@@ -1,0 +1,60 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="q1">The largest planet in the solar system is Jupiter</string>
+    <string name="q2">The first Olympic Games were held in Athens, Greece</string>
+    <string name="q3">The violin has 6 strings</string>
+    <string name="q4">Flying bats belong to birds</string>
+    <string name="q5">Sound spreads faster in the water than in the air</string>
+    <string name="wrong_answer">Your answer is wrong.</string>
+    <string name="correct_answer">Your answer is correct.</string>
+    <string name="analytics_custom_event_sample">Custom Event Sample</string>
+    <string name="analytics_true">True</string>
+    <string name="analytics_false">False</string>
+    <string name="analytics_your_score">Your Score</string>
+    <string name="analytics_predefined_event_sample">Predefined Event Sample</string>
+    <string name="analytics_post_score">Post Score</string>
+    <string name="analytics_next">Next</string>
+
+    <string name="custom_event">Custom Event Sample;</string>
+    <string name="questions">questions</string>
+    <string name="question_true">True</string>
+    <string name="question_false">False</string>
+    <string name="question_next">Next</string>
+    <string name="your_score">Your Score</string>
+    <string name="event_sample">Predefined Event Sample</string>
+    <string name="post_score">Post Score</string>
+
+    <string name="your_score_is">Your score: %1$d</string>
+    <string name="url_txt_analyticskit">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001050745149</string>
+
+
+    <string name="introduction_analyticskit">HUAWEI Analytics Kit (hereinafter referred to as Analytics Kit or Kit) offers a rich array of preset analytics models that help you gain an in-depth insight into your users, products, and content. With this insight, you can then take a data-driven approach to make informed decisions for product and marketing optimizations.</string>
+    <string name="automatically_collected_events_info">Such events can be automatically collected without extra coding. The system event collection function is automatically enabled during initiation. The event ID of an automatically collected event is a reserved field of the analysis service and cannot be reused.</string>
+    <string name="automatically_collected_events_text"><u>Click here to get more information about automatically collected events.</u></string>
+    <string name="automatically_collected_events_link">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/android-automatic-event-collection-0000001051757143</string>
+
+    <string name="custom_events_info">Such events can be used to meet personalized analysis requirements that cannot be met by automatically collected events and predefined events. You may have personalized events that need to be collected and analyzed. Analytics Kit allows you to customize events and extend event parameters, or add personalized parameters for predefined events.</string>
+    <string name="custom_events_sample_text">In this example, we are defining a special event such as a quiz. We collect the user\'s response.</string>
+
+    <string name="predefined_events_info">Such events have been predefined by the Analytics SDK based on common application scenarios. It is recommended you use predefined event IDs for event collection and analysis. The system has been enabled to provide various insight reports based on predefined events.</string>
+    <string name="predefined_events_sample_text">In this example, we collect user scores by using the predefined Score event, according to the points they get from the answers given by the user in the custom event.</string>
+
+
+</resources>

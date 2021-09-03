@@ -1,0 +1,45 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="you_should_not_be_seeing_this_if_you_are_seeing_this_there_is_a_grave_error_occurred">YOU SHOULD NOT BE SEEING THIS! IF YOU ARE SEEING THIS, THERE IS A GRAVE ERROR OCCURRED.</string>
+    <string name="descappgallery">descAppGallery</string>
+    <string name="desccomingsoon">descComingSoon</string>
+    <string name="descdeeplink">descDeepLink</string>
+    <string name="hms_quick_app">HMS Quick App</string>
+    <string name="explanation">Explanation</string>
+    <string name="link_to_hms_page">Link to HMS Page</string>
+    <string name="deschomescreenicon">descHomeScreenIcon</string>
+    <string name="descquickappcenter">descQuickAppCenter</string>
+    <string name="desc_long_app_gallery">Users can open AppGallery and go to quick apps section, or search for quick apps.</string>
+    <string name="desc_long_coming_soon">QuickApp will be coming to HiBoard and HiSearch soon.\n\nIn HiBoard, Quick app cards are seamlessly integrated into HAG, for flawless performance in intelligent scenarios. Users can use cards in HiBoard, or click a card, to open a quick app. \n\nIn HiSearch, Users can search for quick apps or quick app cards directly, by swiping down on the home screen.</string>
+    <string name="desc_long_deep_link">Quick apps can be opened via a deep link that can be accessed through numerous mediums, such as HTML5 pages, apps, or quick apps themselves.</string>
+    <string name="desc_long_home_screen_icon">After adding quick apps to the home screen, users can open them directly by touching the app icons.</string>
+    <string name="desc_long_quick_app_center"><![CDATA[Users can go to AppGallery > Manager > Quick App manager >  Quick App Center to search for, access, and manage quick apps. Quick App Center can be added to the home screen.]]></string>
+    <string name="main_page">Main Page</string>
+    <string name="docs">Docs</string>
+    <string name="link_developer_quickapp">https://developer.huawei.com/consumer/en/huawei-quickApp</string>
+    <string name="link_quickapp_documentation_introduction">https://developer.huawei.com/consumer/en/doc/development/quickApp-Guides/quickapp-introduction</string>
+
+    <string name="quickapp_explanation1">Quick apps are a new form of installation-free apps developed based on industry standards. They are developed based on the frontend technology stack and support native rendering, therefore possessing the advantages of both HTML5 apps and native apps. Users do not need to install quick apps and only need to tap them open and enjoy the same experience and performance as native apps.\n\n</string>
+    <string name="quickapp_explanation2">\u2022 It is easy to access and has low development costs. You can use JavaScript and CSS to develop quick apps or you can convert already existing HTML5 apps to quick apps. \n\u2022 It provides native rendering experience so that users can use the apps at the speed of native development without having to install the apps and the code can be updated automatically (i.e. no need for users to update the quick apps). \n\u2022 Another advantage for developers is to increase their user retention because users can easily add a quick app to their home screen if they want to use it later and they can be reached through AppGallery QuickApp search and through push notification by just one simple click. \n\u2022 You can also distribute your quick apps easily by using Quick App Center, deep links, Huawei Assistant etc. \n\n</string>
+    <string name="quickapp_explanation3">For development details, you can use the links below to access to the official documentation of QuickApp. \n\nAlso you can slide right to see some features in detail.</string>
+    <string name="references">1) https://developer.huawei.com/consumer/en/huawei-quickApp \n\n2) https://developer.huawei.com/consumer/en/doc/development/quickApp-Guides/quickapp-introduction"</string>
+    <string name="quickapp_title">Quick App</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="please_select_a_model">Select a Model</string>
+    <string name="sync_classify">Sync Classify</string>
+    <string name="async_classify">Async Classify</string>
+    <string name="sample_image">sample image</string>
+    <string name="sample_title">tabby,tabby cat - 74.8893%</string>
+    <string name="sample_result">Egyptian cat - 16.1959%\ntiger cat - 4.8629%</string>
+    <string name="sample_time">inference time:12.241ms</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="gallery">Gallery</string>
+    <string name="service_introduction">Service Introduction</string>
+    <string name="hiai_foundation_desc">HUAWEI HiAI encompasses a smart and comprehensive ecosystem based on an innovative \'chip-device-cloud\' three-layer open architecture, enabling developers to quickly and easily use the powerful AI capabilities on Huawei devices, and deliver a next-level smart app user experience.\n\nHUAWEI HiAI Foundation serves as a basic platform providing chip-level capabilities, and a high-performing computing environment characterized by low power consumption and all-scenario versatility, with broad-based support for more than 300 operators and features across the industry.</string>
+    <string name="hiai_foundation_desc2">HUAWEI HiAI Foundation connects smart services and computing chips to provide lightweight model computing capabilities. Supporting interconnection with frameworks such as Huawei MindSpore, TensorFlow, Caffe, Paddle, ONNX and AndroidNN, HUAWEI HiAI Foundation provides for heterogeneous computing of multiple computing units in the chip, and offers efficient tool chains such as model quantization, model conversion, performance optimization, and maintenance and test.</string>
+    <string name="try_hiai_foundation">Try HiAI Foundation</string>
+    <string name="url_txt_hiaifoundation">https://developer.huawei.com/consumer/en/hiai#Foundation/</string>
+</resources>

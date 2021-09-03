@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<resources>
+
+    <string name="txt_header_for_cloud_hosting">Cloud Hosting</string>
+    <string name="txt_for_service_introduction">Service Information</string>
+    <string name="txt_for_description">Cloud Hosting integrated, you can manage multiple sites under a project. Each site can use the domain name provided by Cloud Hosting. In addition, multi-version management is also available for each site.</string>
+    <string name="txt_for_site">Site: A site is a carrier for you to host static web pages, helping you manage and maintain web page content of all versions.</string>
+    <string name="txt_for_version">Version: You can manage hosted static web pages by version to implement updates</string>
+
+    <string name="txt_for_hyperlink"><a href="">Click here to learn more about AGC Cloud Hosting.</a></string>
+    <string name="txt_for_hyperlink_link">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-cloudhosting-introduction</string>
+</resources>

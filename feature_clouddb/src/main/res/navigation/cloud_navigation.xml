@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/cloud_navigation"
+    app:startDestination="@id/allCommentFragment">
+
+    <fragment
+        android:id="@+id/addCommentFragment"
+        android:name="com.genar.hmssandbox.huawei.feature_clouddb.view.AddCommentFragment"
+        android:label="AddCommentFragment" >
+        <action
+            android:id="@+id/action_addCommentFragment_to_allCommentFragment"
+            app:destination="@id/allCommentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateCommentFragment"
+        android:name="com.genar.hmssandbox.huawei.feature_clouddb.view.UpdateCommentFragment"
+        android:label="UpdateCommentFragment" >
+        <action
+            android:id="@+id/action_updateCommentFragment_to_allCommentFragment"
+            app:destination="@id/allCommentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allCommentFragment"
+        android:name="com.genar.hmssandbox.huawei.feature_clouddb.view.AllCommentFragment"
+        android:label="AllCommentFragment" >
+        <action
+            android:id="@+id/action_allCommentFragment_to_addCommentFragment"
+            app:destination="@id/addCommentFragment" />
+        <action
+            android:id="@+id/action_allCommentFragment_to_updateCommentFragment"
+            app:destination="@id/updateCommentFragment" />
+    </fragment>
+</navigation>

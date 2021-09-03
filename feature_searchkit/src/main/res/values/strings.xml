@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="search_kit_edit_text">Search</string>
+    <string name="web_searchkit">Web</string>
+    <string name="image_searchkit">Image</string>
+    <string name="video_searchkit">Video</string>
+    <string name="news_searchkit">News</string>
+
+    <string name="searh_kit_spell_check">Spell check: %1$s</string>
+    <string name="search_kit_click_url">Click url: <u>%1$s</u></string>
+
+    <string name="english_searckit">ENGLISH</string>
+    <string name="spanish_searckit">SPANISH</string>
+    <string name="german_searckit">GERMAN</string>
+    <string name="italian_searckit">ITALIAN</string>
+    <string name="french_searckit">FRENCH</string>
+    <string name="arabic_searckit">ARABIC</string>
+    <string name="polish_searckit">POLISH</string>
+    <string name="turkish_searckit">TURKISH</string>
+    <string name="finnish_searckit">FINNISH</string>
+    <string name="swedish_searckit">SWEDISH</string>
+    <string name="danish_searckit">DANISH</string>
+    <string name="norwegian_searckit">NORWEGIAN</string>
+    <string name="portuguese_searckit">PORTUGUESE</string>
+    <string name="czech_searckit">CZECH</string>
+    <string name="set_site_name_text_searchkit">Set site name</string>
+    <string name="linked_text"><a href=""> %1$s </a></string>
+
+    <string name="url_searchkit">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001055591730</string>
+
+</resources>

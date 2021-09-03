@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.genar.hmssandbox.huawei.feature_analyticskit.AnalyticsKitActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_analytics"
+        style="@style/ToolbarAppearance.Sandbox.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Analytics Kit" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_analytics">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvIntroductionHeader_analyticskit"
+                style="@style/TextAppearance.Sandbox.Headline5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Service Introduction"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvIntroductionText_analyticskit"
+                style="@style/TextAppearance.Sandbox.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/introduction_analyticskit"
+                app:layout_constraintTop_toBottomOf="@+id/tvIntroductionHeader_analyticskit" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgAnaltyicsKit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:scaleType="fitXY"
+                app:layout_constraintTop_toBottomOf="@+id/tvIntroductionText_analyticskit"
+                app:srcCompat="@drawable/bg_analycticskit" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvAutomaticallyCollectedHeader"
+                style="@style/TextAppearance.Sandbox.Headline5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Automatically Collected Events"
+                app:layout_constraintTop_toBottomOf="@+id/imgAnaltyicsKit" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvAutomaticallyCollectedText"
+                style="@style/TextAppearance.Sandbox.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/automatically_collected_events_info"
+                app:layout_constraintTop_toBottomOf="@+id/tvAutomaticallyCollectedHeader" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvAutomaticallyCollectedLink"
+                style="@style/TextAppearance.Sandbox.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/automatically_collected_events_text"
+                app:layout_constraintTop_toBottomOf="@+id/tvAutomaticallyCollectedText" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvCustomEventsHeader"
+                style="@style/TextAppearance.Sandbox.Headline5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Custom Events"
+                app:layout_constraintTop_toBottomOf="@+id/tvAutomaticallyCollectedLink" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvCustomEventsText"
+                style="@style/TextAppearance.Sandbox.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/custom_events_info"
+                app:layout_constraintTop_toBottomOf="@+id/tvCustomEventsHeader" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvCustomEventsSampleHeader"
+                style="@style/TextAppearance.Sandbox.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/custom_events_sample_text"
+                app:layout_constraintTop_toBottomOf="@+id/tvCustomEventsText" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/questionsLayout_analyticskit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/h16"
+                android:background="@drawable/bg_gray_result"
+                app:layout_constraintTop_toBottomOf="@+id/tvCustomEventsSampleHeader">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvQuestionsHedaer"
+                    style="@style/TextAppearance.Sandbox.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/h16"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="Questions" />
+
+                <View
+                    android:id="@+id/separator1_analyticskit"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGray1"
+                    android:layout_marginTop="@dimen/h16"
+                    app:layout_constraintTop_toBottomOf="@+id/tvQuestionsHedaer" />
+
+
+                <TextView
+                    android:id="@+id/tv_questions"
+                    style="@style/TextAppearance.Sandbox.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/h16"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/separator1_analyticskit" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_false"
+                style="@style/ButtonAppearance.Sandbox.Outline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="2dp"
+                android:text="False"
+                app:layout_constraintEnd_toStartOf="@+id/btn_true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questionsLayout_analyticskit" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_true"
+                style="@style/ButtonAppearance.Sandbox.Normal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="True"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_false"
+                app:layout_constraintTop_toBottomOf="@+id/questionsLayout_analyticskit" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/scoreLay_analyticskit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/h16"
+                android:background="@drawable/bg_gray_result"
+                app:layout_constraintTop_toBottomOf="@+id/btn_false">
+
+                <TextView
+                    android:id="@+id/tv_score"
+                    style="@style/TextAppearance.Sandbox.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                   android:layout_margin="@dimen/h16"
+                    android:text="Your Score"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <TextView
+                android:id="@+id/tv_predefinedEventText"
+                style="@style/TextAppearance.Sandbox.Headline5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Predefined Events"
+                app:layout_constraintTop_toBottomOf="@+id/scoreLay_analyticskit" />
+
+            <TextView
+                android:id="@+id/tv_predefinedEventInfo"
+                style="@style/TextAppearance.Sandbox.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/predefined_events_info"
+                app:layout_constraintTop_toBottomOf="@+id/tv_predefinedEventText" />
+
+            <TextView
+                android:id="@+id/tv_predefinedEventSampleText"
+                style="@style/TextAppearance.Sandbox.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/predefined_events_sample_text"
+                app:layout_constraintTop_toBottomOf="@+id/tv_predefinedEventInfo" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_postScore"
+                style="@style/ButtonAppearance.Sandbox.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="@dimen/h16"
+                android:text="@string/analytics_post_score"
+                app:layout_constraintTop_toBottomOf="@+id/tv_predefinedEventSampleText"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

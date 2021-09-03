@@ -1,0 +1,32 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="title_wiseplay_drm">WisePlay DRM</string>
+    <string name="txt_wiseplaydrm">WisePlay DRM provides you with digital content copyright protection capabilities, including hardware- and software-level DRM capabilities. This helps to support you in various use cases such as online application for client certificates, content encryption in multiple formats and algorithms, and online and offline playback. Video service providers (SPs) use keys to encrypt content. The content must be decrypted using the keys before being played.</string>
+    <string name="txt_wiseplay_features">Provides free content copyright protection capabilities. Provides a more secure enhanced hardware-level DRM compared with the software-level DRM, based on a complete DRM solution at the hardware and software levels.</string>
+    <string name="txt_wiseplay_usecases">Content encryption: The SP service obtains a key, encrypts content when transcoding it, and delivers the encrypted content to the content delivery network (CDN).
+Content decryption: Before a user plays the encrypted content, the client obtains a key from the SP service, and uses the DRM to decrypt the content.</string>
+    <string name="txt_wiseplay_link">https://developer.huawei.com/consumer/en/hms/huawei-wiseplay/</string>
+    <string name="txt_wiseplay_link_info"><a href="">Click here to learn more about WisePlay DRM.</a></string>
+    <string name="txt_encryption_process">Encryption Process</string>
+    <string name="txt_encryption_process_exp">If the SP server does not have the MultiDRM capability (that is, a video is protected by multiple DRMs), you can refer to this section to build one based on the key management system (KMS) sample code provided by HUAWEI Developers.The sample code provides the capabilities of generating and managing keys and the logic of generating WisePlay DRM encryption index information.</string>
+    <string name="txt_encryption_process_follows">The video content encryption process is as follows:\n1.The video operations platform sends a request of creating a content encoding task to the encoder and passes parameters such as the content ID and encryption type.\n2.The encoder determines whether the content is encrypted based on the encryption type. If so, the encoder calls the getKeyInfo API to obtain Key, KeyID, and PSSH Box for encryption from the KMS.\n3.The KMS generates a content encryption key, a key ID, and PSSH box information, and establishes the mapping between the key ID and content ID. The KMS stores the key information securely and persistently. The KMS of different SPs has different storage solutions.\n4.After obtaining the key from the KMS, the encoder transcodes and encrypts the content (encrypts video segments in AES-128-CTR/CBC mode) and writes the PSSH box information to the index file.\n5.After the transcoding and encryption, the content is ingested to the CDN.\n</string>
+
+
+</resources>

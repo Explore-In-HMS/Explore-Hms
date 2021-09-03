@@ -1,0 +1,1138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.genar.hmssandbox.huawei.feature_cameraengine.ui.common.AutoFitTextureView
+        android:id="@+id/aftv_pro_vid_camera_engine"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="16dp"/>
+
+    <ImageView
+        android:id="@+id/iv_flash_pro_video_mode_camera_engine"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toTopOf="@+id/aftv_pro_vid_camera_engine"
+        app:layout_constraintRight_toRightOf="@+id/aftv_pro_vid_camera_engine"
+        android:layout_marginEnd="3dp">
+    </ImageView>
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_time_pro_vid_camera_engine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.Sandbox.Body2"
+        android:textColor="@color/colorWhiteCameraEngine"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/view_light_border_light_gray_camera_engine"
+        android:visibility="invisible"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_show_introduction_pro_vid_camera_engine"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_show_introduction_pro_vid_camera_engine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            style="@style/ButtonAppearance.Sandbox.Normal"
+            android:text="@string/txt_show_mode_intro_camera_engine"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+        </com.google.android.material.button.MaterialButton>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_mode_introduction_pro_vid_camera_engine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:animateLayoutChanges="true"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_pro_vid_mode_camera_engine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Sandbox.Headline6"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_gravity="center"
+            android:gravity="start"
+            android:text="@string/txt_pro_v_camera_engine"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/seperator_pro_vid_intro_camera_engine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGray1CameraEngine"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_pro_vid_mode_camera_engine">
+        </View>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_pro_vid_mode_intro_camera_engine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Sandbox.Body1"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"
+            android:gravity="start"
+            android:text="@string/msg_pro_mode_video_camera_engine"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/seperator_pro_vid_intro_camera_engine"
+            app:layout_constraintBottom_toTopOf="@+id/btn_hide_intro_pro_vid_camera_engine"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_hide_intro_pro_vid_camera_engine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            style="@style/ButtonAppearance.Sandbox.Normal"
+            android:text="@string/txt_hide_intro_camera_engine"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_pro_vid_mode_intro_camera_engine"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+        </com.google.android.material.button.MaterialButton>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_night_functions_plus_level_camera_engine"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/cl_pro_vidto_functions_plus_camera_engine"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/view_light_border_light_gray_camera_engine"
+        android:visibility="invisible">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_mode_not_supp_pro_vid_camera_engine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/msg_mode_not_supported_camera_engine"
+            style="@style/TextAppearance.Sandbox.Body2"
+            android:background="@color/white"
+            android:gravity="center"
+            android:visibility="invisible">
+
+        </com.google.android.material.textview.MaterialTextView>
+
+        <SeekBar
+            android:id="@+id/seekbar_iso_pro_vid_camera_engine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+        </SeekBar>
+
+        <SeekBar
+            android:id="@+id/seekbar_awb_type_pro_vid_camera_engine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+        </SeekBar>
+
+        <SeekBar
+            android:id="@+id/seekbar_man_wb_pro_vid_camera_engine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+        </SeekBar>
+
+        <SeekBar
+            android:id="@+id/seekbar_foc_dist_pro_vid_camera_engine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+        </SeekBar>
+
+        <SeekBar
+            android:id="@+id/seekbar_pro_meter_pro_vid_camera_engine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+        </SeekBar>
+
+        <SeekBar
+            android:id="@+id/seekbar_exp_comp_pro_vid_camera_engine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+        </SeekBar>
+
+        <SeekBar
+            android:id="@+id/seekbar_face_detect_mode_pro_vid_camera_engine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+        </SeekBar>
+
+        <SeekBar
+            android:id="@+id/seekbar_noise_red_pro_vid_camera_engine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+        </SeekBar>
+
+        <SeekBar
+            android:id="@+id/seekbar_edge_mode_pro_vid_camera_engine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+        </SeekBar>
+
+        <SeekBar
+            android:id="@+id/seekbar_tone_map_mode_pro_vid_camera_engine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+        </SeekBar>
+
+        <SeekBar
+            android:id="@+id/seekbar_color_corr_mode_pro_vid_camera_engine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+        </SeekBar>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_cont_aelock_pro_vid_camera_engine"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:visibility="invisible">
+        </com.google.android.material.switchmaterial.SwitchMaterial>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_cont_awlock_vid_camera_engine"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:visibility="invisible">
+        </com.google.android.material.switchmaterial.SwitchMaterial>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_exp_hint_pro_vid_camera_engine"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:visibility="invisible">
+        </com.google.android.material.switchmaterial.SwitchMaterial>
+
+        <Spinner
+            android:id="@+id/spinner_target_frame_pro_vid_camera_engine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@color/colorWhiteCameraEngine"
+            android:visibility="invisible">
+        </Spinner>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_pro_vidto_functions_plus_camera_engine"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        app:layout_constraintBottom_toTopOf="@+id/cl_pro_vid_functions_camera_engine"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/view_light_border_light_gray_camera_engine">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_iso_level_pro_vid_camera_engine"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    app:cardCornerRadius="48dp"
+                    android:elevation="3dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="8dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_iso_val_pro_vid_camera_engine"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/TextAppearance.Sandbox.Body2"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:text="@string/txt_iso_camera_engine"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_exp_comp_pro_vid_camera_engine"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    app:cardCornerRadius="48dp"
+                    android:elevation="3dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+                    app:layout_constraintTop_toTopOf="@+id/cv_iso_level_pro_vid_camera_engine"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_iso_level_pro_vid_camera_engine"
+                    app:layout_constraintLeft_toRightOf="@+id/cv_iso_level_pro_vid_camera_engine">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_exp_comp_pro_vid_camera_engine"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/TextAppearance.Sandbox.Body2"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:text="@string/txt_exposure_comp_camera_engine"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_exposure_hint_level_pro_vid_camera_engine"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    app:cardCornerRadius="48dp"
+                    android:elevation="3dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+                    app:layout_constraintTop_toTopOf="@+id/cv_exp_comp_pro_vid_camera_engine"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_exp_comp_pro_vid_camera_engine"
+                    app:layout_constraintLeft_toRightOf="@+id/cv_exp_comp_pro_vid_camera_engine">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_exposure_hint_pro_vid_camera_engine"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/TextAppearance.Sandbox.Body2"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:text="@string/txt_exposure_hint_camera_engine"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_awb_type_pro_vid_camera_engine"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    app:cardCornerRadius="48dp"
+                    android:elevation="3dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+                    app:layout_constraintTop_toTopOf="@+id/cv_exposure_hint_level_pro_vid_camera_engine"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_exposure_hint_level_pro_vid_camera_engine"
+                    app:layout_constraintLeft_toRightOf="@+id/cv_exposure_hint_level_pro_vid_camera_engine">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_awb_type_pro_vid_camera_engine"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/TextAppearance.Sandbox.Body2"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:text="@string/txt_awb_type_camera_engine"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_man_wb_pro_vid_camera_engine"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    app:cardCornerRadius="48dp"
+                    android:elevation="3dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+                    app:layout_constraintTop_toTopOf="@+id/cv_awb_type_pro_vid_camera_engine"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_awb_type_pro_vid_camera_engine"
+                    app:layout_constraintLeft_toRightOf="@+id/cv_awb_type_pro_vid_camera_engine">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_man_wb_pro_vid_camera_engine"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/TextAppearance.Sandbox.Body2"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:text="@string/txt_wb_camera_engine"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_foc_dist_pro_vid_camera_engine"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    app:cardCornerRadius="48dp"
+                    android:elevation="3dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+                    app:layout_constraintTop_toTopOf="@+id/cv_man_wb_pro_vid_camera_engine"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_man_wb_pro_vid_camera_engine"
+                    app:layout_constraintLeft_toRightOf="@+id/cv_man_wb_pro_vid_camera_engine">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_foc_dist_pro_vid_camera_engine"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/TextAppearance.Sandbox.Body2"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:text="@string/txt_focus_distance_camera_engine"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_pro_m_pro_vid_camera_engine"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    app:cardCornerRadius="48dp"
+                    android:elevation="3dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+                    app:layout_constraintTop_toTopOf="@+id/cv_foc_dist_pro_vid_camera_engine"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_foc_dist_pro_vid_camera_engine"
+                    app:layout_constraintLeft_toRightOf="@+id/cv_foc_dist_pro_vid_camera_engine">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_pro_m_pro_vid_camera_engine"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/TextAppearance.Sandbox.Body2"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:text="@string/txt_pro_meter_camera_engine"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_face_det_pro_vid_camera_engine"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    app:cardCornerRadius="48dp"
+                    android:elevation="3dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+                    app:layout_constraintTop_toTopOf="@+id/cv_pro_m_pro_vid_camera_engine"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_pro_m_pro_vid_camera_engine"
+                    app:layout_constraintLeft_toRightOf="@+id/cv_pro_m_pro_vid_camera_engine">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_face_det_pro_vid_camera_engine"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/TextAppearance.Sandbox.Body2"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:text="@string/txt_face_detect_camera_engine"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_target_fps_pro_vid_camera_engine"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    app:cardCornerRadius="48dp"
+                    android:elevation="3dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+                    app:layout_constraintTop_toTopOf="@+id/cv_face_det_pro_vid_camera_engine"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_face_det_pro_vid_camera_engine"
+                    app:layout_constraintLeft_toRightOf="@+id/cv_face_det_pro_vid_camera_engine">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_target_fps_pro_vid_camera_engine"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/TextAppearance.Sandbox.Body2"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:text="@string/txt_target_fps_camera_engine"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_noise_red_pro_vid_camera_engine"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    app:cardCornerRadius="48dp"
+                    android:elevation="3dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+                    app:layout_constraintTop_toTopOf="@+id/cv_target_fps_pro_vid_camera_engine"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_target_fps_pro_vid_camera_engine"
+                    app:layout_constraintLeft_toRightOf="@+id/cv_target_fps_pro_vid_camera_engine">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_noise_red_pro_vid_camera_engine"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/TextAppearance.Sandbox.Body2"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:text="@string/txt_noise_red_camera_engine"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_edge_mode_pro_vid_camera_engine"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    app:cardCornerRadius="48dp"
+                    android:elevation="3dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+                    app:layout_constraintTop_toTopOf="@+id/cv_noise_red_pro_vid_camera_engine"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_noise_red_pro_vid_camera_engine"
+                    app:layout_constraintLeft_toRightOf="@+id/cv_noise_red_pro_vid_camera_engine">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_edge_mode_pro_vid_camera_engine"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/TextAppearance.Sandbox.Body2"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:text="@string/txt_edge_mode_camera_engine"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_tonemap_mode_pro_vid_camera_engine"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    app:cardCornerRadius="48dp"
+                    android:elevation="3dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+                    app:layout_constraintTop_toTopOf="@+id/cv_edge_mode_pro_vid_camera_engine"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_edge_mode_pro_vid_camera_engine"
+                    app:layout_constraintLeft_toRightOf="@+id/cv_edge_mode_pro_vid_camera_engine">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_edge_mod_pro_vid_camera_engine"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/TextAppearance.Sandbox.Body2"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:text="@string/txt_tone_mode_camera_engine"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_color_corr_mode_pro_vid_camera_engine"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    app:cardCornerRadius="48dp"
+                    android:elevation="3dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+                    app:layout_constraintTop_toTopOf="@+id/cv_tonemap_mode_pro_vid_camera_engine"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_tonemap_mode_pro_vid_camera_engine"
+                    app:layout_constraintLeft_toRightOf="@+id/cv_tonemap_mode_pro_vid_camera_engine">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_color_corr_mode_vid_camera_engine"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/TextAppearance.Sandbox.Body2"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:text="@string/txt_color_corr_mode_camera_engine"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_contr_aelock_pro_vid_camera_engine"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    app:cardCornerRadius="48dp"
+                    android:elevation="3dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+                    app:layout_constraintTop_toTopOf="@+id/cv_color_corr_mode_pro_vid_camera_engine"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_color_corr_mode_pro_vid_camera_engine"
+                    app:layout_constraintLeft_toRightOf="@+id/cv_color_corr_mode_pro_vid_camera_engine">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_contr_aelock_vid_camera_engine"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/TextAppearance.Sandbox.Body2"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:text="@string/txt_contr_aelock_camera_engine"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_contr_awblock_pro_vid_camera_engine"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    app:cardCornerRadius="48dp"
+                    android:elevation="3dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+                    app:layout_constraintTop_toTopOf="@+id/cv_contr_aelock_pro_vid_camera_engine"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_contr_aelock_pro_vid_camera_engine"
+                    app:layout_constraintLeft_toRightOf="@+id/cv_contr_aelock_pro_vid_camera_engine"
+                    app:layout_constraintRight_toRightOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_ccontr_awblock_vid_camera_engine"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            style="@style/TextAppearance.Sandbox.Body2"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:text="@string/txt_contr_awblock_camera_engine"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </HorizontalScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_pro_vid_functions_camera_engine"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/view_light_border_light_gray_camera_engine">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_last_image_pro_vid_camera_engine"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            app:cardCornerRadius="36dp"
+            android:elevation="3dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+            app:layout_constraintTop_toTopOf="@+id/ll_record_pro_camera_engine"
+            app:layout_constraintBottom_toBottomOf="@+id/ll_record_pro_camera_engine"
+            app:layout_constraintLeft_toLeftOf="parent"
+            >
+
+            <ImageView
+                android:layout_height="32dp"
+                android:layout_width="32dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_view_camera_engine">
+            </ImageView>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_settings_pro_vid_camera_engine"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            app:cardCornerRadius="36dp"
+            android:elevation="3dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+            app:layout_constraintTop_toTopOf="@+id/ll_record_pro_camera_engine"
+            app:layout_constraintBottom_toBottomOf="@+id/ll_record_pro_camera_engine"
+            app:layout_constraintLeft_toRightOf="@+id/cv_last_image_pro_vid_camera_engine"
+            app:layout_constraintRight_toLeftOf="@+id/ll_record_pro_camera_engine">
+
+            <ImageView
+                android:layout_height="32dp"
+                android:layout_width="32dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_settings_camera_engine">
+            </ImageView>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/ll_record_pro_camera_engine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_start_stop_pro_vid_camera_eng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="36dp"
+                android:elevation="3dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginEnd="4dp"
+                app:cardBackgroundColor="@color/colorPrimaryCameraEngine">
+
+                <ImageView
+                    android:id="@+id/iv_start_stop_pro_vid_camera_engine"
+                    android:layout_height="28dp"
+                    android:layout_width="28dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_record_camera_engine"
+                    android:layout_margin="12dp">
+                </ImageView>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_pause_resume_pro_vid_camera_eng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="36dp"
+                android:elevation="3dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="4dp"
+                app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_pause_resume_pro_vid_camera_engine"
+                    android:layout_height="28dp"
+                    android:layout_width="28dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="12dp">
+                </ImageView>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_zoom_in_pro_vid_camera_engine"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            app:cardCornerRadius="36dp"
+            android:elevation="3dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+            app:layout_constraintTop_toTopOf="@+id/ll_record_pro_camera_engine"
+            app:layout_constraintLeft_toRightOf="@+id/ll_record_pro_camera_engine"
+            app:layout_constraintBottom_toBottomOf="@+id/ll_record_pro_camera_engine"
+            app:layout_constraintRight_toLeftOf="@+id/cv_zoom_out_pro_vid_camera_engine">
+
+            <ImageView
+                android:layout_height="32dp"
+                android:layout_width="32dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_zoom_in_camera_engine">
+            </ImageView>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_zoom_out_pro_vid_camera_engine"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            app:cardCornerRadius="36dp"
+            android:elevation="3dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/colorPrimaryCameraEngine"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintTop_toTopOf="@+id/cv_zoom_in_pro_vid_camera_engine"
+            app:layout_constraintLeft_toRightOf="@+id/cv_zoom_in_pro_vid_camera_engine"
+            app:layout_constraintBottom_toBottomOf="@+id/cv_zoom_in_pro_vid_camera_engine"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <ImageView
+                android:layout_height="32dp"
+                android:layout_width="32dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_zoom_out_camera_engine"
+                android:layout_weight="1">
+            </ImageView>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_settings_value_vid_camera_engine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        style="@style/TextAppearance.Sandbox.Headline3"
+        android:textColor="@color/colorWhiteCameraEngine"
+        app:layout_constraintTop_toTopOf="@+id/aftv_pro_vid_camera_engine"
+        app:layout_constraintBottom_toBottomOf="@+id/aftv_pro_vid_camera_engine"
+        app:layout_constraintLeft_toLeftOf="@+id/aftv_pro_vid_camera_engine"
+        app:layout_constraintRight_toRightOf="@+id/aftv_pro_vid_camera_engine"
+        app:layout_constraintVertical_bias="0.4">
+    </com.google.android.material.textview.MaterialTextView>
+
+    <ProgressBar
+        android:id="@+id/pb_pro_vid_mode_camera_engine"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        android:indeterminateDrawable="@drawable/custom_progress_bar_camera_engine"
+        android:visibility="gone">
+    </ProgressBar>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

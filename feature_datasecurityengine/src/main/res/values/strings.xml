@@ -1,0 +1,36 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="you_should_not_be_seeing_this_if_you_are_seeing_this_there_is_a_grave_error_occurred">YOU SHOULD NOT BE SEEING THIS! IF YOU ARE SEEING THIS, THERE IS A GRAVE ERROR OCCURRED.</string>
+    <string name="desc_default_string">DataSecurity Engine</string>
+    <string name="desc_service_introduction">Service Introduction</string>
+    <string name="header_enabling_app_signing_for_a_new_app_app_gallery">Enabling App Signing for a New App - Letting AppGallery Connect Create a Signature Key</string>
+
+    <string name="explanation">Explanation</string>
+    <string name="desc_enabling_export_app_signing">If you choose to use your own signature key, you can submit key certificates of your signature key and upload key (optional) in AppGallery Connect. After you upload an app package, AppGallery Connect verifies your identity using the key certificate of the upload key you submitted. \n\nAfter the verification is successful, AppGallery Connect uses the signature key you submitted to re-sign the app. After the signature is successful, AppGallery Connect distributes the app to users. When you update your app, you only need to use the upload key to sign the app package. AppGallery Connect will always use the signature key you upload to re-sign the app, ensuring that the signature key is the same as that of the released app. \n\nThe key certificate of the upload key is optional. If you do not submit the key certificate of the upload key, AppGallery Connect uses the signature key you upload as the upload key for verification by default.\n</string>
+    <string name="docs">Docs</string>
+
+    <string name="link_developer_datasecurity_engine">https://developer.huawei.com/consumer/en/doc/development/system-Guides/3210801</string>
+
+    <string name="datasecurity_engine_explanation1">DataSecurity Engine storage ability provides a layer of security for storing, deleting, updating, and querying sensitive data. This ability can be leveraged in scenarios where short data (64 bytes or less) such as user passwords, credit card information, and app token data is being stored, deleted, updated, or queried. DataSecurity Engine has three main features.\n\n</string>
+    <string name="datasecurity_engine_explanation2">\u2022Versatile: Can be used across a broad range of scenarios where sensitive data needs to be stored or managed.\n\n\u2022Secure: Stores keys in a Trusted Execution Environment (TEE), adopts optimized decryption algorithms, and encrypts stored data, to add three extra layers of security including key, algorithm, and data security.\n\n\u2022Efficient: Decreases the time needed for developing algorithms, making more time for developing the app.\n\n</string>
+    <string name="datasecurity_engine_explanation3">For further details, you can use the link below to access to the official documentation of DataSecurity Engine.</string>
+</resources>

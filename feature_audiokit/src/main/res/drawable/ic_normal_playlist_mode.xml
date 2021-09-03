@@ -1,0 +1,55 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+  <path
+      android:pathData="M24,0C24,0 24,0 24,0C24,14.4 24,22.4 24,24C24,24 24,24 24,24C9.6,24 1.6,24 0,24C0,24 0,24 0,24C0,9.6 0,1.6 0,0C0,0 0,0 0,0C14.4,0 22.4,0 24,0Z"
+      android:fillColor="#000000"
+      android:fillAlpha="0"/>
+  <path
+      android:fillColor="#FF000000"
+      android:pathData="M24,0C24,0 24,0 24,0C24,14.4 24,22.4 24,24C24,24 24,24 24,24C9.6,24 1.6,24 0,24C0,24 0,24 0,24C0,9.6 0,1.6 0,0C0,0 0,0 0,0C14.4,0 22.4,0 24,0Z"
+      android:strokeAlpha="0"
+      android:strokeWidth="1"
+      android:fillAlpha="0"
+      android:strokeColor="#000000"/>
+  <path
+      android:pathData="M18,4L18,7L3,7L3,9L18,9L18,12L22,8L18,4Z"
+      android:fillColor="@color/colorPrimary"/>
+  <path
+      android:fillColor="#FF000000"
+      android:pathData="M18,4L18,7L3,7L3,9L18,9L18,12L22,8L18,4Z"
+      android:strokeAlpha="0"
+      android:strokeWidth="1"
+      android:fillAlpha="0"
+      android:strokeColor="#000000"/>
+  <path
+      android:pathData="M18,12.74L18,15.74L3,15.74L3,17.74L18,17.74L18,20.74L22,16.74L18,12.74Z"
+      android:fillColor="@color/colorPrimary"/>
+  <path
+      android:fillColor="#FF000000"
+      android:pathData="M18,12.74L18,15.74L3,15.74L3,17.74L18,17.74L18,20.74L22,16.74L18,12.74Z"
+      android:strokeAlpha="0"
+      android:strokeWidth="1"
+      android:fillAlpha="0"
+      android:strokeColor="#000000"/>
+</vector>

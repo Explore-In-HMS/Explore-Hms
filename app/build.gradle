@@ -1,0 +1,362 @@
+/*
+ *
+ *   Copyright 2020. Explore in HMS. All rights reserved.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   You may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ */
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.huawei.agconnect'
+apply plugin: "androidx.navigation.safeargs"
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+def gradleVersionsFile = rootProject.file("version.properties")
+def gradleVersionInfo = new Properties()
+gradleVersionInfo.load(new FileInputStream(gradleVersionsFile))
+def gradleVersionCode = gradleVersionInfo['versionCode'].toInteger()
+def gradleVersionName = gradleVersionInfo['versionName']
+
+
+android {
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.genar.hmssandbox.huawei"
+        minSdkVersion 26
+        targetSdkVersion 30
+        versionCode gradleVersionCode
+        versionName gradleVersionName
+        resConfigs "en", "zh-rCN"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.release
+            debuggable true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+//    packagingOptions {
+//        exclude 'lib/arm64-v8a/libc++_shared.so'
+//        exclude 'lib/armeabi-v7a/libc++_shared.so'
+//    }
+
+    dynamicFeatures =
+            [
+                    ':feature_hiai',
+                    ':feature_panorama',
+                    ":feature_mlkit",
+                    ':feature_imagekit',
+                    ':feature_scenekit',
+                    ':feature_analyticskit',
+                    ':feature_videokit',
+                    ':feature_healthkit',
+                    ':feature_adskit',
+                    ':feature_nearbyservice',
+                    ':feature_awarenesskit',
+                    ':feature_fidokit',
+                    ':feature_identitykit',
+                    ':feature_applinking',
+                    ':feature_shareengine',
+                    ':feature_accountkit',
+                    ':feature_audiokit',
+                    ':feature_authservice',
+                    ':feature_safetydetect',
+                    ':feature_quickapp',
+                    ':feature_wirelesskit',
+                    ':feature_acceleratekit',
+                    ':feature_castengine',
+                    ':feature_cloudfunctions',
+                    ':feature_caaskit',
+                    ':feature_clouddb',
+                    ':feature_drivekit',
+                    ':feature_walletkit',
+                    ':feature_cloudhosting',
+                    ':feature_appsigning',
+                    ':feature_computergraphics',
+                    ':feature_opentesting',
+                    ':feature_crashservice',
+                    ':feature_searchkit',
+                    ':feature_cloudtesting',
+                    ':feature_hquic',
+                    ':feature_clouddebugging',
+                    ':feature_remoteconfig',
+                    ':feature_abtest',
+                    ':feature_wiseplaydrm',
+                    ':feature_operationanalysis',
+                    ':feature_distributionanalysis',
+                    ':feature_onehopengine',
+                    ':feature_cloudstorage',
+                    ':feature_appmessaging',
+                    ':feature_appbundle',
+                    ':feature_paidapps',
+                    ':feature_apprelease',
+                    ':feature_preorders',
+                    ':feature_earlyaccess',
+                    ':feature_inapppurchases',
+                    ':feature_apm',
+                    ':feature_comments',
+                    ':feature_giftmanagement',
+                    ':feature_gameservice',
+                    ':feature_integrationcheck',
+                    ':feature_productmanagement',
+                    ':feature_phasedrelease',
+                    ':feature_audioengine',
+                    ':feature_dynamicability',
+                    ':dynamicfeaturetest',
+                    ':feature_arengine',
+                    ':feature_appgallerykit',
+                    ':feature_wearengine',
+                    ':feature_localauthenticationengine',
+                    ':feature_dynamictagmanager',
+                    ':feature_datasecurityengine',
+                    ':feature_devicevirtualizationengine',
+                    ':feature_hiaifoundation',
+                    ':feature_connectapi',
+                    ':feature_cameraengine',
+                    ':feature_networkkit'
+            ]
+
+}
+
+dependencies {
+    api fileTree(dir: "libs", include: ["*.jar", '*.aar'])
+    api 'androidx.appcompat:appcompat:1.2.0'
+    api 'androidx.constraintlayout:constraintlayout:2.0.4'
+    api 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+
+    api 'com.google.android.material:material:1.3.0-beta01'
+    implementation 'org.jetbrains:annotations:15.0'
+
+    api 'androidx.exifinterface:exifinterface:1.3.2'
+
+//    api 'com.huawei.hms:push:5.0.2.300'
+
+//    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+//    implementation 'androidx.navigation:navigation-fragment:2.3.0'
+//    implementation 'androidx.navigation:navigation-ui:2.3.0'
+//    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    api 'androidx.recyclerview:recyclerview:1.1.0'
+    //implementation "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+    implementation 'androidx.navigation:navigation-fragment:2.3.3'
+    implementation 'androidx.navigation:navigation-ui:2.3.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    api 'com.huawei.agconnect:agconnect-core:1.4.2.300'
+
+    api 'com.huawei.hms:dynamicability:1.0.14.300'
+    implementation 'com.huawei.hms:location:5.0.4.300'
+    implementation 'com.huawei.hms:site:5.2.0.300'
+    api 'com.huawei.hms:hwid:5.2.0.300'
+//    api 'com.huawei.hms:drive:4.0.3.300'
+    implementation 'com.huawei.hms:scan:1.3.1.300'
+
+    //cloud functions sdk
+    api 'com.huawei.agconnect:agconnect-function:1.4.1.300'
+
+    api 'io.reactivex.rxjava2:rxjava:2.2.19'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+
+
+    //cloud storage
+    api "com.huawei.agconnect:agconnect-storage:1.3.1.100"
+    /**
+     * Ana uygulama başlatılamaması - feature'lardaki kütüphane çakışmalarından dolayı feature gradle'larından buraya taşındı.
+     * */
+    api 'com.huawei.hms:ml-computer-vision-ocr:2.0.1.300'
+    //
+    api 'com.huawei.hms:ml-computer-vision-bcr:2.0.0.300'
+    api 'com.huawei.hms:ml-computer-card-bcr-model:2.0.2.300'
+    api 'com.huawei.hms:ml-computer-card-bcr-plugin:2.0.3.300'
+    api 'com.huawei.hms:ml-computer-card-gcr-plugin:2.0.1.300'
+    api 'com.huawei.hms:ml-computer-card-icr-cn:2.0.3.303'
+    api 'com.huawei.hms:ml-computer-card-icr-vn:2.1.0.301'
+    api 'com.huawei.hms:ml-computer-vision-livenessdetection:2.0.2.300'
+    api 'com.huawei.hms:ml-computer-vision-object-detection-model:2.0.3.300'
+    api 'com.huawei.hms:ml-computer-vision-image-classification-model:2.0.1.300'
+    api 'com.huawei.hms:ml-computer-vision-cloud:2.0.3.300'
+    api 'com.huawei.hms:ml-product-visual-search-plugin:2.0.3.300'
+    //
+    api 'com.huawei.hms:hianalytics:5.1.0.301'
+    api 'com.huawei.hms:nearby:5.2.1.300'
+   // api 'com.huawei.hms:nearbyfullsdk:5.2.1.300'
+
+    api "com.huawei.hms:videokit-player:1.0.1.300"
+
+    api 'com.huawei.scenekit:full-sdk:5.1.0.300'
+
+    api 'com.huawei.scenekit:scenekit-render-foundation:5.1.0.300'
+    api 'com.huawei.scenekit:scenekit-render-extension:5.1.0.300'
+    api 'com.huawei.scenekit:scenekit-math:5.1.0.300'
+
+    api 'com.huawei.agconnect:agconnect-applinking:1.5.0.300'
+
+    api 'com.huawei.hms:fido-fido2:5.0.2.303'
+    api 'com.huawei.hms:fido-bioauthn-androidx:5.0.2.303'
+
+
+    api 'com.huawei.hms:awareness:1.0.7.301'
+
+    api 'com.huawei.hms:ml-computer-voice-asr-plugin:2.0.3.300'
+
+    api 'com.huawei.hms:ml-computer-vision-face:2.0.5.300'
+    api 'com.huawei.hms:ml-computer-vision-face-shape-point-model:2.0.5.300'
+    api 'com.huawei.hms:ml-computer-vision-face-emotion-model:2.0.5.300'
+    api 'com.huawei.hms:ml-computer-vision-face-feature-model:2.0.5.300'
+    api 'com.huawei.hms:ml-computer-vision-face-3d-model:2.0.5.300'
+    api 'com.huawei.hms:ml-computer-vision-faceverify:2.1.0.300'
+    api 'com.huawei.hms:ml-computer-vision-faceverify-model:2.1.0.300'
+    api 'com.huawei.hms:ml-computer-vision-skeleton:2.0.4.300'
+    api 'com.huawei.hms:ml-computer-vision-skeleton-model:2.0.4.300'
+    api 'com.huawei.hms:ml-computer-vision-skeleton-model:2.0.4.300'
+    api 'com.huawei.hms:ml-computer-vision-face:2.0.5.300'
+    api 'com.huawei.hms:ml-computer-vision-face-shape-point-model:2.0.5.300'
+    api 'com.huawei.hms:ml-computer-vision-face-emotion-model:2.0.5.300'
+    api 'com.huawei.hms:ml-computer-vision-face-feature-model:2.0.5.300'
+
+    api 'com.huawei.hms:ml-computer-vision-yoga-model:2.0.4.300'
+    api 'com.huawei.hms:ml-computer-vision-handkeypoint:2.1.0.300'
+    api 'com.huawei.hms:ml-computer-vision-handkeypoint-model:2.1.0.300'
+    api 'com.huawei.hms:ml-computer-vision-gesture-model:2.1.0.300'
+
+    implementation 'com.huawei.hms:ml-computer-language-detection:2.2.0.300'
+    implementation 'com.huawei.hms:ml-computer-translate-model:2.0.3.300'
+    implementation 'com.huawei.hms:ml-computer-card-bcr-model:2.0.2.300'
+    implementation 'com.huawei.hms:ml-computer-vision-ocr-latin-model:2.0.1.300'
+
+    implementation  'com.huawei.hms:ml-computer-vision-ocr-cn-model:2.0.5.300'
+
+    implementation 'com.huawei.hms:ml-computer-language-detection:2.0.3.300'
+    implementation 'com.huawei.hms:ml-computer-voice-realtimetranscription:2.2.0.300'
+    implementation 'com.huawei.hms:ml-computer-voice-aft:2.0.1.300'
+    implementation 'com.huawei.hms:ml-computer-voice-tts:2.2.0.300'
+    implementation 'com.huawei.hms:ml-computer-voice-asr:2.2.0.300'
+    implementation 'com.huawei.hms:ml-computer-translate:2.0.3.300'
+
+    api 'com.huawei.hms:dtm-api:5.0.2.300'
+    api 'com.huawei.hms:push:5.1.1.301'
+
+    //MAP kit
+    api "com.huawei.hms:maps:5.1.0.300"
+
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.android.volley:volley:1.1.1'
+
+
+    api 'com.huawei.hms:ads-lite:13.4.39.302'
+    api 'com.huawei.hms:image-vision:1.0.3.301'
+
+    // Auth Service
+    api 'com.huawei.agconnect:agconnect-auth:1.5.1.300'
+    api 'com.huawei.agconnect:agconnect-core:1.4.2.301'
+
+    //Game Kit
+    api "com.huawei.hms:game:5.0.4.301"
+
+
+    //Cloud DB
+    api 'com.huawei.agconnect:agconnect-database:1.2.3.301'
+
+
+    //search kit
+    // implementation 'com.huawei.hms:searchkit:5.0.4.303'
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    api 'com.squareup.retrofit2:converter-gson:2.5.0'
+    /**
+     * 3rd party libraries
+     **/
+    api 'com.android.support:multidex:1.0.3'
+    api 'com.squareup.okhttp3:okhttp:3.14.9'
+    api 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
+    api 'com.squareup.picasso:picasso:2.71828'
+    api 'com.jakewharton:butterknife:10.2.3'
+    api 'com.github.clemp6r.futuroid:futuroid:1.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+    api 'com.github.bumptech.glide:glide:4.11.0'
+
+    implementation "com.klinkerapps:peekview:1.2.3"
+
+//    api 'com.google.code.gson:gson:2.8.5'
+//
+//    api "androidx.camera:camera-camera2:1.0.0-beta12"
+//    api "androidx.camera:camera-lifecycle:1.0.0-beta12"
+//    api "androidx.camera:camera-view:1.0.0-alpha19"
+
+    //Drive Kit
+    api 'com.huawei.hms:drive:5.0.0.302'
+
+    //Crash Service
+    api 'com.huawei.agconnect:agconnect-crash:1.4.2.301'
+
+    //Remote Configuration
+    api 'com.huawei.agconnect:agconnect-remoteconfig:1.4.2.301'
+
+    //App Messaging
+    api 'com.huawei.agconnect:agconnect-appmessaging:1.4.2.301'
+
+    //AR Engine
+    api 'com.huawei.hms:arenginesdk:2.15.0.1'
+
+    //Network Kit
+    def stats_sdk_version = "5.1.0.300"
+
+    api "com.huawei.hms:stats:${stats_sdk_version}"
+    api 'com.huawei.hms:network-embedded:5.0.1.301'
+    api 'com.huawei.hms:filemanager:4.0.6.301'
+
+}
+
+apply from: '../sonarqube.gradle'
+sonarqube {
+    properties {
+        property "sonar.projectName", "HmsSandbox:" + project.name
+    }
+}

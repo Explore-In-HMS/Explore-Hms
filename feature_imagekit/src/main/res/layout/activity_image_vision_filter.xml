@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_filter_service_image_kit"
+        style="@style/ToolbarAppearance.Sandbox.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Filter Service"/>
+
+
+    <ScrollView
+        android:id="@+id/sv_filter_service_image_kit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_filter_service_image_kit">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_filter_service_image_kit_info_title"
+                style="@style/TextAppearance.Sandbox.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                android:text="@string/txt_service_introduction"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_filter_service_image_kit_info"
+                style="@style/TextAppearance.Sandbox.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/white"
+                android:gravity="start"
+                android:text="@string/msg_image_filter_service_info_image_kit"
+                app:layout_constraintTop_toBottomOf="@+id/tv_filter_service_image_kit_info_title" />
+
+            <View
+                android:id="@+id/seperator_filter_service_image_kit_info"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorGray1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_filter_service_image_kit_info"></View>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_filter_service_image_kit_gallery"
+                style="@style/ButtonAppearance.Sandbox.Normal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp"
+                android:drawableEnd="@drawable/icon_gallery_24_imagekit"
+                android:text="@string/txt_gallery_image_kit"
+                app:layout_constraintEnd_toStartOf="@id/btn_filter_service_image_kit_camera"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seperator_filter_service_image_kit_info" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_filter_service_image_kit_camera"
+                style="@style/ButtonAppearance.Sandbox.Normal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:drawableEnd="@drawable/icon_camera_24_imagekit"
+                android:text="@string/txt_camera_image_kit"
+                app:layout_constraintBottom_toBottomOf="@id/btn_filter_service_image_kit_gallery"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_filter_service_image_kit_gallery"
+                app:layout_constraintTop_toTopOf="@id/btn_filter_service_image_kit_gallery" />
+
+            <ImageView
+                android:id="@+id/iv_image_filter_service_image_kit"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/view_border_black_white_back_image_kit"
+                android:src="@drawable/photo_holder_image_kit"
+                app:layout_constraintTop_toBottomOf="@+id/btn_filter_service_image_kit_camera" />
+
+            <View
+                android:id="@+id/separator"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorGray1"
+                app:layout_constraintTop_toBottomOf="@id/iv_image_filter_service_image_kit"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+            <LinearLayout
+                android:id="@+id/ll_image_filter_service"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/separator">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_filter_type_image_kit"
+                    style="@style/TextAppearance.Sandbox.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/txt_filter_type_type_filter_image_kit" />
+
+                <androidx.appcompat.widget.AppCompatSeekBar
+                    android:id="@+id/sb_filter_type"
+                    style="@style/ButtonAppearance.Sandbox.Normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:max="24"
+                    android:min="0" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_intensity_level_image_kit"
+                    style="@style/TextAppearance.Sandbox.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/txt_intensity_filter_image_kit" />
+
+                <androidx.appcompat.widget.AppCompatSeekBar
+                    android:id="@+id/sb_intensity_level"
+                    style="@style/ButtonAppearance.Sandbox.Normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:max="100"
+                    android:min="0"
+                    android:progress="100"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_compress_level_image_kit"
+                    style="@style/TextAppearance.Sandbox.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/txt_compress_filter_image_kit" />
+
+                <androidx.appcompat.widget.AppCompatSeekBar
+                    android:id="@+id/sb_compress_level"
+                    style="@style/ButtonAppearance.Sandbox.Normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:max="100"
+                    android:min="10"
+                    android:progress="100"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

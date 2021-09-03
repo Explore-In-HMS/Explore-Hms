@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<resources>
+    <string name="text_for_app_bundle_toolbar">App Bundle Distribution</string>
+    <string name="text_for_app_bundle_header">AGC App Bundle Distribution Information</string>
+    <string name="text_for_app_bundle_image_description">App bundle banner</string>
+
+    <string name="txt_for_app_bundle_distribution"><a href="">Click here to learn more about AGC App Bundle Distribution</a></string>
+    <string name="txt_for_app_bundle_distribution_link">https://developer.huawei.com/consumer/en/doc/distribution/app/18527283</string>
+
+    <string name="txt_for_app_bundle_information">Users are generally more willing to download smaller apps. Therefore, reducing the size of your app package to the greatest possible extent, is essential for boosting its download and installation success rate. App Bundle does this for you, and has become the preferred service for an increasing number of developers. HUAWEI AppGallery Connect allows you to release your app in App Bundle format, with the relevant Huawei SDKs integrated, ensuring that users only need to download the required content, bundled in a smaller, more streamlined app package.</string>
+    <string name="txt_for_app_bundle_steps">App Bundle release processes consist of four steps.</string>
+    <string name="txt_for_app_first_step">1) Add an app to app signature plan.AppGallery Connect provides you with two signature creation methods:\n\n\u2022 Let AppGallery Connect to create and manage my app signature key\n\n\u2022 Export and upload the key and certificate.</string>
+    <string name="txt_for_app_second_step">2) Test Whether the AAB file functions are correct.</string>
+    <string name="txt_for_app_third_step">3) Upload the AAB file </string>
+    <string name="txt_for_app_fourth_step">4) Submit the app for review\n\n\u2022To release a new app, you need to configure the app information and version information for the app.</string>
+</resources>

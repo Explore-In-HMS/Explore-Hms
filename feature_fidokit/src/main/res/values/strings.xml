@@ -1,0 +1,48 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="btn_text_finger_auth_no_crpObj">BioAuthnPrompt Without CryptoObject</string>
+    <string name="btn_text_face_auth_with_crpObj">Face Manager Without CryptoObject</string>
+    <string name="txt_need_residentkey_or_not">Resident Key:</string>
+    <string name="btn_net_test_register">Register</string>
+    <string name="btn_net_test_authenticate">Authenticate</string>
+    <string name="btn_clear_log">Clear Log</string>
+    <string name="bioauthn_androidx">BioAuthn-AndroidX</string>
+    <string name="Fidokit">Fido kit</string>
+    <string name="FIDO2">FIDO2</string>
+    <string name="fido_bioAuthn">Fido BioAuthn</string>
+    <string name="bio_auth_text">FIDO BioAuthn provides your app with powerful local biometric authentication capabilities, including fingerprint authentication and 3D facial authentication. It allows your app to provide secure and easy-to-use password-free authentication for users while ensuring reliable authentication results.</string>
+    <string name="fido2_client">Fido2 Client</string>
+    <string name="fido2">FIDO2 includes two operations: registration and authentication.</string>
+    <string name="fido2_authentication">HUAWEI FIDO2 allows users to complete authentication through roaming authenticators (USB, NFC, and Bluetooth authenticators) and platform authenticators (fingerprint and 3D face authenticator)</string>
+    <string name="facial_auth">Currently, only Mate 20 Pro and Mate 30 Pro support 3D facial authentication.</string>
+    <string name="print">print：\n</string>
+    <string name="print_n">print：\n</string>
+    <string name="fido_info_text">HUAWEI FIDO provides your app with FIDO2 based on the WebAuthn standard. It provides Android Java APIs for apps and browsers, and allows users to complete authentication through roaming authenticators (USB, NFC, and Bluetooth authenticators) and platform authenticators (fingerprint and 3D face authenticator).</string>
+    <string name="cannot_auth">Can not authenticate. errorCode=</string>
+    <string name="auth_error">Authentication error. errorCode=</string>
+    <string name="error_message">,errorMessage=</string>
+    <string name="auth_succeed">Authentication succeeded. CryptoObject=</string>
+    <string name="auth_failed">Authentication failed.</string>
+    <string name="fido2_is_not_supported">FIDO2 is not supported.</string>
+    <string name="registration_success">Registration success.</string>
+    <string name="auth_failure">Authentication failure.</string>
+    <string name="url_txt_fido">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001051069988</string>
+
+</resources>

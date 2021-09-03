@@ -1,0 +1,68 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="text_nearbyConnection">Nearby Connection</string>
+    <string name="text_nearbyMessages">Nearby Messages(Beacon)</string>
+    <string name="text_nearbyWifi">Nearby Wifi Share</string>
+
+    
+    
+    
+    <string name="error_missing_permissions">Cannot start without required permissions</string>
+    <string name="begin_to_n_chat">Begin to\n chat!</string>
+    <string name="friend_name">Friend\'s name:</string>
+    <string name="my_name">My name: </string>
+    <string name="send">send</string>
+    <string name="input_message_here">Input message here</string>
+    <string name="picture">PICTURE</string>
+    <string name="receivedPicture">RECEIVE</string>
+    
+    <string name="search_tip">Searching for nearby canteens...</string>
+    <string name="found_tip">Found these canteens: </string>
+    <string name="warn">Warn</string>
+    <string name="btn_confirm">Confirm</string>
+    <string name="configuration_error">The configuration of APPGallery Connect is wrong. Please reconfigure agconnect-services.json!</string>
+    <string name="permission_error">There is not granted app permission to use Message API!</string>
+    <string name="start_get_beacon_message_success">Start get beacon message success!</string>
+    <string name="start_get_beacon_message_failed">Start get beacon message failed!</string>
+    <string name="text_service_introduction_nearbyservice">Service Introduction</string>
+
+    <string name="text_introduction_nearbyservice">Nearby Service includes Nearby Data Communication and Contact Shield. Nearby Data Communication allows apps to easily discover nearby devices and set up communication with them using technologies such as Bluetooth and Wi-Fi. HMS Core Contact Shield is a basic contact tracing service developed based on the Bluetooth low energy (BLE) technology.</string>
+
+    <string name="text_click_more_info_nearbyservice"><u>Click here to get more information about Nearby Service.</u></string>
+    <string name="url_nearbyservice">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-nearby-0000001060363166</string>
+
+    <string name="text_introduction_nearbymessages">Nearby Message allows a user to subscribe to messages published by nearby users or from nearby beacons. Nearby Message provides app-based and beacon-based message publishing and subscription.</string>
+    <string name="text_precautions_nearbymessages">Precautions</string>
+    <string name="text_precautions_info_nearbymessages">\u2022 Respect user privacy, and remind users not to publish sensitive information when using the Nearby Message feature.\n\u2022 Explicitly tell users that the Nearby Message service requires the Bluetooth broadcast and scanning function, which may increase power consumption of their devices.\n\u2022 Upon app exit, you need to call unput(Message) of the MessageEngine class to unpublish messages and unget(xxx) of the MessageEngine class to unsubscribe from messages.\n\u2022 Please comply with applicable data protection laws and regulations when collecting and processing personal data, identifying users, taking rights as a data subject, and performing other relevant operations.\n\u2022 You are responsible for storing users\' device and network identifiers properly. HUAWEI Nearby Service does not store any device or network identifiers.\n\u2022 Do not publish or subscribe to messages without notifying users. Explicitly provide the functions of unpublishing and unsubscribing from messages.</string>
+
+
+    <string name="text_click_more_info_nearbymessage"><u>Click here to get more information about Nearby Message.</u></string>
+    <string name="url_nearbymessage">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/message-preparations-0000001050042561</string>
+
+    <string name="stop_wifi_sharing">Stop Wi-Fi sharing</string>
+    <string name="stop_wifi_connecting">Stop Wi-Fi connecting</string>
+    <string name="click_to_share_wifi">Share Wi-Fi</string>
+    <string name="click_to_connect_wifi">Connect Wi-Fi</string>
+    <string name="device_list">RESULT</string>
+    <string name="auth_code">Auth code: </string>
+    <string name="string_share_wifi_title">if your device is connected Wi-Fi, click Share Wi-Fi</string>
+    <string name="string_connect_wifi_title">If you are not connected Wi-Fi, click Connect Wi-Fi</string>
+
+</resources>

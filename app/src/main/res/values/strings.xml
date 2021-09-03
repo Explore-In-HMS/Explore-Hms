@@ -1,0 +1,569 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="title_feature_searchkit">Search Kit</string>
+    <string name="title_quickapp">QuickApp</string>
+    <string name="title_feature_quickapp">QuickApp</string>
+    <string name="title_feature_inapppurchase">In App Purchase Module</string>
+    <string name="title_feature_wirelesskit">Wireless Kit</string>
+    <string name="title_feature_acceleratekit">Accelerate Kit</string>
+    <string name="title_feature_cloudfunctions">Cloud Functions</string>
+    <string name="title_feature_castengine">Cast Engine</string>
+    <string name="title_feature_gameservices">Game Services Module</string>
+    <string name="title_feature_hiai">HiAI</string>
+    <string name="title_feature_awarenesskitrework">Awareness Kit</string>
+    <string name="title_feature_clouddb">Cloud DB</string>
+    <string name="title_feature_drivekit">Drive Kit</string>
+    <string name="title_feature_caaskit">CaaS Kit</string>
+    <string name="title_feature_walletkit">Wallet Kit</string>
+    <string name="title_feature_cloudhosting">Cloud Hosting</string>
+    <string name="title_feature_appsigning">App Signing</string>
+    <string name="title_feature_computergraphics">Computer Graphics Kit</string>
+    <string name="title_feature_opentesting">Open Testing</string>
+    <string name="title_feature_crashservice">Feature Crash Service</string>
+    <string name="title_feature_cloudtesting">Cloud Testing</string>
+    <string name="title_feature_hquic">hQUIC</string>
+    <string name="title_feature_clouddebugging">Cloud Debugging</string>
+    <string name="title_feature_remoteconfig">Remote Configuration</string>
+    <string name="title_feature_abtest">feature_abtest</string>
+    <string name="title_wiseplaydrm">WisePlayDRM</string>
+    <string name="title_operationanalysis">Operation Analysis</string>
+    <string name="title_feature_onehopengine">OneHop Engine</string>
+    <string name="title_feature_cloudstorage">Cloud Storage</string>
+    <string name="title_feature_appmessaging">App Messaging</string>
+    <string name="title_feature_appbundle">Feature App Bundle</string>
+    <string name="title_feature_paidapps">Paid Apps</string>
+    <string name="title_feature_apprelease">fature_apprelease</string>
+    <string name="title_feature_preorders">feature_preorders</string>
+    <string name="title_feature_earlyaccess">feature_earlyaccess</string>
+    <string name="title_feature_inapppurchases">In-App Purchases</string>
+    <string name="title_feature_integrationcheck">Integration Check</string>
+    <string name="title_feature_apm">App Performance Management</string>
+    <string name="title_feature_comments">Comments</string>
+    <string name="title_feature_giftmanagement">Gift Management</string>
+    <string name="title_feature_gameservicesrework">Game Services</string>
+    <string name="title_feature_productmanagement">Product Management</string>
+    <string name="title_feature_phasedrelease">Phased Release</string>
+    <string name="title_feature_audioengine">Audio Engine</string>
+    <string name="title_feature_dynamicability">Dynamic Ability</string>
+    <string name="title_dynamicfeaturetest">Dynamic Feature test</string>
+    <string name="title_feature_appgallerykit">AppGalleryKit</string>
+    <string name="title_feature_distributionanalysis">Distribution Analysis</string>
+    <string name="title_feature_wearengine">Wear Engine</string>
+    <string name="title_feature_arengine">AR Engine</string>
+    <string name="title_feature_localauthenticationengine">Local Authentication Engine</string>
+    <string name="title_feature_datasecurityengine">Data Security Engine</string>
+    <string name="title_feature_devicevirtualizationengine">Device Virtualization Engine</string>
+    <string name="title_feature_hiaifoundation">HiAI Foundation</string>
+    <string name="title_feature_connectapi">Connect API</string>
+    <string name="title_feature_mlkit">Machine Learning - ML Kit</string>
+    <string name="title_feature_authservice">AuthService</string>
+    <string name="title_feature_mapkit">Map Kit</string>
+    <string name="show_direction_routing_mapkit">Show Direction Routing</string>
+    <string name="open_petalMap_MapKit">Open Petal Map</string>
+    <string name="title_feature_scankit">Scan Kit</string>
+    <string name="title_feature_nearbyservice">Nearby Service</string>
+    <string name="title_feature_dynamictagmanager">Dynamic Tag Manager</string>
+    <string name="title_feature_panorama">Panorama</string>
+    <string name="title_feature_imagekit">Image Kit</string>
+    <string name="title_feature_awarenesskit">Awareness Kit</string>
+    <string name="title_feature_analyticskit">Analytics Kit</string>
+    <string name="title_feature_videokit">VideoKit</string>
+    <string name="title_feature_healthkit">Health Kit</string>
+    <string name="title_feature_adskit">AdsKit Module</string>
+    <string name="title_feature_scenekit">Scene Kit</string>
+    <string name="title_feature_pushkit">Push Kit</string>
+    <string name="title_feature_accountkit">Account Kit</string>
+    <string name="title_feature_identitykit">Identity Kit</string>
+    <string name="title_feature_in_app_purchasekit">InAppPurchase Kit</string>
+    <string name="title_feature_fidokit">Fido Kit</string>
+    <string name="title_feature_applinking">App Linking</string>
+    <string name="title_feature_shareengine">Share Engine</string>
+    <string name="title_feature_audiokit">Audio Kit</string>
+    <string name="title_feature_safetydetect">SafetyDetect</string>
+    <string name="title_feature_cameraengine">Camera Engine</string>
+
+    <string name="app_name">HMS Sandbox</string>
+    <string name="txt_not_available">NA</string>
+    <string name="default_text">Default Text</string>
+    <string name="url_txt_pushkit">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050040060</string>
+
+    <string name="copy">Copy</string>
+    <string name="copy_toast">Content has been copied</string>
+    <string name="add_calendar">Add to calendar</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="send_email">Send Email</string>
+    <string name="navigation">Navigation</string>
+    <string name="call">Call</string>
+    <string name="send_sms">Send SMS</string>
+    <string name="connect_network">Connet to network</string>
+    <string name="open_browser">Open in browser</string>
+
+
+    <string name="btn_txt_signin_huaweiid">Sign In with HUAWEI ID</string>
+    <string name="btn_txt_signin_silent">Silent SignIn</string>
+    <string name="btn_txt_signin_authcode">Sign In with Authorization Code</string>
+    <string name="btn_txt_signin_viasms">Sign in via Sms</string>
+    <string name="txt_madeby">made by Cem GENAR</string>
+    <string name="btn_txt_menu_signout">Sign Out</string>
+    <string name="btn_txt_menu_revoke">Revoke HUAWEI ID</string>
+    <string name="btn_txt_resource">Documentation</string>
+    <string name="btn_txt_userdetail">User Detail</string>
+    <string name="accountkit_info">If your app requires a user to enter a mobile number and verifies the user identity using an SMS verification code, you can integrate the ReadSmsManager service so that your app can first get user authorization, then automatically read the SMS verification code without applying for the SMS reading permission. After the integration, SMS verification codes are automatically filled in for the verification, greatly improving user experience.</string>
+    <string name="txt_about_accountkit"><a href="http://developer.huawei.com/consumer/en/hms/huawei-accountkit">About Account Kit</a></string>
+
+    <string name="title_adskit">Ads Kit</string>
+    <string name="title_splash">Ads Kit</string>
+    <string name="btn_txt_adskit">Ads Kit</string>
+    <string name="btn_txt_videokit">Video Kit</string>
+    <string name="btn_txt_splash_sd">Show Splash Ad</string>
+    <string name="ad_id_splash">testq6zq98hecj</string>
+    <string name="owner">HUAWEI Developer</string>
+    <string name="copyright_info">Copyright 2020. Huawei Technologies Co., Ltd</string>
+    <string name="status_load_ad_success">Ad loading state: loaded successfully.</string>
+    <string name="status_load_ad_fail">Ad loading state: failed to be loaded. Error code: </string>
+    <string name="status_ad_dismissed">Ad is dismissed.</string>
+
+    <!-- Location Kit Texts -->
+    <string name="link_location">https://developer.huawei.com/consumer/en/doc/HMSCore-Guides-V5/introduction-0000001050706106-V5</string>
+    <string name="title_locationkit">Location Kit</string>
+    <string name="btn_txt_locationkit">Location Kit</string>
+    <string name="btn_txt_check_device_location_settings">Check Device location Settings</string>
+    <string name="btn_txt_start_continuous_location_feed">Start Location With Callback</string>
+    <string name="btn_txt_stop_continuous_location_feed">Stop Location With Callback</string>
+    <string name="btn_txt_show_last_known_location">Get Last Location</string>
+    <string name="btn_txt_start_activity_identification">Activity Recognition Update</string>
+    <string name="btn_txt_start_activity_conversion">Activity Transition Update</string>
+    <string name="lbl_latitude">Latitude</string>
+    <string name="lbl_longitude">Longitude</string>
+    <string name="btn_txt_get_location_availability">Get Location Availability</string>
+    <string name="btn_txt_set_mock_location">Set Mock Location</string>
+    <string name="btn_txt_get_context_state">Get Nav Context State</string>
+    <string name="btn_txt_get_location_with_hd">Get Location with HD</string>
+    <string name="btn_txt_remove_location_hd">Remove LocationHD</string>
+    <string name="btn_txt_start_intent_location_feed">Start Location With Intent</string>
+    <string name="btn_txt_stop_intent_location_feed">Stop Location With Intent</string>
+    <string name="title_location_activity_identification">Activity Identification</string>
+    <string name="title_location_activity_conversion">Activity Conversion</string>
+    <string name="activity_conversion_select_the_status_of_listening">Select the status of listening</string>
+    <string name="activity_conversion_activity_type">ActivityType</string>
+    <string name="activity_conversion_transition_type">TransitionType</string>
+    <string name="title_location_hd">Location HD</string>
+    <string name="title_geofence">GeoFence</string>
+    <string name="title_geofence_create">Create GeoFence</string>
+    <string name="btn_txt_start_activity_geo_fence">GeoFence</string>
+    <string name="text_geofence_trigger_default">input trigger ( Default is 5 )</string>
+    <string name="text_geofence_which_wait_to_add">See the Geofence which wait to add</string>
+    <string name="text_geofence_which_already_send_the_request">See the Geofence which already send the request</string>
+    <string name="btn_text_send_request_with_pending_intent">Send Request With Pending Intent</string>
+    <string name="btn_text_send_request_with_new_pending_intent">Send Request With New Pending Intent</string>
+    <string name="btn_text_add_geofence">Add Geofence</string>
+    <string name="btn_text_remove_all_geofence">Remove All Geofence</string>
+    <string name="btn_text_get_geofence_data">Get GeoFence Data</string>
+    <string name="btn_text_get_request_message">Get Request Message</string>
+    <string name="text_input_pending_intent">Input Pending Intent</string>
+    <string name="btn_text_remove_geofence_with_intent">Remove GeoFence With Intent</string>
+    <string name="text_input_geofence_uniqueid">Input GeoFence UniqueId</string>
+    <string name="btn_text_remove_geofence_with_id">Remove GeoFence With ID</string>
+    <string name="text_result_logs_will_be_here">Result Logs Will Be Here</string>
+    <string name="text_trigger">Trigger</string>
+    <string name="text_roundarea">RoundArea</string>
+    <string name="text_roundarea_lat">RoundArea Latitude</string>
+    <string name="text_roundarea_lon">RoundArea Longitude</string>
+    <string name="text_radius_meters">Radius meters</string>
+    <string name="text_conversation_help">enter : 0 - exit : 1</string>
+    <string name="text_milisecond">milisecond</string>
+    <string name="mock_mode_use_warning">To use Mock Location: \nYou should allow Mock Locations and Authorize App in Developer options!</string>
+    <string name="mock_mode_use_method_introduction">To use the mock location function, \ngo to Settings > System &amp; updates > Developer options > Select mock location app and select the desired app. \n\n(If Developer options is unavailable, go to Settings > About phone and tap Build number for seven consecutive times. \nThen, Developer options will be displayed on System &amp; updates.)</string>
+    <string name="text_uniqueid">UniqueId</string>
+    <string name="text_conversions">Conversions</string>
+    <string name="text_valid_time">Valid Time</string>
+    <string name="text_dwell_delay_time">Dwell Delay Time</string>
+    <string name="text_notification_interval">Notification Interval</string>
+    <string name="btn_text_get_current_location">Get Current Location</string>
+    <string name="btn_text_create_geofence">Create Geofence</string>
+    <string name="btn_text_show_geolist">Show GeoList</string>
+
+    <string name="no_such_intent_for_geo_fence">No such intent!</string>
+    <string name="no_new_request_to_add">No new request to add!</string>
+    <string name="no_request">no request!</string>
+    <string name="getRequestMessage">getRequestMessage : </string>
+    <string name="getRequestMessage_">getRequestMessage : \n</string>
+
+    <string name="activity_rec_type_100">[100] VEHICLE</string>
+    <string name="activity_rec_type_101">[101] BIKE</string>
+    <string name="activity_rec_type_102">[102] FOOT</string>
+    <string name="activity_rec_type_103">[103] STILL</string>
+    <string name="activity_rec_type_104">[104] OTHERS</string>
+    <string name="activity_rec_type_107">[107] WALKING</string>
+    <string name="activity_rec_type_108">[108] RUNNING</string>
+
+    <string name="btn_back_loc">Back</string>
+
+    <string name="title_mapkit">Map Kit</string>
+    <string name="btn_txt_mapkit">Map Kit</string>
+
+    <string name="title_sitekit">Site Kit</string>
+    <string name="btn_txt_sitekit">Site Kit</string>
+
+    <string name="title_drivekit">Drive Kit</string>
+    <string name="btn_txt_drivekit">Drive Kit</string>
+    <string name="btn_txt_mlkit">ML Kit</string>
+
+    <string name="facebook_app_id">1012640882577435</string>
+    <string name="facebook_app_secret">f0c789db544e9b0424d2274d5eafa609</string>
+
+    <string name="btn_txt_scankit">Scan Kit</string>
+    <string name="scan_kit">Scan Kit</string>
+    <string name="title_common">Scan</string>
+    <string name="btn_txt_dynamic_tag_manager">Dynamic Tag Manager</string>
+    <string name="scan_tip">Place the code within the frame</string>
+    <string name="scan_showresult">Scan results will show on screen</string>
+    <string name="title_result">Result</string>
+    <string name="code_format">Code Format</string>
+    <string name="result_type">Result Type</string>
+    <string name="result_content">Result</string>
+    <string name="text">Text</string>
+    <string name="generate_qr_code">Generate QRCode</string>
+    <string name="custom_view">Custom View</string>
+    <string name="custom_view_model">Customize View Model </string>
+    <string name="bitmap_mode">Bitmap Mode</string>
+    <string name="multi_processorapi_syc"> Multi ProccessorApi SynchronousMode</string>
+    <string name="multi_processorapi_asyc"> Multi ProccessorApi AsynchronousMode</string>
+    <string name="scan_kit_introduction"> An in-app scanner and generator for 1D and 2D barcodes connects your app to real-world scenarios. Build powerful capabilities such as auto zoom for small or distant barcodes and enhanced recognition in complex scenarios. </string>
+    <string name="service_introduction">Service Introduction</string>
+    <string name="supported_barcodes"> Supports QR Code, Data Matrix, PDF417, Aztec, EAN-8, EAN-13, UPC-A, UPC-E, Codabar, Code 39, Code 93, Code 128, and ITF.</string>
+    <string name="dialog_message">Welcome to Alert Dialog</string>
+    <string name="dialog_title">Javatpoint Alert Dialog</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="txt_image_vision_service">Image Vision Service</string>
+    <string name="txt_image_vision_service_filter">Filter Service</string>
+    <string name="txt_image_vision_service_smart_layout">Smart Layout Service</string>
+    <string name="txt_image_vision_service_theme_tagging">Theme Tagging Service</string>
+    <string name="txt_image_vision_service_sticker">Sticker Service</string>
+    <string name="txt_image_vision_service_cropping">Image Cropping Service</string>
+    <string name="txt_image_render_service">Image Render Service</string>
+
+
+    <string name="msg_aaid_pushkit">AAID : Anonymous Device Identifier</string>
+    <string name="msg_aaid_auto_apply_pushkit">Auto Apply : Automatically Generate AAID</string>
+    <string name="msg_aaid_man_apply_pushkit">Manuel Apply : Get and Delete AAID Manually </string>
+    <string name="msg_token_pushkit">Token : Unique key on each device. \nApp server sends messages to the app based on the token.\nToken may change if you call API for deregister token</string>
+    <string name="msg_turn_onoff_push_pushkit">Disable / Enable notification message</string>
+    <string name="msg_auto_init_pushkit">Automatically generating AAIDs and automatically applying for tokens</string>
+    <string name="msg_topic_apply_pushkit">Allows you to receive notifications on a specific topic</string>
+
+    <string name="msg_ntf_tap_activity_pushkit">This is the target activity when you tap notification messages</string>
+
+    <string name="msg_rmt_msg_not_received">Remote message couldn\'t receive. Please check push parameters</string>
+
+    <string name="msg_topic_sub_exception">Please select the topic name as a single word</string>
+    <string name="msg_get_dummy_notification_warning">
+        This is a dummy notification generated by the device. If you want a notification generated by the service, you must use the AGC Console with the project you created using the sample codes in this project. </string>
+
+    <string name="txt_aaid_pushkit">AAID</string>
+    <string name="txt_auto_apply_pushkit">Auto Apply</string>
+    <string name="txt_man_apply_pushkit">Manuel Apply</string>
+    <string name="txt_get_aaid_pushkit">Get AAID</string>
+    <string name="txt_del_aaid_pushkit">Delete AAID</string>
+    <string name="txt_opr_res_pushkit">Operation Result : -</string>
+    <string name="txt_opr_res_success_pushkit">Operation Result : Success</string>
+    <string name="txt_opr_res_failed_pushkit">Operation Result : Failed!</string>
+    <string name="txt_token_pushkit">TOKEN</string>
+    <string name="txt_get_token_pushkit">Get Token</string>
+    <string name="txt_deregister_token_pushkit">Deregister Token</string>
+    <string name="txt_push_pref_pushkit">Push Preferences</string>
+    <string name="txt_res_pushkit">Turn Off Push :</string>
+    <string name="txt_res_pushkit2">Auto Init Enabled :</string>
+    <string name="txt_topic_pushkit">TOPIC</string>
+    <string name="txt_sub_pushkit">Subscribe</string>
+    <string name="txt_unsub_pushkit">Unsubscribe</string>
+    <string name="txt_next_pushkit">Next</string>
+    <string name="txt_prev_puskit">Previous</string>
+    <string name="txt_next_getnotification_puskit">Get Notification</string>
+    <string name="push_kit_demo_channel_pushkit">push_kit_demo_channel</string>
+    <string name="push_kit_demo_channel_pushkit_name">Push Kit Demo Channel</string>
+    <string name="txt_notification_settting_puskit">Notification Settings</string>
+    <string name="txt_notification_title_puskit">Title</string>
+    <string name="txt_notification_description_puskit">Description</string>
+    <string name="txt_notification_subtext_puskit">Subtext</string>
+    <string name="txt_notification_open_activity_puskit">Open Activity On Tap</string>
+    <string name="txt_notification_vibrate_pushkit">Vibrate</string>
+    <string name="txt_notification_get_pushkit">GET</string>
+    <string name="txt_push_on_pushkit">PUSH ON</string>
+    <string name="txt_push_off_pushkit">PUSH OFF</string>
+    <string name="txt_failed_pushkit">Failed!</string>
+    <string name="txt_success_pushkit">Success</string>
+    <string name="txt_sub_name_pushkit">Subscribed : "%s"</string>
+    <string name="txt_unsub_name_pushkit">Unsubscribed : "%s"</string>
+    <string name="txt_enabled_pushkit">Enabled</string>
+    <string name="txt_disabled_pushkit">Disabled</string>
+    <string name="txt_sub_topic_pushkit">Subscribe Topic Name</string>
+    <string name="txt_cancel_pushkit">Cancel</string>
+    <string name="txt_confirm_pushkit">Confirm</string>
+    <string name="txt_exit_pushkit">EXIT</string>
+    <string name="txt_back_pushkit">Back</string>
+
+    <string name="main_fragment_title_sitekit">HMS Site Kit</string>
+    <string name="button_keyword_search_sitekit">Keyword Search</string>
+    <string name="button_nearby_search_sitekit">Nearby Place Search</string>
+    <string name="button_place_detail_sitekit">Place Detail Search</string>
+    <string name="button_search_suggestion_sitekit">Place Search Suggestion</string>
+    <string name="txt_name">Name: Turkey</string>
+    <string name="txt_country">Country: Turkey</string>
+    <string name="txt_locality">Locality: Turkey</string>
+    <string name="txt_sub_locality">Sub Locality: Turkey</string>
+    <string name="txt_admin_area">Admin Area: Turkey</string>
+    <string name="txt_thoroughfare">Thoroughfare: Turkey</string>
+    <string name="txt_sub_admin_area">Sub Admin Area: Turkey</string>
+    <string name="txt_street_number">Street Number: Turkey</string>
+    <string name="txt_postal_code">Postal Code: Turkey</string>
+    <string name="txt_latitude">Latitude: Turkey</string>
+    <string name="txt_longitude">Longitude: Turkey</string>
+    <string name="txt_enter_keyword">Enter a keyword</string>
+    <string name="txt_select_radius">Select a Radius : </string>
+    <string name="txt_select_poi">Select a POI Type : </string>
+    <string name="cbx_set_strict_bound">Strictly Restrict Place Search</string>
+    <string name="txt_auto_complete">Returns an autocomplete place and a list of suggested places based on the entered keyword.</string>
+    <string name="txt_keyword_search">Returns a place list based on keywords entered by the user.</string>
+    <string name="txt_nearby_place_search">Searches for nearby places based on the current location of the user`s device.</string>
+    <string name="txt_place_detail_search">Searches for details about a place.</string>
+    <string name="txt_place_search_suggestion">Returns a list of suggested places.</string>
+    <string name="txt_widget">The widget is a search component of the built-in place search suggestion feature.</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nearby_search_poi_cafe">Cafe</string>
+    <string name="nearby_search_poi_address">Address</string>
+    <string name="nearby_search_poi_restaurant">Restaurant</string>
+    <string name="nearby_search_poi_shopping_mall">Shopping Mall</string>
+    <string name="nearby_search_poi_drug_store">Drugstore</string>
+    <string name="nearby_search_poi_type_hospital">Hospital</string>
+    <string name="nearby_search_poi_type_bank">Bank</string>
+    <string name="nearby_search_poi_all">All</string>
+    <!--Site Kit Nearby Search recycler view item texts-->
+    <string name="address_item_title">Site: %1$d</string>
+    <string name="address_item_name">Name: %1$s</string>
+    <string name="address_item_country">Country: %1$s</string>
+    <string name="address_item_admin_area">Admin Area: %1$s</string>
+    <string name="address_item_locality">Locality: %1$s</string>
+    <string name="address_item_sublocality">Sub Locality: %1$s</string>
+    <string name="address_item__sub_admin_area">Sub Admin Area: %1$s</string>
+    <string name="address_item__thoroughfare">Thoroughfare: %1$s</string>
+    <string name="address_item__street_number">Street Number: %1$s</string>
+    <string name="address_item__postal_code">Postal code: %1$s</string>
+    <string name="address_item_latitude">Latitude: %1$f</string>
+    <string name="address_item_longitude">Longitude: %1$f</string>
+    <string name="detail_header_sitekit">Place Detail</string>
+    <string name="site_kit_API_KEY">CV8RiFSCwQTFPxl1ET8PWacetyb/E3+HjejRkuQHJ/RSczHVZzPXC7pNRBPPpSoJvuigzxm5tRMzvee57oVD3djKVLNc</string>
+
+    <string name="site_kit_information">Directing users to the location-based service they need makes your app accessible to more people. Give your users the power to explore their world. With Site Kit, your app can provide users with convenient and secure access to diverse, place-related services, and therefore acquire more users.</string>
+    <string name="site_kit_more_information"><a href="">Click here to learn more about Site Kit.</a></string>
+    <string name="site_link_documentation_link">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/android-sdk-introduction-0000001050158571</string>
+    <string name="site_kit_pricing_information"><a href="">Click here to learn more about Service Pricing Detail.</a></string>
+    <string name="site_kit_pricing_information_link">https://developer.huawei.com/consumer/en/doc/HMSCore-Guides-V5/about-charging-0000001052557393-V5</string>
+    <string name="site_kit_personal_data_processing"><a href="">Click here to learn more about Personal Data Processing.</a></string>
+    <string name="site_kit_personal_data_processing_link">https://developer.huawei.com/consumer/en/doc/HMSCore-Guides-V5/personal-data-0000001050191406-V5</string>
+
+
+    <string name="map_kit_information"><a href="">Click here to learn more about Map Kit.</a></string>
+    <string name="map_kit_information_link">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/android-sdk-introduction-0000001061991291</string>
+    <string name="map_kit_pricing_information"><a href="">Click here to learn more about Service Pricing Detail</a></string>
+    <string name="map_kit_pricing_information_link">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/about-charging-0000001051637068</string>
+
+
+    <string name="btn_txt_scan_defaultview">Default View Mode</string>
+    <string name="btn_txt_scan_customizeview">Custom View Mode</string>
+    <string name="btn_txt_scan_bitmapview">Bitmap Mode (With Image) </string>
+    <string name="btn_txt_scan_bitmapviewcamera">Bitmap Mode (With Camera) </string>
+    <string name="btn_txt_scan_multiproc_sync">Multi-Processor Syncronous Mode</string>
+    <string name="btn_txt_scan_multiproc_async">Multi-Processor Asyncronous Mode</string>
+    <string name="btn_txt_scan_generateqr">Generate QR Code</string>
+
+    <string name="barcode_width">Barcode width:</string>
+    <string name="barcode_height">Barcode height:</string>
+    <string name="barcode_type">Type:</string>
+    <string name="barcode_margin">Margin:</string>
+    <string name="barcode_color">Color:</string>
+    <string name="barcode_backgroundcolor">Back Color:</string>
+    <string name="barcode_content">Barcode Content:</string>
+    <string name="width_value">700</string>
+    <string name="height_value">700</string>
+    <string name="generate_barcode">Generate Barcode</string>
+    <string name="set_qrlogo">Set QR Logo With Image</string>
+    <string name="save_barcode">Save Barcode</string>
+    <string name="title_generatecode">Generate Code Activity</string>
+    <string name="move_animate_camera_mapkit">Move/Animate Camera</string>
+    <string name="map_kit_header_mapkit">Map Kit</string>
+    <string name="move_random_location_text_mapkit">Move Random Location</string>
+    <string name="animate_random_location_text_mapkit">Animate Random Location</string>
+    <string name="show_marker_text_mapkit">Show Marker</string>
+    <string name="show_custom_marker_text_mapkit">Show Custom Marker</string>
+    <string name="show_shape_text_mapkit">Show Shape</string>
+    <string name="you_can_click_the_shapes_text_mapkit">You can click the shapes.</string>
+    <string name="you_can_click_the_markers_text_mapkit">You can click the markers.</string>
+    <string name="show_tile_overlay_text_mapkit">Show Tile Overlay</string>
+    <string name="show_ground_overlay_text_mapkit">Show Ground Overlay</string>
+    <string name="show_style_text_mapkit">Show Style</string>
+    <string name="change_style_text_mapkit">Change Style</string>
+    <string name="site_kit_widget_text_sitekit">Widget</string>
+    <string name="place_detail_search_with_siteid_text_sitekit">Place Detail Search with SiteId</string>
+    <string name="site_kit_autocomplete_text_sitekit">Site Kit Autocomplete</string>
+    <string name="place_text_sitekit">Place</string>
+    <string name="link_sample">Lorem ipsum dolor sit amet,<a href="http://www.google.com">consectetur</a> adipiscing elit.</string>
+
+    <string name="mapkit_info">Map Kit is an SDK for map development. It covers map data of more than 200 countries and regions, and supports hundreds of languages. With this SDK, you can easily integrate map-based functions into your apps.</string>
+    <string name="mapkit_title">Service Introduction</string>
+
+    <string name="remove_activity_transition_update">Remove Activity Transition Update</string>
+    <string name="request_activity_transition_update">Request Activity Transition Update</string>
+    <string name="geofence_desc">Allows you to set an interested area through an API so that your app can receive a notification when a specified action (such as leaving, entering, or staying in the area) occurs.</string>
+    <string name="qr_code">QR code</string>
+    <string name="AZTEC_code">AZTEC code</string>
+    <string name="DATAMATRIX_code">DATAMATRIX code</string>
+    <string name="PDF417_code">PDF417 code</string>
+    <string name="CODE93">CODE93</string>
+    <string name="CODE39">CODE39</string>
+    <string name="CODE128">CODE128</string>
+    <string name="EAN13_code">EAN13 code</string>
+    <string name="EAN8_code">EAN8 code</string>
+    <string name="ITF14_code">ITF14 codee</string>
+    <string name="UPCCODE_A">UPCCODE_A</string>
+    <string name="UPCCODE_E">UPCCODE_E</string>
+    <string name="CODABAR">CODABAR</string>
+    <string name="event">Event</string>
+    <string name="contact">Contact</string>
+    <string name="licence">Licence</string>
+    <string name="email">Email</string>
+    <string name="tel">Tel</string>
+    <string name="wifi">Wi-Fi</string>
+    <string name="website">WebSite</string>
+    <string name="product">Product</string>
+    <string name="isbn">ISBN</string>
+    <string name="sms">SMS</string>
+    <string name="location">Location</string>
+    <string name="createActivityConversionUpdatesSuccess">createActivityConversionUpdates onSuccess</string>
+    <string name="createActivityConversionUpdatesOnFailure">createActivityConversionUpdates onFailure:</string>
+    <string name="createActivityConversionUpdatesOnFailure_">createActivityConversionUpdates onFailure! \n</string>
+    <string name="removeActivityConversionUpdatesSuccess">removeActivityConversionUpdates onSuccess</string>
+    <string name="removeActivityConversionUpdatesFailure">removeActivityConversionUpdates Failure!</string>
+    <string name="removeActivityConversionUpdatesFailure_">removeActivityConversionUpdates Failure:</string>
+    <string name="removeActivityConversionUpdatesFailure__">removeActivityConversionUpdates Failure!:</string>
+    <string name="startActivityIdentificationsFailure_">startActivityIdentifications onFailure:</string>
+    <string name="startActivityIdentificationsFailure__">StartActivityIdentifications onFailure! \n</string>
+    <string name="startActivityIdentificationsException">startActivityIdentifications Exception:</string>
+    <string name="startActivityIdentificationsException_">startActivityIdentifications Exception! \n</string>
+    <string name="startToRemoteActivityUpdates">start to removeActivityUpdates</string>
+    <string name="removeActivityConversionUpdatesException">removeActivityConversionUpdates Exception:</string>
+    <string name="removeActivityConversionUpdatesExceptionEmptySpace">RemoveActivityConversionUpdates Exception:\n</string>
+    <string name="startActivityIdentificationsSuccess">startActivityIdentifications onSuccess</string>
+    <string name="deleteActivityIdentificationUpdatesSuccess">deleteActivityIdentificationUpdates onSuccess</string>
+    <string name="deleteActivityIdentificationsFailure">deleteActivityIdentificationUpdates onFailure:</string>
+    <string name="deleteActivityIdentificationsFailure_">deleteActivityIdentificationUpdates onFailure!</string>
+    <string name="deleteActivityIdentificationsExceptions">deleteActivityIdentificationUpdates Exception:</string>
+    <string name="deleteActivityIdentificationsExceptions_">deleteActivityIdentificationUpdates Exception:\n</string>
+    <string name="permissionDenied">PERMISSION DENIED</string>
+    <string name="physicalActivityPermission">PHYSICAL ACTIVITY PERMISSION</string>
+    <string name="physicalActivity">Physical Activity</string>
+    <string name="setLayoutDataAndParamsRuntimeException">setLayoutDataAndParams RuntimeException:</string>
+    <string name="createActivityConversionUpdatesException">createActivityConversionUpdates Exception:</string>
+    <string name="createActivityConversionUpdatesException_">createActivityConversionUpdates Exception! \n</string>
+    <string name="setLayoutDataAndParamsException_">setLayoutDataAndParams Exception:</string>
+    <string name="onRequestPermissionsResultPermission">onRequestPermissionsResult: apply ACTIVITY_RECOGNITION PERMISSION successful</string>
+    <string name="onRequestPermissionsResultPermissionFailed">onRequestPermissionsResult: apply ACTIVITY_RECOGNITION PERMISSION  failed</string>
+    <string name="needActivityRecognitionPermission">NEED ACTIVITY_RECOGNITION PERMISSION</string>
+    <string name="activityRecognition">Activity Recognition</string>
+    <string name="permissionSettings">Would You Like To Go To Permission Settings To Allow?</string>
+    <string name="activityRecognitionFeatures">You can not use Activity Recognition Features without </string>
+    <string name="permission"> Permission!</string>
+    <string name="yesGo">YES GO</string>
+    <string name="cancel" tools:ignore="ButtonCase">CANCEL</string>
+    <string name="resultLogs">Result Logs Will Be Here</string>
+    <string name="defaultText">Default</string>
+    <string name="noGeoFenceData">no GeoFence Data!</string>
+    <string name="uniqueID">Unique ID is </string>
+    <string name="getGeoFenceData">getGeoFenceData : \n</string>
+    <string name="getGeoFenceWithIntent">requestGeoFenceWithIntent : </string>
+    <string name="getGeoFenceWithIntentEmptySpace">requestGeoFenceWithIntent : \n</string>
+    <string name="noPendingIntentToSend">No pendingIntent to send!</string>
+    <string name="checkUniqueID">ID already exist,please remove and add it again!</string>
+    <string name="checkUniqueID_">checkUniqueID : </string>
+    <string name="isTrue"> is TRUE</string>
+    <string name="checkUniqueIDGeoFenceRequestListsFalse">checkUniqueID : geoFenceRequestLists all checkID is FALSE</string>
+
+    <string name="defaultTriggerFive">Default trigger is 5</string>
+    <string name="defaultTrigger">Trigger is </string>
+    <string name="createGeoFenceListOnSuccess">createGeoFenceList : onSuccess</string>
+    <string name="requestGeoFenceWithIntentOnFailure">requestGeoFenceWithIntent onFailure : </string>
+    <string name="requestGeoFenceWithIntentOnFailureTask">requestGeoFenceWithIntent onFailure : task.getException() : </string>
+    <string name="requestGeoFenceWithIntentGetException">requestGeoFenceWithIntent \ntask.getException() : </string>
+    <string name="requestGeoFenceWithIntentException">requestGeoFenceWithIntent Exception : </string>
+    <string name="pleaseEnterPendingIntentId">Please Enter the Pending Intent Id </string>
+    <string name="removeWithIDDeleteGeoFenceOnSuccess">removeWithID deleteGeoFence : onSuccess : </string>
+    <string name="removeWithIDDeleteGeoFenceOnFailure">removeWithID deleteGeoFence onFailure :</string>
+    <string name="requestGeoFenceWithNewIntent">requestGeoFenceWithNewIntent : </string>
+    <string name="requestGeoFenceWithNewIntentWithEmptySpace">requestGeoFenceWithNewIntent : \n</string>
+    <string name="currentLocationGeoFenceOnFailure">CurrentLocationGeoFence onFailure : </string>
+    <string name="resolvableCurrentLocationGeoFenceOnFailure">CurrentLocationGeoFence onFailure : ResolvableApiException :</string>
+    <string name="currentLocationSuccess">CurrentLocationGeoFence onSuccess</string>
+    <string name="sourceType">SourceType</string>
+    <string name="setMockLocationOnSuccessWith">setMockLocation onSuccess with </string>
+    <string name="mockLocationOnFailure">setMockLocation onFailure : </string>
+    <string name="onRequestPermissionsResultLocationPermissionSuccessful">onRequestPermissionsResult: apply LOCATION PERMISSION successful</string>
+    <string name="onRequestPermissionsResultLocationPermissionFailed">onRequestPermissionsResult: apply LOCATION PERMISSION failed</string>
+    <string name="applyGpsResolvableApiExceptionSuccessful">onRequestPermissionsResult: apply GPS ResolvableApiException successful</string>
+    <string name="gpsIsActivated">GPS is activated now! You can again your transaction</string>
+    <string name="gpsIsNotActivated">GPS is not activated! You can not use your transaction</string>
+    <string name="loadFeatureOnFailure">Feature load failed!</string>
+    <string name="loadFeatureOnSuccess">Feature load successful.</string>
+    <string name="error">Error:</string>
+    <string name="completeToStartInstall">Feature installation completed.</string>
+    <string name="succeedToStartInstallSessionId">Feature installation started successfully.</string>
+    <string name="failToStartInstall">fail to start install.</string>
+    <string name="text_appinfo_onboarding1">You can find all HMS Core Kits and AGC services in HMS Sandbox.</string>
+    <string name="tab_information_onboarding2">Services and kits are located under HMS Core and AGC tabs.</string>
+    <string name="swipe_click_info_onboarding2">Navigation between tabs can be done by swiping or clicking.</string>
+    <string name="search_headline_onboarding3">Searching</string>
+    <string name="search_info_onboarding3">Search function helps to find kits or services easily.</string>
+    <string name="category_info_onboarding4">Kits and services are located under related categories in HMS Core and AGC tabs. Categorization is as same as declared in official website. (developer.huawei.com)</string>
+    <string name="modules_info_onboarding5">There are two types of modules in Sandbox application. One type includes all features of the related kit or service (e.g. Location Kit, Share Engine etc.) Other type is called as references where information about related kit or services can be found (e.g. Cast Engnie, CaaaS Kit etc.)</string>
+    <string name="text_with_image_onboarding5">The  icon means it is a reference module.</string>
+    <string name="download_delete_info_onboarding4">When you install HMS Sandbox on your phone, you will have base modules such as Location Kit, Map Kit etc. You can also download or delete other modules also.</string>
+    <string name="install_uninstall_info_onboarding6">You can install modules that are not loaded. If you want, you can remove the installed module except base modules.(e.g. Location Kit, Map Kit, Push Kit, Scan Kit, Site Kit)</string>
+    <string name="install_withoutuninstall_info_onboarding6">Kits or services are considered as modules in Sandbox application. They can be installed as modules separately.</string>
+    <string name="app_name_onboarding1">HMS Sandbox</string>
+    <string name="information_text_onboarding1">Information</string>
+    <string name="app_information_onboarding1">HMS Sandbox application provides information about all HMS Core kits and services. HMS Core Kits and services can be examined and experienced with using this application. Sandbox application is open source project. Kits and services codes are separated in packages to be easily analyzed. Usage and implementation of kits and services can be found in source code.</string>
+    <string name="modules_information_onboarding5">Module Details</string>
+    <string name="button_text_onboarding5">Let\'s start!</string>
+    <string name="url_doc_scankit">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050041994</string>
+    <string name="distance_time">%1$s (%2$s)</string>
+    <string name="title_feature_networkkit">feature_networkkit</string>
+    <string name="scan_display_copy_text">COPY</string>
+</resources>

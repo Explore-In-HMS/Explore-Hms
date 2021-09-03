@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="network_qoe_long">Network Quality of Experience</string>
+    <string name="check_below">Error! Please check the prerequisites.</string>
+    <string name="unregistered">Unregistered!</string>
+    <string name="long_general_explanation"><b>Prerequisites for using Wireless Kit</b>\n\nWireless kit requirements are given in the table above.\n\nAs can be
+    seen, out of four features available, two of them requires EMUI 11 and other two requires at least EMUI 10.1 version, alongside
+    some processor requirements.\n\nIf the device you are testing this kit with
+        does not meet these requirements, the Wireless Kit may behave unexpectedly
+    or you may not be able to get the result you had hoped you would get.
+    </string>
+    <string name="app_quality_information">You can use the values above to test the app quality. If the response is 0 that means the feedback is successful. Otherwise, the feedback has failed.</string>
+    <string name="success">Success</string>
+    <string name="failed">Failed</string>
+    <string name="explanation_qoe">You can integrate the Wireless SDK into your app to obtain network QoE services. After network QoE perception is registered with your app,
+        Wireless Kit can periodically report your app\'s network QoE information, including the uplink and downlink air interface delays during data transmission,
+        real-time bandwidth and rate of the uplink and downlink air interfaces, network QoE level assessment, and packet loss rate of the uplink air interface. </string>
+    <string name="explanation">Explanation</string>
+    <string name="explanation_app_quality">Apps send information such as transmission lags and transmission statistics to the wireless communication module through Wireless Kit. Therefore, the communication module can make scheduling adjustments accordingly to improve the wireless transmission efficiency for the apps.
+        \n\nFor example, if frame freezing occurs during video streaming on an app, Wireless Kit will receive this issue and report it to the wireless communication module. The communication module will then record the frame freezing information and enhance the transmission capability based on the current network status.</string>
+    <string name="report_app_quality">Report app quality</string>
+    <string name="try_with_the_values_from_previous_page">Try with the values from previous page:</string>
+    <string name="send">Send</string>
+    <string name="direction">direction</string>
+    <string name="eventid">eventId</string>
+    <string name="netreason">netreason</string>
+    <string name="result_code">Result code</string>
+    <string name="other_features_explanation">Wireless Kit also has two other features.
+        \n\n<b>Weak signal prediction</b>\nWireless Kit uses machine learning to analyze the cellular network signal quality when a user moves along a fixed route.
+        Based on the learning result, it will predict the time when the user is about to enter an area with poor signals, and the time when the user will move to an area with normal signals.
+        In this way, it helps third-party apps take measures in advance, bringing seamless cellular network experience.
+        \n\n<b>Wi-Fi high-priority transmission</b>\nYou can integrate the Wireless SDK into your app to obtain Wi-Fi enhancement services.
+        After the Wi-Fi enhancement services are registered with your app, the Wi-Fi high-priority transmission can be enabled.\n\nFor the main page of Wireless Kit, please click the left button.\n\nFor official documentation that explains all the features in details, please click the right button.
+    </string>
+    <string name="other_features">Other Features</string>
+    <string name="bind_service">Bind service</string>
+    <string name="register_callback">Register callback</string>
+    <string name="unregister_callback">Unregister callback</string>
+    <string name="query_real_time_qoe">Query real time qoe</string>
+    <string name="unbind_service">Unbind service</string>
+    <string name="main_page">MAIN PAGE</string>
+    <string name="official_docs">OFFICIAL DOCS</string>
+    <string name="channel_num">channelNum</string>
+    <string name="package_name">com.genar.hmssandbox.huawei.feature_wirelesskit</string>
+</resources>

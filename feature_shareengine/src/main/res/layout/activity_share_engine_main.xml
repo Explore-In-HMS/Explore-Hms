@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShareEngineMainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_share_engine"
+        app:title="@string/title_feature_shareengine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/ToolbarAppearance.Sandbox.Normal"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"/>
+    <TextView
+        android:layout_marginTop="@dimen/h16"
+        android:layout_marginStart="@dimen/h16"
+        style="@style/TextAppearance.Sandbox.Headline6"
+        android:text="@string/service_introduction"
+        android:id="@+id/service_introdution"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_share_engine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_marginEnd="@dimen/h16"
+        android:layout_marginStart="@dimen/h16"
+        android:layout_marginTop="8dp"
+        style="@style/TextAppearance.Sandbox.Body1"
+        app:layout_constraintTop_toBottomOf="@+id/service_introdution"
+        android:text="@string/txt_service_introdustion_share_engine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:id="@+id/banner_share_engine"
+        android:src="@drawable/banner_share_engine"
+        android:layout_marginEnd="@dimen/h16"
+        android:layout_marginStart="@dimen/h16"
+        android:layout_marginTop="@dimen/h16"
+        app:layout_constraintTop_toBottomOf="@+id/text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="167dp"/>
+    <com.google.android.material.button.MaterialButton
+        style="@style/ButtonAppearance.Sandbox.Normal"
+        android:layout_marginEnd="@dimen/h16"
+        android:layout_marginStart="@dimen/h16"
+        android:layout_marginTop="@dimen/h16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_share_between_huawei"
+        android:textAllCaps="false"
+        android:id="@+id/btn_between_huawei"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banner_share_engine" />
+    <com.google.android.material.button.MaterialButton
+        style="@style/ButtonAppearance.Sandbox.Normal"
+        android:layout_marginEnd="@dimen/h16"
+        android:layout_marginStart="@dimen/h16"
+        android:layout_marginTop="8dp"
+        android:id="@+id/button_android_devices"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_share_between_huawei"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/btn_between_huawei"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <com.google.android.material.button.MaterialButton
+        style="@style/ButtonAppearance.Sandbox.Normal"
+        android:layout_marginEnd="@dimen/h16"
+        android:layout_marginStart="@dimen/h16"
+        android:layout_marginTop="8dp"
+        android:id="@+id/button_linux_devices"
+        app:layout_constraintTop_toBottomOf="@+id/button_android_devices"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_for_linux"
+        android:textAllCaps="false" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

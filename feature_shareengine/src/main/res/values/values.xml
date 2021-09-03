@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="title_share_engine">Share Engine</string>
+    <string name="btn_share_between_huawei">Between Huawei Phones</string>
+    <string name="btn_for_linux">For Linux Devices</string>
+    <string name="txt_for_android">For Android Devices</string>
+    <string name="txt_input">Input</string>
+    <string name="txt_share_text_file">Share text file:</string>
+    <string name="txt_share_file">Share files</string>
+    <string name="txt_share_by_default">Shares a file by default.</string>
+    <string name="txt_share_file_s">Share file/files:</string>
+    <string name="btn_share_file">Share File</string>
+    <string name="txt_service_introdustion_share_engine">Share Engine allows for high-speed file transfers between phones, PCs, and other devices by using Bluetooth to discover nearby devices and authenticate connections, and then setting up peer-to-peer Wi-Fi channels. File transfer speeds can be up to 80 MB/s when the device and environment permit it.</string>
+
+    <string name="url_shareengine">https://developer.huawei.com/consumer/en/doc/development/connectivity-Guides/share-introduction</string>
+</resources>
