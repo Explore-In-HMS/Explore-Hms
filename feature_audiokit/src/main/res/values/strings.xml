@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<resources>
+    <string name="delete_from_list">Delete from list</string>
+    <string name="playlist_name">Playlist Name:</string>
+    <string name="song_name">Song Name</string>
+    <string name="artist_name">Artist Name</string>
+    <string name="album_name">Album Name</string>
+    <string name="progress_text_default_value">0?:??</string>
+    <string name="playlist">Playlist</string>
+    <string name="adjust_sound">Adjust In-App Sound</string>
+    <string name="_100">100</string>
+    <string name="please_select_one_playlist_type">Please select one playlist type</string>
+    <string name="online_playlist">Online Playlist</string>
+    <string name="local_playlist">Local Playlist</string>
+    <string name="confirm">Confirm</string>
+    <string name="audios_present_in_local_storage">Audios Present in Local Storage</string>
+    <string name="playlists">Playlists</string>
+    <string name="create_playlist">Create Playlist</string>
+    <string name="songs_present">4 Songs Present</string>
+    <string name="the_title_of_the_song">The title of the song</string>
+    <string name="the_name_of_the_artist">The name of the artist</string>
+    <string name="_19_00">19:00</string>
+    <string name="choose_song">Try choosing a song</string>
+    <string name="from_playlist">From the playlist</string>
+    <string name="album_unknown">Album Unknown</string>
+    <string name="zero_and_zero">00:00</string>
+    <string name="channel_name">Notification Bar</string>
+    <string name="channel_description">Displays real-time music control notification bar</string>
+    <string name="right_top_of_screen">It is at right-top of the screen</string>
+    <string name="url_txt_audiokit">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001050749665</string>
+</resources>

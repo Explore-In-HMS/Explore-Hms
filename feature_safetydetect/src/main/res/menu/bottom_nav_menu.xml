@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/sys_integrity"
+        android:enabled="true"
+        android:title="@string/title_sys_integrity_entry"
+        android:icon="@drawable/ic_sysintegrity"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/apps_check"
+        android:enabled="true"
+        android:title="@string/title_apps_check_entry"
+        android:icon="@drawable/ic_appcheck"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/url_check"
+        android:enabled="true"
+        android:title="@string/title_activity_url_check"
+        android:icon="@drawable/ic_urlcheck"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/user_detect"
+        android:enabled="true"
+        android:title="@string/title_activity_user_detect"
+        android:icon="@drawable/ic_usercheck"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/wifi_detect"
+        android:enabled="true"
+        android:title="@string/title_activity_wifi_detect"
+        android:icon="@drawable/ic_wificheck"
+        app:showAsAction="always" />
+</menu>

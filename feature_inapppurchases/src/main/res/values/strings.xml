@@ -1,0 +1,72 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <!--
+      ~ Copyright 2020. Explore in HMS. All rights reserved.
+      ~
+      ~    Licensed under the Apache License, Version 2.0 (the "License");
+      ~    you may not use this file except in compliance with the License.
+      ~    You may obtain a copy of the License at
+      ~
+      ~      http://www.apache.org/licenses/LICENSE-2.0
+      ~
+      ~    Unless required by applicable law or agreed to in writing, software
+      ~    distributed under the License is distributed on an "AS IS" BASIS,
+      ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      ~    See the License for the specific language governing permissions and
+      ~    limitations under the License.
+      -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="you_should_not_be_seeing_this_if_you_are_seeing_this_there_is_a_grave_error_occurred">YOU SHOULD NOT BE SEEING THIS! IF YOU ARE SEEING THIS, THERE IS A GRAVE ERROR OCCURRED.</string>
+    <string name="desc_default_string">In-App Purchases</string>
+    <string name="desc_in_app_service_introduction">Service Introduction</string>
+    <string name="header_features">Features</string>
+    <string name="header_use_cases">Use Cases</string>
+    <string name="header_service_process">Service Process</string>
+
+    <string name="desc_features">\u2022Comprehensive access procedure guidance and sandbox testing configuration are provided so that you can quickly and easily access HUAWEI IAP.\n\n\u2022Localized languages and currencies are displayed for in-app products based on the locations where users are located. All you have to do is just releasing an app, and then the app will be promoted within supported locations.\n\n\u2022Users can pay with bank cards, Alipay, WeChat, Direct Carrier Billing (DCB), and HUAWEI Points. The bank cards include those issued by major banks in China as well as Visa and Mastercard. DCB is supported by many large carriers outside China. Users can bind their bank cards and phone numbers to their HUAWEI IDs and make payments by entering HUAWEI ID payment passwords they have set before, which is more convenient than traditional payment methods. Please note that, currently Huawei smart screens support code-scanning payment via Alipay and WeChat in the Chinese mainland, and bank card payment outside the Chinese mainland.</string>
+    <string name="desc_features_two">\u2022High security, high reliability, and 24/7 monitoring with the TLS protocol is used to encrypt data for transmission and the RSA algorithm is used for signatures to protect user messages from being intercepted or tampered with. Data is encrypted and anonymized before being saved in the background, ensuring data security and cluster deployment and redundancy design are adopted for background servers, and 24/7 real-time system monitoring can facilitate locating a fault and providing assistance for operations.\n</string>
+    <string name="desc_use_cases">\u2022Release: You can release an app (gaming app or other) with one package and manage the prices and languages of in-app products. The locations supported by the PMS on the price configuration page shall prevail.\n\n\u2022Currencies and languages: You can set one default currency and one default language for each location. Only one language is allowed for a location.\n\n\u2022Price: Huawei provides an in-app product reference price for each location based on the price (tax included) you set and the exchange rate. You can change the reference price for each location as needed. For example, if you enter one euro, the system automatically sets the prices for other locations based on the exchange rate. If Euro to CNY rate is 7.88, the system automatically sets the price for China to CNY 7.88. You can change the price as needed.\n\n\u2022Exchange rate: fixed exchange rate by which Huawei will update the price. Updating the exchange rate by Huawei will not affect your price if you do not change the price.\n\n\u2022Intended audience: global developers. To release an app (gaming app or other) to multiple locations, you need to manage the price and language of the products locally.\n\nPMS supports the following types of products:</string>
+    <string name="desc_use_cases_two">\u2022Allow users to purchase advanced services or functions at a time after they download and experience your app free of charge.\n\n\u2022Allow users to purchase virtual products, such as game monetary props and extra lives, to improve their game experience.\n\n\u2022Allow users to subscribe to the content provided in your app, such as monthly memberships and yearly advanced function subscriptions, and make periodic payments flexibly.\n</string>
+
+    <string name="desc_service_process">HUAWEI IAP provides in-app payment and order hosting services, reducing your development costs and enabling you to quickly integrate in-app payment capabilities. In addition, the built-in confirmation mechanism of the order hosting service helps greatly reduce the probability of delivery failure, save operations and customer service costs, and provide users with a complete payment experience.</string>
+
+    <string name="main_page">Main Page</string>
+    <string name="docs">Docs</string>
+    <string name="explanation">Explanation</string>
+
+    <string name="first_location">Chinese\nMainland</string>
+    <string name="second_location">Hong Kong(China)\nMacao(China)\nTaiwan(China)\nLocations outside China</string>
+    <string name="first_location_output">Bank card\nAlipay\nWeChat Pay\nHUAWEI Points</string>
+    <string name="second_location_output">Bank card\nDCB\nThird-party payment\nHUAWEI Points</string>
+
+    <string name="consumables">Consumables</string>
+    <string name="non_consumables">Non-Consumables</string>
+    <string name="subscriptions">Subscriptions</string>
+    <string name="consumables_description">Consumables are used once, are depleted, and can be purchased again. For example, extra lives and gems in a game.</string>
+    <string name="non_consumables_description">Non-consumables are purchased once and do not expire. For example, Extra game levels in a game or permanent membership of an app.</string>
+    <string name="subscriptions_description">Users can purchase access to value-added functions or content in a specified period of time. The subscriptions are automatically renewed on a recurring basis until users decide to cancel. For example, non-permanent membership of an app, such as a monthly video membership.</string>
+
+    <string name="link_developer_in_app_purchases">https://developer.huawei.com/consumer/en/hms/huawei-iap</string>
+    <string name="link_in_app_purchases_documentation_introduction">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001050033062</string>
+
+    <string name="_in_app_purchases_explanation1">HUAWEI In-App Purchases (IAP) provides convenient in-app payment experience, which helps you boost monitization. Users can purchase a variety of virtual products, including one-time virtual products and subscriptions, directly within your app. It can be used in mobile phones, smart screen and tablets. HUAWEI IAP also provides a product management system (PMS) for allowing you to manage the prices and languages of in-app products (including games) in multiple locations.\n\n</string>
+    <string name="_in_app_purchases_explanation3">For development details, you can use the links below to access to the official documentation of In-App Purchases. \n\nAlso you can slide right to see some features in detail.</string>
+
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<HwTheme>
+	<item style="flowertext"/>
+	<stickerposition>Default</stickerposition>
+	<stickerscreen>w="450" h="262"</stickerscreen>
+	<textposition>x="105" y="86"</textposition>
+	<textscreen>w="250" h="70"</textscreen>
+	<text maxnumber="5"/>
+	<item fontcolor="#e90002"/>
+	<font>It's all right</font>
+	<font-cn>妥妥的</font-cn>
+</HwTheme>

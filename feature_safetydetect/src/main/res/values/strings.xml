@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="app_name">HMSSafetyDetectSample</string>
+
+    <string name="title_activity_main">Main</string>
+    <string name="title_activity_start">start</string>
+
+    <!-- SysIntegrity -->
+    <string name="title_activity_sys_integrity">SysIntegrity</string>
+    <string name="title_sys_integrity_entry">SysIntegrity</string>
+    <string name="run">Run Detection</string>
+    <string name="processing">Detecting</string>
+    <string name="rerun">Rerun detection</string>
+    <string name="info_sys_integrity">Checks whether the device running your app is secure, for example, whether it is rooted.</string>
+    <string name="detect_go_hint">Click the button below to detect system integrity.</string>
+    <string name="detect_go_hint_user_detect">Click the button below to user detect.</string>
+    <string name="error_title">Error:</string>
+
+    <!-- AppsCheck -->
+    <string name="title_apps_check_entry">AppsCheck</string>
+    <string name="title_activity_apps_check">AppsCheck</string>
+    <string name="get_malicious_appslist">Get Malicious Apps List</string>
+    <string name="isverify_appscheck">Verify AppsCheck Enabled</string>
+    <string name="enable_appscheck">Enable AppsCheck</string>
+    <string name="appscheck_info">Checks for malicious apps and provides you with a list of malicious apps.</string>
+    <string name="app_type_virus">Virus App</string>
+    <string name="app_type_risk">Risk App</string>
+    <string name="app_type_unknown">Unknown App</string>
+    <string name="verify_enabled">Verified that AppsCheck is enabled.</string>
+
+    <!-- UrlCheck -->
+    <string name="title_url_check_entry">URLCheck</string>
+    <string name="title_activity_url_check">URLCheck</string>
+    <string name="call_url_text">http|https://</string>
+    <string name="call_url_btn">Check Url</string>
+    <string name="call_result_text">Result</string>
+    <string name="info_url_check">Determines the threat type of a specific URL.\n\nPlease choose a URL to test.</string>
+
+    <!-- UserDetect -->
+    <string name="title_user_detect_entry">UserDetect</string>
+    <string name="title_activity_user_detect">UserDetect</string>
+    <string name="user_detect_btn">Run Detection</string>
+    <string name="login_btn">Login</string>
+    <string name="user_name_text">username</string>
+    <string name="password_text">password</string>
+    <string name="info_user_detect">Checks whether your app is interacting with a fake user.</string>
+
+    <!-- WifiDetect -->
+    <string name="title_wifi_detect_entry">WifiDetect</string>
+    <string name="title_activity_wifi_detect">WifiDetect</string>
+    <string name="get_wifidetect_status">Get WifiDetect Status</string>
+    <string name="info_wifi_detect">Checks whether the Wi-Fi to be connected is secure.\n\nPlease click the button to get your WiFi status.</string>
+
+    <!-- Tab -->
+    <string name="tab_menu_appscheck">AppsCheck</string>
+    <string name="tab_menu_integrity">SysIntegrity</string>
+    <string name="tab_menu_urlcheck">URLCheck</string>
+    <string name="tab_menu_user">UserDetect</string>
+    <string name="tab_menu_wifidetect">WifiDetect</string>
+
+    <!-- URL Array for URL Check Fragment -->
+    <string-array name="url_array">
+        <item>http://owafranceadmin.000webhostapp.com/</item>
+        <item>http://rewtrrt.000webhostapp.com/</item>
+        <item>http://5e5m2i.wuxihg.com/</item>
+        <item>https://stpfproflowers.cf/attloginF/v3917uidhq1/secure/upgrade/form.html</item>
+    </string-array>
+
+    <string name="userdetect_feature_is_unavailable">Warning: UserDetect feature is unavailable in the Chinese mainland.</string>
+    <string name="user_detection_and_verify_succeed">User detection succeed and verify succeed</string>
+    <string name="only_user_detection_succeed">User detection succeed but verify failed, please replace verify url with your server address</string>
+    <string name="detection_successful">Detection Successful</string>
+    <string name="detection_partly_successful">Detection Partly Successful</string>
+    <string name="detection_NOT_successful">Detection NOT Successful</string>
+    <string name="wifidetect_is_not_supported">Warning: WifiDetect is not supported outside of the mainland China.</string>
+    <string name="appcheck_is_enabled">The AppsCheck feature is enabled.</string>
+    <string name="potential_malicious_apps_found">No known potentially malicious apps are installed.</string>
+    <string name="no_threats_found">No threats found.</string>
+    <string name="threats_found">Threats found!</string>
+    <string name="title_of_fragment">Title Of Fragment</string>
+    <string name="print">print：\n</string>
+    <string name="result">Result</string>
+    <string name="result_will_be_displayed_here">Result will be displayed here</string>
+    <string name="user_detection_failed">User detection failed!</string>
+
+    <string name="url_safetydetect">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001050156325</string>
+
+
+
+</resources>

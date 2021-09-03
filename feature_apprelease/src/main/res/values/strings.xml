@@ -1,0 +1,42 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="title_app_release">App Release</string>
+    <string name="txt_app_release">After an app is developed, you need to submit it to Huawei for review in HUAWEI AppGallery Connect.</string>
+    <string name="txt_app_release_steps">Steps : </string>
+    <string name="txt_app_release_info">1) Configuring App Information
+        \n2) Setting Countries/Regions to Release Your App
+        \n3) Setting Whether the Version Is for Open Testing
+        \n4) Uploading the App Package
+        \n5) Configuring Payment Information
+        \n6) Configuring Content Rating
+        \n7) Configuring the Privacy Description
+        \n8) Configuring the Privacy Policy
+        \n9) Configuring Copyright Information
+        \n10) Completing Other Version Information
+        \n11) Scheduling the App Release
+        \n12) Submitting Your App for Review
+        \n13) Adjusting the Release Date for Your App
+        \n14) Appendix: App Languages
+</string>
+    <string name="txt_apprelease_click"><a href="">Click here to learn more about App Release.</a></string>
+    <string name="sample_image">sample_image</string>
+    <string name="txt_apprelease_link">https://developer.huawei.com/consumer/en/doc/distribution/app/agc-create_app</string>
+
+</resources>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="txt_doc_link_camera_engine">https://developer.huawei.com/consumer/en/doc/development/Media-Guides/3180101</string>
+
+    <string name="txt_hdr_mode_introduction_camera_engine">HDR Mode Introduction</string>
+    <string name="txt_night_mode_introduction_camera_engine">Night Mode Introduction</string>
+    <string name="txt_ultra_wide_angle_introduction_camera_engine">Ultra-wide Angle Mode Introduction</string>
+    <string name="txt_portrait_introduction_camera_engine">Portrait Mode Introduction</string>
+    <string name="txt_photo_introduction_camera_engine">Photo Mode Introduction</string>
+    <string name="txt_recording_introduction_camera_engine">Recording Mode Introduction</string>
+    <string name="txt_super_slow_mo_introduction_camera_engine">Super Slow Mode Introduction</string>
+    <string name="txt_slow_mo_introduction_camera_engine">Slow Mode Introduction</string>
+    <string name="txt_pro_p_introduction_camera_engine">Pro Mode (Photo) Introduction</string>
+    <string name="txt_pro_v_introduction_camera_engine">Pro Mode (Video) Introduction</string>
+     <string name="txt_dual_view">DUAL-VIEW VIDEO</string>
+    <string name="txt_hdr_mode_camera_engine">HDR Mode</string>
+    <string name="txt_night_mode_camera_engine">Night Mode</string>
+    <string name="txt_ultra_wide_angle_mode_camera_engine">Ultra-wide Angle Mode</string>
+    <string name="txt_portrait_mode_camera_engine">Portrait Mode</string>
+    <string name="txt_photo_mode_camera_engine">Photo Mode</string>
+    <string name="txt_recording_mode_camera_engine">Recording Mode</string>
+    <string name="txt_super_slow_mode_camera_engine">Super Slow Mode</string>
+    <string name="txt_slow_mode_camera_engine">Slow Mode</string>
+    <string name="txt_pro_p_camera_engine">Pro (Photo) Mode</string>
+    <string name="txt_pro_v_camera_engine">Pro (Video) Mode</string>
+
+    <string name="txt_service_introduction_camera_engine">Service Introduction</string>
+    <string name="txt_show_mode_intro_camera_engine">Show Mode Introduction</string>
+    <string name="txt_zoom_level_camera_engine">x%.1f</string>
+    <string name="txt_zoom_level_0_camera_engine">Zoom : 1.0</string>
+    <string name="txt_record_timer_camera_engine">%d:%d</string>
+
+    <string name="txt_no_picture_camera_engine">No Picture</string>
+    <string name="txt_no_record_camera_engine">No Record</string>
+    <string name="txt_camera_not_exist_camera_engine">Camera Not Exist</string>
+    <string name="txt_not_ready_camera_engine">Not Ready</string>
+
+    <string name="txt_back_camera_engine">BACK</string>
+    <string name="txt_hide_intro_camera_engine">Hide Introduction</string>
+
+    <string name="txt_exposure_level_camera_engine">Exposure</string>
+    <string name="txt_sensitivity_level_camera_engine">Sensitivity</string>
+    <string name="txt_skin_smooth_camera_engine">Skin Smooth</string>
+    <string name="txt_face_slender_camera_engine">Face Slender</string>
+    <string name="txt_skin_color_camera_engine">Skin Color</string>
+    <string name="txt_body_shaping_camera_engine">Body Shaping</string>
+    <string name="txt_iso_camera_engine">ISO</string>
+    <string name="txt_exposure_time_camera_engine">Exp Time</string>
+    <string name="txt_exposure_hint_camera_engine">Exp Hint</string>
+    <string name="txt_awb_type_camera_engine">Awb Type</string>
+    <string name="txt_wb_camera_engine">WB</string>
+    <string name="txt_focus_distance_camera_engine">Focus Dist</string>
+    <string name="txt_pro_meter_camera_engine">Pro Meter</string>
+    <string name="txt_exposure_comp_camera_engine">Exp Comp</string>
+    <string name="txt_face_detect_camera_engine">Face Detect</string>
+    <string name="txt_target_fps_camera_engine">Target FPS</string>
+    <string name="txt_noise_red_camera_engine">Noise Red</string>
+    <string name="txt_edge_mode_camera_engine">Edge Mode</string>
+    <string name="txt_tone_mode_camera_engine">Tone Mode</string>
+    <string name="txt_color_corr_mode_camera_engine">Color Corr Mode</string>
+    <string name="txt_contr_aelock_camera_engine">Contr AeLock</string>
+    <string name="txt_contr_awblock_camera_engine">Contr AwbLock</string>
+    <string name="txt_ai_camera_engine">AI</string>
+    <string name="txt_filter_camera_engine">Filter</string>
+    <string name="txt_filter_level_camera_engine">Filter Level</string>
+    <string name="txt_stabl_camera_engine">Stabl</string>
+
+    <string name="msg_this_mode_not_supported_camera_engine">This mode is not supported on this device</string>
+    <string name="msg_this_device_not_support_camera_kit_camera_engine">This devices not support Camera Engine or not installed</string>
+    <string name="msg_time_out_waiting_lock_camera_camera_engine">Time out waiting to lock camera opening</string>
+    <string name="msg_front_camera_does_not_sup_mod_camera_engine">Front camera does not support current mode</string>
+    <string name="msg_rear_camera_does_not_sup_mod_camera_engine">Rear camera does not support current mode</string>
+    <string name="msg_size_cannot_be_ngt_camera_engine">Size cannot be negative</string>
+    <string name="msg_record_stopped_saving_camera_engine">Record stopped, saving…</string>
+    <string name="msg_capture_completed_camera_engine">Capture completed, saving…</string>
+    <string name="msg_mode_settings_not_supported_camera_engine">This setting not supported on this device</string>
+    <string name="msg_photo_mode_camera_engine">This mode supports the general capabilities.</string>
+    <string name="msg_hdr_mode_camera_engine">In a backlit or low-light environment, High Dynamic Range (HDR) improves the details in both the well-lit and poorly-lit areas of photos to present more life-like qualities</string>
+    <string name="msg_night_mode_camera_engine">This mode is used for taking photos with sufficient brightness at night by using a long exposure. It also helps you to take photos that are properly exposed in other dark environments</string>
+    <string name="msg_wide_aperture_mode_camera_engine">This mode blurs the background and highlights the subject in a photo. You are advised to be within two meters of the subject when taking a photo and to disable the flash in this mode</string>
+    <string name="msg_recording_mode_camera_engine">This mode helps you record HD videos with effects such as different colors, filters, and AI film</string>
+    <string name="msg_portrait_mode_camera_engine">This mode can be used for taking portraits and close-ups</string>
+    <string name="msg_super_slow_mo_recording_mode_camera_engine">This mode allows you to record super slow-motion videos with a frame rate of over 960 FPS in manual or automatic (motion detection) mode</string>
+    <string name="msg_slow_mo_recording_mode_camera_engine">This mode allows you to record slow-motion videos with a frame rate lower than 960 FPS</string>
+    <string name="msg_pro_mode_photo_camera_engine">This mode allows you to adjust the following camera parameters to obtain the same shooting capabilities as those of Huawei camera: Metering mode, ISO, exposure compensation, exposure duration, focus mode, and automatic white balance</string>
+    <string name="msg_pro_mode_video_camera_engine">The Pro mode is designed to open the professional photography and recording capabilities of the Huawei camera to apps to meet diversified shooting requirements</string>
+    <string name="msg_dual_view">This mode enables you to record a video in two views at the same time. You will be able to record the panoramic and close-up videos simultaneously.The close-up view will be automatically focused on the center of the panoramic view you are recording (manual adjustment is not supported). You can spread or pinch your fingers to adjust the zoom.</string>
+    <string name="msg_mode_not_supported_camera_engine">Selected mode is not supported on this phone</string>
+    <string name="msg_wait_for_current_process_camera_engine">Please wait for the current process to finish</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

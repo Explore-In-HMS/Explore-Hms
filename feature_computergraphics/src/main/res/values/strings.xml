@@ -1,0 +1,30 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+
+    <string name="computer_graphics_info">CG Rendering Framework, a key capability of HUAWEI Computer Graphics (CG) Kit, is a Vulkan-based high-performance rendering framework that consists of the physically based rendering (PBR) material, model, texture, light, and component systems, and more. This rendering framework is designed for Huawei device development kit (DDK) features and implementation details to provide the best 3D rendering capabilities on Huawei devices using Kirin SoCs. In addition, the framework supports secondary development, which reduces app development difficulty and complexity and therefore increases your development efficiency.</string>
+    <string name="computer_graphics_use_cases">\u2022 3D applications\nCG Rendering Framework consists of the PBR material, model, texture, light, component subsystems, encapsulates the necessary Vulkan API call methods, and implements dedicated optimization on the Huawei GPU DDK. This greatly reduces your workload in developing high-quality 3D static models.\n\u2022 Commercial engines (such as game development)\nCG Rendering Framework provides a high-performance multi-thread rendering module that integrates the best practices in usage of Huawei-dedicated Vulkan enhancements and its extensions, giving full play to the ultimate capability of Vulkan. More cutting-edge rendering algorithms of the graphics field will be introduced for 3D game development and further performance optimization of commercial engines.\n\u2022 Enhanced rendering capabilities\nThe CG Kit plug-in management framework manages an array of 3D rendering enhancement plug-ins. The plug-ins leverage Huawei\'s optimization capabilities, hardware features, and algorithms, and can be easily integrated to your game client and engine rendering pipeline</string>
+
+    <string name="computer_graphics_restrictions"><b><u>\u2022 Supported Device:</u></b>\nAndroid mobile phones\n<b>\u2022 Vulkan Version:</b>\nStandard graphics API: Vulkan 1.0, Vulkan 1.1\n<b>\u2022 Android Version:</b>\n8.0 or later</string>
+
+
+    <string name="computer_graphics_more_information"><u>Click here to get more information about Computer Graphics Kit.</u></string>
+    <string name="computer_graphics_more_information_link">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001050197938</string>
+
+</resources>

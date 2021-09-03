@@ -1,0 +1,26 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="btn_test">Send Data to Dynamic Tag Manager</string>
+    <string name="title_dynamic_tag_manager">Dynamic Tag Manager</string>
+    <string name="dtm_service_introduction">Service Introduction</string>
+    <string name="screen_shot">Successfully reported data is displayed on HUAWEI Analytics in real time, as shown in the screenshots below.</string>
+    <string name="about_dtm">With DTM, you can dynamically update tracking tags on a web-based UI to track specific events and report data to third-party analytics platforms, tracking your marketing activity data as needed.</string>
+    <string name="url_txt_dtm">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001050043907</string>
+</resources>

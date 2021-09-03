@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+
+    <string name="desc">
+        Sign in to AppGallery Connect and click App analytics.
+        Click an app, go to the Distribution analysis page, and choose Finance report.
+    </string>
+
+    <string name="desc2">
+        By accessing the menus under Finance report, you can check the global
+        financial data of your app, including
+        the revenue, purchaser statistics, conversion rate, and subscription.
+    </string>
+
+    <string name="desc3">
+        &#8226;  View data by currency (CNY, USD, or EUR)\n\n
+        &#8226;  View the total revenue, Average Revenue Per Paying User (ARPPU) of the past 30 days, and average value per transaction for your app.\n\n
+        &#8226;  View revenue data of last day, last 7 days, or later 30 days.\n\n
+        &#8226;  On the Buyers list, you can view buyer data of the last day, last 7 days, or later 30 days.
+    </string>
+
+    <string name="desc4">
+        &#8226;  View data by one or more countries/regions, currency(CNY, USD, or EUR),or time period (last day, last 7 days, last 30 days, or all time).\n\n
+        &#8226;  View transaction data of the top 10 products in your app on the Revenue(by product) list, including the revenue, number of orders, refund, partial refund, and estimated annual revenue\n\n
+        &#8226;  View the revenue trend curve of the app in the last seven days on the revenue trend chart.\n\n
+        &#8226;  View statistics on the events that users obtain preferences at the bottom of the page, including Free products and Coupons.
+    </string>
+
+    <string name="title">
+        The page provides buyer and ARPPU data.
+    </string>
+
+    <string name="desc6">
+        &#8226;  View data by one or more countries/regions or time period (last day, last 7 days, last 30 days, or all time).\n\n
+        &#8226;  View the statistics of all buyers, new buyers, and returning buyers in the last day, last seven days, and last 30 days. The All tab page also displays accumulated data.\n\n
+        &#8226;  View the user quantity and MoM growth rate of the top 10 products in your app on the Buyers statistics by product tab page.
+    </string>
+
+    <string name="desc7">
+        &#8226;  View data by one or more countries/regions, currency (CNY, USD, or EUR), or time period (last day, last 7 days, last 30 days, or all time).\n\n
+        &#8226;  View the ARPPU statistics of the last day, last seven days, last 30 days, and all time.\n\n
+        &#8226;  View the ARPPU and its MoM rate over the statistical period on the ARPPU list. The statistical data is displayed in descending order by ARPPU.
+    </string>
+
+    <string name="desc8">
+        &#8226;  View data by one or more countries/regions.\n\n
+        &#8226;  View the payment rate (number of paying accounts divided by number of installs) of the last 30 days, 6 months, 12 months, and all time.\n\n
+        &#8226;  View the user account payment rate of top 10 in-app products on day 0, and in the last 30 days, last 6 months, and last 12 months.
+    </string>
+
+    <string name="desc9">
+        &#8226;  View data by one or more countries/regions or currency (CNY, USD, or EUR).\n\n
+        &#8226;  View the average number of times that a user pays and average payment amount of a user in your app in each month on the Payment conversion rate list.
+    </string>
+
+    <string name="desc10">
+        &#8226;  View data by one or more countries/regions, currency (CNY, USD, or EUR), or time period (last day, last 7 days, last 30 days, or all time).\n\n
+        &#8226;  View the operation data of the top 10 subscription items in an app from the Subscription report list.\n\n
+        &#8226;  View the trend of the total number of subscriptions of the app in the last seven days.\n\n
+        &#8226;  View the total subscription revenue trend of the app in the last seven days.\n\n
+        &#8226;  View order quantities of the top 3 subscription items.\n\n
+        &#8226;  View statistics of new subscription sources of this month, including subscription items and the percentage of new subscriptions in the current month.
+
+    </string>
+    <string name="notification_desc_more">The Notification details report provides the statistical graphs and details of major indicators such as Sent times, Delivered times, Tapped times, and Undelivered notification details, and supports report download.</string>
+    <string name="notification_desc">Sign in to AppGallery Connect and click App analytics. Click an app, go to the Operation analysis page, and choose Notification details.</string>
+    <string name="notification_details">Notification Details</string>
+    <string name="user_detail_desc_more">This report provides the statistical graphs and details of major indicators such as Daily active users, Daily new users, Monthly active users, and Total users, and supports report download.</string>
+    <string name="user_details_desc">Sign in to AppGallery Connect and click App analytics. Click an app, go to the Operation Analysis page, and select the User details report.</string>
+    <string name="user_details">User Details</string>
+    <string name="arppu_title">On the ARPPU tab page, you can:</string>
+    <string name="conversion_title">On the Conversion rate tab page, you can:</string>
+    <string name="conversion_headline">The Conversion page provides conversion rate and ARPPU data.</string>
+    <string name="revenue_title">On the Revenue page, you can:</string>
+    <string name="viewing_financial_reports">Viewing Financial Reports</string>
+    <string name="on_the_overview_page_you_can">On the Overview page, you can:</string>
+    <string name="on_the_buyer_tab_page_you_can">On the Buyer tab page, you can:</string>
+    <string name="on_the_arppu_tab_page_you_can">On the ARPPU tab page, you can:</string>
+    <string name="on_the_subscription_page_you_can">On the Subscription page, you can:</string>
+
+    <string name="url_distranalys">https://developer.huawei.com/consumer/en/doc/distribution/app/agc-view_analysis</string>
+
+</resources>

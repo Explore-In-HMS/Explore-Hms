@@ -1,0 +1,42 @@
+Cloud DB
++ Primary key issue
+
+If Users want to use Cloud DB , They should declare at least one primary key in table, but Cloud DB doesn't provide any solution for this feature like auto increment.
+
+Solution
+
+Primary key should be generated in code part using Random generator by Developers.
+
+---------------------------
+
++Model Properties of Cloud DB
+
+Cloud DB doesn't support annotation binding like Room DB so model name should be declared correctly and they should be same with table column in CloudDB.
+
+------------------------
+
+Cloud Hosting 
+
+Cloud Hosting can be used for static web page. And it has own folder structure . IF your web site doesn't meet this restriction, It won't be released on Cloud Hosting.
+Web site structure should be same with following one.
+
++Site name
+ +images
+ +js
+ +css
+ +index.html
+
+In addition, Web site can be uploaded as zip file into Cloud Hosting.
+
+-------------------------
+
+How can developers test dynamic ability before release?
+
+Dynamic ability can be tested with open testing platform before release.
+
+-------------------------
+
+
+
+
+

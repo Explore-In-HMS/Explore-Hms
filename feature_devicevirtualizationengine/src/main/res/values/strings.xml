@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="toolbar_title">Device Virtualization Engine</string>
+    <string name="text_service_info_devicevirtualiation">DeviceVirtualization Engine (DV Engine for short) is a multi-device virtualization platform provided by Huawei to facilitate the virtualization of external devices and components. Through this platform, peripheral devices or device components are converted into virtual components of mobile phones, and their capabilities are incorporated and utilized by mobile phones as general capabilities. In addition, capabilities of multiple virtual devices can be used synchronously.</string>
+    <string name="text_service_introduction_devicevirtualization">Service Introduction</string>
+    <string name="text_service_features_devicevirtualization">Service Features</string>
+
+    <string name="text_provide_user_devicevirtualization"><b>Distributed device virtualization provides users with the following benefits:</b></string>
+    <string name="text_provide_user_info_devicevirtualization">\u2022 Resource advantages of various devices are fully leveraged, and the optimal execution hardware is selected for each scenario users encounter. For example, the external cameras are used to provide a wider field of view; the external speakers are used when a broader sound pickup range and superior sound quality are required; the external large-screen display is used to provide clearer images; external fitness and health devices can help obtain heart rate information and provide for more scientifically-grounded health functions.\n\u2022 Services are seamlessly transferred among devices.</string>
+
+    <string name="text_provide_developer_devicevirtualization"><b>Distributed device virtualization provides you developers with the following benefits:</b></string>
+    <string name="text_provide_developer_info_devicevirtualization">\u2022 Higher usage frequency\n\u2022 Longer usage time\n\u2022 Greater traffic\n\u2022 Improved brand recognition</string>
+    <string name="text_use_cases_devicevirtualization">Use Cases</string>
+    <string name="text_use_cases_info_devicevirtualization">\u2022 Entertainment\n<b>Video call enhancement:</b> During a video call, the phone, smart TV, speaker, and camera work seamlessly. With the multi-microphone sound pickup capability of the smart speaker, the large display of the smart TV, and the wide angle of the camera, the video call data flow is transferred to external devices, providing an enhanced hands-free video calling experience.\n<b>Video sharing:</b> External cameras, such as the drones, can shoot and share videos with a wider horizon.\n\u2022 Smart travel\n<b>Driving safety and convenience:</b> The mobile phone, head unit, and cameras can be collaboratively controlled, virtually pooling the resources of the mobile phone and vehicle.\n\u2022 Fitness and Health\n<b>Scientifically-grounded workouts:</b> The phone, smart TV, camera, speaker, wearable device, and fitness device collaborate for intelligent workouts that harness each device\'s unique capabilities.\n<b>Personal health assistance:</b> The mobile phone and wearable devices work together to collect and analyze the user\'s health information.</string>
+
+    <string name="text_getmore_information_devicevirtualization"><u>Click here to get more information about Device Virtualization Engine.</u></string>
+    <string name="devicevirtualization_url">https://developer.huawei.com/consumer/en/doc/development/connectivity-Guides/devicevirtualization-introduction</string>
+
+    <string name="text_appintegration_overview_devicevirtualization">DeviceVirtualization Engine (DV Engine for short) enables apps to use the capabilities of peripheral devices and components, including but not limited to cameras, speakers, monitors, microphones, sensors, and motors.</string>
+    <string name="text_overview_appintegration">Overview</string>
+
+    <string name="text_selection_dialog_appintegration">Device Selection Dialog Box</string>
+    <string name="text_selection_dialog_info_appintegration">Any app that uses DV Engine must display the following dialog box for users to select an available device to complete capability continuation.</string>
+
+    <string name="text_sdk_data_security_appintegration">SDK Data Security</string>
+
+    <string name="text_how_does_work_appintegration"><b>How Does the SDK Work?</b></string>
+    <string name="text_how_does_work_info_appintegration">The SDK needs to be loaded to your app when you build and package the app. It works only when requested.</string>
+
+    <string name="text_what_permissions_require_appintegration"><b>What Permissions are Required for Using the SDK?</b></string>
+    <string name="text_what_permissions_require_info_appintegration">When the SDK is running, the system permission is not called.\nIf an app needs to use a virtualized peripheral, corresponding permissions are required.\n\u2022 Camera permission: Required when the app needs to use the camera.\n\u2022 Audio permission: Required when the app needs to use the audio related capabilities.\n\u2022 Distributed permission: Required when the app needs to use external virtual distributed peripherals.</string>
+
+    <string name="text_what_data_collect_appintegration"><b>What Data Does the SDK Collect?</b></string>
+    <string name="text_what_data_collect_info_appintegration">The SDK collects the app ID, package name, and API call status of the app to continuously improve DV Engine. The SDK does not collect user data.</string>
+
+    <string name="text_click_more_information_appintegration"><u>Click here to get more information about App Integration.</u></string>
+    <string name="appintegration_url">https://developer.huawei.com/consumer/en/doc/development/connectivity-Guides/devicevirtualization-guide</string>
+
+
+    <string name="text_overview_deviceintegration">Overview</string>
+    <string name="text_overview_info_deviceintegration">DeviceVirtualization Engine (DV Engine for short) extends devices or components services to supplement the mobile phone through virtualization technology. It enables device vendors to use the capabilities of peripheral devices and components, including but not limited to cameras, speakers, monitors, and microphones. With the distributed device virtualization platform, peripheral devices or components are used to extend the mobile phone capabilities to form a "super device" that delivers an optimal user experience.</string>
+
+    <string name="text_sampleimg_deviceintegration"><b>The following is an example of the device connection PIN display screen. For details, see the UX design specifications:</b></string>
+    <string name="text_data_security_deviceintegration">Data Security</string>
+
+    <string name="text_how_does_work_deviceintegration"><b>How Does the SDK Work?</b></string>
+    <string name="text_how_does_work_info_deviceintegration">The SDK contains external APIs (aar) and independent app services (APKs). The APIs need to be compiled into the vendor\'s app during the compilation and packaging of the app. The app services are started when the APIs are called. After the app services are started, the virtualization capability is provided in the background. The app services can be stopped at any time by calling the APIs.</string>
+
+
+    <string name="text_what_data_collect_deviceintegration"><b>What Data Does the SDK Collect?</b></string>
+    <string name="text_what_data_collect_info_deviceintegration">\u2022 Image data is collected through the camera.\n\u2022 Audio data is collected through the microphone.</string>
+
+    <string name="text_how_data_protect_deviceintegration"><b>How Does the SDK Protect Your Data?</b></string>
+    <string name="text_how_data_protect_info_deviceintegration">\u2022 Two-way authentication is required when the device tries to establish a connection with the phone to ensure that the device is trusted.\n\u2022 Data transmitted between devices and phones is encrypted to prevent data leakage.</string>
+
+
+    <string name="text_click_more_information_deviceintegration"><u>Click here to get more information about Device Integration.</u></string>
+    <string name="deviceintegration_url">https://developer.huawei.com/consumer/en/doc/development/connectivity-Guides/androiddevicevirtualizationkit-guide</string>
+
+</resources>

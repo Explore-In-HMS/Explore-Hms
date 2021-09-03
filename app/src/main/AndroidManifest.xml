@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.genar.hmssandbox.huawei">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission
+        android:name="android.permission.ACCESS_MOCK_LOCATION"
+        tools:ignore="MockLocation,ProtectedPermissions" /> <!-- Dont add Suppress tags -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.huawei.hms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:name=".SandboxApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/icon_app"
+        android:label="@string/app_name"
+        android:resizeableActivity="false"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="name, icon, label, theme, resizeableActivity, allowBackup">
+        <activity android:name=".baseapp.activity.BaseActivity" />
+        <activity android:name=".baseapp.activity.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".onboarding.OnboardingActivity" />
+        <activity android:name=".baseapp.activity.MainActivityTab" />
+        <activity android:name=".sitekit.SiteKitWidgetActivity" />
+        <activity android:name=".mapkit.MainActivityMapKit" />
+        <activity android:name=".mapkit.ui.MapKitDirectionApiActivity" />
+        <activity android:name=".sitekit.MainActivitySiteKit" />
+        <activity android:name=".scankit.ScanCustomViewActivity" />
+        <activity android:name=".scankit.ScanKitActivity" />
+        <activity
+            android:name=".scankit.GenerateCodeActivity"
+            android:label="@string/title_generatecode" />
+        <activity android:name=".scankit.CommonActivity" />
+        <activity android:name=".scankit.DisplayActivity" />
+        <activity android:name=".scankit.DisplayMulActivity" />
+        <activity
+            android:name=".locationkit.LocationKitActivity"
+            android:label="@string/title_locationkit" />
+        <activity
+            android:name=".locationkit.HdLocationActivity"
+            android:label="@string/title_location_hd" />
+        <activity
+            android:name=".locationkit.ActivityIdentificationActivity"
+            android:label="@string/title_location_activity_identification" />
+        <activity
+            android:name=".locationkit.ActivityConversionActivity"
+            android:label="@string/title_location_activity_conversion" />
+        <activity
+            android:name=".locationkit.GeoFenceActivity"
+            android:label="@string/title_geofence"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".locationkit.GeoFenceCreateActivity"
+            android:label="@string/title_geofence_create"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".pushkit.MainActivityPushKit" />
+        <activity android:name=".pushkit.NotificationTargetActivityPushKit">
+            <intent-filter>
+                <action android:name="com.genar.hmssandbox.huawei.pushkit.click" /> <!-- Target Activity When Tap Notification -->
+                <category android:name="android.intent.category.DEFAULT" /> <!-- Need to select 'Custom action page' name on service -->
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".locationkit.LocationBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.genar.hmssandbox.huawei.locationkit.ACTION_PROCESS_LOCATION" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".locationkit.GeoFenceBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".locationkit.GeoFenceIntentService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" /> <!-- HMS Message Service -->
+        <!-- HMS Message Service -->
+        <service
+            android:name=".pushkit.service.HuaweiPushServicePushKit"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.huawei.push.action.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- Applying for Token -->
+        <meta-data
+            android:name="push_kit_auto_init_enabled"
+            android:value="true" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.genar.hmssandbox.huawei.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            android:splitName=""
+            tools:replace="authorities, splitName">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths"
+                tools:replace="resource,android:value"
+                android:value="30.0.2"/>
+        </provider>
+    </application>
+
+</manifest>

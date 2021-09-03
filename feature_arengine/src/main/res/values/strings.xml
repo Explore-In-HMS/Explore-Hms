@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<resources>
+    <string name="txt_service_introduction_arengine">Service Introduction</string>
+    <string name="txt_world_tracking_arengine">World Tracking</string>
+    <string name="txt_face_tracking_arengine">Face Tracking</string>
+    <string name="txt_hand_tracking_arengine">Hand Tracking</string>
+    <string name="txt_body_tracking_arengine">Body Tracking</string>
+    <string name="txt_image_tracking_arengine">Health Check</string>
+    <string name="txt_cancel_arengine" priority="translator">Cancel</string>
+    <string name="txt_install_arengine" priority="translator">Install</string>
+
+    <string name="msg_install_app_arengine" priority="translator">Install the latest version of HUAWEI AR Engine to continue.</string>
+    <string name="msg_service_info_arengine">AR Engine is an engine for building augmented reality (AR) apps on Android smartphones. It is based on the HiSilicon chipset, and integrates AR core algorithms to provide basic AR capabilities such as motion tracking, environment tracking, body tracking, and face tracking, allowing your app to bridge virtual world with the real world, for a brand new visually interactive user experience</string>
+
+    <string name="txt_doc_link_arengine">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides-V5/introduction-0000001050130900-V5</string>
+    <string name="txt_doc_link_face_hand_body_arengine">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides-V5/introduction-0000001050130900-V5#EN-US_TOPIC_0000001064732168__section2239823154511</string>
+    <string name="txt_doc_link_env_arengine">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides-V5/introduction-0000001050130900-V5#EN-US_TOPIC_0000001064732168__section1610185811446</string>
+
+    <!-- World -->
+    <string name="txt_world_textview_arengine">TextView</string>
+    <string name="txt_plane_other_arengine">Other</string>
+    <string name="txt_plane_floor_arengine">Floor</string>
+    <string name="txt_plane_wall_arengine">Wall</string>
+    <string name="txt_plane_table_arengine">Table</string>
+    <string name="txt_plane_seat_arengine">Seat</string>
+    <string name="txt_plane_ceiling_arengine">Ceiling</string>
+    <string name="txt_plane_door_arengine">Door</string>
+    <string name="txt_plane_window_arengine">Window</string>
+    <string name="txt_plane_bed_arengine">Bed</string>
+    <string name="msg_world_pls_move_camera_arengine">Please move the mobile phone slowly to find the plane</string>
+
+    <string name="txt_camera_open_failed_message">Camera open failed, please restart the app</string>
+    <string name="txt_agree_message">Please agree to install.</string>
+</resources>

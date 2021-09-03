@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_theme_tagging_image_kit"
+        style="@style/ToolbarAppearance.Sandbox.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Theme Tagging Service" />
+
+
+    <ScrollView
+        android:id="@+id/sv_theme_tagging_image_kit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_theme_tagging_image_kit">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_theme_tagging_image_kit_info_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.Sandbox.Headline6"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:text="@string/txt_service_introduction"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_theme_tagging_image_kit_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.Sandbox.Body1"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:text="@string/msg_theme_tagging_service_info_image_kit"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tv_theme_tagging_image_kit_info_title"/>
+
+            <View
+                android:id="@+id/seperator_theme_tagging_image_kit_info"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorGray1"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_theme_tagging_image_kit_info"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_theme_tagging_image_kit_gallery"
+                style="@style/ButtonAppearance.Sandbox.Normal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/txt_gallery_image_kit"
+                app:layout_constraintEnd_toStartOf="@id/btn_theme_tagging_image_kit_camera"
+                android:drawableEnd="@drawable/icon_gallery_24_imagekit"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seperator_theme_tagging_image_kit_info" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_theme_tagging_image_kit_camera"
+                style="@style/ButtonAppearance.Sandbox.Normal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/txt_camera_image_kit"
+                android:drawableEnd="@drawable/icon_camera_24_imagekit"
+                app:layout_constraintBottom_toBottomOf="@id/btn_theme_tagging_image_kit_gallery"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_theme_tagging_image_kit_gallery"
+                app:layout_constraintTop_toTopOf="@id/btn_theme_tagging_image_kit_gallery" />
+
+            <ImageView
+                android:id="@+id/iv_image_theme_tagging"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/view_border_black_white_back_image_kit"
+                android:src="@drawable/huawei_logo_imagekit"
+                app:layout_constraintTop_toBottomOf="@+id/btn_theme_tagging_image_kit_camera"/>
+
+            <View
+                android:id="@+id/seperator2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorGray1"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/iv_image_theme_tagging"/>
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/ButtonAppearance.Sandbox.Normal"
+                android:id="@+id/btn_image_vision_theme_tagging_gettoken"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_run_service_smart_get_token"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintTop_toBottomOf="@id/seperator2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_image_vision_theme_tagging_runservice"
+                style="@style/ButtonAppearance.Sandbox.Normal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/txt_run_service_smart_image_kit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_image_vision_theme_tagging_gettoken" />
+
+            <LinearLayout
+                android:id="@+id/ll_imagekit_theme_tagging_result_text"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/btn_image_vision_theme_tagging_runservice"
+                android:background="@drawable/view_light_border_light_gray_image_kit">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/TextAppearance.Sandbox.Body2"
+                    android:layout_margin="16dp"
+                    android:text="@string/txt_result_theme_image_kit"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+                </com.google.android.material.textview.MaterialTextView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_imagekit_theme_tagging_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/TextAppearance.Sandbox.Body2"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_gravity="center"
+                    android:gravity="start">
+                </com.google.android.material.textview.MaterialTextView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/TextAppearance.Sandbox.Body1"
+                    android:layout_margin="16dp"
+                    android:text="@string/txt_operation_result_theme_image_kit"
+                    android:layout_gravity="center"
+                    android:gravity="start"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_imagekit_theme_tagging_operation_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/TextAppearance.Sandbox.Body1"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_gravity="center"
+                    android:gravity="start"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_imagekit_theme_tagging_result_object_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/view_light_border_light_gray_image_kit"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/ll_imagekit_theme_tagging_result_text"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextAppearance.Sandbox.Body1"
+                        android:layout_margin="16dp"
+                        android:text="@string/txt_theme_type_theme_image_kit"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_weight="1">
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextAppearance.Sandbox.Body1"
+                        android:text="@string/txt_theme_possibility_theme_image_kit"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_weight="1">
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextAppearance.Sandbox.Body1"
+                        android:layout_margin="16dp"
+                        android:text="@string/txt_show_on_image_theme_image_kit"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_weight="1">
+                    </com.google.android.material.textview.MaterialTextView>
+
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/lv_imagekit_theme_tagging"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp">
+                </ListView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_imagekit_theme_tagging_result_tags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/view_light_border_light_gray_image_kit"
+                app:layout_constraintTop_toBottomOf="@+id/ll_imagekit_theme_tagging_result_object_list"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextAppearance.Sandbox.Body1"
+                        android:text="@string/txt_tag_name_theme_image_kit"
+                        android:layout_margin="16dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_weight="1">
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextAppearance.Sandbox.Body1"
+                        android:layout_margin="16dp"
+                        android:text="Tag Confidence"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_weight="1">
+                    </com.google.android.material.textview.MaterialTextView>
+
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/lv_imagekit_theme_tagging_tag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"/>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/pb_imagekit_themetagging"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone">
+    </ProgressBar>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

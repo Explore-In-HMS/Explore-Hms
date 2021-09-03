@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+
+    <!-- BASE -->
+    <string name="btn_basic_and_advanced_animation_image_kit">Basic &amp; Advanced Animations</string>
+    <string name="txt_filter_service_image_kit">Filter Service</string>
+    <string name="txt_smart_layout_service_image_kit">Smart Layout Service</string>
+    <string name="txt_theme_tagging_image_kit">Theme Tagging Service</string>
+    <string name="txt_sticker_service_image_kit">Sticker Service</string>
+    <string name="txt_image_cropping_image_kit">Image Cropping Service</string>
+    <string name="title_image_kit">Image Kit</string>
+    <string name="txt_service_introduction">Service Introduction</string>
+    <string name="txt_gallery_image_kit">Gallery</string>
+    <string name="txt_camera_image_kit">Camera</string>
+    <string name="txt_parameters_image_kit">OPTIONS</string>
+    <string name="txt_image_vision_service_introduction">HUAWEI Image Kit incorporates smart image editing and design as well as animation capabilities into your app, giving it the power of efficient image content reproduction while providing a better image editing experience for your users.</string>
+    <string name="txt_img_render_service_introduction">The Image Render service provides five basic animation effects and nine advanced animation effects. Basic animation effects can be used in flexible combinations to suit different user needs. Advanced animation effects are not only stunning but easy to use and interesting, bringing more fun to user interactions.</string>
+    <string name="txt_show_image_kit">Show</string>
+    <string name="txt_result_image_kit">RESULT</string>
+    <string name="txt_image_doc_link_image_kit">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides-V5/service-introduction-0000001050199011-V5</string>
+    <string name="txt_token_obtained_image_kit">Token Obtained</string>
+
+    <!-- COMMON -->
+    <string name="msg_initialization_success_common_image_kit">Initialization successful</string>
+    <string name="msg_callback_failed_common_image_kit">CallBack failure. Error Code</string>
+    <string name="msg_pls_take_photo_common_image_kit">Please Take Photo</string>
+
+    <string name="txt_success_image_kit">SUCCESS</string>
+    <string name="txt_yes_image_kit">YES</string>
+    <string name="txt_no_image_kit">NO</string>
+    <string name="txt_ok_image_kit">OK</string>
+
+    <!-- FILTER -->
+    <string name="txT_parameters_filter_image_kit">Parameters</string>
+    <string name="txt_parameters_info_filter_image_kit">Filter Type: 0&#8211;24 / Intensity: 0&#8211;1 / Compress: 0.1&#8211;1</string>
+    <string name="msg_image_filter_service_info_image_kit">Provides 24 unique color filters, such as freesia and reed.\nFilter Type: 0&#8211;24 / Intensity: 0&#8211;1 / Compress: 0.1&#8211;1</string>
+    <string name="txt_filter_type_filter_image_kit">Filter Type : </string>
+    <string name="txt_filter_type_type_filter_image_kit">Filter Type : 0- Original</string>
+    <string name="txt_intensity_image_kit">Intensity : </string>
+    <string name="txt_intensity_filter_image_kit">Intensity : 1</string>
+    <string name="txt_compress_image_kit">Compress : </string>
+    <string name="txt_compress_filter_image_kit">Compress : 1</string>
+
+    <!-- IMAGE VISION -->
+    <string name="msg_service_result_smart_image_kit">"Service result code : "</string>
+
+    <!-- CROPPING -->
+    <string name="msg_crop_service_image_kit">This service provides the cropping function for users to resize images</string>
+    <string name="msg_ratio_xy_warning_cropping_image_kit">Please insert ratio X and ratio Y values</string>
+    <string name="msg_ratio_xy_lower_zero_warning_cropping_image_kit">Ratio X and ratio Y values must be more than 0</string>
+    <string name="msg_ratio_xy_not_valid_warning_cropping_image_kit">Please insert numeric ratio X and ratio Y values</string>
+    <string name="msg_rotate_image_90_crop_image_kit">Rotate the image by 90 degrees</string>
+    <string name="msg_flip_image_horizontal_crop_image_kit">Horizontal mirroring</string>
+    <string name="msg_flip_image_vertical_crop_image_kit">Vertical mirroring</string>
+    <string name="msg_crop_fixed_ratio_crop_image_kit">Crop an image with a fixed ratio</string>
+    <string name="msg_crop_random_ratio_crop_image_kit">Crop an image with a random ratio</string>
+
+    <string name="txt_hint_x_image_kit">X</string>
+    <string name="txt_hint_y_image_kit">Y</string>
+    <string name="txt_oval_cropping_image_kit">Oval</string>
+    <string name="txt_rectangle_cropping_image_kit">Rectangle</string>
+    <string name="txt_rectangle_cropping_set_image_kit">Set</string>
+    <string name="txt_crop_image_crop_image_kit">Crop Image</string>
+    <string name="txt_crop_style_crop_image_kit">Crop Style</string>
+    <string name="txt_cropped_image_crop_image_kit">Cropped Image Preview</string>
+
+    <!-- SMART -->
+    <string name="msg_mandatory_input_smart_image_kit">Please insert mandatory inputs</string>
+    <string name="msg_smart_layout_service_service_info_image_kit">This service provides nine styles for smart image and text layout</string>
+    <string name="txt_options_smart_image_kit">Options</string>
+    <string name="txt_title_smart_image_kit">Title</string>
+    <string name="txt_mandatory_smart_image_kit">Mandatory</string>
+    <string name="txt_description_smart_image_kit">Description</string>
+    <string name="txt_copyright_smart_image_kit">Copyright</string>
+    <string name="txt_anchor_smart_image_kit">Anchor</string>
+    <string name="txt_is_need_mask_smart_image_kit">Is Need Mask</string>
+    <string name="txt_style_list_smart_image_kit">Style List</string>
+    <string name="txt_result_code_smart_image_kit">ResultCode</string>
+    <string name="txt_run_service_smart_image_kit">Run Service</string>
+    <string name="txt_run_service_smart_get_token">Get Token</string>
+
+    <!-- STICKER -->
+    <string name="msg_text_art_sticker_warn_sticker_image_kit">Touch Text Area On Editable Sticker To Edit</string>
+    <string name="msg_sticker_service_info_image_kit">This service provides the sticker and text art function. It allows users to scale, drag, or delete stickers and text arts and customize the text of text arts</string>
+    <string name="txt_sticker_sticker_image_kit">Sticker</string>
+    <string name="txt_editable_sticker_sticker_image_kit">Editable Sticker</string>
+    <string name="txt_add_sticker_sticker_image_kit">Add Sticker</string>
+
+    <!-- THEME -->
+    <string name="msg_photo_or_gallery_warning_theme_image_kit">Please Take Photo or Select Picture</string>
+    <string name="msg_theme_tagging_service_info_image_kit">This service provides the theme tagging function, which supports tagging for images created by users as well as tagging for objects detected in images</string>
+    <string name="txt_success_theme_image_kit">Success</string>
+    <string name="txt_try_again_theme_image_kit">" - Try Again"</string>
+    <string name="txt_result_theme_image_kit">RESULT</string>
+    <string name="txt_operation_result_theme_image_kit">Operation Result</string>
+    <string name="txt_theme_type_theme_image_kit">Theme Type</string>
+    <string name="txt_theme_possibility_theme_image_kit">Theme Possibility</string>
+    <string name="txt_show_on_image_theme_image_kit">Show on Image</string>
+    <string name="txt_tag_name_theme_image_kit">Tag Name</string>
+    <string name="txt_tag_confidence_theme_image_kit">Tag Confidence</string>
+
+    <!-- IMAGE RENDER -->
+    <string name="msg_image_render_service_info_image_kit">The Image Render service provides five basic animation effects and nine advanced animation effects. Basic animation effects can be used in flexible combinations to suit different user needs. Advanced animation effects are not only stunning but easy to use and interesting, bringing more fun to user interactions</string>
+    <string name="msg_position_anim">Changes the position of an image within the specified period to implement the translation effect</string>
+    <string name="msg_rotation_anim">Changes the rotation angle of an image within the specified time to implement image rotation effects</string>
+    <string name="msg_size_anim">Changes the width and height of an image within a specified period to implement image zoom effects</string>
+    <string name="msg_alpha_anim">Changes the alpha of an image within a specified period to implement the procedural fading effects</string>
+    <string name="msg_sources_anim">Swaps multiple ordered images repeatedly within a specified period to create the illusion of movement</string>
+    <string name="msg_particle_view">Generates a particle at the sliding track when a finger slides on the screen</string>
+    <string name="msg_waterwall_view">Generates ripples when a user taps the screen</string>
+    <string name="msg_paint">Brushes off the image or color that covers the background layer by sliding fingers on the screen</string>
+    <string name="msg_marquee">Displays the marquee effect around the screen border</string>
+    <string name="msg_particle_scatter">Supports image-particle scattering and particle-image scattering. Tap the screen</string>
+    <string name="msg_rotate_view">Divides an image into meshes and displays a vortex shrinking to the tapped point when a user taps the screen, with the vortex center moving with the tapped point</string>
+    <string name="msg_drop_physical_view">Implements a combination of translation, rotation, and alpha effects within the specified movable area during dropping</string>
+    <string name="msg_flipbook">Displays the page flip effect when a user slides fingers from the lower-right corner on the screen</string>
+    <string name="msg_mesh_image">Divides an image into multiple meshes and separately operates image parts in different meshes</string>
+    <string name="msg_start_record_warning_render_image_kit">Start recording animation?
+        This process will create 10 second video and gif</string>
+    <string name="msg_stop_record_on_backpress_render_image_kit">Stop recording animation?</string>
+    <string name="msg_record_success_render_image_kit">Record Success</string>
+    <string name="msg_record_stopped_render_image_kit">Record Stopped</string>
+    <string name="msg_animation_info_render_image_kit">Changes the position of an image within the specified period to implement the translation effect</string>
+    <string name="txt_animations_image_kit">Animations</string>
+    <string name="txt_animation_play_image_kit">Play</string>
+    <string name="txt_animation_pause_image_kit">Pause</string>
+    <string name="txt_animation_resume_image_kit">Resume</string>
+    <string name="txt_animation_stop_image_kit">Stop</string>
+    <string name="txt_recording_image_render_image_kit">Progress : %d/100 , Recording…</string>
+    <string name="txt_not_record_process_finished_image_kit">Record Saving...</string>
+    <string name="txt_not_recording_image_render_image_kit">Not Recording</string>
+
+
+    <string name="url_txt_imagekitmain">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050199011</string>
+</resources>

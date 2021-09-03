@@ -1,0 +1,51 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+
+    <string name="overview_desc_nativeapp">
+        &#8226;  Native app: \n
+        You can check metrics related to user installations and usage of your native app through the Downloads &amp; installs, Download source analysis, Pre-orders, and User acquisition and retention menus.\n
+        You can check the sales metrics for your native app through the In-App Purchases and Paid app details menus.
+    </string>
+    <string name="overview_desc_quickapp">
+        &#8226;  Quick app:\n
+        You can learn about the user and running data of your quick app through the Quick app user report and Quick app running report menus.
+    </string>
+    <string name="downloads_installs_desc">Sign in to AppGallery Connect and click App analytics. Click an app, go to the Distribution analysis page, and choose Downloads &amp; installs.</string>
+    <string name="download_installs_desc_more"><![CDATA[The Downloads & installs report provides an overview of major indicators of your app in all channels (AppGallery and AppTouch), such as New downloads and Update downloads, charts, and data details, and supports report download.]]></string>
+    <string name="in_app_purchase_desc">Sign in to AppGallery Connect and click App analytics. Click an app, go to the Distribution analysis page, and choose In-App Purchase.</string>
+    <string name="in_app_purchase_desc_more">The In-App Purchase report provides an overview of major indicators of your app in all channels (AppGallery and AppTouch), such as Payment amount and ARPPU, charts, and data details, and supports report download.</string>
+    <string name="paid_app_detail_desc">Sign in to AppGallery Connect and click App analytics. Click an app, go to the Distribution analysis page, and choose Paid application details.</string>
+    <string name="paid_app_detail_desc_more">This report displays data such as Total purchases and order information, and supports report download.</string>
+
+    <string name="quick_app_user_report">Quick App User Report</string>
+    <string name="quick_app_user_report_desc">Sign in to AppGallery Connect and click App analytics. Click an app, go to the Distribution analysis page, and choose Quick app user report.</string>
+    <string name="quick_app_user_report_desc_more">The quick app user report displays metrics such as new users, active users, and user retention in a chart for your quick app, provides details about the metrics, and allows you to download the report.</string>
+    <string name="quick_app_running_report_desc">Sign in to AppGallery Connect and click App analytics. Click an app, go to the Distribution analysis page, and choose Quick app running report.</string>
+    <string name="quick_app_running_report">Quick App Running Report</string>
+    <string name="quick_app_running_report_desc_more">The quick app running report displays metrics such as number of app opens, app use duration, and number of icons added to home screen in a chart for your quick app, provides details about the metrics, and allows you to download the report.</string>
+    <string name="download_and_install_title"><![CDATA[Downloads & installs]]></string>
+    <string name="overview_title">Viewing Distribution Analysis</string>
+    <string name="overview_desc">On the Distribution analysis tab page, you can view the usage and sales data of a native app, or data reports of a quick app.</string>
+    <string name="in_app_purchase_title">In-App Purchase</string>
+    <string name="paid_application_details_title">Paid Application Details</string>
+    <string name="url_txt_distranalyse">https://developer.huawei.com/consumer/en/agconnect/Appanalytics/</string>
+
+
+</resources>

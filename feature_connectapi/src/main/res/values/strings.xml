@@ -1,0 +1,55 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="connect_api">Connect API</string>
+    <string name="connect_api_explanation">The AppGallery Connect API provides RESTful APIs that can be used to customize services provided by AppGallery Connect or implement process automation, thereby improving your work efficiency.</string>
+    <string name="fragment_comments_api">Comments API</string>
+    <string name="fragment_pms_api">PMS API</string>
+    <string name="fragment_project_managment">Project Managment</string>
+    <string name="fragment_publishing_api">Publishing API</string>
+    <string name="fragment_repors_api">Reports API</string>
+    <string name="comments_api_explanation">You can call the Comments API to obtain comment data from AppGallery Connect and analyze the data using your own or a third-party comment analysis system (such as Braze) for refined operations or reply to comments. A typical development process using the Comments API is as follows: \n 1.Obtaining authorization from the server: Obtain authorization from the server in the API client mode.\n 2.Querying the comment list: Query the comment list of your app by criteria including the app ID (mandatory), original comment content, commenting time period (mandatory), country/region (mandatory), rating, device model, APK version, review status, reply status, and language.\n 3.Querying details about a comment: Query details about a comment and its replies based on the comment ID.\n 4.Replying to comments and replies: You can reply to a comment (once), or to a reply (multiple times and the content can be modified). Your reply is displayed both in AppGallery Connect and on AppGallery.</string>
+    <string name="pms_api_explanation">You can manage the prices and languages of in-app products through the PMS API to implement localized pricing for all supported locations.
+        \n1.The basic development process is as follows:
+        \n2.Obtaining authorization from the AppGallery Connect server
+        \n3.Creating products
+        \n4.Querying and updating products
+        \n5.Managing product status
+        \n6.Managing product promotions</string>
+    <string name="project_managment_explanation">The Project Management API is provided for you to access and manage project information, including:
+        \n1.Obtaining the development team list.
+        \n2.Obtaining brief information of apps in a project.
+        \n3.Obtaining the SDK configuration file for an app in a project.
+        \n4.Using the API, your users can access and manage their projects without signing in to AppGallery Connect, improving their development efficiency.</string>
+    <string name="publish_api_explanation">The Publishing API allows you to:
+        \n1.Upload app information, including the app copyright information.
+        \n2.Modify basic app information, including the app name and description.
+        \n3.Add or update version information, including the app screenshot and video.
+        \n4.Release and update apps and submit apps for approval.
+        \n5.The Publishing API cannot be used to create apps. You need to create apps in AppGallery Connect first. Then you can call the Publishing API to update app information, upload app packages, and perform other app-related operations. The Publishing API cannot be used to set app content ratings. Therefore, you need to set content ratings for apps in AppGallery Connect before submitting the apps for approval.</string>
+    <string name="getting_started">Get Start</string>
+    <string name="reports_api_explanation">You can use the Reports API to query most analysis data in AppGallery Connect, including report data such as download and installation, in-app purchases, and paid download. A typical development process using the Reports API is as follows:
+        /n1.View report data. Before obtaining a report of an app, you must ensure that the corresponding report data of the app exists in AppGallery Connect and the app must have been released and promoted.
+        /n2.Obtain the report download URL. You need to call the Reports API to obtain the download URL of the report CSV or Excel file.
+        /n3.Download the report. You need to manually download the CSV or Excel file based on the obtained report download URL.</string>
+
+    <string name="api_list_connectapi">APIs in the Connect api:</string>
+    <string name="api_list_info">\u2022 Publishing API\n\u2022 Reports API\n\u2022 Project Management API\n\u2022 Comments API\n\u2022 PMS API</string>
+    <string name="url_txt_connectapi">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agcapi-overview</string>
+</resources>

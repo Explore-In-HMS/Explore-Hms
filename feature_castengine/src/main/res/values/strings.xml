@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="infotext_1_castengine">Designed to provide multi-screen collaboration revolving around mobile phones, HUAWEI Cast Engine enables fast, stable, and low-latency collaboration between mobile phones and external large screens, delivering a seamless, cross-device collaborative experience.</string>
+    <string name="scenarios_castengine">Scenarios</string>
+
+    <string name="scenarios_info_castengine">\u2022 By integrating Cast Engine, large-screen devices, such as TVs, are able to connect to Huawei phones for multi-screen collaboration.\n\u2022 (Coming soon) Third-party mobile apps can utilize features provided by Cast Engine to offer differentiated experiences.</string>
+
+    <string name="advantages_text">Advantages</string>
+    <string name="advantages_info_text">\u2022 Quick discovery and stable connection\n\u2022 High-definition and low-latency\n\u2022 Leading multi-screen collaboration capabilities, with countermeasures preventing artifacts and frame-freezing</string>
+
+    <string name="supported_devices_text">Supported Devices</string>
+    <string name="supported_device"><b>Device:</b>\nHuawei</string>
+    <string name="supported_osversion"><b>OS version:</b>\nEMUI 10.1 or later</string>
+
+
+    <string name="precautions_text">Precautions</string>
+    <string name="precautions_info_text">\u2022 Devices that integrate the HUAWEI Cast Engine SDK must comply with the HUAWEI Cast Engine UX Design Specification, which is provided by Huawei after the contract is signed between the parties.\n\u2022 When an update for HUAWEI Cast Engine is available, it will be provided to the third-party device manufacturers in the form of a binary software package, rather than being pushed over the air.The detailed update strategy will be negotiated between Huawei and the applicable manufacturers, on a case-by-case basis.\n\u2022 HUAWEI Cast Engine is not yet compatible with Miracast, AirPlay, and Google Cast on third-party devices.</string>
+
+
+    <string name="castengine_more_information"><a href="">Click here to learn more about Cast Engine.</a></string>
+    <string name="castengine_link_documentation_link">https://developer.huawei.com/consumer/en/doc/development/connectivity-Guides/introduction-0000001052079408</string>
+</resources>

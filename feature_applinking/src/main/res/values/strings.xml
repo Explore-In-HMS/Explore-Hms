@@ -1,0 +1,41 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+
+    <string name="app_header_text">App Linking</string>
+    <string name="switch_compat_text">Short link</string>
+
+    <string name="social_card_title_text">Social Card Title</string>
+    <string name="social_card_description_text">Social Card Description</string>
+
+    <string name="btn_createlink_text_applinking">Create Link</string>
+
+
+    <string name="deeplink_success_message">DeepLink success</string>
+    <string name="deeplink_failed_message">DeepLink failed</string>
+    <string name="app_linking_create_link">Create Link</string>
+    <string name="url_txt_applinking">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-applinking-introduction-0000001054143215</string>
+
+    <string name="create_link">Create Link</string>
+    <string name="service_introduction">Service Introduction</string>
+    <string name="applinking_info">Use App Linking to redirect users from different platforms to your in-app content. Users who have not yet installed your app will be redirected to AppGallery to download. App Linking also provides you with high-revealing data for analysis, such as link taps and app launches.</string>
+    <string name="text_share_info_applinking">Click on the created link to share the link.</string>
+
+
+</resources>

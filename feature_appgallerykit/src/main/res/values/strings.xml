@@ -1,0 +1,72 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <!--
+      ~ Copyright 2020. Explore in HMS. All rights reserved.
+      ~
+      ~    Licensed under the Apache License, Version 2.0 (the "License");
+      ~    you may not use this file except in compliance with the License.
+      ~    You may obtain a copy of the License at
+      ~
+      ~      http://www.apache.org/licenses/LICENSE-2.0
+      ~
+      ~    Unless required by applicable law or agreed to in writing, software
+      ~    distributed under the License is distributed on an "AS IS" BASIS,
+      ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      ~    See the License for the specific language governing permissions and
+      ~    limitations under the License.
+      -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="you_should_not_be_seeing_this_if_you_are_seeing_this_there_is_a_grave_error_occurred">YOU SHOULD NOT BE SEEING THIS! IF YOU ARE SEEING THIS, THERE IS A GRAVE ERROR OCCURRED.</string>
+    <string name="desc_default_string">AppGalleryKit</string>
+    <string name="desc_app_gallery_kit_app">AppGalleryKit App</string>
+    <string name="desc_app_gallery_kit_game">AppGalleryKit Game</string>
+    <string name="desc_app_initialize_app">Initializing the App</string>
+    <string name="desc_app_update_app">Updating the App</string>
+    <string name="desc_app_gallery_kit_introduction">Service Introduction</string>
+
+    <string name="docs">Docs</string>
+    <string name="explanation">Explanation</string>
+
+    <string name="appgallerykit_app_first_step">Initializing the App\n(Optional)</string>
+    <string name="appgallerykit_app_second_step">Updating the App\n(Optional)</string>
+    <string name="appgallerykit_app_third_step">Account Kit\n(Optional)</string>
+    <string name="appgallerykit_app_fourth_step">In-App Purchases\n(Mandatory)</string>
+    <string name="appgallerykit_app_first_step_output">When a user taps an app icon to launch the app, initialize the app in the background so that statistics about app use can be collected and in-app bulletins can be displayed. Please note that this function is mandatory if the app is released in China.</string>
+    <string name="appgallerykit_app_second_step_output">After an app is launched or when a user proactively checks whether there is a later version, call the update API of the HMS Core SDK to check whether there is a later version available on AppGallery. If so, display a pop-up asking the user whether to update the app. Common apps do not support forcible update. Users can choose not to update apps immediately. Please note that this function is mandatory if the app is released in China.</string>
+    <string name="appgallerykit_app_third_step_output">Account Kit provides you with simple, secure, and quick sign-in and authorization functions. Instead of entering accounts and passwords and waiting for authentication, users can just tap the Sign in with HUAWEI ID button to quickly and securely sign in to your app with their HUAWEI IDs. Please note that this function is mandatory if the app is released in China.</string>
+    <string name="appgallerykit_app_fourth_step_output">IAP provides convenient in-app payment experience, which helps you boost monetization. Users can purchase a variety of virtual products, including one-time virtual products and subscriptions, directly within your app. </string>
+
+    <string name="appgallerykit_game_developing_game_functions">Game Service\n(Optional)</string>
+    <string name="appgallerykit_game_game_update">Game Update\n(Optional)</string>
+    <string name="appgallerykit_game_developing_game_functions_output">HUAWEI Game Service provides HUAWEI ID sign-in, game addiction prevention,floating window,achievements, events, leaderboards, saved games, player statistics and access to basic game information features for your app. Games to be released in the Chinese mainland must support the floating window and game addiction prevention functions.</string>
+    <string name="appgallerykit_game_game_update_output">After an app is launched or when a user proactively checks whether there is a later version, call the related API of the HMS Core SDK to check whether there is a later version available on AppGallery. Please note that games released in the Chinese mainland must call this API.</string>
+
+    <string name="link_app_gallery_kit_documentation_introduction">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/appgallerykit-introduction</string>
+    <string name="desc_app_gallery_kit_app_explanantion">You can check the details of the following functions for using AppGalleryKit App. You can joint this functions for the non-game apps.</string>
+    <string name="desc_app_gallery_kit_game_explanantion">You can check the details of the following functions for using AppGalleryKit Game. You can joint this functions for the game apps.</string>
+    <string name="desc_app_gallery_kit_initialize_app">When a user taps an app icon to launch the app, initialize the app in the background so that statistics about app use can be collected and in-app bulletins can be displayed. Please note that if your app has a splash screen ad, initialize the app after the splash screen ad ends.\n\n\u2022This scenario is mandatory in the Chinese mainland and optional in other countries and regions.\n\u2022If your app provides a privacy agreement for users, it should call the init API after the user has accepted the privacy agreement.\n\u2022It is recommended that the app be initialized upon app launch, rather than during user operations such as sign-in and payment.\n</string>
+    <string name="desc_app_gallery_kit_update_app">After an app is launched or when a user proactively checks whether there is a later version, call the update API of the HMS Core SDK to check whether there is a later version available on AppGallery. If so, display a pop-up asking the user whether to update the app. Common apps do not support forcible update. Users can choose not to update apps immediately. You can investigate this process in below figure.\n</string>
+    <string name="desc_app_gallery_kit_game_update_feature">Please note that AppGalleryKit Game support non-immediate update and forcible update. For mobile game apps, you can enable force update. After this function is enabled, players must update the app to enter the game.</string>
+
+    <string name="app_gallery_kit_explanation1">Joint operations services allow you to jointly operate your apps with Huawei and share revenue generated in the process. You will have access to diverse services of HUAWEI which are HUAWEI AppGallery connection, data reports, activity operations, and user operations to obtain more premium HUAWEI AppGallery resources to promote your apps.\n\n</string>
+    <string name="app_gallery_kit_explanation2">To enable joint operations, you need to sign the HUAWEI AppGallery Connect Distribution Service Agreement For Paid Apps with Huawei. AppGalleryKit App is used for the non-game apps for which you have enabled joint operations, AppGalleryKit Game is used for the game apps for which you have enabled joint operations.\n\n</string>
+    <string name="app_gallery_kit_explanation3">For development details, you can use the link below to access to the official documentation of AppGallery Kit. \n\nAlso you can slide right to see some features in detail.</string>
+
+</resources>

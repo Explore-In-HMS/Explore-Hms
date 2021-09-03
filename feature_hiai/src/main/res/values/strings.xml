@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+
+<!-- COMMON -->
+    <string name="txt_camera_hiai">Camera</string>
+    <string name="txt_gallery_hiai">Gallery</string>
+    <string name="txt_run_service_hiai">Run Service</string>
+    <string name="txt_result_hiai">RESULT</string>
+    <string name="txt_score_hiai">Score</string>
+    <string name="txt_result_code_hiai">Result Code</string>
+    <string name="txt_result_image_hiai">Result Image</string>
+    <string name="txt_service_introduction">Service Introduction</string>
+    <string name="txt_see_document">See</string>
+    <string name="txt_null_hiai">NULL</string>
+    <string name="msg_error_occurred_check_rest_hiai">Error occurred, please check restrictions from developer guide</string>
+
+    <string name="txt_doc_link_main_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/introduction-0000001053217795</string>
+
+<!-- FACIAL RECOGNITION -->
+        <!-- Facial Comparison -->
+                <string name="txt_facial_comp_hiai">Facial Comparison</string>
+                <string name="txt_facial_comp_score_hiai">Score</string>
+                <string name="txt_facial_comp_is_same_person_hiai">Is Same Person</string>
+                <string name="txt_facial_comp_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/facial-comparison-introduction-0000001053859748</string>
+                <string name="msg_facial_comp_info_hiai">Facial comparison recognizes and extracts key facial features, performs high-precision comparisons of human faces, provides confidence scores, and determines whether the same person appears across different images</string>
+        <!-- Face Detection -->
+                <string name="txt_face_detection_hiai">Face Detection</string>
+                <string name="txt_face_detection_rotation_angle_hiai">Rotation angle : –90° (left), 90° (right)</string>
+                <string name="txt_face_detection_pitch_angle_hiai">Pitch angle : –90° (left), 90° (right)</string>
+                <string name="txt_face_detection_rotation_angle_plane_hiai">Rotation angel in a plane : –180° (counterclockwise), 180° (clockwise)</string>
+                <string name="txt_face_detection_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/face-detection-introduction-0000001053711588</string>
+                <string name="msg_face_detection_info_hiai">Face detection detects human faces in images, and maps the faces according to a high-precision rectangular grid</string>
+        <!-- Face Parsing -->
+                <string name="txt_face_parsing_hiai">Face Parsing</string>
+                <string name="txt_face_parsing_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/face-parsing-introduction-0000001054260975</string>
+                <string name="msg_face_parsing_info_hiai">Face parsing analyzes the surface composition of the human head (including the face), to obtain insights on facial features</string>
+        <!-- Face Attribute Recognition -->
+                <string name="txt_face_attributes_hiai">Face Attribute</string>
+                <string name="txt_face_attributes_age_hiai">Age</string>
+                <string name="txt_face_attributes_emotion_hiai">Emotion</string>
+                <string name="txt_face_attributes_sex_hiai">Sex</string>
+                <string name="txt_face_attributes_beard_hiai">Beard</string>
+                <string name="txt_face_attributes_glass_hiai">Glass</string>
+                <string name="txt_face_attributes_hat_hiai">Hat</string>
+                <string name="txt_face_attribute_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/face-attributes-introduction-0000001053941079</string>
+                <string name="msg_face_attributes_info_hiai">Face attributes are biological features that represent facial characteristics with strong inherent stability and individual variation, which are therefore useful for identifying individuals. Important variables include gender, skin tone, age, and expression</string>
+        <!-- Face Orientation Recognation -->
+                <string name="txt_face_orientation_recog_hiai">Face Orientation</string>
+                <string name="txt_face_orientation_recog_orientation_hiai">Orientation Of Face</string>
+                <string name="txt_face_orientation_recog_confidence_hiai">Orientation Of Face</string>
+                <string name="txt_face_orientation_recog_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/face-orientation-recognition-introduction-0000001054741166</string>
+                <string name="msg_face_orientation_recog_info_hiai">Face orientation recognition identifies face (head) orientation in an image, and returns the orientation information, including upward-facing, right-facing, downward-facing, left-facing, and no face, by utilizing advanced image recognition technologies</string>
+        <!-- Facial Feature Detection -->
+                <string name="txt_facial_feature_detection_hiai">Facial Feature Detection</string>
+                <string name="txt_facial_feature_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/facial-feature-detection-introduction-0000001054022505</string>
+                <string name="msg_facial_feature_detection_info_hiai">Facial feature recognition is used to detect the key features on a human face in the input image, and return the coordinates of the key points</string>
+<!-- IMAGE RECOGNITION -->
+        <!-- Aesthetics Score -->
+                <string name="txt_aesthetic_score_hiai">Aesthetics Score</string>
+                <string name="txt_aesthetic_osp_mode_hiai">OSP</string>
+                <string name="txt_aesthetic_osp_score_hiai">OSP Score</string>
+                <string name="txt_aesthetic_hf_mode_hiai">HF</string>
+                <string name="txt_aesthetic_hf_score_hiai">HF Score</string>
+                <string name="txt_aesthetic_all_mode_hiai">ALL</string>
+                <string name="txt_aesthetic_frame_time_stampt_hiai">Frame Timestamp</string>
+                <string name="txt_aesthetic_detect_image_mode_hiai">Detect Image Mode</string>
+                <string name="txt_aesthetic_score_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/aesthetic-score-introduction-0000001054030737</string>
+                <string name="msg_aesthetic_score_hiai">Aesthetic engine comprehends complex subjective aspects in images, and makes high-level judgments related to the attractiveness, memorability and engaging nature of an image</string>
+    <!-- Image Category Labeling -->
+                <string name="txt_image_category_labeling_hiai">Image Category Labeling</string>
+                <string name="txt_image_category_labeling_category_hiai">Category</string>
+                <string name="txt_image_category_labeling_category_probability_hiai">Category Probability</string>
+                <string name="txt_image_category_labeling_label_contents_hiai">Label Contents</string>
+                <string name="txt_image_category_labeling_label_contents_id_hiai">Label ID</string>
+                <string name="txt_image_category_labeling_label_contents_probability_hiai">Label Probability</string>
+                <string name="txt_image_category_labeling_label_content_hiai">Content %d</string>
+                <string name="txt_image_category_labeling_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/image-category-label-introduction-0000001054031637</string>
+                <string name="msg_image_category_labeling_hiai">Image category labeling identifies image elements such as objects, scenes, and actions, including flower, bird, fish, insect, vehicle, and building, based on deep learning methods</string>
+        <!-- Image Super Resolution -->
+                <string name="txt_image_super_resolution_hiai">Image Super Resolution</string>
+                <string name="txt_image_super_resolution_process_mode_hiai">Process Mode</string>
+                <string name="txt_image_super_resolution_process_mode_out_hiai">Mode Out</string>
+                <string name="txt_image_super_resolution_process_mode_in_hiai">Mode In</string>
+                <string name="txt_image_super_resolution_quality_hiai">Quality</string>
+                <string name="txt_image_super_resolution_quality_low_hiai">Low</string>
+                <string name="txt_image_super_resolution_quality_medium_hiai">Medium</string>
+                <string name="txt_image_super_resolution_quality_high_hiai">High</string>
+                <string name="txt_image_super_resolution_result_code_hiai">Result Code</string>
+                <string name="txt_image_super_resolution_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/image-super-resolution-introduction-0000001053970397</string>
+                <string name="msg_image_super_resolution_hiai">Image Super Resolution is with the deep learning technologies, an image can be intelligently upscaled, or the compressed noise can be removed without changing the resolution, so as to obtain an image that is clearer and sharper than with conventional image processing</string>
+        <!-- Scene Detection -->
+                <string name="txt_scene_detection_hiai">Scene Detection</string>
+                <string name="txt_scene_detection_scene_id_hiai">Scene ID</string>
+                <string name="txt_scene_detection_scene_name_hiai">Scene Name</string>
+                <string name="txt_scene_detection_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/scene-detection-introduction-0000001053850371</string>
+                <string name="msg_scene_detection_hiai">Scene detection can quickly classify images by identifying the type of scene to which image content belongs, including animals, green plants, food, buildings, and automobiles</string>
+        <!-- Document Skew Correction -->
+                <string name="txt_document_skew_correction_hiai">Document Skew Correction</string>
+                <string name="txt_document_skew_correction_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/document-correction-introduction-0000001054290390</string>
+                <string name="msg_document_skew_correction_hiai">Document skew correction is used to improve the document photography process by automatically identifying the document in an image, and returning the position information of the document in the original image</string>
+        <!-- Text Image Super-Resolution -->
+                <string name="txt_text_image_super_resolution_hiai">Text Image Super-Resolution</string>
+                <string name="msg_text_image_super_resolution_result_code_hiai">Result Code</string>
+                <string name="msg_text_image_super_resolution_result_image_hiai">Result Image</string>
+                <string name="msg_text_image_super_resolution_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/character-image-super-resolution-introduction-0000001054051662</string>
+                <string name="msg_text_image_super_resolution_hiai">Text image super-resolution can upscale an image that contains text by 9 times (3 times for each edge) to significantly improve the definition of text in the image</string>
+        <!-- Portrait Segmentation -->
+                <string name="txt_portrait_segmentation_hiai">Portrait Segmentation</string>
+                <string name="txt_portrait_segmentation_result_code_hiai">Result Code</string>
+                <string name="txt_portrait_segmentation_result_image_hiai">Result Image</string>
+                <string name="txt_portrait_segmentation_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/portrait-segmentation-introduction-0000001053971672</string>
+                <string name="msg_portrait_segmentation_hiai">Portrait segmentation separates the portrait in an image from the background to form different areas, which are distinguished using different labels</string>
+        <!-- Semantic Segmentation -->
+                <string name="txt_semantic_segmentation_hiai">Semantic Segmentation</string>
+                <string name="txt_semantic_segmentation_result_code_hiai">Result Code</string>
+                <string name="txt_semantic_segmentation_result_image_hiai">Result Image</string>
+                <string name="txt_semantic_segmentation_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/image-semantic-segmentation-introduction-0000001054610398</string>
+                <string name="msg_semantic_segmentation_hiai">Semantic segmentation performs pixel-level recognition and segmentation on a photo, to obtain category information and accurate position information of objects in the image</string>
+<!-- Code Recognition -->
+        <!-- Code Recognition -->
+                <string name="txt_code_recognition_hiai">Code Recognition</string>
+                <string name="txt_code_recognation_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/code-detection-introduction-0000001054627922</string>
+                <string name="msg_code_recognition_hiai">Code recognition identifies the QR codes and bar codes to obtain the contained information, based on which the service framework is provided</string>
+<!-- Video Technology -->
+        <!-- Video Summarization -->
+                <string name="txt_video_summarization_hiai">Video Summarization</string>
+                <string name="txt_video_summarization_start_video_hiai">Watch Part</string>
+                <string name="txt_video_summarization_video_paths_hiai">Video Paths</string>
+                <string name="txt_video_summarization_summary_video_parts_hiai">Summarized Video Parts</string>
+                <string name="txt_video_summarization_live_cover_hiai">Live Cover</string>
+                <string name="txt_video_summarization_watch_live_cover_hiai">Watch Live Cover</string>
+                <string name="txt_video_summarization_static_cover_hiai">Static Cover</string>
+                <string name="txt_video_summarization_summary_video_parts_count_hiai">Summarized Video Parts : %d</string>
+                <string name="txt_video_summarization_summary_video_part_x_hiai">Parts : %d</string>
+                <string name="txt_video_summarization_summary_video_start_end_time_hiai">Start sec : %d - End Sec : %d </string>
+                <string name="txt_video_summarization_summary_static_time_hiai">Time : %d</string>
+                <string name="txt_video_summarization_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/video-summary-introduction-0000001054796828</string>
+                <string name="msg_video_summarization_hiai">Implementing an advanced multi-dimensional scoring framework, the aesthetic engine assists with shooting, photo selection, video editing, and video splitting, by comprehending complex subjective aspects in images, and making high-level judgments related to the attractiveness, memorability and engaging nature of images</string>
+<!-- Text Recognition -->
+        <!-- General Text Recognition -->
+                <string name="txt_general_text_recognition_hiai">General Text Recognition</string>
+                <string name="txt_general_text_recognition_text_lang_hiai">Text Language</string>
+                <string name="txt_general_text_recognition_text_value_hiai">Text Value</string>
+                <string name="txt_general_text_recognition_lang_hiai">Language</string>
+                <string name="txt_general_text_recognition_probability_hiai">Probability</string>
+                <string name="txt_general_text_recognition_auto_hiai">Auto</string>
+                <string name="txt_general_text_recognition_manuel_hiai">Manuel</string>
+                <string name="txt_general_text_recognition_result_image_hiai">Result Image</string>
+                <string name="txt_general_text_recognition_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/screenshot-ocr-introduction-0000001054078319</string>
+                <string name="msg_general_text_recognition_hiai">General Text Recognition extracts text in screenshots and photos taken by the phone camera. Currently supports from screenshots with simple to more complex backgrounds,shots where the focus is on the text,recreated film,shots with indoor and outdoor lighting,packaging</string>
+        <!-- Table Recognition -->
+                <string name="txt_table_recognition_hiai">Table Recognition</string>
+                <string name="txt_table_recognition_cell_results">Table Cells Result</string>
+                <string name="txt_table_recognition_cell_word">Cell Word</string>
+                <string name="txt_table_recognition_cell_start_col">Start Column</string>
+                <string name="txt_table_recognition_cell_start_row">Start Row</string>
+                <string name="txt_table_recognition_cell_end_column">End Colum</string>
+                <string name="txt_table_recognition_cell_end_row">End Row</string>
+                <string name="txt_table_recognition_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/table-ocr-introduction-0000001054398275</string>
+                <string name="msg_table_recognition_hiai">Based on the OCR capability for photos, table recognition recognizes text in input images and detects the table structure, including the position of each cell, number of rows and columns of each cell, as well as the text in each cell</string>
+        <!-- Document Text Converter -->
+                <string name="txt_document_text_converter_hiai">Document Text Converter</string>
+                <string name="txt_document_text_converter_text_lang_hiai">Text Language</string>
+                <string name="txt_document_text_converter_text_auto_hiai">Auto</string>
+                <string name="txt_document_text_converter_text_manuel_hiai">Manuel</string>
+                <string name="txt_document_text_converter_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/doctransfer-ocr-introduction-0000001054319010</string>
+                <string name="txt_document_text_converter_result_image_hiai">Result Image</string>
+                <string name="txt_document_text_converter_coordinates_hiai">Coordinates</string>
+                <string name="txt_document_text_converter_no_coordinates_hiai">No Coordinates</string>
+                <string name="txt_document_text_converter_no_result_hiai">No Result</string>
+                <string name="txt_document_text_converter_text_text_val_hiai">Text Value</string>
+                <string name="txt_document_text_converter_text_text_lang_hiai">Text Language</string>
+                <string name="txt_document_text_converter_text_probability_hiai">Probability</string>
+                <string name="msg_document_text_converter_hiai">Document converter enables apps to convert document images into electronic documents conveniently, such as PPT files</string>
+<!-- Body Recognition -->
+        <!-- Pose Estimation -->
+                <string name="txt_pose_estimation_hiai">Pose Estimation</string>
+                <string name="txt_pose_estimation_points_hiai">Points</string>
+                <string name="txt_pose_estimation_points_on_image_hiai">Points on Image</string>
+                <string name="txt_pose_estimation_body_not_found_hiai">Body Could Not Found</string>
+                <string name="txt_pose_estimation_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/skeleton-ocr-introduction-0000001054263137</string>
+                <string name="msg_pose_estimation_hiai">Pose estimation mainly detects key human body features such as joints and facial features, and provides skeletal information based on such features</string>
+        <!-- Video Portrait Segmentation -->
+                <string name="txt_video_portrait_segmentation_hiai">Video Portrait Segmentation</string>
+                <string name="txt_video_portrait_segmentation_back_camera_hiai">Back Camera</string>
+                <string name="txt_video_portrait_segmentation_front_camera_hiai">Front Camera</string>
+                <string name="msg_video_portrait_segmentation_tap_hiai">Click to Start Segmentation</string>
+                <string name="msg_video_portrait_segmentation_stream_results_hiai">Stream Results</string>
+                <string name="msg_video_portrait_segmentation_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/videoportrait-ocr-introduction-0000001054468190</string>
+                <string name="msg_video_portrait_segmentation_hiai">Video portrait segmentation supports real-time processing of video streams. You can pass every frame of image in real-time video streams to HUAWEI HiAI Engine to segment the portrait in the frames and obtain the result</string>
+</resources>

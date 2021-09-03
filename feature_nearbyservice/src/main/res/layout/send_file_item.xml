@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:theme="@style/AppTheme.Material">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1nearby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".65" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_fileName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:text="fileName"
+            app:layout_constraintBottom_toTopOf="@+id/tv_fileSize"
+            app:layout_constraintEnd_toStartOf="@+id/iv_file_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_fileSize"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:text="fileSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/iv_file_default"
+            app:layout_constraintStart_toStartOf="@+id/tv_fileName"
+            app:layout_constraintTop_toBottomOf="@+id/tv_fileName" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_file_default"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/file_default"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline1nearby"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/pb_trans_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/tv_progress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline1nearby"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="178k/180k"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline1nearby"
+            app:layout_constraintTop_toBottomOf="@+id/pb_trans_file" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/rl_file_layout"-->
+<!--            android:layout_width="240dp"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:background="@color/colorGray1nt"-->
+<!--            android:padding="10dp">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_fileName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_toLeftOf="@id/iv_file_default"-->
+<!--                android:maxLines="2"-->
+<!--                android:text="file name" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_fileSize"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@id/tv_fileName"-->
+<!--                android:text="file size" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_file_default"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@mipmap/file_default" />-->
+<!--        </RelativeLayout>-->
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/rl_progress"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:layout_toEndOf="@id/rl_file_layout"-->
+<!--            android:gravity="center">-->
+
+<!--            <ProgressBar-->
+<!--                android:id="@+id/pb_trans_file"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/Widget.AppCompat.ProgressBar.Horizontal"-->
+<!--                android:indeterminateTint="@color/colorDarkGreen"-->
+<!--                android:indeterminateTintMode="src_atop"-->
+<!--                android:progress="100" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_progress"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@id/pb_trans_file"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:text="178k/180k" />-->
+<!--        </RelativeLayout>-->
+
+
+</androidx.cardview.widget.CardView>

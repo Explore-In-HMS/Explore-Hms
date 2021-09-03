@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="accelerate_kit_thread_count">Thread Count: %1$d</string>
+    <string name="accelerate_kit_time">Time: %1$s sn</string>
+    <string name="accelerate_kit_pi_result">Calculated PI value: %1$s</string>
+    <string name="accelerate_kit_info_text">HUAWEI Accelerate Kit provides the multi-thread acceleration capability that efficiently
+        improves concurrent execution of multiple threads. It is located above the kernel in the OS and opened to developers as a set of C language APIs.</string>
+    <string name="multithread_lib_service_introduction_text">Multi Thread Lib Service Introduction</string>
+    <string name="set_thread_count_should_be">Thread count should be between 0-20</string>
+    <string name="calculate_pi_button_text">Calculate Pi</string>
+    <string name="url_txt_acceleratekit">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001050980807</string>
+</resources>
