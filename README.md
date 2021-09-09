@@ -7,8 +7,46 @@
 
 ## Screenshots
 
-![1](https://imgur.com/U29ct2I.jpg)![2](https://imgur.com/nbzOvFs.jpg)![3](https://imgur.com/fdZp9h0.jpg)![4](https://imgur.com/v3LqMsW.jpg)
-![5](https://imgur.com/p0KyQkn.jpg)![6](https://imgur.com/5sKdjSc.jpg)![7](https://imgur.com/dPHH5CL.jpg)![8](https://imgur.com/RT8S4xg.jpg)
+<table>
+<tr>
+<td>
+<img src="/art/1.png" width="300"/>
+
+</td>
+<td>
+<img src="/art/2.png" width="300"/>
+
+</td>
+<td>
+<img src="/art/3.png" width="300"/>
+
+</td>
+<td>
+<img src="/art/4.png" width="300"/>
+
+</td>
+</tr>
+
+<tr>
+<td>
+<img src="/art/5.png" width="300"/>
+
+</td>
+<td>
+<img src="/art/6.png" width="300"/>
+
+</td>
+<td>
+<img src="/art/7.png" width="300"/>
+
+</td>
+<td>
+<img src="/art/8.png" width="300"/>
+
+</td>
+</tr>
+</table>
+
 
 ## Introduction
 HMS Sandbox application will host all HMS Core services and kits as example modules. It targets to include all features that HMS can provide. Because HMS Core is rapidly growing source, new modules and features fill be added. With each update, the application will be kept up to date, new features will be added, the application and modules will be constantly updated and optimized.
@@ -769,14 +807,14 @@ Features:
 * [Huawei Developers Forum](https://forums.developer.huawei.com/forumPortal/en/home)
 
 ## Licence
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-     http://www.apache.org/licenses/LICENSE-2.0
+       http://www.apache.org/licenses/LICENSE-2.0
 
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
