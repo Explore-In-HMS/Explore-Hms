@@ -28,8 +28,10 @@
     <string name="btn_ar_view">AR View</string>
     <string name="btn_face_view">Face View</string>
     <string name="btn_render_view">Render View</string>
+    <string name="btn_simulation_view">2D Fluid Simulation View</string>
     <string name="title_ar_view">AR View</string>
     <string name="title_render_view">Render View</string>
+    <string name="title_simulation_view">2D Simulation View</string>
     <string name="title_face_view">Face View</string>
     <string name="title_scene_view">Scene View</string>
     <string name="service_exp">Service Introduction</string>

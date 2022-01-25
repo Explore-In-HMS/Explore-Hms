@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CastEngineMainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_castengine"
+        style="@style/ToolbarAppearance.Sandbox.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Cast Engine" />
+
+    <ScrollView
+        android:id="@+id/layScroll_castengine"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_castengine">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvHeaderIntro"
+                style="@style/TextAppearance.Sandbox.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Service Introduction"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvInfoText1_castengine"
+                style="@style/TextAppearance.Sandbox.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/infotext_1_castengine"
+                app:layout_constraintTop_toBottomOf="@+id/tvHeaderIntro" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivHeader_castengine"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvInfoText1_castengine"
+                app:srcCompat="@drawable/header_castengine" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvScenarios_castengine"
+                style="@style/TextAppearance.Sandbox.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/scenarios_castengine"
+                app:layout_constraintTop_toBottomOf="@+id/ivHeader_castengine" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvScenariosInfoText_castengine"
+                style="@style/TextAppearance.Sandbox.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvScenarios_castengine" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivImage_castengine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_castengine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvScenariosInfoText_castengine" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvAdvantages_castengine"
+                style="@style/TextAppearance.Sandbox.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/advantages_text"
+                app:layout_constraintTop_toBottomOf="@+id/ivImage_castengine" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvAdvantagesInfoText_castengine"
+                style="@style/TextAppearance.Sandbox.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvAdvantages_castengine" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvSupportedDevices_castengine"
+                style="@style/TextAppearance.Sandbox.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/supported_devices_text"
+                app:layout_constraintTop_toBottomOf="@+id/tvAdvantagesInfoText_castengine" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvSupportedDevicesText_castengine"
+                style="@style/TextAppearance.Sandbox.Body1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/supported_device"
+                app:layout_constraintEnd_toStartOf="@+id/tvSupportedDevicesText2_castengine"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSupportedDevices_castengine" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvSupportedDevicesText2_castengine"
+                style="@style/TextAppearance.Sandbox.Body1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/supported_osversion"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvSupportedDevicesText_castengine"
+                app:layout_constraintTop_toBottomOf="@+id/tvSupportedDevices_castengine" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPrecautions_castengine"
+                style="@style/TextAppearance.Sandbox.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/precautions_text"
+                app:layout_constraintTop_toBottomOf="@+id/tvSupportedDevicesText_castengine" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPrecautionsText_castengine"
+                style="@style/TextAppearance.Sandbox.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPrecautions_castengine" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -35,6 +35,7 @@ import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 
 public class MainActivityMapKit extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

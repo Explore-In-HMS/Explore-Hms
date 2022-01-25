@@ -53,6 +53,8 @@ public class MapKitMapStyleFragment extends BaseFragment implements OnMapReadyCa
     }
 
     private void changeStyle() {
+        /*        hMap.previewId("661426468651539584");
+        hMap.setStyleId("661432858472356992");*/
         hMap.setMapStyle(darkMode ? MapStyleOptions.loadRawResourceStyle(requireContext(), R.raw.mapstyle_night_hms) :
                 MapStyleOptions.loadRawResourceStyle(requireContext(), R.raw.mapstyle_grayscale_hms));
     }

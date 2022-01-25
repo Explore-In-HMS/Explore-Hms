@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
+    android:keepScreenOn="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.PlayerActivity">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_info_sound"
+        android:visibility="gone"
+        style="@style/TextAppearance.Sandbox.Body2"
+        android:text="@string/tv_sound_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <Button
+        android:id="@+id/selectFileBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginStart="15dp"
+        android:text="@string/choose_file"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_info_sound" />
+
+    <Switch
+        android:id="@+id/switchSr"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginEnd="15dp"
+        android:checked="false"
+        android:showText="true"
+        android:text="SR"
+        android:textOn=""
+        android:textOff=""
+        app:layout_constraintTop_toTopOf="@id/selectFileBtn"
+        app:layout_constraintBottom_toBottomOf="@id/selectFileBtn"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <SurfaceView
+        android:id="@+id/surfaceViewup"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintTop_toBottomOf="@id/selectFileBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/startStopButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/play"
+        android:clickable="true"
+        app:layout_constraintStart_toStartOf="@id/surfaceViewup"
+        app:layout_constraintTop_toBottomOf="@id/surfaceViewup" />
+
+    <TextView
+        android:id="@+id/textViewNow"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="00:00"
+        app:layout_constraintStart_toEndOf="@id/startStopButton"
+        app:layout_constraintTop_toBottomOf="@id/surfaceViewup" />
+
+    <TextView
+        android:id="@+id/textViewTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/surfaceViewup"
+        app:layout_constraintTop_toBottomOf="@id/surfaceViewup"
+        app:layout_constraintHorizontal_bias="1"
+        android:gravity="center"
+        android:text="00:00" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@id/textViewTotal"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textViewNow"
+        app:layout_constraintTop_toBottomOf="@id/surfaceViewup" />
+
+    <ImageButton
+        android:id="@+id/muteButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/volume"
+        android:clickable="true"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/surfaceViewup"
+        app:layout_constraintTop_toBottomOf="@id/startStopButton" />
+
+    <SeekBar
+        android:id="@+id/volumeSeekBar"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:max="10"
+        android:progress="0"
+        app:layout_constraintTop_toTopOf="@id/muteButton"
+        app:layout_constraintBottom_toBottomOf="@id/muteButton"
+        app:layout_constraintEnd_toEndOf="@id/seekBar"
+        app:layout_constraintLeft_toRightOf="@id/muteButton"
+        app:layout_constraintStart_toStartOf="@id/seekBar" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/soundEvent"
+        style="@style/TextAppearance.Sandbox.Headline6"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/volumeSeekBar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

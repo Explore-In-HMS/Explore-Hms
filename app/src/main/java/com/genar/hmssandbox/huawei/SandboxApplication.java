@@ -18,33 +18,41 @@
 
 package com.genar.hmssandbox.huawei;
 
+
 import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
+import com.genar.hmssandbox.huawei.baseapp.util.DatabaseAppUtils;
+import com.genar.hmssandbox.huawei.baseapp.util.DatabaseMaterialAppUtils;
+import com.genar.hmssandbox.huawei.baseapp.util.OverseasContextWrapper;
+import com.huawei.hms.api.HuaweiMobileServicesUtil;
+import com.huawei.hms.audioeditor.common.agc.HAEApplication;
 import com.huawei.hms.feature.dynamicinstall.FeatureCompat;
+import com.huawei.hms.materialgeneratesdk.MaterialGenApplication;
 import com.huawei.hms.network.NetworkKit;
+import com.huawei.hms.objreconstructsdk.ReconstructApplication;
 import com.huawei.hms.videokit.player.InitFactoryCallback;
+import com.huawei.hms.videokit.player.LogConfigInfo;
 import com.huawei.hms.videokit.player.WisePlayerFactory;
-import com.huawei.hms.videokit.player.WisePlayerFactoryOptions;
-import com.huawei.hms.videokit.player.util.log.Logger;
+import com.huawei.hms.videokit.player.WisePlayerFactoryOptionsExt;
+
+import me.jessyan.autosize.AutoSizeConfig;
+import me.jessyan.autosize.unit.Subunits;
 
 public class SandboxApplication extends Application {
 
     private static final String TAG = "DENEME";
 
-    private static WisePlayerFactory factory;
+    public static SandboxApplication app;
 
-    public static WisePlayerFactory getWisePlayerFactory() {
-        if (factory != null) {
-            return factory;
-        } else
-            return null;
-    }
+    private static WisePlayerFactory wisePlayerFactory = null;
+
+
 
     @Override
     protected void attachBaseContext(Context base) {
-        super.attachBaseContext(base);
+        super.attachBaseContext(OverseasContextWrapper.wrap(base,"en"));
         // Start the Dynamic Ability SDK.
         try {
             FeatureCompat.install(base);
@@ -56,24 +64,11 @@ public class SandboxApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
-        // Pass the device ID to the setDeviceId method.
-        WisePlayerFactoryOptions factoryOptions = new WisePlayerFactoryOptions.Builder().setDeviceId("xxx").build();
-
-        // In the multi-process scenario, the onCreate method in Application is called multiple times.
-        // The app needs to call the WisePlayerFactory.initFactory() API in the onCreate method of the app process (named "app package name") and WisePlayer process (named "app package name:player").
-        WisePlayerFactory.initFactory(this, factoryOptions, new InitFactoryCallback() {
-            @Override
-            public void onSuccess(WisePlayerFactory wisePlayerFactory) {
-                Logger.d(TAG, "onSuccess wisePlayerFactory:" + wisePlayerFactory);
-                factory = wisePlayerFactory;
-            }
-
-            @Override
-            public void onFailure(int errorCode, String msg) {
-                Logger.e(TAG, "onFailure errorcode:" + errorCode + " reason:" + msg);
-            }
-        });
+        HuaweiMobileServicesUtil.setApplication(this);
+        DatabaseAppUtils.initDatabase(this);
+        DatabaseMaterialAppUtils.initDatabase(this);
+        app = this;
+        initAutoSize();
         NetworkKit.init(
                 getApplicationContext(),
                 new NetworkKit.Callback() {
@@ -86,5 +81,49 @@ public class SandboxApplication extends Application {
                         }
                     }
                 });
+        initPlayer();
     }
+
+    private void initAutoSize() {
+        AutoSizeConfig.getInstance().getUnitsManager()
+                .setSupportDP(false)
+                .setSupportSP(false)
+                .setSupportSubunits(Subunits.MM);
+    }
+
+    private void initPlayer() {
+        // DeviceId test is used in the demo, specific access to incoming deviceId after encryption
+        WisePlayerFactoryOptionsExt.Builder factoryOptions =
+                new WisePlayerFactoryOptionsExt.Builder().setDeviceId("xxx");
+        LogConfigInfo logCfgInfo =
+                new LogConfigInfo(Constants.LEVEL_DEBUG, "", Constants.LOG_FILE_NUM, Constants.LOG_FILE_SIZE);
+        factoryOptions.setLogConfigInfo(logCfgInfo);
+        WisePlayerFactory.initFactory(this, factoryOptions.build(), initFactoryCallback);
+    }
+
+    /**
+     * Player initialization callback
+     */
+    private static final InitFactoryCallback initFactoryCallback = new InitFactoryCallback() {
+        @Override
+        public void onSuccess(WisePlayerFactory wisePlayerFactory) {
+            Log.i(TAG, "init player factory success");
+            setWisePlayerFactory(wisePlayerFactory);
+        }
+
+        @Override
+        public void onFailure(int errorCode, String reason) {
+            Log.w(TAG, "init player factory fail reason :" + reason + ", errorCode is " + errorCode);
+        }
+    };
+
+    public static WisePlayerFactory getWisePlayerFactory() {
+        return wisePlayerFactory;
+    }
+
+    private static void setWisePlayerFactory(WisePlayerFactory wisePlayerFactory) {
+        SandboxApplication.wisePlayerFactory = wisePlayerFactory;
+    }
+
+
 }

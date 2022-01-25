@@ -58,15 +58,15 @@ public class AudioKillService extends Service {
         Log.i(TAG, "onBind");
         return null;
     }
-	
-	@Override
+
+    @Override
     public void onTaskRemoved(Intent rootIntent) {
         try {
-			Log.w(TAG, "run: kill my self.");
-			android.os.Process.killProcess(android.os.Process.myPid());
-		} catch (RuntimeException e) {
-			Log.e(TAG, TAG, e);
-		}
+            Log.w(TAG, "run: kill my self.");
+            android.os.Process.killProcess(android.os.Process.myPid());
+        } catch (RuntimeException e) {
+            Log.e(TAG, TAG, e);
+        }
         super.onTaskRemoved(rootIntent);
     }
 }

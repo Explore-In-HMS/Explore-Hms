@@ -215,13 +215,13 @@ public class PhoneLoginActivity extends AppCompatActivity {
             task.addOnSuccessListener(TaskExecutors.uiThread(), new OnSuccessListener<VerifyCodeResult>() {
                 @Override
                 public void onSuccess(VerifyCodeResult verifyCodeResult) {
-                    String msg = getResources().getString(R.string.verify_code_send_mail) + " : onSuccess.. ";
+                    String msg = getResources().getString(R.string.verify_code_send) + " : onSuccess.. ";
                     showSuccessMessageDetail(msg, msg + " : \nverifyCodeResult ValidityPeriod : " + verifyCodeResult.getValidityPeriod());
                 }
             }).addOnFailureListener(TaskExecutors.uiThread(), new OnFailureListener() {
                 @Override
                 public void onFailure(Exception e) {
-                    showErrorMessageDetail(getResources().getString(R.string.verify_code_send_mail) + PHONE_LOGIN_ON_FAILURE, e);
+                    showErrorMessageDetail(getResources().getString(R.string.verify_code_send) + PHONE_LOGIN_ON_FAILURE, e);
                 }
             });
 

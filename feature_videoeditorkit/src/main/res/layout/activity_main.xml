@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_main_video_editor_kit"
+        style="@style/ToolbarAppearance.Sandbox.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/video_editor_kit" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_start_editing"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_main_video_editor_kit"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_height="wrap_content"
+        style="@style/ButtonAppearance.Sandbox.Normal"
+        android:text="@string/start_editing_video"
+        android:layout_margin="@dimen/hiad_16_dp">
+    </com.google.android.material.button.MaterialButton>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/draft_rv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_start_editing"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/hiad_16_dp"
+        android:layout_marginLeft="@dimen/hiad_16_dp"
+        android:layout_marginRight="@dimen/hiad_16_dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

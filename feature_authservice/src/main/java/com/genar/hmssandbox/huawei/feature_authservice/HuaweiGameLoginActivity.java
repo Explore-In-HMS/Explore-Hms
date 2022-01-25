@@ -35,19 +35,26 @@ import com.huawei.agconnect.auth.AGConnectAuth;
 import com.huawei.agconnect.auth.AGConnectAuthCredential;
 import com.huawei.agconnect.auth.AGConnectUser;
 import com.huawei.agconnect.auth.HWGameAuthProvider;
+import com.huawei.hmf.tasks.OnFailureListener;
+import com.huawei.hmf.tasks.OnSuccessListener;
 import com.huawei.hmf.tasks.Task;
 import com.huawei.hms.api.HuaweiMobileServicesUtil;
 import com.huawei.hms.common.ApiException;
+import com.huawei.hms.jos.AntiAddictionCallback;
+import com.huawei.hms.jos.AppParams;
 import com.huawei.hms.jos.JosApps;
 import com.huawei.hms.jos.JosAppsClient;
+import com.huawei.hms.jos.JosStatusCodes;
 import com.huawei.hms.jos.games.Games;
 import com.huawei.hms.jos.games.PlayersClient;
 import com.huawei.hms.jos.games.player.Player;
+import com.huawei.hms.support.account.request.AccountAuthParams;
 import com.huawei.hms.support.hwid.HuaweiIdAuthManager;
 import com.huawei.hms.support.hwid.request.HuaweiIdAuthParams;
 import com.huawei.hms.support.hwid.request.HuaweiIdAuthParamsHelper;
 import com.huawei.hms.support.hwid.result.AuthHuaweiId;
 import com.huawei.hms.support.hwid.service.HuaweiIdAuthService;
+import com.huawei.hms.utils.ResourceLoaderUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -125,8 +132,41 @@ public class HuaweiGameLoginActivity extends AppCompatActivity {
         try {
             HuaweiMobileServicesUtil.setApplication(getApplication());
 
-            JosAppsClient appsClient = JosApps.getJosAppsClient(HuaweiGameLoginActivity.this, null);
-            appsClient.init();
+            AccountAuthParams params = AccountAuthParams.DEFAULT_AUTH_REQUEST_PARAM_GAME;
+            JosAppsClient appsClient = JosApps.getJosAppsClient(this);
+            Task<Void> initTask;
+            ResourceLoaderUtil.setmContext(this);  // Set the game addiction prevention message context, which is mandatory.
+            initTask = appsClient.init(
+                    new AppParams(params, new AntiAddictionCallback() {
+                        @Override
+                        public void onExit() {
+                            // The callback is returned in either of the following cases:
+                            // 1. If a minor who has passed identity verification signs in to your game beyond the allowed time period, Game Service will display a message, indicating that the player is not allowed to enter the game, and the player taps OK.
+                            // 2. A minor who has passed identity verification signs in to your game within the allowed time period. If the player is still playing the game at 21:00, Game Service notifies the player that the allowed time period ends, and the player taps OK.
+                            // Implement the game addiction prevention function including saving the game progress and calling the account sign-out API or exiting the game process using System.exit(0).
+                        }
+                    }));
+            initTask.addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+
+                }
+            }).addOnFailureListener(
+                    new OnFailureListener() {
+                        @Override
+                        public void onFailure(Exception e) {
+                            if (e instanceof ApiException) {
+                                ApiException apiException = (ApiException) e;
+                                int statusCode = apiException.getStatusCode();
+                                // Result code 7401 indicates that the user does not agree to Huawei's joint operations privacy agreement.
+                                if (statusCode == JosStatusCodes.JOS_PRIVACY_PROTOCOL_REJECTED) {
+                                    Log.d("failure","has reject the protocol");
+                                    // Exit the game.
+                                }
+                                // Process other result codes.
+                            }
+                        }
+                    });
             HuaweiIdAuthParams authParams = new HuaweiIdAuthParamsHelper(HuaweiIdAuthParams.DEFAULT_AUTH_REQUEST_PARAM_GAME).createParams();
             HuaweiIdAuthService authService = HuaweiIdAuthManager.getService(this, authParams);
             startActivityForResult(authService.getSignInIntent(), ACTIVITY_REQUEST_LOGIN_WITH_HUAWEI_GAME);

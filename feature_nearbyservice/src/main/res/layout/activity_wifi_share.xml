@@ -21,22 +21,25 @@
     android:layout_height="match_parent"
     tools:ignore="MissingDefaultResource">
 
-    <LinearLayout
-        android:id="@+id/ll_top"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_nearbyservice"
+        style="@style/ToolbarAppearance.Sandbox.Normal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="?attr/actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Nearby WiFi" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_nearbyservice"
-            style="@style/ToolbarAppearance.Sandbox.Normal"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:title="Nearby WiFi" />
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_nearbyservice">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,14 +48,20 @@
             android:layout_marginTop="@dimen/hiad_16_dp"
             android:layout_marginRight="@dimen/hiad_16_dp"
             android:layout_marginBottom="@dimen/hiad_16_dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/txt_connect_wifi"
                 style="@style/TextAppearance.Sandbox.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/string_connect_wifi_title" />
+                android:layout_marginTop="50dp"
+                android:text="@string/string_connect_wifi_title"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar_nearbyservice" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_connect_wifi"

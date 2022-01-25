@@ -104,7 +104,7 @@ public class PlaylistCreator {
         HwAudioPlayItem audioPlayItem1 = new HwAudioPlayItem();
         audioPlayItem1.setAudioId("1000");
         audioPlayItem1.setSinger("Sample MP3 - Need lower bandwidth");
-        audioPlayItem1.setOnlinePath("https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3");
+        audioPlayItem1.setOnlinePath("https://lfmusicservice.hwcloudtest.cn:18084/HMS/audio/Taoge-dayu.mp3");
         audioPlayItem1.setOnline(1);
         audioPlayItem1.setAudioTitle("Kalimba - MP3");
         playItemList.add(audioPlayItem1);
@@ -112,7 +112,7 @@ public class PlaylistCreator {
         HwAudioPlayItem audioPlayItem2 = new HwAudioPlayItem();
         audioPlayItem2.setAudioId("1001");
         audioPlayItem2.setSinger("Sample FLAC - Need higher bandwidth");
-        audioPlayItem2.setOnlinePath("https://www.learningcontainer.com/wp-content/uploads/2020/02/Sample-FLAC-File.flac");
+        audioPlayItem2.setOnlinePath("https://lfmusicservice.hwcloudtest.cn:18084/HMS/audio/Taoge-chengshilvren.mp3");
         audioPlayItem2.setOnline(1);
         audioPlayItem2.setAudioTitle("Kalimba - FLAC");
         playItemList.add(audioPlayItem2);

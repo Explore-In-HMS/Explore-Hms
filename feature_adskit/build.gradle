@@ -37,7 +37,7 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 26
+        minSdkVersion 28
         targetSdkVersion 30
         versionCode gradleVersionCode
         versionName gradleVersionName
@@ -61,9 +61,9 @@ dependencies {
 //    androidTestImplementation 'androidx.annotation:annotation:1.1.0'
 
 //    implementation "androidx.cardview:cardview:1.0.0"
-    implementation 'com.huawei.hms:ads-lite:13.4.39.302'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.huawei.hms:ads-lite:13.4.47.302'
+/*    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'*/
 //    implementation 'androidx.appcompat:appcompat:1.2.0'
 //    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 

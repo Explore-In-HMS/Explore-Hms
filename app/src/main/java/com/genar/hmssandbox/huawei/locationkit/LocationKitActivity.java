@@ -36,6 +36,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.genar.hmssandbox.huawei.R;
 import com.genar.hmssandbox.huawei.Util;
 import com.huawei.hmf.tasks.Task;
@@ -50,18 +54,15 @@ import com.huawei.hms.location.LocationResult;
 import com.huawei.hms.location.LocationServices;
 import com.huawei.hms.location.LocationSettingsRequest;
 import com.huawei.hms.location.LocationSettingsResponse;
+import com.huawei.hms.location.LocationSettingsStates;
 import com.huawei.hms.location.NavigationRequest;
 import com.huawei.hms.location.NavigationResult;
 import com.huawei.hms.location.SettingsClient;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 import java.util.Locale;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import org.jetbrains.annotations.NotNull;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -79,6 +80,8 @@ public class LocationKitActivity extends AppCompatActivity {
     int reqCount = 0;
 
     private LocationCallback mLocationCallback;
+
+    private LocationSettingsStates mLocationGnss;
 
     private LocationRequest mLocationRequest;
 
@@ -142,7 +145,7 @@ public class LocationKitActivity extends AppCompatActivity {
         unbinder = ButterKnife.bind(this);
 
         instance = this;
-
+        mLocationGnss = new LocationSettingsStates();
         createFusedLocationProviderClient();
         createLocationSettingClient();
 
@@ -682,21 +685,27 @@ public class LocationKitActivity extends AppCompatActivity {
             if (resultCode == -1) {
                 Log.i(TAG, getString(R.string.applyGpsResolvableApiExceptionSuccessful));
                 Utils.showToastMessage(getApplicationContext(), getString(R.string.gpsIsActivated));
+                mLocationGnss.setGnssUsable(true);
+                mLocationGnss.setGnssPresent(true);
                 requestLocationUpdatesWithCallback();
             } else {
                 Log.i(TAG, getString(R.string.applyGpsResolvableApiExceptionSuccessful));
                 Utils.showToastMessage(getApplicationContext(), getString(R.string.gpsIsNotActivated));
+                mLocationGnss.setGnssUsable(false);
             }
         }
         if (requestCode == activityResultCodeGpsForIntent) {
             if (resultCode == -1) {
                 Log.i(TAG, getString(R.string.applyGpsResolvableApiExceptionSuccessful));
                 Utils.showToastMessage(getApplicationContext(), getString(R.string.gpsIsActivated));
+                mLocationGnss.setGnssUsable(true);
+                mLocationGnss.setGnssPresent(true);
                 checkLastKnownLocation();
                 requestLocationUpdatesWithIntent();
             } else {
                 Log.i(TAG, getString(R.string.applyGpsResolvableApiExceptionSuccessful));
                 Utils.showToastMessage(getApplicationContext(), getString(R.string.gpsIsNotActivated));
+                mLocationGnss.setGnssUsable(false);
             }
         }
     }

@@ -19,6 +19,7 @@ package com.genar.hmssandbox.huawei.feature_mlkit.ui.mlServices.imageRelated.sce
 
 import android.hardware.Camera;
 import android.hardware.SensorManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.OrientationEventListener;

@@ -31,7 +31,8 @@
         map:cameraTargetLat="41.01900781145951"
         map:cameraTargetLng="28.9559978825787"
         map:cameraZoom="12"
-        map:mapType="normal"
+        map:mapType="terrain"
+        map:liteMode="true"
         map:uiCompass="true"
         map:uiZoomControls="true" />
 

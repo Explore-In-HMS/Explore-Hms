@@ -32,7 +32,7 @@ android {
 
     defaultConfig {
         applicationId "com.genar.hmssandbox.huawei.feature_gameservicesrework"
-        minSdkVersion 26
+        minSdkVersion 28
         targetSdkVersion 30
         versionCode gradleVersionCode
         versionName gradleVersionName
@@ -66,14 +66,15 @@ dependencies {
 //    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
 //    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 //    androidTestImplementation 'androidx.annotation:annotation:1.1.0'
-    implementation 'androidx.navigation:navigation-fragment:2.3.2'
-    implementation 'androidx.navigation:navigation-ui:2.3.2'
+/*    implementation 'androidx.navigation:navigation-fragment:2.3.2'
+    implementation 'androidx.navigation:navigation-ui:2.3.2'*/
 
 
-    implementation 'com.huawei.hms:game:5.0.4.301'
-    implementation 'com.huawei.hms:base:5.0.5.300'
+    implementation 'com.huawei.hms:game:6.1.0.301'
+    implementation 'com.huawei.hms:base:6.1.0.301'
+
     implementation files('gameservices-1.0.0.300.jar')
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+   /* implementation 'androidx.legacy:legacy-support-v4:1.0.0'*/
 }
 
 apply from: '../sonarqube.gradle'

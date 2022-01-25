@@ -30,6 +30,7 @@
     <string name="analytics_your_score">Your Score</string>
     <string name="analytics_predefined_event_sample">Predefined Event Sample</string>
     <string name="analytics_post_score">Post Score</string>
+    <string name="analytics_post_e_info">Post Information</string>
     <string name="analytics_next">Next</string>
 
     <string name="custom_event">Custom Event Sample;</string>
@@ -47,6 +48,7 @@
 
     <string name="introduction_analyticskit">HUAWEI Analytics Kit (hereinafter referred to as Analytics Kit or Kit) offers a rich array of preset analytics models that help you gain an in-depth insight into your users, products, and content. With this insight, you can then take a data-driven approach to make informed decisions for product and marketing optimizations.</string>
     <string name="automatically_collected_events_info">Such events can be automatically collected without extra coding. The system event collection function is automatically enabled during initiation. The event ID of an automatically collected event is a reserved field of the analysis service and cannot be reused.</string>
+    <string name="arrayListBundle_events_info">Enhanced e-commerce allows you to analyze interactions between users and products in the shopping process, including viewing the product list, tapping products, browsing product details, adding products to favorites, adding products to the shopping cart, removing products from the shopping cart, purchasing products, paying for purchased products, and applying for a refund.</string>
     <string name="automatically_collected_events_text"><u>Click here to get more information about automatically collected events.</u></string>
     <string name="automatically_collected_events_link">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/android-automatic-event-collection-0000001051757143</string>
 
@@ -55,6 +57,15 @@
 
     <string name="predefined_events_info">Such events have been predefined by the Analytics SDK based on common application scenarios. It is recommended you use predefined event IDs for event collection and analysis. The system has been enabled to provide various insight reports based on predefined events.</string>
     <string name="predefined_events_sample_text">In this example, we collect user scores by using the predefined Score event, according to the points they get from the answers given by the user in the custom event.</string>
+    <string name="data_of_the_arraylist_and_bundle">E-Commerce Data Example</string>
+    <string name="e_commerce_example">E-Commerce Example</string>
+    <string name="product_id">Product Id : </string>
+    <string name="product_name">Product Name :</string>
+    <string name="category">Category :</string>
+    <string name="quantity">Quantity :</string>
+    <string name="price">Price :</string>
+    <string name="currency_name">Currency Name :</string>
+    <string name="ecommerce">Ecommerce Example</string>
 
 
 </resources>

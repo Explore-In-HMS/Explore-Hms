@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_dynamic_tag"
+            style="@style/ToolbarAppearance.Sandbox.Normal"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/title_dynamic_tag_manager" />
+        <TextView
+            android:layout_marginTop="@dimen/h16"
+            android:layout_marginStart="@dimen/h16"
+            style="@style/TextAppearance.Sandbox.Headline6"
+            android:text="@string/service_introduction"
+            android:id="@+id/service"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_dynamic_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/service"
+            style="@style/TextAppearance.Sandbox.Body1"
+            android:id="@+id/text_about_dtm"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="@dimen/h16"
+            android:layout_marginEnd="@dimen/h16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_dtm" />
+        <TextView
+            style="@style/TextAppearance.Sandbox.Body1"
+            android:layout_marginStart="@dimen/h16"
+            android:layout_marginEnd="@dimen/h16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/text_screenshot"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_about_dtm"
+            tools:layout_constraintRight_toRightOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/screen_shot"/>
+        <ImageView
+            android:layout_marginStart="@dimen/h16"
+            android:layout_marginEnd="@dimen/h16"
+            android:layout_marginTop="@dimen/h16"
+            android:id="@+id/banner_dtm"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_screenshot"
+            tools:layout_constraintRight_toRightOf="parent"
+            android:src="@drawable/dtm_banner"
+            android:layout_width="0dp"
+            android:layout_height="165dp"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_marginStart="@dimen/h16"
+            android:layout_marginEnd="@dimen/h16"
+            android:layout_marginTop="@dimen/h16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/banner_dtm"
+            tools:layout_constraintRight_toRightOf="parent"
+            style="@style/ButtonAppearance.Sandbox.Normal"
+            android:id="@+id/testButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/btn_test" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_margin="@dimen/h16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/testButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+                android:padding="@dimen/h16"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                app:src="@drawable/dtm_instance" />
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+
+

@@ -85,18 +85,17 @@ public class DownloadEngine extends AUpDownloadEngine {
             }
 
             @Override
-            public void onException(GetRequest request, NetworkException exception) {
-                if (exception instanceof InterruptedException) {
+            public void onException(GetRequest getRequest, NetworkException e, Response<GetRequest, File, Closeable> response) {
+                if (e instanceof InterruptedException) {
                     String errorMsg = "download exception for paused or canceled";
                     Log.w(TAG, errorMsg);
                     listener.onException(errorMsg);
                 } else {
-                    String errorMsg = "download exception for request:" + request.getId() +
-                            "\n\ndetail : " + exception.getMessage();
-                    if (exception.getCause() != null) {
+                    String errorMsg = "download exception for request:" + getRequest.getId() +
+                            "\n\ndetail : " + e.getMessage();
+                    if (e.getCause() != null) {
                         errorMsg += " , cause : " +
-                                exception.getCause().getMessage();
-                    }
+                                e.getCause().getMessage();                    }
                     Log.e(TAG, errorMsg);
                     listener.onException(errorMsg);
                 }

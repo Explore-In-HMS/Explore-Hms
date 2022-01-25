@@ -40,6 +40,7 @@ import com.genar.hmssandbox.huawei.sitekit.model.AddressInfo;
 import com.huawei.hms.site.api.SearchResultListener;
 import com.huawei.hms.site.api.SearchService;
 import com.huawei.hms.site.api.SearchServiceFactory;
+import com.huawei.hms.site.api.model.HwLocationType;
 import com.huawei.hms.site.api.model.SearchStatus;
 import com.huawei.hms.site.api.model.Site;
 import com.huawei.hms.site.api.model.TextSearchRequest;
@@ -48,6 +49,7 @@ import com.huawei.hms.site.api.model.TextSearchResponse;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SiteKitTextSearchFragment extends Fragment implements SiteKitResultItemClickListener {
@@ -109,6 +111,8 @@ public class SiteKitTextSearchFragment extends Fragment implements SiteKitResult
          * Creating TextSearchRequest. You can customize with using various properties.
          */
         request = new TextSearchRequest();
+        request.setHwPoiType(HwLocationType.AMUSEMENT_PARK);
+        request.setCountries(Arrays.asList("en", "fr", "cn", "de", "ko"));
         request.setLocation(getArguments().getParcelable("location"));
         //request.setLanguage("en");
         //request.setHwPoiType(HwLocationType.ADDRESS); Huawei POI type of returned places. This parameter is recommended.

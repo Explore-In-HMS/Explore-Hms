@@ -18,7 +18,7 @@
  * @APPLE_APACHE_LICENSE_HEADER_END@
  *
  * Add HiRE header.
- * Copyright (c) 2020-2020 Huawei Technologies Co., Ltd.. All rights reserved.
+ * Copyright (c) 2020-2020 Explore in HMS.. All rights reserved.
  */
 
 #ifndef __DISPATCH_PUBLIC__

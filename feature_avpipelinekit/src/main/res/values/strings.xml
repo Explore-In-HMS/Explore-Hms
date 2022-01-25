@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">avpipeline</string>
+    <string name="start_stop">start/stop</string>
+    <string name="toolbar_text_av_pipeline_kit">AV Pipeline Kit</string>
+    <string name="info_text_av_pipeline_kit">AV Pipeline Kit is a system of open capabilities for easier media app development. It contains a lightweight framework and a range of high-performance plugins for audio and video processing. The framework parses plugin orchestration logic from each configuration file to create a pipeline with capabilities such as media playback, recording, or editing, while each plugin in a pipeline undertakes specific tasks, for example, demuxing, decoding, and filtering.\n\nAV Pipeline Kit presets pipelines for scenarios like video playback, video super-resolution, and sound event detection, and provides Java APIs for you to use these pipelines. You can also call a single preset plugin directly through C++ APIs. If you want to achieve more functions other than those provided by the preset plugins or pipelines, you can even customize some plugins or pipelines based on your own needs.</string>
+    <string name="asset_information">Asset Information</string>
+    <string name="base_player">Base Player</string>
+    <string name="screen_resolution_disabled_player">Screen Resolution (Disabled) Player</string>
+    <string name="screen_resolution_enabled_player">Screen Resolution (Enabled) Player</string>
+    <string name="sound_detect_player">Sound Detect Player</string>
+    <string name="choose_file_for_getting_information">Choose File For Getting Info</string>
+    <string name="choose_file">choose file</string>
+    <string name="tv_sound_info">Sound Detection can detect these voices : Laughter, Baby-cry, Snoring, Sneeze, Children-playing, Meow, Bark, Water, Car-alarm, Doorbell, Knock, Alarm, Steam-whistle, Noise</string>
+</resources>

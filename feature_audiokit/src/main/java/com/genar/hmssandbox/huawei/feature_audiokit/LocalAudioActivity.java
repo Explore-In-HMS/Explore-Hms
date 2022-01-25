@@ -58,7 +58,7 @@ public class LocalAudioActivity extends AppCompatActivity implements CreatedPlay
         setContentView(view);
 
         setupToolbar();
-        
+
         isLocal = (getIntent().getExtras() != null) ? getIntent().getExtras().getString(TYPE_OF_PLAYLIST) : "not found";
 
         if(isLocal != null && isLocal.equals("online")){

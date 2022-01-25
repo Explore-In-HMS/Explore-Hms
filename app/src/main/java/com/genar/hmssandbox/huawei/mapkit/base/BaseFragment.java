@@ -31,6 +31,7 @@ import com.genar.hmssandbox.huawei.R;
 import com.genar.hmssandbox.huawei.mapkit.data.Constants;
 import com.huawei.hms.maps.CameraUpdateFactory;
 import com.huawei.hms.maps.HuaweiMap;
+import com.huawei.hms.maps.HuaweiMapOptions;
 import com.huawei.hms.maps.MapView;
 import com.huawei.hms.maps.MapsInitializer;
 import com.huawei.hms.maps.OnMapReadyCallback;

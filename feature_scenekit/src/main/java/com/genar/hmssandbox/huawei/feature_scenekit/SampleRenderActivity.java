@@ -19,6 +19,7 @@
 package com.genar.hmssandbox.huawei.feature_scenekit;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ import android.view.ScaleGestureDetector;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.genar.hmssandbox.huawei.Util;
 import com.huawei.hms.scene.math.Quaternion;
 import com.huawei.hms.scene.math.Vector3;
 import com.huawei.hms.scene.sdk.render.Animator;
@@ -69,9 +71,24 @@ public class SampleRenderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sample_render);
         renderView = findViewById(R.id.render_view);
         prepareScene();
+        setupToolbar();
         loadModel();
         loadTextures();
         addGestureEventListener();
+    }
+
+    private void setupToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar_render_view);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        Util.setToolbar(this, toolbar, getString(R.string.url_scenekit));
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     private void prepareScene() {

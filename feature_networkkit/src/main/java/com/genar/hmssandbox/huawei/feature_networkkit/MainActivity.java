@@ -17,15 +17,14 @@
  */
 package com.genar.hmssandbox.huawei.feature_networkkit;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-import com.genar.hmssandbox.huawei.Util;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.huawei.hms.feature.dynamicinstall.FeatureCompat;
 
 import butterknife.BindView;

@@ -123,13 +123,13 @@ dependencies {
     // ID Card Recognition ------------------------------------------ //
     implementation 'com.huawei.hms:ml-computer-card-icr-vn:2.1.0.301'
     implementation 'com.huawei.hms:ml-computer-card-icr-cn:2.0.3.303'
-   // implementation 'com.huawei.hms:ml-computer-vision-icr:2.0.1.300'
-   // implementation 'com.huawei.hms:ml-computer-card-icr-cn-model:2.0.1.300'
-  //  implementation ('com.huawei.hms:ml-computer-card-icr-cn-plugin:2.0.1.300') {
-        // If use on-cloud ID card recognition service, you need to comment out this configuration.
+    // implementation 'com.huawei.hms:ml-computer-vision-icr:2.0.1.300'
+    // implementation 'com.huawei.hms:ml-computer-card-icr-cn-model:2.0.1.300'
+    //  implementation ('com.huawei.hms:ml-computer-card-icr-cn-plugin:2.0.1.300') {
+    // If use on-cloud ID card recognition service, you need to comment out this configuration.
     //    exclude group: 'com.huawei.hms', module: 'ml-computer-net'
     //    exclude group: 'com.huawei.hms', module: 'ml-computer-card-qa-plugin'
-   // }
+    // }
 
     // ------------------------------------------------------------- //
     // Language And Translate Related Features
@@ -151,7 +151,7 @@ dependencies {
     implementation 'com.huawei.hms:ml-computer-voice-realtimetranscription:2.2.0.300'
     /**
      *
-    // Video Course Creator   ------------------------------------------------------------------- //
+     // Video Course Creator   ------------------------------------------------------------------- //
      // This is Beta for now
      *
      */
@@ -218,11 +218,11 @@ dependencies {
     // Face/Body Related Features
     // ------------------------------------------------------------------------------------------ //
     // Face Detection --------------------------------------------------------------------------- //
-  /*  implementation 'com.huawei.hms:ml-computer-vision-face:2.0.5.300'
-    implementation 'com.huawei.hms:ml-computer-vision-face-shape-point-model:2.0.5.300'
-    implementation 'com.huawei.hms:ml-computer-vision-face-emotion-model:2.0.1.300'
-    implementation 'com.huawei.hms:ml-computer-vision-face-feature-model:2.0.5.300'
-    // automatically Updating the Machine Learning Model manifest metadata*/
+    /*  implementation 'com.huawei.hms:ml-computer-vision-face:2.0.5.300'
+      implementation 'com.huawei.hms:ml-computer-vision-face-shape-point-model:2.0.5.300'
+      implementation 'com.huawei.hms:ml-computer-vision-face-emotion-model:2.0.1.300'
+      implementation 'com.huawei.hms:ml-computer-vision-face-feature-model:2.0.5.300'
+      // automatically Updating the Machine Learning Model manifest metadata*/
 
     // manifest <meta-data android:name="com.huawei.hms.ml.DEPENDENCY" android:value= "face"/>
 

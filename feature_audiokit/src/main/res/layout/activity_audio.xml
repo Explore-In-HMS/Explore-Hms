@@ -234,6 +234,20 @@
         app:layout_constraintTop_toBottomOf="@+id/adjustSound"
         app:srcCompat="@drawable/ic_volume_up" />
 
+
+
+    <SeekBar
+        android:id="@+id/volumeSeekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/volumeImageView"
+        app:layout_constraintTop_toTopOf="@+id/volumeImageView"
+        app:layout_constraintBottom_toBottomOf="@id/volumeImageView"/>
+
     <TextView
         android:id="@+id/volumeTextView"
         style="@style/TextAppearance.Sandbox.Body1"
@@ -247,17 +261,15 @@
         app:layout_constraintStart_toStartOf="@+id/playButtonImageView"
         app:layout_constraintTop_toBottomOf="@+id/volumeSeekBar" />
 
-    <SeekBar
-        android:id="@+id/volumeSeekBar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/volumeImageView"
-        app:layout_constraintTop_toTopOf="@+id/volumeImageView"
-        app:layout_constraintBottom_toBottomOf="@id/volumeImageView"/>
+    <ImageView
+        android:id="@+id/speedImageView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/playButtonImageView"
+        app:layout_constraintTop_toBottomOf="@+id/volumeTextView"
+        app:layout_constraintStart_toStartOf="@+id/playButtonImageView"
+        app:srcCompat="@drawable/ic_speed_up" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/containerLayout"

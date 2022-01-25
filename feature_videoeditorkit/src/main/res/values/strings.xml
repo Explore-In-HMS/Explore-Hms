@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">VideoEditDemo</string>
+    <string name="start_tv">Get started</string>
+    <string name="version">Version</string>
+    <string name="setting">Settings</string>
+    <string name="cancels">Cancel</string>
+    <string name="back">Back</string>
+    <string name="permission_tips">Please enable the Storage and Microphone permissions.</string>
+    <string name="delete">Delete</string>
+    <string name="video_editor_kit">Video Editor Kit</string>
+    <string name="service_introduction">Service Introduction</string>
+    <string name="introduction_text">Video Editor Kit is a one-stop toolkit that can be easily integrated into your app, equipping it with versatile video editing functions like video import/export, editing, rendering, and media resource management. Its powerful, intuitive, and compatible APIs let you easily create a video editing app for diverse scenarios.</string>
+    <string name="try_functions">Try Video Editor Functions</string>
+    <string name="start_editing_video">Start Editing Video</string>
+</resources>

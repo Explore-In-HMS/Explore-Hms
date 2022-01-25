@@ -39,7 +39,6 @@ import com.genar.hmssandbox.huawei.Util;
 import com.google.android.material.button.MaterialButton;
 import com.huawei.agconnect.applinking.AGConnectAppLinking;
 import com.huawei.agconnect.applinking.AppLinking;
-import com.huawei.hms.ads.App;
 import com.huawei.hms.feature.dynamicinstall.FeatureCompat;
 
 
@@ -149,6 +148,7 @@ public class AppLinkingMainActivity extends AppCompatActivity implements Adapter
         boolean iosLinkEnabled=iosLink.isChecked();
         if(iosLinkEnabled){
             AppLinking.Builder builder = AppLinking.newBuilder();
+            builder.setIsShowPreview(true);
             builder.setUriPrefix("https://hmssandboxdev.dre.agconnect.link");
             builder.setDeepLink(Uri.parse("https://developer.huawei.com/" + path));
 

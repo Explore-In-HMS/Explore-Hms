@@ -1,21 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~
-  ~   Copyright 2020. Explore in HMS. All rights reserved.
-  ~
-  ~   Licensed under the Apache License, Version 2.0 (the "License");
-  ~   You may not use this file except in compliance with the License.
-  ~   You may obtain a copy of the License at
-  ~
-  ~   http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~   Unless required by applicable law or agreed to in writing, software
-  ~   distributed under the License is distributed on an "AS IS" BASIS,
-  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~   See the License for the specific language governing permissions and
-  ~   limitations under the License.
-  ~
-  -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -32,7 +15,6 @@
             android:layout_gravity="center_vertical"
             android:layout_marginStart="15dp"
             android:layout_weight="1"
-            style="@style/TextAppearance.Sandbox.Body1"
             android:text="@string/video_add_single_cache_url"
             android:textSize="16sp" />
 
@@ -56,7 +38,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="15dp"
-            style="@style/TextAppearance.Sandbox.Body1"
             android:layout_weight="1"
             android:text="@string/video_add_single_cache_playparam"
             android:textSize="15sp" />
@@ -81,7 +62,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="15dp"
-            style="@style/TextAppearance.Sandbox.Body1"
             android:layout_weight="1"
             android:text="@string/video_add_single_cache_appId"
             android:textSize="16sp" />
@@ -99,6 +79,30 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1"
+            android:text="@string/video_add_single_cache_video_format"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_cache_format"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:ems="3"
+            android:inputType="number" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
@@ -108,7 +112,6 @@
             android:layout_gravity="center_vertical"
             android:layout_marginStart="15dp"
             android:layout_weight="1"
-            style="@style/TextAppearance.Sandbox.Body1"
             android:text="@string/video_add_single_cache_width"
             android:textSize="16sp" />
 
@@ -132,7 +135,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            style="@style/TextAppearance.Sandbox.Body1"
             android:layout_marginStart="15dp"
             android:layout_weight="1"
             android:text="@string/video_add_single_cache_height"
@@ -158,7 +160,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="15dp"
-            style="@style/TextAppearance.Sandbox.Body1"
             android:layout_weight="1"
             android:text="@string/video_add_single_cache_size"
             android:textSize="15sp" />
@@ -185,7 +186,6 @@
             android:layout_marginStart="15dp"
             android:layout_weight="1"
             android:text="@string/video_add_single_cache_priority"
-            style="@style/TextAppearance.Sandbox.Body1"
             android:textSize="16sp" />
 
         <EditText
@@ -213,7 +213,6 @@
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
             android:text="@string/setting_ok"
-            style="@style/ButtonAppearance.Sandbox.Normal"
             android:textAllCaps="false" />
 
         <Button
@@ -223,7 +222,6 @@
             android:layout_marginStart="10dp"
             android:layout_weight="1"
             android:text="@string/setting_cancel"
-            style="@style/ButtonAppearance.Sandbox.Normal"
             android:textAllCaps="false" />
 
     </LinearLayout>

@@ -96,6 +96,8 @@ public class Fido2ClientActivity extends AppCompatActivity {
         byte[] challengeBytes = getChallege();
         // Initiate the Fido2RegistrationRequest request. The first parameter of AuthenticatorSelectionCriteria
         // specifies whether to use a platform authenticator or a roaming authenticator. If no authenticator needs to be specified, pass null to this parameter.
+
+
         PublicKeyCredentialCreationOptions.Builder builder = new PublicKeyCredentialCreationOptions.Builder();
         builder.setRp(new PublicKeyCredentialRpEntity(RP_ID, RP_ID, null))
                 .setChallenge(challengeBytes)

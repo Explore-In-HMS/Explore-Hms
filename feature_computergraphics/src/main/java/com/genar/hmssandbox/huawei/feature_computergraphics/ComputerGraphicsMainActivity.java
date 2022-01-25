@@ -21,7 +21,6 @@ package com.genar.hmssandbox.huawei.feature_computergraphics;
 import android.app.NativeActivity;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;

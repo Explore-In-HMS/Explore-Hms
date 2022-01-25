@@ -20,14 +20,37 @@ package com.genar.hmssandbox.huawei.feature_adskit;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.Activity;
+import android.graphics.Bitmap;
+import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
+import com.genar.hmssandbox.huawei.Util;
 
 public class ExSplashActivity extends AppCompatActivity {
+
+    ImageView splash_image;
+    Activity activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ex_splash);
+        activity=this;
+        splash_image=findViewById(R.id.splash_image);
+        splash_image.setDrawingCacheEnabled(true);
+        splash_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Util.showDialogImagePeekView(
+                        activity,
+                        getApplicationContext(),
+                        splash_image
+                );
+            }
+        });
         setupToolbar();
 
     }

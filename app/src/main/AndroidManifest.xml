@@ -31,6 +31,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="com.huawei.hms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="com.huawei.permission.SECURITY_DIAGNOSE" />
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -42,10 +43,18 @@
         android:icon="@drawable/icon_app"
         android:label="@string/app_name"
         android:resizeableActivity="false"
+        android:hardwareAccelerated="false"
         android:supportsRtl="true"
+        android:largeHeap="true"
         android:theme="@style/AppTheme"
-        tools:replace="name, icon, label, theme, resizeableActivity, allowBackup">
+        tools:replace="name, icon, label, theme, resizeableActivity, allowBackup,hardwareAccelerated">
         <activity android:name=".baseapp.activity.BaseActivity" />
+
+        <activity android:name=".modelingkit3d.ui.activity.CaptureMaterialActivity"/>
+        <activity android:name=".modelingkit3d.ui.activity.HistoryActivity"/>
+        <activity android:name=".modelingkit3d.ui.activity.MainActivity"/>
+        <activity android:name=".modelingkit3d.ui.activity.NewScanActivity"/>
+
         <activity android:name=".baseapp.activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -62,6 +71,23 @@
         <activity android:name=".sitekit.MainActivitySiteKit" />
         <activity android:name=".scankit.ScanCustomViewActivity" />
         <activity android:name=".scankit.ScanKitActivity" />
+        <activity android:name=".localauthenticationengine.LocalAuthenticationMainActivity" />
+        <activity android:name=".reference.appbundle.AppBundleMainActivity" />
+        <activity android:name=".reference.apprelease.AppReleaseActivity" />
+        <activity android:name=".reference.earlyaccess.EarlyAccessActivity" />
+        <activity android:name=".reference.preorders.PreordersActivity" />
+        <activity android:name=".reference.cloudhosting.CloudHostingMainActivity" />
+        <activity android:name=".reference.comments.CommentsActivity" />
+        <activity android:name=".reference.giftmanagement.GiftManagementActivity" />
+        <activity android:name=".reference.crashservice.CrashServiceMainActivity" />
+        <activity android:name=".reference.castengine.CastEngineMainActivity" />
+        <activity android:name=".reference.hquic.HQUICActivity" />
+        <activity android:name=".reference.dynamictagmanager.DynamicActivity" />
+        <activity android:name=".reference.datasecurity.GeneralFeaturesActivity" />
+        <activity android:name=".reference.apm.AppPerformanceMainActivity" />
+        <activity android:name=".reference.wiseplaydrm.WisePlayDRMMainActivity" />
+        <activity android:name=".reference.paidapps.GeneralFeaturesActivity" />
+        <activity android:name=".reference.integrationcheck.MainIntegrationCheckActivity" />
         <activity
             android:name=".scankit.GenerateCodeActivity"
             android:label="@string/title_generatecode" />
@@ -92,6 +118,7 @@
             android:windowSoftInputMode="adjustResize" />
         <activity android:name=".pushkit.MainActivityPushKit" />
         <activity android:name=".pushkit.NotificationTargetActivityPushKit">
+
             <intent-filter>
                 <action android:name="com.genar.hmssandbox.huawei.pushkit.click" /> <!-- Target Activity When Tap Notification -->
                 <category android:name="android.intent.category.DEFAULT" /> <!-- Need to select 'Custom action page' name on service -->
@@ -126,6 +153,10 @@
         <meta-data
             android:name="push_kit_auto_init_enabled"
             android:value="true" />
+
+        <meta-data
+            android:name="com.huawei.agconnect.applinking.READ_CLIPBOARD_PERMISSION"
+            android:value="Available"/>
 
         <provider
             android:name="androidx.core.content.FileProvider"

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Hisilicon Technologies Co., Ltd. 2020-2020. All rights reserved.
+ * Copyright (c) Hisilicon Technologies Co.. 2020-2020. All rights reserved.
  * Description: A sample that illustrates the rendering of a demo scene.
  */
 

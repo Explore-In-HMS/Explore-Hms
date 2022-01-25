@@ -41,6 +41,7 @@ public class BaseViewPagerAdapter extends FragmentStateAdapter {
         fragmentList.add(new AppGalleryConnectFragment());
     }
 
+
     @NonNull
     @Override
     public Fragment createFragment(int position) {
@@ -53,6 +54,7 @@ public class BaseViewPagerAdapter extends FragmentStateAdapter {
 
         return fragmentList.get(position);
     }
+
 
     @Override
     public int getItemCount() {

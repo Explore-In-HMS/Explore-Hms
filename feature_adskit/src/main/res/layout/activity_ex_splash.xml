@@ -69,6 +69,7 @@
 
 
                 <ImageView
+                    android:id="@+id/splash_image"
                     android:layout_width="match_parent"
                     android:layout_height="172dp"
                     android:layout_marginLeft="@dimen/h16"
