@@ -6,8 +6,8 @@
 
 
 ## Screenshots
-![image](/uploads/0870d3a4-b384-42ab-a2cb-fe49ad8f5853/1642138047927.png '1642138047927.png')![image](/uploads/1a828e20-e5c0-4d68-b3ae-6d64bab64d41/1642138202930.png '1642138202930.png') ![image](/uploads/424b8d12-130e-4041-a422-7595b47c34b1/1642138219845.png '1642138219845.png')![image](/uploads/8b1ce79c-a13b-43a4-b037-07d4726fab76/1642138224582.png '1642138224582.png')
-![image](/uploads/ca236200-a795-405c-acd9-a76202024b48/1642138233687.png '1642138233687.png')![image](/uploads/87a7436d-007c-46a1-aa2a-8bae8a869130/1642138237983.png '1642138237983.png')![image](/uploads/a566680d-320f-4afb-940c-eba8464f5472/1642138241969.png '1642138241969.png')![image](/uploads/bddc56f0-b5dd-477e-a61f-2381db21d221/1642138245875.png '1642138245875.png')
+![1](https://imgur.com/U29ct2I.jpg)![2](https://imgur.com/nbzOvFs.jpg)![3](https://imgur.com/fdZp9h0.jpg)![4](https://imgur.com/v3LqMsW.jpg)
+![5](https://imgur.com/p0KyQkn.jpg)![6](https://imgur.com/5sKdjSc.jpg)![7](https://imgur.com/dPHH5CL.jpg)![8](https://imgur.com/RT8S4xg.jpg)
 
 ## Introduction
 HMS Sandbox application will host all HMS Core services and kits as example modules. It targets to include all features that HMS can provide. Because HMS Core is rapidly growing source, new modules and features fill be added. With each update, the application will be kept up to date, new features will be added, the application and modules will be constantly updated and optimized.
