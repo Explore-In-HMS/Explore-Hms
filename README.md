@@ -1,4 +1,4 @@
-# ![ic_launcher](https://lh3.googleusercontent.com/DPp9j8OOBMr80lSOgJX8eTfuowUNgXl9VCN3Y9nRbTCNk2xEATKBdXe2zpcDdU4LlP-w=s85)  HMS Sandbox  
+#  HMS Sandbox  
 
 ## Overview
 
