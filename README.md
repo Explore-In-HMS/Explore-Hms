@@ -881,7 +881,7 @@ Features:
 
 *Version: 6.0.0.302*
 
-Bolster your app with cutting-edge 5G communications capabilities, by equipping it with exclusive 5G cell information services.
+Bolster your app with cutting-edge 5G communicati efnan serkanons capabilities, by equipping it with exclusive 5G cell information services.
 
 Features:
 
@@ -896,13 +896,10 @@ Features:
 - Cem Genar
 - Erdal Kaymak
 - Efnan Akkuş
-- Enes Simşek
-- Fatih Öztürk
 - Ismail Emre Bayırlı
 - Mustafa Can
 - Serkan Mutlu
 - Ubeyde Akgül
-- Yavuz Koç
 - Yunus Emre Pekgüç
 
 ## Useful Links
