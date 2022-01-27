@@ -127,5 +127,4 @@ public class RemoteConfigMainActivity2 extends AppCompatActivity {
     }
 
 
-
 }

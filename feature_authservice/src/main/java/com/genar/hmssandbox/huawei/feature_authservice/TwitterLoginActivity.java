@@ -22,7 +22,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,6 +36,10 @@ import com.huawei.agconnect.auth.AGConnectAuth;
 import com.huawei.agconnect.auth.AGConnectAuthCredential;
 import com.huawei.agconnect.auth.AGConnectUser;
 import com.huawei.agconnect.auth.TwitterAuthProvider;
+import com.huawei.agconnect.remoteconfig.AGConnectConfig;
+import com.huawei.agconnect.remoteconfig.ConfigValues;
+import com.huawei.hmf.tasks.OnFailureListener;
+import com.huawei.hmf.tasks.OnSuccessListener;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.DefaultLogger;
 import com.twitter.sdk.android.core.Result;
@@ -44,6 +50,11 @@ import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.identity.TwitterAuthClient;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -53,14 +64,16 @@ public class TwitterLoginActivity extends AppCompatActivity {
 
 
     //region variablesAndObjects
-
+    private static final String REMOTE_ERR ="REMOTE_ERR";
+    private AGConnectConfig remoteConfig;
+    private String twitterApiSecret;
+    private String twitterApiKey;
     private static final String TAG = TwitterLoginActivity.class.getSimpleName();
     private static final String TWITTER_LOGIN_ON_FAILURE = " : onFailure : ";
     private static final String ESCAPE_STRING = "\n" + "...\n" + "\n";
     private static final String AGC_TWITTER_SIGN_IN_EXCEPTION = "AGConnectAuth.getInstance signIn Exception : ";
 
     private TwitterAuthClient twitterAuthClient;
-
     private Unbinder unbinder;
 
     @Nullable
@@ -72,15 +85,63 @@ public class TwitterLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // important to call before setContentView
-        initializeTwitterApi();
+
         setContentView(R.layout.activity_twitter_login);
 
         unbinder = ButterKnife.bind(this);
         setupToolbar();
-
         Utils.initializeAGConnectInstance(getApplicationContext());
+        setRemoteConfigurationSettings();
 
     }
+
+    private void setRemoteConfigurationSettings(){
+        remoteConfig = AGConnectConfig.getInstance();
+        remoteConfig.applyDefault(R.xml.remote_config);
+
+
+        //Interval time can be changed.default values is 12 hours
+        remoteConfig.fetch(0).addOnSuccessListener(new OnSuccessListener<ConfigValues>() {
+            @Override
+            public void onSuccess(ConfigValues configValues) {
+                remoteConfig.apply(configValues);
+                obtainData();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(Exception e) {
+                Log.e(REMOTE_ERR,e.toString());
+            }
+        });
+    }
+
+    private void obtainData(){
+
+        Map<String,Object> allValues = remoteConfig.getMergedAll();
+        if(allValues != null && allValues.size() > 0){
+           // ArrayList<RemoteResult> allResultFromRemote = new ArrayList<>();
+
+            Set set = allValues.entrySet();
+            Iterator iterator = set.iterator();
+            while (iterator.hasNext()){
+                Map.Entry entry = (Map.Entry)iterator.next();
+                System.out.println(entry.getKey()+" "+entry.getValue());
+                if(entry.getKey().toString().equalsIgnoreCase("twitter_api_secret")){
+                    twitterApiSecret=entry.getValue().toString();
+                }
+                if(entry.getKey().toString().equalsIgnoreCase("twitter_api_key")){
+                    twitterApiKey=entry.getValue().toString();
+                }
+               // allResultFromRemote.add(new RemoteResult(entry.getKey().toString(), entry.getValue().toString()));
+            }
+            initializeTwitterApi();
+
+        }else{
+            Toast.makeText(getApplicationContext(),"There is no value on Cloud",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
 
     @OnClick({R.id.clLogin, R.id.clLogout})
     public void onItemClick(View v) {
@@ -114,8 +175,8 @@ public class TwitterLoginActivity extends AppCompatActivity {
     private void initializeTwitterApi() {
         try {
             TwitterAuthConfig authConfig = new TwitterAuthConfig(
-                    getResources().getString(R.string.twitter_api_key),
-                    getResources().getString(R.string.twitter_api_secret));
+                    twitterApiKey,
+                    twitterApiSecret);
 
             TwitterConfig twitterConfig = new TwitterConfig.Builder(TwitterLoginActivity.this)
                     .logger(new DefaultLogger(Log.DEBUG))
@@ -250,5 +311,6 @@ public class TwitterLoginActivity extends AppCompatActivity {
         logOut();
         unbinder.unbind();
     }
+
 
 }
