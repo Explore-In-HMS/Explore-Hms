@@ -32,7 +32,7 @@ android {
 
     defaultConfig {
         applicationId "com.genar.hmssandbox.huawei.feature_hquic"
-        minSdkVersion 26
+        minSdkVersion 28
         targetSdkVersion 30
         versionCode gradleVersionCode
         versionName gradleVersionName
@@ -57,8 +57,8 @@ dependencies {
 
     /*Add cronet related*/
     implementation 'com.huawei.hms:hquic-provider:5.0.1.300'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+/*    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'*/
 
 }
 

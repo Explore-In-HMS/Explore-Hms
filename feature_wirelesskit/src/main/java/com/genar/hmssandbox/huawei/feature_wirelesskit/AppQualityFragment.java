@@ -24,8 +24,10 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import android.os.IBinder;
@@ -85,6 +87,7 @@ public class AppQualityFragment extends Fragment {
         }
     };
 
+    @RequiresApi(api = Build.VERSION_CODES.P)
     private void reportAppNetworkQuality() {
         Bundle data = new Bundle();
         String inputStr = eventIdDetail.getText().toString();
@@ -124,6 +127,7 @@ public class AppQualityFragment extends Fragment {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.P)
     private int packageCode(Context context) {
         PackageManager manager = context.getPackageManager();
         int code = 0;
@@ -185,6 +189,7 @@ public class AppQualityFragment extends Fragment {
 
         // Click sendButton to report app quality
         sendButton.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View view) {
                 Log.i(TAG, "onClick");

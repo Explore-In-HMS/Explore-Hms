@@ -18,6 +18,7 @@
 
 package com.genar.hmssandbox.huawei.feature_authservice;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -40,6 +41,9 @@ import com.huawei.agconnect.auth.AGConnectAuth;
 import com.huawei.agconnect.auth.AGConnectAuthCredential;
 import com.huawei.agconnect.auth.AGConnectUser;
 import com.huawei.agconnect.auth.FacebookAuthProvider;
+import com.huawei.agconnect.auth.SignInResult;
+import com.huawei.hmf.tasks.OnFailureListener;
+import com.huawei.hmf.tasks.OnSuccessListener;
 
 import java.util.Arrays;
 
@@ -47,6 +51,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+
+import static com.huawei.agconnect.auth.AGConnectAuthCredential.Facebook_Provider;
 
 public class FacebookLoginActivity extends AppCompatActivity {
 
@@ -57,6 +63,8 @@ public class FacebookLoginActivity extends AppCompatActivity {
     private CallbackManager facebookCallbackManager = CallbackManager.Factory.create();
 
     private Unbinder unbinder;
+
+    private Activity activity;
 
     private static final int TV_PROFILE_DETAILS = R.id.tvProfileDetails;
 
@@ -71,6 +79,7 @@ public class FacebookLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // important to call before setContentView
         FacebookSdk.sdkInitialize(getApplicationContext());
+        activity=this;
 
         setContentView(R.layout.activity_facebook_login);
         setupToolbar();
@@ -139,12 +148,28 @@ public class FacebookLoginActivity extends AppCompatActivity {
                 tvProfileDetails.setText(msg);
 
                 transmitFacebookAccessTokenIntoAGC(token);
+
+                AGConnectAuth.getInstance().getCurrentUser().link(activity, Facebook_Provider)
+                        .addOnSuccessListener(new OnSuccessListener<SignInResult>() {
+                            @Override
+                            public void onSuccess(SignInResult signInResult) {
+                                // onSuccess
+                                AGConnectUser user = signInResult.getUser();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(Exception e) {
+                                Log.d(TAG, "Failed to link account" + " : onCancel");
+                            }
+                        });
             }
 
             @Override
             public void onCancel() {
                 Log.d(TAG, getResources().getString(R.string.login_with_facebook) + " : onCancel");
                 Utils.showToastMessage(getApplicationContext(), getResources().getString(R.string.login_with_facebook) + " : onCancel");
+
             }
 
             @Override

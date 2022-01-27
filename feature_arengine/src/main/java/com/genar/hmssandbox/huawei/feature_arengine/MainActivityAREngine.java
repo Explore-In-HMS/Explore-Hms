@@ -17,13 +17,16 @@
  */
 package com.genar.hmssandbox.huawei.feature_arengine;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,6 +43,13 @@ import com.genar.hmssandbox.huawei.feature_arengine.utils.DialogUtils;
 import com.google.android.material.button.MaterialButton;
 import com.huawei.hms.feature.dynamicinstall.FeatureCompat;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
 public class MainActivityAREngine extends AppCompatActivity {
 
     private static final int PERMISSION_REQUEST = 123;
@@ -52,10 +62,13 @@ public class MainActivityAREngine extends AppCompatActivity {
 
     private Intent currentIntent;
 
+    @SuppressLint("ShowToast")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_arengine);
-
+        if(!checkDeviceProcessor()){
+            Toast.makeText(MainActivityAREngine.this,"Your device is not supported by AR Engine",Toast.LENGTH_SHORT).show();
+        }
         initUI();
         setupToolbar();
         initListeners();
@@ -86,10 +99,17 @@ public class MainActivityAREngine extends AppCompatActivity {
     private void initListeners(){
 
         btnWorldTracking.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ShowToast")
             @Override
             public void onClick(View v) {
-                currentIntent = new Intent(MainActivityAREngine.this, WorldActivity.class);
-                checkPermissions();
+                if(checkDeviceProcessor()){
+                    currentIntent = new Intent(MainActivityAREngine.this, WorldActivity.class);
+                    checkPermissions();
+                }
+                else{
+                   Toast.makeText(MainActivityAREngine.this,"Your device is not supported by AR Engine",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
@@ -107,26 +127,46 @@ public class MainActivityAREngine extends AppCompatActivity {
         });
 
         btnHandTracking.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ShowToast")
             @Override
             public void onClick(View v) {
-                currentIntent = new Intent(MainActivityAREngine.this, HandActivity.class);
-                checkPermissions();
+                if(checkDeviceProcessor()){
+                    currentIntent = new Intent(MainActivityAREngine.this, HandActivity.class);
+                    checkPermissions();
+                }
+                else{
+                    Toast.makeText(MainActivityAREngine.this,"Your device is not supported by AR Engine",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         btnBodyTracking.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ShowToast")
             @Override
             public void onClick(View v) {
-                currentIntent = new Intent(MainActivityAREngine.this, BodyActivity.class);
-                checkPermissions();
+                if(checkDeviceProcessor()){
+                    currentIntent = new Intent(MainActivityAREngine.this, BodyActivity.class);
+                    checkPermissions();
+                }
+                else{
+                    Toast.makeText(MainActivityAREngine.this,"Your device is not supported by AR Engine",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
         btnHealthTracking.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ShowToast")
             @Override
             public void onClick(View v) {
-                currentIntent = new Intent(MainActivityAREngine.this, HealthActivity.class);
-                checkPermissions();
+                if(checkDeviceProcessor()){
+                    currentIntent = new Intent(MainActivityAREngine.this, HealthActivity.class);
+                    checkPermissions();
+                }
+                else{
+                    Toast.makeText(MainActivityAREngine.this,"Your device is not supported by AR Engine",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }
@@ -151,23 +191,24 @@ public class MainActivityAREngine extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
-        if(requestCode == PERMISSION_REQUEST && grantResults.length > 0){
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == PERMISSION_REQUEST && grantResults.length > 0) {
             boolean grantResult = true;
-            for(int permission : grantResults){
-                if(permission == PackageManager.PERMISSION_DENIED){
+            for (int permission : grantResults) {
+                if (permission == PackageManager.PERMISSION_DENIED) {
                     DialogUtils.permissionDeniedDialog(MainActivityAREngine.this,
                             new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                            checkPermissions();
-                        }
-                    });
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                    checkPermissions();
+                                }
+                            });
                     grantResult = false;
                 }
             }
-            if(grantResult){
-               startActivity(currentIntent);
+            if (grantResult) {
+                startActivity(currentIntent);
             }
         }
     }
@@ -183,5 +224,51 @@ public class MainActivityAREngine extends AppCompatActivity {
         super.attachBaseContext(newBase);
         // Initialize the SDK in the activity.
         FeatureCompat.install(newBase);
+    }
+
+    public static Boolean checkDeviceProcessor(){
+
+        boolean processorOK = false;
+        String hardware = "Hardware";
+        try(BufferedReader br = new BufferedReader (new FileReader("/proc/cpuinfo"))) {
+
+            String str;
+
+            Map<String, String> output = new HashMap<>();
+
+            while ((str = br.readLine ()) != null) {
+
+                String[] data = str.split (":");
+
+                if (data.length > 1) {
+
+                    String key = data[0].trim ().replace (" ", "_");
+                    if (key.equals(hardware)){
+                        output.put(key, data[1].trim ());
+                        break;
+                    }
+                }
+            }
+
+            /**
+             * Farklı şekillerde kullanılabilir
+             */
+
+            if(output.get(hardware) != null && !Objects.equals(output.get(hardware), "")){
+                String processorHardware = output.get(hardware);
+
+                processorOK = processorHardware != null && (
+                        processorHardware.contains("Kirin970") ||
+                                processorHardware.contains("Kirin990") );
+
+            }
+            br.close();
+
+        }catch (IOException e) {
+            Log.e("ProcessorInfo",e.toString());
+            processorOK = false;
+        }
+
+        return processorOK;
     }
 }

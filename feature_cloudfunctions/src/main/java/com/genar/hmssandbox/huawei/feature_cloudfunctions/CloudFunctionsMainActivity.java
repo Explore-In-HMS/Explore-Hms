@@ -24,6 +24,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -151,6 +152,7 @@ public class CloudFunctionsMainActivity extends AppCompatActivity {
 
                         Log.i(TAG, value);
                     } else {
+                        Toast.makeText(this,"Please try again",Toast.LENGTH_SHORT).show();
                         Exception e = task.getException();
                         if (e instanceof AGCFunctionException) {
                             int errCode = ((AGCFunctionException) e).getCode();
@@ -204,6 +206,7 @@ public class CloudFunctionsMainActivity extends AppCompatActivity {
                     } else {
                         Exception e = task.getException();
                         Log.e(TAG, e.toString());
+                        Toast.makeText(this,"Please try again",Toast.LENGTH_SHORT).show();
                     }
                 });
     }

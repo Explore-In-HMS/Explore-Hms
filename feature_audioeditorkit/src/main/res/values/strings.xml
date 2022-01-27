@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Audio Editor Kit</string>
+    <string name="start_tv">Start creating</string>
+    <string name="edit_draft">Clip Draft</string>
+    <string name="no_draft">No draft...</string>
+    <string name="version">Version:</string>
+    <string name="setting">Setting</string>
+    <string name="permission">The sample application requires the storage permission.</string>
+    <string name="cancels">cancel</string>
+    <string name="select_none_video">No video selected</string>
+    <string name="extract_success">Audio extraction succeeded: %s</string>
+    <string name="extract_fail">Audio extraction failed.</string>
+    <string name="main_extract">Audio extraction</string>
+    <string name="main_format">Format conversion</string>
+    <string name="main_withdraw">Audio extraction</string>
+    <string name="file_not_avable">This file is not available</string>
+    <string name="dm_extract_cancel">cancel</string>
+    <string name="main_separat">Vocal separation</string>
+    <string name="select_none_audio">No audio selected</string>
+    <string name="separat_success">Voice separation succeeded: %s</string>
+    <string name="separat_fail">Voice separation failure</string>
+
+    <string name="audio_format_mp3">mp3</string>
+    <string name="audio_format_wav">wav</string>
+    <string name="audio_format_m4a">flac</string>
+    <string name="transfer_btn">Transform</string>
+    <string name="format_title">Audio format conversion</string>
+    <string name="save_path">Saved to %s.</string>
+    <string name="title_activity_main_audio_editor" translatable="false">MainAudioEditorActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world" translatable="false">Hello Square World!</string>
+    <string name="audio_editor_kit" translatable="false">Audio Editor Kit</string>
+    <string name="service_introduction" translatable="false">Service Introduction</string>
+    <string name="audio_editor_kit_info_text" translatable="false">Audio Editor Kit provides a wide range of audio editing capabilities, including audio import, export, editing, extraction, and conversion. You can easily integrate these capabilities into your app as needed through the kit\'s open, powerful, yet easy-to-use APIs.</string>
+    <string name="create_and_edit_audio" translatable="false">Create and Edit Audio</string>
+    <string name="video_audio_extraction" translatable="false">Video Audio Extraction</string>
+    <string name="open_extracted_source" translatable="false">Play Extracted Audio</string>
+    <string name="extracted_source" translatable="false">Extracted Source</string>
+    <string name="audio_format_conversion" translatable="false">Audio Format Conversion</string>
+    <string name="play_formatted_audio" translatable="false">Play Formatted Audio</string>
+</resources>

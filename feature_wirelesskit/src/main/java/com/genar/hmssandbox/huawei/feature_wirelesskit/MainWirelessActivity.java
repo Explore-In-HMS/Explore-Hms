@@ -38,7 +38,7 @@ public class MainWirelessActivity extends AppCompatActivity {
     /**
      * The number of pages (wizard steps) to show in this demo.
      */
-    private static final int NUM_PAGES = 5;
+    private static final int NUM_PAGES = 6;
 
     private static final String TAG = "MainWirelessActivity";
 
@@ -132,8 +132,11 @@ public class MainWirelessActivity extends AppCompatActivity {
                 return new AppQualityFragment();
             else if (position == 4)
                 return new OtherFeaturesFragment();
-            else
-                return new OtherFeaturesFragment();
+            else if (position==5)
+                return new DualWifiFragment();
+            else{
+                return new DualWifiFragment();
+            }
         }
 
         @Override

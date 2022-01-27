@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Huawei Technologies Co., Ltd. 2020-2020. All rights reserved.
+ * Copyright (c) Explore in HMS. 2020-2020. All rights reserved.
  * Description: The class used to report touch input events. Defined the constants touch action,
  * the interface get touch pointer info, action, posX and posY.
  */

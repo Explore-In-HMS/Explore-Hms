@@ -105,6 +105,9 @@ public class AnalyticsKitActivity extends AppCompatActivity implements View.OnCl
         MaterialButton btnPostScore = findViewById(R.id.btn_postScore);
         btnPostScore.setOnClickListener(this);
 
+        MaterialButton btnArrayListBundleActivity = findViewById(R.id.btn_arrayListBundle);
+        btnArrayListBundleActivity.setOnClickListener(this);
+
         TextView tvInfoLink = findViewById(R.id.tvAutomaticallyCollectedLink);
         tvInfoLink.setOnClickListener(view -> {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW);
@@ -130,6 +133,9 @@ public class AnalyticsKitActivity extends AppCompatActivity implements View.OnCl
                 postScore();
                 refresh();
                 break;
+            case R.id.btn_arrayListBundle:
+                Intent openEcommerceActivityIntent = new Intent(this, EcommerceExampleActivity.class);
+                startActivity(openEcommerceActivityIntent);
             default: //default state
                 break;
         }

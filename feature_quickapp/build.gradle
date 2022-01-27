@@ -32,7 +32,7 @@ android {
 
     defaultConfig {
         applicationId "com.genar.hmssandbox.huawei.feature_quickapp"
-        minSdkVersion 26
+        minSdkVersion 28
         targetSdkVersion 30
         versionCode gradleVersionCode
         versionName gradleVersionName

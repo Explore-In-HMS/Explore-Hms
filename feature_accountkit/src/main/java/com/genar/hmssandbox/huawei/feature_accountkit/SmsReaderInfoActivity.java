@@ -34,7 +34,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class SmsReaderInfoActivity extends AppCompatActivity {
-     @BindView(R.id.btn_smscodeverify)
+    @BindView(R.id.btn_smscodeverify)
     Button btn_veriffication;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class SmsReaderInfoActivity extends AppCompatActivity {
         int simState = telMgr.getSimState();
         switch (simState) {
             case TelephonyManager.SIM_STATE_ABSENT:
-               btn_veriffication.setVisibility(View.INVISIBLE);
+                btn_veriffication.setVisibility(View.INVISIBLE);
                 break;
 
             case TelephonyManager.SIM_STATE_READY:

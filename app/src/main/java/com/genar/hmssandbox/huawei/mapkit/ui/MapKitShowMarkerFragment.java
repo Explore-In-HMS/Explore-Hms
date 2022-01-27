@@ -18,7 +18,9 @@
 
 package com.genar.hmssandbox.huawei.mapkit.ui;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,8 +28,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.genar.hmssandbox.huawei.R;
 import com.genar.hmssandbox.huawei.databinding.FragmentMapKitShowMarkerBinding;
 import com.genar.hmssandbox.huawei.mapkit.base.BaseFragment;
+import com.huawei.hms.maps.model.BitmapDescriptor;
+import com.huawei.hms.maps.model.BitmapDescriptorFactory;
 import com.huawei.hms.maps.model.LatLng;
 import com.huawei.hms.maps.model.MarkerOptions;
 
@@ -48,6 +53,12 @@ public class MapKitShowMarkerFragment extends BaseFragment {
     public void initializeUI() {
         initDummyMarkerList();
         addMarketToMap();
+        hMap.getUiSettings().setMarkerClusterColor(Color.RED);
+        hMap.getUiSettings().setMarkerClusterTextColor(Color.RED);
+        BitmapDescriptor icon = BitmapDescriptorFactory.fromResource(R.drawable.icon_mapkit);
+        hMap.getUiSettings().setMarkerClusterIcon(icon);
+        hMap.getUiSettings().setLogoPosition(Gravity.BOTTOM|Gravity.END);
+        hMap.getUiSettings().setLogoPadding(10,10,50,30);
     }
 
     private void addMarketToMap() {

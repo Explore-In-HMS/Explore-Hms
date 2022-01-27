@@ -18,9 +18,6 @@
 
 package com.genar.hmssandbox.huawei.baseapp.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
@@ -29,8 +26,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.genar.hmssandbox.huawei.R;
 import com.genar.hmssandbox.huawei.Util;
@@ -45,6 +43,12 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         setContentView(inflateLayout());
         initToolbar();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle oldInstanceState) {
+        super.onSaveInstanceState(oldInstanceState);
+        oldInstanceState.clear();
     }
 
     public abstract int getLayoutRes();

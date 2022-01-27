@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Audio Editor Kit</string>
+    <string name="start_tv">开始创作</string>
+    <string name="edit_draft">剪辑草稿</string>
+    <string name="no_draft">暂无草稿...</string>
+    <string name="version">版本:</string>
+    <string name="setting">设置</string>
+    <string name="permission">示例应用需要存储权限.</string>
+    <string name="cancels">取消</string>
+    <string name="select_none_video">未选择视频</string>
+    <string name="extract_success">音频提取成功：%s</string>
+    <string name="extract_fail">音频提取失败</string>
+    <string name="main_extract">音频提取</string>
+
+    <string name="main_format">格式转换</string>
+    <string name="main_withdraw">音频提取</string>
+    <string name="file_not_avable">该文件不可用</string>
+    <string name="dm_extract_cancel">取消</string>
+    <string name="main_separat">人声分离</string>
+    <string name="select_none_audio">未选择音频</string>
+    <string name="separat_success">人声分离成功：%s</string>
+    <string name="separat_fail">人声分离失败</string>
+
+    <string name="audio_format_mp3">MP3</string>
+    <string name="audio_format_wav">WAV</string>
+    <string name="audio_format_m4a">M4A</string>
+    <string name="audio_format_aac">AAC</string>
+    <string name="transfer_btn">转换</string>
+    <string name="format_title">音频格式转换</string>
+    <string name="save_path">存储至 %s</string>
+</resources>

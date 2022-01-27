@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout_recycler_view_layout_audio_format_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:layout_marginTop="@dimen/dp_16">
+
+
+    <ImageView
+        android:id="@+id/image_recycler_view_layout_audio_format_item"
+        android:layout_width="21dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="@dimen/hiad_16_dp"
+        android:src="@drawable/musical_note"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/more_recycler_view_layout_audio_format_item"
+        android:layout_width="@dimen/dp_24"
+        android:layout_height="@dimen/dp_24"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/status_select_recycler_view_layout_audio_format_item"
+        android:layout_width="@dimen/dp_24"
+        android:layout_height="@dimen/dp_24"
+        android:background="@drawable/audio_import_select_audio_selector"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progress_recycler_view_layout_audio_format_item"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="@dimen/dp_0"
+        android:backgroundTint="@color/black"
+        android:layout_height="@dimen/dp_2"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="@dimen/hiad_16_dp"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:max="100"
+        android:orientation="horizontal"
+        android:progress="0"
+        app:layout_constraintBottom_toBottomOf="@+id/status_recycler_view_layout_audio_format_item"
+        app:layout_constraintEnd_toStartOf="@+id/more_recycler_view_layout_audio_format_item"
+        app:layout_constraintStart_toStartOf="@+id/image_recycler_view_layout_audio_format_item"
+        app:layout_constraintTop_toTopOf="@+id/status_recycler_view_layout_audio_format_item" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/status_recycler_view_layout_audio_format_item"
+        android:layout_width="wrap_content"
+        style="@style/TextAppearance.Sandbox.Body2"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:fontFamily="HWtext"
+        android:gravity="start|center_vertical"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="@dimen/dp_11"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/image_recycler_view_layout_audio_format_item"
+        app:layout_constraintStart_toEndOf="@+id/image_recycler_view_layout_audio_format_item"
+        tools:ignore="SpUsage" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/audio_name"
+        style="@style/TextAppearance.Sandbox.Body2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:gravity="start|center_vertical"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="@dimen/dp_13"
+        app:layout_constraintStart_toEndOf="@+id/image_recycler_view_layout_audio_format_item"
+        app:layout_constraintTop_toTopOf="@id/image_recycler_view_layout_audio_format_item"
+        tools:ignore="SpUsage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -35,7 +35,7 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 26
+        minSdkVersion 28
         targetSdkVersion 30
         versionCode gradleVersionCode
         versionName gradleVersionName
@@ -55,7 +55,7 @@ dependencies {
 
     implementation 'com.huawei.hms:image-vision:1.0.3.301'
     implementation 'com.huawei.hms:image-vision-fallback:1.0.3.301'
-    implementation 'com.huawei.hms:image-render:1.0.3.301'
+    implementation 'com.huawei.hms:image-render:1.0.3.303'
     implementation 'com.huawei.hms:image-render-fallback:1.0.3.301'
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'

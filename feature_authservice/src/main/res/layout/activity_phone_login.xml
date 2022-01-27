@@ -175,7 +175,7 @@
                         android:id="@+id/btnSendCode"
                         style="@style/ButtonAppearance.Sandbox.Normal"
                         android:layout_width="0dp"
-                        android:layout_height="50dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/h10"
                         android:layout_weight="1"
                         android:clickable="true"

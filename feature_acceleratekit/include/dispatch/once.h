@@ -19,7 +19,7 @@
  *
  * Delete some apple specific comments to avoid confusion.
  * Hide some interfaces.
- * Copyright (c) 2020-2020 Huawei Technologies Co., Ltd.. All rights reserved.
+ * Copyright (c) 2020-2020 Explore in HMS.. All rights reserved.
  */
 
 #ifndef __DISPATCH_ONCE__

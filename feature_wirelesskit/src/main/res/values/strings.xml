@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~
   ~   Copyright 2020. Explore in HMS. All rights reserved.
   ~
@@ -36,6 +35,7 @@
         Wireless Kit can periodically report your app\'s network QoE information, including the uplink and downlink air interface delays during data transmission,
         real-time bandwidth and rate of the uplink and downlink air interfaces, network QoE level assessment, and packet loss rate of the uplink air interface. </string>
     <string name="explanation">Explanation</string>
+    <string name="explanation_dual_wifi">You can integrate the Wireless SDK into your app to obtain dual Wi-Fi services. After registering dual Wi-Fi services in the app, you can enable or disable Wi-Fi 2 when connecting to Wi-Fi. After connecting to Wi-Fi 2, you can obtain the connection status, network link attributes, and network port status of Wi-Fi 2.</string>
     <string name="explanation_app_quality">Apps send information such as transmission lags and transmission statistics to the wireless communication module through Wireless Kit. Therefore, the communication module can make scheduling adjustments accordingly to improve the wireless transmission efficiency for the apps.
         \n\nFor example, if frame freezing occurs during video streaming on an app, Wireless Kit will receive this issue and report it to the wireless communication module. The communication module will then record the frame freezing information and enhance the transmission capability based on the current network status.</string>
     <string name="report_app_quality">Report app quality</string>
@@ -54,6 +54,12 @@
     </string>
     <string name="other_features">Other Features</string>
     <string name="bind_service">Bind service</string>
+    <string name="title_dual_wifi">Dual Wi-Fi Capabilities</string>
+    <string name="enable_dual_wifi">Enable Dual Wi-Fi</string>
+    <string name="disable_dual_wifi">Disable Dual Wi-Fi</string>
+    <string name="wifi_connection_info">Wi-Fi Connection Info</string>
+    <string name="link_properties">Link Properties</string>
+    <string name="network_info">Network Info</string>
     <string name="register_callback">Register callback</string>
     <string name="unregister_callback">Unregister callback</string>
     <string name="query_real_time_qoe">Query real time qoe</string>
@@ -62,4 +68,6 @@
     <string name="official_docs">OFFICIAL DOCS</string>
     <string name="channel_num">channelNum</string>
     <string name="package_name">com.genar.hmssandbox.huawei.feature_wirelesskit</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="wi_fi_information">Wi-Fi Information</string>
 </resources>

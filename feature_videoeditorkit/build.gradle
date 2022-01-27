@@ -1,0 +1,39 @@
+plugins {
+    id 'com.android.dynamic-feature'
+}
+def gradleVersionsFile = rootProject.file("version.properties")
+def gradleVersionInfo = new Properties()
+gradleVersionInfo.load(new FileInputStream(gradleVersionsFile))
+def gradleVersionCode = gradleVersionInfo['versionCode'].toInteger()
+def gradleVersionName = gradleVersionInfo['versionName']
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.genar.hmssandbox.huawei.feature_videoeditorkit"
+        minSdkVersion 28
+        targetSdkVersion 29
+        versionCode gradleVersionCode
+        versionName gradleVersionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+           // proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(":app")
+
+}

@@ -38,7 +38,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:host="developer.huawei.com" android:scheme="http" />
+                <data android:host="developer.huawei.com" android:scheme="https" />
             </intent-filter>
         </activity>
         <activity android:name=".AppLinkingMainActivity" />

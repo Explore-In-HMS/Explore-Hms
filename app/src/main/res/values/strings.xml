@@ -18,8 +18,8 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <string name="title_feature_searchkit">Search Kit</string>
-    <string name="title_quickapp">QuickApp</string>
+    <string name="title_feature_searchkit" translatable="false">Search Kit</string>
+    <string name="title_quickapp" translatable="false">QuickApp</string>
     <string name="title_feature_quickapp">QuickApp</string>
     <string name="title_feature_inapppurchase">In App Purchase Module</string>
     <string name="title_feature_wirelesskit">Wireless Kit</string>
@@ -116,6 +116,304 @@
     <string name="connect_network">Connet to network</string>
     <string name="open_browser">Open in browser</string>
 
+    <!-- app bundle-->
+    <string name="text_for_app_bundle_toolbar">App Bundle Distribution</string>
+    <string name="text_for_app_bundle_header">AGC App Bundle Distribution Information</string>
+    <string name="text_for_app_bundle_image_description">App bundle banner</string>
+
+    <string name="txt_for_app_bundle_distribution"><a href="">Click here to learn more about AGC App Bundle Distribution</a></string>
+    <string name="txt_for_app_bundle_distribution_link">https://developer.huawei.com/consumer/en/doc/distribution/app/18527283</string>
+
+    <string name="txt_for_app_bundle_information">Users are generally more willing to download smaller apps. Therefore, reducing the size of your app package to the greatest possible extent, is essential for boosting its download and installation success rate. App Bundle does this for you, and has become the preferred service for an increasing number of developers. HUAWEI AppGallery Connect allows you to release your app in App Bundle format, with the relevant Huawei SDKs integrated, ensuring that users only need to download the required content, bundled in a smaller, more streamlined app package.</string>
+    <string name="txt_for_app_bundle_steps">App Bundle release processes consist of four steps.</string>
+    <string name="txt_for_app_first_step">1) Add an app to app signature plan.AppGallery Connect provides you with two signature creation methods:\n\n\u2022 Let AppGallery Connect to create and manage my app signature key\n\n\u2022 Export and upload the key and certificate.</string>
+    <string name="txt_for_app_second_step">2) Test Whether the AAB file functions are correct.</string>
+    <string name="txt_for_app_third_step">3) Upload the AAB file </string>
+    <string name="txt_for_app_fourth_step">4) Submit the app for review\n\n\u2022To release a new app, you need to configure the app information and version information for the app.</string>
+    <!-- app bundle-->
+
+    <!--app release-->
+    <string name="title_app_release">App Release</string>
+    <string name="txt_app_release">After an app is developed, you need to submit it to Huawei for review in HUAWEI AppGallery Connect.</string>
+    <string name="txt_app_release_steps">Steps : </string>
+    <string name="txt_app_release_info">1) Configuring App Information
+        \n2) Setting Countries/Regions to Release Your App
+        \n3) Setting Whether the Version Is for Open Testing
+        \n4) Uploading the App Package
+        \n5) Configuring Payment Information
+        \n6) Configuring Content Rating
+        \n7) Configuring the Privacy Description
+        \n8) Configuring the Privacy Policy
+        \n9) Configuring Copyright Information
+        \n10) Completing Other Version Information
+        \n11) Scheduling the App Release
+        \n12) Submitting Your App for Review
+        \n13) Adjusting the Release Date for Your App
+        \n14) Appendix: App Languages
+</string>
+    <string name="txt_apprelease_click"><a href="">Click here to learn more about App Release.</a></string>
+    <string name="sample_image">sample_image</string>
+    <string name="txt_apprelease_link">https://developer.huawei.com/consumer/en/doc/distribution/app/agc-create_app</string>
+    <!--app release-->
+
+    <!--early access -->
+    <string name="hello_blank_fragment_access">Hello blank fragment</string>
+    <string name="title_earlyaccess">Early Access</string>
+    <string name="txt_earlyaccess">This service tests how well your game adapts to Huawei devices and provides gameplay data to optimize versions for upcoming release. Early access data will also be used as an important reference for rating games and allocating promotion resources. Therefore, it is strongly recommended that you perform early access on the game.The early access application process is as follows.</string>
+    <string name="txt_earlyaccess_link">https://developer.huawei.com/consumer/en/doc/distribution/app/5020204</string>
+    <string name="txt_earlyaccess_click"><a href="">Click here to learn more about Early Access.</a></string>
+    <!--early access -->
+
+    <!-- preorders -->
+    <string name="title_preorders">Preorders</string>
+    <string name="txt_preorders">This service attracts potential users to your game prior to its release. During early access or initial release of a game, the system sends notifications to users who have preordered it to attract them to download the game. Therefore, it is recommended that you apply for Preorders. \nThe preorder application process is as follows.</string>
+    <string name="txt_preorders_preparing">Currently, users can preorder a game on the details page. You only need to prepare five images and game introduction for preorders. Your game can be distributed to multiple countries or regions outside the Chinese mainland, and multiple languages are supported. Therefore, you need to prepare materials in advance based on the language requirements of the countries and regions where your game is to be released.</string>
+    <string name="txt_preorders_link">https://developer.huawei.com/consumer/en/doc/distribution/app/5020203</string>
+    <string name="txt_preorder_click"><a href="">Click here to learn more about Preorders.</a></string>
+    <!-- preorders -->
+
+    <!-- comments -->
+    <string name="title">Service Introduction</string>
+    <string name="desc">To provide more convenient and high-quality services and further optimize user experience, we enabled the Comments menu in AppGallery Connect. You can sign in to AppGallery Connect, select your app, and manage comments on the Comments page.</string>
+    <string name="title2">1. Application Scope</string>
+    <string name="desc2">Apps (including games) released in HUAWEI AppGallery</string>
+    <string name="title3">2. Commonly Used Functions</string>
+    <string name="desc3">2.1 Reply \n\nYou can reply to users\' comments.</string>
+    <string name="desc4">2.2 Reply Update \n\nYou can click Update Reply to modify a reply. Then, the updated reply will overwrite the original one, and the replied time will also be updated.</string>
+    <string name="desc5">2.3 Re-reply \n\nAfter you reply to a user\'s comment, if the user replies to your message, a number in red is displayed under Number of replies to notify you of unread replies. You can click the number to respond to the user.</string>
+    <string name="desc6">2.4 Comment Post/Update \n\nYou can post a comment for your app by clicking Create a comment, but only one comment is allowed for each version. After a comment is posted, if you click Create a comment again and write a comment, the original comment will be overwritten.</string>
+    <string name="desc7">2.5 Exporting Comments \n\nYou can export comments for analysis. Up to 100,000 comments within a period of one month can be exported at a time. The exported content is the same as the information filtered on the UI.</string>
+    <string name="searchcomment">searchcomment</string>
+    <string name="commentpost">commentpost</string>
+    <string name="rereply">rereply</string>
+    <string name="replyupdate">replyupdate</string>
+    <string name="reply">reply</string>
+    <string name="toolbar_title">Comments</string>
+    <string name="link"><a href="">Click here to learn more about Comments Service.</a></string>
+    <string name="link2">https://developer.huawei.com/consumer/en/doc/distribution/app/20400</string>
+    <!-- comments -->
+
+    <!-- cloud hosting -->
+    <string name="txt_header_for_cloud_hosting">Cloud Hosting</string>
+    <string name="txt_for_service_introduction">Service Information</string>
+    <string name="txt_for_description">Cloud Hosting integrated, you can manage multiple sites under a project. Each site can use the domain name provided by Cloud Hosting. In addition, multi-version management is also available for each site.</string>
+    <string name="txt_for_site">Site: A site is a carrier for you to host static web pages, helping you manage and maintain web page content of all versions.</string>
+    <string name="txt_for_version">Version: You can manage hosted static web pages by version to implement updates</string>
+
+    <string name="txt_for_hyperlink"><a href="">Click here to learn more about AGC Cloud Hosting.</a></string>
+    <string name="txt_for_hyperlink_link">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-cloudhosting-introduction</string>
+    <!-- cloud hosting -->
+
+    <!-- gift management -->
+    <string name="gift_management_toolbar_title">Gift Management</string>
+    <string name="gift_link"><a href="">Click here to learn more about Gift Management Service.</a></string>
+    <string name="gift_link2">https://developer.huawei.com/consumer/en/doc/distribution/app/agc_Packagemanagement</string>
+    <string name="gift_desc3">2.1 Gift Type \n\n2.1.1 Gift - with code:A gift code, in the form of a serial number, is sent to a user who can redeem the code in the app or game following the instructions to get the gift.\n\n2.1.2 Gift - without code:Information about such gifts is displayed on the AppGallery app details page. If there is a gift available for an app, users can get the mapping gift in the app according to the description of the gift after installing the app.</string>
+    <string name="gift_title2">2. Configuration Rules, Process, and Description</string>
+    <string name="gift_desc2">1.2 Regular Gift Packages \n\nRegular gift packages are classified into common gift packages and activity gift packages. These packages will be promoted using resources of HUAWEI AppGallery (including Kids Center, GameCenter, and EduCenter), including but not limited to the gift zone, app details page, and activity zone. Gift packages that meet specific conditions will have more exposure chances.</string>
+    <string name="gift_desc">1.1 New Users Gift Packages \n\nNew users gift packages target users of specific Huawei device models and are provided as one of the selling points of new devices. Involved apps will be promoted via wide-ranging marketing resources including but not limited to product launch events, product overview pages, and official social accounts. That\'s not all, these apps will be pushed to users whose newly purchased devices are connected to the Internet for the first time.</string>
+    <string name="gift_title1">1. New Users Gift Packages and Regular Gift Packages</string>
+    <string name="gift_title">Service Introduction</string>
+    <string name="gift_desc4">3. Gift Addition\n\n3.1 AppGallery Connect&gt; My apps &gt; Operate &gt; Promotion &gt; Gift Management</string>
+    <string name="gift_desc5">3.2 Configure the gift under Operate section. ClickAdd giftand select a gift type (Gift - with code or Gift - without code).</string>
+    <string name="image_1">image_1</string>
+    <string name="image_2">image_2</string>
+    <string name="image_3">image_3</string>
+    <string name="image_4">image_4</string>
+    <!-- gift management -->
+
+    <!-- crash service -->
+    <string name="text_for_crash_service_toolbar">AGC Crash Service</string>
+    <string name="text_for_crash_service_intro">Service Information</string>
+    <string name="text_for_crash_service_description">The AppGallery Connect Crash service provides a powerful yet lightweight solution to app crash problems. With the service, you can quickly detect, locate, and resolve app crashes (unexpected exits of apps), and have access to highly readable crash reports in real time, without the need to write any code.</string>
+    <string name="text_for_crash_service_description_second">The Crash service provides real-time reports, revealing any crash of your app on any device. In addition, the Crash service can intelligently aggregate crashes, providing context data when a crash occurs, such as environment information and stack, for you to prioritize the crash easily for rapid resolution.</string>
+
+    <string name="text_for_crash_service_key_functions">Key Functions</string>
+
+    <string name="text_for_crash_service_key_func_first">Readable, real-time reports : </string>
+    <string name="text_for_crash_service_key_func_first_desc">Generates highly readable data reports containing stack and other relevant information for your reference, without requiring any code.</string>
+
+    <string name="text_for_crash_service_key_func_second">Custom reports : </string>
+    <string name="text_for_crash_service_key_func_second_desc">Enables you to add custom traces in the form of user IDs, logs, and key-value pairs, generating customized crash reports that provide for accurate tracking.</string>
+
+    <string name="text_for_crash_service_key_func_third">Intelligent crash classification : </string>
+    <string name="text_for_crash_service_key_func_third_desc">Automatically classifies a large number of crashes by type or code location, and allows you to prioritize crashes according to their severity.</string>
+
+    <string name="text_for_crash_service_key_func_fourth">Real-time tracking and alerts : </string>
+    <string name="text_for_crash_service_key_func_fourth_desc">Reflects whether your app is running stably by generating minute-by-minute reports.</string>
+
+    <string name="text_for_crash_service_key_func_fifth">NDK crash analysis : </string>
+    <string name="text_for_crash_service_key_func_fifth_desc">Requires only an NDK package during SDK integration for monitoring crashes in the native library.</string>
+
+    <string name="text_for_crash_service_key_func_sixth">Cross-platform support : </string>
+    <string name="text_for_crash_service_key_func_sixth_desc">Supports the Android and iOS platforms and provides common cross-platform framework plug-ins.such as Flutter,Cordova,React Native and Ionic.</string>
+
+    <string name="txt_for_crash_hyperlink"><a href="">Click here to learn more about AGC Crash Service</a></string>
+    <string name="txt_for_crash_hyperlink_link">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-crash-introduction-0000001055732708</string>
+
+    <string name="btn_exception_text">Thrown an exception</string>
+    <string name="btn_crash_service_yes">Yes</string>
+    <string name="btn_crash_service_no">No</string>
+    <string name="text_for_crash_alert_title">Crash Service Warning</string>
+    <string name="text_for_crash_alert_content">You can add filters and select a time segment to search problems and view problem information including the number of crashes, number of affected users, and last occurrence time.</string>
+    <string name="text_for_crash_question">If you want to throw a null pointer exception, You can click yes button !</string>
+    <!-- crash service -->
+
+    <!-- Cast engine -->
+    <string name="infotext_1_castengine">Designed to provide multi-screen collaboration revolving around mobile phones, HUAWEI Cast Engine enables fast, stable, and low-latency collaboration between mobile phones and external large screens, delivering a seamless, cross-device collaborative experience.</string>
+    <string name="scenarios_castengine">Scenarios</string>
+    <string name="scenarios_info_castengine">\u2022 By integrating Cast Engine, large-screen devices, such as TVs, are able to connect to Huawei phones for multi-screen collaboration.\n\u2022 (Coming soon) Third-party mobile apps can utilize features provided by Cast Engine to offer differentiated experiences.</string>
+    <string name="advantages_text">Advantages</string>
+    <string name="advantages_info_text">\u2022 Quick discovery and stable connection\n\u2022 High-definition and low-latency\n\u2022 Leading multi-screen collaboration capabilities, with countermeasures preventing artifacts and frame-freezing</string>
+    <string name="supported_devices_text">Supported Devices</string>
+    <string name="supported_device"><b>Device:</b>\nHuawei</string>
+    <string name="supported_osversion"><b>OS version:</b>\nEMUI 10.1 or later</string>
+    <string name="precautions_text">Precautions</string>
+    <string name="precautions_info_text">\u2022 Devices that integrate the HUAWEI Cast Engine SDK must comply with the HUAWEI Cast Engine UX Design Specification, which is provided by Huawei after the contract is signed between the parties.\n\u2022 When an update for HUAWEI Cast Engine is available, it will be provided to the third-party device manufacturers in the form of a binary software package, rather than being pushed over the air.The detailed update strategy will be negotiated between Huawei and the applicable manufacturers, on a case-by-case basis.\n\u2022 HUAWEI Cast Engine is not yet compatible with Miracast, AirPlay, and Google Cast on third-party devices.</string>
+    <string name="castengine_more_information"><a href="">Click here to learn more about Cast Engine.</a></string>
+    <string name="castengine_link_documentation_link">https://developer.huawei.com/consumer/en/doc/development/connectivity-Guides/introduction-0000001052079408</string>
+    <!-- Cast engine -->
+
+    <!--Hquic Kit -->
+    <string name="title_hquic">HQUIC Kit</string>
+    <string name="txt_service_introduction">Service Introduction</string>
+    <string name="txt_hquic">Huawei`s intelligent congestion control algorithms and QUIC support connect your apps faster, resist to packet loss, and boost throughput.</string>
+    <string name="btn_hquic">Check App</string>
+    <string name="hquic_result">Result</string>
+    <string name="imageview_banner">banner</string>
+    <string name="url_txt_hquic">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001050440045</string>
+    <!--Hquic Kit -->
+
+
+    <!-- Dynamic Tag Manager -->
+    <string name="btn_test">Send Data to Dynamic Tag Manager</string>
+    <string name="title_dynamic_tag_manager">Dynamic Tag Manager</string>
+    <string name="dtm_service_introduction">Service Introduction</string>
+    <string name="screen_shot">Successfully reported data is displayed on HUAWEI Analytics in real time, as shown in the screenshots below.</string>
+    <string name="about_dtm">With DTM, you can dynamically update tracking tags on a web-based UI to track specific events and report data to third-party analytics platforms, tracking your marketing activity data as needed.</string>
+    <string name="url_txt_dtm">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001050043907</string>
+    <!-- Dynamic Tag Manager -->
+
+
+    <!--Data security engine -->
+    <string name="you_should_not_be_seeing_this_if_you_are_seeing_this_there_is_a_grave_error_occurred">YOU SHOULD NOT BE SEEING THIS! IF YOU ARE SEEING THIS, THERE IS A GRAVE ERROR OCCURRED.</string>
+    <string name="desc_default_string">DataSecurity Engine</string>
+    <string name="desc_service_introduction">Service Introduction</string>
+    <string name="header_enabling_app_signing_for_a_new_app_app_gallery">Enabling App Signing for a New App - Letting AppGallery Connect Create a Signature Key</string>
+    <string name="explanation">Explanation</string>
+    <string name="desc_enabling_export_app_signing">If you choose to use your own signature key, you can submit key certificates of your signature key and upload key (optional) in AppGallery Connect. After you upload an app package, AppGallery Connect verifies your identity using the key certificate of the upload key you submitted. \n\nAfter the verification is successful, AppGallery Connect uses the signature key you submitted to re-sign the app. After the signature is successful, AppGallery Connect distributes the app to users. When you update your app, you only need to use the upload key to sign the app package. AppGallery Connect will always use the signature key you upload to re-sign the app, ensuring that the signature key is the same as that of the released app. \n\nThe key certificate of the upload key is optional. If you do not submit the key certificate of the upload key, AppGallery Connect uses the signature key you upload as the upload key for verification by default.\n</string>
+    <string name="docs">Docs</string>
+    <string name="link_developer_datasecurity_engine">https://developer.huawei.com/consumer/en/doc/development/system-Guides/3210801</string>
+    <string name="datasecurity_engine_explanation1">DataSecurity Engine storage ability provides a layer of security for storing, deleting, updating, and querying sensitive data. This ability can be leveraged in scenarios where short data (64 bytes or less) such as user passwords, credit card information, and app token data is being stored, deleted, updated, or queried. DataSecurity Engine has three main features.\n\n</string>
+    <string name="datasecurity_engine_explanation2">\u2022Versatile: Can be used across a broad range of scenarios where sensitive data needs to be stored or managed.\n\n\u2022Secure: Stores keys in a Trusted Execution Environment (TEE), adopts optimized decryption algorithms, and encrypts stored data, to add three extra layers of security including key, algorithm, and data security.\n\n\u2022Efficient: Decreases the time needed for developing algorithms, making more time for developing the app.\n\n</string>
+    <string name="datasecurity_engine_explanation3">For further details, you can use the link below to access to the official documentation of DataSecurity Engine.</string>
+    <!--Data security engine -->
+
+    <!-- App performance management -->
+    <string name="text_for_apm_tool_bar">App Performance Management</string>
+    <string name="text_for_apm_banner_description">AGC APM banner</string>
+    <string name="text_for_apm_test_page">APM Test Page</string>
+    <string name="text_for_apm_description">App Performance Management (APM) of HUAWEI AppGallery Connect provides minute-level app performance monitoring capabilities.\n\nApp developers can view and analyze app performance data collected by APM in AppGallery Connect to improve user experience and solve app performance problem quickly. </string>
+    <string name="text_for_apm_key_functions"><b>Key Functions</b></string>
+    <string name="text_for_apm_first_function"><b>\u2022 Automatic performance monitoring</b></string>
+    <string name="text_for_apm_first_function_desc">Automatically Collect Application Not Responding(ANR) data, app launch performance data, app screen performance data, HTTP/HTTPS network performance data, and foreground and background activity performance data.</string>
+    <string name="apm_anr_view"><b>App ANR Monitoring :</b>The APM service can monitor the trend and impact of ANR and collect detailed information when ANR problems occur, helping you quickly locate and resolve ANR problems.</string>
+    <string name="apm_app_launch_monitoring"><b>App Launch Monitoring :</b> This function monitors the app launch duration, so that you can understand the app launch performance in a timely manner.</string>
+    <string name="apm_app_screen_monitoring"><b>App Screen Monitoring :</b> This function displays the percentages of slow frame screens and frozen frame screens, providing you with performance analysis data of app screen rendering.</string>
+    <string name="apm_foreground_act_monitoring"><b>Foreground Activity Monitoring :</b> APM monitors the duration of foreground activities of your app, helping you understand the performance of your apps in the foreground in a timely and comprehensive manner.</string>
+    <string name="apm_background_act_monitoring"><b>Background Activity Monitoring :</b> APM monitors the duration of background activities of your app, helping you understand the performance of your apps in the background in a timely and comprehensive manner.</string>
+    <string name="apm_custom_app_performance_mon"><b>Custom App Performance Monitoring :</b> APM captures the performance of your app in specific scenarios and evaluates the performance with custom indicators to provide overall monitoring of app performance.</string>
+    <string name="apm_network_req_monitoring"><b>Network Request Monitoring :</b> APM monitors HTTP/HTTPS network requests initiated by the OkHttp, URLConnection, and ApacheHttpClient and clusters data of the same type of network requests by matching URL clustering rules and detect network problems.</string>
+    <string name="text_for_apm_second_function"><b>\u2022 Real-time reports</b></string>
+    <string name="text_for_apm_second_function_desc">Displays a broad spectrum of app performance data that updates by the minute; draws tendency curves outlining device, OS, CPU, memory, and network request performance, enabling you to address any potential issues promptly.</string>
+    <string name="text_for_apm_third_function"><b>\u2022 Custom traces and indicators</b></string>
+    <string name="text_for_apm_third_function_desc">Monitors your app via tailored traces and indicators, providing a detailed glimpse of app performance.\n\n<b>Note:</b>Nowadays Custom trace can be used Android and Web applications.</string>
+    <string name="text_for_apm_link_text_for_website">App Performance Management (APM) web page</string>
+    <string name="text_for_apm_link_for_web_site">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-apms-introduction</string>
+    <string name="text_for_apm_link_name_for_codelab">App Performance Management (APM) Codelab</string>
+    <string name="text_for_apm_link_for_codelab">https://developer.huawei.com/consumer/en/codelab/AppGalleryConnectAPM/index.html#0</string>
+    <!-- App performance management -->
+
+
+    <!-- Wise play drm -->
+    <string name="title_wiseplay_drm">WisePlay DRM</string>
+    <string name="txt_wiseplaydrm">WisePlay DRM provides you with digital content copyright protection capabilities, including hardware- and software-level
+        DRM capabilities. This helps to support you in various use cases such as online application for client certificates,
+        content encryption in multiple formats and algorithms, and online and offline playback. Video service providers (SPs) use keys to encrypt content.
+        The content must be decrypted using the keys before being played.</string>
+    <string name="txt_wiseplay_features">Provides free content copyright protection capabilities. Provides a more secure enhanced hardware-level
+        DRM compared with the software-level DRM, based on a complete DRM solution at the hardware and software levels.</string>
+    <string name="txt_wiseplay_usecases">Content encryption: The SP service obtains a key, encrypts content when transcoding it, and delivers the
+        encrypted content to the content delivery network (CDN).
+Content decryption: Before a user plays the encrypted content, the client obtains a key from the SP service, and uses the DRM to decrypt the content.</string>
+    <string name="txt_wiseplay_link">https://developer.huawei.com/consumer/en/hms/huawei-wiseplay/</string>
+    <string name="txt_wiseplay_link_info"><a href="">Click here to learn more about WisePlay DRM.</a></string>
+    <string name="txt_encryption_process">Encryption Process</string>
+    <string name="txt_encryption_process_exp">If the SP server does not have the MultiDRM capability (that is, a video is protected by multiple DRMs),
+        you can refer to this section to build one based on the key management system (KMS) sample code provided by HUAWEI Developers.The sample code
+        provides the capabilities
+        of generating and managing keys and the logic of generating WisePlay DRM encryption index information.</string>
+    <string name="txt_encryption_process_follows">The video content encryption process is as follows:\n1.The video operations platform sends a request
+        of creating a content encoding task to the encoder and passes parameters such as the content ID and encryption type.\n2.The encoder determines
+        whether the content is encrypted based on the encryption type.
+        If so, the encoder calls the getKeyInfo API to obtain Key, KeyID, and PSSH Box for encryption from the KMS.\n3.
+        The KMS generates a content encryption key, a key ID, and PSSH box information, and establishes the mapping between
+        the key ID and content ID. The KMS stores the key information securely and persistently. The KMS of different SPs has
+        different storage solutions.\n4.After obtaining the key from the KMS, the encoder transcodes and encrypts the content
+        (encrypts video segments in AES-128-CTR/CBC mode) and writes the PSSH box information to the index file.\n5.After the
+        transcoding and encryption, the content is ingested to the CDN.\n</string>
+    <!-- Wise play drm -->
+
+
+    <!-- Paid Apps -->
+    <string name="paidApps_you_should_not_be_seeing_this_if_you_are_seeing_this_there_is_a_grave_error_occurred">YOU SHOULD NOT BE SEEING THIS! IF YOU ARE SEEING THIS, THERE IS A GRAVE ERROR OCCURRED.</string>
+    <string name="paidApps_desc_default_string">Paid Apps</string>
+    <string name="paidApps_desc_service_introduction">Paid Apps Introduction</string>
+    <string name="header_authenticating_a_paid_app_purchase">Authenticating a Paid App Purchase</string>
+    <string name="header_app_gallery_drm_service_lite_sdk">AppGallery DRM Service Lite SDK</string>
+    <string name="paidApps_explanation">Explanation</string>
+    <string name="desc_authenticating_a_paid_app_purchase">When a user uses your paid app, you need to check whether the user has purchased the app. Please note that the AppGallery DRM Service SDK applies only to HUAWEI AppGallery 7.2.1 and later versions.\n\n As an example of an use case, company A develops a paid app, and user B purchases the app. When user B launches the app, the app checks whether user B has successfully purchased the app. If so, user B can continue using the app. Otherwise, user B is prompted to purchase the app.\n</string>
+    <string name="desc_app_gallery_drm_service_lite_sdk">In order to enable customization of the AppGallery DRM Service SDK, Huawei releases the open-source AppGallery DRM Service SDK of the Lite version. Please note that the open-source Lite SDK does not support payment authentication for AppTouch and HUAWEI GameCenter, but only for HUAWEI AppGallery.\n\n\u2022If you want to customize the payment authentication mechanism, you can perform secondary development on the Lite version.\n\n\u2022If you do not have this requirement, you can directly integrate the AppGallery DRM Service SDK into your app.</string>
+    <string name="paidApps_docs">Docs</string>
+    <string name="link_developer_paid_apps">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/appgallerykit-paydownload-introduction</string>
+    <string name="paid_apps_explanation1">AppGallery Connect enables consumers to download high-quality apps and pay through a variety of payment methods, providing a better way for you to monetize your apps. To make your app a paid one, you can set Payment type to Paid when releasing your app in AppGallery Connect. You can integrate the AppGallery DRM Service SDK to check whether a user has successfully purchased your paid app based on your needs.\n\n</string>
+    <string name="paid_apps_explanation2">If you choose not to integrate the AppGallery DRM Service SDK, you do not need to perform operations in this document and only need to set your app as a paid app when configuring payment information. \n\n</string>
+    <string name="paid_apps_explanation3">If you choose to integrate the AppGallery DRM Service SDK,  when a user opens your paid app, the AppGallery DRM Service SDK checks whether the user has purchased the app. If the user has not purchased the app, the SDK prompts the user to purchase it.\n\n</string>
+    <string name="paid_apps_explanation4">For further details, you can use the link below to access to the official documentation of Paid Apps. \n\nAlso you can slide right to see some features in detail.</string>
+    <!-- Paid Apps -->
+
+    <!-- Integration Check -->
+    <string name="text_1">Huawei provides a tool that fully automates the checking of apps.
+        You simply fill in the app information and upload the app package, and the tool will scan your package and provide you with a report.
+        You can then optimize your app based on the report.
+        \n\n1. Sign in to AppGallery Connect and select <b>My projects</b>.
+        \n\n2. Find your project from the project list and click the app for self-check on the project card. The <b>Project Setting</b> page is displayed.</string>
+    <string name="text_2">3. Go to <b>Quality</b> > <b>Integration Check</b>, and click <b>New check</b>.</string>
+    <string name="text_3">4. Confirm the information you entered, and click <b>Submit</b>.
+\n\n●  If <b>Category, Payment type</b>, and <b>Country/Region</b> are not automatically supplied, please complete these fields.
+\n\n●  Click <b>Browse</b> to upload the app package to be checked.</string>
+    <string name="text_4">5. View the check result on the <b>Check history</b> page after the check task is completed.</string>
+    <string name="text_5">●  To check the report, click <b>View report</b> in the <b>Operation</b> column of the check record.</string>
+    <string name="text_6">●  On the <b>Report</b> page, to view details about the app, click <b>More</b>.</string>
+    <string name="text_7">●  To delete a check record, click <b>Delete</b>.</string>
+    <string name="header">Service Introduction</string>
+    <string name="url_txt_integrationcheck">https://developer.huawei.com/consumer/en/doc/distribution/app/agc-auto_check</string>
+    <!-- Integration Check -->
+
+    <!-- local authentication-->
+    <string name="text_service_introduction_localauthentication">Service Introduction</string>
+    <string name="text_service_info_localauthentication">Facial recognition is a technology that can perform facial comparison using images taken with the front camera and running facial feature algorithms.</string>
+    <string name="text_application_scenarios_localauthentication">Application Scenarios</string>
+    <string name="text_scenarios_info_localauthentication">Facial recognition can be used for logging in, making payments or other scenarios where facial recognition is required.</string>
+    <string name="text_key_features_localauthentication">Key Features</string>
+    <string name="text_key_features_info_localauthentication"> Allows for quick facial comparisons using deep neural network algorithms.\n\u2022 Efficient: Decreases the time needed for developing algorithms and make the app more convenient.\n Versatile: Can be used across a broad range of scenarios.</string>
+    <string name="text_requirements_localauthentication">Requirements</string>
+    <string name="text_requirements_info_localauthentication">Requirements</string>
+    <string name="text_development_environment_localauthentication">Development environment</string>
+    <string name="text_development_environment_info_localauthentication">Android Studio, V3.0.1 or later.\n Mobile phone, EMUI 10.0 and later versions, supporting 3D facial recognition.</string>
+    <string name="text_click_here_localauthentication">Click here to get more information about Local Authentication Engine.</string>
+    <string name="localauthentication_url">https://developer.huawei.com/consumer/en/doc/development/Security-Guides/introduction-0000001051219741</string>
+    <!-- local authentication-->
 
     <string name="btn_txt_signin_huaweiid">Sign In with HUAWEI ID</string>
     <string name="btn_txt_signin_silent">Silent SignIn</string>
@@ -136,7 +434,7 @@
     <string name="btn_txt_splash_sd">Show Splash Ad</string>
     <string name="ad_id_splash">testq6zq98hecj</string>
     <string name="owner">HUAWEI Developer</string>
-    <string name="copyright_info">Copyright 2020. Huawei Technologies Co., Ltd</string>
+    <string name="copyright_info">Copyright 2020. Explore in HMS</string>
     <string name="status_load_ad_success">Ad loading state: loaded successfully.</string>
     <string name="status_load_ad_fail">Ad loading state: failed to be loaded. Error code: </string>
     <string name="status_ad_dismissed">Ad is dismissed.</string>
@@ -386,6 +684,7 @@
     <string name="site_kit_information">Directing users to the location-based service they need makes your app accessible to more people. Give your users the power to explore their world. With Site Kit, your app can provide users with convenient and secure access to diverse, place-related services, and therefore acquire more users.</string>
     <string name="site_kit_more_information"><a href="">Click here to learn more about Site Kit.</a></string>
     <string name="site_link_documentation_link">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/android-sdk-introduction-0000001050158571</string>
+    <string name="video_kit_link_documentation_link">https://developer.huawei.com/consumer/en/doc/development/Media-Guides/introduction-0000001050439577</string>
     <string name="site_kit_pricing_information"><a href="">Click here to learn more about Service Pricing Detail.</a></string>
     <string name="site_kit_pricing_information_link">https://developer.huawei.com/consumer/en/doc/HMSCore-Guides-V5/about-charging-0000001052557393-V5</string>
     <string name="site_kit_personal_data_processing"><a href="">Click here to learn more about Personal Data Processing.</a></string>
@@ -566,4 +865,23 @@
     <string name="distance_time">%1$s (%2$s)</string>
     <string name="title_feature_networkkit">feature_networkkit</string>
     <string name="scan_display_copy_text">COPY</string>
+    <string name="title_feature_hemkit">feature_hemkit</string>
+    <string name="result">Result</string>
+    <string name="activity_identification_introduction">Activity Identification Introduction</string>
+    <string name="title_feature_audioeditorkit">Audio Editor Kit</string>
+    <string name="title_feature_avpipelinekit">AV Pipeline Kit</string>
+    <string name="title_feature_3dmodellingkit">3D Modelling Kit</string>
+    <string name="title_feature_videoeditorkit">Video Editor Kit</string>
+
+
+    <string name="start_tv">Get started</string>
+    <string name="version">Version</string>
+    <string name="setting">Settings</string>
+    <string name="cancels">Cancel</string>
+    <string name="back">Back</string>
+    <string name="permission_tips">Please enable the Storage and Microphone permissions.</string>
+    <string name="delete">Delete</string>
+    <string name="title_feature_videoeditor_kit">Video Editor Kit</string>
+    <string name="title_feature_modem5g_kit">5G Modem Kit</string>
+
 </resources>

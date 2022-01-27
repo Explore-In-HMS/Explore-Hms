@@ -110,6 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity="center"
+            android:layout_marginEnd="16dp"
             android:orientation="horizontal"
             android:weightSum="2"
             app:layout_constraintEnd_toStartOf="@id/btn_setMock_location"
@@ -130,7 +131,7 @@
                 android:id="@+id/radioGroup_mockMode_false"
                 style="@style/TextAppearance.Sandbox.Body1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:checked="true"
                 android:text="False"
@@ -185,6 +186,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity="center"
+            android:layout_marginEnd="16dp"
             android:orientation="horizontal"
             android:weightSum="2"
             app:layout_constraintEnd_toStartOf="@id/btn_getContext_State"
@@ -194,21 +196,21 @@
             <RadioButton
                 android:id="@+id/radioGroup_state_supportEx"
                 style="@style/TextAppearance.Sandbox.Body1"
-                android:layout_width="wrap_content"
+                android:layout_width="44dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:checked="true"
-                android:text="SupportEx"
+                android:text="Support\nEx"
                 android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/radioGroup_state_overpass"
                 style="@style/TextAppearance.Sandbox.Body1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="47dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:checked="false"
-                android:text="Overpass"
+                android:text="Over\nPass"
                 android:textSize="12sp" />
 
         </RadioGroup>

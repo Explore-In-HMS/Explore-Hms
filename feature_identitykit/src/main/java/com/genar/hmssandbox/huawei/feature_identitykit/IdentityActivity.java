@@ -136,6 +136,8 @@ public class IdentityActivity extends AppCompatActivity {
                         sb.append("area:").append(userAddress.getLocality()).append(",");
                         sb.append("address:").append(userAddress.getAddressLine1()).append(userAddress.getAddressLine2()).append(", ");
                         sb.append("phone:").append(userAddress.getPhoneNumber());
+                        sb.append("CountryIso Code: ").append(userAddress.getCountryISOCode());
+                        sb.append("Country Code: ").append(userAddress.getCountryCode());
                         Log.i(TAG, "user address is " + sb.toString());
                         userAddressTextView.setText(sb.toString());
                     } else {
