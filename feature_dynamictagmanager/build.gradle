@@ -16,55 +16,44 @@
  *
  */
 
-apply plugin: "com.android.dynamic-feature"
-
-def gradleVersionsFile = rootProject.file("version.properties")
-def gradleVersionInfo = new Properties()
-gradleVersionInfo.load(new FileInputStream(gradleVersionsFile))
-def gradleVersionCode = gradleVersionInfo['versionCode'].toInteger()
-def gradleVersionName = gradleVersionInfo['versionName']
-
-
+plugins {
+    id 'com.android.dynamic-feature'
+}
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
     defaultConfig {
+        applicationId "com.genar.hmssandbox.huawei.feature_connectapi"
         minSdkVersion 26
         targetSdkVersion 30
-        versionCode gradleVersionCode
-        versionName gradleVersionName
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
     }
 }
 
 dependencies {
     implementation project(":app")
-//    implementation 'com.huawei.hms:dtm-api:5.0.2.300'
-
-
-//    implementation fileTree(dir: "libs", include: ["*.jar"])
-//    implementation project(":app")
 //    implementation 'androidx.appcompat:appcompat:1.2.0'
-//    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-//    implementation 'com.huawei.hms:hianalytics:5.0.3.300'
-//    implementation 'com.huawei.hms:dtm-api:5.0.2.300'
-
-//    testImplementation 'junit:junit:4.13'
+//    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+//    testImplementation 'junit:junit:4.+'
 //    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
 //    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 //    androidTestImplementation 'androidx.annotation:annotation:1.1.0'
-}
-
-apply from: '../sonarqube.gradle'
-sonarqube {
-    properties {
-        property "sonar.projectName","HmsSandbox:"+project.name
-    }
 }

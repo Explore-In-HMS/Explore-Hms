@@ -172,11 +172,11 @@ public class SmsReaderActivity extends AppCompatActivity {
             if (bundle != null && ReadSmsConstant.READ_SMS_BROADCAST_ACTION.equals(intent.getAction())) {
                 Status status = bundle.getParcelable(ReadSmsConstant.EXTRA_STATUS);
                 if (status.getStatusCode() == CommonStatusCodes.TIMEOUT) {
-                   return;
+                    return;
                 } else if (status.getStatusCode() == CommonStatusCodes.SUCCESS) {
                     if (bundle.containsKey(ReadSmsConstant.EXTRA_SMS_MESSAGE)) {
 
-                      smscode.setText("101010");
+                        smscode.setText("101010");
                     }
                 }
             }

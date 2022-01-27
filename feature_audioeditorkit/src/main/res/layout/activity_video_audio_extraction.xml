@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.VideoAudioExtractionActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_video_extraction"
+        style="@style/ToolbarAppearance.Sandbox.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/video_audio_extraction" />
+
+    <EditText
+        android:id="@+id/et_extracted_source2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="85dp"
+        android:layout_marginStart="@dimen/hiad_16_dp"
+        android:layout_marginEnd="@dimen/hiad_16_dp"
+        android:enabled="false"
+        android:gravity="top|left"
+        android:hint="@string/extracted_source"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:maxLines="4"
+        android:minLines="1"
+        android:textAllCaps="false"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_video_extraction" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_open_source2"
+        style="@style/ButtonAppearance.Sandbox.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="172dp"
+        android:layout_marginStart="@dimen/hiad_16_dp"
+        android:layout_marginEnd="@dimen/hiad_16_dp"
+        android:text="@string/open_extracted_source"
+        android:textAllCaps="false"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@id/et_extracted_source2"
+        app:layout_constraintStart_toStartOf="@id/et_extracted_source2"
+        app:layout_constraintTop_toBottomOf="@+id/et_extracted_source2" />
+
+
+</RelativeLayout>

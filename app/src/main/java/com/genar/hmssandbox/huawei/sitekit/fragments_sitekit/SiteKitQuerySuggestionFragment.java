@@ -41,6 +41,7 @@ import com.huawei.hms.site.api.SearchResultListener;
 import com.huawei.hms.site.api.SearchService;
 import com.huawei.hms.site.api.SearchServiceFactory;
 import com.huawei.hms.site.api.model.Coordinate;
+import com.huawei.hms.site.api.model.HwLocationType;
 import com.huawei.hms.site.api.model.QuerySuggestionRequest;
 import com.huawei.hms.site.api.model.QuerySuggestionResponse;
 import com.huawei.hms.site.api.model.SearchStatus;
@@ -49,6 +50,7 @@ import com.huawei.hms.site.api.model.Site;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -111,6 +113,7 @@ public class SiteKitQuerySuggestionFragment extends Fragment implements SiteKitR
          * Creating QuerySuggestionRequest. You can customize with using various properties.
          */
         request = new QuerySuggestionRequest();
+        request.setCountries(Arrays.asList("en", "fr", "cn", "de", "ko"));
         Boolean isStrictBound=binding.cbxStrictBound.isChecked();
         request.setStrictBounds(isStrictBound);
         request.setLocation((Coordinate) getArguments().getParcelable("location"));

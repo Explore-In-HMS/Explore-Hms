@@ -33,7 +33,7 @@ android {
 
     defaultConfig {
         applicationId "com.genar.hmssandbox.huawei.feature_cloudstorage"
-        minSdkVersion 26
+        minSdkVersion 28
         targetSdkVersion 30
         versionCode gradleVersionCode
         versionName gradleVersionName
@@ -61,9 +61,9 @@ dependencies {
    // implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     //implementation "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
-    implementation 'androidx.navigation:navigation-fragment:2.3.1'
+/*    implementation 'androidx.navigation:navigation-fragment:2.3.1'
     implementation 'androidx.navigation:navigation-ui:2.3.1'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'*/
 //    implementation 'androidx.appcompat:appcompat:1.2.0'
 //    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 //    implementation 'androidx.legacy:legacy-support-v4:1.0.0'

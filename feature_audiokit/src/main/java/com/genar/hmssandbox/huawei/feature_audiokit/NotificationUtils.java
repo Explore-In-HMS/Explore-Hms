@@ -61,14 +61,14 @@ public class NotificationUtils {
 
     @TargetApi(Build.VERSION_CODES.O)
     private static void createNotificationChannel(Application application, String channelId,
-        NotificationCompat.Builder builder) {
+                                                  NotificationCompat.Builder builder) {
 
         NotificationChannel notificationChannel =
-            new NotificationChannel(channelId, "Play", NotificationManager.IMPORTANCE_DEFAULT);
+                new NotificationChannel(channelId, "Play", NotificationManager.IMPORTANCE_DEFAULT);
         notificationChannel.enableVibration(false);
         notificationChannel.setSound(null, null);
         NotificationManager notificationManager =
-            (NotificationManager) application.getSystemService(Context.NOTIFICATION_SERVICE);
+                (NotificationManager) application.getSystemService(Context.NOTIFICATION_SERVICE);
         if (notificationManager != null) {
             notificationManager.createNotificationChannel(notificationChannel);
         }

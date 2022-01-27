@@ -29,7 +29,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        minSdkVersion 26
+        minSdkVersion 28
         targetSdkVersion 30
         versionCode gradleVersionCode
         versionName gradleVersionName
@@ -52,9 +52,9 @@ dependencies {
 
     implementation 'com.google.code.gson:gson:2.8.5'
 
-    implementation "androidx.camera:camera-camera2:1.0.0-beta12"
-    implementation "androidx.camera:camera-lifecycle:1.0.0-beta12"
-    implementation "androidx.camera:camera-view:1.0.0-alpha19"
+    //implementation "androidx.camera:camera-camera2:1.0.0-beta12"
+    //implementation "androidx.camera:camera-lifecycle:1.0.0-beta12"
+    //implementation "androidx.camera:camera-view:1.0.0-alpha19"
 
 }
 

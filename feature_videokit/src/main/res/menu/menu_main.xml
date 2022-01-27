@@ -1,0 +1,119 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.huawei.video.kit.demo.activity.HomePageActivity">
+    <item
+        android:id="@+id/video_type_setting"
+        android:orderInCategory="100"
+        android:title="@string/video_type"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/video_view_setting"
+        android:orderInCategory="100"
+        android:title="@string/video_view_setting"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/video_mute_setting"
+        android:orderInCategory="100"
+        android:title="@string/video_mute_setting"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/video_play_setting"
+        android:orderInCategory="100"
+        android:title="@string/play_mode"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/video_bandwidth_setting"
+        android:orderInCategory="100"
+        android:title="@string/automatic_adaptation"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/video_init_bitrate_setting"
+        android:orderInCategory="100"
+        android:title="@string/video_init_bitrate_setting"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/video_bitrate_range_setting"
+        android:orderInCategory="100"
+        android:title="@string/video_bitrate_range_setting"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/video_init_preloader"
+        android:orderInCategory="100"
+        android:title="@string/video_init_preloader"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/video_add_single_cache"
+        android:orderInCategory="100"
+        android:title="@string/video_add_single_cache"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/video_pause_cache"
+        android:orderInCategory="100"
+        android:title="@string/video_pause_cache"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/video_resume_cache"
+        android:orderInCategory="100"
+        android:title="@string/video_resume_cache"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/video_remove_cache"
+        android:orderInCategory="100"
+        android:title="@string/video_remove_cache"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/video_remove_tasks"
+        android:orderInCategory="100"
+        android:title="@string/video_remove_tasks"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/recommend_video_info"
+        android:orderInCategory="100"
+        android:title="@string/get_recommend_info"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/video_set_alg_param"
+        android:orderInCategory="100"
+        android:title="@string/video_set_alg_para"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/video_update_country"
+        android:orderInCategory="100"
+        android:title="@string/update_server_country"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/subtitle_preset_language_setting"
+        android:orderInCategory="100"
+        android:title="@string/subtitle_preset_language_setting"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/audio_set_prefer_audio"
+        android:orderInCategory="100"
+        android:title="@string/audio_set_prefer_audio"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/socks_proxy"
+        android:orderInCategory="100"
+        android:title="@string/set_socks_proxy"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/download_link_num_setting"
+        android:orderInCategory="100"
+        android:title="@string/download_link_num"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/set_wake_mode"
+        android:orderInCategory="100"
+        android:title="@string/set_wake_mode"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/subtitle_render"
+        android:orderInCategory="100"
+        android:title="@string/subtitle_render"
+        app:showAsAction="never" />
+</menu>

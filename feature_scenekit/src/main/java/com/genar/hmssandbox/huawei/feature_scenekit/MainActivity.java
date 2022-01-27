@@ -36,16 +36,22 @@ import com.genar.hmssandbox.huawei.feature_scenekit.faceview.FaceViewActivity;
 import com.genar.hmssandbox.huawei.feature_scenekit.sceneview.SceneViewActivity;
 import com.google.android.material.button.MaterialButton;
 import com.huawei.hms.feature.dynamicinstall.FeatureCompat;
+import com.huawei.hms.scene.common.base.error.exception.ModuleException;
+import com.huawei.hms.scene.common.base.error.exception.StateException;
 import com.huawei.hms.scene.common.base.error.exception.UpdateNeededException;
+import com.huawei.hms.scene.sdk.fluid.SceneKitFluid;
 import com.huawei.hms.scene.sdk.render.SceneKit;
 import com.huawei.hms.videokit.player.common.Constants;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int REQ_CODE_UPDATE = 100001;
+    private boolean initialized2D = false;
     private static final int PERMISSION_REQUEST = 99;
     private static final int REQ_CODE_UPDATE_SCENE_KIT = 10001;
     private boolean initialized = false;
     private static final int RES_CODE_UPDATE_SUCCESS = -1;
+    private static final int RES_CODE_UPDATE_SUCCESS_2D = -1;
 
     /**
      * Service Related UI Elements
@@ -54,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
     private MaterialButton btnArView;
     private MaterialButton btnFaceView;
     private MaterialButton btnRenderView;
+    private MaterialButton btn2dSimulationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +99,26 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void initializeSceneKitFluid() {
+        // Use the asynchronous API for initialization.
+        SceneKitFluid.getInstance().initialize(this, new SceneKitFluid.OnInitEventListener() {
+            @Override
+            public void onUpdateNeeded(Intent intent) {
+                startActivityForResult(intent, REQ_CODE_UPDATE);
+            }
+
+            @Override
+            public void onInitialized() {
+                initialized2D = true;
+            }
+
+            @Override
+            public void onException(Exception e) {
+                Toast.makeText(MainActivity.this, "failed to initialize SceneKit fluid: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -105,6 +132,18 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "SceneKit initialized", Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
                 // No upgrade need is detected during re-initialization.
+                Toast.makeText(this, "failed to initialize SceneKit: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        if (requestCode == REQ_CODE_UPDATE
+                && resultCode == RES_CODE_UPDATE_SUCCESS_2D) {
+            try {
+                SceneKitFluid.getInstance().initializeSync(getApplicationContext());
+                initialized = true;
+                Toast.makeText(this, "SceneKit Fluid initialized", Toast.LENGTH_SHORT).show();
+            } catch (StateException | ModuleException e) {
+                // No update need is detected during re-initialization.
                 Toast.makeText(this, "failed to initialize SceneKit: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
@@ -132,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
         btnArView = findViewById(R.id.btn_ar_view);
         btnFaceView = findViewById(R.id.btn_face_view);
         btnRenderView=findViewById(R.id.btn_render_view);
+        btn2dSimulationView=findViewById(R.id.btn_fluid_simulation_view);
     }
 
 
@@ -162,6 +202,15 @@ public class MainActivity extends AppCompatActivity {
             Intent renderViewIntent = new Intent(MainActivity.this, SampleRenderActivity.class);
             isPermissionsGranted(renderViewIntent);
         });
+
+        btn2dSimulationView.setOnClickListener(v -> {
+            if (!initialized2D) {
+                initializeSceneKitFluid();
+                return;
+            }
+            Intent simulationViewIntent = new Intent(MainActivity.this, FluidSimulation2D.class);
+            isPermissionsGranted(simulationViewIntent);
+        });
     }
 
     /**
@@ -185,6 +234,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == PERMISSION_REQUEST && grantResults.length != 0 && (grantResults[0] == PackageManager.PERMISSION_DENIED)) {
             Toast.makeText(getApplicationContext(), getResources().getString(R.string.msg_prm_req_scene_kit), Toast.LENGTH_LONG).show();
         }

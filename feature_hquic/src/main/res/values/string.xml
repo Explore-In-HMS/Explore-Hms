@@ -22,4 +22,7 @@
     <string name="txt_service_introduction">Service Introduction</string>
     <string name="txt_hquic">Huawei`s intelligent congestion control algorithms and QUIC support connect your apps faster, resist to packet loss, and boost throughput.</string>
     <string name="btn_hquic">Check App</string>
+    <string name="result">Result</string>
+    <string name="imageview_banner">banner</string>
+    <string name="url_txt_hquic">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001050440045</string>
 </resources>

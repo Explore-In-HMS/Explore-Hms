@@ -75,9 +75,18 @@ public class GestureTransactor extends BaseTransactor<List<MLGesture>> {
             @NonNull GraphicOverlay graphicOverlay) {
         graphicOverlay.clear();
         Log.d(TAG,"gesture detect time end to end:" + (System.currentTimeMillis() - start));
+        int one = 0;
         if (originalCameraImage != null) {
             CameraImageGraphic imageGraphic = new CameraImageGraphic(graphicOverlay, originalCameraImage);
             graphicOverlay.addGraphic(imageGraphic);
+            for (int i = 0; i < results.size(); i++) {
+                MLGesture mlGesture = results.get(0);
+                one = mlGesture.category;
+             
+            }
+            if (one == MLGesture.GOOD) {
+                Log.d("GestureTransactorOne", "isaret:like, "+one);
+            }
         }
 
         GestureGraphic graphic = new GestureGraphic(graphicOverlay, mContext, results);

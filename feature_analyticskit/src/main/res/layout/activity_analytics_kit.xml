@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~
   ~   Copyright 2020. Explore in HMS. All rights reserved.
   ~
@@ -157,15 +156,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/h16"
                     android:gravity="center_horizontal"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:text="Questions" />
+                    android:text="Questions"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <View
                     android:id="@+id/separator1_analyticskit"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/colorGray1"
                     android:layout_marginTop="@dimen/h16"
+                    android:background="@color/colorGray1"
                     app:layout_constraintTop_toBottomOf="@+id/tvQuestionsHedaer" />
 
 
@@ -221,15 +220,14 @@
                     style="@style/TextAppearance.Sandbox.Body1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                   android:layout_margin="@dimen/h16"
-                    android:text="Your Score"
+                    android:layout_margin="@dimen/h16"
                     android:gravity="center_horizontal"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    android:text="Your Score"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
             <TextView
@@ -260,10 +258,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:text="@string/predefined_events_sample_text"
                 app:layout_constraintTop_toBottomOf="@+id/tv_predefinedEventInfo" />
+
+            <TextView
+                android:id="@+id/tv_predefinedEventText22"
+                style="@style/TextAppearance.Sandbox.Headline5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Predefined Events"
+                app:layout_constraintTop_toBottomOf="@+id/scoreLay_analyticskit" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_postScore"
@@ -274,10 +283,21 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="@dimen/h16"
                 android:text="@string/analytics_post_score"
-                app:layout_constraintTop_toBottomOf="@+id/tv_predefinedEventSampleText"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toTopOf="@+id/btn_arrayListBundle"
+                app:layout_constraintTop_toBottomOf="@+id/tv_predefinedEventSampleText" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_arrayListBundle"
+                style="@style/ButtonAppearance.Sandbox.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="@dimen/hiad_8_dp"
+                android:layout_marginBottom="@dimen/hiad_16_dp"
+                android:text="@string/data_of_the_arraylist_and_bundle"
+                app:layout_constraintTop_toBottomOf="@+id/btn_postScore" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

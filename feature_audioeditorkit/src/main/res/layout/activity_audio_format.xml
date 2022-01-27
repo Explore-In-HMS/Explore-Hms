@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.AudioFormatActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_audio"
+        style="@style/ToolbarAppearance.Sandbox.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/audio_format_conversion" />
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/recycler_view_fragment_audio_format"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginStart="@dimen/hiad_16_dp"
+        android:layout_marginTop="@dimen/dp_14"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:background="@color/color_gray"
+        app:layout_constraintBottom_toTopOf="@+id/line_fragment_audio_format"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/path_fragment_audio_format"
+        app:layout_constraintVertical_bias="1.0">
+
+        <include layout="@layout/audio_format_item"
+            android:id="@+id/layout"/>
+
+
+        <EditText
+            android:id="@+id/et_extracted_source1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:enabled="false"
+            android:textColor="@color/white"
+            android:gravity="top|left"
+            android:layout_marginEnd="@dimen/hiad_16_dp"
+            android:hint="@string/extracted_source"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:layout_marginStart="@dimen/hiad_16_dp"
+            android:maxLines="4"
+            android:textSize="@dimen/sp_14"
+            android:minLines="1"
+            android:textAllCaps="false"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/layout"
+            app:layout_constraintStart_toStartOf="@id/layout"
+            app:layout_constraintTop_toBottomOf="@id/layout" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_open_source1"
+            style="@style/ButtonAppearance.Sandbox.Normal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/play_formatted_audio"
+            android:textAllCaps="false"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/et_extracted_source1"
+            app:layout_constraintStart_toStartOf="@id/et_extracted_source1"
+            app:layout_constraintTop_toBottomOf="@+id/et_extracted_source1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/path_fragment_audio_format"
+        style="@style/TextAppearance.Sandbox.Body2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_audio"
+        tools:ignore="SpUsage" />
+
+    <LinearLayout
+        android:id="@+id/line_fragment_audio_format"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioGroup
+            android:id="@+id/radio_group_fragment_audio_format"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="9">
+
+            <RadioButton
+                android:id="@+id/radio_button_1_fragment_audio_format"
+                android:text="@string/audio_format_mp3"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dimens_16"
+                android:paddingRight="@dimen/hiad_16_dp"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_2_fragment_audio_format"
+                android:text="@string/audio_format_wav"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:paddingRight="@dimen/hiad_16_dp"
+                android:layout_marginRight="@dimen/dimens_16"
+                android:layout_weight="1"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_3_fragment_audio_format"
+                android:text="@string/audio_format_m4a"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/hiad_16_dp"
+                android:layout_marginRight="@dimen/dimens_16"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"/>
+
+        </RadioGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/transfer_fragment_audio_format"
+            android:layout_width="match_parent"
+            style="@style/ButtonAppearance.Sandbox.Normal"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/hiad_16_dp"
+            android:layout_marginEnd="@dimen/hiad_16_dp"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_24"
+            android:gravity="center"
+            android:text="@string/transfer_btn"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/dp_16"
+            tools:ignore="SpUsage" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

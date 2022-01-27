@@ -1,0 +1,11 @@
+Image Kit - Picasso
+
+Dynamic Tag Manager - com.huawei.hms.aaid.InitProvider
+
+Dynamic Tag Manager - HiAnalytics
+
+Scan Kit - com.huawei.hms.mlsdk
+
+Scene Kit - com.huawei.hms.framework.network.grs.GrsApp ClassDefNotFound
+
+Awareness Kit - C:\Users\i84169105\AndroidStudioProjects\hms-sandbox\feature_awarenesskit\build\intermediates\metadata_feature_manifest\debug\metadata-feature\AndroidManifest.xml:47:9-49:57: AAPT: error: resource integer/KIT_MINI_VERSION (aka com.genar.hmssandbox.huawei:integer/KIT_MINI_VERSION) not found.

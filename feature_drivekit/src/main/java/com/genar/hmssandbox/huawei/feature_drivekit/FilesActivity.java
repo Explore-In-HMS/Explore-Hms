@@ -216,7 +216,7 @@ public class FilesActivity extends AppCompatActivity {
 
             result.addSuccessCallback(result1 -> {
                 if (result1) {
-                    Toast.makeText(FilesActivity.this, "Upload Successful", Toast.LENGTH_LONG).show();
+                    Toast.makeText(FilesActivity.this, "Upload Successful:"+result1.toString(), Toast.LENGTH_LONG).show();
                     queryFiles(null);
                 } else {
                     Toast.makeText(FilesActivity.this, "Upload Error!", Toast.LENGTH_LONG).show();

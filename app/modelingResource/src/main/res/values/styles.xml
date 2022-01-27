@@ -1,0 +1,167 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/din_pro_light</item>
+        <item name="fontFamily">@font/din_pro_light</item>
+    </style>
+
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">@dimen/dimens_14sp</item>
+    </style>
+
+    <style name="BottomAnimDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowBackground">@color/transparent</item><!--背景透明-->
+        <item name="android:background">@color/transparent</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+        <item name="android:windowAnimationStyle">@style/ActionSheetDialogAnimation</item><!--动画-->
+    </style>
+
+    <style name="ActionSheetDialogAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/bottom_anim_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/bottom_anim_dialog_out</item>
+    </style>
+
+
+    <style name="MyProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/bg_progress</item>
+    </style>
+
+     <style name="ToolbarAppearance.Sandbox.Normal" parent="Widget.MaterialComponents.Toolbar">
+        <item name="fontFamily">@font/din_pro</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:foregroundTint">@color/colorCream</item>
+        <item name="titleTextColor">@color/colorCream</item>
+
+
+    </style>
+
+    <style name="ButtonAppearance.Sandbox.Outline" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:fontFamily">@font/din_pro_light</item>
+        <item name="fontFamily">@font/din_pro_light</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="ButtonAppearance.Sandbox.Text" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:fontFamily">@font/din_pro_light</item>
+        <item name="fontFamily">@font/din_pro_light</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="ButtonAppearance.Sandbox.Normal" parent="Widget.MaterialComponents.Button">
+        <item name="android:fontFamily">@font/din_pro_light</item>
+        <item name="fontFamily">@font/din_pro_light</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/whiteBG</item>
+        <item name="android:iconTint">@color/whiteBG</item>
+        <item name="background">@color/colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Sandbox.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:fontFamily">@font/din_pro</item>
+        <item name="fontFamily">@font/din_pro</item>
+        <item name="android:textSize">96sp</item>
+        <item name="android:textColor">@color/black_dialog_title_color</item>
+    </style>
+
+    <style name="TextAppearance.Sandbox.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="android:fontFamily">@font/din_pro</item>
+        <item name="fontFamily">@font/din_pro</item>
+        <item name="android:textSize">60sp</item>
+        <item name="android:textColor">@color/black_dialog_title_color</item>
+    </style>
+
+    <style name="TextAppearance.Sandbox.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="android:fontFamily">@font/din_pro</item>
+        <item name="fontFamily">@font/din_pro</item>
+        <item name="android:textSize">48sp</item>
+        <item name="android:textColor">@color/black_dialog_title_color</item>
+    </style>
+
+    <style name="TextAppearance.Sandbox.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:fontFamily">@font/din_pro</item>
+        <item name="fontFamily">@font/din_pro</item>
+        <item name="android:textSize">34sp</item>
+        <item name="android:textColor">@color/black_dialog_title_color</item>
+    </style>
+
+    <style name="TextAppearance.Sandbox.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:fontFamily">@font/din_pro</item>
+        <item name="fontFamily">@font/din_pro</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/black_dialog_title_color</item>
+    </style>
+
+    <style name="TextAppearance.Sandbox.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:fontFamily">@font/din_pro</item>
+        <item name="fontFamily">@font/din_pro</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black_dialog_title_color</item>
+    </style>
+
+    <style name="TextAppearance.Sandbox.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:fontFamily">@font/din_pro_light</item>
+        <item name="fontFamily">@font/din_pro_light</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black_dialog_title_color</item>
+    </style>
+
+    <style name="TextAppearance.Sandbox.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:fontFamily">@font/din_pro_light</item>
+        <item name="fontFamily">@font/din_pro_light</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black_dialog_title_color</item>
+    </style>
+
+    <style name="TabLayoutAppearance.Sandbox.Normal" parent="Widget.MaterialComponents.TabLayout">
+        <item name="android:fontFamily">@font/din_pro</item>
+        <item name="fontFamily">@font/din_pro</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TabItemAppearance.Sandbox.Normal" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:fontFamily">@font/din_pro</item>
+        <item name="fontFamily">@font/din_pro</item>
+        <item name="android:textSize">2sp</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="custom_dialog_pushkit" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+    </style>
+
+    <style name="custom_full_screen_dialog_pushkit" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:colorBackground">@color/colorCream</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="custom_pushkit_theme_black">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+</resources>

@@ -37,6 +37,8 @@ import com.genar.hmssandbox.huawei.SharedPrefHelper;
 import com.genar.hmssandbox.huawei.SharedPrefKey;
 import com.genar.hmssandbox.huawei.onboarding.OnboardingActivity;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.security.SecureRandom;
 import java.util.ArrayList;
 
@@ -223,5 +225,11 @@ public class SplashScreen extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         processDone = true;
         startMain();
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NotNull Bundle oldInstanceState) {
+        super.onSaveInstanceState(oldInstanceState);
+        oldInstanceState.clear();
     }
 }

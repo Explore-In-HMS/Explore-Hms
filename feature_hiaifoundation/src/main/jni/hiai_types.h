@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Huawei Technologies Co., Ltd. 2020-2020. All rights reserved.
+ * Copyright (c) Explore in HMS. 2020-2020. All rights reserved.
  * Description: Basic Type Define
  */
 #ifndef _HIAI_TYPE_H_

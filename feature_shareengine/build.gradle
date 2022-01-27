@@ -29,7 +29,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        minSdkVersion 26
+        minSdkVersion 28
         targetSdkVersion 30
         versionCode gradleVersionCode
         versionName gradleVersionName

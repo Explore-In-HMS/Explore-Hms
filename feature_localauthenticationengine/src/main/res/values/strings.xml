@@ -22,11 +22,11 @@
     <string name="text_application_scenarios_localauthentication">Application Scenarios</string>
     <string name="text_scenarios_info_localauthentication">Facial recognition can be used for logging in, making payments or other scenarios where facial recognition is required.</string>
     <string name="text_key_features_localauthentication">Key Features</string>
-    <string name="text_key_features_info_localauthentication">\u2022 Fast: Allows for quick facial comparisons using deep neural network algorithms.\n\u2022 Efficient: Decreases the time needed for developing algorithms and make the app more convenient.\n\u2022 Versatile: Can be used across a broad range of scenarios.</string>
+    <string name="text_key_features_info_localauthentication"> Allows for quick facial comparisons using deep neural network algorithms.\n\u2022 Efficient: Decreases the time needed for developing algorithms and make the app more convenient.\n Versatile: Can be used across a broad range of scenarios.</string>
     <string name="text_requirements_localauthentication">Requirements</string>
     <string name="text_requirements_info_localauthentication">Requirements</string>
     <string name="text_development_environment_localauthentication">Development environment</string>
-    <string name="text_development_environment_info_localauthentication">\u2022 Android Studio, V3.0.1 or later.\n\u2022 Mobile phone, EMUI 10.0 and later versions, supporting 3D facial recognition.</string>
-    <string name="text_click_here_localauthentication"><u>Click here to get more information about Local Authentication Engine.</u></string>
+    <string name="text_development_environment_info_localauthentication">Android Studio, V3.0.1 or later.\n Mobile phone, EMUI 10.0 and later versions, supporting 3D facial recognition.</string>
+    <string name="text_click_here_localauthentication">Click here to get more information about Local Authentication Engine.</string>
     <string name="localauthentication_url">https://developer.huawei.com/consumer/en/doc/development/Security-Guides/introduction-0000001051219741</string>
 </resources>

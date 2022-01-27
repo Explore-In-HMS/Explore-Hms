@@ -1,7 +1,7 @@
 /**
  * @file classify_jni.cpp
  *
- * Copyright (C) 2019. Huawei Technologies Co., Ltd. All rights reserved.
+ * Copyright (C) 2019. Explore in HMS. All rights reserved.
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of

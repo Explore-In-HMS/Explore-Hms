@@ -34,6 +34,8 @@
 
     <application>
         <activity android:name=".AnalyticsKitActivity"/>
+        <activity android:name=".EcommerceExampleActivity"/>
     </application>
+
 
 </manifest>

@@ -27,6 +27,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.huawei.agconnect.applinking.AGConnectAppLinking;
+import com.huawei.agconnect.applinking.ResolvedLinkData;
 
 public class AppLinkingDeepLinkActivity extends AppCompatActivity {
 
@@ -39,13 +40,16 @@ public class AppLinkingDeepLinkActivity extends AppCompatActivity {
         setContentView(R.layout.activity_app_linking_deep_link);
 
 
-        AGConnectAppLinking.getInstance().getAppLinking(this).addOnSuccessListener(resolvedData -> {
+        AGConnectAppLinking.getInstance().getAppLinking(this).addOnSuccessListener(resolvedLinkData -> {
 
-            Uri deepLink = resolvedData.getDeepLink();
+            Uri deepLink = resolvedLinkData.getDeepLink();
+            ResolvedLinkData.LinkType linkType=resolvedLinkData.getLinkType();
+            String installSource=resolvedLinkData.getInstallSource();
+            String className=deepLink.getPath().replace('/', ' ').trim();
 
             try {
-                startActivity(new Intent(this, Class.forName(deepLink.getPath().replace('/', ' ').trim())));
-                toast(getResources().getString(R.string.deeplink_success_message));
+                startActivity(new Intent(this, Class.forName(className)));
+                toast(getResources().getString(R.string.deeplink_success_message)+"link Type:"+linkType.name()+"Source:"+installSource);
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
                 Log.e(TAG, e.getMessage());

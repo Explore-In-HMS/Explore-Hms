@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="lighter_gray">#ddd</color>
+    <color name="white">#FFFFFF</color>
+    <color name="clear">#00FFFFFF</color>
+    <color name="coral">#FF7F50</color>
+    <color name="chocolate">#D2691E</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="grayFont">#606060</color>
+    <color name="blackFont">#000000</color>
+    <color name="lightGrayBackground">#f1f1f1</color>
+    <color name="darkGrayBackground">#dddddd</color>
+    <color name="disableColor">#FCFAF2</color>
+    <color name="blueColor">#2EC4FF</color>
+    <color name="greenColor">#5BB75B</color>
+    <color name="redColor">#F44336</color>
+    <color name="separatorColor">#cccccc</color>
+    <color name="userCenterColor">#F49DB0A4</color>
+</resources>

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Huawei Technologies Co., Ltd. 2018-2019. All rights reserved.
+ * Copyright (c) Explore in HMS. 2018-2019. All rights reserved.
  * Description: hiai AIPP para
  *
  */

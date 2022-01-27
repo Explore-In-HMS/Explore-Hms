@@ -269,6 +269,15 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
             }
         });
 
+        binding.speedImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mHwAudioPlayerManager != null) {
+                    mHwAudioPlayerManager.setPlaySpeed(2f);
+                }
+            }
+        });
+
         binding.previousSongImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -492,6 +501,7 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
 
                             if (playList != null) {
                                 doListenersAndNotifications();
+                                mHwAudioPlayerManager.setPlaySpeed(1f);
                             } else {
                                 Log.e("TAG", "playlist null");
                             }

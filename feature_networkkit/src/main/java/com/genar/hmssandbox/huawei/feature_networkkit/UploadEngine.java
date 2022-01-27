@@ -79,19 +79,18 @@ public class UploadEngine extends AUpDownloadEngine {
                 Log.i(TAG, "onSuccess:" + response.getContent());
                 listener.onSuccess("timeused:" + (System.currentTimeMillis() - startTime));
             }
-
-            @Override
-            public void onException(BodyRequest request, NetworkException exception) {
-                if (exception instanceof InterruptedException) {
+             @Override
+            public void onException(BodyRequest bodyRequest, NetworkException e, Response<BodyRequest, String, Closeable> response) {
+                if (e instanceof InterruptedException) {
                     String errorMsg = "upload onException for canceled";
                     Log.w(TAG, errorMsg);
                     listener.onException(errorMsg);
                 } else {
-                    String errorMsg = "upload exception for request:" + request.getId() +
-                            "\n\ndetail : " + exception.getMessage();
-                    if (exception.getCause() != null) {
+                    String errorMsg = "upload exception for request:" + bodyRequest.getId() +
+                            "\n\ndetail : " + e.getMessage();
+                    if (e.getCause() != null) {
                         errorMsg += " , cause : " +
-                                exception.getCause().getMessage();
+                                e.getCause().getMessage();
                     }
                     Log.e(TAG, errorMsg);
                     listener.onException(errorMsg);

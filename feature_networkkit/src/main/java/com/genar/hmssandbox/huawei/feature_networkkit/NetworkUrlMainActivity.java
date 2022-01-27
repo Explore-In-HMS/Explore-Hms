@@ -31,14 +31,11 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+
 
 import com.huawei.hms.network.NetworkKit;
 
-import butterknife.ButterKnife;
 
-import static com.huawei.hms.support.api.fido.bioauthn.common.update.UpdateTools.getActivity;
 
 
 public class NetworkUrlMainActivity extends Activity implements AUpDownloadEngine.EventListener {
