@@ -28,7 +28,7 @@ def gradleVersionName = gradleVersionInfo['versionName']
 
 
 android {
-    ndkVersion "20.1.5948944"
+    ndkVersion "21.1.6352462"
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
@@ -40,7 +40,7 @@ android {
 
     defaultConfig {
         applicationId "com.genar.hmssandbox.huawei.feature_computergraphics"
-        minSdkVersion 28
+        minSdkVersion 26
         targetSdkVersion 30
         versionCode gradleVersionCode
         versionName gradleVersionName
@@ -72,13 +72,18 @@ android {
     externalNativeBuild {
         cmake {
             path "src/main/cpp/CMakeLists.txt"
-            version "3.6.0"
+            version "3.10.2+"
         }
     }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        pickFirst 'lib/arm64-v8a/libcgkit.so'
+        pickFirst 'lib/armeabi-v7a/libcgkit.so'
     }
 }
 
