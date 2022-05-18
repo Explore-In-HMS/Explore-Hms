@@ -20,7 +20,6 @@ package com.genar.hmssandbox.huawei.feature_accountkit;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -32,15 +31,17 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.genar.hmssandbox.huawei.CredentialManager;
 import com.genar.hmssandbox.huawei.Util;
-import com.genar.hmssandbox.huawei.baseapp.activity.BaseActivity;
 import com.huawei.hmf.tasks.Task;
 import com.huawei.hms.common.ApiException;
 import com.huawei.hms.feature.dynamicinstall.FeatureCompat;
+import com.huawei.hms.support.account.AccountAuthManager;
+import com.huawei.hms.support.account.request.AccountAuthParams;
+import com.huawei.hms.support.account.request.AccountAuthParamsHelper;
+import com.huawei.hms.support.account.result.AuthAccount;
+import com.huawei.hms.support.account.service.AccountAuthService;
 import com.huawei.hms.support.api.entity.auth.Scope;
 import com.huawei.hms.support.hwid.HuaweiIdAuthAPIManager;
 import com.huawei.hms.support.hwid.HuaweiIdAuthManager;
-import com.huawei.hms.support.hwid.request.HuaweiIdAuthParams;
-import com.huawei.hms.support.hwid.request.HuaweiIdAuthParamsHelper;
 import com.huawei.hms.support.hwid.result.AuthHuaweiId;
 
 import java.util.ArrayList;
@@ -56,6 +57,9 @@ public class LoginActivity extends AppCompatActivity {
     private static final int REQUEST_SIGN_IN_LOGIN = 140;
     private static final int REQUEST_SIGN_IN_LOGIN_CODE = 141;
     private static final int REQUEST_SIGN_IN_AUTH_CODE = 142;
+
+    //To specify the signature algorithm type for the ID token (2: RS256  1:PS256)
+    private static final int SIGNATURE_ALGORITHM_TYPE = 2;
 
     @BindView(R.id.btn_signin_idtoken)
     Button btnSigninIdtoken;
@@ -102,23 +106,44 @@ public class LoginActivity extends AppCompatActivity {
         List<Scope> scopeList = new ArrayList<>();
         scopeList.add(HuaweiIdAuthAPIManager.HUAWEIID_BASE_SCOPE); // Basic account permissions.
 
-        HuaweiIdAuthParams mHuaweiIdAuthParams = new HuaweiIdAuthParamsHelper(HuaweiIdAuthParams.DEFAULT_AUTH_REQUEST_PARAM)
+        //Old method
+        /*HuaweiIdAuthParams mHuaweiIdAuthParams = new HuaweiIdAuthParamsHelper(HuaweiIdAuthParams.DEFAULT_AUTH_REQUEST_PARAM)
                 .setEmail()
                 .setIdToken()
                 .setScopeList(scopeList)
                 .createParams();
         CredentialManager.setHuaweiIdAuthService(HuaweiIdAuthManager.getService(LoginActivity.this, mHuaweiIdAuthParams));
-        startActivityForResult(CredentialManager.getHuaweiIdAuthService().getSignInIntent(), REQUEST_SIGN_IN_LOGIN);
+        startActivityForResult(CredentialManager.getHuaweiIdAuthService().getSignInIntent(), REQUEST_SIGN_IN_LOGIN);*/
+
+        AccountAuthParams accountAuthParams = new AccountAuthParamsHelper(AccountAuthParams.DEFAULT_AUTH_REQUEST_PARAM)
+                .setEmail()
+                .setIdTokenSignAlg(SIGNATURE_ALGORITHM_TYPE)
+                .setIdToken()
+                .setScopeList(scopeList)
+                .setCarrierId()
+                .createParams();
+        AccountAuthService accountAuthService = AccountAuthManager.getService(LoginActivity.this, accountAuthParams);
+        startActivityForResult(accountAuthService.getSignInIntent(),REQUEST_SIGN_IN_LOGIN);
+
     }
 
     @OnClick(R.id.btn_signin_authcode)
     public void signInWithAuthCode() {
-        HuaweiIdAuthParams authParams = new HuaweiIdAuthParamsHelper(HuaweiIdAuthParams.DEFAULT_AUTH_REQUEST_PARAM)
+        //Old way
+        /*HuaweiIdAuthParams authParams = new HuaweiIdAuthParamsHelper(HuaweiIdAuthParams.DEFAULT_AUTH_REQUEST_PARAM)
                 .setIdToken()
                 .setEmail()
                 .setAuthorizationCode().createParams();
         CredentialManager.setHuaweiIdAuthService(HuaweiIdAuthManager.getService(LoginActivity.this, authParams));
-        startActivityForResult(CredentialManager.getHuaweiIdAuthService().getSignInIntent(), REQUEST_SIGN_IN_AUTH_CODE);
+        startActivityForResult(CredentialManager.getHuaweiIdAuthService().getSignInIntent(), REQUEST_SIGN_IN_AUTH_CODE);*/
+
+        AccountAuthParams authParams = new AccountAuthParamsHelper(AccountAuthParams.DEFAULT_AUTH_REQUEST_PARAM)
+                .setAuthorizationCode()
+                .setIdTokenSignAlg(SIGNATURE_ALGORITHM_TYPE)
+                .setCarrierId()
+                .createParams();
+        AccountAuthService accountAuthService = AccountAuthManager.getService(LoginActivity.this,authParams);
+        startActivityForResult(accountAuthService.getSignInIntent(),REQUEST_SIGN_IN_AUTH_CODE);
     }
 
     @OnClick(R.id.btn_signin_silent)
@@ -126,23 +151,32 @@ public class LoginActivity extends AppCompatActivity {
      * Sign in method without requiring a user action. Works only if authorization is not revoked.
      */
     public void silentSignIn() {
-        HuaweiIdAuthParams authParams = new HuaweiIdAuthParamsHelper(HuaweiIdAuthParams.DEFAULT_AUTH_REQUEST_PARAM)
+        /*HuaweiIdAuthParams authParams = new HuaweiIdAuthParamsHelper(HuaweiIdAuthParams.DEFAULT_AUTH_REQUEST_PARAM)
                 .setEmail()
                 .setIdToken()
                 .createParams();
         CredentialManager.setHuaweiIdAuthService(HuaweiIdAuthManager.getService(LoginActivity.this, authParams));
 
-        Task<AuthHuaweiId> task = CredentialManager.getHuaweiIdAuthService().silentSignIn();
+        Task<AuthHuaweiId> task = CredentialManager.getHuaweiIdAuthService().silentSignIn(); */
+
+        AccountAuthParams accountAuthParams = new AccountAuthParamsHelper(AccountAuthParams.DEFAULT_AUTH_REQUEST_PARAM)
+                .setIdTokenSignAlg(SIGNATURE_ALGORITHM_TYPE)
+                .setCarrierId()
+                .createParams();
+
+        AccountAuthService accountAuthService = AccountAuthManager.getService(LoginActivity.this,accountAuthParams);
+        Task<AuthAccount>task = accountAuthService.silentSignIn();
 
         final Activity activity = this;
 
         task.addOnSuccessListener(authHuaweiId -> {
-            CredentialManager.setCredentials(authHuaweiId);
+            //CredentialManager.setCredentials(authHuaweiId);
             Toast.makeText(activity, "Silent SignIn Successfull", Toast.LENGTH_SHORT).show();
-            activity.finish();
-            Util.startActivity(activity, UserDetailActivity.class);
+            //activity.finish();
+            //Util.startActivity(activity, UserDetailActivity.class);
             // Obtain HUAWEI ID information.
             Log.i("DEBUG", "displayName:" + authHuaweiId.getDisplayName());
+            Log.i("CARRIER ID: ", String.valueOf(authHuaweiId.getCarrierId()));
         });
 
         task.addOnFailureListener(e -> {
@@ -184,6 +218,8 @@ public class LoginActivity extends AppCompatActivity {
                     finish();
                     Util.startActivity(this, UserDetailActivity.class);
                     Log.i("DEBUG", "signIn success " + huaweiAccount.getDisplayName());
+                    Log.i("DEBUG", "signIn success " + huaweiAccount.getCarrierId());
+
                 } else {
                     Toast.makeText(this, "Error ->" + "signIn failed: " + ((ApiException) authHuaweiIdTask.getException()).getStatusCode(), Toast.LENGTH_SHORT).show();
                     Log.i("ERROR ->", "signIn failed: " + ((ApiException) authHuaweiIdTask.getException()).getStatusCode());

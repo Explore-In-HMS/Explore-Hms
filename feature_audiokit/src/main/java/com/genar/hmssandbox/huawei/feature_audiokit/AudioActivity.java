@@ -497,6 +497,9 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
                             mHwAudioConfigManager = mHwAudioManager.getConfigManager();
                             mHwAudioQueueManager = mHwAudioManager.getQueueManager();
 
+                            //Sets the MediaSession status. MediaSession active -> true
+                            mHwAudioConfigManager.setSessionState(true);
+
                             mHwAudioQueueManager.addPlayItemList(playList, 0);
 
                             if (playList != null) {
