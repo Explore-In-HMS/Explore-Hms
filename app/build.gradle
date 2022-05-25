@@ -200,7 +200,8 @@ dependencies {
 
     api 'com.huawei.agconnect:agconnect-core:1.6.1.300'
 
-    api 'com.huawei.hms:dtm-api:5.3.0.300'
+    //DTM
+    api 'com.huawei.hms:dtm-api:6.2.0.304'
 
     //hquic
     implementation 'com.huawei.hms:hquic-provider:5.0.1.300'
@@ -214,7 +215,7 @@ dependencies {
     implementation 'com.huawei.hms:scan:2.0.0.300'
 
     //cloud functions sdk
-    api 'com.huawei.agconnect:agconnect-function:1.6.1.300'
+    api 'com.huawei.agconnect:agconnect-function:1.6.3.300'
 
     api 'io.reactivex.rxjava2:rxjava:2.2.19'
     api 'io.reactivex.rxjava2:rxandroid:2.1.1'
@@ -226,7 +227,6 @@ dependencies {
     api 'io.reactivex:rxjava:1.0.14'
     api 'io.reactivex:rxandroid:1.0.1'
     api 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
-
 
     //cloud storage
     api "com.huawei.agconnect:agconnect-storage:1.4.0.100"
@@ -329,13 +329,14 @@ dependencies {
     api 'com.huawei.hms:image-vision:1.0.3.301'
 
     // Auth Service
-    implementation 'com.huawei.agconnect:agconnect-auth:1.6.0.300'
+    implementation 'com.huawei.agconnect:agconnect-auth:1.6.4.300'
+
 
     //Game Kit
     api "com.huawei.hms:game:6.1.0.301"
 
     //Cloud DB
-    api 'com.huawei.agconnect:agconnect-cloud-database:1.4.9.300'
+    api 'com.huawei.agconnect:agconnect-cloud-database:1.5.0.300'
 
     //search kit
     // implementation 'com.huawei.hms:searchkit:5.0.4.303'
@@ -367,16 +368,16 @@ dependencies {
     api 'com.huawei.hms:drive:5.0.0.305'
 
     //Crash Service
-    api 'com.huawei.agconnect:agconnect-crash:1.6.0.300'
+    api 'com.huawei.agconnect:agconnect-crash:1.6.4.300'
 
     //Remote Configuration
     api 'com.huawei.agconnect:agconnect-remoteconfig:1.6.0.300'
 
     //App Messaging
-    api 'com.huawei.agconnect:agconnect-appmessaging:1.5.1.300'
+    api 'com.huawei.agconnect:agconnect-appmessaging:1.6.4.300'
 
     //AR Engine
-    api 'com.huawei.hms:arenginesdk:2.15.0.4'
+    api 'com.huawei.hms:arenginesdk:3.6.0.5'
 
     //Hem Kit
     api  'com.huawei.hms:hemsdk:1.0.0.303'

@@ -152,15 +152,18 @@ public class HmsKitActivity extends HmsKitBaseActivity implements IHmsKitActivit
                 lteScellArfcnCbox, lteScellPhyCellIdCbox, lteScellDlFreqCbox, lteScellBandCbox,
                 lteScellMimoCbox, lteScellDlBandWidthCbox, lteScellRsrpCbox, lteScellRsrqCbox,
                 lteScellSinrCbox,
-                nrCbox, nrServCellInfoCbox, nrServCellInfoSsbArfchCbox,
-                nrServCellInfoPhyCellIdCbox, nrServCellInfoBandCbox, nrServCellInfoCgTypeCbox,
-                nrServCellInfoCellTypeCbox, nrServCellInfoScsTypeCbox, nrServCellInfoDlMimoLayersCbox,
-                nrServCellInfoDssTypeCbox, nrServCellInfoSsbRsrpCbox, nrServCellInfoSsbRsrqCbox,
-                nrServCellInfoSsbSinrCbox, nrServCellInfoCsiRsrpCbox, nrServCellInfoCsiRsrqCbox,
-                nrServCellInfoCsiSinrCbox,
+                nrCbox, nrSpcellInfoCbox, nrScellInfoCbox,
+                nrSpcellBasicCbox, nrSpcellCfgCbox, nrSpcellMeasCbox,
+                nrScellBasicCbox, nrScellCfgCbox, nrScellSsbMeasCbox,
+                netCbox, netLteInfoCbox, netNrInfoCbox,
+                netLteRejCntCbox, netLteRejInfosCbox, netLtePdnRejCntCbox,
+                netLtePdnRejInfosCbox, netLteAmbrCntCbox,
+                netLteAmbrsCbox, netNrRejCntCbox, netNrRejInfoCbox,
+                netNrPduRejCntCbox, netNrPduRejInfoCbox, netNrAmbrCntCbox, netNrAmbrCbox,
                 bearerCbox, bearerDrbInfoCbox, bearerDrbInfoRbIdCbox,
                 bearerDrbInfoPdcpVersionCbox, bearerDrbInfoBearerTypeCbox,
-                bearerDrbInfoDataSplitThresholdCbox
+                bearerDrbInfoDataSplitThresholdCbox,
+
         };
         mCheckBoxList = new ArrayList<>(Arrays.asList(checkBoxes));
         for (CheckBox checkBox : mCheckBoxList) {

@@ -60,7 +60,7 @@ public class MainActivityCloud extends AppCompatActivity {
         //CloudDB's initialize methods called , This method is called inside manifest file.
         AGConnectCloudDB.initialize(getApplicationContext());
 
-        CloudDBZoneWrapper.initCloudDBZone();
+        CloudDBZoneWrapper.initCloudDBZone(getApplicationContext());
 
         setComponents();//
         setClickEvent();//set click events

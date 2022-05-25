@@ -67,8 +67,9 @@ public class MainActivityAuth extends AppCompatActivity {
     @OnClick({R.id.clLoginWithAnonymous, R.id.clLoginWithPhone, R.id.clLoginWithMail,
             R.id.clLoginWithHuaweiId, R.id.clLoginWithHuaweiGame,
             R.id.clLoginWithGoogle2, R.id.clLoginWithGooglePlay2,
-            R.id.clLoginWithFacebook, R.id.clLoginWithTwitter,R.id.reauthenticate,
-            R.id.clLoginWithWeChat, R.id.clLoginWithQQ, R.id.clLoginWithWeibo})
+            R.id.clLoginWithFacebook, R.id.clLoginWithTwitter, R.id.reauthenticate,
+            R.id.clLoginWithWeChat, R.id.clLoginWithQQ, R.id.clLoginWithWeibo,
+            R.id.clLoginWithVk})
     public void onItemClick(View v) {
         switch (v.getId()) {
             case R.id.clLoginWithAnonymous:
@@ -94,7 +95,7 @@ public class MainActivityAuth extends AppCompatActivity {
                 break;
 
             case R.id.reauthenticate:
-                Utils.startActivity(MainActivityAuth.this,ReauthenticateActivity.class);
+                Utils.startActivity(MainActivityAuth.this, ReauthenticateActivity.class);
                 break;
 
             case R.id.clLoginWithGoogle2:
@@ -117,8 +118,13 @@ public class MainActivityAuth extends AppCompatActivity {
                 showSupportMessage("LoginWith Weibo");
                 Utils.openWebPage(MainActivityAuth.this, getResources().getString(R.string.url_auth_service_weibo));
                 break;
+            case R.id.clLoginWithVk:
+                showSupportMessage("Login With Vk");
+                Utils.openWebPage(MainActivityAuth.this, getResources().getString(R.string.url_auth_service_vk));
+                break;
+
             default:
-                Log.e(TAG,"Default case");
+                Log.e(TAG, "Default case");
                 break;
         }
     }

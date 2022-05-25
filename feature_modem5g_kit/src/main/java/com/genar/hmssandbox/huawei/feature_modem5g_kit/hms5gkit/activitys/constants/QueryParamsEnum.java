@@ -9,6 +9,9 @@ import com.genar.hmssandbox.huawei.feature_modem5g_kit.R;
 import com.huawei.hms5gkit.agentservice.constants.parameters.Bearer;
 import com.huawei.hms5gkit.agentservice.constants.parameters.Lte;
 import com.huawei.hms5gkit.agentservice.constants.parameters.Nr;
+import com.huawei.hms5gkit.agentservice.constants.parameters.NetDiagnosis;
+import com.huawei.hms5gkit.agentservice.constants.parameters.FailureEvent;
+
 
 import java.util.Arrays;
 import java.util.Map;
@@ -43,7 +46,8 @@ public enum QueryParamsEnum {
     LTE_TYPE_SCELL_RSRQ(R.id.lte_s_rsrq, Lte.LTE_SCELL_rsrq),
     LTE_TYPE_SCELL_SINR(R.id.lte_s_sinr, Lte.LTE_SCELL_sinr),
 
-    NR_TYPE(R.id.nr_cb, Nr.NR),
+    //Old way
+    /*NR_TYPE(R.id.nr_cb, Nr.NR),
     NR_TYPE_SERVCELLINFO(R.id.nr_scinfo, Nr.NR_SERV_CELL_INFO),
     NR_TYPE_SERVCELLINFO_SSBARFCN(R.id.nr_sc_arfcn, Nr.NR_SSB_ARFCN),
     NR_TYPE_SERVCELLINFO_PHYCELLID(R.id.nr_sc_pci, Nr.NR_PHY_CELL_ID),
@@ -58,7 +62,33 @@ public enum QueryParamsEnum {
     NR_TYPE_SERVCELLINFO_SSBSINR(R.id.nr_sc_ssr, Nr.NR_SSB_SINR),
     NR_TYPE_SERVCELLINFO_CSIRSRP(R.id.nr_sc_crp, Nr.NR_CSI_RSRP),
     NR_TYPE_SERVCELLINFO_CSIRSRQ(R.id.nr_sc_crq, Nr.NR_CSI_RSRQ),
-    NR_TYPE_SERVCELLINFO_CSISINR(R.id.nr_sc_csr, Nr.NR_CSI_SINR),
+    NR_TYPE_SERVCELLINFO_CSISINR(R.id.nr_sc_csr, Nr.NR_CSI_SINR),*/
+
+    NR_TYPE(R.id.nr_cb, Nr.NR),
+    NR_TYPE_SPCELL_INFO(R.id.nr_spcell_info, Nr.NR_SPCELL_INFO),
+    NR_TYPE_SCELL_INFO(R.id.nr_scell_info, Nr.NR_SCELL_INFO),
+    NR_TYPE_SPCELL_BASIC(R.id.nr_spcell_basic, Nr.NR_SPCELL_BASIC),
+    NR_TYPE_SPCELL_CFG(R.id.nr_spcell_cfg, Nr.NR_SPCELL_CFG),
+    NR_TYPE_SPCELL_MEAS(R.id.nr_spcell_meas, Nr.NR_SPCELL_MEAS),
+    NR_TYPE_SCELL_BASIC(R.id.nr_scell_basic, Nr.NR_SCELL_BASIC),
+    NR_TYPE_SCELL_CFG(R.id.nr_scell_cfg, Nr.NR_SCELL_CFG),
+    NR_TYPE_SCELL_SSB_MEAS(R.id.nr_scell_ssb_meas, Nr.NR_SCELL_SSB_MEAS),
+
+    NET_TYPE(R.id.net, NetDiagnosis.NET),
+    NET_TYPE_LTE_INFO(R.id.net_lte_info, NetDiagnosis.NET_LTE_INFO),
+    NET_TYPE_NR_INFO(R.id.net_nr_info, NetDiagnosis.NET_NR_INFO),
+    NET_TYPE_LTE_REJ_CNT(R.id.net_lte_rej_cnt, NetDiagnosis.NET_LTE_REJ_CNT),
+    NET_TYPE_LTE_REJ_INFOS(R.id.net_lte_rej_infos, NetDiagnosis.NET_LTE_REJ_INFOS),
+    NET_TYPE_LTE_PDN_REJ_CNT(R.id.net_lte_pdn_rej_cnt, NetDiagnosis.NET_LTE_PDN_REJ_CNT),
+    NET_TYPE_LTE_PDN_REJ_INFOS(R.id.net_lte_pdn_rej_infos, NetDiagnosis.NET_LTE_PDN_REJ_INFOS),
+    NET_TYPE_LTE_AMBR_CNT(R.id.net_lte_ambr_cnt, NetDiagnosis.NET_LTE_AMBR_CNT),
+    NET_TYPE_NR_REJ_INFO(R.id.net_nr_rej_info, NetDiagnosis.NET_NR_REJ_INFO),
+    NET_TYPE_NR_PDU_REJ_CNT(R.id.net_nr_pdu_rej_cnt, NetDiagnosis.NET_NR_PDU_REJ_CNT),
+    NET_TYPE_NR_PDU_REJ_INFO(R.id.net_nr_pdu_rej_info, NetDiagnosis.NET_NR_PDU_REJ_INFO),
+    NET_TYPE_NR_AMBR_CNT(R.id.net_nr_ambr_cnt, NetDiagnosis.NET_NR_AMBR_CNT),
+    NET_TYPE_NR_AMBR(R.id.net_nr_ambr, NetDiagnosis.NET_NR_AMBR),
+
+
 
     BEARER_TYPE(R.id.bearer_cb, Bearer.BEARER),
     BEARER_TYPE_DRBINFO(R.id.bearer_dinfo, Bearer.BEARER_DRB_INFO),
@@ -66,6 +96,8 @@ public enum QueryParamsEnum {
     BEARER_TYPE_DRBINFO_PDCPVERSION(R.id.bearer_d_pver, Bearer.BEARER_PDCP_VERSION),
     BEARER_TYPE_DRBINFO_BEARERTYPE(R.id.bearer_d_btype, Bearer.BEARER_BEARER_TYPE),
     BEARER_TYPE_DRBINFO_DATASPLITTHRESHOLD(R.id.bearer_d_dst, Bearer.BEARER_DATA_SPLIT_THRESHOLD);
+
+
 
     private int resourceId; // Checkbox resource id
     private String queryName; // Request parameter
