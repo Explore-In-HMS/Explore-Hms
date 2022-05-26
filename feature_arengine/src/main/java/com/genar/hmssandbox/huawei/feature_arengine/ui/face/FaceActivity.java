@@ -85,6 +85,13 @@ public class FaceActivity extends AppCompatActivity {
     // The initial texture ID is -1.
     private int textureId = -1;
 
+    //Lightning Modes
+    private int lightModeNone = ARConfigBase.LIGHT_MODE_NONE;
+    private int lightModeAmbientIntensity = ARConfigBase.LIGHT_MODE_AMBIENT_INTENSITY;
+    private int lightModeEnvironmentLighting = ARConfigBase.LIGHT_MODE_ENVIRONMENT_LIGHTING;
+    private int lightModeEnvironmentTexture = ARConfigBase.LIGHT_MODE_ENVIRONMENT_TEXTURE;
+    private int lightModeAll = ARConfigBase.LIGHT_MODE_ALL;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -152,17 +159,23 @@ public class FaceActivity extends AppCompatActivity {
                     return;
                 }
                 mArSession = new ARSession(this);
-                mArConfig = new ARFaceTrackingConfig(mArSession);
-
+                ARFaceTrackingConfig mArConfig = new ARFaceTrackingConfig(mArSession);
+                mArConfig.setCameraLensFacing(ARConfigBase.CameraLensFacing.FRONT);
+                mArConfig.setLightingMode(lightModeEnvironmentLighting);
                 mArConfig.setPowerMode(ARConfigBase.PowerMode.POWER_SAVING);
 
                 if (IS_OPEN_CAMERA_OUTSIDE) {
                     mArConfig.setImageInputMode(ARConfigBase.ImageInputMode.EXTERNAL_INPUT_ALL);
+
                 }
                 mArSession.configure(mArConfig);
             } catch (Exception capturedException) {
                 exception = capturedException;
                 setMessageWhenError(capturedException);
+            }
+            if (mArConfig.getLightingMode() != lightModeEnvironmentLighting) {
+                String toastMsg = "Please update HUAWEI AR Engine app in the AppGallery.";
+                Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
             }
             if (message != null) {
                 stopArSession(exception);

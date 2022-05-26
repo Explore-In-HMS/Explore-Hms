@@ -93,6 +93,25 @@ public class WorldShaderUtil {
                     + "    gl_FragColor.rgb = objectColor.rgb * + diffuse + specular;" + LS
                     + "}";
 
+    private static final String POINTCLOUD_VERTEX =
+            "uniform mat4 u_ModelViewProjection;" + LS
+                    + "uniform vec4 u_Color;" + LS
+                    + "uniform float u_PointSize;" + LS
+                    + "attribute vec4 a_Position;" + LS
+                    + "varying vec4 v_Color;" + LS
+                    + "void main() {" + LS
+                    + "   v_Color = u_Color;" + LS
+                    + "   gl_Position = u_ModelViewProjection * vec4(a_Position.xyz, 1.0);" + LS
+                    + "   gl_PointSize = u_PointSize;" + LS
+                    + "}";
+
+    private static final String POINTCLOUD_FRAGMENT =
+            "precision mediump float;" + LS
+                    + "varying vec4 v_Color;" + LS
+                    + "void main() {" + LS
+                    + "    gl_FragColor = v_Color;" + LS
+                    + "}";
+
     private WorldShaderUtil() {
     }
 
@@ -102,6 +121,9 @@ public class WorldShaderUtil {
 
     static int getObjectProgram() {
         return createGlProgram(OBJECT_VERTEX, OBJECT_FRAGMENT);
+    }
+    static int getPointCloudProgram() {
+        return createGlProgram(POINTCLOUD_VERTEX, POINTCLOUD_FRAGMENT);
     }
 
     private static int createGlProgram(String vertexCode, String fragmentCode) {
