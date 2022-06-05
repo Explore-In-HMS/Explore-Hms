@@ -83,6 +83,6 @@
 
     <string name="modem_slice">Modem.Slice</string>
 
-    <string name="enable_event">EN</string>
+    <string name="enable_event">ENABLE</string>
     <string name="disable_event">DISABLE</string>
 </resources>
