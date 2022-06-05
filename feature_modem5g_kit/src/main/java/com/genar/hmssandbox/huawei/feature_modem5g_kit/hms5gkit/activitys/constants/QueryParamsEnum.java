@@ -8,6 +8,7 @@ package com.genar.hmssandbox.huawei.feature_modem5g_kit.hms5gkit.activitys.const
 import com.genar.hmssandbox.huawei.feature_modem5g_kit.R;
 import com.huawei.hms5gkit.agentservice.constants.parameters.Bearer;
 import com.huawei.hms5gkit.agentservice.constants.parameters.Lte;
+import com.huawei.hms5gkit.agentservice.constants.parameters.ModemSlice;
 import com.huawei.hms5gkit.agentservice.constants.parameters.Nr;
 import com.huawei.hms5gkit.agentservice.constants.parameters.NetDiagnosis;
 import com.huawei.hms5gkit.agentservice.constants.parameters.FailureEvent;
@@ -95,9 +96,11 @@ public enum QueryParamsEnum {
     BEARER_TYPE_DRBINFO_RBID(R.id.bearer_d_rbid, Bearer.BEARER_RBID),
     BEARER_TYPE_DRBINFO_PDCPVERSION(R.id.bearer_d_pver, Bearer.BEARER_PDCP_VERSION),
     BEARER_TYPE_DRBINFO_BEARERTYPE(R.id.bearer_d_btype, Bearer.BEARER_BEARER_TYPE),
-    BEARER_TYPE_DRBINFO_DATASPLITTHRESHOLD(R.id.bearer_d_dst, Bearer.BEARER_DATA_SPLIT_THRESHOLD);
+    BEARER_TYPE_DRBINFO_DATASPLITTHRESHOLD(R.id.bearer_d_dst, Bearer.BEARER_DATA_SPLIT_THRESHOLD),
 
 
+
+    MODEM_SLICE(R.id.modem_slice, ModemSlice.MODEM_SLICE);
 
     private int resourceId; // Checkbox resource id
     private String queryName; // Request parameter

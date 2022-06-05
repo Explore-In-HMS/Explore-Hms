@@ -118,22 +118,6 @@ public class CloudDBZoneWrapper {
         }
     }
 
-    public static void setUserKey(){
-        Task<Boolean> setUserKeyTask = cloudDB.setUserKey("12345678a", null, true);
-        setUserKeyTask.addOnCompleteListener(task -> {
-            StringBuilder builder = new StringBuilder();
-            if (task.getException() != null) {
-                builder.append("exception : ").append(task.getException());
-                return;
-            }
-            boolean isSuccess = task.getResult();
-            if (isSuccess) {
-                Log.e(TAG, "set user key success");
-            } else {
-                Log.e(TAG,"set user key fail.");
-            }
-        });
-    }
 
     public static void deleteData(BookComment comment) {
 

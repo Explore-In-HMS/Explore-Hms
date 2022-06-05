@@ -44,6 +44,52 @@
             android:orientation="horizontal">
 
             <CheckBox
+                android:id="@+id/fe_scg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/fe_scg"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/fe_rach"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/fe_rach"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/fe_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/fe_rl"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/fe_ho"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/fe_ho"
+                android:textSize="12sp" />
+        </TableRow>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/separatorColor"
+            android:orientation="vertical" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <CheckBox
                 android:id="@+id/lte_cb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -628,6 +674,28 @@
                 android:textSize="12sp" />
         </TableRow>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/separatorColor"
+            android:orientation="vertical" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/modem_slice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/modem_slice"
+                android:textSize="12sp" />
+        </TableRow>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -680,6 +748,43 @@
                 android:minWidth="25dp"
                 android:minHeight="0dp"
                 android:text="@string/unregister"
+                android:textColor="@android:color/white"
+                tools:ignore="ButtonStyle" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/enableEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/change_color_btn"
+                android:minWidth="25dp"
+                android:minHeight="0dp"
+                android:text="@string/enable_event"
+                android:textColor="@android:color/white"
+                tools:ignore="ButtonStyle" />
+
+
+            <Button
+                android:id="@+id/disableEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/change_color_unreg_btn"
+                android:minWidth="25dp"
+                android:minHeight="0dp"
+                android:text="@string/disable_event"
                 android:textColor="@android:color/white"
                 tools:ignore="ButtonStyle" />
         </LinearLayout>

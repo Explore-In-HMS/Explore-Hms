@@ -6,6 +6,11 @@
     <string name="_5g_kit_test">5G KIT TEST</string>
     <string name="_5g_hms_kit_test">5G Hms Kit Test</string>
 
+    <string name="fe">FAILUREEVENT</string>
+    <string name="fe_scg">FE.SCG</string>
+    <string name="fe_rach">FE.RACH</string>
+    <string name="fe_rl">FE.RL</string>
+    <string name="fe_ho">FE.HO</string>
     <string name="lte">LTE</string>
     <string name="l_arfcn">L.Arfcn</string>
     <string name="l_pid">L.PID</string>
@@ -75,4 +80,9 @@
     <string name="net_nr_pdu_rej_info">NET_NR_PDU_REJ_INFO</string>
     <string name="net_nr_ambr_cnt">NET_NR_AMBR_CNT</string>
     <string name="net_nr_ambr">NET_NR_AMBR</string>
+
+    <string name="modem_slice">Modem.Slice</string>
+
+    <string name="enable_event">EN</string>
+    <string name="disable_event">DISABLE</string>
 </resources>

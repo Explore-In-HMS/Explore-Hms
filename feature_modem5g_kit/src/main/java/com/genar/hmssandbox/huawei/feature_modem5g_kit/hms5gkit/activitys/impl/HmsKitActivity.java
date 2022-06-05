@@ -17,12 +17,16 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.genar.hmssandbox.huawei.feature_modem5g_kit.MyApplication;
 import com.genar.hmssandbox.huawei.feature_modem5g_kit.R;
 import com.genar.hmssandbox.huawei.feature_modem5g_kit.hms5gkit.activitys.IHmsKitActivity;
 import com.genar.hmssandbox.huawei.feature_modem5g_kit.hms5gkit.activitys.common.LoadingDialogCenter;
+import com.genar.hmssandbox.huawei.feature_modem5g_kit.hms5gkit.activitys.constants.EventParamEnum;
 import com.genar.hmssandbox.huawei.feature_modem5g_kit.hms5gkit.activitys.constants.QueryParamsEnum;
 import com.genar.hmssandbox.huawei.feature_modem5g_kit.hms5gkit.presenter.HmsKitPresenter;
 import com.genar.hmssandbox.huawei.feature_modem5g_kit.hms5gkit.utils.TimeStampUtils;
+import com.genar.hmssandbox.huawei.feature_modem5g_kit.hms5gkit.utils.ToastUtil;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,6 +46,8 @@ public class HmsKitActivity extends HmsKitBaseActivity implements IHmsKitActivit
     // Collection object used to store selected items
     // After query, all selected will not be cancelled
     List<String> selected = new CopyOnWriteArrayList<>();
+    List<String> selectedevent = new CopyOnWriteArrayList<>();
+
 
     @BindView(R.id.registerBtn)
     Button regBtn;
@@ -52,11 +58,20 @@ public class HmsKitActivity extends HmsKitBaseActivity implements IHmsKitActivit
     @BindView(R.id.unRegister)
     Button unRegisterBtn;
 
+    @BindView(R.id.enableEvent)
+    Button enableEventBtn;
+
+    @BindView(R.id.disableEvent)
+    Button disableEventBtn;
+
     @BindView(R.id.textOutput)
     TextView outputText;
 
     private HmsKitPresenter mHmsKitPresenter;
     List<CheckBox> mCheckBoxList;
+
+    List<CheckBox> mParamCheckBoxList;
+    List<CheckBox> mEventCheckBoxList;
 
     @Override
     protected int getLayoutId() {
@@ -94,7 +109,45 @@ public class HmsKitActivity extends HmsKitBaseActivity implements IHmsKitActivit
                 outputText.setText("");
             }
         });
+
+        enableEventBtn.setOnClickListener(view ->{
+            if (!mHmsKitPresenter.getConnectStatus()) {
+                hasNotRegister();
+                return;
+            }
+            if (selectedevent.size() == 0) {
+                ToastUtil.toast("No Data Selected");
+                return;
+            }
+            LoadingDialogCenter.getInstance().showLoadingDialog(this, "Enabling Event...");
+            mHmsKitPresenter.enable(EventParamEnum.hasAllEvent(selectedevent));
+//            String p = "";
+//            for(String e: selectedevent) { //EventParamEnum.hasAllEvent(selectedevent)
+//               p = p + e + ",";
+//            }
+//            ToastUtil.toast("点击enable:" + p);
+        });
+
+        disableEventBtn.setOnClickListener(view ->{
+            if (!mHmsKitPresenter.getConnectStatus()) {
+                hasNotRegister();
+                return;
+            }
+            if (selectedevent.size() == 0) {
+                ToastUtil.toast("No Data Selected");
+                return;
+            }
+            LoadingDialogCenter.getInstance().showLoadingDialog(this, "Disabling Event...");
+            mHmsKitPresenter.disable(EventParamEnum.hasAllEvent(selectedevent));
+//            String p = "";
+//            for(String e: EventParamEnum.hasAllEvent(selectedevent)) { //EventParamEnum.hasAllEvent(selectedevent)
+//                p = p + e + ",";
+//            }
+//            ToastUtil.toast("点击disable:" + p);
+        });
         initCheckBoxes();
+        initEventCheckBoxes();
+
         outputText.setMovementMethod(ScrollingMovementMethod.getInstance());
     }
 
@@ -125,15 +178,26 @@ public class HmsKitActivity extends HmsKitBaseActivity implements IHmsKitActivit
     private CompoundButton.OnCheckedChangeListener mChangeListener = (buttonView, isChecked) -> {
         int resourceId = buttonView.getId();
         String selectStr = QueryParamsEnum.getResourceId2QueryNameMap().getOrDefault(resourceId, "");
+        String selectEventStr = EventParamEnum.getResourceId2EventNameMap().getOrDefault(resourceId, "");
         if (isChecked) {
             // Save a Map (key: resourceId, value: queryName),
             // Add the selected text to the list,
             if (!"".equals(selectStr)) {
                 selected.add(selectStr);
+            }else if (!"".equals(selectEventStr)) {
+                selectedevent.add(selectEventStr);
             }
+            textBlack(buttonView);
         } else {
             // The text to be canceled is deleted from the selected list
-            selected.remove(selectStr);
+
+            if (!"".equals(selectStr)) {
+                selected.remove(selectStr);
+            }else if (!"".equals(selectEventStr))
+            {
+                selectedevent.remove(selectEventStr);
+            }
+            textBlack(buttonView);
         }
     };
 
@@ -163,6 +227,7 @@ public class HmsKitActivity extends HmsKitBaseActivity implements IHmsKitActivit
                 bearerCbox, bearerDrbInfoCbox, bearerDrbInfoRbIdCbox,
                 bearerDrbInfoPdcpVersionCbox, bearerDrbInfoBearerTypeCbox,
                 bearerDrbInfoDataSplitThresholdCbox,
+                modemsliceCbox
 
         };
         mCheckBoxList = new ArrayList<>(Arrays.asList(checkBoxes));
@@ -171,13 +236,49 @@ public class HmsKitActivity extends HmsKitBaseActivity implements IHmsKitActivit
         }
     }
 
+    private void initEventCheckBoxes() {
+        CheckBox[] checkBoxes = new CheckBox[]{
+                feScgCbox, feRachCbox, feRadioLinkCbox, feHandOverCbox
+        };
+        mEventCheckBoxList = new ArrayList<>(Arrays.asList(checkBoxes));
+        for (CheckBox checkBox : mEventCheckBoxList) {
+            checkBox.setOnCheckedChangeListener(mChangeListener);
+        }
+    }
+
+
     public void cancelAll() {
         for (CheckBox checkBox : mCheckBoxList) {
             checkBox.setChecked(false);
             textBlack(checkBox);
         }
+
+        for (CheckBox checkBox : mEventCheckBoxList) {
+            checkBox.setChecked(false);
+            textBlack(checkBox);
+        }
     }
 
+//    private void setTextChocolate(CompoundButton buttonView) {
+//        if (buttonView.getCurrentTextColor() == MyApplication.getContext().getColor(R.color.greenColor)) {
+//            // The color is green, indicating that it is reporting periodically
+//            return;
+//        }
+//        textChocolate(buttonView);
+//    }
+
+
+//    private void textChocolate(CompoundButton buttonView) {
+//        buttonView.setTextColor(getApplicationContext().getColor(R.color.chocolate));
+//    }
+
+//    private void setTextBlack(CompoundButton buttonView) {
+//        if (buttonView.getCurrentTextColor() == MyApplication.getContext().getColor(R.color.greenColor)) {
+//            // The color is green, indicating that it is reporting periodically
+//            return;
+//        }
+//        textBlack(buttonView);
+//    }
 
     private void textBlack(CompoundButton buttonView) {
         buttonView.setTextColor(getApplicationContext().getColor(R.color.blackFont));

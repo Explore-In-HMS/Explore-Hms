@@ -12,6 +12,15 @@ import com.genar.hmssandbox.huawei.feature_modem5g_kit.hms5gkit.activitys.base.B
 import butterknife.BindView;
 
 public abstract class HmsKitBaseActivity extends BaseActivity {
+    @BindView(R.id.fe_scg)
+    CheckBox feScgCbox;
+    @BindView(R.id.fe_rach)
+    CheckBox feRachCbox;
+    @BindView(R.id.fe_rl)
+    CheckBox feRadioLinkCbox;
+    @BindView(R.id.fe_ho)
+    CheckBox feHandOverCbox;
+
     @BindView(R.id.lte_cb)
     CheckBox lteCbox;
     @BindView(R.id.lte_arfcn_cb)
@@ -129,4 +138,6 @@ public abstract class HmsKitBaseActivity extends BaseActivity {
     @BindView(R.id.bearer_d_dst)
     CheckBox bearerDrbInfoDataSplitThresholdCbox;
 
+    @BindView(R.id.modem_slice)
+    CheckBox modemsliceCbox;
 }
