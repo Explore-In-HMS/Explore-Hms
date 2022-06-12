@@ -27,11 +27,8 @@ import com.genar.hmssandbox.huawei.baseapp.util.DatabaseAppUtils;
 import com.genar.hmssandbox.huawei.baseapp.util.DatabaseMaterialAppUtils;
 import com.genar.hmssandbox.huawei.baseapp.util.OverseasContextWrapper;
 import com.huawei.hms.api.HuaweiMobileServicesUtil;
-import com.huawei.hms.audioeditor.common.agc.HAEApplication;
 import com.huawei.hms.feature.dynamicinstall.FeatureCompat;
-import com.huawei.hms.materialgeneratesdk.MaterialGenApplication;
 import com.huawei.hms.network.NetworkKit;
-import com.huawei.hms.objreconstructsdk.ReconstructApplication;
 import com.huawei.hms.videokit.player.InitFactoryCallback;
 import com.huawei.hms.videokit.player.LogConfigInfo;
 import com.huawei.hms.videokit.player.WisePlayerFactory;
@@ -49,10 +46,9 @@ public class SandboxApplication extends Application {
     private static WisePlayerFactory wisePlayerFactory = null;
 
 
-
     @Override
     protected void attachBaseContext(Context base) {
-        super.attachBaseContext(OverseasContextWrapper.wrap(base,"en"));
+        super.attachBaseContext(OverseasContextWrapper.wrap(base, "en"));
         // Start the Dynamic Ability SDK.
         try {
             FeatureCompat.install(base);

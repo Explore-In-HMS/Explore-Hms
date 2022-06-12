@@ -53,7 +53,7 @@ android {
 dependencies {
     implementation project(":app")
 
-    implementation 'com.huawei.hms:image-vision:1.0.3.301'
+    implementation 'com.huawei.hms:image-vision:1.0.3.304'
     implementation 'com.huawei.hms:image-vision-fallback:1.0.3.301'
     implementation 'com.huawei.hms:image-render:1.0.3.303'
     implementation 'com.huawei.hms:image-render-fallback:1.0.3.301'

@@ -50,8 +50,9 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation "com.huawei.hms:stats:${stats_sdk_version}"
-    implementation 'com.huawei.hms:network-embedded:5.0.7.300'
-    implementation 'com.huawei.hms:filemanager:5.0.7.300'
+    implementation 'com.huawei.hms:network-embedded:5.0.9.300'
+
+    implementation 'com.huawei.hms:filemanager:5.0.9.300'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
