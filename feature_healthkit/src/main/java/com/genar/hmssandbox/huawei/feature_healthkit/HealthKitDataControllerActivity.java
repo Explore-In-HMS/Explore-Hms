@@ -19,8 +19,10 @@
 package com.genar.hmssandbox.huawei.feature_healthkit;
 
 import android.annotation.SuppressLint;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.TextView;
 
@@ -32,6 +34,7 @@ import com.huawei.hmf.tasks.OnSuccessListener;
 import com.huawei.hmf.tasks.Task;
 import com.huawei.hms.hihealth.DataController;
 import com.huawei.hms.hihealth.HiHealthOptions;
+import com.huawei.hms.hihealth.HiHealthStatusCodes;
 import com.huawei.hms.hihealth.HuaweiHiHealth;
 import com.huawei.hms.hihealth.data.DataCollector;
 import com.huawei.hms.hihealth.data.DataType;
@@ -47,7 +50,10 @@ import com.huawei.hms.support.hwid.result.AuthHuaweiId;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -55,7 +61,6 @@ import java.util.concurrent.TimeUnit;
  *
  * @since 2020-08-27
  */
-@SuppressLint("SimpleDateFormat")
 public class HealthKitDataControllerActivity extends AppCompatActivity {
     private static final String TAG = "DataController";
 
@@ -67,6 +72,9 @@ public class HealthKitDataControllerActivity extends AppCompatActivity {
 
     // Internal context object of the activity
     private Context context;
+
+    // PendingIntent, required when registering or unregistering a listener within the data controller
+    private PendingIntent pendingIntent;
 
     // TextView for displaying operation information on the UI
     private TextView logInfoView;
@@ -332,7 +340,7 @@ public class HealthKitDataControllerActivity extends AppCompatActivity {
         todaySummationTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(Exception e) {
-                CommonUtil.printFailureMessage(TAG, e, "readTodaySummation", logInfoView);
+                printFailureMessage(e, "readTodaySummation");
             }
         });
     }
@@ -398,4 +406,57 @@ public class HealthKitDataControllerActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * TextView to send the operation result logs to the logcat and to the UI
+     *
+     * @param string (indicating the log string)
+     */
+    private void logger(String string) {
+        CommonUtil.logger(string, TAG, logInfoView);
+    }
+
+    /**
+     * Print the SamplePoint in the SampleSet object as an output.
+     *
+     * @param sampleSet (indicating the sampling dataset)
+     */
+    private void showSampleSet(SampleSet sampleSet) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        for (SamplePoint samplePoint : sampleSet.getSamplePoints()) {
+            logger("Sample point type: " + samplePoint.getDataType().getName());
+            logger("Start: " + dateFormat.format(new Date(samplePoint.getStartTime(TimeUnit.MILLISECONDS))));
+            logger("End: " + dateFormat.format(new Date(samplePoint.getEndTime(TimeUnit.MILLISECONDS))));
+            for (Field field : samplePoint.getDataType().getFields()) {
+                logger("Field: " + field.getName() + " Value: " + samplePoint.getFieldValue(field));
+            }
+        }
+    }
+
+    /**
+     * Print the SamplePoint as an output.
+     *
+     * @param samplePoint (indicating the sampling point)
+     */
+    private void showSamplePoint(SamplePoint samplePoint) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        logger("Sample point type: " + samplePoint.getDataType().getName());
+        logger("Start: " + dateFormat.format(new Date(samplePoint.getStartTime(TimeUnit.MILLISECONDS))));
+        logger("End: " + dateFormat.format(new Date(samplePoint.getEndTime(TimeUnit.MILLISECONDS))));
+        for (Field field : samplePoint.getDataType().getFields()) {
+            logger("Field: " + field.getName() + " Value: " + samplePoint.getFieldValue(field));
+        }
+        logger(System.lineSeparator());
+    }
+
+    /**
+     * Print error code and error information for an exception.
+     *
+     * @param exception indicating an exception object
+     * @param api api name
+     */
+    private void printFailureMessage(Exception exception, String api) {
+        CommonUtil.printFailureMessage(TAG, exception, api, logInfoView);
+    }
 }

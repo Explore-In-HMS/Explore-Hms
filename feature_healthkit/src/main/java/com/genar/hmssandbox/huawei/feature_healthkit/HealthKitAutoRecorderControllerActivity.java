@@ -29,6 +29,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.provider.Settings;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -62,10 +63,13 @@ import java.util.Date;
 public class HealthKitAutoRecorderControllerActivity extends AppCompatActivity {
     private static final String TAG = "AutoRecorderTest";
 
+    // Line separators for the display on the UI
     private static final String SPLIT = "*******************************" + System.lineSeparator();
 
     // HMS Health AutoRecorderController
     private AutoRecorderController autoRecorderController;
+
+    private Context mContext;
 
     // Text control that displays action information on the page
     private TextView logInfoView;
@@ -81,22 +85,27 @@ public class HealthKitAutoRecorderControllerActivity extends AppCompatActivity {
     // WakeLock
     private PowerManager.WakeLock wl;
 
+    /**
+     * add app to the battery optimization trust list, to avoid the app be killed
+     *
+     * @param activity activity
+     */
     public void ignoreBatteryOptimization(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             try {
-                PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
-                boolean hasIgnored = powerManager.isIgnoringBatteryOptimizations(activity.getPackageName());
                 /**
                  * Check whether the current app is added to the battery optimization trust list,
                  * If not, a dialog box is displayed for you to add a battery optimization trust list.
-                 * */
+                 */
+                PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+                boolean hasIgnored = powerManager.isIgnoringBatteryOptimizations(activity.getPackageName());
                 if (!hasIgnored) {
                     Intent newIntent = new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
                     newIntent.setData(Uri.parse("package:" + activity.getPackageName()));
                     startActivity(newIntent);
                 }
             } catch (Exception e) {
-                Log.e(TAG,e.getLocalizedMessage());
+                e.printStackTrace();
             }
         }
     }
@@ -147,7 +156,7 @@ public class HealthKitAutoRecorderControllerActivity extends AppCompatActivity {
     private void initData() {
         intent = new Intent();
         intent.setPackage(getPackageName());
-        intent.setAction(getString(R.string.health_kit_service));
+        intent.setAction("HealthKitService");
     }
 
     @Override
@@ -155,10 +164,40 @@ public class HealthKitAutoRecorderControllerActivity extends AppCompatActivity {
         Log.i(TAG, "signIn onActivityResult");
         super.onActivityResult(requestCode, resultCode, data);
 
-        HiHealthOptions options = HiHealthOptions.builder().build();
-        AuthHuaweiId signInHuaweiId = HuaweiIdAuthManager.getExtendedAuthResult(options);
-        autoRecorderController =
-                HuaweiHiHealth.getAutoRecorderController(com.genar.hmssandbox.huawei.feature_healthkit.HealthKitAutoRecorderControllerActivity.this, signInHuaweiId);
+        autoRecorderController = HuaweiHiHealth.getAutoRecorderController(HealthKitAutoRecorderControllerActivity.this);
+    }
+
+    /**
+     * Returns the callback data in SamplePoint mode.
+     *
+     * @param samplePoint Reported data
+     */
+    private void showSamplePoint(SamplePoint samplePoint) {
+        if (samplePoint != null) {
+            logger("Sample point type: " + samplePoint.getDataType().getName());
+            for (Field field : samplePoint.getDataType().getFields()) {
+                logger("Field: " + field.getName() + " Value: " + samplePoint.getFieldValue(field));
+                logger(stampToData(String.valueOf(System.currentTimeMillis())));
+            }
+        } else {
+            logger("samplePoint is null!! ");
+            logger(SPLIT);
+        }
+    }
+
+    /**
+     * Timestamp conversion function
+     *
+     * @param timeStr Timestamp
+     * @return Time in date format
+     */
+    private String stampToData(String timeStr) {
+        String res;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        long it = Long.parseLong(timeStr);
+        Date date = new Date(it);
+        res = simpleDateFormat.format(date);
+        return res;
     }
 
     /**
@@ -172,7 +211,7 @@ public class HealthKitAutoRecorderControllerActivity extends AppCompatActivity {
             // Registering a Broadcast Receiver
             receiver = new MyReceiver();
             IntentFilter filter = new IntentFilter();
-            filter.addAction(getString(R.string.health_kit_service));
+            filter.addAction("HealthKitService");
             this.registerReceiver(receiver, filter);
             count++;
         } else {
@@ -182,7 +221,7 @@ public class HealthKitAutoRecorderControllerActivity extends AppCompatActivity {
             // Registering a Broadcast Receiver
             receiver = new MyReceiver();
             IntentFilter filter = new IntentFilter();
-            filter.addAction(getString(R.string.health_kit_service));
+            filter.addAction("HealthKitService");
             this.registerReceiver(receiver, filter);
             count++;
         }
@@ -198,39 +237,6 @@ public class HealthKitAutoRecorderControllerActivity extends AppCompatActivity {
             SamplePoint samplePoint = (SamplePoint) bundle.get("SamplePoint");
             showSamplePoint(samplePoint);
         }
-
-        /**
-         * Returns the callback data in SamplePoint mode.
-         *
-         * @param samplePoint Reported data
-         */
-        private void showSamplePoint(SamplePoint samplePoint) {
-            if (samplePoint != null) {
-                logger("Sample point type: " + samplePoint.getDataType().getName());
-                for (Field field : samplePoint.getDataType().getFields()) {
-                    logger("Field: " + field.getName() + " Value: " + samplePoint.getFieldValue(field));
-                    logger(stampToData(String.valueOf(System.currentTimeMillis())));
-                }
-            } else {
-                logger("samplePoint is null!! ");
-                logger(SPLIT);
-            }
-        }
-
-        /**
-         * Timestamp conversion function
-         *
-         * @param timeStr Timestamp
-         * @return Time in date format
-         */
-        private String stampToData(String timeStr) {
-            String res;
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            long it = Long.parseLong(timeStr);
-            Date date = new Date(it);
-            res = simpleDateFormat.format(date);
-            return res;
-        }
     }
 
     /**
@@ -241,9 +247,7 @@ public class HealthKitAutoRecorderControllerActivity extends AppCompatActivity {
     public void stopRecordByType(View view) {
         logger("stopRecordByType");
         if (autoRecorderController == null) {
-            HiHealthOptions options = HiHealthOptions.builder().build();
-            AuthHuaweiId signInHuaweiId = HuaweiIdAuthManager.getExtendedAuthResult(options);
-            autoRecorderController = HuaweiHiHealth.getAutoRecorderController(this, signInHuaweiId);
+            autoRecorderController = HuaweiHiHealth.getAutoRecorderController(this);
         }
 
         autoRecorderController.stopRecord(DataType.DT_CONTINUOUS_STEPS_TOTAL, onSamplePointListener)
@@ -256,10 +260,8 @@ public class HealthKitAutoRecorderControllerActivity extends AppCompatActivity {
                         // 2.this type is not supported so far
                         if (taskResult.isSuccessful()) {
                             logger("onComplete stopRecordByType Successful");
-                            logger(SPLIT);
                         } else {
                             logger("onComplete stopRecordByType Failed");
-                            logger(SPLIT);
                         }
                     }
                 })
@@ -298,11 +300,6 @@ public class HealthKitAutoRecorderControllerActivity extends AppCompatActivity {
     /**
      * construct OnSamplePointListener
      */
-    private final OnSamplePointListener onSamplePointListener = new OnSamplePointListener() {
-        @Override
-        public void onSamplePoint(SamplePoint samplePoint) {
-            Log.i(TAG,samplePoint.toString());
-        }
+    private OnSamplePointListener onSamplePointListener = samplePoint -> {
     };
-
 }
