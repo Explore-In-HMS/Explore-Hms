@@ -63,6 +63,7 @@
                 <action android:name="HealthKitService" />
             </intent-filter>
         </service>
-        <service android:name=".ActivityRecordForegroundService" />    </application>
+        <service android:name=".ActivityRecordForegroundService" />
+    </application>
 
 </manifest>

@@ -78,6 +78,7 @@
     <string name="title_feature_mapkit">Map Kit</string>
     <string name="show_direction_routing_mapkit">Show Direction Routing</string>
     <string name="open_petalMap_MapKit">Open Petal Map</string>
+    <string name="heat_Map">Heat Map</string>
     <string name="title_feature_scankit">Scan Kit</string>
     <string name="title_feature_nearbyservice">Nearby Service</string>
     <string name="title_feature_dynamictagmanager">Dynamic Tag Manager</string>
@@ -452,6 +453,7 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="lbl_latitude">Latitude</string>
     <string name="lbl_longitude">Longitude</string>
     <string name="btn_txt_get_location_availability">Get Location Availability</string>
+    <string name="btn_txt_geocoder_availability">Geocoder Example</string>
     <string name="btn_txt_set_mock_location">Set Mock Location</string>
     <string name="btn_txt_get_context_state">Get Nav Context State</string>
     <string name="btn_txt_get_location_with_hd">Get Location with HD</string>
@@ -464,6 +466,7 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="activity_conversion_activity_type">ActivityType</string>
     <string name="activity_conversion_transition_type">TransitionType</string>
     <string name="title_location_hd">Location HD</string>
+    <string name="title_location_geocoder">Geocoder Example</string>
     <string name="title_geofence">GeoFence</string>
     <string name="title_geofence_create">Create GeoFence</string>
     <string name="btn_txt_start_activity_geo_fence">GeoFence</string>

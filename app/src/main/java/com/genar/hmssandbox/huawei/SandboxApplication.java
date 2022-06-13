@@ -25,7 +25,6 @@ import android.util.Log;
 
 import com.genar.hmssandbox.huawei.baseapp.util.DatabaseAppUtils;
 import com.genar.hmssandbox.huawei.baseapp.util.DatabaseMaterialAppUtils;
-import com.genar.hmssandbox.huawei.baseapp.util.OverseasContextWrapper;
 import com.huawei.hms.api.HuaweiMobileServicesUtil;
 import com.huawei.hms.feature.dynamicinstall.FeatureCompat;
 import com.huawei.hms.network.NetworkKit;
@@ -45,17 +44,6 @@ public class SandboxApplication extends Application {
 
     private static WisePlayerFactory wisePlayerFactory = null;
 
-
-    @Override
-    protected void attachBaseContext(Context base) {
-        super.attachBaseContext(OverseasContextWrapper.wrap(base, "en"));
-        // Start the Dynamic Ability SDK.
-        try {
-            FeatureCompat.install(base);
-        } catch (Exception e) {
-            Log.w("DynamicAbility", "", e);
-        }
-    }
 
     @Override
     public void onCreate() {
@@ -78,6 +66,17 @@ public class SandboxApplication extends Application {
                     }
                 });
         initPlayer();
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        // Start the Dynamic Ability SDK.
+        try {
+            FeatureCompat.install(base);
+        } catch (Exception e) {
+            Log.w("DynamicAbility", "", e);
+        }
     }
 
     private void initAutoSize() {

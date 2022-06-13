@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_homeFragmentMapKit_to_mapKitDirectionApi"
             app:destination="@id/mapKitDirectionApi" />
+        <action
+            android:id="@+id/action_homeFragmentMapKit_to_heatMapFragment"
+            app:destination="@id/heatMapFragment" />
     </fragment>
     <fragment
         android:id="@+id/mapKitCameraFragment"
@@ -93,4 +96,8 @@
         android:name="com.genar.hmssandbox.huawei.mapkit.ui.MapKitDirectionApiActivity"
         android:label="activity_map_kit_direction_api"
         tools:layout="@layout/activity_map_kit_direction_api" />
+    <fragment
+        android:id="@+id/heatMapFragment"
+        android:name="com.genar.hmssandbox.huawei.mapkit.ui.HeatMapFragment"
+        android:label="HeatMapFragment" />
 </navigation>

@@ -1,22 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~
-  ~   Copyright 2020. Explore in HMS. All rights reserved.
-  ~
-  ~   Licensed under the Apache License, Version 2.0 (the "License");
-  ~   You may not use this file except in compliance with the License.
-  ~   You may obtain a copy of the License at
-  ~
-  ~   http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~   Unless required by applicable law or agreed to in writing, software
-  ~   distributed under the License is distributed on an "AS IS" BASIS,
-  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~   See the License for the specific language governing permissions and
-  ~   limitations under the License.
-  ~
-  -->
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.genar.hmssandbox.huawei">
@@ -40,21 +22,20 @@
     <application
         android:name=".SandboxApplication"
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@drawable/icon_app"
         android:label="@string/app_name"
-        android:resizeableActivity="false"
-        android:hardwareAccelerated="false"
-        android:supportsRtl="true"
         android:largeHeap="true"
+        android:resizeableActivity="false"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="name, icon, label, theme, resizeableActivity, allowBackup,hardwareAccelerated">
+
         <activity android:name=".baseapp.activity.BaseActivity" />
-
-        <activity android:name=".modelingkit3d.ui.activity.CaptureMaterialActivity"/>
-        <activity android:name=".modelingkit3d.ui.activity.HistoryActivity"/>
-        <activity android:name=".modelingkit3d.ui.activity.MainActivity"/>
-        <activity android:name=".modelingkit3d.ui.activity.NewScanActivity"/>
-
+        <activity android:name=".modelingkit3d.ui.activity.CaptureMaterialActivity" />
+        <activity android:name=".modelingkit3d.ui.activity.HistoryActivity" />
+        <activity android:name=".modelingkit3d.ui.activity.MainActivity" />
+        <activity android:name=".modelingkit3d.ui.activity.NewScanActivity" />
         <activity android:name=".baseapp.activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -101,6 +82,9 @@
             android:name=".locationkit.HdLocationActivity"
             android:label="@string/title_location_hd" />
         <activity
+            android:name=".locationkit.GeocoderActivity"
+            android:label="@string/title_location_geocoder" />
+        <activity
             android:name=".locationkit.ActivityIdentificationActivity"
             android:label="@string/title_location_activity_identification" />
         <activity
@@ -118,7 +102,6 @@
             android:windowSoftInputMode="adjustResize" />
         <activity android:name=".pushkit.MainActivityPushKit" />
         <activity android:name=".pushkit.NotificationTargetActivityPushKit">
-
             <intent-filter>
                 <action android:name="com.genar.hmssandbox.huawei.pushkit.click" /> <!-- Target Activity When Tap Notification -->
                 <category android:name="android.intent.category.DEFAULT" /> <!-- Need to select 'Custom action page' name on service -->
@@ -150,14 +133,12 @@
                 <action android:name="com.huawei.push.action.MESSAGING_EVENT" />
             </intent-filter>
         </service> <!-- Applying for Token -->
-
         <meta-data
             android:name="push_kit_auto_init_enabled"
             android:value="true" />
-
         <meta-data
             android:name="com.huawei.agconnect.applinking.READ_CLIPBOARD_PERMISSION"
-            android:value="Available"/>
+            android:value="Available" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -169,8 +150,8 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_provider_paths"
-                tools:replace="resource,android:value"
-                android:value="30.0.2"/>
+                android:value="30.0.2"
+                tools:replace="resource,android:value" />
         </provider>
     </application>
 
