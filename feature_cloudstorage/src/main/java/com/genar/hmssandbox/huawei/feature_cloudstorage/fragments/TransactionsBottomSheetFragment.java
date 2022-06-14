@@ -120,6 +120,14 @@ public class TransactionsBottomSheetFragment extends BottomSheetDialogFragment {
                 if (((StorageException) exception).getCode() == 11016) {
                     Toast.makeText(requireContext(), "File already downloaded.", Toast.LENGTH_SHORT).show();
                 }
+                else if (((StorageException) exception).getCode() == 11017) {
+                    Toast.makeText(requireContext(), "Your request is frozen due to malicious access.\n" +
+                            "\n", Toast.LENGTH_SHORT).show();
+                }
+                else if(((StorageException) exception).getCode() == 11018){
+                    Toast.makeText(requireContext(), "Invalid request parameters.\n" +
+                            "\n", Toast.LENGTH_LONG).show();
+                }
             }).addOnSuccessListener(downloadResult -> {
                 progressDialogCloudStorage.dismissProgressDialog();
                 trigger.updateList();

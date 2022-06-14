@@ -17,6 +17,8 @@
  */
 package com.genar.hmssandbox.huawei.feature_adskit;
 
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -129,7 +131,13 @@ public class RewardActivity extends AppCompatActivity implements View.OnClickLis
             }
         };
 
-        rewardedAd.loadAd(new AdParam.Builder().build(), rewardAdLoadListener);
+        Location location = new Location(LocationManager.GPS_PROVIDER);
+
+        rewardedAd.loadAd(new AdParam.Builder()
+                //Set the location information passed by the app
+                .setLocation(location)
+                .setContentBundle(Utils.contentBundle)
+                .build(), rewardAdLoadListener);
     }
 
 

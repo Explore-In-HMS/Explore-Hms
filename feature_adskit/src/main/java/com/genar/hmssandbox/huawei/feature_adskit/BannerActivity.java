@@ -18,6 +18,8 @@
 package com.genar.hmssandbox.huawei.feature_adskit;
 
 import android.graphics.Color;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -73,7 +75,12 @@ public class BannerActivity extends AppCompatActivity {
         });
         adFrameLayout = findViewById(R.id.ad_frame);
         bannerView = findViewById(R.id.hw_banner_view);
-        adParam = new AdParam.Builder().build();
+        Location location = new Location(LocationManager.GPS_PROVIDER);
+        adParam = new AdParam.Builder()
+                //Set the location information passed by the app
+                .setLocation(location)
+                .setContentBundle(Utils.contentBundle)
+                .build();
         // can customize ad RequestOptions parameters
         //adParam = AdvancedAdUtils.editAndGetAdParam(1, 0, 1, "J"); // eg : ads for child
     }

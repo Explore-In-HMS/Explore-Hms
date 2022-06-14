@@ -17,6 +17,8 @@
  */
 package com.genar.hmssandbox.huawei.feature_adskit;
 
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -82,9 +84,13 @@ public class InterstitialActivity extends AppCompatActivity {
         interstitialAd = new InterstitialAd(this);
         interstitialAd.setAdId(getAdId(getRandomNumber(2, 1))); // Set an ad slot ID.
         interstitialAd.setAdListener(adListener);
-
+        Location location = new Location(LocationManager.GPS_PROVIDER);
         // Load an interstitial ad.
-        AdParam adParam = new AdParam.Builder().build();
+        AdParam adParam = new AdParam.Builder()
+                //Set the location information passed by the app
+                .setLocation(location)
+                .setContentBundle(Utils.contentBundle)
+                .build();
         interstitialAd.loadAd(adParam);
 
     }

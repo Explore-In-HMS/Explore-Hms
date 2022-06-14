@@ -44,6 +44,52 @@
             android:orientation="horizontal">
 
             <CheckBox
+                android:id="@+id/fe_scg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/fe_scg"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/fe_rach"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/fe_rach"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/fe_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/fe_rl"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/fe_ho"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/fe_ho"
+                android:textSize="12sp" />
+        </TableRow>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/separatorColor"
+            android:orientation="vertical" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <CheckBox
                 android:id="@+id/lte_cb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -325,66 +371,27 @@
                 android:textSize="12sp" />
 
             <CheckBox
-                android:id="@+id/nr_scinfo"
+                android:id="@+id/nr_spcell_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:text="@string/n_scinfo"
+                android:text="@string/n_sp_info"
                 android:textSize="12sp" />
 
             <CheckBox
-                android:id="@+id/nr_sc_arfcn"
+                android:id="@+id/nr_scell_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:text="@string/n_sc_arfcn"
+                android:text="@string/n_sc_info"
                 android:textSize="12sp" />
 
             <CheckBox
-                android:id="@+id/nr_sc_pci"
+                android:id="@+id/nr_spcell_basic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:text="@string/n_sc_pci"
-                android:textSize="12sp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/nr_sc_band"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:text="@string/n_sc_band"
-                android:textSize="12sp" />
-
-            <CheckBox
-                android:id="@+id/nr_sc_cgt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:text="@string/n_sc_cgt"
-                android:textSize="12sp" />
-
-            <CheckBox
-                android:id="@+id/nr_sc_ct"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:text="@string/n_sc_ct"
-                android:textSize="12sp" />
-
-            <CheckBox
-                android:id="@+id/nr_sc_st"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:text="@string/n_sc_st"
+                android:text="@string/n_sp_basic"
                 android:textSize="12sp" />
         </TableRow>
 
@@ -395,37 +402,61 @@
             android:orientation="horizontal">
 
             <CheckBox
-                android:id="@+id/nr_sc_dml"
+                android:id="@+id/nr_spcell_cfg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/n_sp_cfg"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/nr_spcell_meas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/n_sp_meas"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/nr_scell_basic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/n_sc_basic"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/nr_scell_cfg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/n_sc_cfg"
+                android:textSize="12sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/nr_scell_ssb_meas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
                 android:text="@string/n_sc_dml"
                 android:textSize="12sp" />
 
-            <CheckBox
-                android:id="@+id/nr_sc_dt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:text="@string/n_sc_dt"
-                android:textSize="12sp" />
-
-            <CheckBox
-                android:id="@+id/nr_sc_srp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:text="@string/n_sc_srp"
-                android:textSize="12sp" />
-
-            <CheckBox
-                android:id="@+id/nr_sc_srq"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:text="@string/n_sc_srq"
-                android:textSize="12sp" />
         </TableRow>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/separatorColor"
+            android:orientation="vertical" />
 
         <TableRow
             android:layout_width="match_parent"
@@ -434,36 +465,143 @@
             android:orientation="horizontal">
 
             <CheckBox
-                android:id="@+id/nr_sc_ssr"
+                android:id="@+id/net"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:text="@string/n_sc_ssr"
+                android:text="@string/net"
                 android:textSize="12sp" />
 
             <CheckBox
-                android:id="@+id/nr_sc_crp"
+                android:id="@+id/net_lte_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:text="@string/n_sc_crp"
+                android:text="@string/net_lte_info"
                 android:textSize="12sp" />
 
             <CheckBox
-                android:id="@+id/nr_sc_crq"
+                android:id="@+id/net_nr_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:text="@string/n_sc_crq"
+                android:text="@string/net_nr_info"
                 android:textSize="12sp" />
 
             <CheckBox
-                android:id="@+id/nr_sc_csr"
+                android:id="@+id/net_lte_rej_cnt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:text="@string/n_sc_csr"
+                android:text="@string/net_lte_rej_cnt"
                 android:textSize="12sp" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/net_lte_rej_infos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/net_lte_rej_infos"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/net_lte_pdn_rej_cnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/net_lte_pdn_rej_cnt"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/net_lte_pdn_rej_infos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/net_lte_pdn_rej_infos"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/net_lte_ambr_cnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/net_lte_ambr_cnt"
+                android:textSize="12sp" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/net_lte_ambrs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/net_lte_ambrs"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/net_nr_rej_cnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/net_nr_rej_cnt"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/net_nr_rej_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/net_nr_rej_info"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/net_nr_pdu_rej_cnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/net_nr_pdu_rej_cnt"
+                android:textSize="12sp" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/net_nr_pdu_rej_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/net_nr_pdu_rej_info"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/net_nr_ambr_cnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/net_nr_ambr_cnt"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/net_nr_ambr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/net_nr_ambr"
+                android:textSize="12sp" />
+
         </TableRow>
 
         <LinearLayout
@@ -543,6 +681,29 @@
             android:background="@color/separatorColor"
             android:orientation="vertical" />
 
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/modem_slice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/modem_slice"
+                android:textSize="12sp" />
+        </TableRow>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/separatorColor"
+            android:orientation="vertical" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -587,6 +748,43 @@
                 android:minWidth="25dp"
                 android:minHeight="0dp"
                 android:text="@string/unregister"
+                android:textColor="@android:color/white"
+                tools:ignore="ButtonStyle" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/enableEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/change_color_btn"
+                android:minWidth="25dp"
+                android:minHeight="0dp"
+                android:text="@string/enable_event"
+                android:textColor="@android:color/white"
+                tools:ignore="ButtonStyle" />
+
+
+            <Button
+                android:id="@+id/disableEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/change_color_unreg_btn"
+                android:minWidth="25dp"
+                android:minHeight="0dp"
+                android:text="@string/disable_event"
                 android:textColor="@android:color/white"
                 tools:ignore="ButtonStyle" />
         </LinearLayout>

@@ -114,6 +114,7 @@
     <string name="url_auth_service_google_play">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-googlegame-0000001053253973</string>
     <string name="url_auth_service_weibo">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-weibo-0000001053732641</string>
     <string name="url_auth_service_wechat">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-wechat-0000001053612645</string>
+    <string name="url_auth_service_vk">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-vk-0000001214373581</string>
     <string name="url_auth_service_qq">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-qq-0000001053852632</string>
     <string name="url_txt_authservicemain">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-introduction-0000001053732605</string>
 <string name="url_reauthenticate">"https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-reauthenticate-0000001127287737"</string>

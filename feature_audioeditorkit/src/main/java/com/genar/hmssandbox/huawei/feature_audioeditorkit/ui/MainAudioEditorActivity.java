@@ -43,9 +43,13 @@ import com.google.android.material.button.MaterialButton;
 import com.huawei.hms.audioeditor.common.agc.HAEApplication;
 import com.huawei.hms.audioeditor.sdk.AudioExtractCallBack;
 import com.huawei.hms.audioeditor.sdk.HAEAudioExpansion;
+import com.huawei.hms.audioeditor.ui.api.AudioEditorLaunchOption;
 import com.huawei.hms.audioeditor.ui.api.AudioExportCallBack;
 import com.huawei.hms.audioeditor.ui.api.AudioInfo;
 import com.huawei.hms.audioeditor.ui.api.HAEUIManager;
+import com.huawei.hms.audioeditor.ui.api.MenuCommon;
+
+import java.util.ArrayList;
 
 public class MainAudioEditorActivity extends AppCompatActivity {
 
@@ -164,8 +168,39 @@ public class MainAudioEditorActivity extends AppCompatActivity {
      * Import audio and enter the audio editing interface management class.
      */
     private void startUIActivity() {
-        HAEUIManager.getInstance().launchEditorActivity(this);
-        HAEUIManager.getInstance().setCallback(callBack);
+        //Old way
+        /*HAEUIManager.getInstance().launchEditorActivity(this);
+        HAEUIManager.getInstance().setCallback(callBack);*/
+
+        ArrayList<Integer> level1List = new ArrayList<>();
+        level1List.add(MenuCommon.MAIN_MENU_ADD_AUDIO_CODE);
+        level1List.add(MenuCommon.MAIN_MENU_ADD_SOUND_EFFECTS_CODE);
+        level1List.add(MenuCommon.MAIN_MENU_AUDIO_RECORDER_CODE);
+        level1List.add(MenuCommon.MAIN_MENU_PIECE_CODE);
+        level1List.add(MenuCommon.MAIN_MENU_TEXT_TO_SPEECH_CODE);
+
+        ArrayList<Integer> level2List = new ArrayList<>();
+
+        level2List.add(MenuCommon.EDIT_MENU_BALANCE_CODE);
+        level2List.add(MenuCommon.EDIT_MENU_CHANGE_VOICE_CODE);
+        level2List.add(MenuCommon.EDIT_MENU_COPY_CODE);
+        level2List.add(MenuCommon.EDIT_MENU_DEL_CODE);
+        level2List.add(MenuCommon.EDIT_MENU_EFFECT_CODE);
+        level2List.add(MenuCommon.EDIT_MENU_FADE_IN_OUT_CODE);
+        level2List.add(MenuCommon.EDIT_MENU_SEGREGATED_CODE);
+        level2List.add(MenuCommon.EDIT_MENU_SPATIAL_ORIENTATION_CODE);
+        level2List.add(MenuCommon.EDIT_MENU_SPLIT_CODE);
+        level2List.add(MenuCommon.EDIT_MENU_VOICE_SEGREGATED_CODE);
+        level2List.add(MenuCommon.EDIT_MENU_VOLUME_SPEED_CODE);
+        level2List.add(MenuCommon.EDIT_MENU_VOLUME2_CODE);
+        level2List.add(MenuCommon.EDIT_MENU_VOLUME2_CODE);
+        level2List.add(MenuCommon.EDIT_MENU_VOLUME2_CODE);
+
+        AudioEditorLaunchOption.Builder audioEditorLaunch = new AudioEditorLaunchOption.Builder()
+                .setCustomMenuList(level1List)
+                .setSecondMenuList(level2List)
+                .setFilePaths(new ArrayList<>());
+        HAEUIManager.getInstance().launchEditorActivity(this, audioEditorLaunch.build());
     }
 
     // Start the audio format conversion page.
