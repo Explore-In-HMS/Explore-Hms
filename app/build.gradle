@@ -253,7 +253,7 @@ dependencies {
     //nearby
     api 'com.huawei.hms:nearby:6.2.0.300'
 
-    api "com.huawei.hms:videokit-player:1.0.10.300"
+    api "com.huawei.hms:videokit-player:1.0.10.302"
 
     //Scene kit
     api 'com.huawei.scenekit:full-sdk:6.0.0.301'
@@ -313,7 +313,7 @@ dependencies {
     implementation 'com.huawei.hms:ml-computer-translate:2.0.3.300'
 
 
-    api 'com.huawei.hms:push:5.1.1.301'
+    api 'com.huawei.hms:push:6.3.0.302'
 
     //MAP kit
     api "com.huawei.hms:maps:6.3.1.300"
