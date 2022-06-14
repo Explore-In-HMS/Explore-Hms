@@ -406,6 +406,9 @@ dependencies {
     //Video Editor Kit
     api 'com.huawei.hms:video-editor-ui:1.1.0.302'
 
+    //Keyring Service
+    implementation "com.huawei.hms:keyring-credential:6.4.0.300"
+
 
     def camerax_version = "1.0.0-rc01"
     // The following line is optional, as the core library is included indirectly by camera-camera2

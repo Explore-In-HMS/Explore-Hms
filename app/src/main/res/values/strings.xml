@@ -165,6 +165,24 @@
     <string name="txt_earlyaccess_click"><a href="">Click here to learn more about Early Access.</a></string>
     <!--early access -->
 
+    <!--keyring service -->
+    <string name="title_keyring">Keyring Service</string>
+    <string name="invalid_input">username or password can not be empty</string>
+    <string name="hint_title">Hint</string>
+    <string name="ok">OK</string>
+    <string name="save_credential_ok">save credential to Keyring success</string>
+    <string name="save_credential_failed">save to keyring failed</string>
+    <string name="delete_ok">delete credential of %s success</string>
+    <string name="delete_failed">delete credential failed. %s</string>
+    <string name="query_credential_failed">query credential failed</string>
+    <string name="no_available_credential">no available credential</string>
+    <string name="title_keyring_example">Keyring Service Example</string>
+    <string name="txt_keyring">Keyring offers the Credentials Management API for storing user credentials locally on Android phones and tablets and sharing them between different apps and different platform versions of an app.Keyring provides APIs for Android apps, APIs for web apps, and APIs for quick apps. Apps can integrate relevant APIs to use Keyring. All user credentials will be stored in HMS Core Keyring regardless of which type of APIs you are calling, implementing unified credential management and sharing.</string>
+    <string name="txt_keyring_link">https://developer.huawei.com/consumer/en/doc/development/Security-Guides/introduction-0000001133141068</string>
+    <string name="txt_keyring_click"><a href="">Click here to learn more about Keyring Service.</a></string>
+    <!--keyring service -->
+
+
     <!-- preorders -->
     <string name="title_preorders">Preorders</string>
     <string name="txt_preorders">This service attracts potential users to your game prior to its release. During early access or initial release of a game, the system sends notifications to users who have preordered it to attract them to download the game. Therefore, it is recommended that you apply for Preorders. \nThe preorder application process is as follows.</string>
@@ -886,5 +904,6 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="delete">Delete</string>
     <string name="title_feature_videoeditor_kit">Video Editor Kit</string>
     <string name="title_feature_modem5g_kit">5G Modem Kit</string>
+    <string name="keyring_service_example">Keyring Service Example</string>
 
 </resources>

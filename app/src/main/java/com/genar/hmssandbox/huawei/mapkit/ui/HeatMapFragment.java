@@ -50,4 +50,6 @@ public class HeatMapFragment extends BaseFragment {
 
     }
 
+
+
 }

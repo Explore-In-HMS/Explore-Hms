@@ -30,7 +30,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="name, icon, label, theme, resizeableActivity, allowBackup,hardwareAccelerated">
-
+        <activity
+            android:name=".keyring.KeyringServiceIntroductionActivity" />
+        <activity
+            android:name=".keyring.KeyringServiceActivity"/>
         <activity android:name=".baseapp.activity.BaseActivity" />
         <activity android:name=".modelingkit3d.ui.activity.CaptureMaterialActivity" />
         <activity android:name=".modelingkit3d.ui.activity.HistoryActivity" />
