@@ -50,10 +50,8 @@ public class CloudDBZoneWrapper {
     private static AGConnectCloudDB cloudDB;
     private static CloudDBZone cloudDbZone;
 
-    public static void initCloudDBZone(Context context) {
-        AGConnectOptions agcConnectOptions = new AGConnectOptionsBuilder().setRoutePolicy(AGCRoutePolicy.GERMANY).build(context);
-        AGConnectInstance instance = AGConnectInstance.buildInstance(agcConnectOptions);
-        cloudDB = AGConnectCloudDB.getInstance(instance, AGConnectAuth.getInstance(instance));
+    public static void initCloudDBZone() {
+        cloudDB = AGConnectCloudDB.getInstance();
         createObjectType();
         openCloudDBZone();
     }
