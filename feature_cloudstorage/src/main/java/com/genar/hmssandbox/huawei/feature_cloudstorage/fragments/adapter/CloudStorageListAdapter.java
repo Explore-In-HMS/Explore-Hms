@@ -102,18 +102,18 @@ public class CloudStorageListAdapter extends RecyclerView.Adapter<CloudStorageLi
                     Map customMetadata = fileMetadata.getCustomMetadata();
 
                     customMetadata.forEach((k, v) ->
-                        builder.append("\n" + k + ": " + v));
+                            builder.append("\n" + k + ": " + v));
                 }
                 binding.tvFileMetadataInfo.setText(context.getString(R.string.metadata_cloud_storage, builder.toString()));
 
             }).addOnFailureListener(e ->
-                binding.tvFileMetadataInfo.setText(
-                        context.getResources().getString(R.string.metadata_cloud_storage,
-                                "There is no custom file metadata.")
-                ));
+                    binding.tvFileMetadataInfo.setText(
+                            context.getResources().getString(R.string.metadata_cloud_storage,
+                                    "There is no custom file metadata.")
+                    ));
 
             binding.rootCloudstorage.setOnClickListener(view ->
-                listener.onFileClick(file));
+                    listener.onFileClick(file));
         }
     }
 }

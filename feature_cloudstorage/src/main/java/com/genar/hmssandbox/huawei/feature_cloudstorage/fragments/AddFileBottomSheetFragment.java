@@ -115,7 +115,7 @@ public class AddFileBottomSheetFragment extends BottomSheetDialogFragment {
             if ((!binding.edtMetadataValueCloudstorage.getEditableText().toString().isEmpty() ||
                     !binding.edtMetadataTitleCloudstorage.getEditableText().toString().isEmpty()) &&
                     !twoInputEmptyValidator(binding.edtMetadataTitleCloudstorage, binding.edtMetadataValueCloudstorage)) {
-                    return;
+                return;
             }
             cust.put(binding.edtMetadataTitleCloudstorage.getEditableText().toString(), binding.edtMetadataValueCloudstorage.getEditableText().toString());
 
@@ -145,9 +145,9 @@ public class AddFileBottomSheetFragment extends BottomSheetDialogFragment {
 
     private void initStorage() {
         if (AGConnectAuth.getInstance() != null && AGConnectAuth.getInstance().getCurrentUser() != null) {
-                AGConnectUser user = AGConnectAuth.getInstance().getCurrentUser();
-                String uid = user.getUid();
-                folderName = "test-" + uid.substring(0, 6) + "/";
+            AGConnectUser user = AGConnectAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
+            folderName = "test-" + uid.substring(0, 6) + "/";
         }
     }
 

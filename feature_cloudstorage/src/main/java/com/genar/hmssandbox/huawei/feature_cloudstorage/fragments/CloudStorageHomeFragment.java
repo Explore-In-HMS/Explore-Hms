@@ -83,7 +83,6 @@ public class CloudStorageHomeFragment extends Fragment implements IFileClickList
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("Cloud Storage Files");
-
         storageManagement = AGCStorageManagement.getInstance();
 
         navDirections = Navigation.findNavController(view);
