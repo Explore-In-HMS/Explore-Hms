@@ -173,6 +173,7 @@ public class WorldActivity extends AppCompatActivity {
         if(mArSession == null){
             try {
                 if (!arEngineAbilityCheck()) {
+
                     finish();
                     return;
                 }
@@ -186,10 +187,6 @@ public class WorldActivity extends AppCompatActivity {
                 exception = capturedException;
                 setMessageWhenError(capturedException);
             }
-            finally {
-                showSemanticModeSupportedInfo();
-            }
-
 
             if(message != null){
                 stopArSession(exception);
@@ -209,25 +206,6 @@ public class WorldActivity extends AppCompatActivity {
         mSurfaceView.onResume();
     }
 
-    private void showSemanticModeSupportedInfo() {
-        String toastMsg = "";
-        switch (mArSession.getSupportedSemanticMode()) {
-            case ARWorldTrackingConfig.SEMANTIC_NONE:
-                toastMsg = "The running environment does not support the semantic mode.";
-                break;
-            case ARWorldTrackingConfig.SEMANTIC_PLANE:
-                toastMsg = "The running environment supports only the plane semantic mode.";
-                break;
-            case ARWorldTrackingConfig.SEMANTIC_TARGET:
-                toastMsg = "The running environment supports only the target semantic mode.";
-                break;
-            default:
-                break;
-        }
-        if (!toastMsg.isEmpty()) {
-            Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
-        }
-    }
 
     /**
      * Check whether HUAWEI AR Engine server (com.huawei.arengine.service) is installed on
