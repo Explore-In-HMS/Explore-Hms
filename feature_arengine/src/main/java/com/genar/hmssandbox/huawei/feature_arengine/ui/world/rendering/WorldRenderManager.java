@@ -222,7 +222,7 @@ public class WorldRenderManager implements GLSurfaceView.Renderer {
             mSession.setCameraTextureName(mTextureDisplay.getExternalTextureId());
             ARFrame arFrame = mSession.update();
             // Set the environment texture probe and mode after the camera is initialized.
-            setEnvTextureData();
+//            setEnvTextureData();
             ARCamera arCamera = arFrame.getCamera();
 
             // The size of the projection matrix is 4 * 4.
