@@ -41,6 +41,10 @@ import com.genar.hmssandbox.huawei.feature_cloudstorage.dao.ProgressDialogCloudS
 import com.genar.hmssandbox.huawei.feature_cloudstorage.databinding.FragmentCloudStorageHomeBinding;
 import com.genar.hmssandbox.huawei.feature_cloudstorage.fragments.adapter.CloudStorageListAdapter;
 import com.genar.hmssandbox.huawei.feature_cloudstorage.model.CloudStorageFile;
+import com.huawei.agconnect.AGCRoutePolicy;
+import com.huawei.agconnect.AGConnectInstance;
+import com.huawei.agconnect.AGConnectOptions;
+import com.huawei.agconnect.AGConnectOptionsBuilder;
 import com.huawei.agconnect.auth.AGConnectAuth;
 import com.huawei.agconnect.auth.AGConnectUser;
 import com.huawei.agconnect.cloud.storage.core.AGCStorageManagement;
@@ -83,7 +87,12 @@ public class CloudStorageHomeFragment extends Fragment implements IFileClickList
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("Cloud Storage Files");
-        storageManagement = AGCStorageManagement.getInstance();
+
+// Set the data processing location to CHINA.
+        /*AGConnectOptions cnOptions = new AGConnectOptionsBuilder().setRoutePolicy(AGCRoutePolicy.CHINA).build(requireContext());
+        AGConnectInstance cnInstance = AGConnectInstance.buildInstance(cnOptions);*/
+// Initialize the storage instance in the specified region.
+        storageManagement= AGCStorageManagement.getInstance();
 
         navDirections = Navigation.findNavController(view);
         progressDialogCloudStorage = new ProgressDialogCloudStorage(requireContext());
