@@ -18,6 +18,7 @@
 
 package com.genar.hmssandbox.huawei.baseapp.adapter;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.ColorMatrix;
@@ -98,9 +99,11 @@ public class KitAdapter extends RecyclerView.Adapter<KitAdapter.KitViewHolder> i
         v.setImageAlpha(255);
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onSuccessfullyDownloaded(int adapterPosition) {
         notifyItemChanged(adapterPosition);
+        notifyDataSetChanged();
     }
 
     public class KitViewHolder extends RecyclerView.ViewHolder{
@@ -116,7 +119,7 @@ public class KitAdapter extends RecyclerView.Adapter<KitAdapter.KitViewHolder> i
             ButterKnife.bind(this, itemView);
         }
 
-        void bind(KitModel kit, IDownloadListener listener){
+        public void bind(KitModel kit, IDownloadListener listener){
             this.kit = kit;
 
             if(kit.getMode() != null){
@@ -133,7 +136,6 @@ public class KitAdapter extends RecyclerView.Adapter<KitAdapter.KitViewHolder> i
             if (kit.isDynamicFeature()) {
                 if (!Util.isFeatureInstalled(activity, kit.getFeatureName())) {
                     setItemColorUnavailable(iv_kitIcon);
-
                     cv_container.setOnClickListener(v -> Util.showFeatureInstallDialog(activity, kit, KitViewHolder.this, listener));
                 } else {
                     setItemColorAvailable(iv_kitIcon);
@@ -168,9 +170,9 @@ public class KitAdapter extends RecyclerView.Adapter<KitAdapter.KitViewHolder> i
             });
         }
 
-        public void refreshItem(){
-           // int a = getAdapterPosition();
-           // notifyDataSetChanged();
+        public void refreshUI(){
+            SortKitList(kitList);
+            bind(kit,KitAdapter.this);
         }
     }
 
