@@ -234,8 +234,8 @@ public class Util {
             public void onComplete(FeatureTask<Void> featureTask) {
                 if (featureTask.isComplete()) {
                     if (featureTask.isSuccessful()) {
-                        viewHolder.refreshItem();
-                        Util.showInfoDialog(context,kit.getKitName() + "is uninstalled successfully", true);
+                        viewHolder.refreshUI();
+                        Util.showInfoDialog(context,kit.getKitName() + " is uninstalled successfully", true);
                     } else {
                         Util.showInfoDialog(context,"Error", kit.getKitName() + " could not be deleted! Try again later", true);
 
