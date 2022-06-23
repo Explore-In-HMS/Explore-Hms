@@ -38,7 +38,7 @@ import me.jessyan.autosize.unit.Subunits;
 
 public class SandboxApplication extends Application {
 
-    private static final String TAG = "DENEME";
+    private static final String TAG = "Sandbox Application";
 
     public static SandboxApplication app;
 
