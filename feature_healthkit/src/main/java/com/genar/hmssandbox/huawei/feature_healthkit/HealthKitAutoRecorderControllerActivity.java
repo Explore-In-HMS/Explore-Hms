@@ -29,7 +29,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.provider.Settings;
-import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -43,14 +42,11 @@ import com.huawei.hmf.tasks.OnFailureListener;
 import com.huawei.hmf.tasks.OnSuccessListener;
 import com.huawei.hmf.tasks.Task;
 import com.huawei.hms.hihealth.AutoRecorderController;
-import com.huawei.hms.hihealth.HiHealthOptions;
 import com.huawei.hms.hihealth.HuaweiHiHealth;
 import com.huawei.hms.hihealth.data.DataType;
 import com.huawei.hms.hihealth.data.Field;
 import com.huawei.hms.hihealth.data.SamplePoint;
 import com.huawei.hms.hihealth.options.OnSamplePointListener;
-import com.huawei.hms.support.hwid.HuaweiIdAuthManager;
-import com.huawei.hms.support.hwid.result.AuthHuaweiId;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -156,7 +152,7 @@ public class HealthKitAutoRecorderControllerActivity extends AppCompatActivity {
     private void initData() {
         intent = new Intent();
         intent.setPackage(getPackageName());
-        intent.setAction("HealthKitService");
+        intent.setAction(getString(R.string.health_kit_service));
     }
 
     @Override
@@ -300,6 +296,6 @@ public class HealthKitAutoRecorderControllerActivity extends AppCompatActivity {
     /**
      * construct OnSamplePointListener
      */
-    private OnSamplePointListener onSamplePointListener = samplePoint -> {
+    private final OnSamplePointListener onSamplePointListener = samplePoint -> {
     };
 }
