@@ -40,6 +40,8 @@ import com.genar.hmssandbox.huawei.modelingkit3d.ui.widget.ProgressCustomDialog;
 import com.genar.hmssandbox.huawei.modelingresource.db.TaskInfoAppDb;
 import com.genar.hmssandbox.huawei.modelingresource.db.TaskInfoAppDbUtils;
 import com.genar.hmssandbox.huawei.modelingresource.util.Constants;
+import com.huawei.hms.objreconstructsdk.Modeling3dReconstructConstants;
+import com.huawei.hms.objreconstructsdk.cloud.Modeling3dReconstructDownloadConfig;
 import com.huawei.hms.objreconstructsdk.cloud.Modeling3dReconstructDownloadListener;
 import com.huawei.hms.objreconstructsdk.cloud.Modeling3dReconstructDownloadResult;
 import com.huawei.hms.objreconstructsdk.cloud.Modeling3dReconstructEngine;
@@ -63,6 +65,7 @@ import butterknife.Unbinder;
 public class HistoryModelDataFragment extends Fragment implements RecycleHistoryAdapter.OnItemClickListener , RecycleHistoryAdapter.OnItemClickDownloadListener, ProgressCustomDialog.OnItemCancelClickListener {
     private Unbinder unbinder;
     private Modeling3dReconstructEngine magic3dReconstructEngine;
+    private Modeling3dReconstructDownloadConfig downloadConfig;
     public Modeling3dReconstructTaskUtils magic3DReconstructTaskUtils;
     public ArrayList<TaskInfoAppDb> dataBeans = new ArrayList<>();
     private RecycleHistoryAdapter adapter;
@@ -94,6 +97,10 @@ public class HistoryModelDataFragment extends Fragment implements RecycleHistory
 
     public void initEngine() {
         magic3dReconstructEngine = Modeling3dReconstructEngine.getInstance(SandboxApplication.app);
+        downloadConfig = new Modeling3dReconstructDownloadConfig.Factory()
+                //0->Normal mode 1->PBR mode
+                .setTextureMode(Modeling3dReconstructConstants.TextureMode.NORMAL)
+                .create();
     }
 
     @Nullable
@@ -184,8 +191,16 @@ public class HistoryModelDataFragment extends Fragment implements RecycleHistory
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
         dialog.setListener(HistoryModelDataFragment.this, appDb);
+
+        //Obtains the model file format.
+        downloadConfig.getModelFormat();
+
+        //Obtains the texture map mode
+        downloadConfig.getTextureMode();
+
         magic3dReconstructEngine.setReconstructDownloadListener(magic3dReconstructDownloadListener);
         magic3dReconstructEngine.downloadModel(appDb.getTaskId(), appDb.getFileSavePath());
+        magic3dReconstructEngine.downloadModelWithConfig(appDb.getTaskId(),appDb.getFileSavePath(), downloadConfig);
     }
 
 
@@ -290,6 +305,11 @@ public class HistoryModelDataFragment extends Fragment implements RecycleHistory
                         }
                     }.start();
                 }
+            }
+            else {
+                //Reconstruction task failure reason
+//                String failureMessage = queryResult.getReconstructFailMessage();
+//                Toast.makeText(getContext(),failureMessage, Toast.LENGTH_LONG).show();
             }
         }
     }

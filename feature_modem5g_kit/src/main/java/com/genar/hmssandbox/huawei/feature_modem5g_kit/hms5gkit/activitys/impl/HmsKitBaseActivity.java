@@ -12,6 +12,15 @@ import com.genar.hmssandbox.huawei.feature_modem5g_kit.hms5gkit.activitys.base.B
 import butterknife.BindView;
 
 public abstract class HmsKitBaseActivity extends BaseActivity {
+    @BindView(R.id.fe_scg)
+    CheckBox feScgCbox;
+    @BindView(R.id.fe_rach)
+    CheckBox feRachCbox;
+    @BindView(R.id.fe_rl)
+    CheckBox feRadioLinkCbox;
+    @BindView(R.id.fe_ho)
+    CheckBox feHandOverCbox;
+
     @BindView(R.id.lte_cb)
     CheckBox lteCbox;
     @BindView(R.id.lte_arfcn_cb)
@@ -68,36 +77,54 @@ public abstract class HmsKitBaseActivity extends BaseActivity {
     CheckBox lteScellSinrCbox;
     @BindView(R.id.nr_cb)
     CheckBox nrCbox;
-    @BindView(R.id.nr_scinfo)
-    CheckBox nrServCellInfoCbox;
-    @BindView(R.id.nr_sc_arfcn)
-    CheckBox nrServCellInfoSsbArfchCbox;
-    @BindView(R.id.nr_sc_pci)
-    CheckBox nrServCellInfoPhyCellIdCbox;
-    @BindView(R.id.nr_sc_band)
-    CheckBox nrServCellInfoBandCbox;
-    @BindView(R.id.nr_sc_cgt)
-    CheckBox nrServCellInfoCgTypeCbox;
-    @BindView(R.id.nr_sc_ct)
-    CheckBox nrServCellInfoCellTypeCbox;
-    @BindView(R.id.nr_sc_st)
-    CheckBox nrServCellInfoScsTypeCbox;
-    @BindView(R.id.nr_sc_dml)
-    CheckBox nrServCellInfoDlMimoLayersCbox;
-    @BindView(R.id.nr_sc_dt)
-    CheckBox nrServCellInfoDssTypeCbox;
-    @BindView(R.id.nr_sc_srp)
-    CheckBox nrServCellInfoSsbRsrpCbox;
-    @BindView(R.id.nr_sc_srq)
-    CheckBox nrServCellInfoSsbRsrqCbox;
-    @BindView(R.id.nr_sc_ssr)
-    CheckBox nrServCellInfoSsbSinrCbox;
-    @BindView(R.id.nr_sc_crp)
-    CheckBox nrServCellInfoCsiRsrpCbox;
-    @BindView(R.id.nr_sc_crq)
-    CheckBox nrServCellInfoCsiRsrqCbox;
-    @BindView(R.id.nr_sc_csr)
-    CheckBox nrServCellInfoCsiSinrCbox;
+    @BindView(R.id.nr_spcell_info)
+    CheckBox nrSpcellInfoCbox;
+    @BindView(R.id.nr_scell_info)
+    CheckBox nrScellInfoCbox;
+    @BindView(R.id.nr_spcell_basic)
+    CheckBox nrSpcellBasicCbox;
+    @BindView(R.id.nr_spcell_cfg)
+    CheckBox nrSpcellCfgCbox;
+    @BindView(R.id.nr_spcell_meas)
+    CheckBox nrSpcellMeasCbox;
+    @BindView(R.id.nr_scell_basic)
+    CheckBox nrScellBasicCbox;
+    @BindView(R.id.nr_scell_cfg)
+    CheckBox nrScellCfgCbox;
+    @BindView(R.id.nr_scell_ssb_meas)
+    CheckBox nrScellSsbMeasCbox;
+    @BindView(R.id.net)
+    CheckBox netCbox;
+    @BindView(R.id.net_lte_info)
+    CheckBox netLteInfoCbox;
+    @BindView(R.id.net_nr_info)
+    CheckBox netNrInfoCbox;
+    @BindView(R.id.net_lte_rej_cnt)
+    CheckBox netLteRejCntCbox;
+    @BindView(R.id.net_lte_rej_infos)
+    CheckBox netLteRejInfosCbox;
+    @BindView(R.id.net_lte_pdn_rej_cnt)
+    CheckBox netLtePdnRejCntCbox;
+    @BindView(R.id.net_lte_pdn_rej_infos)
+    CheckBox netLtePdnRejInfosCbox;
+    @BindView(R.id.net_lte_ambr_cnt)
+    CheckBox netLteAmbrCntCbox;
+    @BindView(R.id.net_lte_ambrs)
+    CheckBox netLteAmbrsCbox;
+    @BindView(R.id.net_nr_rej_cnt)
+    CheckBox netNrRejCntCbox;
+    @BindView(R.id.net_nr_rej_info)
+    CheckBox netNrRejInfoCbox;
+    @BindView(R.id.net_nr_pdu_rej_cnt)
+    CheckBox netNrPduRejCntCbox;
+    @BindView(R.id.net_nr_pdu_rej_info)
+    CheckBox netNrPduRejInfoCbox;
+    @BindView(R.id.net_nr_ambr_cnt)
+    CheckBox netNrAmbrCntCbox;
+    @BindView(R.id.net_nr_ambr)
+    CheckBox netNrAmbrCbox;
+
+
     @BindView(R.id.bearer_cb)
     CheckBox bearerCbox;
     @BindView(R.id.bearer_dinfo)
@@ -110,4 +137,7 @@ public abstract class HmsKitBaseActivity extends BaseActivity {
     CheckBox bearerDrbInfoBearerTypeCbox;
     @BindView(R.id.bearer_d_dst)
     CheckBox bearerDrbInfoDataSplitThresholdCbox;
+
+    @BindView(R.id.modem_slice)
+    CheckBox modemsliceCbox;
 }

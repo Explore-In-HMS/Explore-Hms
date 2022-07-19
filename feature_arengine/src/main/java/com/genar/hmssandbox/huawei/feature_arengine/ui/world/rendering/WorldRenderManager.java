@@ -36,6 +36,7 @@ import com.genar.hmssandbox.huawei.feature_arengine.ui.world.GestureEvent;
 import com.genar.hmssandbox.huawei.feature_arengine.ui.world.VirtualObject;
 import com.google.android.material.textview.MaterialTextView;
 import com.huawei.hiar.ARCamera;
+import com.huawei.hiar.ARConfigBase;
 import com.huawei.hiar.ARFrame;
 import com.huawei.hiar.ARHitResult;
 import com.huawei.hiar.ARLightEstimate;
@@ -44,8 +45,10 @@ import com.huawei.hiar.ARPoint;
 import com.huawei.hiar.ARPose;
 import com.huawei.hiar.ARSession;
 import com.huawei.hiar.ARTrackable;
+import com.huawei.hiar.ARWorldTrackingConfig;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -72,6 +75,8 @@ public class WorldRenderManager implements GLSurfaceView.Renderer {
     private static final float[] GREEN_COLORS = new float[] {66.0f, 133.0f, 244.0f, 255.0f};
 
     private ARSession mSession;
+
+    private ARWorldTrackingConfig mArWorldTrackingConfig;
 
     private final Activity mActivity;
 
@@ -102,6 +107,8 @@ public class WorldRenderManager implements GLSurfaceView.Renderer {
     private VirtualObject mSelectedObj = null;
 
     private ArrayList<VirtualObject> mVirtualObjects = new ArrayList<>();
+
+    private boolean mHaveSetEnvTextureData = false;
 
     /**
      * The constructor passes context and activity. This method will be called onCreate
@@ -214,6 +221,8 @@ public class WorldRenderManager implements GLSurfaceView.Renderer {
         try {
             mSession.setCameraTextureName(mTextureDisplay.getExternalTextureId());
             ARFrame arFrame = mSession.update();
+            // Set the environment texture probe and mode after the camera is initialized.
+//            setEnvTextureData();
             ARCamera arCamera = arFrame.getCamera();
 
             // The size of the projection matrix is 4 * 4.
@@ -222,7 +231,7 @@ public class WorldRenderManager implements GLSurfaceView.Renderer {
             arCamera.getProjectionMatrix(projectionMatrix, PROJ_MATRIX_OFFSET, PROJ_MATRIX_NEAR, PROJ_MATRIX_FAR);
             mTextureDisplay.onDrawFrame(arFrame);
             StringBuilder sb = new StringBuilder();
-            updateMessageData(sb);
+            updateMessageData(arFrame, sb);
             mTextDisplay.onDrawFrame(sb);
 
             // The size of ViewMatrix is 4 * 4.
@@ -249,6 +258,15 @@ public class WorldRenderManager implements GLSurfaceView.Renderer {
         } catch (Exception t) {
             // This prevents the app from crashing due to unhandled exceptions.
             Log.e(TAG, "Exception on the OpenGL thread: ", t);
+        }
+    }
+    private void setEnvTextureData() {
+        if (!mHaveSetEnvTextureData) {
+            float[] boundBox = mObjectDisplay.getBoundingBox();
+            mSession.setEnvironmentTextureProbe(boundBox);
+            Log.i(TAG, "setEnvironmentTextureProbe = " + Arrays.toString(boundBox));
+            mSession.setEnvironmentTextureUpdateMode(ARSession.EnvironmentTextureUpdateMode.AUTO);
+            mHaveSetEnvTextureData = true;
         }
     }
 
@@ -299,9 +317,36 @@ public class WorldRenderManager implements GLSurfaceView.Renderer {
      *
      * @param sb String buffer.
      */
-    private void updateMessageData(StringBuilder sb) {
+    private void updateMessageData(ARFrame arFrame, StringBuilder sb) {
         float fpsResult = doFpsCalculate();
         sb.append("FPS=").append(fpsResult).append(System.lineSeparator());
+
+        ARLightEstimate lightEstimate = arFrame.getLightEstimate();
+
+        if ((mSearchingTextView.getVisibility() != View.GONE)
+                || (lightEstimate.getState() != ARLightEstimate.State.VALID)) {
+            return;
+        }
+
+        // Obtain the estimated light data when the light intensity mode is enabled.
+        if ((mArWorldTrackingConfig.getLightingMode() & ARConfigBase.LIGHT_MODE_AMBIENT_INTENSITY) != 0) {
+            sb.append("PixelIntensity=").append(lightEstimate.getPixelIntensity()).append(System.lineSeparator());
+        }
+
+        // Obtain the texture data when the environment texture mode is enabled.
+        if ((mArWorldTrackingConfig.getLightingMode() & ARConfigBase.LIGHT_MODE_ENVIRONMENT_LIGHTING) != 0) {
+            sb.append("PrimaryLightIntensity=").append(lightEstimate.getPrimaryLightIntensity())
+                    .append(System.lineSeparator());
+            sb.append("PrimaryLightDirection=").append(Arrays.toString(lightEstimate.getPrimaryLightDirection()))
+                    .append(System.lineSeparator());
+            sb.append("PrimaryLightColor=").append(Arrays.toString(lightEstimate.getPrimaryLightColor()))
+                    .append(System.lineSeparator());
+            sb.append("LightShadowType=").append(lightEstimate.getLightShadowType()).append(System.lineSeparator());
+            sb.append("LightShadowStrength=").append(lightEstimate.getShadowStrength()).append(System.lineSeparator());
+            sb.append("LightSphericalHarmonicCoefficients=")
+                    .append(Arrays.toString(lightEstimate.getSphericalHarmonicCoefficients()))
+                    .append(System.lineSeparator());
+        }
     }
 
     private float doFpsCalculate() {

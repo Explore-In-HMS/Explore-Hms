@@ -19,6 +19,8 @@ package com.genar.hmssandbox.huawei.feature_adskit;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -72,8 +74,12 @@ public class SplashActivity extends AppCompatActivity {
 
     private void loadAd() {
         Log.i(TAG, "Start to load ad");
-
-        AdParam adParam = new AdParam.Builder().build();
+        Location location = new Location(LocationManager.GPS_PROVIDER);
+        AdParam adParam = new AdParam.Builder()
+                //Set the location information passed by the app
+                .setLocation(location)
+                .setContentBundle(Utils.contentBundle)
+                .build();
         splashView = findViewById(R.id.splash_ad_view);
         splashView.setAdDisplayListener(adDisplayListener);
 

@@ -173,6 +173,7 @@ public class WorldActivity extends AppCompatActivity {
         if(mArSession == null){
             try {
                 if (!arEngineAbilityCheck()) {
+
                     finish();
                     return;
                 }
@@ -204,6 +205,7 @@ public class WorldActivity extends AppCompatActivity {
         mDisplayRotationManager.registerDisplayListener();
         mSurfaceView.onResume();
     }
+
 
     /**
      * Check whether HUAWEI AR Engine server (com.huawei.arengine.service) is installed on

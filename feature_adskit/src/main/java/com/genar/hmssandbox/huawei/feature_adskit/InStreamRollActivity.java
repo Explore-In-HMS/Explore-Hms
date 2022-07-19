@@ -18,6 +18,8 @@
 package com.genar.hmssandbox.huawei.feature_adskit;
 
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -201,7 +203,12 @@ public class InStreamRollActivity extends AppCompatActivity implements View.OnCl
             loadButton.setText("Loading");
             instreamContainer.setVisibility(View.VISIBLE);
 
-            adParam = new AdParam.Builder().build();
+            Location location = new Location(LocationManager.GPS_PROVIDER);
+            adParam = new AdParam.Builder()
+                    //Set the location information passed by the app
+                    .setLocation(location)
+                    .setContentBundle(Utils.contentBundle)
+                    .build();
             // can customize ad RequestOptions parameters
             //adParam = AdvancedAdUtils.editAndGetAdParam(1, 0, 1, "J"); // eg : ads for child
 

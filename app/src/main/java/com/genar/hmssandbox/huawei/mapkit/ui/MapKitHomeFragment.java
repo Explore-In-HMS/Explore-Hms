@@ -78,6 +78,9 @@ public class MapKitHomeFragment extends Fragment {
         binding.btnShowRoutingDirectionMapkit.setOnClickListener(view1 ->
                 navController.navigate(R.id.action_homeFragmentMapKit_to_mapKitDirectionApi));
 
+        binding.btnHeatMap.setOnClickListener(view1 ->
+                navController.navigate(R.id.action_homeFragmentMapKit_to_heatMapFragment));
+
         binding.btnOpenPetalMap.setOnClickListener(view1 -> {
             String uriString = "mapapp://textSearch?text=" + "The Eiffel Tower";
             Uri content_url = Uri.parse(uriString);

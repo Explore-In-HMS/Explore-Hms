@@ -20,12 +20,22 @@ package com.genar.hmssandbox.huawei.feature_appmessaging;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.huawei.agconnect.appmessaging.AGConnectAppMessaging;
+import com.huawei.agconnect.appmessaging.AGConnectAppMessagingCallback;
+import com.huawei.agconnect.appmessaging.AGConnectAppMessagingDisplay;
+import com.huawei.agconnect.appmessaging.AGConnectAppMessagingOnClickListener;
+import com.huawei.agconnect.appmessaging.AGConnectAppMessagingOnDismissListener;
+import com.huawei.agconnect.appmessaging.AGConnectAppMessagingOnDisplayListener;
+import com.huawei.agconnect.appmessaging.model.Action;
+import com.huawei.agconnect.appmessaging.model.AppMessage;
 import com.huawei.hms.ads.HwAds;
+import com.huawei.hms.mlplugin.card.bcr.CustomView;
 
 public class AppMessagingTestActivity extends AppCompatActivity {
 
@@ -62,12 +72,14 @@ public class AppMessagingTestActivity extends AppCompatActivity {
     }
 
 
+
+
     private void setButtonClicks(){
         Button btnPopUpMessage = findViewById(R.id.btnShowPopupMessage);
         btnPopUpMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                agConnectAppMessaging.trigger("PopupMessageCustomeEvent");
+                agConnectAppMessaging.setForceFetch("PopupMessageCustomeEvent");
             }
         });
 
@@ -75,7 +87,7 @@ public class AppMessagingTestActivity extends AppCompatActivity {
         btnBannerMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                agConnectAppMessaging.trigger("BannerMessageCustomeEvent");
+                agConnectAppMessaging.setForceFetch("BannerMessageCustomeEvent");
             }
         });
 
@@ -83,8 +95,39 @@ public class AppMessagingTestActivity extends AppCompatActivity {
         btnImageMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                agConnectAppMessaging.trigger("ImageMessageExample");
+                agConnectAppMessaging.setForceFetch("ImageMessageExample");
             }
         });
+        popUpListener();
     }
+
+
+    public void popUpListener(){
+        agConnectAppMessaging.addOnDisplayListener(new AGConnectAppMessagingOnDisplayListener() {
+            @Override
+            public void onMessageDisplay(AppMessage appMessage) {
+                Toast.makeText(AppMessagingTestActivity.this, "Message showed", Toast.LENGTH_LONG).show();
+            }
+        });
+        agConnectAppMessaging.addOnClickListener(new AGConnectAppMessagingOnClickListener() {
+            @Override
+            public void onMessageClick(@NonNull AppMessage appMessage, @NonNull Action action) {
+                Toast.makeText(AppMessagingTestActivity.this, "Message Clicked", Toast.LENGTH_LONG).show();
+
+            }
+        });
+        agConnectAppMessaging.addOnDismissListener(new AGConnectAppMessagingOnDismissListener() {
+            @Override
+            public void onMessageDismiss(@NonNull AppMessage appMessage, @NonNull AGConnectAppMessagingCallback.DismissType dismissType) {
+                Toast.makeText(AppMessagingTestActivity.this, "Message Dismiss, dismiss type: " + dismissType, Toast.LENGTH_LONG).show();
+
+            }
+
+        });
+    }
+
+  
+
+
+
 }

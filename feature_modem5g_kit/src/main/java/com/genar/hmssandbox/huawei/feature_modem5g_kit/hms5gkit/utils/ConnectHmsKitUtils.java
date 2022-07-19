@@ -8,10 +8,15 @@ import android.content.Context;
 import android.util.Log;
 
 import com.genar.hmssandbox.huawei.feature_modem5g_kit.hms5gkit.activitys.IHmsKitActivity;
+import com.genar.hmssandbox.huawei.feature_modem5g_kit.hms5gkit.activitys.common.TranJson;
+import com.huawei.hms5gkit.agentservice.constants.parameters.ModemSlice;
+import com.huawei.hms5gkit.agentservice.constants.parameters.NetDiagnosis;
 import com.huawei.hms5gkit.agentservice.controller.IConnectProcess;
 import com.huawei.hms5gkit.agentservice.controller.IQueryModem;
 import com.huawei.hms5gkit.agentservice.controller.IResProcess;
 import com.huawei.hms5gkit.agentservice.controller.impl.QueryModemController;
+
+import org.json.JSONException;
 
 public class ConnectHmsKitUtils {
     private static final String TAG = "[5ghmskit] ConnectHmsKitUtils";
@@ -38,19 +43,55 @@ public class ConnectHmsKitUtils {
         return connectHmsKitUtils;
     }
 
+    public TranJson tranJson = new TranJson();
     private IResProcess mResProcess = response -> {
         if (response != null && response.getCode() == 0) {
             String key = response.getQueryParameters();
             String data = response.getValue();
             String content = TimeStampUtils.getCurDateStr() + " ";
             if (data != null) {
-                content += key + " request result: \"" + data + "\"";
+                if(key.equals(NetDiagnosis.NET) || key.equals(NetDiagnosis.NET_LTE_INFO) || key.equals(NetDiagnosis.NET_NR_INFO) ||
+                        key.equals(NetDiagnosis.NET_LTE_REJ_CNT) || key.equals(NetDiagnosis.NET_LTE_REJ_INFOS ) || key.equals(NetDiagnosis.NET_LTE_PDN_REJ_CNT) ||
+                        key.equals(NetDiagnosis.NET_LTE_PDN_REJ_INFOS) || key.equals(NetDiagnosis.NET_NR_REJ_CNT) || key.equals(NetDiagnosis.NET_NR_REJ_INFO) ||
+                        key.equals(NetDiagnosis.NET_NR_PDU_REJ_CNT) || key.equals(NetDiagnosis.NET_NR_PDU_REJ_INFO)
+                ){                                               //需要转换时间戳的消息
+                    tranJson.setParamAndJsonStr(key,data);
+                    queryModem(ModemSlice.MODEM_SLICE_CURTIMESTAMP);
+                }else if(key.equals(ModemSlice.MODEM_SLICE_CURTIMESTAMP)){
+                    try {
+                        tranJson.setModemSlice(data);
+                        String tmp = tranJson.TimeTran();
+                        content += tranJson.getParamName() + " test request result: \"" + tmp + "\"";
+                        Log.i(TAG, content);
+                        mHmsKitActivity.showDataResult(content);
+                        tranJson.clean();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Log.i(TAG, content);
+                        mHmsKitActivity.showDataResult(content + "ModemSlice时间戳解析失败:" + e.toString());
+                    }
+                }
+                else{
+                    content += key + " request result: \"" + data + "\"";
+                    Log.i(TAG, content);
+                    mHmsKitActivity.showDataResult(content);
+                }
             } else {
                 content += key + " request result is null";
             }
             Log.i(TAG, content);
             mHmsKitActivity.showDataResult(content);
-        } else {
+        }    else if (response != null && response.getCode() == 200) {  //约定周期上报响应码为200
+            String data = response.getValue();
+            String content = TimeStampUtils.getCurDateStr() + " ";
+            if (data != null) {
+                content += " NR failure event result: \"" + data + "\"";
+            } else {
+                content += " NR failure event result is null";
+            }
+            Log.i(TAG, content);
+            mHmsKitActivity.showDataResult(content);
+        }else {
             if (response != null) {
                 String content = TimeStampUtils.getCurDateStr() + " error code: "
                         + response.getCode() + ",\t" + response.getMsg();
@@ -102,4 +143,8 @@ public class ConnectHmsKitUtils {
     public void unRegisterCallback() {
         mQueryModem.unRegisterCallback();
     }
+
+    public boolean disable(String category) { return mQueryModem.disable(category);}
+
+    public boolean enable(String category) { return mQueryModem.enable(category);}
 }

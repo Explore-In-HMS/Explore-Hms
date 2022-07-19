@@ -199,7 +199,7 @@ public class LocationKitActivity extends AppCompatActivity {
     @OnClick({R.id.btn_start_loc_feed, R.id.btn_stop_loc_feed, R.id.btn_last_known_loc,
             R.id.btn_get_location_availability, R.id.btn_start_loc_intent, R.id.btn_stop_loc_intent,
             R.id.btn_start_activity_identification, R.id.btn_start_activity_conversion,
-            R.id.btn_setMock_location, R.id.btn_getContext_State,
+            R.id.btn_setMock_location, R.id.btn_getContext_State,R.id.btn_get_geocoder_availability,
             R.id.btn_getLocationHD, R.id.btn_start_activity_geoFence})
     public void onItemClick(View v) {
         updateLogResults("Result Logs Will Be Here");
@@ -241,6 +241,9 @@ public class LocationKitActivity extends AppCompatActivity {
                 if (isGrantPermissions()) {
                     requestLocationUpdatesWithIntent();
                 }
+                break;
+            case R.id.btn_get_geocoder_availability:
+                    Utils.startActivity(LocationKitActivity.this, GeocoderActivity.class);
                 break;
             case R.id.btn_stop_loc_intent:
                 removeLocationUpdatesWithIntent();

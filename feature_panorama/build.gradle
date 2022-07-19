@@ -51,8 +51,8 @@ dependencies {
 //    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
 //    testImplementation 'junit:junit:4.13'
 
-    implementation 'com.huawei.hms:panorama:5.0.2.304'
-    implementation 'com.huawei.hms:panorama-local:5.0.2.304'
+    implementation 'com.huawei.hms:panorama:5.0.2.306'
+    implementation 'com.huawei.hms:panorama-local:5.0.2.306'
 
 //    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
 //    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

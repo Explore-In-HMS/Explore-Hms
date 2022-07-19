@@ -37,6 +37,7 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
+import java.util.Arrays;
 import java.util.Optional;
 
 import de.javagl.obj.Obj;
@@ -385,6 +386,10 @@ public class ObjectDisplay {
                 && ((event.getY() > boundarys[2]) && (event.getY() < boundarys[3]));
     }
 
+    public float[] getBoundingBox() {
+        float[] boundBox = Arrays.copyOf(mBoundingBoxs, mBoundingBoxs.length);
+        return boundBox;
+    }
     // The size of minXmaxXminYmaxY is 4, and the size of index is 3.
     private float[] findMaximum(float[] minXmaxXminYmaxY, int[] index) {
         float[] screenPos = calculateScreenPos(mBoundingBoxs[index[0]],

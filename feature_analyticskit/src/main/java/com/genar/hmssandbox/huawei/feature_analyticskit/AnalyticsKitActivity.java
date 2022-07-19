@@ -69,7 +69,15 @@ public class AnalyticsKitActivity extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_analytics_kit);
 
         HiAnalyticsTools.enableLog();
-        mHiAnalyticsInstance = HiAnalytics.getInstance(this);
+        // Sets context and data processing location. DE -> Germany
+        mHiAnalyticsInstance = HiAnalytics.getInstance(this,"DE");
+
+        //Sets the app installation source
+        mHiAnalyticsInstance.setChannel("AppGallery");
+
+        //Sets whether to collect system attributes. Only userAgent attribute is supported now.
+        mHiAnalyticsInstance.setPropertyCollection("userAgent",true);
+
         Toolbar toolBar = findViewById(R.id.toolbar_analytics);
         setSupportActionBar(toolBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

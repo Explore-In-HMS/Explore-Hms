@@ -78,6 +78,7 @@
     <string name="title_feature_mapkit">Map Kit</string>
     <string name="show_direction_routing_mapkit">Show Direction Routing</string>
     <string name="open_petalMap_MapKit">Open Petal Map</string>
+    <string name="heat_Map">Heat Map</string>
     <string name="title_feature_scankit">Scan Kit</string>
     <string name="title_feature_nearbyservice">Nearby Service</string>
     <string name="title_feature_dynamictagmanager">Dynamic Tag Manager</string>
@@ -163,6 +164,24 @@
     <string name="txt_earlyaccess_link">https://developer.huawei.com/consumer/en/doc/distribution/app/5020204</string>
     <string name="txt_earlyaccess_click"><a href="">Click here to learn more about Early Access.</a></string>
     <!--early access -->
+
+    <!--keyring service -->
+    <string name="title_keyring">Keyring Service</string>
+    <string name="invalid_input">username or password can not be empty</string>
+    <string name="hint_title">Hint</string>
+    <string name="ok">OK</string>
+    <string name="save_credential_ok">save credential to Keyring success</string>
+    <string name="save_credential_failed">save to keyring failed</string>
+    <string name="delete_ok">delete credential of %s success</string>
+    <string name="delete_failed">delete credential failed. %s</string>
+    <string name="query_credential_failed">query credential failed</string>
+    <string name="no_available_credential">no available credential</string>
+    <string name="title_keyring_example">Keyring Service Example</string>
+    <string name="txt_keyring">Keyring offers the Credentials Management API for storing user credentials locally on Android phones and tablets and sharing them between different apps and different platform versions of an app.Keyring provides APIs for Android apps, APIs for web apps, and APIs for quick apps. Apps can integrate relevant APIs to use Keyring. All user credentials will be stored in HMS Core Keyring regardless of which type of APIs you are calling, implementing unified credential management and sharing.</string>
+    <string name="txt_keyring_link">https://developer.huawei.com/consumer/en/doc/development/Security-Guides/introduction-0000001133141068</string>
+    <string name="txt_keyring_click"><a href="">Click here to learn more about Keyring Service.</a></string>
+    <!--keyring service -->
+
 
     <!-- preorders -->
     <string name="title_preorders">Preorders</string>
@@ -452,6 +471,7 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="lbl_latitude">Latitude</string>
     <string name="lbl_longitude">Longitude</string>
     <string name="btn_txt_get_location_availability">Get Location Availability</string>
+    <string name="btn_txt_geocoder_availability">Geocoder Example</string>
     <string name="btn_txt_set_mock_location">Set Mock Location</string>
     <string name="btn_txt_get_context_state">Get Nav Context State</string>
     <string name="btn_txt_get_location_with_hd">Get Location with HD</string>
@@ -464,6 +484,7 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="activity_conversion_activity_type">ActivityType</string>
     <string name="activity_conversion_transition_type">TransitionType</string>
     <string name="title_location_hd">Location HD</string>
+    <string name="title_location_geocoder">Geocoder Example</string>
     <string name="title_geofence">GeoFence</string>
     <string name="title_geofence_create">Create GeoFence</string>
     <string name="btn_txt_start_activity_geo_fence">GeoFence</string>
@@ -883,5 +904,6 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="delete">Delete</string>
     <string name="title_feature_videoeditor_kit">Video Editor Kit</string>
     <string name="title_feature_modem5g_kit">5G Modem Kit</string>
+    <string name="keyring_service_example">Keyring Service Example</string>
 
 </resources>

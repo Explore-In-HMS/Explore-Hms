@@ -159,5 +159,16 @@
             app:layout_constraintStart_toStartOf="@id/btnMoveAnimateCamera_mapkit"
             app:layout_constraintTop_toBottomOf="@+id/btnShowRoutingDirection_mapkit" />
 
+        <Button
+            android:id="@+id/btnHeatMap"
+            style="@style/ButtonAppearance.Sandbox.Normal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/heat_Map"
+            app:layout_constraintEnd_toEndOf="@id/btnShowRoutingDirection_mapkit"
+            app:layout_constraintStart_toStartOf="@id/btnMoveAnimateCamera_mapkit"
+            app:layout_constraintTop_toBottomOf="@+id/btnOpenPetalMap" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

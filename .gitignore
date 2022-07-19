@@ -10,3 +10,10 @@
 *.aab
 *.aab
 /ExportAAB/
+/app/agconnect-services.json
+SonarQubeSettings
+sonarqube.gradle
+DependecyBugList.txt
+hs_err_pid67668.log
+replay_pid67668.log
+design.docx

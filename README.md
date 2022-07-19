@@ -2,7 +2,7 @@
 
 ## Overview
 
-![ #Kits/Services in Sandbox](https://img.shields.io/badge/%20%23Kits%2FServices%20in%20Sandbox-83-yellow) ![% HMS Kit/Service Coverage ](https://img.shields.io/badge/%20HMS%20Kit%2FService%20Coverage%20-100%2F100-orange) ![% Functional Coverage per Kit/Service](https://img.shields.io/badge/%20Functional%20Coverage%20per%20Kit%2FService-99%2F100-yellow) ![% Kit/Service Up-to-Date](https://img.shields.io/badge/%20Kit%2FService%20Up--to--Date-98%2F100-lightgrey)
+![ #Kits/Services in Sandbox](https://img.shields.io/badge/%20%23Kits%2FServices%20in%20Sandbox-84-yellow) ![% HMS Kit/Service Coverage ](https://img.shields.io/badge/%20HMS%20Kit%2FService%20Coverage%20-100%2F100-orange) ![% Functional Coverage per Kit/Service](https://img.shields.io/badge/%20Functional%20Coverage%20per%20Kit%2FService-99%2F100-yellow) ![% Kit/Service Up-to-Date](https://img.shields.io/badge/%20Kit%2FService%20Up--to--Date-98%2F100-lightgrey)
 
 
 ## Screenshots

@@ -1,16 +1,16 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 include_directories(
-        ${CMAKE_SOURCE_DIR}/../../../include/CGRenderingFramework )
+        ${CMAKE_SOURCE_DIR}/include/CGRenderingFramework )
 
 include_directories(
-        ${CMAKE_SOURCE_DIR}/../../../include/MainApplication )
+        ${CMAKE_SOURCE_DIR}/include/MainApplication )
 
 add_library(
         main-lib
         SHARED
-        Main.cpp
-        MainApplication.cpp)
+        source/Main.cpp
+        source/MainApplication.cpp)
 
 ADD_LIBRARY(
         cgkit

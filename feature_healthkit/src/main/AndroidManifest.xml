@@ -56,6 +56,14 @@
         <activity android:name=".auth.HealthKitCloudLogin" />
         <activity android:name=".auth.HealthKitAuthClientActivity" />
         <activity android:name=".auth.HealthKitAuthCloudActivity" />
+
+        <service android:name=".PersistService"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="HealthKitService" />
+            </intent-filter>
+        </service>
+        <service android:name=".ActivityRecordForegroundService" />
     </application>
 
 </manifest>

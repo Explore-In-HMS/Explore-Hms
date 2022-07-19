@@ -17,10 +17,16 @@
  */
 package com.genar.hmssandbox.huawei.feature_clouddb.dao;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.genar.hmssandbox.huawei.feature_clouddb.model.BookComment;
 import com.genar.hmssandbox.huawei.feature_clouddb.model.ObjectTypeInfoHelper;
+import com.huawei.agconnect.AGCRoutePolicy;
+import com.huawei.agconnect.AGConnectInstance;
+import com.huawei.agconnect.AGConnectOptions;
+import com.huawei.agconnect.AGConnectOptionsBuilder;
+import com.huawei.agconnect.auth.AGConnectAuth;
 import com.huawei.agconnect.cloud.database.AGConnectCloudDB;
 import com.huawei.agconnect.cloud.database.CloudDBZone;
 import com.huawei.agconnect.cloud.database.CloudDBZoneConfig;
@@ -109,6 +115,7 @@ public class CloudDBZoneWrapper {
             Log.e(TAG, e.toString());
         }
     }
+
 
     public static void deleteData(BookComment comment) {
 

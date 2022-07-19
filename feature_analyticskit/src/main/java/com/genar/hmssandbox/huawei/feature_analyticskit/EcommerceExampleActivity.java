@@ -49,7 +49,15 @@ public class EcommerceExampleActivity extends AppCompatActivity {
         setSupportActionBar(toolBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        mHiAnalyticsInstance = HiAnalytics.getInstance(this);
+
+        // Sets context and data processing location. DE -> Germany
+        mHiAnalyticsInstance = HiAnalytics.getInstance(this, "DE");
+
+        //Sets the app installation source
+        mHiAnalyticsInstance.setChannel("AppGallery");
+
+        //Sets whether to collect system attributes. Only userAgent attribute is supported now.
+        mHiAnalyticsInstance.setPropertyCollection("userAgent",true);
         initialize();
     }
 

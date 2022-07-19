@@ -39,7 +39,9 @@ import com.genar.hmssandbox.huawei.modelingresource.util.Constants;
 import com.genar.hmssandbox.huawei.modelingresource.util.FileSizeUtil;
 import com.genar.hmssandbox.huawei.modelingresource.util.Utils;
 import com.genar.hmssandbox.huawei.modelingresource.view.CustomRoundAngleImageView;
+import com.huawei.hms.objreconstructsdk.Modeling3dReconstructConstants;
 import com.huawei.hms.objreconstructsdk.cloud.Modeling3dReconstructEngine;
+import com.huawei.hms.objreconstructsdk.cloud.Modeling3dReconstructPreviewConfig;
 import com.huawei.hms.objreconstructsdk.cloud.Modeling3dReconstructPreviewListener;
 import com.huawei.hms.objreconstructsdk.cloud.Modeling3dReconstructTaskUtils;
 
@@ -107,7 +109,8 @@ public class RecycleHistoryAdapter extends RecyclerView.Adapter<RecycleHistoryAd
                     @Override
                     public void onClick(View v) {
                             Modeling3dReconstructEngine engine = Modeling3dReconstructEngine.getInstance(mContext);
-                            engine.previewModel(news.getTaskId(), SandboxApplication.app, new Modeling3dReconstructPreviewListener() {
+                            //Old way
+                            /* engine.previewModel(news.getTaskId(), SandboxApplication.app, new Modeling3dReconstructPreviewListener() {
                                 @Override
                                 public void onResult(String s, Object o) {
 
@@ -119,7 +122,25 @@ public class RecycleHistoryAdapter extends RecyclerView.Adapter<RecycleHistoryAd
                                         Toast.makeText(mContext, s1, Toast.LENGTH_LONG).show();
                                     });
                                 }
-                            });
+                            });*/
+                        Modeling3dReconstructPreviewListener previewListener = new Modeling3dReconstructPreviewListener() {
+                            @Override
+                            public void onResult(String taskId, Object ext) {
+                                // Result of 3D model preview.
+                            }
+                            @Override
+                            public void onError(String taskId, int errorCode, String message) {
+                                ((Activity)mContext).runOnUiThread(() -> {
+                                    Toast.makeText(mContext, taskId, Toast.LENGTH_LONG).show();
+                                });
+                            }
+                        };
+                        // Define model preview settings.
+                        Modeling3dReconstructPreviewConfig config = new Modeling3dReconstructPreviewConfig.Factory()
+                                .setTextureMode(Modeling3dReconstructConstants.TextureMode.PBR)
+                                .create();
+                        //Preview a model.
+                        engine.previewModelWithConfig(news.getTaskId(), mContext,config, previewListener);
                         }
                 });
                 break;

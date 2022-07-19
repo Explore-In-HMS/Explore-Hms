@@ -142,6 +142,8 @@ public class HealthActivity extends AppCompatActivity {
                 mArSession = new ARSession(this);
                 ARFaceTrackingConfig mArFaceTrackingConfig = new ARFaceTrackingConfig(mArSession);
                 mArFaceTrackingConfig.setEnableItem(ARConfigBase.ENABLE_HEALTH_DEVICE);
+                mArFaceTrackingConfig
+                        .setFaceDetectMode(ARConfigBase.FaceDetectMode.HEALTH_ENABLE_DEFAULT.getEnumValue());
                 mArSession.configure(mArFaceTrackingConfig);
                 setHealthServiceListener();
             } catch (ARUnavailableServiceNotInstalledException capturedException) {

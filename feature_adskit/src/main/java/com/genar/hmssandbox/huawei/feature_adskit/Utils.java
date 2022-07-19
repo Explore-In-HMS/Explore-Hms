@@ -21,6 +21,9 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.security.SecureRandom;
 
 public class Utils {
@@ -31,6 +34,28 @@ public class Utils {
     }
 
     private static final String TAG = Utils.class.getSimpleName();
+    public static String contentBundle = "";
+    public static final int ACTIVATE_STYLE = 2; //1->Confirmation pop-up  2->Banner at the bottom
+
+
+    static {
+        try {
+            //Sample string for setContentBundle() method
+            contentBundle = new JSONObject()
+                    .put("channelCategoryCode","TV series")
+                    .put("title","Game of Thrones")
+                    .put("tags","fantasy")
+                    .put("relatedPeople","David Benioff")
+                    .put("content","Nine noble families fight for control over the lands of Westeros.")
+                    .put("contentID","123123")
+                    .put("category","classics")
+                    .put("subcategory","historical drama")
+                    .put("thirdCategory","mystery")
+                    .toString();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static void showToast(Context context, String message) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();

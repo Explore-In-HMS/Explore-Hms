@@ -51,6 +51,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setupToolbar();
         // Initialize the HUAWEI Ads SDK.
         HwAds.init(this);
+        //Obtains the style of an app activation reminder pop-up
+        HwAds.getAppActivateStyle();
+
+        //Sets the style for an app activation reminder pop-up after the app installation.
+        HwAds.setAppActivateStyle(Utils.ACTIVATE_STYLE);
+
+        //Sets whether to enable an app activation reminder pop-up.
+        HwAds.setAppInstalledNotify(true);
+
+        //Checks whether an app activation reminder pop-up is enabled
+        HwAds.isAppInstalledNotify();
 
         initializeUI();
 

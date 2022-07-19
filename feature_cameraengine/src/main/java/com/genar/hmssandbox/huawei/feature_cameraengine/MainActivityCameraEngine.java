@@ -101,6 +101,7 @@ public class MainActivityCameraEngine extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == PERMISSION_REQUEST && grantResults.length > 0) {
             boolean allOK = true;
             for (int permission : grantResults) {
