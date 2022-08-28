@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.AwarenessKitReworkInfoActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarAwarenessKitInfo"
+        style="@style/ToolbarAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Awareness Kit" />
+
+    <ScrollView
+        android:id="@+id/layScroll_awarenesskit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnLetsStart_awarenesskit"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarAwarenessKitInfo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvAwarenessIntroduction_info"
+                style="@style/TextAppearance.ExploreHMS.Headline6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Introduction"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvIntroduction_awarenesskit"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/introduction_awarenesskit"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAwarenessIntroduction_info" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivHeader_awarenesskit"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvIntroduction_awarenesskit"
+                app:srcCompat="@drawable/img_awarenesskit_header" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvAdvantages_awarenesskit"
+                style="@style/TextAppearance.ExploreHMS.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/advantages_text_awarenesskit"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivHeader_awarenesskit" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvAdvantagesInfo_awarenesskit"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvAdvantages_awarenesskit" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivInfo_awarenesskit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:scaleType="center"
+                android:scaleX="1.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAdvantagesInfo_awarenesskit"
+                app:srcCompat="@drawable/img_awareness_info" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvCaptureBarrier_awarenesskit"
+                style="@style/TextAppearance.ExploreHMS.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/capture_api_and_barrier_api_text_awarenesskit"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivInfo_awarenesskit" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvCaptureBarrierInfo_awarenesskit"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvCaptureBarrier_awarenesskit" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLetsStart_awarenesskit"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Let's Try"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

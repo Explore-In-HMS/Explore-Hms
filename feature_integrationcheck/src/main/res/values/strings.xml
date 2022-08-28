@@ -1,0 +1,35 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="text_1">Huawei provides a tool that fully automates the checking of apps.
+        You simply fill in the app information and upload the app package, and the tool will scan your package and provide you with a report.
+        You can then optimize your app based on the report.
+        \n\n1. Sign in to AppGallery Connect and select <b>My projects</b>.
+        \n\n2. Find your project from the project list and click the app for self-check on the project card. The <b>Project Setting</b> page is displayed.</string>
+    <string name="text_2">3. Go to <b>Quality</b> > <b>Integration Check</b>, and click <b>New check</b>.</string>
+    <string name="text_3">4. Confirm the information you entered, and click <b>Submit</b>.
+\n\n●  If <b>Category, Payment type</b>, and <b>Country/Region</b> are not automatically supplied, please complete these fields.
+\n\n●  Click <b>Browse</b> to upload the app package to be checked.</string>
+    <string name="text_4">5. View the check result on the <b>Check history</b> page after the check task is completed.</string>
+    <string name="text_5">●  To check the report, click <b>View report</b> in the <b>Operation</b> column of the check record.</string>
+    <string name="text_6">●  On the <b>Report</b> page, to view details about the app, click <b>More</b>.</string>
+    <string name="text_7">●  To delete a check record, click <b>Delete</b>.</string>
+    <string name="header">Service Introduction</string>
+    <string name="url_txt_integrationcheck">https://developer.huawei.com/consumer/en/doc/distribution/app/agc-auto_check</string>
+</resources>

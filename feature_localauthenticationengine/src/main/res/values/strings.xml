@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="text_service_introduction_localauthentication">Service Introduction</string>
+    <string name="text_service_info_localauthentication">Facial recognition is a technology that can perform facial comparison using images taken with the front camera and running facial feature algorithms.</string>
+    <string name="text_application_scenarios_localauthentication">Application Scenarios</string>
+    <string name="text_scenarios_info_localauthentication">Facial recognition can be used for logging in, making payments or other scenarios where facial recognition is required.</string>
+    <string name="text_key_features_localauthentication">Key Features</string>
+    <string name="text_key_features_info_localauthentication"> Allows for quick facial comparisons using deep neural network algorithms.\n\u2022 Efficient: Decreases the time needed for developing algorithms and make the app more convenient.\n Versatile: Can be used across a broad range of scenarios.</string>
+    <string name="text_requirements_localauthentication">Requirements</string>
+    <string name="text_requirements_info_localauthentication">Requirements</string>
+    <string name="text_development_environment_localauthentication">Development environment</string>
+    <string name="text_development_environment_info_localauthentication">Android Studio, V3.0.1 or later.\n Mobile phone, EMUI 10.0 and later versions, supporting 3D facial recognition.</string>
+    <string name="text_click_here_localauthentication">Click here to get more information about Local Authentication Engine.</string>
+    <string name="localauthentication_url">https://developer.huawei.com/consumer/en/doc/development/Security-Guides/introduction-0000001051219741</string>
+</resources>

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolbarAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/tts_s"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_tts_options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <TextView
+            android:id="@+id/tv_language_text"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:text="@string/tts_language"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spTtsLanguage"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/bg_default_spinner_ml"
+            android:elevation="2dp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_language_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_language_text" />
+
+        <TextView
+            android:id="@+id/tv_sound_type_text"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:text="@string/tts_style"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_language_text" />
+
+        <Spinner
+            android:id="@+id/spTtsSoundType"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/bg_default_spinner_ml"
+            android:elevation="2dp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_sound_type_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_sound_type_text" />
+
+
+        <TextView
+            android:id="@+id/tv_play_mode_text"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:text="@string/tts_play_mode"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sound_type_text" />
+
+        <Spinner
+            android:id="@+id/spTtsPlayMode"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/bg_default_spinner_ml"
+            android:elevation="2dp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_play_mode_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_play_mode_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_inputText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_tts_options">
+
+        <EditText
+            android:id="@+id/et_inputTextToSpeech"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/shape_layout_dashed_box"
+            android:gravity="top"
+            android:hint="@string/tts_text_to_speech_input"
+            android:minLines="10"
+            android:padding="8dp"
+            android:text="@string/tts_sample_text_the_earth"
+            android:textIsSelectable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_inputTextCharCount"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="0 character"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/et_inputTextToSpeech"
+            app:layout_constraintEnd_toEndOf="@id/et_inputTextToSpeech" />
+
+        <ImageView
+            android:id="@+id/btn_delete"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/icon_card_off"
+            app:layout_constraintEnd_toEndOf="@+id/et_inputTextToSpeech"
+            app:layout_constraintTop_toTopOf="@+id/et_inputTextToSpeech" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_volume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_inputText">
+
+        <TextView
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/tts_volume" />
+
+        <TextView
+            android:id="@+id/tv_volume"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="75%" />
+
+        <SeekBar
+            android:id="@+id/sb_volume"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:max="100"
+            android:maxHeight="4dp"
+            android:progress="75" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_speed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_volume">
+
+        <TextView
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/tts_speech_rate" />
+
+        <TextView
+            android:id="@+id/tv_speed"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="50%" />
+
+        <SeekBar
+            android:id="@+id/sb_speed"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:max="100"
+            android:maxHeight="4dp"
+            android:progress="50" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_speak"
+        style="@style/ButtonAppearance.ExploreHMS.Outline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="@string/tts_speech_speak"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_speed" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:weightSum="2"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_speak">
+
+
+        <Button
+            android:id="@+id/btn_playSpeech"
+            style="@style/ButtonAppearance.ExploreHMS.Outline"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone"
+            android:text="@string/tts_play" />
+
+        <Button
+            android:id="@+id/btn_pauseSpeech"
+            style="@style/ButtonAppearance.ExploreHMS.Normal"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/tts_pause" />
+
+        <Button
+            android:id="@+id/btn_stopSpeech"
+            style="@style/ButtonAppearance.ExploreHMS.Normal"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/tts_stop" />
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/svResult"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/bg_gray_soft_sq1"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/btn_code_recognition_run">
+
+            <TextView
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:text="@string/text_results" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray200" />
+
+            <TextView
+                android:id="@+id/resultLogs"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/text_to_speech_result_descriptions_will_be_here" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:elevation="4dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

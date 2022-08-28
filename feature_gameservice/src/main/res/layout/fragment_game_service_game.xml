@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_gameservices"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.GameServiceGameFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTime_gameservices"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/h16"
+        android:layout_marginTop="@dimen/h16"
+        android:layout_marginEnd="8dp"
+        android:text="@string/time"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddTime_gameservices"
+        app:layout_constraintEnd_toStartOf="@+id/tvScore_gameservices"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvScore_gameservices"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="@dimen/h16"
+        android:text="@string/score"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvTime_gameservices"
+        app:layout_constraintTop_toTopOf="@+id/tvTime_gameservices" />
+
+
+    <View
+        android:id="@+id/layStopView_gameservices"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/transparent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/layGame_gameservices"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/layGame_gameservices" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvStopText_gameservices"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/game_paused"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/layGame_gameservices"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/layGame_gameservices" />
+
+    <ProgressBar
+        android:id="@+id/progressBarGame_gameservices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddTime_gameservices"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/h16"
+        android:layout_marginEnd="8dp"
+        android:alpha=".7"
+        android:clickable="false"
+        android:text="@string/give_me_time"
+        app:layout_constraintBottom_toTopOf="@+id/layGame_gameservices"
+        app:layout_constraintEnd_toEndOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTime_gameservices" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSlower_gameservices"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="@dimen/h16"
+        android:alpha=".7"
+        android:autoSizeTextType="uniform"
+        android:clickable="false"
+        android:maxLines="1"
+        android:text="@string/make_it_slower"
+        app:layout_constraintBottom_toBottomOf="@+id/btnAddTime_gameservices"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/btnAddTime_gameservices" />
+
+
+    <FrameLayout
+        android:id="@+id/layGame_gameservices"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_gray_result"
+        app:layout_constraintBottom_toTopOf="@+id/btnStopGame_gameservices"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddTime_gameservices" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnSaveGame_gameservices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/h16"
+        android:contentDescription="@string/save"
+        android:src="@drawable/ic_save"
+        app:backgroundTint="@color/colorGreen"
+        app:layout_constraintBottom_toBottomOf="@+id/btnStartGame_gameservices"
+        app:layout_constraintEnd_toStartOf="@+id/btnStartGame_gameservices"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnStartGame_gameservices" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnStartGame_gameservices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/h16"
+        android:layout_marginBottom="@dimen/h16"
+        android:contentDescription="@string/start"
+        android:src="@drawable/ic_play_gameservices"
+        app:backgroundTint="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnAchievements_gameservices"
+        app:layout_constraintEnd_toStartOf="@+id/btnStopGame_gameservices"
+        app:layout_constraintStart_toEndOf="@+id/btnSaveGame_gameservices"
+        app:layout_constraintTop_toBottomOf="@+id/layGame_gameservices" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnStopGame_gameservices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/h16"
+        android:contentDescription="@string/pause"
+        android:src="@drawable/ic_stop_gameservices"
+        app:backgroundTint="@color/colorSecondary"
+        app:layout_constraintBottom_toBottomOf="@+id/btnStartGame_gameservices"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnStartGame_gameservices"
+        app:layout_constraintTop_toTopOf="@+id/btnStartGame_gameservices" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAchievements_gameservices"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/h16"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="@dimen/h16"
+        android:text="@string/achievements"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnLeaderboard_gameservices"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLeaderboard_gameservices"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="@dimen/h16"
+        android:layout_marginBottom="@dimen/h16"
+        android:text="@string/leaderboards"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnAchievements_gameservices" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

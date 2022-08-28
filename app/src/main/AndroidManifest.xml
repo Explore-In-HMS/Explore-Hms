@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.hms.explorehms">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission
+        android:name="android.permission.ACCESS_MOCK_LOCATION"
+        tools:ignore="MockLocation,ProtectedPermissions" /> <!-- Dont add Suppress tags -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.huawei.hms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="com.huawei.permission.SECURITY_DIAGNOSE" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:name="com.hms.explorehms.ExploreHMSApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/app_icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:resizeableActivity="false"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config_main"
+        tools:replace="name, icon, label, theme, resizeableActivity, allowBackup, hardwareAccelerated,android:networkSecurityConfig">
+        <activity android:name="com.hms.explorehms.keyring.KeyringServiceIntroductionActivity" />
+        <activity android:name="com.hms.explorehms.keyring.KeyringServiceActivity" />
+        <activity android:name="com.hms.explorehms.baseapp.activity.BaseActivity" />
+        <activity android:name="com.hms.explorehms.modelingkit3d.ui.activity.CaptureMaterialActivity" />
+        <activity android:name="com.hms.explorehms.modelingkit3d.ui.activity.HistoryActivity" />
+        <activity android:name="com.hms.explorehms.modelingkit3d.ui.activity.MainActivity" />
+        <activity android:name="com.hms.explorehms.modelingkit3d.ui.activity.NewScanActivity" />
+        <activity android:name="com.hms.explorehms.baseapp.activity.SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.hms.explorehms.onboarding.OnboardingActivity" />
+        <activity android:name="com.hms.explorehms.baseapp.activity.MainActivityTab" />
+        <activity android:name="com.hms.explorehms.sitekit.SiteKitWidgetActivity" />
+        <activity android:name="com.hms.explorehms.mapkit.MainActivityMapKit" />
+        <activity android:name="com.hms.explorehms.mapkit.ui.MapKitDirectionApiActivity" />
+        <activity android:name="com.hms.explorehms.sitekit.MainActivitySiteKit" />
+        <activity android:name="com.hms.explorehms.scankit.ScanCustomViewActivity" />
+        <activity android:name="com.hms.explorehms.scankit.ScanKitActivity" />
+        <activity android:name="com.hms.explorehms.localauthenticationengine.LocalAuthenticationMainActivity" />
+        <activity android:name="com.hms.explorehms.reference.appbundle.AppBundleMainActivity" />
+        <activity android:name="com.hms.explorehms.reference.apprelease.AppReleaseActivity" />
+        <activity android:name="com.hms.explorehms.reference.earlyaccess.EarlyAccessActivity" />
+        <activity android:name="com.hms.explorehms.reference.preorders.PreordersActivity" />
+        <activity android:name="com.hms.explorehms.reference.cloudhosting.CloudHostingMainActivity" />
+        <activity android:name="com.hms.explorehms.reference.comments.CommentsActivity" />
+        <activity android:name="com.hms.explorehms.reference.giftmanagement.GiftManagementActivity" />
+        <activity android:name="com.hms.explorehms.reference.crashservice.CrashServiceMainActivity" />
+        <activity android:name="com.hms.explorehms.reference.castengine.CastEngineMainActivity" />
+        <activity android:name="com.hms.explorehms.reference.hquic.HQUICActivity" />
+        <activity android:name="com.hms.explorehms.reference.dynamictagmanager.DynamicActivity" />
+        <activity android:name="com.hms.explorehms.reference.datasecurity.GeneralFeaturesActivity" />
+        <activity android:name="com.hms.explorehms.reference.apm.AppPerformanceMainActivity" />
+        <activity android:name="com.hms.explorehms.reference.wiseplaydrm.WisePlayDRMMainActivity" />
+        <activity android:name="com.hms.explorehms.reference.paidapps.GeneralFeaturesActivity" />
+        <activity android:name="com.hms.explorehms.reference.integrationcheck.MainIntegrationCheckActivity" />
+        <activity
+            android:name="com.hms.explorehms.scankit.GenerateCodeActivity"
+            android:label="@string/title_generatecode" />
+        <activity android:name="com.hms.explorehms.scankit.CommonActivity" />
+        <activity android:name="com.hms.explorehms.scankit.DisplayActivity" />
+        <activity android:name="com.hms.explorehms.scankit.DisplayMulActivity" />
+        <activity
+            android:name="com.hms.explorehms.locationkit.LocationKitActivity"
+            android:label="@string/title_locationkit" />
+        <activity
+            android:name="com.hms.explorehms.locationkit.HdLocationActivity"
+            android:label="@string/title_location_hd" />
+        <activity
+            android:name="com.hms.explorehms.locationkit.GeocoderActivity"
+            android:label="@string/title_location_geocoder" />
+        <activity
+            android:name="com.hms.explorehms.locationkit.ActivityIdentificationActivity"
+            android:label="@string/title_location_activity_identification" />
+        <activity
+            android:name="com.hms.explorehms.locationkit.ActivityConversionActivity"
+            android:label="@string/title_location_activity_conversion" />
+        <activity
+            android:name="com.hms.explorehms.locationkit.GeoFenceActivity"
+            android:label="@string/title_geofence"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.hms.explorehms.locationkit.GeoFenceCreateActivity"
+            android:label="@string/title_geofence_create"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name="com.hms.explorehms.pushkit.MainActivityPushKit" />
+        <activity android:name="com.hms.explorehms.pushkit.NotificationTargetActivityPushKit"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.hms.explorehms.pushkit.click" /> <!-- Target Activity When Tap Notification -->
+                <category android:name="android.intent.category.DEFAULT" /> <!-- Need to select 'Custom action page' name on service -->
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name="com.hms.explorehms.locationkit.LocationBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.hms.explorehms.locationkit.ACTION_PROCESS_LOCATION" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.hms.explorehms.locationkit.GeoFenceBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name="com.hms.explorehms.locationkit.GeoFenceIntentService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" /> <!-- HMS Message Service -->
+        <!-- HMS Message Service -->
+        <service
+            android:name="com.hms.explorehms.pushkit.service.HuaweiPushServicePushKit"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.huawei.push.action.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- Applying for Token -->
+        <meta-data
+            android:name="push_kit_auto_init_enabled"
+            android:value="true" />
+        <meta-data
+            android:name="com.huawei.agconnect.applinking.READ_CLIPBOARD_PERMISSION"
+            android:value="Available" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.hms.explorehms.huawei.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            android:splitName=""
+            tools:replace="authorities, splitName">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"
+                android:value="30.0.2"
+                tools:replace="resource,android:value" />
+        </provider>
+    </application>
+
+</manifest>

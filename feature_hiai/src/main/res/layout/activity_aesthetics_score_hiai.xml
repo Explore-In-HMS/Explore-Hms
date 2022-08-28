@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_aesthetics_score_hiai"
+        style="@style/ToolbarAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/txt_aesthetic_score_hiai"/>
+
+    <ScrollView
+        android:id="@+id/sv_aesthetics_score"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_aesthetics_score_hiai">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_aesthetics_score_info_title"
+                style="@style/TextAppearance.ExploreHMS.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                android:text="@string/txt_service_introduction"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_aesthetics_score_info"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/white"
+                android:gravity="start"
+                android:text="@string/msg_aesthetic_score_hiai"
+                app:layout_constraintTop_toBottomOf="@+id/tv_aesthetics_score_info_title" />
+
+            <View
+                android:id="@+id/seperator_aesthetics_score_hiai_info"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/colorGray1HiAi"
+                app:layout_constraintTop_toBottomOf="@+id/tv_aesthetics_score_info"></View>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_aesthetics_score_gallery"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/txt_gallery_hiai"
+                app:layout_constraintEnd_toStartOf="@id/btn_aesthetics_score_camera"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seperator_aesthetics_score_hiai_info" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_aesthetics_score_camera"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:drawableEnd="@drawable/icon_camera_24_hiai"
+                android:text="@string/txt_camera_hiai"
+                app:layout_constraintBottom_toBottomOf="@id/btn_aesthetics_score_gallery"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_aesthetics_score_gallery"
+                app:layout_constraintTop_toTopOf="@id/btn_aesthetics_score_gallery" />
+
+
+            <ImageView
+                android:id="@+id/iv_aesthetics_score"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/view_border_black_white_back_hiai"
+                android:padding="16dp"
+                android:src="@drawable/image_image_hiai"
+                app:layout_constraintTop_toBottomOf="@+id/btn_aesthetics_score_camera"/>
+
+            <LinearLayout
+                android:id="@+id/ll_aesthetics_score_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/view_light_border_light_gray_arengine"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/iv_aesthetics_score">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_aesthetics_score_mode"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center"
+                    android:text="@string/txt_aesthetic_detect_image_mode_hiai">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGray1HiAi"></View>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_aesthetics_score_mode_1"
+                        style="@style/ButtonAppearance.ExploreHMS.Normal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="center"
+                        android:text="@string/txt_aesthetic_osp_mode_hiai"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/btn_aesthetics_score_mode_2"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_aesthetics_score_mode_2"
+                        style="@style/ButtonAppearance.ExploreHMS.Normal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="center"
+                        android:text="@string/txt_aesthetic_hf_mode_hiai"
+                        app:layout_constraintBottom_toBottomOf="@id/btn_aesthetics_score_mode_1"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_aesthetics_score_mode_3"
+                        app:layout_constraintStart_toEndOf="@id/btn_aesthetics_score_mode_1"
+                        app:layout_constraintTop_toTopOf="@id/btn_aesthetics_score_mode_1" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_aesthetics_score_mode_3"
+                        style="@style/ButtonAppearance.ExploreHMS.Normal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="center"
+                        android:text="@string/txt_aesthetic_all_mode_hiai"
+                        app:layout_constraintBottom_toBottomOf="@id/btn_aesthetics_score_mode_2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/btn_aesthetics_score_mode_2"
+                        app:layout_constraintTop_toTopOf="@id/btn_aesthetics_score_mode_2" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_image_aesthetics_score_run"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/txt_run_service_hiai"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_aesthetics_score_mode" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_aesthetics_score_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/view_light_border_light_gray_arengine"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/btn_image_aesthetics_score_run">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:gravity="center"
+                    android:text="@string/txt_result_hiai"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGray1HiAi"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:gravity="start"
+                    android:text="@string/txt_score_hiai"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_aesthetics_score_score"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="start"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGray1HiAi"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:gravity="start"
+                    android:text="@string/txt_aesthetic_osp_score_hiai"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_aesthetics_score_osp_score"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="start"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGray1HiAi"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:gravity="start"
+                    android:text="@string/txt_aesthetic_hf_score_hiai"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_aesthetics_score_hfs_score"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="start"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGray1HiAi"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:gravity="start"
+                    android:text="@string/txt_aesthetic_frame_time_stampt_hiai"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_aesthetics_score_frame_timestamp"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="start"/>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

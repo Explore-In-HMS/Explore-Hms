@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.hms.explorehms.huawei.feature_mlkit">
+
+    <dist:module
+        dist:instant="false"
+        dist:title="@string/title_feature_mlkit">
+        <dist:delivery>
+            <dist:on-demand />
+        </dist:delivery>
+
+        <dist:fusing dist:include="true" />
+    </dist:module> <!-- network and internet permissions -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- camera permissions -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- add authorization of camera customization -->
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" /> <!-- storage permissions -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- audio record permissions -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission
+        android:name="com.mlkit.asr.permission"
+        android:label="ASR" />
+    <!--
+ For RootDetect: isRoot exception : Must have SECURITY_DIAGNOSE permission.:
+         Neither user 10479 nor current process has com.huawei.permission.SECURITY_DIAGNOSE.
+         on TextRecognition.
+    -->
+    <uses-permission android:name="com.huawei.permission.SECURITY_DIAGNOSE" /> <!-- ML Kits meta data dependency values -->
+    <meta-data
+        android:name="com.huawei.hms.ml.DEPENDENCY"
+        android:value="ocr,bcr,icr,langdetect,translate,sounddect,                         label,object,imgseg,imagesuperresolution,tisr,dsc,1,fr,                         face,skeleton,livenessdetection,handkeypoint" />
+
+    <application
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/icon_ml"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:resizeableActivity="true"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme"
+        tools:node="replace"
+        tools:replace="icon, label, theme, screenOrientation, resizeableActivity"
+        tools:targetApi="q">
+        <activity android:name=".ui.mlServices.faceAndBodyRelated.gesture.GestureMainActivity"></activity>
+        <activity android:name=".ui.mlServices.faceAndBodyRelated.face3d.Live3DActivity" />
+        <activity
+            android:name=".MLMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" /> <!-- Text Related Services Activities -->
+        <activity
+            android:name=".ui.mlServices.textRelated.bankCardRecognition.BankCardRecognitionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.textRelated.docRecognition.DocumentRecognitionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.textRelated.generalCardRecognition.GeneralCardRecognitionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.textRelated.textRecognition.TextRecognitionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.textRelated.textRecognition.TextRecognitionCameraActivity"
+            android:launchMode="singleTask"
+            android:resizeableActivity="false"
+            android:theme="@style/AppTheme"
+            tools:targetApi="n" />
+        <activity
+            android:name=".ui.mlServices.textRelated.textEmbedding.TextEmbeddingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.mlServices.textRelated.idCardRecognition.IDCardActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|keyboardHidden|orientation"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ui.mlServices.textRelated.idCardRecognition.IDCardRecognitionActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|keyboardHidden|orientation"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ui.mlServices.textRelated.idCardRecognition.VNIdCardRecognitionActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|keyboardHidden|orientation"
+            android:launchMode="singleTask" /> <!-- Language Related Services Activities -->
+        <activity
+            android:name=".ui.mlServices.languageRelated.audioTranscription.AudioFileTranscriptionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            tools:replace="theme" />
+        <activity
+            android:name=".ui.mlServices.languageRelated.speechRecognition.AutomaticSpeechRecognitionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            tools:replace="theme" />
+        <activity
+            android:name=".ui.mlServices.languageRelated.textToSpeech.TextToSpeechActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.languageRelated.textTranslation.TextTranslationOnlineActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.languageRelated.textTranslation.TextTranslationOfflineActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.languageRelated.realTimeTranscription.RealTimeTranscriptionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.languageRelated.soundDetection.SoundDetectionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" /> <!-- Face and Body Related Services Activities -->
+        <activity
+            android:name=".ui.mlServices.faceAndBodyRelated.faceDetection.FaceDetectionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.faceAndBodyRelated.faceDetection.FaceDetectionCameraActivity"
+            android:launchMode="singleTask"
+            android:resizeableActivity="false"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.faceAndBodyRelated.livenessDetection.LivenessDetectionActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.faceAndBodyRelated.handKeyPointDetection.HandKeyPointDetectionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.faceAndBodyRelated.handKeyPointDetection.HandKeyPointDetectionCameraActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.faceAndBodyRelated.skeletonDetection.SkeletonDetectionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.faceAndBodyRelated.skeletonDetection.SkeletonDetectionCameraActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.imageRelated.objectDetection.ObjectDetectionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.imageRelated.objectDetection.ObjectDetectionCameraActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.faceAndBodyRelated.face3d.Live3DFaceAnalyseActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.faceAndBodyRelated.faceVerification.FaceVerificationActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|keyboardHidden|orientation"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ui.mlServices.faceAndBodyRelated.gesture.GestureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.faceAndBodyRelated.gesture.GestureImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" /> <!-- Image Related Services Activities -->
+        <activity
+            android:name=".ui.mlServices.imageRelated.formTableRecognition.FormTableRecognitionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.imageRelated.imageClassification.ImageClassificationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.imageRelated.imageClassification.ImageClassificationCameraActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.imageRelated.landmarkRecognition.LandmarkRecognitionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.mlServices.imageRelated.productVisualSearch.ProductVisualSearchActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            tools:node="replace" />
+        <activity
+            android:name=".ui.mlServices.imageRelated.documentSkewCorrection.DocumentSkewCorrectionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            tools:node="replace" />
+        <activity
+            android:name=".ui.mlServices.imageRelated.textImageSuperResolution.TextImageSuperResolutionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            tools:node="replace" />
+        <activity
+            android:name=".ui.mlServices.imageRelated.imageSuperResolution.ImageSuperResolutionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            tools:node="replace" />
+        <activity
+            android:name=".ui.mlServices.imageRelated.sceneDetection.SceneDetectionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            tools:node="replace" />
+        <activity
+            android:name=".ui.mlServices.imageRelated.sceneDetection.SceneDetectionCameraActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            tools:node="replace" />
+        <activity
+            android:name=".ui.mlServices.imageRelated.imageSegmentation.ImageSegmentationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            tools:node="replace" />
+        <activity
+            android:name=".ui.mlServices.imageRelated.imageSegmentation.ImageSegmentationCameraActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            tools:node="replace" />
+        <activity
+            android:name=".ui.mlServices.imageRelated.imageSegmentation.SegmentationWithColorOfObjectsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            tools:node="replace" />
+        <activity
+            android:name=".ui.mlServices.imageRelated.imageSegmentation.SegmentationWithCutOutOfObjectsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            tools:node="replace" />
+    </application>
+
+</manifest>

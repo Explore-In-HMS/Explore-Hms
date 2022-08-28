@@ -1,0 +1,215 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.hms.explorehms.huawei.feature_hiai">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-feature android:name="android.hardware.camera.any" />
+
+    <application
+        android:screenOrientation="portrait"
+        android:resizeableActivity="true"
+        android:theme="@style/AppTheme"
+        android:label="HiAI">
+        <activity
+            android:name=".MainActivityHiAi"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN">
+                </action>
+            </intent-filter>
+        </activity>
+
+
+        <!-- Facial Recognition Activities -->
+
+        <activity
+            android:name=".ui.hiaiserviceviews.facial_recognition.facial_comparison.FacialComparisionActivity"
+            android:label="Facial Comparision"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.hiaiserviceviews.facial_recognition.face_detection.FaceDetectionActivity"
+            android:label="Face Detection"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.hiaiserviceviews.facial_recognition.face_parsing.FaceParsingActivity"
+            android:label="Face Parsing"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.hiaiserviceviews.facial_recognition.face_attributes.FaceAttributesActivity"
+            android:label="Face Attribute"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.hiaiserviceviews.facial_recognition.face_orientation_recognition.FaceOrientationRecognitionActivity"
+            android:label="Face Orientation Recognition"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.hiaiserviceviews.facial_recognition.facial_feature_detection.FacialFeatureDetectionActivity"
+            android:label="Facial Feature Detection"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- Image Recognition Activities -->
+
+        <activity
+            android:name=".ui.hiaiserviceviews.image_recognition.aestheticScore.AestheticsScoreActivity"
+            android:label="Aesthetics Score"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.hiaiserviceviews.image_recognition.imageCategoryLabeling.ImageCategoryLabelingActivity"
+            android:label="Image Category Labeling"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.hiaiserviceviews.image_recognition.imageSuperResolution.ImageSuperResolutionActivity"
+            android:label="Image Super Resolution"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.hiaiserviceviews.image_recognition.sceneDetection.SceneDetectionActivity"
+            android:label="Scene Detection"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.hiaiserviceviews.image_recognition.documentSkewCorrection.DocumentSkewCorrectionActivity"
+            android:label="Document Skew Correction"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.hiaiserviceviews.image_recognition.textImageSuperResolution.TextImageSuperResolutionActivity"
+            android:label="Text Image Super-Resolution"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.hiaiserviceviews.image_recognition.portraitSegmentation.PortraitSegmentationActivity"
+            android:label="Portrait Segmentation"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.hiaiserviceviews.image_recognition.semanticSegmentation.SemanticSegmentationActivity"
+            android:label="Semantic Segmentation"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- Code Recognition Activities -->
+
+        <activity
+            android:name=".ui.hiaiserviceviews.code_recognition.code_recognition.CodeRecognitionActivity"
+            android:label="Semantic Segmentation"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- Video Technology Activities -->
+
+        <activity
+            android:name=".ui.hiaiserviceviews.video_technology.video_summarization.VideoSummarizationActivity"
+            android:label="Video Summarization"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- Text Recognition Activities -->
+        <activity
+            android:name=".ui.hiaiserviceviews.text_recognition.general_text_recognition.GeneralTextRecognitionActivity"
+            android:label="General Text Recognition"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.hiaiserviceviews.text_recognition.table_recognition.TableRecognitionActivity"
+            android:label="Table Recognition"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.hiaiserviceviews.text_recognition.document_converter.DocumentTextConverterRecognitionActivity"
+            android:label="Document Converter"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- Body Recognition -->
+        <activity
+            android:name=".ui.hiaiserviceviews.body_recognition.pose_estimation.PoseEstimationActivity"
+            android:label="Pose Estimation"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".ui.hiaiserviceviews.body_recognition.video_portrait_segmentation.VideoPortraitSegmentationActivity"
+            android:label="Video Portrait Segmentation"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+    </application>
+
+    <dist:module
+        dist:instant="false"
+        dist:title="@string/title_feature_hiai">
+        <dist:delivery>
+            <dist:on-demand />
+        </dist:delivery>
+        <dist:fusing dist:include="true" />
+    </dist:module>
+</manifest>

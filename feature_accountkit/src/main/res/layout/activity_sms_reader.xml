@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SmsReaderActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolbarAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/LoginviaSMS" />
+    <TextView
+        android:id="@+id/tv_number"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:textStyle="bold"
+        android:text="@string/Number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tv_etnumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:hint="@string/Number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_number">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_verifycode"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textStyle="bold"
+        android:text="@string/VerificationCode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_etnumber" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tv_etverifcode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:hint="@string/VerificationCode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_verifycode">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_smscode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:id="@+id/btn_getcode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/Getcode"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_etverifcode"
+        app:layout_constraintStart_toStartOf="@id/tv_etverifcode"
+        app:layout_constraintEnd_toEndOf="@id/tv_etverifcode"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_login"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/Login"
+        app:layout_constraintEnd_toEndOf="@id/btn_getcode"
+        app:layout_constraintStart_toStartOf="@id/btn_getcode"
+        app:layout_constraintTop_toBottomOf="@id/btn_getcode" />
+</androidx.constraintlayout.widget.ConstraintLayout>

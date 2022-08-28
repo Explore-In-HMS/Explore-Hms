@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.AwarenessKitHomeFragment">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnTimeAwareness_awarenesskit"
+        style="@style/ButtonAppearance.ExploreHMS.Outline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_time_awareness"
+        android:padding="16dp"
+        android:text="Time\nAwareness"
+        android:textAllCaps="false"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintBottom_toTopOf="@+id/btnBeaconAwareness_awarenesskit"
+        app:layout_constraintEnd_toStartOf="@+id/btnLocationAwareness_awarenesskit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLocationAwareness_awarenesskit"
+        style="@style/ButtonAppearance.ExploreHMS.Outline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_location_awareness"
+        android:padding="16dp"
+        android:text="Location\nAwareness"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/btnTimeAwareness_awarenesskit"
+        app:layout_constraintEnd_toStartOf="@+id/btnBehaviorAwareness_awarenesskit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnTimeAwareness_awarenesskit"
+        app:layout_constraintTop_toTopOf="@+id/btnTimeAwareness_awarenesskit" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBehaviorAwareness_awarenesskit"
+        style="@style/ButtonAppearance.ExploreHMS.Outline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_behavior_awareness"
+        android:padding="16dp"
+        android:text="Behavior\nAwareness"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/btnTimeAwareness_awarenesskit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnLocationAwareness_awarenesskit"
+        app:layout_constraintTop_toTopOf="@+id/btnTimeAwareness_awarenesskit" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBeaconAwareness_awarenesskit"
+        style="@style/ButtonAppearance.ExploreHMS.Outline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:drawableTop="@drawable/ic_beacon_awareness"
+        android:padding="16dp"
+        android:text="Beacon\nAwareness"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/btnAudioDeviceAwareness_awarenesskit"
+        app:layout_constraintEnd_toStartOf="@+id/btnAmbientLightAwareness_awarenesskit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTimeAwareness_awarenesskit" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAmbientLightAwareness_awarenesskit"
+        style="@style/ButtonAppearance.ExploreHMS.Outline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_ambient_light_awareness"
+        android:padding="16dp"
+        android:text="Light\nAwareness"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBeaconAwareness_awarenesskit"
+        app:layout_constraintEnd_toStartOf="@+id/btnWeatherAwareness_awarenesskit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnBeaconAwareness_awarenesskit"
+        app:layout_constraintTop_toTopOf="@+id/btnBeaconAwareness_awarenesskit" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnWeatherAwareness_awarenesskit"
+        style="@style/ButtonAppearance.ExploreHMS.Outline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_weather_awareness"
+        android:padding="16dp"
+        android:text="Weather\nAwareness"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBeaconAwareness_awarenesskit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnAmbientLightAwareness_awarenesskit"
+        app:layout_constraintTop_toTopOf="@+id/btnBeaconAwareness_awarenesskit" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAudioDeviceAwareness_awarenesskit"
+        style="@style/ButtonAppearance.ExploreHMS.Outline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:drawableTop="@drawable/ic_headset_awareness"
+        android:padding="16dp"
+        android:text="Audio Device\nAwareness"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnPhoneStatusAwareness_awarenesskit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnBeaconAwareness_awarenesskit" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPhoneStatusAwareness_awarenesskit"
+        style="@style/ButtonAppearance.ExploreHMS.Outline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_phone_status_awareness"
+        android:padding="16dp"
+        android:text="Phone Status\nAwareness"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/btnAudioDeviceAwareness_awarenesskit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnAudioDeviceAwareness_awarenesskit"
+        app:layout_constraintTop_toTopOf="@+id/btnAudioDeviceAwareness_awarenesskit" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

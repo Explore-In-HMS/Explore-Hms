@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="title">Service Introduction</string>
+    <string name="desc">To provide more convenient and high-quality services and further optimize user experience, we enabled the Comments menu in AppGallery Connect. You can sign in to AppGallery Connect, select your app, and manage comments on the Comments page.</string>
+    <string name="title2">1. Application Scope</string>
+    <string name="desc2">Apps (including games) released in HUAWEI AppGallery</string>
+    <string name="title3">2. Commonly Used Functions</string>
+    <string name="desc3">2.1 Reply \n\nYou can reply to users\' comments.</string>
+    <string name="desc4">2.2 Reply Update \n\nYou can click Update Reply to modify a reply. Then, the updated reply will overwrite the original one, and the replied time will also be updated.</string>
+    <string name="desc5">2.3 Re-reply \n\nAfter you reply to a user\'s comment, if the user replies to your message, a number in red is displayed under Number of replies to notify you of unread replies. You can click the number to respond to the user.</string>
+    <string name="desc6">2.4 Comment Post/Update \n\nYou can post a comment for your app by clicking Create a comment, but only one comment is allowed for each version. After a comment is posted, if you click Create a comment again and write a comment, the original comment will be overwritten.</string>
+    <string name="desc7">2.5 Exporting Comments \n\nYou can export comments for analysis. Up to 100,000 comments within a period of one month can be exported at a time. The exported content is the same as the information filtered on the UI.</string>
+    <string name="searchcomment">searchcomment</string>
+    <string name="commentpost">commentpost</string>
+    <string name="rereply">rereply</string>
+    <string name="replyupdate">replyupdate</string>
+    <string name="reply">reply</string>
+    <string name="toolbar_title">Comments</string>
+    <string name="link"><a href="">Click here to learn more about Comments Service.</a></string>
+    <string name="link2">https://developer.huawei.com/consumer/en/doc/distribution/app/20400</string>
+</resources>

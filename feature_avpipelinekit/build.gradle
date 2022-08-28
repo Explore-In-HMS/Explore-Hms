@@ -1,0 +1,39 @@
+plugins {
+    id 'com.android.dynamic-feature'
+}
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.hms.explorehms.huawei.feature_avpipelinekit"
+        minSdkVersion 28
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(":app")
+}
+
+/*apply from: '../sonarqube.gradle'
+sonarqube {
+    properties {
+        property "sonar.projectName","ExploreHMS:"+project.name
+    }
+}*/

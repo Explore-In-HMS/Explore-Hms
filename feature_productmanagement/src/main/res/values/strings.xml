@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="toolbar_title">Product Management</string>
+    <string name="add_product_title">Adding a Product</string>
+    <string name="add_product_desc">Products can be classified into subscriptions and non-subscriptions:\n\n• Non-subscriptions are purchased once. They can be further divided into consumables and non-consumables. You can configure virtual products when you select consumables or non-consumables in editing state and the app distribution area contains the Chinese mainland.\n\n- Consumables: They are products that are intended to be consumed and purchased repeatedly, such as in-game currencies.\n\n- Non-consumables: Users only need to purchase them once. Such products do not expire or decrease as they are used.\n\n• Subscriptions can be automatically renewed, and do not support virtual products currently.\n\nYou can add products either by adding a single product, or by importing products in batches.</string>
+    <string name="conversion_rule_desc">After you set Default price (tax included) for a product, click Convert prices to calculate its local prices for other countries/regions based on exchange rates.\n\n• For countries/regions with general currency requirements, product prices are converted based on the exchange rates, and then adjusted according to the following rules:\n\n- If a converted price is an integer or contains only two decimal places, it will be used as the default price. For example, if the converted price is 1.23, the final price is 1.23.\n\n- If a converted price contains three or more decimal places, the decimal part after the second digit (excluding the second digit) is truncated and the price is automatically adjusted based on the second decimal place X.\n\n• For countries/regions with special currency requirements, product prices are converted based on the following rules:\n\n- For countries or regions that support only integers, if the converted price is not an integer, it will be rounded up to the nearest integer. For example, if the converted price is 5.02, the final price is 6.00.\n\n- For countries or regions that support only multiples of 0.20, if the converted price is not an integer, it will be rounded up to the nearest multiple of 0.20. For example, if the converted price is 1.23, the final price is 1.40.</string>
+    <string name="conversion_rule_title">Conversion Rule Description</string>
+    <string name="deactivating_a_product_title">Deactivating a Product</string>
+    <string name="deactivating_a_product_desc">An activated product is available for sale. If you want to stop selling the product, you can deactivate it.\n\n1. Sign in to AppGallery Connect and select My apps.\n\n2. Click an app from the app list to deactivate a product.\n\n3. Go to Operate&gt;Products&gt;Product Management.\n\n4. On the product list, click Deactivate next to the product you wish to deactivate.\n\n5. In the dialog box that is displayed, click OK.</string>
+    <string name="managing_product_marketing_title">Managing Product Marketing</string>
+    <string name="managing_product_marketing_desc">You can package a specified product for marketing and display the product publicity image, product name, and product description on your app details page in HUAWEI AppGallery (10.2.0 and later versions). Users can directly purchase the product on the app details page. This process is referred to as product marketing.\n\nProduct marketing supports the following modes:\n\n● Deep link: When a user taps to purchase a product on AppGallery, the user will be redirected to your app and instructed to complete payment and delivery in your app.\n\n● Direct purchase: When a user taps to purchase a product on AppGallery, HUAWEI HMS Core initiates a payment request. After the payment is complete, Huawei server instructs your server to complete product delivery.\n\nCaution: Currently, the product marketing management function supports only apps that are developed by enterprise developers and released in the Chinese mainland.</string>
+    <string name="managing_subscription_groups_title">Managing Subscription Groups</string>
+    <string name="managing_subscription_groups_desc">Each auto-renewable subscription is assigned to a subscription group. One subscription group can contain multiple subscriptions. Users can only purchase one subscription at a time per group. If your app allows users to purchase multiple subscriptions, you can add these subscriptions to different groups. For example, a movie or music subscription group (monthly/annual subscription).\n\n• Adding a Subscription Group\n\n1. Sign in to AppGallery Connect and select My apps.\n\n2. Click an app from the app list to add a subscription group.\n\n3. Go to Operate &gt; Products &gt; Product Management &gt; Subscription groups and click Add subscription group.\n\n4. Enter the subscription group name in the text box and click OK.</string>
+    <string name="deleting_a_product_title">Deleting a Product</string>
+    <string name="deleting_a_product_desc">• Non-Subscriptions\n\nIf you want to remove a product, you can either deactivate or delete it.1. Sign in to AppGallery Connect and click My apps.\n\n2. Click an app from the app list to delete a product.\n\n3. Go to Operate &gt; Products &gt; Product Management.\n\n4. On the product list, click Edit next to the product you wish to delete.\n\n5. On the Edit Product page, click Delete in the upper right corner.\n\n6. In the displayed dialog box, click OK.</string>
+    <string name="deleting_a_product_desc2">• Subscriptions\n\nCurrently, subscriptions cannot be deleted. You can deactivate a subscription.</string>
+    <string name="modifying_product_information_title">Modifying Product Information</string>
+    <string name="modifying_product_information_desc">Modifying a Single Product\n\n• Non-Subscriptions\n\n1. Sign in to AppGallery Connect and select My apps. \n\n2. Click an app from the app list to modify a product.\n\n3. Go to Operate &gt;Products &gt; Product Management &gt; Products.\n\n4. On the product list, click Edit next to the consumable or non-consumable that you wish to edit.\n\n5. Edit basic product information and click Save. Click View and edit to modify prices.</string>
+    <string name="modifying_product_information_desc2">• Subscriptions\n\n1. Sign in to AppGallery Connect and select My apps.\n\n2. Click an app from the app list to modify a product.\n\n3. Go to Operate &gt; Product Operation &gt; Product Management.\n\n4. On the product list, click Edit next to the subscription you wish to edit.\n\n5. Edit basic product information and click Save. Click View and edit to modify prices.</string>
+    <string name="activating_product_title">Activating a Product</string>
+    <string name="activating_product_desc">After a product is added or deactivated, its status is Invalid by default. If you want to start selling the product, you can activate it.\n\n1. Sign in to AppGallery Connect and click My apps.\n\n2. Click an app from the app list to activate a product.\n\n3. Go to Operate &gt; Products &gt; Product Management.\n\n4. On the product list, click Activate next to the product you wish to activate.\n\n5. In the displayed dialog box, click OK.</string>
+
+    <string name="url_productmanagement">https://developer.huawei.com/consumer/en/doc/distribution/app/agc-create_product</string>
+</resources>

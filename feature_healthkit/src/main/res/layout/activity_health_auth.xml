@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".auth.HealthKitAuthClientActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_health_kit_login"
+            style="@style/ToolbarAppearance.ExploreHMS.Normal"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/title_health_kit" />
+
+        <ImageView
+            android:id="@+id/health_kit_icon"
+            style="@style/health_kit_icon"
+            android:src="@drawable/health_kit_icon"
+            android:contentDescription="@string/app_icon" />
+
+        <TextView
+            android:id="@+id/health_auth_desc_title"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/h16"
+            android:layout_marginTop="@dimen/h16"
+            android:layout_marginEnd="@dimen/h16"
+            android:text="@string/health_auth_health_kit_waitting" />
+
+        <TextView
+            android:id="@+id/health_auth_desc"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/h16"
+            android:layout_marginTop="@dimen/h16"
+            android:layout_marginEnd="@dimen/h16"
+            android:text="@string/health_auth_health_kit_desc" />
+
+        <TextView
+            android:id="@+id/health_auth_fail_tips"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/h16"
+            android:layout_marginTop="@dimen/h16"
+            android:layout_marginEnd="@dimen/h16"
+            android:text="@string/health_auth_health_kit_fail_tips_connect" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/health_login_auth"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/health_login_auth"
+                android:textAllCaps="false" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/health_auth_confirm"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/confirm"
+                android:textAllCaps="false" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/health_auth_retry"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/health_auth_retry"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

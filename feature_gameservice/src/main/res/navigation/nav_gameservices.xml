@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_gameservices"
+    app:startDestination="@id/gameServicesLoginFragment">
+
+    <fragment
+        android:id="@+id/gameServicesLoginFragment"
+        android:name="com.hms.explorehms.huawei.feature_gameservice.fragments.GameServicesLoginFragment"
+        android:label="fragment_game_services_login"
+        tools:layout="@layout/fragment_game_services_login">
+        <action
+            android:id="@+id/action_goto_GameServicesHomeFragment"
+            app:destination="@id/gameServicesHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameServicesHomeFragment"
+        android:name="com.hms.explorehms.huawei.feature_gameservice.fragments.GameServicesHomeFragment"
+        android:label="fragment_game_services_home"
+        tools:layout="@layout/fragment_game_services_home">
+        <argument
+            android:name="hw_id"
+            app:argType="com.huawei.hms.support.hwid.result.AuthHuaweiId"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_gotoGameServicesPlayerStatisticsFragment"
+            app:destination="@id/gameServicePlayerStatisticsFragment" />
+        <action
+            android:id="@+id/action_gotoGameServicesEventsFragment"
+            app:destination="@id/gameServicesEventsFragment" />
+        <action
+            android:id="@+id/action_gotoGameServicesGameTurboEngineFragment"
+            app:destination="@id/gameServiceGameTurboEngineFragment" />
+        <action
+            android:id="@+id/action_gotoGameServicesFloatingWindowFragment"
+            app:destination="@id/gameServicesFloatingWindowFragment" />
+        <action
+            android:id="@+id/action_gotoGameServicesAddictionPreventionFragment"
+            app:destination="@id/gameServiceAddictionPreventionFragment" />
+        <action
+            android:id="@+id/action_gotoGameServicesGameFragment"
+            app:destination="@id/gameServiceGameFragment" />
+        <action
+            android:id="@+id/action_gotoGameServicesLoadFragment"
+            app:destination="@id/gameServicesLoadFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameServicePlayerStatisticsFragment"
+        android:name="com.hms.explorehms.huawei.feature_gameservice.fragments.GameServicePlayerStatisticsFragment"
+        android:label="fragment_game_service_player_statistics"
+        tools:layout="@layout/fragment_game_service_player_statistics" />
+    <fragment
+        android:id="@+id/gameServicesEventsFragment"
+        android:name="com.hms.explorehms.huawei.feature_gameservice.fragments.GameServicesEventsFragment"
+        android:label="fragment_game_services_events"
+        tools:layout="@layout/fragment_game_services_events" />
+    <fragment
+        android:id="@+id/gameServiceGameTurboEngineFragment"
+        android:name="com.hms.explorehms.huawei.feature_gameservice.fragments.GameServiceGameTurboEngineFragment"
+        android:label="fragment_game_service_game_turbo_engine"
+        tools:layout="@layout/fragment_game_service_game_turbo_engine" />
+    <fragment
+        android:id="@+id/gameServicesFloatingWindowFragment"
+        android:name="com.hms.explorehms.huawei.feature_gameservice.fragments.GameServicesFloatingWindowFragment"
+        android:label="fragment_game_services_floating_window"
+        tools:layout="@layout/fragment_game_services_floating_window" />
+    <fragment
+        android:id="@+id/gameServiceAddictionPreventionFragment"
+        android:name="com.hms.explorehms.huawei.feature_gameservice.fragments.GameServiceAddictionPreventionFragment"
+        android:label="fragment_game_service_addiction_prevention"
+        tools:layout="@layout/fragment_game_service_addiction_prevention" />
+    <fragment
+        android:id="@+id/gameServiceGameFragment"
+        android:name="com.hms.explorehms.huawei.feature_gameservice.fragments.GameServiceGameFragment"
+        android:label="fragment_game_service_game"
+        tools:layout="@layout/fragment_game_service_game">
+        <argument
+            android:name="milliLeft"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <argument
+            android:name="score"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameServicesLoadFragment"
+        android:name="com.hms.explorehms.huawei.feature_gameservice.fragments.GameServicesLoadFragment"
+        android:label="fragment_game_services_load"
+        tools:layout="@layout/fragment_game_services_load">
+        <action
+            android:id="@+id/action_gotoGameFragmentFromLoadFragment"
+            app:destination="@id/gameServiceGameFragment" />
+    </fragment>
+</navigation>

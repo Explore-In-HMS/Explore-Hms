@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_result"
+        style="@style/ToolbarAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="@string/title_result" />
+
+    <ImageView
+        android:id="@+id/diplay_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/text"></ImageView>
+
+    <TextView
+        android:id="@+id/diplay_text"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/diplay_icon"
+        android:layout_marginTop="@dimen/hiad_16_dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="@string/text">
+
+    </TextView>
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/diplay_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/hiad_16_dp"
+        android:layout_marginTop="@dimen/hiad_16_dp"
+        android:layout_marginRight="@dimen/hiad_16_dp"
+        android:layout_marginBottom="@dimen/hiad_16_dp"
+        android:background="@drawable/clors_dis">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/hiad_16_dp"
+            android:layout_marginRight="@dimen/hiad_16_dp"
+            android:layout_marginBottom="@dimen/hiad_16_dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/barcode_type_t"
+                style="@style/TextAppearance.ExploreHMS.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/code_format" />
+
+            <TextView
+                android:id="@+id/barcode_type"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/barcode_type_mon_t"
+                style="@style/TextAppearance.ExploreHMS.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="@string/result_type" />
+
+            <TextView
+                android:id="@+id/barcode_type_mon"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/result_t"
+                style="@style/TextAppearance.ExploreHMS.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="@string/result_content"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/barcode_rawValue"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="#99000000" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_operate"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/h16"
+        android:layout_marginRight="@dimen/h16"
+        android:text="@string/scan_display_copy_text"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+</LinearLayout>

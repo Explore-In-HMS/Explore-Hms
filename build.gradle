@@ -1,0 +1,95 @@
+/*
+*
+*   Copyright 2020. Explore in HMS. All rights reserved.
+*
+*   Licensed under the Apache License, Version 2.0 (the "License");
+*   You may not use this file except in compliance with the License.
+*   You may obtain a copy of the License at
+*
+*   http://www.apache.org/licenses/LICENSE-2.0
+*
+*   Unless required by applicable law or agreed to in writing, software
+*   distributed under the License is distributed on an "AS IS" BASIS,
+*   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+*   See the License for the specific language governing permissions and
+*   limitations under the License.
+*
+*/    // Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        nav_version = "2.3.1"
+    }
+    repositories {
+        google()
+        jcenter()
+
+        maven { url 'http://developer.huawei.com/repo/' }
+
+        flatDir {
+            dirs 'libs'
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.2'
+
+        classpath 'com.huawei.agconnect:agcp:1.6.0.300'
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+        classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.0")
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://developer.huawei.com/repo/' }
+
+    }
+}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+
+    ve_sdk_versionCode = '10100301'
+    ve_sdk_versionName = '1.1.0.301'
+
+    ve_apk_versionCode = '10100301'
+    ve_apk_versionName = '1.1.0.301'
+
+}
+
+//sdk
+if (null != System.getenv('ve_versionCode') && (!System.getenv('ve_versionCode').isEmpty())) {
+    ext.ve_sdk_versionCode = System.getenv('ve_versionCode')
+}
+
+if (null != System.getenv('ve_versionName') && (!System.getenv('ve_versionName').isEmpty())) {
+    ext.ve_sdk_versionName = System.getenv('ve_versionName')
+}
+
+if (null != System.getenv('ve_versionCode') && (!System.getenv('ve_versionCode').isEmpty())) {
+    ext.ve_apk_versionCode = System.getenv('ve_versionCode')
+}
+
+if (null != System.getenv('ve_versionName') && (!System.getenv('ve_versionName').isEmpty())) {
+    ext.ve_apk_versionName = System.getenv('ve_versionName')
+}
+
+if (null != System.getenv('needHwSign') && (!System.getenv('needHwSign').isEmpty())) {
+    ext.needHwSign = System.getenv('needHwSign')
+}
+
+if (null != System.getenv('useRemoteImplementation') && (!System.getenv('useRemoteImplementation').isEmpty())) {
+    ext.useRemoteImplementation = System.getenv('useRemoteImplementation')
+}
+
+if (null != System.getenv('ve_Common_model') && (!System.getenv('ve_Common_model').isEmpty())) {
+    ext.ve_Common_model = System.getenv('ve_Common_model')
+}

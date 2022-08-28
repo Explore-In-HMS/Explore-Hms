@@ -1,0 +1,84 @@
+/*
+ *
+ *   Copyright 2020. Explore in HMS. All rights reserved.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   You may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ */
+
+include ':app:modelingResource'
+include ':app:cameratakelib'
+
+include ':feature_hiai'
+include ':feature_panorama'
+include ':feature_mlkit'
+include ':feature_imagekit'
+include ':feature_scenekit'
+include ':feature_analyticskit'
+include ':feature_videokit'
+include ':feature_healthkit'
+include ':feature_adskit'
+include ':feature_nearbyservice'
+include ':feature_awarenesskit'
+include ':feature_fidokit'
+include ':feature_identitykit'
+include ':feature_applinking'
+include ':feature_shareengine'
+include ':feature_accountkit'
+include ':feature_audiokit'
+include ':feature_authservice'
+include ':feature_safetydetect'
+include ':feature_quickapp'
+include ':feature_wirelesskit'
+include ':feature_acceleratekit'
+include ':feature_cloudfunctions'
+include ':feature_caaskit'
+include ':feature_clouddb'
+include ':feature_drivekit'
+include ':feature_walletkit'
+include ':feature_appsigning'
+include ':feature_computergraphics'
+include ':feature_opentesting'
+include ':feature_searchkit'
+include ':feature_cloudtesting'
+include ':feature_clouddebugging'
+include ':feature_remoteconfig'
+include ':feature_abtest'
+include ':feature_operationanalysis'
+include ':feature_distributionanalysis'
+include ':feature_onehopengine'
+include ':feature_cloudstorage'
+include ':feature_appmessaging'
+include ':feature_inapppurchases'
+include ':feature_gameservice'
+include ':feature_productmanagement'
+include ':feature_phasedrelease'
+include ':feature_audioengine'
+include ':feature_dynamicability'
+include ':feature_arengine'
+include ':feature_appgallerykit'
+include ':feature_wearengine'
+include ':feature_hemkit'
+include ':feature_hiaifoundation'
+include ':feature_connectapi'
+include ':feature_networkkit'
+include ':feature_audioeditorkit'
+include ':feature_avpipelinekit'
+include ':feature_cameraengine'
+include ':feature_devicevirtualizationengine'
+include ':feature_modem5g_kit'
+include ':feature_videoeditorkit'
+
+
+include ':app'
+rootProject.name = "ExploreHMS"

@@ -1,0 +1,107 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="app_name">Health Kit Sample Code</string>
+    <string name="login_info">Touch Login to complete login and authorization, and then use other buttons to try the related API functions.Note: If the login dialog box is not displayed, change the package name, app ID, and configure the signature file by referring to the developer guide on the official website.</string>
+    <string name="data_controller">Managing historical fitness and health data</string>
+    <string name="sensors_controller">Obtaining real-time data of peripheral sensors (phone sensors and external Bluetooth devices)</string>
+    <string name="auto_recorder">Continuously recording the fitness data of the user</string>
+    <string name="activity_record">Managing single workout sesson or activity</string>
+    <string name="sensors_getController">Getting the SensorsController first</string>
+    <string name="sensors_registerStep">Registering and unregistering a listener for step counting</string>
+    <string name="sensors_scan">Scanning and saving Bluetooth devices</string>
+    <string name="sensors_findSource">Searching for available data collectors and deleting Bluetooth devices</string>
+    <string name="sensors_registerHeartRate">Registering and unregistering a listener for heart rate monitoring</string>
+    <string name="activity_record_BeginOrEnd">Starting or stopping an activity record</string>
+    <string name="activity_record_AddOrGet">Adding or reading an activity record</string>
+    <string name="activity_record_MonitorOptions">Registering or unregistering a listener for monitoring the activity record status</string>
+    <string name="activity_record_Delete">Deleting an activity record</string>
+    <string name="setting_controller">Managing setting controller</string>
+    <string name="setting_controller_set_name">Set new data type name, Duplicate names are unacceptable, this name must start with package name, and End with a custom name.</string>
+    <string name="setting_controller_manager">Choose which Field to select，you connot add new Field</string>
+    <string name="setting_controller_read_write">Use the newly added data type to write or read value.</string>
+    <string name="data_controller_manager">Managing fitness and health data, including inserting, updating, reading, and deleting data</string>
+    <string name="data_controller_read">Feature-based query APIs: Querying the summary data of the current day, as well as the summary data on the local device of the current day</string>
+    <string name="data_controller_register">Registering or unregistering a listener for data changes and triggering the listener for testing purposes</string>
+    <string name="data_controller_sync">Synchronizing fitness and health data between the device and cloud, as well as clearing all data</string>
+    <string name="auto_recorder_start_stop_record_by_type">Starting or stopping automatic recording of total step count by data type</string>
+    <string name="health_auth_health_kit_waitting">Please wait...</string>
+    <string name="health_auth_health_kit_success">Authorization succeeded</string>
+    <string name="health_auth_health_kit_fail">Authorization failed</string>
+    <string name="confirm">OK</string>
+    <string name="health_auth_retry">Re-authorize</string>
+    <string name="health_auth_health_kit_desc">Log in to the HUAWEI ID and authorize the app to access the Health Kit, and allow the HUAWEI Health app to open data to HUAWEI Health Kit, so that third-party apps authorized by the Health Kit can share your HUAWEI Health app data.</string>
+    <string name="health_auth_health_kit_fail_tips_connect">How to enable: \nOpen the HUAWEI Health app, and go to Me > Settings > Data sharing > Health Kit > LINK.</string>
+    <string name="health_auth_health_kit_fail_tips_install">How to enable: \n1. Install the HUAWEI Health app version 10.1.2.550 or later. \n2. Open HUAWEI Health app, and go to Me > Settings > Data sharing > Health Kit > LINK.</string>
+    <string name="health_auth_health_kit_fail_tips_update">How to enable: \n1. Update the HUAWEI Health app to 10.1.2.550 or later. \n2. Open HUAWEI Health app, and go to Me > Settings > Data sharing > Health Kit > LINK.</string>
+    <string name="cloud_login_info">Login and authorization by RESTful APIs</string>
+    <string name="health_auth_health_kit_fail_tips_exception">API calling error. Please try again.</string>
+    <string name="health_login_auth">Log in and authorize</string>
+
+    <string name="title_health_kit">Health Kit</string>
+    <string name="title_setting_controller">Setting Controller</string>
+    <string name="txt_activity_records_controller">ActivityRecords Controller</string>
+    <string name="txt_service_introduction">Service Introduction</string>
+    <string name="txt_result">RESULT</string>
+    <string name="txt_print">print：\n</string>
+    <string name="txt_data_controller">Data Controller</string>
+    <string name="txt_insert">Insert</string>
+    <string name="txt_read">Read</string>
+    <string name="txt_update">Update</string>
+    <string name="txt_delete">Delete</string>
+    <string name="txt_today_summation">Today Summation</string>
+    <string name="txt_daily_summation">Daily Summation</string>
+    <string name="txt_clear_all">Clear All</string>
+    <string name="title_auto_recorder">Auto Recorder</string>
+    <string name="txt_start_record_total_steps">Start Record By Total Steps</string>
+    <string name="txt_stop_record_total_steps">Stop Record By Total Steps</string>
+    <string name="txt_begin_record">Begin Activity Record</string>
+    <string name="txt_end_record">End Activity Record</string>
+    <string name="txt_add_record">Add Activity Record</string>
+    <string name="txt_get_record">Get Activity Record</string>
+    <string name="txt_delete_record">Delete Activity Record</string>
+    <string name="btn_auto_recorder">Auto Recorder Controller</string>
+    <string name="btn_activty_record">Activity Records Controller</string>
+    <string name="btn_setting_controller">Setting Controller</string>
+
+    <string name="btn_login">Login</string>
+    <string name="btn_restful_login">RESTful Login</string>
+    <string name="btn_data_controller">Data Controller</string>
+    <string name="btn_add">Add</string>
+    <string name="btn_get">Get</string>
+    <string name="btn_disable">Disable</string>
+    <string name="btn_check_auth">Check Authorization</string>
+    <string name="btn_get_auth">Get Authorization</string>
+    <string name="btn_write">Write</string>
+    <string name="btn_read">Read</string>
+    <string name="result">RESULT</string>
+    <string name="print_n">print：\n</string>
+    <string name="app_icon">icon</string>
+    <string name="sample_image">sample_image</string>
+    <string name="check_whether_text">Check whether the Huawei Health app authorise access to HealthKit.</string>
+    <string name="test">test1</string>
+    <string name="health_kit_service">HealthKitService</string>
+    <string name="steps_delta">STEPS_DELTA</string>
+    <string name="date_format">yyyy-MM-dd hh:mm:ss</string>
+    <string name="start_date">2020-08-27 09:00:00</string>
+    <string name="end_date">2020-08-27 09:05:00</string>
+    <string name="success">success</string>
+    <string name="failed">failed</string>
+    <string name="url_txt_healthkit">https://developer.huawei.com/consumer/en/doc/health-introduce-0000001053684429-V5</string>
+</resources>

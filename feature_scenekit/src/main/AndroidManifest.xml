@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.hms.explorehms.huawei.feature_scenekit">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <dist:module
+        dist:instant="false"
+        dist:title="@string/title_feature_scenekit">
+        <dist:delivery>
+            <dist:on-demand />
+        </dist:delivery>
+
+        <dist:fusing dist:include="true" />
+    </dist:module>
+
+    <application
+        android:resizeableActivity="false"
+        android:screenOrientation="portrait">
+        <activity android:name=".FluidSimulation2D" />
+        <activity android:name=".SampleRenderActivity" />
+
+        <meta-data
+            android:name="appId"
+            android:value="102418005" />
+
+        <activity
+            android:name=".MainActivity"
+            android:label="Scene Kit" />
+        <activity
+            android:name=".sceneview.SceneViewActivity"
+            android:label="Scene View" />
+        <activity
+            android:name=".arview.ARViewActivity"
+            android:label="AR View" />
+        <activity
+            android:name=".faceview.FaceViewActivity"
+            android:label="Face View" />
+
+        <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:value="30.0.2"
+            tools:replace="android:value" />
+    </application>
+
+</manifest>

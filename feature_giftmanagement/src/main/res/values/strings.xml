@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="gift_management_toolbar_title">Gift Management</string>
+    <string name="link"><a href="">Click here to learn more about Gift Management Service.</a></string>
+    <string name="link2">https://developer.huawei.com/consumer/en/doc/distribution/app/agc_Packagemanagement</string>
+    <string name="desc3">2.1 Gift Type \n\n2.1.1 Gift - with code:A gift code, in the form of a serial number, is sent to a user who can redeem the code in the app or game following the instructions to get the gift.\n\n2.1.2 Gift - without code:Information about such gifts is displayed on the AppGallery app details page. If there is a gift available for an app, users can get the mapping gift in the app according to the description of the gift after installing the app.</string>
+    <string name="title2">2. Configuration Rules, Process, and Description</string>
+    <string name="desc2">1.2 Regular Gift Packages \n\nRegular gift packages are classified into common gift packages and activity gift packages. These packages will be promoted using resources of HUAWEI AppGallery (including Kids Center, GameCenter, and EduCenter), including but not limited to the gift zone, app details page, and activity zone. Gift packages that meet specific conditions will have more exposure chances.</string>
+    <string name="desc">1.1 New Users Gift Packages \n\nNew users gift packages target users of specific Huawei device models and are provided as one of the selling points of new devices. Involved apps will be promoted via wide-ranging marketing resources including but not limited to product launch events, product overview pages, and official social accounts. That\'s not all, these apps will be pushed to users whose newly purchased devices are connected to the Internet for the first time.</string>
+    <string name="title1">1. New Users Gift Packages and Regular Gift Packages</string>
+    <string name="title">Service Introduction</string>
+    <string name="desc4">3. Gift Addition\n\n3.1 AppGallery Connect&gt; My apps &gt; Operate &gt; Promotion &gt; Gift Management</string>
+    <string name="desc5">3.2 Configure the gift under Operate section. ClickAdd giftand select a gift type (Gift - with code or Gift - without code).</string>
+    <string name="image_1">image_1</string>
+    <string name="image_2">image_2</string>
+    <string name="image_3">image_3</string>
+    <string name="image_4">image_4</string>
+</resources>

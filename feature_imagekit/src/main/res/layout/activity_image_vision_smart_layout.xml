@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_imagekit_smart_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_smart_layout_image_kit"
+        style="@style/ToolbarAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Smart Layout Service">
+
+        <ImageView
+            android:id="@+id/iv_doc_link_smart_layout_image_kit"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center|end"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:src="@drawable/icon_link_32_imagekit" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/sv_smart_layout_image_kit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_smart_layout_image_kit">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_smart_layout_image_kit_info_title"
+                style="@style/TextAppearance.ExploreHMS.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="start"
+                android:text="@string/txt_service_introduction"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_smart_layout_image_kit_info"
+                style="@style/TextAppearance.ExploreHMS.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/white"
+                android:gravity="start"
+                android:text="@string/msg_smart_layout_service_service_info_image_kit"
+                app:layout_constraintTop_toBottomOf="@+id/tv_smart_layout_image_kit_info_title" />
+
+            <View
+                android:id="@+id/seperator_smart_layout_image_kit_info"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/colorGray1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_smart_layout_image_kit_info"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_smart_layout_image_kit_camera"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:drawableEnd="@drawable/icon_camera_24_imagekit"
+                android:text="@string/txt_camera_image_kit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/seperator_smart_layout_image_kit_info" />
+
+            <ImageView
+                android:id="@+id/iv_image_smart_layout"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/view_border_black_white_back_image_kit"
+                android:src="@drawable/photo_imagekit_smart_layout_ex"
+                app:layout_constraintTop_toBottomOf="@+id/btn_smart_layout_image_kit_camera"/>
+            <LinearLayout
+                android:id="@+id/ll_image_vision_options_image_kit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/iv_image_smart_layout">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.ExploreHMS.Headline6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/txt_parameters_image_kit"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGray1"/>
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="start"
+                    android:text="@string/txt_title_smart_image_kit" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:hint="@string/txt_mandatory_smart_image_kit">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tv_image_vision_smart_layout_title"
+                        style="@style/TextAppearance.ExploreHMS.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="start"
+                    android:text="@string/txt_description_smart_image_kit" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:hint="@string/txt_mandatory_smart_image_kit">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tv_image_vision_smart_layout_description"
+                        style="@style/TextAppearance.ExploreHMS.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="start"
+                    android:text="@string/txt_copyright_smart_image_kit" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tv_image_vision_smart_layout_copyright"
+                        style="@style/TextAppearance.ExploreHMS.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="start"
+                    android:text="@string/txt_anchor_smart_image_kit" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tv_image_vision_smart_layout_anchor"
+                        style="@style/TextAppearance.ExploreHMS.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:gravity="start"
+                    android:text="@string/txt_style_list_smart_image_kit" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinner_image_vision_style_list_image_kit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/bg_default_spinner"
+                    android:minHeight="50dp" />
+
+                <CheckBox
+                    android:id="@+id/cb_image_vision_smart_layout_isneedmask"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="16dp"
+                    android:text="@string/txt_is_need_mask_smart_image_kit" />
+
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_smart_layout_image_kit_run"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/txt_run_service_smart_image_kit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_image_vision_options_image_kit" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/view_light_border_light_gray_image_kit"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/btn_smart_layout_image_kit_run">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:gravity="center"
+                    android:text="@string/txt_result_image_kit"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGray1"/>
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.ExploreHMS.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:gravity="start"
+                    android:text="@string/txt_result_code_smart_image_kit"></com.google.android.material.textview.MaterialTextView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_imagekit_smart_layout_result"
+                    style="@style/TextAppearance.ExploreHMS.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="start"/>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/pb_imagekit_smartlayout"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

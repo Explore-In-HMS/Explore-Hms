@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.DeviceVirtualizationDeviceIntegrationFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvOverviewHeader_deviceintegration"
+                style="@style/TextAppearance.ExploreHMS.Headline5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/text_overview_deviceintegration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvOverviewInfo_deviceintegration"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/text_overview_info_deviceintegration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOverviewHeader_deviceintegration" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvSampleImageInfo_deviceintegration"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/text_sampleimg_deviceintegration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOverviewInfo_deviceintegration" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivImgSample_deviceintegration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_pin_deviceintegration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSampleImageInfo_deviceintegration" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvDataSecurityHeader_deviceintegration"
+                style="@style/TextAppearance.ExploreHMS.Headline5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/text_data_security_deviceintegration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivImgSample_deviceintegration" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvHowDoesWorkHeader_deviceintegration"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/text_how_does_work_deviceintegration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDataSecurityHeader_deviceintegration" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvHowDoesWorkInfo_deviceintegration"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/text_how_does_work_info_deviceintegration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvHowDoesWorkHeader_deviceintegration" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvWhatDataCollectHeader_deviceintegration"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/text_what_data_collect_deviceintegration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvHowDoesWorkInfo_deviceintegration" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvWhatDataCollectInfo_appintegration"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvWhatDataCollectHeader_deviceintegration" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvHowDataProtectHeader_deviceintegration"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/text_how_data_protect_deviceintegration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvWhatDataCollectInfo_appintegration" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvHowDataProtectInfo_deviceintegration"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:layout_marginBottom="@dimen/h16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvHowDataProtectHeader_deviceintegration" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

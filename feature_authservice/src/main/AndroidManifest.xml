@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.hms.explorehms.huawei.feature_authservice">
+
+    <dist:module
+        dist:instant="false"
+        dist:title="@string/title_feature_authservice">
+        <dist:delivery>
+            <dist:on-demand />
+        </dist:delivery>
+
+        <dist:fusing dist:include="true" />
+    </dist:module>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme"
+        tools:node="replace"
+        tools:replace="theme, screenOrientation">
+        <activity android:name=".ReauthenticateActivity"></activity>
+        <activity
+            android:name=".MainActivityAuth"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            tools:node="replace"
+            tools:replace="theme" />
+        <activity
+            android:name=".AnonymousAccountLoginActivity"
+            android:screenOrientation="portrait"
+            tools:node="replace" />
+        <activity
+            android:name=".PhoneLoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            tools:node="replace" />
+        <activity
+            android:name=".EmailLoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            tools:node="replace" />
+        <activity
+            android:name=".HuaweiIdLoginActivity"
+            android:screenOrientation="portrait"
+            tools:node="replace" />
+        <activity
+            android:name=".HuaweiGameLoginActivity"
+            android:screenOrientation="portrait"
+            tools:node="replace" />
+        <activity
+            android:name=".TwitterLoginActivity"
+            android:screenOrientation="portrait"
+            tools:node="replace" />
+        <activity
+            android:name=".FacebookLoginActivity"
+            android:screenOrientation="portrait"
+            tools:node="replace" /> <!-- Facebook START -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.twitter.sdk.android.core.identity.OAuthActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/facebook_app_secret" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

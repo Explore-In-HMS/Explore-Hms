@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hms.explorehms.huawei.feature_accountkit.UserDetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolbarAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Profile" />
+
+    <TextView
+        android:id="@+id/detail_txt_email"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/default_text"
+        android:textColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/detail_txt_name"
+        app:layout_constraintStart_toStartOf="@+id/detail_txt_username"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_email" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/detail_profile_image"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/profile_image"
+        android:visibility="visible"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <TextView
+        android:id="@+id/detail_txt_idtoken"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/default_text"
+        android:maxLines="3"
+        android:textColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/detail_txt_username"
+        app:layout_constraintStart_toStartOf="@+id/detail_txt_username"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_idtoken" />
+
+    <TextView
+        android:id="@+id/detail_txt_username"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/default_text"
+        android:textColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/detail_txt_name"
+        app:layout_constraintStart_toStartOf="@+id/detail_txt_name"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_username" />
+
+    <TextView
+        android:id="@+id/detail_txt_name"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/default_text"
+        android:textColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/lbl_fullname"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_fullname" />
+
+    <Button
+        android:id="@+id/detail_btn_logOut"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/btn_txt_menu_signout"
+        app:layout_constraintBottom_toTopOf="@id/detail_btn_revoke"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/detail_btn_revoke"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/btn_txt_revoke"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/detail_btn_logOut"
+        app:layout_constraintStart_toStartOf="@+id/detail_btn_logOut" />
+
+    <TextView
+        android:id="@+id/lbl_username"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/label_username"
+        app:layout_constraintStart_toStartOf="@+id/lbl_fullname"
+        app:layout_constraintTop_toBottomOf="@+id/detail_txt_name" />
+
+    <TextView
+        android:id="@+id/lbl_email"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/label_email"
+        app:layout_constraintStart_toStartOf="@+id/lbl_username"
+        app:layout_constraintTop_toBottomOf="@+id/detail_txt_username" />
+
+    <TextView
+        android:id="@+id/lbl_fullname"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/label_fullname"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_profile_image" />
+
+    <TextView
+        android:id="@+id/lbl_idtoken"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_idtoken"
+        app:layout_constraintStart_toStartOf="@id/lbl_fullname"
+        app:layout_constraintTop_toBottomOf="@id/detail_txt_email" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.GameServicesHomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivImgHome_gameservices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:src="@drawable/ic_gameicon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTmpHome_gameservice"
+                style="@style/TextAppearance.ExploreHMS.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:gravity="center"
+                android:text="@string/game_service_sample_game"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivImgHome_gameservices" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPlay_gameservices"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/play"
+                app:layout_constraintTop_toBottomOf="@+id/tvTmpHome_gameservice" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLoad_gameservices"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/load"
+                app:layout_constraintTop_toBottomOf="@+id/btnPlay_gameservices" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvOtherFeatures_gameservices"
+                style="@style/TextAppearance.ExploreHMS.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:gravity="center"
+                android:text="@string/related_services"
+                app:layout_constraintTop_toBottomOf="@+id/btnLoad_gameservices" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPlayerStatistics_gameservices"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/player_statistics"
+                app:layout_constraintTop_toBottomOf="@+id/tvOtherFeatures_gameservices" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEvents_gameservices"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/events"
+                app:layout_constraintTop_toBottomOf="@+id/btnPlayerStatistics_gameservices" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFloatingWindow_gameservices"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/floating_window"
+                app:layout_constraintTop_toBottomOf="@+id/btnEvents_gameservices" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGameTurboEngine_gameservices"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/game_turbo_engine"
+                app:layout_constraintTop_toBottomOf="@+id/btnFloatingWindow_gameservices" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddictionPrevention_gameservices"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:layout_marginBottom="@dimen/h16"
+                android:text="@string/addiction_prevention"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnGameTurboEngine_gameservices" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_data_controller"
+            style="@style/ToolbarAppearance.ExploreHMS.Normal"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/txt_data_controller" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/h16"
+            android:layout_marginEnd="@dimen/h16"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_data_controller">
+
+            <TextView
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/h16"
+                android:text="@string/data_controller_manager" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/ButtonAppearance.ExploreHMS.Normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="4"
+                    android:autoSizeTextType="uniform"
+                    android:maxLines="1"
+                    android:onClick="insertData"
+                    android:text="@string/txt_insert"
+                    android:textAllCaps="false" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/ButtonAppearance.ExploreHMS.Normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="4"
+                    android:autoSizeTextType="uniform"
+                    android:maxLines="1"
+                    android:onClick="readData"
+                    android:text="@string/txt_read"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/ButtonAppearance.ExploreHMS.Normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="4"
+                    android:autoSizeTextType="uniform"
+                    android:maxLines="1"
+                    android:onClick="updateData"
+                    android:text="@string/txt_update"
+                    android:textAllCaps="false" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/ButtonAppearance.ExploreHMS.Outline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="4"
+                    android:autoSizeTextType="uniform"
+                    android:maxLines="1"
+                    android:onClick="deleteData"
+                    android:text="@string/txt_delete"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/data_controller_read" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/ButtonAppearance.ExploreHMS.Normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="2"
+                    android:autoSizeTextType="uniform"
+                    android:maxLines="1"
+                    android:onClick="readToday"
+                    android:text="@string/txt_today_summation"
+                    android:textAllCaps="false" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/ButtonAppearance.ExploreHMS.Normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="2"
+                    android:autoSizeTextType="uniform"
+                    android:maxLines="1"
+                    android:onClick="readDaily"
+                    android:text="@string/txt_daily_summation"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/data_controller_sync" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/ButtonAppearance.ExploreHMS.Outline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="clearCloudData"
+                android:text="@string/txt_clear_all"
+                android:textAllCaps="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/h16"
+                android:background="@color/colorGray1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.ExploreHMS.Headline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:padding="16dp"
+                    android:text="@string/txt_result" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGray1" />
+
+                <TextView
+                    android:id="@+id/data_controller_log_info"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/h16" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

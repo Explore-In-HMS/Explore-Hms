@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.GameServicesLoginFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/h16"
+        app:layout_constraintBottom_toTopOf="@+id/tvMustLoginText_gameservices"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvIntroduction_gameservices"
+                style="@style/TextAppearance.ExploreHMS.Headline5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/service_introduction"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvIntrouctionInfo_gameservices"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                app:layout_constraintTop_toBottomOf="@+id/tvIntroduction_gameservices" />
+
+            <ImageView
+                android:id="@+id/ivImage_gameservices"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/info_image"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_gameservices"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvIntrouctionInfo_gameservices" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvWhatCanYouDo_gameservices"
+                style="@style/TextAppearance.ExploreHMS.Headline5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/what_can_you_do_with_huawei_game_service"
+                app:layout_constraintTop_toBottomOf="@+id/ivImage_gameservices" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvWhatCanYouDoInfo_gameservices"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                app:layout_constraintTop_toBottomOf="@+id/tvWhatCanYouDo_gameservices" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvMustLoginText_gameservices"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/h16"
+        android:layout_marginTop="@dimen/h16"
+        android:layout_marginEnd="@dimen/h16"
+        android:layout_marginBottom="@dimen/h16"
+        android:text="@string/let_s_start_please_signin_first"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin_gameservices" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin_gameservices"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/h16"
+        android:layout_marginEnd="@dimen/h16"
+        android:layout_marginBottom="@dimen/h16"
+        android:text="@string/click_to_sign_in"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

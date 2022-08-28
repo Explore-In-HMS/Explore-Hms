@@ -1,0 +1,14 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/greenColor" />
+    <!-- colorBackPress is the color when the button is not clicked -->
+
+    <stroke
+        android:width="0.4dp"
+        android:color="@color/greenColor" />
+    <corners
+        android:topLeftRadius="2dp"
+        android:topRightRadius="2dp"
+        android:bottomRightRadius="2dp"
+        android:bottomLeftRadius="2dp" />
+
+</shape>

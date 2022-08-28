@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="6dp"
+                android:fitsSystemWindows="true"
+                app:contentScrim="@color/bg_ml_tab_banner"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:layout_scrollInterpolator="@android:anim/decelerate_interpolator"
+                app:toolbarId="@+id/toolbar">
+
+                <RelativeLayout
+                    android:id="@+id/rl_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="142dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/icon_banner"
+                    android:fitsSystemWindows="true"
+                    app:layout_collapseMode="parallax">
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:lineHeight="30dp"
+                        android:text="@string/frg_image_header"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="30dp"
+                        android:layout_toEndOf="@+id/title"
+                        android:src="@drawable/icon_logo" />
+
+                </RelativeLayout>
+
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:elevation="0dp"
+                    android:isScrollContainer="true" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarSize="4dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            app:layout_constraintTop_toBottomOf="@+id/appbar">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="142dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_img_related_imgCls"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="4dp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="2dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textView_img_cls"
+                                style="@style/TextAppearance.ExploreHMS.Body1"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/imageView_img_cls"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                android:lines="2"
+                                android:text="@string/img_c_s" />
+
+                            <ImageView
+                                android:id="@+id/imageView_img_cls"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                app:srcCompat="@drawable/icon_classification" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_img_related_obj_dtc"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="4dp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="2dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textView_obj_dtc"
+                                style="@style/TextAppearance.ExploreHMS.Body1"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/imageView_obj_dtc"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                android:lines="2"
+                                android:text="@string/obj_dtc_s" />
+
+                            <ImageView
+                                android:id="@+id/imageView_obj_dtc"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                app:srcCompat="@drawable/icon_object" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="0dp"
+                    android:layout_height="142dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_img_related_lnd_rec"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="4dp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="2dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textView_lnd_rec"
+                                style="@style/TextAppearance.ExploreHMS.Body1"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/imageView_lnd_rec"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                android:lines="2"
+                                android:text="@string/lnd_rec_s" />
+
+                            <ImageView
+                                android:id="@+id/imageView_lnd_rec"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                app:srcCompat="@drawable/icon_landmark" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_img_related_img_sgm"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="4dp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="2dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textView_img_sgm"
+                                style="@style/TextAppearance.ExploreHMS.Body1"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/imageView_img_sgm"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                android:lines="2"
+                                android:text="@string/img_sgm_s" />
+
+                            <ImageView
+                                android:id="@+id/imageView_img_sgm"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                app:srcCompat="@drawable/icon_segmentation" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="0dp"
+                    android:layout_height="142dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_img_related_prd_vs"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="4dp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="2dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textView_prd_vs"
+                                style="@style/TextAppearance.ExploreHMS.Body1"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/imageView_prd_vs"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                android:lines="2"
+                                android:text="@string/prd_vs_s" />
+
+                            <ImageView
+                                android:id="@+id/imageView_prd_vs"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                app:srcCompat="@drawable/icon_shopping" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_img_related_img_sp_res"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="4dp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="2dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textView_img_sp_res"
+                                style="@style/TextAppearance.ExploreHMS.Body1"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/imageView_img_sp_res"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                android:lines="2"
+                                android:text="@string/img_sp_res_s" />
+
+                            <ImageView
+                                android:id="@+id/imageView_img_sp_res"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                app:srcCompat="@drawable/icon_image_super_resolution" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_img_related_doc_sc"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="4dp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="2dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textView_doc_sc"
+                                style="@style/TextAppearance.ExploreHMS.Body1"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/imageView_doc_sc"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                android:lines="2"
+                                android:text="@string/doc_sc_s" />
+
+                            <ImageView
+                                android:id="@+id/imageView_doc_sc"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                app:srcCompat="@drawable/icon_documentskew" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_img_related_table_form_rec"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="4dp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="2dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textView_table_form_rec"
+                                style="@style/TextAppearance.ExploreHMS.Body1"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/imageView_table_form_rec"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                android:lines="2"
+                                android:text="@string/tab_form_rec_s" />
+
+                            <ImageView
+                                android:id="@+id/imageView_table_form_rec"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                app:srcCompat="@drawable/icon_table_form_recognition" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout4"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_img_related_text_img_sp_res"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="4dp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="2dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textView_text_img_sp_res"
+                                style="@style/TextAppearance.ExploreHMS.Body1"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/imageView_text_img_sp_res"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                android:lines="2"
+                                android:text="@string/text_img_sp_res_s" />
+
+                            <ImageView
+                                android:id="@+id/imageView_text_img_sp_res"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                app:srcCompat="@drawable/icon_text_super_resolution" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_img_related_scene_dtc"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="4dp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="2dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textView_scene_dtc"
+                                style="@style/TextAppearance.ExploreHMS.Body1"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/imageView_scene_dtc"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                android:lines="2"
+                                android:text="@string/scene_dtc_s" />
+
+                            <ImageView
+                                android:id="@+id/imageView_scene_dtc"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                app:srcCompat="@drawable/icon_scene_detection" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout5"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_img_related_empty"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:visibility="invisible"
+                        app:cardCornerRadius="4dp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="2dp" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

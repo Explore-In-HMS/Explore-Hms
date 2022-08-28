@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/ButtonAppearance.ExploreHMS.Text"
+        android:id="@+id/tvDownload_cloudstorage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/h16"
+        android:text="@string/download_file"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/btmSeparator1_cloudstorage"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/h16"
+        android:background="@color/colorGray1"
+        app:layout_constraintTop_toBottomOf="@+id/tvDownload_cloudstorage" />
+
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/ButtonAppearance.ExploreHMS.Text"
+        android:id="@+id/tvDelete_cloudstorage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/h16"
+        android:text="@string/delete_file"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@+id/btmSeparator1_cloudstorage" />
+
+    <View
+        android:id="@+id/btmSeparator3_cloudstorage"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/h16"
+        android:background="@color/colorGray1"
+        app:layout_constraintTop_toBottomOf="@+id/tvDelete_cloudstorage" />
+</androidx.constraintlayout.widget.ConstraintLayout>

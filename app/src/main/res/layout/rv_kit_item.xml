@@ -1,0 +1,78 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_kit"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:clickable="true"
+    app:cardCornerRadius="4dp"
+    android:background="@drawable/custom_ripple_effect"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    card_view:cardElevation="6dp"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/kitClickLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/hiad_8_dp"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/iv_mode"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/kitItem_image"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="16dp"
+            android:adjustViewBounds="false"
+            android:src="@drawable/cirle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="@string/default_text"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/kitItem_image"
+            app:layout_constraintStart_toStartOf="@+id/kitItem_image"
+            app:layout_constraintTop_toBottomOf="@+id/kitItem_image"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

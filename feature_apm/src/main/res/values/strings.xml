@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<resources>
+    <string name="text_for_apm_tool_bar">App Performance Management</string>
+    <string name="text_for_apm_banner_description">AGC APM banner</string>
+    <string name="text_for_apm_test_page">APM Test Page</string>
+
+    <string name="text_for_apm_description">App Performance Management (APM) of HUAWEI AppGallery Connect provides minute-level app performance monitoring capabilities.\n\nApp developers can view and analyze app performance data collected by APM in AppGallery Connect to improve user experience and solve app performance problem quickly. </string>
+    <string name="text_for_apm_key_functions"><b>Key Functions</b></string>
+
+    <string name="text_for_apm_first_function"><b>\u2022 Automatic performance monitoring</b></string>
+    <string name="text_for_apm_first_function_desc">Automatically Collect Application Not Responding(ANR) data, app launch performance data, app screen performance data, HTTP/HTTPS network performance data, and foreground and background activity performance data.</string>
+
+    <string name="apm_anr_view"><b>App ANR Monitoring :</b>The APM service can monitor the trend and impact of ANR and collect detailed information when ANR problems occur, helping you quickly locate and resolve ANR problems.</string>
+    <string name="apm_app_launch_monitoring"><b>App Launch Monitoring :</b> This function monitors the app launch duration, so that you can understand the app launch performance in a timely manner.</string>
+    <string name="apm_app_screen_monitoring"><b>App Screen Monitoring :</b> This function displays the percentages of slow frame screens and frozen frame screens, providing you with performance analysis data of app screen rendering.</string>
+    <string name="apm_foreground_act_monitoring"><b>Foreground Activity Monitoring :</b> APM monitors the duration of foreground activities of your app, helping you understand the performance of your apps in the foreground in a timely and comprehensive manner.</string>
+    <string name="apm_background_act_monitoring"><b>Background Activity Monitoring :</b> APM monitors the duration of background activities of your app, helping you understand the performance of your apps in the background in a timely and comprehensive manner.</string>
+    <string name="apm_custom_app_performance_mon"><b>Custom App Performance Monitoring :</b> APM captures the performance of your app in specific scenarios and evaluates the performance with custom indicators to provide overall monitoring of app performance.</string>
+    <string name="apm_network_req_monitoring"><b>Network Request Monitoring :</b> APM monitors HTTP/HTTPS network requests initiated by the OkHttp, URLConnection, and ApacheHttpClient and clusters data of the same type of network requests by matching URL clustering rules and detect network problems.</string>
+
+    <string name="text_for_apm_second_function"><b>\u2022 Real-time reports</b></string>
+    <string name="text_for_apm_second_function_desc">Displays a broad spectrum of app performance data that updates by the minute; draws tendency curves outlining device, OS, CPU, memory, and network request performance, enabling you to address any potential issues promptly.</string>
+
+    <string name="text_for_apm_third_function"><b>\u2022 Custom traces and indicators</b></string>
+    <string name="text_for_apm_third_function_desc">Monitors your app via tailored traces and indicators, providing a detailed glimpse of app performance.\n\n<b>Note:</b>Nowadays Custom trace can be used Android and Web applications.</string>
+
+    <string name="text_for_apm_link_text_for_website">App Performance Management (APM) web page</string>
+    <string name="text_for_apm_link_for_web_site">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-apms-introduction</string>
+
+    <string name="text_for_apm_link_name_for_codelab">App Performance Management (APM) Codelab</string>
+    <string name="text_for_apm_link_for_codelab">https://developer.huawei.com/consumer/en/codelab/AppGalleryConnectAPM/index.html#0</string>
+
+</resources>

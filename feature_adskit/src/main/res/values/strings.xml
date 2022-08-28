@@ -1,0 +1,94 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="app_name">D6AdsKit</string>
+
+
+
+    /*
+    *******************************************
+    Banner Ads testID 		: testw6vs28auh3
+    Native Ad Video testID  : testy63txaom86
+    Native Ads testID       : testu7m3hc4gvm
+    Native Ad Small testID  : testb65czjivt9
+    Rewarded Ads testID 	: testx9dtjwj8hp
+    Interstitial Ads testID : testb4znbuh3n2 video
+    Interstitial Ads testID : teste9ih9j0rc3 image
+    Splash  Ads testID 		: testq6zq98hecj
+    *******************************************
+    */
+
+    <!-- Splash ad -->
+    <string name="ad_id_splash">testq6zq98hecj</string>
+
+    <string name="owner">HUAWEI Developer UA</string>
+    <string name="copyright_info">Copyright 2020. Explore in HMS</string>
+    <string name="status_load_ad_success">Ad loading state: loaded successfully.</string>
+    <string name="status_load_ad_fail">Ad loading state: failed to be loaded. Error code: </string>
+    <string name="status_ad_dismissed">Ad is dismissed.</string>
+
+    <!-- Banner ad -->
+    <string name="ad_id_banner">testw6vs28auh3</string>
+
+    <!-- interstitial ad -->
+    <string name="ad_id_interstitial_video">testb4znbuh3n2</string>
+    <string name="ad_id_interstitial_image">teste9ih9j0rc3</string>
+
+    <!-- reward ad -->
+    <string name="ad_id_reward">testx9dtjwj8hp</string>
+
+    <!-- native ad -->
+    <string name="ad_id_native">testu7m3hc4gvm</string>
+    <string name="ad_id_native_small">testb65czjivt9</string>
+    <string name="ad_id_native_video">testy63txaom86</string>
+
+    <!-- Roll ad -->
+    <string name="ad_id_roll">testy3cglm3pj0</string>
+
+    <string name="BannerActivityTitle">Banner Ad Activity</string>
+    <string name="BannerActivityInfoText">ReCreate Banner AD</string>
+    <string name="BannerActivityButtonText">Banner ads are rectangular images that occupy a spot at the top, middle, or bottom within an apps layout. Banner ads refresh automatically at regular intervals. When a user taps a banner ad, the user is redirected to the advertisers page in most cases</string>
+    <string name="your_video_content">Your video content</string>
+    <string name="skipad">SkipAd</string>
+    <string name="ad_flag">Ad Flag</string>
+    <string name="learn_more">Learn more</string>
+    <string name="load_ad">Load Ad</string>
+    <string name="play_instreamad">Play InStreamAd</string>
+    <string name="mute">Mute</string>
+    <string name="pause">Pause</string>
+    <string name="recreate_instream_ad">ReCreate InStream AD</string>
+    <string name="video_native_ad_example">Video Native Ad example</string>
+    <string name="small_native_ad_example">Small Native Ad example</string>
+    <string name="large_image_native_ad_example">Large Image Native Ad example</string>
+    <string name="score">Score :</string>
+    <string name="play_for_point">Play For Point</string>
+    <string name="watch_video_for_reward">Watch video for Reward</string>
+    <string name="icon">icon</string>
+    <string name="back">Back</string>
+    <string name="instreamroll_ad_activity">InStreamRoll Ad Activity</string>
+    <string name="ads_kit_introduction"> HUAWEI Ads Publisher Service utilizes Huawei\'s vast user base and extensive data capabilities to deliver targeted, high quality ad content to users. With this service, your app will be able to generate revenues while bringing your users content which is relevant to them.</string>
+    <string name="reward_ads_text">Rewarded ads are full-screen video ads that reward users for watching.</string>
+    <string name="interstitial_ads_text">Interstitial ads are full-screen ads that cover the interface of an app. Such ads are displayed when a user starts, pauses, or exits an app, without disrupting the user\'s experience.</string>
+    <string name="interstitial_ads">Interstitial Ads</string>
+    <string name="service_introduction">Service Introduction</string>
+    <string name="banner_ad">Banner Ad</string>
+    <string name="url_txt_adskit">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/publisher-service-introduction-0000001070671805</string>
+    <string name="ex_splash_ad">The express splash ad service is a new traffic monetization solution provided by HUAWEI Ads to improve splash ad experience without requiring you to integrate any SDK.
+        Prerequisites.An app integrated with this service can display express splash ads only after a user agrees to the user agreement.When the user agreement status changes (a user agrees to or withdraws from the agreement), the latest status needs to be synchronized to HUAWEI Ads.</string>
+</resources>

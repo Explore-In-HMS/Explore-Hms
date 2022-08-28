@@ -1,0 +1,44 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="you_should_not_be_seeing_this_if_you_are_seeing_this_there_is_a_grave_error_occurred">YOU SHOULD NOT BE SEEING THIS! IF YOU ARE SEEING THIS, THERE IS A GRAVE ERROR OCCURRED.</string>
+    <string name="desc_default_string">Cloud Testing</string>
+    <string name="header_compatibility_test">Compatibility Test</string>
+    <string name="header_stability_test">Stability Test</string>
+    <string name="header_performance_test">Performance Test</string>
+    <string name="header_power_consumption_test">Power Consumption Test</string>
+
+    <string name="desc_compatibility_test">The compatibility test of Cloud Test allows you to perform real machine tests. The test automatically verifies 11 compatibility issues, including the app installation, startup, crash, application not responding (ANR), unexpected exit, running error, UI error, black/white screen, exit failure, account exception, and uninstallation. \n\nOn the test report details page that is displayed, you can view the test screenshots, obtained performance data, including the startup duration, CPU usage, memory usage, traffic consumption, and power consumption, and Logcat logs.\n\nPlease note that each developer account can create up to 30 compatibility test tasks every day.\n</string>
+    <string name="desc_stability_test">In a stability test, long-term traverse testing and random testing are performed to detect app stability issues such as the memory leakage, memory overwriting, screen freezing, and crash on Huawei phones.  Each stability test task can run for up to 60 minutes.On the test report details page that is displayed, you can view the test screenshots, obtained performance data, including the startup duration, CPU usage, memory usage, traffic consumption, and power consumption, and Logcat logs. \n\nPlease note that each developer account has a stability test duration of 5 hours every day in total.\n</string>
+    <string name="desc_performance_test">The performance test in Cloud Test collects performance data on real phones and analyzes app performance defects in depth. This test supports analysis of the startup duration, frame rate, memory usage, and app behaviors. \n\nOn the test report details page that is displayed, you can view the test screenshots, obtained performance data, including the startup duration, CPU usage, memory usage, traffic consumption, and power consumption, and Logcat logs.\n\nPlease note that some check items in the test result vary depending on app categories. For example, the standards for game apps to pass the frame rate test are different from those of non-game apps.\n</string>
+    <string name="desc_power_consumption_test">In the power consumption test of Cloud Test, you can check key indicators and determine how your app affects the power consumption of devices. \n\nOn the test report details page that is displayed, you can view the test screenshots, obtained performance data, including the startup duration, CPU usage, memory usage, traffic consumption, and power consumption, and Logcat logs. \n\nPlease note that some check items in the test result vary depending on app categories. For example, the standards for audio and video apps to pass the audio use duration test are different for those of other apps, and the standards for map and navigation apps to pass the location sensor usage test are different from those of other apps.\n</string>
+
+    <string name="main_page">Main Page</string>
+    <string name="docs">Docs</string>
+
+    <string name="link_developer_cloud_testing">https://developer.huawei.com/consumer/en/agconnect/cloud-test</string>
+    <string name="link_cloudtesting_documentation_introduction">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-cloudtest-introduction</string>
+
+    <string name="open_testing_explanation1">Cloud Testing provides a complete set of automatic test processes based on real mobile phone use. It automatically tests the compatibility, stability, performance, and power consumption of Android apps, without manual intervention. In Cloud Testing, you can test your app against the full range of Huawei phones, to determine if there are any potential issues, well in advance. There are four different tests in cloud testing. \n\n</string>
+    <string name="open_testing_explanation2">\u2022Compatibility Test \n\u2022Stability Test \n\u2022Performance Test\n\u2022Power Consumption Test \n\n</string>
+    <string name="open_testing_explanation3">For development details, you can use the links below to access to the official documentation of Cloud Testing. \n\nAlso you can slide right to see some features in detail.</string>
+
+</resources>

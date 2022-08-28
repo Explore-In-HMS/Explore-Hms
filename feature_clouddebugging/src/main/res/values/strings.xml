@@ -1,0 +1,46 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="you_should_not_be_seeing_this_if_you_are_seeing_this_there_is_a_grave_error_occurred">YOU SHOULD NOT BE SEEING THIS! IF YOU ARE SEEING THIS, THERE IS A GRAVE ERROR OCCURRED.</string>
+    <string name="desc_default_string">Cloud Debugging</string>
+    <string name="header_service_introduction">Cloud Debugging Introduction</string>
+    <string name="header_debugging_two_devices">Debugging Apps on Two Real Devices at the Same Time</string>
+    <string name="header_viewing_system_logs">Viewing System Logs</string>
+    <string name="header_debugging_app_real_device">Debugging an App on a Real Device in Real Time</string>
+    <string name="header_releasing_real_device">Releasing a Real Device</string>
+
+    <string name="desc_debugging_two_devices">You can debug apps on two real devices at the same time using one HUAWEI ID. \n\nAssuming that you have applied for a device successfully, in device models tab you can start new debugging with another mobile phone. If everything is successful, in My Info tab there will be two devices you have applied for will be displayed. \n</string>
+    <string name="desc_viewing_system_logs">Device logs can be seen in Cloud Debugging. On Debugging > Logs click obtain logs to see the logs. Logs can be filtered by type (verbose, debug, info, warn, error, or assert) and click export logs if required. The exported log information contains the Level, Time, PID, Tag, and Text fields.\n</string>
+    <string name="desc_debugging_app_real_device">In AppGallery Connect, go to Quality > Cloud Debugging. Devices can be filtered by series, Android version, EMUI version and resolution. Select the device you desired and apply for device model. Set debug duration based on your needs, the options are 30 minutes, 1 hours and 2 hours.\n\nClick upload to upload an APK. If you have uploaded APKs before, the apps are also displayed on tab page. In the displayed dialog box indicating that the app is being installed, click OK. When the installation is complete, you can see the app icon on the device screen on the left. Operate the device by moving or clicking your cursor on the device screen, or clicking the power button, home button, menu button, or back button. The device will respond like your own phone. You can click the question mark next to the device model to view the information about the device. \n</string>
+    <string name="desc_releasing_real_device">In order to release a device in use but the test duration does not end, devices can be released on the occupied device tab page and on the my info tab page.\n\nIn both methods, press stop debugging and when the displayed dialog box appears click OK. The device will be released successfully and the device list will be displayed.\n</string>
+
+    <string name="main_page">Main Page</string>
+    <string name="docs">Docs</string>
+
+    <string name="link_developer_cloud_debugging">https://developer.huawei.com/consumer/en/agconnect/cloud-adjust</string>
+    <string name="link_cloud_debugging_documentation_introduction">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-clouddebug-introduction</string>
+
+    <string name="open_testing_explanation1">Cloud Debugging tests your app using mainstream Huawei devices provided by Huawei. You can run your app on the latest and most popular Huawei devices to test app functions. The testing experience is smooth and pleasant, like running an app on your own phone. You can perform operations such as rotating the screen, taking screenshots, and exporting logs. \n\n</string>
+    <string name="open_testing_explanation2">Cloud Debugging provides a default use duration of 24 hours for each user. When your remaining duration is less than 2 hours, you can apply to extend the duration. You can choose to extend the duration by 4 hours or 8 hours each time.\n\n</string>
+    <string name="open_testing_explanation3">For development details, you can use the links below to access to the official documentation of Cloud Debugging. \n\nAlso you can slide right to see some features in detail.</string>
+
+
+</resources>

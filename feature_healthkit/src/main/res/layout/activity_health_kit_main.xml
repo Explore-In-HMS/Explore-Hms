@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HealthKitMainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_health_kit"
+        style="@style/ToolbarAppearance.ExploreHMS.Normal"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/title_health_kit" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_health_kit">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/h16"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_h50">
+
+            <TextView
+                android:id="@+id/service_introduction"
+                style="@style/TextAppearance.ExploreHMS.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/service_introduction"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar_health_kit" />
+
+            <TextView
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/login_info"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/service_introduction" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:layout_marginTop="15dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/sample_image"
+                android:src="@drawable/banner_health_kit" />
+
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="onLoginClick"
+                android:text="@string/btn_login" />
+
+            <TextView
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/cloud_login_info" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="onCloudLoginClick"
+                android:text="@string/btn_restful_login" />
+
+            <TextView
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/data_controller" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="hihealthDataControllerOnclick"
+                android:text="@string/btn_data_controller"
+                android:textAllCaps="false" />
+
+            <TextView
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/auto_recorder" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="hihealthAutoRecorderOnClick"
+                android:text="@string/btn_auto_recorder"
+                android:textAllCaps="false" />
+
+            <TextView
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/activity_record" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="hihealthActivityRecordOnClick"
+                android:text="@string/btn_activty_record"
+                android:textAllCaps="false" />
+
+            <TextView
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/setting_controller" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="hihealthSettingControllerOnclick"
+                android:text="@string/btn_setting_controller"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    app:layout_constraintHorizontal_chainStyle="spread">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolbarAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/main"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="Buttons" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button1"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Button"
+        app:icon="@drawable/huawei"
+        app:iconSize="24dp"
+        app:layout_constraintEnd_toStartOf="@id/button2"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button2"
+        style="@style/ButtonAppearance.ExploreHMS.Outline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:icon="@drawable/huawei"
+        app:iconSize="24dp"
+        app:layout_constraintEnd_toStartOf="@id/button3"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/button1"
+        app:layout_constraintTop_toTopOf="@id/button1" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button3"
+        style="@style/ButtonAppearance.ExploreHMS.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:icon="@drawable/huawei"
+        app:iconSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="@id/button2" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edittext1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button3">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs1"
+        style="@style/TabLayoutAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edittext1">
+
+
+        <com.google.android.material.tabs.TabItem
+            style="@style/TabItemAppearance.ExploreHMS.Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test1" />
+
+        <com.google.android.material.tabs.TabItem
+            style="@style/TabItemAppearance.ExploreHMS.Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test2" />
+    </com.google.android.material.tabs.TabLayout>
+
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:text="Checkbox"
+        app:layout_constraintEnd_toStartOf="@id/checkbox2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabs1" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/checkbox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:checked="true"
+        android:text="Checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/checkbox"
+        app:layout_constraintTop_toBottomOf="@id/tabs1" />
+
+    <androidx.appcompat.widget.AppCompatRadioButton
+        android:id="@+id/radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:text="RadioButton"
+        app:layout_constraintEnd_toStartOf="@id/radio2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkbox" />
+
+    <androidx.appcompat.widget.AppCompatRadioButton
+        android:id="@+id/radio2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:checked="true"
+        android:text="RadioButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/radio"
+        app:layout_constraintTop_toBottomOf="@id/checkbox" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:text="Switch"
+        app:layout_constraintEnd_toStartOf="@id/radio2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radio" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:checked="true"
+        android:text="Switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/switch_button"
+        app:layout_constraintTop_toBottomOf="@id/radio" />
+
+    <TextView
+        android:id="@+id/linked_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:autoLink="all"
+        android:clickable="true"
+        android:linksClickable="true"
+        android:text="@string/link_sample"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/switch_button" />
+
+    <com.google.android.material.slider.Slider
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:valueFrom="0"
+        android:valueTo="100"
+        android:value="50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linked_text"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

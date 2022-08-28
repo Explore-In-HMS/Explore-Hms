@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.TimeAwarenessFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTimeAwarenessCapabilities"
+        style="@style/TextAppearance.ExploreHMS.Headline6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Introduction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTimeAwarenessInfo_awarenesskit"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/time_awareness_info_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimeAwarenessCapabilities" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTimeMethod_awarenesskit"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Select method:"
+        app:layout_constraintEnd_toStartOf="@id/spinnetTimeAwarenessMethod"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimeAwarenessInfo_awarenesskit" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinnetTimeAwarenessMethod"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_default_spinner"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTimeMethod_awarenesskit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvTimeMethod_awarenesskit"
+        app:layout_constraintTop_toTopOf="@+id/tvTimeMethod_awarenesskit" />
+
+    <View
+        android:id="@+id/sepator1_timeawareness"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorGray1nt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimeMethod_awarenesskit" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layEdt1_awarenesskit"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="3dp"
+        android:hint="Start Time (eg. 10)"
+        app:layout_constraintEnd_toStartOf="@+id/layEdt2_awarenesskit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimeCategoryInfo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtStartInput_awarenesskit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layEdt2_awarenesskit"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="End Time (eg. 14)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/layEdt1_awarenesskit"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimeCategoryInfo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtEndInput_awarenesskit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layEdt3_awarenesskit"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Barrier Label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layEdt1_awarenesskit">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtBarrierLabel_timeawareness"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTimeCategory"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Select time category:"
+        app:layout_constraintEnd_toStartOf="@id/spinnerTimeCategory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sepator1_timeawareness" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinnerTimeCategory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_default_spinner"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTimeCategory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvTimeCategory"
+        app:layout_constraintTop_toTopOf="@+id/tvTimeCategory" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTimeCategoryInfo"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_horizontal|center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimeCategory" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSetBarrier_timeawareness"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Set Barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layEdt3_awarenesskit" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

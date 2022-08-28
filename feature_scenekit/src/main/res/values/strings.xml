@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+
+    <string name="txt_clear">Clear</string>
+    <string name="txt_load">Load</string>
+    <string name="txt_show_plane">Show Plane</string>
+    <string name="txt_face_view">Face View</string>
+    <string name="msg_kit_information">Scene Kit features may NOT work on some phone models. If you get a black screen or encounter an error during the feature test, please review the supported phone models in the relevant kit documentation. </string>
+    <string name="msg_prm_req_scene_kit">Please Allow Permissions to Use Scene Kit Services</string>
+    <string name="btn_scene_view">Scene View</string>
+    <string name="btn_ar_view">AR View</string>
+    <string name="btn_face_view">Face View</string>
+    <string name="btn_render_view">Render View</string>
+    <string name="btn_simulation_view">2D Fluid Simulation View</string>
+    <string name="title_ar_view">AR View</string>
+    <string name="title_render_view">Render View</string>
+    <string name="title_simulation_view">2D Simulation View</string>
+    <string name="title_face_view">Face View</string>
+    <string name="title_scene_view">Scene View</string>
+    <string name="service_exp">Service Introduction</string>
+    <string name="title_scene">A 3D graphics rendering engine performs more with less. User-friendly rendering APIs for games, AR and VR apps, and other apps bring your users a stunning visual experience.</string>
+
+    <string name="url_scenekit">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050163355</string>
+</resources>

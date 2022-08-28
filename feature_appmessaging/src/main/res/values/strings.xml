@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<resources>
+    <string name="text_for_app_messaging_toolbar">AGC App Messaging</string>
+    <string name="text_for_app_messaging_toolbar_test">AGC App Messaging Test</string>
+
+    <string name="text_for_app_messaging_information">AGC App Messaging Information</string>
+    <string name="text_for_app_messaging_description">App Messaging of AppGallery Connect can be used to send relevant messages to target users actively using your app to encourage them to use key app functions.</string>
+    <string name="text_for_app_messaging_description_two">App Messaging even allows you to customize how your messages look and the way they will be sent, and define events for triggering message sending to your users at the right momen</string>
+
+    <string name="text_for_app_messaging_types">Message Types</string>
+    <string name="text_for_app_messaging_types_popup">A pop-up message can have a title and body and contain an image and up to two buttons. It is a better choice for you to send rich information to your users.</string>
+    <string name="text_for_app_messaging_types_banner">A banner message is displayed on the top of the screen, containing a thumbnail and the message title and body. A user can tap the banner to access the specified page.</string>
+    <string name="text_for_app_messaging_types_image">An image message only contains an image. For example, an image message can be a poster well designed to promote an activity. A user can tap the image to access the activity details page.</string>
+
+    <string name="text_for_app_messaging_working_principle">How it works</string>
+    <string name="text_for_app_messaging_working_description">After the App Messaging SDK is integrated into app, the SDK automatically synchronizes in-app messages published on the AppGallery Connect server and determines whether to display a specific in-app message based on the validity of message period and trigger.</string>
+    <string name="text_for_app_messaging_extra_info">Users can tap an in-app message to access the destination specified during message creation. The App Messaging SDK reports the message display result to AppGallery Connect. Developers can view the statistics on message displays, taps, and conversion data in AppGallery Connect.</string>
+
+    <string name="text_for_app_message_test_page_header">App Message Test</string>
+    <string name="text_for_app_messaging_toolbar_test_information">App Messaging types can be tested clicking relevant buttons.</string>
+
+    <string name="text_for_app_messaging_button">Open Test Page</string>
+    <string name="text_for_app_messaging_toolbar_test_btn_popup">Show Pop-up Message</string>
+    <string name="text_for_app_messaging_toolbar_test_btn_banner">Show Banner Message</string>
+    <string name="text_for_app_messaging_toolbar_test_btn_image">Show Image Message</string>
+
+    <string name="txt_for_app_messaging_hyperlink"><a href="">Click here to learn more about AGC In-App Messaging</a></string>
+    <string name="txt_for_app_messaging_hyperlink_link">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-appmessage-introduction</string>
+
+    <string name="banner_for_app_message">AGC In-App Messaging Banner</string>
+    <string name="text_for_pop_massage">1- Pop-Up Message</string>
+    <string name="text_for_banner_massage">2- Banner Message</string>
+    <string name="text_for_image_massage">3- Image Message</string>
+
+    <string name="text_for_app_message_design_steps">In-App Message Trigger Events</string>
+    <string name="text_for_app_message_first_info">Message display is triggered by specific events. For example, a news app can display headline news when a user opens the app. These actions in these cases are trigger events. A trigger event is required for each in-app message</string>
+    <string name="text_for_app_message_second_info">App Messaging supports two types of trigger events: preset events and HUAWEI Analytics Kit events.</string>
+
+    <string name="text_for_app_message_preset_event">Preset Events</string>
+    <string name="text_for_app_message_preset_event_description">There are two preset events like AppLaunch and AppOnForeground.</string>
+
+    <string name="text_for_app_message_analytics_event">Huawei Analytics Kit Events</string>
+    <string name="text_for_app_message_analytics_event_description">There are two types event for Analytics kit event. Developers can use analytics kit events to trigger App Messaging.Also They can define custom event for app messaging.After create custom events,They can be called from Application.</string>
+</resources>

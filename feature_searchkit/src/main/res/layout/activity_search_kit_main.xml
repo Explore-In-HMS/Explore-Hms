@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchKitMainActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolbarAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Search Kit" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvWebsiteSelect"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Select website:"
+        android:layout_marginStart="@dimen/h16"
+        android:layout_marginTop="@dimen/h16"
+        android:layout_marginEnd="@dimen/h16"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/guideline1"/>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinnerWebsite"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/h16"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="3dp"
+        android:background="@drawable/bg_default_spinner"
+        app:layout_constraintTop_toBottomOf="@+id/tvWebsiteSelect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/guideline1"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvRegionSelect"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Select region:"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="@dimen/h16"
+        android:layout_marginEnd="@dimen/h16"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinnerRegion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/h16"
+        android:layout_marginStart="3dp"
+        android:background="@drawable/bg_default_spinner"
+        app:layout_constraintTop_toBottomOf="@+id/tvWebsiteSelect"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvLanguageSelect"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Select language:"
+        android:layout_marginStart="@dimen/h16"
+        android:layout_marginTop="@dimen/h16"
+        android:layout_marginEnd="@dimen/h16"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerWebsite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/guideline1"/>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinnerLanguage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="3dp"
+        android:background="@drawable/bg_default_spinner"
+        android:layout_marginStart="@dimen/h16"
+        app:layout_constraintTop_toBottomOf="@+id/tvLanguageSelect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline1"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:id="@+id/layTextInputSearchkit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/h16"
+        android:layout_marginStart="@dimen/h16"
+        android:layout_marginEnd="@dimen/h16"
+        android:hint="@string/search_kit_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerLanguage"
+        app:startIconDrawable="@drawable/ic_search_sitekit">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTextInputSearchkit"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerAutoSuggestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:layout_marginStart="@dimen/h16"
+        android:layout_marginEnd="@dimen/h16"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layTextInputSearchkit" />
+
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:id="@+id/tvSpellingCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/h16"
+        android:layout_marginTop="@dimen/h16"
+        android:layout_marginEnd="@dimen/h16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layTextInputSearchkit"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:id="@+id/tvSpellingCheckResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="@dimen/h16"
+        android:textColor="@android:color/holo_blue_dark"
+        app:layout_constraintStart_toEndOf="@+id/tvSpellingCheck"
+        app:layout_constraintTop_toBottomOf="@+id/layTextInputSearchkit"/>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/layTabsSearchKit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/h16"
+        app:layout_constraintTop_toBottomOf="@+id/tvSpellingCheck">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/web_searchkit" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/image_searchkit" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/video_searchkit" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/news_searchkit" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_searchkit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/h16"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layTabsSearchKit" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

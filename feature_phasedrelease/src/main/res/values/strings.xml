@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="toolbar_title">Phased Release</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="canceling_release_title">Canceling Release by Phase</string>
+    <string name="canceling_release_desc">After the release by phase is approved, you can cancel the release no matter whether it has taken effect and regardless of the state it is in. Canceling release by phase does not require manual review. You simply need to perform the following steps:\n\n1. In the upper right corner of the Version information page, click Cancel phased release.\n\n2. In the displayed dialog box, click OK.\n\nAfter the release by phase is canceled, users cannot find the version on AppGallery.</string>
+    <string name="changing_phased_release_title">Changing Phased Release to Full Release</string>
+    <string name="changing_phased_release_desc">• Automatic change to full release\n\nWhen the phased release period ends, the version released by phase will be automatically released on the entire network.\n\n• Manual change to full release\n\nYou can click Restore phased release or Update phased release in the upper right corner, and set Release type to Full release in the dialog box that is displayed to release the version on the entire network.\n\nAfter a version is changed from phased release to full release, account holders, administrators, and app administrators will receive email and SMS notifications (only email notifications for developers outside the Chinese mainland).</string>
+    <string name="phased_release_overview_title">Submitting a Phased Release Application</string>
+    <string name="phased_release_overview_desc">1. Sign in to AppGallery Connect and click My apps.\n\n2. Find your app from the list and click the version to be upgraded.\n\n3. Click Upgrade in the upper right corner. The New Version Draft menu appears in the navigation tree on the left.</string>
+    <string name="phased_release_overview_desc2">4. To modify app information, choose App information in the navigation tree on the left. For details, please refer to Configuring App Information. Click Save. The Draft page is displayed.</string>
+    <string name="phased_release_overview_desc3">5. Click Software packages under Software version. In the displayed dialog box, upload a software package of the new version.</string>
+    <string name="phased_release_overview_desc4">• If you do not need to update the software package, select the software package of the current released version from the list and click Select.\n\n• If you need to update the software package, click Upload to upload a package.</string>
+    <string name="phased_release_overview_desc5">6. Set Release type to Phased release, and set Effective, Release percentage, and Description.</string>
+    <string name="phased_release_overview_desc6">7. Configure other information, click Submit, confirm your version number, and click OK.\n\nAfter the application is submitted, the app version status changes to Under review.</string>
+    <string name="phased_release_overview_desc7">When the phase-based release application is approved, but the effective time has not arrived, the status of the version to be released by phase changes to New Version Pending release in the navigation tree on the left. On the Version information page, Status under Release type is set to Phased releasing, and the Update phased release and Cancel phased release buttons are displayed in the upper right corner.</string>
+    <string name="phased_release_overview_desc8">When release by phase takes effect, the version status in the navigation tree on the left changes to Released (Phased). On the Version information page, Status under Release type is set to Phased releasing, and the Update phased release, Suspend phased release, Cancel phased release, and Upgrade buttons are displayed in the upper right corner.</string>
+    <string name="removing_phased_release_title">Removing a Phased Release Version from Sale</string>
+    <string name="removing_phased_release_desc">• After phased release is canceled, the phased release version is removed from sale immediately, without requiring manual review.\n\n• After a full release version is approved for removal from sale, its corresponding phased release version will also be removed.</string>
+    <string name="rolling_back_title">Rolling Back a Phased Release Version</string>
+    <string name="rolling_back_desc">Phased release versions do not support the rollback function.</string>
+    <string name="restoring_release_title">Restoring Release by Phase</string>
+    <string name="restoring_release_desc">You can restore suspended release by phase. Restoring release by phase does not require manual review. You simply need to perform the following steps:\n\n1. In the upper right corner of the Version information page, click Restore phased release.\n\n2. In the Restore phased release dialog box that is displayed, modify parameters as required and click OK.\n\n• Release type: Retain the default value, Phased release.\n\n• Start time: The parameter cannot be modified.\n\n• End time: The value can be changed, but you need to ensure that the period does not exceed 30 days.\n\n• Release percentage: The value can be changed. Note that the value cannot be less than that of the released version.\n\n• Description: The value can be modified. You can enter up to 500 characters.</string>
+    <string name="restoring_release_desc2">After release by phase is successfully restored, Status under Release type changes from Suspend phased release to Phased releasing. In this case, users can find the version released by phase on AppGallery.</string>
+    <string name="suspending_release_title">Suspending Release by Phase</string>
+    <string name="suspending_release_desc">You can suspend ongoing release by phase. Suspending release by phase does not require manual review. You simply need to perform the following steps:\n\n1. In the upper right corner of the Version information page, click Suspend phased release.\n\n2. In the displayed dialog box, click OK.</string>
+    <string name="suspending_release_desc2">After release by phase is successfully suspended, Status under Release type changes from Phased releasing to Suspend phased release. In this case, users cannot find the version released by phase on AppGallery.</string>
+    <string name="updating_release_title">Updating Release by Phase</string>
+    <string name="updating_release_desc">You can update release by phase in either of the following scenarios:\n\n• Release by phase has been approved but has not taken effect.\n\n• Release by phase has taken effect and is in Phased releasing state.\n\nUpdating release by phase does not require manual review. You simply need to perform the following steps:\n\n1. In the upper right corner of the Version information page, click Update phased release.\n\n2. In the Update phased release dialog box that is displayed, modify parameters as required and click OK.</string>
+    <string name="upgrading_phased_title">Upgrading a Phased Release Version</string>
+    <string name="upgrading_phased_desc">After a version is released by phase, you can click Upgrade in the upper right corner of the Version information page to upgrade the version. Configure the same information as that configured in Submitting a Phased Release Application. However, Release type can only be set to Phased release. That is, only a phased release version can be upgraded.</string>
+    <string name="upgrading_phased_desc2">Notice:\n\n• Click Upgrade in the upper right corner. A full release version cannot be upgraded.\n\n• If you need to upgrade the full release version, change the phased release version to full release, or cancel the phased release first.</string>
+    <string name="viewing_history_title">Viewing History of Release by Phase</string>
+    <string name="viewing_history_desc">You can view the operation history of release by phase, such as suspending, restoring, updating, or canceling release by phase under Release type on the Version information page</string>
+
+    <string name="url_txt_pahsedrelease">https://developer.huawei.com/consumer/en/doc/distribution/app/agc-phased_release</string>
+</resources>

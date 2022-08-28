@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.PhoneStatusAwarenessFragment">
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvHeadText_phonestatusawareness"
+        style="@style/TextAppearance.ExploreHMS.Headline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Introduction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvPhoneStatusAwarenessInfo"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/phone_status_awareness_info"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeadText_phonestatusawareness" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/result_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_gray_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPhoneStatusAwarenessInfo">
+
+        <TextView
+            android:id="@+id/result"
+            style="@style/TextAppearance.ExploreHMS.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Result"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/separator2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorGray1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/result" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvScreenStatus"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Screen status (Capture API):"
+            app:layout_constraintEnd_toEndOf="@+id/separator2"
+            app:layout_constraintStart_toStartOf="@+id/separator2"
+            app:layout_constraintTop_toTopOf="@+id/separator2" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvScreenStatusText_phonestatusawareness"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvScreenStatus" />
+
+        <View
+            android:id="@+id/separator2_phonestatusawareness"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorGray1"
+            app:layout_constraintEnd_toEndOf="@+id/bgView_phonestatusawareness"
+            app:layout_constraintStart_toStartOf="@+id/bgView_phonestatusawareness"
+            app:layout_constraintTop_toBottomOf="@+id/tvScreenStatusText_phonestatusawareness" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvWifiStatus"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Wi-Fi status (Capture API):"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator2_phonestatusawareness" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvWifiStatusText_phonestatusawareness"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvWifiStatus" />
+
+        <View
+            android:id="@+id/separator3_phonestatusawareness"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorGray1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvWifiStatusText_phonestatusawareness" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvDarkMode"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Dark mode (Capture API):"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator3_phonestatusawareness" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvDarkModeText_phonestatusawareness"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDarkMode" />
+
+        <View
+            android:id="@+id/separator4_phonestatusawareness"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorGray1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDarkModeText_phonestatusawareness" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvAppStatus"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="App status (Capture API):"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator4_phonestatusawareness" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvAppStatusText_phonestatusawareness"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAppStatus" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolbarAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/ttr_online_translate"/>
+
+
+    <Spinner
+        android:id="@+id/spSourceTypeOnline"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_default_spinner_ml"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@id/btn_SwitchLangOnline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <ImageView
+        android:id="@+id/btn_SwitchLangOnline"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:padding="4dp"
+        android:src="@drawable/icon_translate_switch"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="@+id/spSourceTypeOnline"
+        app:layout_constraintEnd_toStartOf="@+id/spDestTypeOnline"
+        app:layout_constraintStart_toEndOf="@+id/spSourceTypeOnline"
+        app:layout_constraintTop_toTopOf="@id/spSourceTypeOnline" />
+
+    <Spinner
+        android:id="@+id/spDestTypeOnline"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_default_spinner_ml"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@id/spSourceTypeOnline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_SwitchLangOnline"
+        app:layout_constraintTop_toTopOf="@id/spSourceTypeOnline" />
+
+    <EditText
+        android:id="@+id/et_inputOnline"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/shape_layout_dashed_box"
+        android:gravity="top"
+        android:minLines="5"
+        android:text="@string/ttr_sample_text_actually_there_are_two_things"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spSourceTypeOnline" />
+
+    <TextView
+        android:id="@+id/tv_src_lang_char_count_Online"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="0 character"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/et_inputOnline"
+        app:layout_constraintEnd_toEndOf="@id/et_inputOnline" />
+
+    <TextView
+        android:id="@+id/tv_outputOnline"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/shape_layout_dashed_box"
+        android:gravity="top"
+        android:minLines="5"
+        android:textColor="@color/gray600"
+        android:textIsSelectable="true"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_inputOnline" />
+
+    <TextView
+        android:id="@+id/tv_dest_lang_char_count_Online"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="0 character"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_outputOnline"
+        app:layout_constraintEnd_toEndOf="@id/tv_outputOnline" />
+
+    <Button
+        android:id="@+id/btn_translatorOnline"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/ttr_translate"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_identificationOnline" />
+
+    <Button
+        android:id="@+id/btn_identificationOnline"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/ttr_language_detect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_outputOnline" />
+
+    <ScrollView
+        android:id="@+id/svResult"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_translatorOnline">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/bg_gray_soft_sq1"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/btn_code_recognition_run">
+
+            <TextView
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:text="@string/text_results" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray200" />
+
+            <TextView
+                android:id="@+id/tv_timeOnline"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/ttr_elapsed_time" />
+
+            <TextView
+                android:id="@+id/resultLogs"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/detection_and_translation_result_descriptions" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <ProgressBar
+        android:id="@+id/progressBarOnline"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:elevation="4dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hms.explorehms.huawei.feature_nearbyservice.NearbyServiceActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_nearbyservice"
+        style="@style/ToolbarAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Nearby Service" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_nearbyservice">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvHeader_nearbyservice"
+                style="@style/TextAppearance.ExploreHMS.Headline5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/text_service_introduction_nearbyservice"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvIntro_nearbyservice"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:text="@string/text_introduction_nearbyservice"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvHeader_nearbyservice" />
+
+            <ImageView
+                android:id="@+id/imageView_nearbyservice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="@dimen/h16"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_banner_nearby"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvIntro_nearbyservice" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_nearbyconnection"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/h16"
+                android:layout_marginTop="@dimen/h16"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="@dimen/h16"
+                android:clickable="true"
+                android:focusable="true"
+                android:theme="@style/Base.CardView"
+                app:cardCornerRadius="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                app:layout_constraintHorizontal_bias="0.66"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView_nearbyservice"
+                tools:cardBackgroundColor="@color/colorCardBackground"
+                tools:cardCornerRadius="10dp"
+                tools:cardElevation="6dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:orientation="vertical"
+                    android:paddingStart="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="16dp">
+
+
+                    <ImageView
+                        android:id="@+id/chat_image"
+                        android:layout_width="46dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="8dp"
+                        android:adjustViewBounds="false"
+                        android:cropToPadding="false"
+                        android:src="@drawable/btnicn_connection"
+                        app:layout_constraintDimensionRatio="h,1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/chat_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:text="@string/text_nearbyConnection"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/chat_image"
+                        app:layout_constraintStart_toStartOf="@+id/chat_image"
+                        app:layout_constraintTop_toBottomOf="@+id/chat_image" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_nearbymessage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:theme="@style/Base.CardView"
+                app:layout_constraintBottom_toBottomOf="@+id/cv_nearbyconnection"
+                app:cardCornerRadius="32dp"
+                app:layout_constraintEnd_toEndOf="@id/guideline4"
+                app:layout_constraintHorizontal_bias="0.33"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toTopOf="@+id/cv_nearbyconnection"
+                tools:cardBackgroundColor="@color/colorCardBackground"
+                tools:cardCornerRadius="10dp"
+                tools:cardElevation="6dp">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:orientation="vertical"
+                    android:paddingStart="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="16dp">
+
+                    <ImageView
+                        android:id="@+id/beacon_image"
+                        android:layout_width="46dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="8dp"
+                        android:adjustViewBounds="false"
+                        android:cropToPadding="false"
+                        android:src="@drawable/btnicn_beacon"
+                        app:layout_constraintDimensionRatio="h,1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/beacon_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:text="@string/text_nearbyMessages"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/beacon_image"
+                        app:layout_constraintStart_toStartOf="@+id/beacon_image"
+                        app:layout_constraintTop_toBottomOf="@+id/beacon_image" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_nearwifi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="@dimen/h16"
+                android:clickable="true"
+                android:focusable="true"
+                android:theme="@style/Base.CardView"
+                app:layout_constraintBottom_toBottomOf="@+id/cv_nearbyconnection"
+                app:cardCornerRadius="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.33"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toTopOf="@+id/cv_nearbyconnection"
+                tools:cardBackgroundColor="@color/colorCardBackground"
+                tools:cardCornerRadius="10dp"
+                tools:cardElevation="6dp">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:orientation="vertical"
+                    android:paddingStart="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="16dp">
+
+                    <ImageView
+                        android:id="@+id/wifi_image"
+                        android:layout_width="46dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="8dp"
+                        android:adjustViewBounds="false"
+                        android:cropToPadding="false"
+                        android:src="@drawable/nearby_wifi"
+                        app:layout_constraintDimensionRatio="h,1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/wifi_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:text="@string/text_nearbyWifi"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/wifi_image"
+                        app:layout_constraintStart_toStartOf="@+id/wifi_image"
+                        app:layout_constraintTop_toBottomOf="@+id/wifi_image" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.34" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.67" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

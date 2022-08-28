@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hms.explorehms.locationkit.ActivityConversionActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolbarAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/title_location_activity_conversion" />
+
+    <TextView
+        android:id="@+id/tv1"
+        style="@style/TextAppearance.ExploreHMS.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/activity_conversion_select_the_status_of_listening"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/activity_conversion_activity_type"
+            app:layout_constraintStart_toStartOf="@id/in"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@id/out"
+            app:layout_constraintTop_toBottomOf="@id/tv1"/>
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:text="@string/activity_conversion_transition_type"
+            app:layout_constraintStart_toStartOf="@id/vehicle"
+            app:layout_constraintEnd_toEndOf="@id/vehicle"
+            app:layout_constraintTop_toBottomOf="@id/tv1"
+            />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorGray1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/in"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IN(0)"
+        app:layout_constraintBottom_toBottomOf="@id/out"
+        app:layout_constraintEnd_toStartOf="@id/out"
+        app:layout_constraintHorizontal_bias=".8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/out" />
+
+    <TextView
+        android:id="@+id/out"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="OUT(1)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view" />
+
+
+    <TextView
+        android:id="@+id/vehicle"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center_vertical"
+        android:text="[100] VEHICLE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/in" />
+
+
+    <CheckBox
+        android:id="@+id/cb_IN_VEHICLE_IN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/vehicle"
+        app:layout_constraintEnd_toEndOf="@id/in"
+        app:layout_constraintStart_toStartOf="@id/in"
+        app:layout_constraintTop_toTopOf="@id/vehicle" />
+
+    <CheckBox
+        android:id="@+id/cb_IN_VEHICLE_OUT"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/vehicle"
+        app:layout_constraintEnd_toEndOf="@id/out"
+        app:layout_constraintStart_toStartOf="@id/out"
+        app:layout_constraintTop_toTopOf="@id/vehicle" />
+
+
+    <TextView
+        android:id="@+id/bike"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="[101] BIKE"
+        app:layout_constraintStart_toStartOf="@id/vehicle"
+        app:layout_constraintTop_toBottomOf="@id/vehicle" />
+
+    <CheckBox
+        android:id="@+id/cb_ON_BICYCLE_IN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/bike"
+        app:layout_constraintEnd_toEndOf="@id/in"
+        app:layout_constraintStart_toStartOf="@id/in"
+        app:layout_constraintTop_toTopOf="@id/bike" />
+
+    <CheckBox
+        android:id="@+id/cb_ON_BICYCLE_OUT"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/bike"
+        app:layout_constraintEnd_toEndOf="@id/out"
+        app:layout_constraintStart_toStartOf="@id/out"
+        app:layout_constraintTop_toTopOf="@id/bike" />
+
+    <TextView
+        android:id="@+id/foot"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="[102] FOOT"
+        app:layout_constraintStart_toStartOf="@id/bike"
+        app:layout_constraintTop_toBottomOf="@id/bike" />
+
+
+    <CheckBox
+        android:id="@+id/cb_ON_FOOT_IN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/foot"
+        app:layout_constraintEnd_toEndOf="@id/in"
+        app:layout_constraintStart_toStartOf="@id/in"
+        app:layout_constraintTop_toTopOf="@id/foot" />
+
+
+    <CheckBox
+        android:id="@+id/cb_ON_FOOT_OUT"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/foot"
+        app:layout_constraintEnd_toEndOf="@id/out"
+        app:layout_constraintStart_toStartOf="@id/out"
+        app:layout_constraintTop_toTopOf="@id/foot" />
+
+
+    <TextView
+        android:id="@+id/still"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="[103] STILL"
+        app:layout_constraintStart_toStartOf="@id/foot"
+        app:layout_constraintTop_toBottomOf="@id/foot" />
+
+
+    <CheckBox
+        android:id="@+id/cb_STILL_IN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/still"
+        app:layout_constraintEnd_toEndOf="@id/in"
+        app:layout_constraintStart_toStartOf="@id/in"
+        app:layout_constraintTop_toTopOf="@id/still" />
+
+    <CheckBox
+        android:id="@+id/cb_STILL_OUT"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/still"
+        app:layout_constraintEnd_toEndOf="@id/out"
+        app:layout_constraintStart_toStartOf="@id/out"
+        app:layout_constraintTop_toTopOf="@id/still" />
+
+    <TextView
+        android:id="@+id/walking"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="[107] WALKING"
+        app:layout_constraintStart_toStartOf="@id/still"
+        app:layout_constraintTop_toBottomOf="@id/still" />
+
+    <CheckBox
+        android:id="@+id/cb_WALKING_IN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/walking"
+        app:layout_constraintEnd_toEndOf="@id/in"
+        app:layout_constraintStart_toStartOf="@id/in"
+        app:layout_constraintTop_toTopOf="@id/walking" />
+
+    <CheckBox
+        android:id="@+id/cb_WALKING_OUT"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/walking"
+        app:layout_constraintEnd_toEndOf="@id/out"
+        app:layout_constraintStart_toStartOf="@id/out"
+        app:layout_constraintTop_toTopOf="@id/walking" />
+
+    <TextView
+        android:id="@+id/running"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="[108] RUNNING"
+        app:layout_constraintStart_toStartOf="@id/walking"
+        app:layout_constraintTop_toBottomOf="@id/walking" />
+
+
+    <CheckBox
+        android:id="@+id/cb_RUNNING_IN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/running"
+        app:layout_constraintEnd_toEndOf="@id/in"
+        app:layout_constraintStart_toStartOf="@id/in"
+        app:layout_constraintTop_toTopOf="@id/running" />
+
+    <CheckBox
+        android:id="@+id/cb_RUNNING_OUT"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/running"
+        app:layout_constraintEnd_toEndOf="@id/out"
+        app:layout_constraintStart_toStartOf="@id/out"
+        app:layout_constraintTop_toTopOf="@id/running" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorGray1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cb_RUNNING_IN" />
+
+    <Button
+        android:id="@+id/btn_requestActivityTransitionUpdate"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/request_activity_transition_update"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separator" />
+
+    <Button
+        android:id="@+id/btn_removeActivityTransitionUpdate"
+        style="@style/ButtonAppearance.ExploreHMS.Outline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/remove_activity_transition_update"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_requestActivityTransitionUpdate" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/result_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_gray_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_removeActivityTransitionUpdate">
+
+        <TextView
+            android:id="@+id/result"
+            style="@style/TextAppearance.ExploreHMS.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Result"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/separator2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorGray1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/result" />
+
+        <TextView
+            android:id="@+id/resultLogs"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/separator2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

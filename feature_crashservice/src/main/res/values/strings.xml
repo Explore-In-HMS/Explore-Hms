@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<resources>
+
+    <string name="text_for_crash_service_toolbar">AGC Crash Service</string>
+    <string name="text_for_crash_service_intro">Service Information</string>
+    <string name="text_for_crash_service_description">The AppGallery Connect Crash service provides a powerful yet lightweight solution to app crash problems. With the service, you can quickly detect, locate, and resolve app crashes (unexpected exits of apps), and have access to highly readable crash reports in real time, without the need to write any code.</string>
+    <string name="text_for_crash_service_description_second">The Crash service provides real-time reports, revealing any crash of your app on any device. In addition, the Crash service can intelligently aggregate crashes, providing context data when a crash occurs, such as environment information and stack, for you to prioritize the crash easily for rapid resolution.</string>
+
+    <string name="text_for_crash_service_key_functions">Key Functions</string>
+
+    <string name="text_for_crash_service_key_func_first">Readable, real-time reports : </string>
+    <string name="text_for_crash_service_key_func_first_desc">Generates highly readable data reports containing stack and other relevant information for your reference, without requiring any code.</string>
+
+    <string name="text_for_crash_service_key_func_second">Custom reports : </string>
+    <string name="text_for_crash_service_key_func_second_desc">Enables you to add custom traces in the form of user IDs, logs, and key-value pairs, generating customized crash reports that provide for accurate tracking.</string>
+
+    <string name="text_for_crash_service_key_func_third">Intelligent crash classification : </string>
+    <string name="text_for_crash_service_key_func_third_desc">Automatically classifies a large number of crashes by type or code location, and allows you to prioritize crashes according to their severity.</string>
+
+    <string name="text_for_crash_service_key_func_fourth">Real-time tracking and alerts : </string>
+    <string name="text_for_crash_service_key_func_fourth_desc">Reflects whether your app is running stably by generating minute-by-minute reports.</string>
+
+    <string name="text_for_crash_service_key_func_fifth">NDK crash analysis : </string>
+    <string name="text_for_crash_service_key_func_fifth_desc">Requires only an NDK package during SDK integration for monitoring crashes in the native library.</string>
+
+    <string name="text_for_crash_service_key_func_sixth">Cross-platform support : </string>
+    <string name="text_for_crash_service_key_func_sixth_desc">Supports the Android and iOS platforms and provides common cross-platform framework plug-ins.such as Flutter,Cordova,React Native and Ionic.</string>
+
+    <string name="txt_for_crash_hyperlink"><a href="">Click here to learn more about AGC Crash Service</a></string>
+    <string name="txt_for_crash_hyperlink_link">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-crash-introduction-0000001055732708</string>
+
+    <string name="btn_exception_text">Thrown an exception</string>
+    <string name="btn_crash_service_yes">Yes</string>
+    <string name="btn_crash_service_no">No</string>
+    <string name="text_for_crash_alert_title">Crash Service Warning</string>
+    <string name="text_for_crash_alert_content">You can add filters and select a time segment to search problems and view problem information including the number of crashes, number of affected users, and last occurrence time.</string>
+    <string name="text_for_crash_question">If you want to throw a null pointer exception, You can click yes button !</string>
+</resources>

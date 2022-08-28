@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/img_searchkit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/dialog_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.87" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layEdtDialogSearchkit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:hint="@string/set_site_name_text_searchkit"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/img_searchkit"
+        app:layout_constraintEnd_toEndOf="@+id/img_searchkit">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtSiteName_searchkit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/spinnerLanguageSearchkit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/layEdtDialogSearchkit"
+        app:layout_constraintStart_toStartOf="@+id/layEdtDialogSearchkit"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSetProperties_searchkit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Okay"
+        android:textAllCaps="false"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerLanguageSearchkit"
+        app:layout_constraintStart_toStartOf="@+id/layEdtDialogSearchkit"
+        app:layout_constraintEnd_toEndOf="@+id/layEdtDialogSearchkit"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,45 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="you_should_not_be_seeing_this_if_you_are_seeing_this_there_is_a_grave_error_occurred">YOU SHOULD NOT BE SEEING THIS! IF YOU ARE SEEING THIS, THERE IS A GRAVE ERROR OCCURRED.</string>
+    <string name="desc_default_string">OneHop Engine</string>
+    <string name="header_development_scenario">Development Scenarios</string>
+    <string name="header_application_scenario">Application Scenarios</string>
+    <string name="header_key_features">Key Features</string>
+    <string name="header_one_hop_introduction">OneHop Engine Introduction</string>
+
+
+    <string name="desc_development_scenario">Currently, there are two different development scenarios. Syncing apps across devices is created for developers and Cross-device quick operations is for hardware manufacturers.\n\n\u2022Syncing apps across devices: It allows apps to be opened in another device, with the exact same content and status as it was on the first device so users can easily continue what they were doing on the second device. This feature is currently only available between Huawei smartphones and Huawei tablets. Users simply need to tap their Huawei smartphone against the NFC tag of another Huawei device, then the two devices will connect and sync the data and status of the app running in the foreground, to perfectly transfer it to the second device. With this technology, you can easily switch devices in the middle of editing documents or watching videos without having to worry about saving multiple files or finding your place again. HUAWEI OneHop Engine provides the ability to connect and sync data between different devices effortlessly, letting app collaboration between different devices become simpler and more efficient.\n\n\u2022Cross-device quick operations: The HUAWEI OneHop Engine functions as a bridge between third-party devices and Huawei smartphones, providing versatile new features that make the interaction between these devices and smartphones simpler and more efficiently, such as OneHop File Sharing and projecting. When you tap your Huawei smartphone against the NFC tag of another third-party device, the system will automatically establish a connection and execute the commands.\n</string>
+    <string name="desc_application_scenario">Currently, there are three different application scenarios.\n\n\u2022Huawei OneHop: It lets users transfer files from their device to another device with an NFC tag, like the OneHop File Sharing feature.\n\u2022Projection: IT lets users project their device to an external display with an NFC tag.\n\u2022Connection: It lets users connect or pair other devices. \n</string>
+    <string name="desc_key_features">Currently, there are three powerful features in OneHop Engine.\n\n\u2022Fast: Faster connecting with just a tap by using NFC technology, instead of QR code scanning to connect.\n\u2022Simple: Accurate recognition of third-party devices achieved with simple and unified language makes quick operations effective and convenient.\n\u2022Seamless: Enables seamless interaction between different devices by compacting triggering, detection, device connection, transfer, and app launching into one simple step for users. All connections are initiated locally to ensure data privacy and keep any private data stored on their device.\n</string>
+
+    <string name="main_page">Main Page</string>
+    <string name="docs">Docs</string>
+    <string name="explanation">Explanation</string>
+
+    <string name="link_developer_onehop_engine">https://developer.huawei.com/consumer/en/onehop-kit</string>
+    <string name="link_onehop_engine_documentation_introduction">https://developer.huawei.com/consumer/en/doc/development/connectivity-Guides/OneHop-introduction</string>
+
+    <string name="onehop_engine__explanation1">The HUAWEI OneHop Engine serves as a full scenario solution for seamless interaction between multiple devices. By leveraging NFC technology, HUAWEI OneHop Engine simplifies the collaboration and interaction between your smartphones and other devices with a simple tap. New feature of Huawei Multi-Screen Collaboration released with the EMUI 10.0 system allows users to use their phone on their tablet or laptop with a simple tap, allowing users to expand their productivity without buying more things. The one-tap connection is made possible with HUAWEI OneHop.\n\n</string>
+    <string name="onehop_engine__explanation2">In addition, the HUAWEI OneHop Engine supports third-party apps and devices. Third-party developers can work jointly with Huawei to provide seamless and efficient interaction between the smartphones and other devices across all scenarios.\n\n</string>
+    <string name="onehop_engine__explanation3">For development details, you can use the links below to access to the official documentation of OneHop Engine. \n\nAlso you can slide right to see some features in detail.</string>
+
+</resources>

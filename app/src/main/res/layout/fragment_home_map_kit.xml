@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/TextAppearance.ExploreHMS.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/mapkit_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/desc"
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/mapkit_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <Button
+            android:id="@+id/btnMoveAnimateCamera_mapkit"
+            style="@style/ButtonAppearance.ExploreHMS.Normal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/move_animate_camera_mapkit"
+            app:layout_constraintBottom_toTopOf="@+id/btnShowMarker_mapkit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/desc"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <Button
+            android:id="@+id/btnShowMarker_mapkit"
+            style="@style/ButtonAppearance.ExploreHMS.Normal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/show_marker_text_mapkit"
+            app:layout_constraintBottom_toTopOf="@+id/btnShowCustomMarker_mapkit"
+            app:layout_constraintEnd_toEndOf="@id/btnMoveAnimateCamera_mapkit"
+            app:layout_constraintStart_toStartOf="@id/btnMoveAnimateCamera_mapkit"
+            app:layout_constraintTop_toBottomOf="@+id/btnMoveAnimateCamera_mapkit" />
+
+        <Button
+            android:id="@+id/btnShowCustomMarker_mapkit"
+            style="@style/ButtonAppearance.ExploreHMS.Normal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/show_custom_marker_text_mapkit"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toTopOf="@+id/btnShowShape_mapkit"
+            app:layout_constraintEnd_toEndOf="@id/btnMoveAnimateCamera_mapkit"
+            app:layout_constraintStart_toStartOf="@id/btnMoveAnimateCamera_mapkit"
+            app:layout_constraintTop_toBottomOf="@+id/btnShowMarker_mapkit" />
+
+        <Button
+            android:id="@+id/btnShowShape_mapkit"
+            style="@style/ButtonAppearance.ExploreHMS.Normal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/show_shape_text_mapkit"
+            app:layout_constraintBottom_toTopOf="@+id/btnShowTileOverlay_mapkit"
+            app:layout_constraintEnd_toEndOf="@id/btnMoveAnimateCamera_mapkit"
+            app:layout_constraintStart_toStartOf="@id/btnMoveAnimateCamera_mapkit"
+            app:layout_constraintTop_toBottomOf="@+id/btnShowCustomMarker_mapkit" />
+
+        <Button
+            android:id="@+id/btnShowTileOverlay_mapkit"
+            style="@style/ButtonAppearance.ExploreHMS.Normal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/show_tile_overlay_text_mapkit"
+            app:layout_constraintBottom_toTopOf="@+id/btnShowGroundOverlay_mapkit"
+            app:layout_constraintEnd_toEndOf="@id/btnMoveAnimateCamera_mapkit"
+            app:layout_constraintStart_toStartOf="@id/btnMoveAnimateCamera_mapkit"
+            app:layout_constraintTop_toBottomOf="@+id/btnShowShape_mapkit" />
+
+        <Button
+            android:id="@+id/btnShowGroundOverlay_mapkit"
+            style="@style/ButtonAppearance.ExploreHMS.Normal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/show_ground_overlay_text_mapkit"
+            app:layout_constraintBottom_toTopOf="@+id/btnShowMapStyle_mapkit"
+            app:layout_constraintEnd_toEndOf="@id/btnMoveAnimateCamera_mapkit"
+            app:layout_constraintStart_toStartOf="@id/btnMoveAnimateCamera_mapkit"
+            app:layout_constraintTop_toBottomOf="@+id/btnShowTileOverlay_mapkit" />
+
+        <Button
+            android:id="@+id/btnShowMapStyle_mapkit"
+            style="@style/ButtonAppearance.ExploreHMS.Normal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/show_style_text_mapkit"
+            app:layout_constraintBottom_toTopOf="@+id/tvMapkitMoreInformation"
+            app:layout_constraintEnd_toEndOf="@id/btnMoveAnimateCamera_mapkit"
+            app:layout_constraintStart_toStartOf="@id/btnMoveAnimateCamera_mapkit"
+            app:layout_constraintTop_toBottomOf="@+id/btnShowGroundOverlay_mapkit"
+            tools:ignore="UnknownId" />
+
+        <Button
+            android:id="@+id/btnShowRoutingDirection_mapkit"
+            style="@style/ButtonAppearance.ExploreHMS.Normal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/show_direction_routing_mapkit"
+            app:layout_constraintEnd_toEndOf="@id/btnMoveAnimateCamera_mapkit"
+            app:layout_constraintStart_toStartOf="@id/btnMoveAnimateCamera_mapkit"
+            app:layout_constraintTop_toBottomOf="@+id/btnShowMapStyle_mapkit" />
+
+        <Button
+            android:id="@+id/btnOpenPetalMap"
+            style="@style/ButtonAppearance.ExploreHMS.Normal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/open_petalMap_MapKit"
+            app:layout_constraintEnd_toEndOf="@id/btnShowRoutingDirection_mapkit"
+            app:layout_constraintStart_toStartOf="@id/btnMoveAnimateCamera_mapkit"
+            app:layout_constraintTop_toBottomOf="@+id/btnShowRoutingDirection_mapkit" />
+
+        <Button
+            android:id="@+id/btnHeatMap"
+            style="@style/ButtonAppearance.ExploreHMS.Normal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/heat_Map"
+            app:layout_constraintEnd_toEndOf="@id/btnShowRoutingDirection_mapkit"
+            app:layout_constraintStart_toStartOf="@id/btnMoveAnimateCamera_mapkit"
+            app:layout_constraintTop_toBottomOf="@+id/btnOpenPetalMap" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

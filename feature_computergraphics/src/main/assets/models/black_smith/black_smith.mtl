@@ -1,0 +1,16 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 14.07.2020 20:21:11
+
+newmtl mat_0_Blksmith_jpg
+	Ns 9.8492
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.6980 0.6980 0.6980
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\black_smith\texture\Blksmith.jpg
+	map_Kd C:\Users\user\Desktop\black_smith\texture\Blksmith.jpg

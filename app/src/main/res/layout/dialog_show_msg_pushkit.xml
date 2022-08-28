@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhitePushKit">
+
+    <ScrollView
+        android:id="@+id/sv_message_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="50dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1">
+
+            <TextView
+                android:id="@+id/tv_push_msg_info_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:background="@drawable/darkgreen_view_shape_pushkit"
+                android:text="Message Info"
+                android:textColor="@color/colorWhitePushKit">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Collapse Key">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_info_collapse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Data">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_info_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="From">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_info_from"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="To">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_info_to"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Message ID">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_info_message_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Original Urgency">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_info_org_urgency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Urgency">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_info_urgency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Send Time">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_info_send_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Message Type">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_info_message_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="TTL">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_info_ttl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_push_msg_data_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:background="@drawable/darkgreen_view_shape_pushkit"
+                android:text="Message Data"
+                android:textColor="@color/white">
+            </TextView>
+
+            <com.hms.explorehms.pushkit.ui.NonScrollListView
+                android:id="@+id/lv_msg_data_push_kit"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_margin="10dp">
+
+            </com.hms.explorehms.pushkit.ui.NonScrollListView>
+
+
+            <TextView
+                android:id="@+id/tv_push_notification_info_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:background="@drawable/darkgreen_view_shape_pushkit"
+                android:text="Notification Info"
+                android:textColor="@color/colorWhitePushKit">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Image Url">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_ntf_img_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Title">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_ntf_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Title Localization Key">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_ntf_title_loc_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Title Localization Args">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_ntf_title_loc_args"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Body">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_ntf_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Body Localization Key">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_ntf_body_loc_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Body Localization Args">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_ntf_body_loc_args"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Icon">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_ntf_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Sound">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_ntf_sound"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Tag">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_ntf_tag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textStyle="bold"
+                android:textColor="@color/colorDarkGreen"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="Color">
+            </TextView>
+
+            <View
+                android:layout_width="2dp"
+                android:background="@color/colorDarkGreen"
+                android:layout_height="match_parent">
+            </View>
+
+            <TextView
+                android:id="@+id/tv_push_ntf_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="13sp"
+                android:textColor="@color/colorBlack">
+            </TextView>
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Click Action">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_ntf_click_action"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Channel ID">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_ntf_channel_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Link">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_ntf_link"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Notify ID">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:background="@color/colorDarkGreen"
+                    android:layout_height="match_parent">
+                </View>
+
+                <TextView
+                    android:id="@+id/tv_push_ntf_notify_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorBlack">
+                </TextView>
+            </LinearLayout>
+
+        </TableLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_exit_push_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/darkred_button_shaped_pushkit"
+        android:textColor="@color/colorWhitePushKit"
+        android:layout_margin="10dp"
+        android:text="@string/txt_exit_pushkit">
+    </Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

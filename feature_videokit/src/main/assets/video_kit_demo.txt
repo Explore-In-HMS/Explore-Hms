@@ -1,0 +1,4 @@
+[
+{"id":1,name:"Video kit introduction","urlType":0,"url":"https://videoplay-mos-dra.dbankcdn.com/P_VT/video_injection/92/v3/C072F990370950198572111872/MP4Mix_H.264_1920x1080_6000_HEAAC1_PVC_NoCut.mp4"},
+{"id":2,name:"Video kit coding practice","urlType":1,"url":"https://videoplay-mos-dra.dbankcdn.com/P_VT/video_injection/3D/v3/60E656DB370974169015277568/MP4Mix_H.264_1920x1080_6000_HEAAC1_PVC_NoCut.mp4-SPAD-https://videoplay-mos-dra.dbankcdn.com/P_VT/video_injection/92/v3/C072F990370950198572111872/MP4Mix_H.264_1920x1080_6000_HEAAC1_PVC_NoCut.mp4"}
+]

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="toolbar_title">Wear Engine</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="service_introduction">Service Introduction</string>
+    <string name="overview_desc">Wear Engine is designed for you to access the open capabilities of Huawei wearable devices.\n\nBy integrating Wear Engine, it will be possible for your app or service on a phone to send and transfer data to Huawei wearable devices, as well as obtaining the status of wearable devices. This also works the other way round, which means that an app or service on a Huawei wearable is able to send messages and transfer data to a phone.\n\nWear Engine pools the phone and the watch\'s resources and capabilities, which include apps and services, creating benefits for consumers and developers alike. It enables your users to use their devices in more diversified scenarios and receive more convenient services, with a smoother experience. It also expands the reach of your business, and takes your apps and services to the next level.</string>
+    <string name="overview_title">Open Capabilities</string>
+    <string name="overview_desc2">Wear Engine currently offers the following capabilities that are centered around Huawei wearable devices:\n\n• Querying information about wearable devices: The app on the phone obtains the list of paired Huawei wearable devices that support Harmony, including the device name and device type. Select the device to be operated from the device list and query the connection status of the device.\n\n• Querying and subscribing to status:\n\n\t\t• Querying and subscribing to the wearable device status: The app on the phone queries and subscribes to the status information including connection status, wearing status, battery level, and charging status of the wearable device.\n\n\t\t• Querying and subscribing to the health status: The app on the phone queries and subscribes to the fitness status including sleep, workout, heart rate alert, and heart rate reminders.\n\n• Communications:\n\n\t\t• App-to-app communications: The app on the phone shares messages and files with that on the wearable devices including images, music, and more.\n\n\t\t• Template-based notification on wearable devices: Your app on the phone sends template-based notifications to wearable devices. You can customize the message title, content, and buttons.</string>
+    <string name="overview_title2">Technical Architecture</string>
+    <string name="overview_desc3">• Wear Engine provides separate SDKs for the phone and wearable device respectively, to offer the corresponding APIs for integration into your app.\n\n• Huawei Health integrates Wear Engine and uses Android Interface Definition Language (AIDL) to communicate with Wear Engine SDK.\n\n• Huawei wearable devices have Wear Engine integrated into their operating system, allowing the phone and the wearable to communicate via Bluetooth (BLE/BR).</string>
+    <string name="sample_image">sample image</string>
+    <string name="service_advantages_desc">Wear Engine allows apps to be quickly and conveniently integrated into Huawei wearable devices. This opens the possibility for developers to explore and bring the reality of an all-scenario experience closer to users.\n\n• Convenient management: Makes cross-device collaboration between different devices a full-fledged reality, based on device connection and real-time status monitoring.\n\n• Real-time reminders: Allows for timely reminders for important events sent directly to the user\'s wrist.\n\n• New ways of interacting: Introduces the brand new interactive experiences to the wrist, including using the device to control music playback and navigate.</string>
+    <string name="service_advantages">Service Advantages</string>
+    <string name="service_scenarios_desc">Receiving notifications for important events on the wrist. For example, any notifications for schedules, medications, or tasks set in the app on the phone, can be synced to the app on the wearable device. This means that users can receive the notification without having to be near their phone and can simply view important messages on their wearable devices.</string>
+    <string name="service_scenarios_title">Distributed Cross-Device Collaboration Between Phones and Wearable Devices</string>
+    <string name="service_scenarios_desc2">Wear Engine introduces the brand new interactive experience to the wrist. For example, when users use apps on the phone to watch videos or listen to music, they can use their wearable device as a remote, to perform operations such as pausing, skipping to the next song/video, or pausing playback.</string>
+    <string name="service_scenarios_desc3">Achieving real-time collaboration between the phone. For example, users can start navigation from the app on the phone and then receive real-time instructions from the wearable device for when to turn left, go straight, or turn right. So the user doesn\'t have to take out their phone or hold it in their hand to check the route as they navigate.</string>
+
+    <string name="url_txt_wearengine">https://developer.huawei.com/consumer/en/doc/development/connectivity-Guides/service-introduction-0000001073786836</string>
+</resources>

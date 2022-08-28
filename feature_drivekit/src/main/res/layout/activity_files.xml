@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FilesActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolbarAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Drive Kit">
+        <ImageView
+            android:id="@+id/ivInfo"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center|end"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:elevation="10dp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/icon_info_drive"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/lbl_search"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_marginStart="16dp"
+        android:gravity="center"
+        android:text="@string/files_lbl_search"
+        app:layout_constraintBottom_toBottomOf="@+id/et_filesearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_filesearch" />
+
+    <ImageButton
+        android:id="@+id/btn_file_search"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:layout_width="35dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/icon_search_18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_filesearch"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_filesearch" />
+
+    <EditText
+        android:id="@+id/et_filesearch"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/file_search_hint_file_name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@id/files_scrollview"
+        app:layout_constraintEnd_toStartOf="@+id/btn_file_search"
+        app:layout_constraintStart_toEndOf="@+id/lbl_search"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/bg_gray_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/files_scrollview"
+        />
+
+
+    <ScrollView
+        android:id="@+id/files_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_filesearch"
+        app:layout_constraintBottom_toTopOf="@+id/btn_uploadfile">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_files"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:paddingTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/bg_gray_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/files_scrollview"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_uploadfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:layout_margin="16dp"
+        android:text="@string/uploadFile"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </com.google.android.material.button.MaterialButton>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

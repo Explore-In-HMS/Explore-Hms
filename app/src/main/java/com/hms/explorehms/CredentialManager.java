@@ -1,0 +1,81 @@
+/*
+ *
+ *   Copyright 2020. Explore in HMS. All rights reserved.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   You may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ */
+package com.hms.explorehms;
+
+import android.net.Uri;
+
+import com.huawei.hms.support.hwid.result.AuthHuaweiId;
+import com.huawei.hms.support.hwid.service.HuaweiIdAuthService;
+
+public class CredentialManager {
+
+    public CredentialManager(){
+        // Empty constructor
+    }
+
+    private static HuaweiIdAuthService mHuaweiIdAuthService;
+
+    private static AuthHuaweiId huaweiId;
+
+    public static boolean isSignedOut = true;
+
+    public static HuaweiIdAuthService getHuaweiIdAuthService() {
+        return mHuaweiIdAuthService;
+    }
+
+    public static void setHuaweiIdAuthService(HuaweiIdAuthService mHuaweiIdAuthService) {
+        CredentialManager.mHuaweiIdAuthService = mHuaweiIdAuthService;
+    }
+    public static String getIDToken() {
+        return huaweiId.getIdToken();
+    }
+
+    public static String getAccessToken(){
+        return huaweiId.getAccessToken();
+    }
+
+    public static String getUserName() {
+        return huaweiId.getDisplayName();
+    }
+
+    public static String getDisplaName() {
+        return huaweiId.getDisplayName();
+    }
+
+    public static String getFullname() {
+        return huaweiId.getGivenName() + " " + huaweiId.getFamilyName();
+    }
+
+    public static String getEmail(){
+        return huaweiId.getEmail();
+    }
+
+    public static Uri getProfilePic() {
+        return huaweiId.getAvatarUri();
+    }
+
+    public static void setCredentials(AuthHuaweiId authHuaweiId){
+        huaweiId = authHuaweiId;
+        isSignedOut = false;
+    }
+
+    public static void clearAuthorization(){
+        huaweiId = null;
+        isSignedOut = true;
+    }
+}

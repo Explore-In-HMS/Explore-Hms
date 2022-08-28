@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hms.explorehms.scankit.ScanKitActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolbarAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        app:title="Scan Kit"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="16dp">
+
+                    <TextView
+                        android:layout_marginTop="@dimen/h16"
+                        style="@style/TextAppearance.ExploreHMS.Headline6"
+                        android:layout_marginLeft="@dimen/h16"
+                        android:text="@string/service_introduction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_marginTop="4dp"
+                        style="@style/TextAppearance.ExploreHMS.Body1"
+                        android:layout_marginLeft="@dimen/h16"
+                        android:layout_marginRight="@dimen/h16"
+                        android:text="@string/scan_kit_introduction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_marginTop="4dp"
+                        style="@style/TextAppearance.ExploreHMS.Body1"
+                        android:layout_marginLeft="@dimen/h16"
+                        android:layout_marginRight="@dimen/h16"
+                        android:text="@string/supported_barcodes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:layout_marginTop="@dimen/h16"
+                        android:layout_marginRight="@dimen/h16"
+                        android:layout_marginLeft="@dimen/h16"
+                        android:src="@drawable/scan_kit"
+                        android:layout_width="match_parent"
+                        android:layout_height="172dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_marginTop="@dimen/h16"
+                        android:layout_marginRight="@dimen/h16"
+                        android:layout_marginLeft="@dimen/h16"
+                        style="@style/ButtonAppearance.ExploreHMS.Normal"
+                        android:layout_width="match_parent"
+                        android:id="@+id/btn_defautViewMode"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+
+                        android:clickable="true"
+                        android:text="@string/btn_txt_scan_defaultview"
+                        android:textColor="@color/whiteBG"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                        tools:layout_editor_absoluteX="80dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_marginRight="@dimen/h16"
+                        android:layout_marginLeft="@dimen/h16"
+                        style="@style/ButtonAppearance.ExploreHMS.Normal"
+                        android:layout_width="match_parent"
+                        android:id="@+id/btn_customizeViewMode"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:clickable="true"
+                        android:text="@string/btn_txt_scan_customizeview"
+                        android:textColor="@color/whiteBG"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_defautViewMode"
+                        tools:layout_editor_absoluteX="80dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_marginRight="@dimen/h16"
+                        android:layout_marginLeft="@dimen/h16"
+                        style="@style/ButtonAppearance.ExploreHMS.Normal"
+                        android:layout_width="match_parent"
+                        android:id="@+id/btn_BitmapMode"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:clickable="true"
+                        android:text="@string/btn_txt_scan_bitmapview"
+                        android:textColor="@color/whiteBG"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_customizeViewMode"
+                        tools:layout_editor_absoluteX="80dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_marginRight="@dimen/h16"
+                        android:layout_marginLeft="@dimen/h16"
+                        style="@style/ButtonAppearance.ExploreHMS.Normal"
+                        android:layout_width="match_parent"
+                        android:id="@+id/btn_BitmapModeCamera"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:clickable="true"
+                        android:text="@string/btn_txt_scan_bitmapviewcamera"
+                        android:textColor="@color/whiteBG"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_multiProccessorApiSynchronousMode"
+                        tools:layout_editor_absoluteX="80dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_marginRight="@dimen/h16"
+                        android:layout_marginLeft="@dimen/h16"
+                        style="@style/ButtonAppearance.ExploreHMS.Normal"
+                        android:layout_width="match_parent"
+                        android:id="@+id/btn_multiProccessorApiSynchronousMode"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:clickable="true"
+                        android:text="@string/btn_txt_scan_multiproc_sync"
+                        android:textColor="@color/whiteBG"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_BitmapMode"
+                        tools:layout_editor_absoluteX="80dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_marginRight="@dimen/h16"
+                        android:layout_marginLeft="@dimen/h16"
+                        style="@style/ButtonAppearance.ExploreHMS.Normal"
+                        android:layout_width="match_parent"
+                        android:id="@+id/btn_multiProccessorApiAsynchronousMode"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:clickable="true"
+                        android:text="@string/btn_txt_scan_multiproc_async"
+                        android:textColor="@color/whiteBG"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_multiProccessorApiSynchronousMode"
+                        tools:layout_editor_absoluteX="80dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_marginRight="@dimen/h16"
+                        android:layout_marginLeft="@dimen/h16"
+                        style="@style/ButtonAppearance.ExploreHMS.Normal"
+                        android:layout_width="match_parent"
+                        android:id="@+id/btn_generateQrCode"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:clickable="true"
+                        android:text="@string/btn_txt_scan_generateqr"
+                        android:textColor="@color/whiteBG"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_multiProccessorApiSynchronousMode"
+                        tools:layout_editor_absoluteX="80dp" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

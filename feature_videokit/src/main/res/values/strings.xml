@@ -1,0 +1,136 @@
+<resources>
+    <string name="app_name">Video Kit Demo</string>
+    <string name="settings">Settings</string>
+    <string name="video_name">Video name: %s</string>
+    <string name="video_width_and_height">Width x height: %1$d x %2$d</string>
+    <string name="video_time">Total duration: %s</string>
+    <string name="video_download_speed">Download speed: %d b/s</string>
+    <string name="input_path">Enter a video URL</string>
+    <string name="play">Play</string>
+    <string name="init_play_fail">Failed to start the player.</string>
+    <string name="video_bitrate">Current bitrate: %d</string>
+    <string name="video_bitrate_empty">Current bitrate: NA</string>
+    <string name="video_bitrate_title">Bitrate switching</string>
+    <string name="video_bitrate_auto">Smoothly change to specified bitrate</string>
+    <string name="video_bitrate_designated">Immediately change to specified bitrate</string>
+    <string name="video_stop_downloading">Download control</string>
+    <string name="video_set_play_speed">Playback speed</string>
+    <string name="video_set_bandwidth_mode">Bandwidth adaptation</string>
+    <string name="video_switch_subtitle">Switch subtitle</string>
+    <string name="setting_cancel">Cancel</string>
+    <string name="setting_ok">OK</string>
+    <string name="video_stop_download">Stop download</string>
+    <string name="video_keep_download">Resume download</string>
+    <string name="automatic_adaptation">Auto-adaptation</string>
+    <string name="close_adaptive_bandwidth">Disable bandwidth adaptation</string>
+    <string name="open_adaptive_bandwidth">Enable bandwidth adaptation</string>
+    <string name="close_logo">Disable watermark</string>
+    <string name="play_mode">Playback mode</string>
+    <string name="play_audio">Audio</string>
+    <string name="play_video">Video</string>
+    <string name="video_set_loop_play">Repeat mode</string>
+    <string name="video_loop_play">Enable repeat mode</string>
+    <string name="video_not_loop_play">Disable repeat mode</string>
+    <string name="video_type">Video type</string>
+    <string name="video_on_demand">VOD</string>
+    <string name="video_live">Live streaming</string>
+    <string name="video_view_setting">View</string>
+    <string name="video_surfaceview_setting">SurfaceView</string>
+    <string name="video_textureview_setting">TextureView</string>
+    <string name="video_load_view_setting">View loading mode</string>
+    <string name="video_mute_setting">Mute/Unmute</string>
+    <string name="video_mute">Mute</string>
+    <string name="video_not_mute">Unmute</string>
+    <string name="video_init_bitrate_setting">Playback start bitrate</string>
+    <string name="video_init_bitrate_use">Use specified playback start bitrate</string>
+    <string name="video_init_bitrate_not_use">Use adaptive playback start bitrate</string>
+    <string name="video_close_logo_setting">Watermark</string>
+    <string name="video_open_logo_setting">Enable watermark</string>
+    <string name="video_close_logo_one">Valid only for the next video</string>
+    <string name="video_close_logo_all">Valid for all videos</string>
+    <string name="video_set_volume">Volume</string>
+    <string name="video_bitrate_range_setting">Bitrate range</string>
+    <string name="video_bitrate_min_setting">Min. bitrate</string>
+    <string name="video_bitrate_max_setting">Max. bitrate</string>
+    <string name="video_bitrate_range_setting_title">Bitrate range (valid only for the next video)</string>
+    <string name="video_bitrate_type">Match a higher bitrate preferentially</string>
+    <string name="video_bitrate_height">Resolution height:</string>
+    <string name="video_bitrate_width">Resolution width:</string>
+    <string name="video_bitrate_init">Playback start bitrate:</string>
+    <string name="subtitle_preset_language_setting">Subtitle preset language</string>
+    <string name="subtitle_preset_language_setting_title">Subtitle preset language (valid only for the next video)</string>
+    <string name="video_volume_range">0-1.0</string>
+    <string name="super_definition">"Blu-ray (%dP)"</string>
+    <string name="high_definition">"HD (%dP)"</string>
+    <string name="standard_definition">"SD (%dP)"</string>
+    <string name="fluency_definition">"Smooth (%dP)"</string>
+    <string name="auto_definition">Auto</string>
+    <string name="resolution_switching">Switching to <![CDATA[<font color="#FF7500">%s</font>]]>... Please wait.</string>
+    <string name="switch_bitrate_enable">The bitrate cannot be changed.</string>
+    <string name="resolution_switched_auto">Switched successfully.</string>
+    <string name="video_init_preloader">Initialize preload</string>
+    <string name="video_preloader_path">Preload path:</string>
+    <string name="video_preloader_total_size">Max. size:</string>
+    <string name="create_file_fail">Failed to create the preload path.</string>
+    <string name="video_add_single_cache">Add preload task</string>
+    <string name="video_add_single_cache_url">url</string>
+    <string name="video_add_single_cache_playparam">playParam</string>
+    <string name="video_add_single_cache_appId">appId</string>
+    <string name="video_add_single_cache_width">width</string>
+    <string name="video_add_single_cache_height">height</string>
+    <string name="video_add_single_cache_size">cacheSize</string>
+    <string name="video_add_single_cache_priority">priority</string>
+    <string name="video_add_single_cache_fail">Settings failed. Perform preload initialization first.</string>
+    <string name="video_pause_cache">Pause preload task</string>
+    <string name="video_resume_cache">Resume preload task</string>
+    <string name="video_remove_cache">Delete all preloaded data</string>
+    <string name="video_remove_tasks">Delete all preload tasks</string>
+    <string name="video_init_preload">No permission. Preload initialization is not allowed.</string>
+    <string name="video_preload_url">The URL for preload cannot be empty.</string>
+    <string name="get_recommend_info">Obtain recommendations</string>
+    <string name="update_server_country">Change country/region code</string>
+    <string name="update_server_country_toast_empty">Enter a country/region code.</string>
+    <string name="update_server_country_toast_length">Enter an uppercase two-letter country/region code.</string>
+    <string name="video_add_single_cache_video_format">videoFormat</string>
+    <string name="update_server_country_title">Change country/region code</string>
+    <string name="server_country_limit">Two uppercase letters</string>
+    <string-array name="play_speed_text">
+        <item>0.5x</item>
+        <item>0.75x</item>
+        <item>1.0x</item>
+        <item>1.25x</item>
+        <item>1.5x</item>
+        <item>2.0x</item>
+    </string-array>
+    <string name="video_set_alg_para">Setting playback startup parameters</string>
+    <string name="video_modify_window_para">Modify default window param</string>
+    <string name="video_display_msg">Click \'+\' to add data</string>
+    <string name="video_min_bitrate">Min Bitrate</string>
+    <string name="video_max_bitrate">Max Bitrate</string>
+    <string name="video_delay">Delay</string>
+    <string name="switch_audio_track">Switch Audio Track</string>
+    <string name="audio_set_prefer_audio">Setting prefer audio</string>
+    <string name="gettings">Gettings</string>
+    <string name="get_audio_track_info">Get audioTracks info</string>
+    <string name="current_audio_track">Get current AudioTrack</string>
+    <string name="audio_tracks">Get AudioTracks</string>
+
+    <string name="socks_proxy_setting">Socks proxy</string>
+    <string name="set_socks_proxy">Setting socks proxy</string>
+    <string name="socks_proxy_ip">Setting proxy ip</string>
+    <string name="socks_proxy_port">Setting proxy port</string>
+    <string name="socks_proxy_user">Setting proxy username</string>
+    <string name="socks_proxy_password">Setting proxy password</string>
+    <string name="download_link_num">Download link num</string>
+    <string name="download_link_single">Download link single</string>
+    <string name="download_link_multi">Download link multi</string>
+    <string name="set_wake_mode">Set wake mode</string>
+    <string name="close_wake_mode">Close wake mode</string>
+
+    <string name="subtitle_render">Subtitle Render</string>
+    <string name="subtitle_render_demo">VideoKitDemo</string>
+    <string name="subtitle_render_player">DmpPlayer</string>
+
+    <string name="speed">Speed</string>
+    <string name="one_times_speed">1.0x</string>
+</resources>

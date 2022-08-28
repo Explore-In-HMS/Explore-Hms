@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_white_sq"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:id="@+id/tv_select_english"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:textColor="@drawable/selector_text_lang_select"
+            android:text="English">
+        </TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.25dp"
+            android:background="@color/gray200" />
+
+        <TextView
+            android:id="@+id/tv_select_latin"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:textColor="@drawable/selector_text_lang_select"
+            android:text="Latin">
+        </TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.25dp"
+            android:background="@color/gray200" />
+
+        <TextView
+            android:id="@+id/tv_select_simple_cn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:textColor="@drawable/selector_text_lang_select"
+            android:text="Simplified Chinese">
+        </TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.25dp"
+            android:background="@color/gray200" />
+
+        <TextView
+            android:id="@+id/tv_select_japanese"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:textColor="@drawable/selector_text_lang_select"
+            android:text="Japanese">
+        </TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.25dp"
+            android:background="@color/gray200" />
+
+        <TextView
+            android:id="@+id/tv_select_korean"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:textColor="@drawable/selector_text_lang_select"
+            android:text="Korean">
+        </TextView>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="introduction_awarenesskit">HUAWEI Awareness Kit provides your app with the ability to obtain contextual information including users
+        current time, location, behavior, audio device status, ambient light, weather, and nearby beacons.
+        Your app can gain insight into a user\'s current situation more efficiently, making it possible to deliver a smarter, more considerate user experience.</string>
+
+    <string name="advantages_awarenesskit">\u2022 <b>Converged:</b> Multi-dimensional and evolvable awareness capabilities can be called in a unified manner.\n\u2022 <b>Accurate:</b> The synergy of hardware and software makes data acquisition more accurate and efficient.\n\u2022 <b>Fast:</b> On-chip processing of local service requests and nearby access of cloud services promise a faster service response.\n\u2022 <b>Economical:</b> Sharing awareness capabilities avoids separate interactions between apps and the device, reducing system resource consumption. Collaborating with the EMUI (or Magic UI) and Kirin chip, Awareness Kit can even achieve optimal performance with the lowest power consumption.</string>
+
+
+    <string name="capture_barrier_info_awarenesskit">\u2022 <b>CaptureAPI</b>\nThe Capture API allows your app to request the current user status, such as time, location, behavior, and whether a headset is connected.\n\u2022 <b>Barrier API</b>\nThe Barrier API allows your app to set a barrier for specific contextual conditions. When the conditions are met, your app will receive a notification.
+    </string>
+    <string name="advantages_text_awarenesskit">Advantages</string>
+    <string name="capture_api_and_barrier_api_text_awarenesskit">Capture API and Barrier API</string>
+
+    <string name="awarenesskit_more_information"><a href="">Click here to learn more about Awareness Kit.</a></string>
+    <string name="awarenesskit_more_information_link_documentation_link">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050031140</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="time_awareness_info_text">The time awareness capability can obtain holiday information of most countries/regions and sunrise and sunset time of all cities around the world. Holiday information is updated periodically to ensure data timeliness and accuracy.</string>
+
+    <string name="location_awareness_info">\u2022 Capture API\nObtains the latitude and longitude of the current location.\n\u2022 Barrier API\nSets a location barrier based on the target location, radius (not smaller than 200 m), and stay duration.For example, if you set a circular region with a 500 m radius in the target location as a barrier, a notification will be triggeredif the user has stayed in the area for the specified period of time.</string>
+
+    <string name="behavior_awareness_info">\u2022 Capture API\nObtains user behavior, such as walking, running, cycling, driving, or staying still.\n\u2022 Barrier API\nDetects the behavior change, such as going from staying still to running.</string>
+
+    <string name="beacon_awareness_info">
+        Currently, Awareness Kit supports beacon devices whose broadcast format is iBeacon or Eddystone-UID.
+        The Beacon ID field in a broadcast packet is user-defined. Beacons with the same beacon ID are considered as the same beacon by Awareness Kit. You need to inform users of this.
+    </string>
+    <string name="beacon_name_text">Beacon name</string>
+    <string name="beacon_type_text">Beacon type</string>
+
+    <string name="audio_status_awareness_info">
+        Obtains the status of audio devices that can be connected to phones. Currently, the following audio devices are supported: 3.5 mm headsets, Type-C headsets,
+        Bluetooth headsets (Bluetooth devices identified as "headsets", which may be actual Bluetooth headsets or just Bluetooth stereos), and Bluetooth car stereos.
+    </string>
+
+    <string name="weather_awareness_info">
+        \u2022 Capture API\n
+        Queries the weather information of the device location or a specified location. Weather of the current day (24 hours) and the next seven days (including the current day) can be queried.
+        The weather information includes the atmospheric temperature, somatosensory temperature, humidity, wind force, wind direction, ultraviolet light intensity, air quality index (AQI), and living index.\n
+
+        \u2022 Barrier API\n
+        The weather awareness does not support the barrier function.
+    </string>
+
+    <string name="light_awareness_info">\u2022 Capture API\nObtains the illuminance of the environment where the device is located. The unit is lux. The illuminance is the intensity received by the light sensor of the device.When the light sensor is blocked or illuminated by strong light, the obtained illuminance changes accordingly.\n\u2022 Barrier API\nSets the ambient light barrier. For example, you can set the system to prompt users to enable the flashlight function when the illuminance is less than 100 lux.</string>
+
+    <string name="phone_status_awareness_info">
+        The phone status awareness capability is supported, including the awareness of the app status, screen status, Wi-Fi status, and dark mode status.
+        After the awareness is successful, you can set barriers based the status.
+    </string>
+    <string name="fill_the_empty_area">Please fill the empty area.</string>
+    <string name="error_message">Please fill the empty area.</string>
+
+
+    <string-array name="time_awareness_methods_array">
+        <item>Period of day</item>
+        <item>Period of week</item>
+        <item>In time category</item>
+    </string-array>
+
+
+</resources>

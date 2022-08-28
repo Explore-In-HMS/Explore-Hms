@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShareEngineHuaweiPhonesActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/title_between_huawei"
+        app:title="@string/title_feature_shareengine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/ToolbarAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"/>
+    <TextView
+        android:layout_marginEnd="@dimen/h16"
+        android:layout_marginStart="@dimen/h16"
+        app:layout_constraintTop_toBottomOf="@+id/title_between_huawei"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:id="@+id/tvShareTextFile"
+        android:overScrollMode="always"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_share_text_file"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/h16"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/h16"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="@dimen/h16"
+        android:hint="@string/txt_input"
+        android:imeOptions="actionSearch"
+        app:layout_constraintTop_toBottomOf="@+id/tvShareTextFile"
+        android:id="@+id/edtShareTextFile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnShareEngineShareText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Share text"
+        android:textAllCaps="false"
+        android:layout_marginTop="@dimen/h16"
+        android:layout_marginStart="@dimen/h16"
+        android:layout_marginEnd="@dimen/h16"
+        app:layout_constraintTop_toBottomOf="@+id/edtShareTextFile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        app:layout_constraintTop_toBottomOf="@+id/btnShareEngineShareText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/h16"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginStart="@dimen/h16"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:id="@+id/tvShareFile"
+                android:overScrollMode="always"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_share_file_s"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+            <TextView
+                android:layout_marginStart="@dimen/h16"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:id="@+id/tvShareFile1"
+                android:overScrollMode="always"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_share_by_default"
+                app:layout_constraintTop_toBottomOf="@+id/tvShareFile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </LinearLayout>
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_marginStart="@dimen/h16"
+            android:layout_marginEnd="@dimen/h16"
+            android:layout_weight="2"
+            android:id="@+id/switchFileFilesShareEngine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_share_file"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnShareEngineShareFile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_share_file"
+        android:textAllCaps="false"
+        android:layout_marginTop="4dp"
+       android:layout_marginEnd="@dimen/h16"
+        android:layout_marginStart="@dimen/h16"
+        app:layout_constraintTop_toBottomOf="@+id/linear_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

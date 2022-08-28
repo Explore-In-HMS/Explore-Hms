@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<resources>
+
+    <string name="text_for_dynamic_ability_toolbar" translatable="false">AGC Dynamic Ability</string>
+    <string name="text_for_dynamic_ability_test_page_button" translatable="false">Test Page</string>
+
+    <string name="text_for_dynamic_ability_intro" translatable="false">Service Introduction</string>
+    <string name="text_for_dynamic_ability_introduction" translatable="false">Dynamic Ability is a service in which HUAWEI AppGallery implements dynamic loading based on the Android App Bundle technology. Apps integrated with the Dynamic Ability SDK can dynamically download features or language packages from HUAWEI AppGallery as required, reducing the unnecessary consumption of network traffic and device storage space.\n\nIn addition, you can register listeners to listen to the loading status. Currently, the Dynamic Ability SDK supports mobile phones, smart screens, and speakers with screens.</string>
+
+    <string name="text_for_dynamic_ability_how_it_works" translatable="false"><b>How it works</b></string>
+
+    <string name="text_for_dynamic_ability_working" translatable="false">When a user downloads an app, HUAWEI AppGallery delivers an APK that is suitable for the user device based on the device language, screen density, and ABI architecture. This reduces the consumption of storage space and network traffic on the user device without affecting features.</string>
+
+    <string name="txt_for_dynamic_ability_image">it shows that How it works</string>
+
+    <string name="link_text_for_dynamic_ability" translatable="false"><a href="">Click here to learn more about AGC Dynamic Ability web page</a></string>
+    <string name="link_for_dynamic_ability_web_page" translatable="false">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-featuredelivery-introduction</string>
+
+    <string name="link_text_for_dynamic_ability_codelab" translatable="false"><a href="">Click here to test AGC Dynamic Ability codelab</a></string>
+    <string name="link_for_dynamic_ability_codelab" translatable="false">https://developer.huawei.com/consumer/en/codelabsPortal/carddetails/DynamicAbility</string>
+
+    <string name="text_for_dynamic_ability_test_header">Dynamic Ability Feature Test </string>
+
+    <string name="text_for_dynamic_ability_download_btn">Add new module</string>
+    <string name="text_for_dynamic_ability_delete_btn">Start installed module</string>
+
+    <string name="text_for_start_feature_toast">You should add new module firstly. </string>
+
+    <string name="text_for_download_language">Load Turkish language package</string>
+
+</resources>

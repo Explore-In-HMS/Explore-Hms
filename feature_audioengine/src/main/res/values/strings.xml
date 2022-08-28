@@ -1,0 +1,57 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+<resources>
+    <string name="explanation_1">HUAWEI provides pioneering audio enhancement services, for immersive listening at all times. Utilize Audio Engine to enable the low-latency headset monitoring feature for your app, and enjoy thrilling karaoke on just a whim.</string>
+    <string name="explanation_2"><b>1. Application Scenarios</b>\n\n
+Audio Engine provides the karaoke headset monitoring feature with open APIs to help you integrate the headset monitoring to your app, facilitating the utilization of Huawei\'s hardware-enabled headset monitoring capability, and achieving a low-latency and low-noise headset real-time listening experience.
+
+\n\n<b>1.1 Main Function</b>
+\n\nAudio Engine provides a series of APIs for you to conveniently implement headset monitoring in a karaoke app. You can just call some APIs in the pre-processing procedure to get a better headset monitoring experience.</string>
+    <string name="explanation_3"><b>1.2 Realization Process</b>
+\n\nAudio Engine provides the API for realizing recording in the low-latency channel, which will then be captured by the DSP and sent to codec to be played directly. This is mainly processed on the Huawei chipset and can make a great advantage of the hardware.</string>
+    <string name="explanation_4"><b>2. Application Effect</b></string>
+
+    <string name="explanation_5"><b>3. App Development Steps</b></string>
+    <string name="explanation_6">Make sure now that you do the preparation steps <a href="https://developer.huawei.com/consumer/en/doc/development/Media-Guides/audio-preparation">here.</a></string>
+    <string name="explanation_7"><b>4. Process Overview</b>\n\nTo develop with Audio Engine, create a basic <b>HwAudioKit</b> object and use it to query the specific capabilities that the mobile phone supports.
+
+\n\nIf the capability is supported, you can create it and use it for development.
+
+\n\nFor example, if the karaoke headset monitoring capability is supported, create a specific karaoke instance, and use it to develop functions such as karaoke enabling and settings functions. When you are not using the object, release it.</string>
+    <string name="explanation_8"><b>5. Precautions</b>
+\n\nYou need to set restrictions to accommodate for certain circumstances.
+
+\n\n ● When using headset monitoring, the feature status must be initialized every time the app is accessed. Parameters such as the corresponding volume should also be configured. The app will usually automatically record the status to avoid conflict with other apps.
+
+\n\n ● When the app is running in the background, make sure that the headset monitoring is disabled, in order to reduce impact on other apps.
+
+\n\n ● To make sure other apps are not affected by headset monitoring, the system will disable headset monitoring when an app that uses the Engine is switched to the background. Once the app is opened again, you will need to retrieve the saved status again.
+
+\n\n ● The <b>getSupportedFeatures()</b> and <b>isFeatureSupported(FeatureType type)</b> APIs can only be used once <b>HwAudioKi</b> has called the <b>initialize()</b> API and <b>ResultCode.AUDIO_KIT_SUCCESS</b> has been returned in <b>onResult</b> of <b>IAudioKitCabllback</b>.
+
+\n\n ● The API of a sub-function can only be used after the object has been created, and the corresponding value has been returned in the <b>onResult</b> of <b>IAudioKitCabllback</b>. For example: The headset monitoring capability can only be used when the <b>createFeature(FeatureTypetype)</b> of <b>HwAudioKit</b> has been called to create an object, and <b>ResultCode.KARAOKE_SUCCESS</b> has been returned in <b>onResult</b> of <b>IAudioKitCabllback</b>.
+
+\n\n ● To obtain latency information for the first time after the phone has been reset, enable headset monitoring, then call the API for obtaining the latency information.
+    </string>
+    <string name="explanation_9"><b>6. Development Procedure</b>
+    \n\nYou need to follow the link below to continue developing Audio Engine.\n\nPlease note that <b>Audio Engine sample app is currently
+         only available in China.</b>\n\nPlease follow the link below to check if it is published yet.</string>
+
+    <string name="docs_button_text">Development Procedure in Docs</string>
+    <string name="url_text_audioengine">https://developer.huawei.com/consumer/en/doc/development/Media-Guides/audio-introduction</string>
+</resources>

@@ -1,0 +1,56 @@
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="template">Template</string>
+    <string name="txt_btn_drive_login">Log in and authorize</string>
+    <string name="drive_kit_desc">Log in to the HUAWEI ID and authorize the app to access the Drive Kit, and allow the HUAWEI Drive app to open data to HUAWEI Drive Kit, so that third-party apps authorized by the Drive Kit can share your HUAWEI Drive app data.\n</string>
+    <string name="drive_kit_fail">Authorization failed</string>
+    <string name="drive_permission_fail">All Permissions Must be Granted</string>
+    <string name="drive_login_success">Login Successful</string>
+    <string name="drive_login_fail">Login Failed</string>
+    <string name="drive_not_enabled">Drive Kit is not enabled</string>
+    <string name="Error">Error</string>
+    <string name="file_no_comments">No Comments</string>
+    <string name="fileDetail_add_comment">Add Comment</string>
+    <string name="fileDetail_your_comment">Your Comment</string>
+    <string name="button_send_text">Send</string>
+    <string name="files_lbl_search">Search</string>
+    <string name="file_search_hint_file_name">File Name</string>
+    <string name="btn_download">Download</string>
+    <string name="btn_renameFile">Rename</string>
+    <string name="btn_copyFile">Copy File</string>
+    <string name="btn_delete">Delete</string>
+    <string name="uploadFile">Upload File</string>
+    <string name="drive_introduction">Drive Kit (short for HUAWEI Drive Kit) allows you to create apps that use HUAWEI Drive capabilities. Drive Kit provides cloud storage for your apps, enabling users to store files that are created while using your apps, including photos, videos, and documents, in Drive (short for HUAWEI Drive) as well as download files, upload files, query historical file versions, search for files, comment on files, and reply to comments. Drive Kit also provides comprehensive data protection, empowering users to manage their data securely and conveniently.</string>
+    <string name="drive_link_doc">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001050039630</string>
+    <string name="txt_reply_count">Reply Count:</string>
+    <string name="fileDetail_add_reply">Add Reply</string>
+    <string name="file_no_replies">No replies</string>
+    <string name="no_history_versions_found">No history versions found!</string>
+    <string name="lbl_historyVersions">History Versions</string>
+    <string name="folder_path">"/storage/emulated/0/Huawei/ExploreHMS/DownLoad/"</string>
+    <string name="replies">"Replies:"</string>
+    <string name="comments">Comments:</string>
+    <string name="no_comments">No Comments</string>
+    <string name="could_not_retrieve_comment_list_for_the_file">Could not retrieve comment list for the file!</string>
+    <string name="could_not_retrieve_comment_list_of_the_file">Could not retrieve comment list of the file!</string>
+    <string name="reply_delete_error_on_async_task">Reply delete error on AsyncTask</string>
+
+
+</resources>

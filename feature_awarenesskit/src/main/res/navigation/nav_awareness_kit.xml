@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   You may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_awareness_kit"
+    app:startDestination="@id/awarenessKitHomeFragment">
+
+    <fragment
+        android:id="@+id/awarenessKitHomeFragment"
+        android:name="com.hms.explorehms.huawei.feature_awarenesskit.ui.fragments.AwarenessKitHomeFragment"
+        android:label="fragment_awareness_kit_home"
+        tools:layout="@layout/fragment_awareness_kit_home">
+
+        <action
+            android:id="@+id/action_gotoTimeAwareness"
+            app:destination="@id/timeAwarenessFragment" />
+        <action
+            android:id="@+id/action_gotoLocationAwareness"
+            app:destination="@id/locationAwarenessFragment" />
+
+        <action
+            android:id="@+id/action_gotoBehaviorAwareness"
+            app:destination="@id/behaviorAwarenessFragment" />
+        <action
+            android:id="@+id/action_gotoBeaconAwareness"
+            app:destination="@id/beaconAwarenessFragment" />
+
+        <action
+            android:id="@+id/action_gotoAudioDeviceAwareness"
+            app:destination="@id/audioDeviceAwarenessFragment" />
+
+        <action
+            android:id="@+id/action_gotoWeatherAwareness"
+            app:destination="@id/weatherAwarenessFragment" />
+
+
+        <action
+            android:id="@+id/action_gotoLightAwareness"
+            app:destination="@id/lightAwarenessFragment" />
+
+        <action
+            android:id="@+id/action_gotoPhoneStatusAwareness"
+            app:destination="@id/phoneStatusAwarenessFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/timeAwarenessFragment"
+        android:name="com.hms.explorehms.huawei.feature_awarenesskit.ui.fragments.TimeAwarenessFragment"
+        android:label="fragment_time_awareness"
+        tools:layout="@layout/fragment_time_awareness" />
+    <fragment
+        android:id="@+id/locationAwarenessFragment"
+        android:name="com.hms.explorehms.huawei.feature_awarenesskit.ui.fragments.LocationAwarenessFragment"
+        android:label="fragment_location_awareness"
+        tools:layout="@layout/fragment_location_awareness" />
+    <fragment
+        android:id="@+id/behaviorAwarenessFragment"
+        android:name="com.hms.explorehms.huawei.feature_awarenesskit.ui.fragments.BehaviorAwarenessFragment"
+        android:label="fragment_behavior_awareness"
+        tools:layout="@layout/fragment_behavior_awareness" />
+    <fragment
+        android:id="@+id/beaconAwarenessFragment"
+        android:name="com.hms.explorehms.huawei.feature_awarenesskit.ui.fragments.BeaconAwarenessFragment"
+        android:label="fragment_beacon_awareness"
+        tools:layout="@layout/fragment_beacon_awareness" />
+    <fragment
+        android:id="@+id/audioDeviceAwarenessFragment"
+        android:name="com.hms.explorehms.huawei.feature_awarenesskit.ui.fragments.AudioDeviceAwarenessFragment"
+        android:label="fragment_audio_device_awareness"
+        tools:layout="@layout/fragment_audio_device_awareness" />
+    <fragment
+        android:id="@+id/weatherAwarenessFragment"
+        android:name="com.hms.explorehms.huawei.feature_awarenesskit.ui.fragments.WeatherAwarenessFragment"
+        android:label="fragment_weather_awareness"
+        tools:layout="@layout/fragment_weather_awareness" />
+    <fragment
+        android:id="@+id/lightAwarenessFragment"
+        android:name="com.hms.explorehms.huawei.feature_awarenesskit.ui.fragments.LightAwarenessFragment"
+        android:label="fragment_light_awareness"
+        tools:layout="@layout/fragment_light_awareness" />
+    <fragment
+        android:id="@+id/phoneStatusAwarenessFragment"
+        android:name="com.hms.explorehms.huawei.feature_awarenesskit.ui.fragments.PhoneStatusAwarenessFragment"
+        android:label="fragment_phone_status_awareness"
+        tools:layout="@layout/fragment_phone_status_awareness" />
+</navigation>
