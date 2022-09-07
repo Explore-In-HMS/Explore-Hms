@@ -374,7 +374,7 @@ public class InStreamRollActivity extends AppCompatActivity implements View.OnCl
         @Override
         public void onMediaError(int playTime, int errorCode, int extra) {
             // Playback error.
-            Log.d(TAG, "InstreamMediaStateListener.onMediaCompletion() : playTime : " + playTime);
+            Log.d(TAG, "InstreamMediaStateListener.onMediaError() : playTime : " + playTime);
             updateCountDown(playTime);
         }
 
