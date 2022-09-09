@@ -133,6 +133,7 @@ android {
                     ':feature_appgallerykit',
                     ':feature_wearengine',
                     ':feature_hemkit',
+                    ':dynamicfeaturetest',
                    // ':feature_hiaifoundation',
                     ':feature_connectapi',
                     ':feature_networkkit',
@@ -284,11 +285,14 @@ dependencies {
     api 'com.huawei.hms:ml-computer-vision-ocr-jk-model:3.6.0.300'
     // Import the Chinese and English model package.
     api 'com.huawei.hms:ml-computer-vision-ocr-cn-model:3.6.0.300'
-
     // Bank Card Recognition
     api 'com.huawei.hms:ml-computer-card-bcr:3.5.0.300'
-
     api 'com.huawei.hms:ml-computer-card-gcr-plugin:2.0.1.300'
+
+    //Text Embedding
+    api 'com.huawei.hms:ml-nlp-textembedding:3.5.0.300'
+
+    //ID card
     api 'com.huawei.hms:ml-computer-card-icr-cn:2.0.3.303'
     api 'com.huawei.hms:ml-computer-card-icr-vn:2.1.0.301'
 
@@ -327,19 +331,37 @@ dependencies {
     api 'com.huawei.hms:ml-computer-vision-gesture-model:2.1.0.300'
 
     // Language detection
-    implementation 'com.huawei.hms:ml-computer-language-detection:2.2.0.300'
+    //implementation 'com.huawei.hms:ml-computer-language-detection:2.2.0.300'
+    // Import the base SDK.
+    api 'com.huawei.hms:ml-computer-language-detection:3.6.0.312'
+    // Import the language detection algorithm package.
+    api 'com.huawei.hms:ml-computer-language-detection-model:3.6.0.312'
 
     // translate
-    implementation 'com.huawei.hms:ml-computer-translate:2.0.3.300'
-    implementation 'com.huawei.hms:ml-computer-translate-model:2.0.3.300'
+    api 'com.huawei.hms:ml-computer-translate:3.6.0.312'
+    // Import the translation algorithm package.
+    api 'com.huawei.hms:ml-computer-translate-model:3.6.0.312'
 
     // Real time transcription
-    implementation 'com.huawei.hms:ml-computer-voice-realtimetranscription:2.2.0.300'
+    api 'com.huawei.hms:ml-computer-voice-realtimetranscription:3.5.0.303'
 
     // Voice
-    implementation 'com.huawei.hms:ml-computer-voice-aft:2.0.1.300'
-    implementation 'com.huawei.hms:ml-computer-voice-tts:2.2.0.300'
-    implementation 'com.huawei.hms:ml-computer-voice-asr:2.2.0.300'
+    api 'com.huawei.hms:ml-computer-voice-aft:3.5.0.300'
+    //implementation 'com.huawei.hms:ml-computer-voice-tts:2.2.0.300'
+    // Import the base SDK.
+    api 'com.huawei.hms:ml-computer-voice-tts:3.6.0.300'
+    // Import the bee voice package.
+    api 'com.huawei.hms:ml-computer-voice-tts-model-bee:3.6.0.300'
+    // Import the eagle voice package.
+    api 'com.huawei.hms:ml-computer-voice-tts-model-eagle:3.6.0.300'
+
+    //ASR
+    api 'com.huawei.hms:ml-computer-voice-asr:3.5.0.301'
+
+    //Sound detection
+    api 'com.huawei.hms:ml-speech-semantics-sounddect-sdk:3.5.0.302'
+    api 'com.huawei.hms:ml-speech-semantics-sounddect-model:3.5.0.302'
+
     // ML KIT END
 
     //Analytics Kit

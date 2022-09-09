@@ -248,7 +248,7 @@ public class ImageClassificationActivity extends AppCompatActivity {
                             graphicOverlay.addGraphic(objectGraphic);
                             graphicOverlay.postInvalidate();
 
-                            imageViewClassification.setImageBitmap(BitmapUtils.loadBitmapFromView(graphicOverlay, 1080, 1200));
+                            imageViewClassification.setImageBitmap(BitmapUtils.loadBitmapFromView(graphicOverlay, graphicOverlay.getWidth(), graphicOverlay.getHeight()));
 
                             displaySuccessAnalyseResults(classificationList);
 

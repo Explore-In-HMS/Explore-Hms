@@ -48,6 +48,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.hms.explorehms.Util;
 import com.hms.explorehms.huawei.feature_mlkit.R;
@@ -201,7 +202,7 @@ public class TextToSpeechActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_to_speech);
 
-        Utils.setApiKeyForRemoteMLApplication();
+        Utils.setApiKeyForRemoteMLApplication(getApplicationContext());
         setupToolbar();
 
         speechParamLanguageCode = getString(R.string.en_us);
@@ -805,14 +806,38 @@ public class TextToSpeechActivity extends AppCompatActivity {
                 restartMediaPlayer(audioFileNameWav);
             }
 
+
             if (eventID == MLTtsConstants.EVENT_PLAY_START || eventID == MLTtsConstants.EVENT_PLAY_RESUME) {
                 Log.i(TAG, "MLTtsCallback onEvent EVENT_PLAY_STOP : " + eventID);
-                etInputTextToSpeech.setTextColor(Color.parseColor("#2196F3"));
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (etInputTextToSpeech != null) {
+                            etInputTextToSpeech.setTextColor(Color.parseColor("#2196F3"));
+                        }
+                    }
+                });
+
+               /* runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                    }
+                });*/
+
             }
 
             if (eventID == MLTtsConstants.EVENT_PLAY_STOP || eventID == MLTtsConstants.EVENT_PLAY_PAUSE) {
                 Log.i(TAG, "MLTtsCallback onEvent EVENT_PLAY_STOP : " + eventID);
-                etInputTextToSpeech.setTextColor(Color.parseColor("#607D8B"));
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (etInputTextToSpeech != null) {
+                            etInputTextToSpeech.setTextColor(Color.parseColor("#607D8B"));
+                        }
+                    }
+                });
+
             }
         }
     };

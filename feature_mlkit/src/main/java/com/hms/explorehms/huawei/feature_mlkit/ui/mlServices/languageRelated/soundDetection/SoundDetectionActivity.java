@@ -35,9 +35,9 @@ import com.hms.explorehms.Util;
 import com.hms.explorehms.huawei.feature_mlkit.R;
 import com.hms.explorehms.huawei.feature_mlkit.utils.DialogUtils;
 import com.hms.explorehms.huawei.feature_mlkit.utils.Utils;
-import com.huawei.hms.mlsdk.sounddect.MLSoundDectConstants;
-import com.huawei.hms.mlsdk.sounddect.MLSoundDectListener;
-import com.huawei.hms.mlsdk.sounddect.MLSoundDector;
+import com.huawei.hms.mlsdk.sounddect.MLSoundDetectConstants;
+import com.huawei.hms.mlsdk.sounddect.MLSoundDetectListener;
+import com.huawei.hms.mlsdk.sounddect.MLSoundDetector;
 
 import java.text.DecimalFormat;
 import java.util.Vector;
@@ -60,7 +60,7 @@ public class SoundDetectionActivity extends AppCompatActivity {
 
     private Unbinder unbinder;
 
-    private MLSoundDector soundDetector;
+    private MLSoundDetector soundDetector;
 
     private static String[] voiceTypeArray;
 
@@ -119,8 +119,8 @@ public class SoundDetectionActivity extends AppCompatActivity {
 
 
     public void createSoundDetectorAndSetListenerCallback() {
-        soundDetector = MLSoundDector.createSoundDector();
-        soundDetector.setSoundDectListener(soundDetectorListener);
+        soundDetector = MLSoundDetector.createSoundDetector();
+        soundDetector.setSoundDetectListener(soundDetectorListener);
     }
 
     private void createTimeHandlerForRecordTimer() {
@@ -170,11 +170,11 @@ public class SoundDetectionActivity extends AppCompatActivity {
         return true;
     }
 
-    private final MLSoundDectListener soundDetectorListener = new MLSoundDectListener() {
+    private final MLSoundDetectListener soundDetectorListener = new MLSoundDetectListener() {
         @Override
         public void onSoundSuccessResult(Bundle result) {
 
-            int voiceType = result.getInt(MLSoundDector.RESULTS_RECOGNIZED);
+            int voiceType = result.getInt(MLSoundDetector.RESULTS_RECOGNIZED);
 
             Log.d(TAG, "soundDetectorListener : onSoundSuccessResult : voiceType : " + voiceType);
             // You can look at the link for sequential voiceType numbers. :
@@ -206,13 +206,13 @@ public class SoundDetectionActivity extends AppCompatActivity {
 
         private String getDetailErrorPrompt(int errorCode) {
             switch (errorCode) {
-                case MLSoundDectConstants.SOUND_DECT_ERROR_NO_MEM:
+                case MLSoundDetectConstants.SOUND_DETECT_ERROR_NO_MEM:
                     return "ERROR: 12201 Memory Error! Check the memory size of the device in the current running state.";
-                case MLSoundDectConstants.SOUND_DECT_ERROR_FATAL_ERROR:
+                case MLSoundDetectConstants.SOUND_DETECT_ERROR_FATAL_ERROR:
                     return "ERROR: 12202 Critical Error! You can submit a ticket online. Huawei technical support will handle it in time.";
-                case MLSoundDectConstants.SOUND_DECT_ERROR_AUDIO:
+                case MLSoundDetectConstants.SOUND_DETECT_ERROR_AUDIO:
                     return "ERROR: 12203 Microphone Error! Check whether the microphone is in use.";
-                case MLSoundDectConstants.SOUND_DECT_ERROR_INTERNAL:
+                case MLSoundDetectConstants.SOUND_DETECT_ERROR_INTERNAL:
                     return "ERROR: 12298 Internal Error! You can submit a ticket online. Huawei technical support will handle it in time.";
                 default:
                     return "";
