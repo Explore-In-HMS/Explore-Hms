@@ -868,9 +868,10 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="text_appinfo_onboarding1">You can find all HMS Core Kits and AGC services in HMS Explore HMS.</string>
     <string name="tab_information_onboarding2">Services and kits are located under HMS Core and AGC tabs.</string>
     <string name="swipe_click_info_onboarding2">Navigation between tabs can be done by swiping or clicking.</string>
-    <string name="search_headline_onboarding3">Searching</string>
-    <string name="search_info_onboarding3">Search function helps to find kits or services easily.</string>
-    <string name="category_info_onboarding4">Kits and services are located under related categories in HMS Core and AGC tabs. Categorization is as same as declared in official website. (developer.huawei.com)</string>
+    <string name="categories_headline_onboarding3">Categories</string>
+    <string name="category_info_onboarding3">Kits and services are located under related categories in HMS Core and AGC tabs. Categorization is as same as declared in official website. (developer.huawei.com)</string>
+    <string name="search_headline_onboarding4">Searching</string>
+    <string name="search_info_onboarding4">Search function helps to find kits or services easily.</string>
     <string name="modules_info_onboarding5">There are two types of modules in Explore HMS application. One type includes all features of the related kit or service (e.g. Location Kit, Share Engine etc.) Other type is called as references where information about related kit or services can be found (e.g. Cast Engnie, CaaaS Kit etc.)</string>
     <string name="text_with_image_onboarding5">The  icon means it is a reference module.</string>
     <string name="download_delete_info_onboarding4">When you install HMS Explore HMS on your phone, you will have base modules such as Location Kit, Map Kit etc. You can also download or delete other modules also.</string>
