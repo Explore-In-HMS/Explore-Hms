@@ -45,12 +45,11 @@ public class AppLinkingDeepLinkActivity extends AppCompatActivity {
 
             Uri deepLink = resolvedLinkData.getDeepLink();
                 ResolvedLinkData.LinkType linkType=resolvedLinkData.getLinkType();
-                String installSource=resolvedLinkData.getInstallSource();
                 String className=deepLink.getPath().replace('/', ' ').trim();
 
                 try {
                     startActivity(new Intent(this, Class.forName(className)));
-                    toast(getResources().getString(R.string.deeplink_success_message)+"link Type:"+linkType.name()+"Source:"+installSource);
+                    toast(getResources().getString(R.string.deeplink_success_message)+"link Type:"+linkType.name());
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                     Log.e(TAG, e.getMessage());

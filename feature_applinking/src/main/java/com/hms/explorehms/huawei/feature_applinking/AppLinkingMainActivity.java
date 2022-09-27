@@ -30,6 +30,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
@@ -42,7 +43,7 @@ import com.huawei.agconnect.applinking.AppLinking;
 import com.huawei.hms.feature.dynamicinstall.FeatureCompat;
 
 
-//https://explorehmsdev.dre.agconnect.link/FXbP
+//https://explorehms.dre.agconnect.link/Ha14
 
 public class AppLinkingMainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
@@ -149,7 +150,7 @@ public class AppLinkingMainActivity extends AppCompatActivity implements Adapter
         if(iosLinkEnabled){
             AppLinking.Builder builder = AppLinking.newBuilder();
             builder.setIsShowPreview(true);
-            builder.setUriPrefix("https://explorehmsdev.dre.agconnect.link");
+            builder.setUriPrefix("https://explorehms.dre.agconnect.link");
             builder.setDeepLink(Uri.parse("https://developer.huawei.com/" + path));
 
             // Set IOS link behavior
@@ -178,7 +179,7 @@ public class AppLinkingMainActivity extends AppCompatActivity implements Adapter
         }
         else {
             AppLinking.Builder builder = AppLinking.newBuilder();
-            builder.setUriPrefix("https://explorehmsdev.dre.agconnect.link");
+            builder.setUriPrefix("https://explorehms.dre.agconnect.link");
             builder.setDeepLink(Uri.parse("https://developer.huawei.com/" + path));
 
             // Set Android link behavior
@@ -197,7 +198,12 @@ public class AppLinkingMainActivity extends AppCompatActivity implements Adapter
                 builder.setSocialCardInfo(socialCardInfo);
 
                 if (shortLinkEnabled) {
-                    builder.buildShortAppLinking().addOnSuccessListener(shortAppLinking -> tvAppLink.setText(shortAppLinking.getShortUrl().toString())).addOnFailureListener(e -> Log.e(TAG, "Message: " + e.getMessage() + e.getCause()));
+                    builder.buildShortAppLinking().addOnSuccessListener(shortAppLinking -> {
+                        Uri shortLinkUri = shortAppLinking.getShortUrl();
+                        tvAppLink.setText(shortLinkUri.toString());
+                    }).addOnFailureListener(e -> {
+                        Toast.makeText(this,e.getMessage().toString(),Toast.LENGTH_LONG).show();
+                    });
                 } else {
                     AppLinking appLink = builder.buildAppLinking();
                     tvAppLink.setText(appLink.getUri().toString());

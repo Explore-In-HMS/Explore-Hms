@@ -17,6 +17,7 @@
  */
 package com.hms.explorehms.huawei.feature_clouddb.dao;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.hms.explorehms.huawei.feature_clouddb.model.BookComment;
@@ -47,10 +48,14 @@ public class CloudDBZoneWrapper {
     private static final String TAG = "WRAPPER";
 
     private static AGConnectCloudDB cloudDB;
+    private static AGConnectOptions agcConnectOptions;
+    private static AGConnectInstance instance;
     private static CloudDBZone cloudDbZone;
 
-    public static void initCloudDBZone() {
-        cloudDB = AGConnectCloudDB.getInstance();
+    public static void initCloudDBZone(Context context) {
+        agcConnectOptions = new AGConnectOptionsBuilder().setRoutePolicy(AGCRoutePolicy.GERMANY).build(context);
+        instance = AGConnectInstance.buildInstance(agcConnectOptions);
+        cloudDB = AGConnectCloudDB.getInstance(instance,AGConnectAuth.getInstance());
         createObjectType();
         openCloudDBZone();
     }

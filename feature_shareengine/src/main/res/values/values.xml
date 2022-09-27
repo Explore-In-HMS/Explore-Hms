@@ -19,6 +19,7 @@
 <resources>
     <string name="title_share_engine">Share Engine</string>
     <string name="btn_share_between_huawei">Between Huawei Phones</string>
+    <string name="btn_share_between_android">Between Android Phones</string>
     <string name="btn_for_linux">For Linux Devices</string>
     <string name="txt_for_android">For Android Devices</string>
     <string name="txt_input">Input</string>

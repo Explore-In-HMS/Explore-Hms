@@ -19,11 +19,11 @@
 
 <resources>
     <string-array name="package_names">
-        <item>com.hms.explorehms.huawei.pushkit.MainActivityPushKit</item>
-        <item>com.hms.explorehms.huawei.mapkit.MainActivityMapKit</item>
-        <item>com.hms.explorehms.huawei.locationkit.LocationKitActivity</item>
-        <item>com.hms.explorehms.huawei.scankit.ScanKitActivity</item>
-        <item>com.hms.explorehms.huawei.sitekit.MainActivitySiteKit</item>
+        <item>com.hms.explorehms.pushkit.MainActivityPushKit</item>
+        <item>com.hms.explorehms.mapkit.MainActivityMapKit</item>
+        <item>com.hms.explorehms.locationkit.LocationKitActivity</item>
+        <item>com.hms.explorehms.scankit.ScanKitActivity</item>
+        <item>com.hms.explorehms.sitekit.MainActivitySiteKit</item>
     </string-array>
 
     <string-array name="spinner_array">
