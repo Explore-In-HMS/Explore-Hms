@@ -31,8 +31,10 @@
     </dist:module>
 
     <application>
-        <activity android:name=".view.MainFragmentActivity"></activity>
-        <activity android:name=".view.MainActivityCloud" />
+        <activity android:name=".view.MainFragmentActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name=".view.MainActivityCloud"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
     </application>
 
 </manifest>

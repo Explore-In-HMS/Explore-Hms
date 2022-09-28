@@ -22,17 +22,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.hms.explorehms.Util;
 import com.google.android.material.button.MaterialButton;
+import com.hms.explorehms.Util;
 import com.huawei.hmf.tasks.OnFailureListener;
 import com.huawei.hmf.tasks.OnSuccessListener;
 import com.huawei.hmf.tasks.Task;
@@ -49,11 +51,11 @@ public class IdentityActivity extends AppCompatActivity {
 
     private static final int GET_ADDRESS = 1000;
 
-    // TextView for displaying operation information on the UI
-    private TextView addresslogInfo;
-
     // TextView for displaying user name, city, area, address, phone information on the UI
     private TextView userAddressTextView;
+
+    // TextView for displaying operation information on the UI
+    private LinearLayout mLinearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,8 +67,7 @@ public class IdentityActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         Util.setToolbar(this, toolBar, getString(R.string.url_txt_identitykit));
         userAddressTextView = findViewById(R.id.user_address);
-        addresslogInfo = findViewById(R.id.identity_address_log_info);
-        addresslogInfo.setMovementMethod(ScrollingMovementMethod.getInstance());
+        mLinearLayout = (LinearLayout) findViewById(R.id.identity_ll);
         // Button for displaying operation information on the UI
         MaterialButton queryUserAddress = findViewById(R.id.query_user_address);
         queryUserAddress.setOnClickListener(new View.OnClickListener() {
@@ -153,13 +154,19 @@ public class IdentityActivity extends AppCompatActivity {
         }
     }
 
+    // TextView for displaying log, view information on the UI
     private void logger(String string) {
         Log.i(TAG, string);
+        View mLayout = LayoutInflater.from(this).inflate(R.layout.activity_identity, mLinearLayout, false);
+        View logView = (View) mLayout.findViewById(R.id.identity_llLog);
+        TextView addresslogInfo = (TextView) mLayout.findViewById(R.id.identity_address_log_info);
         addresslogInfo.append("Log: " + string + System.lineSeparator());
-        int offset = addresslogInfo.getLineCount() * addresslogInfo.getLineHeight();
-        if (offset > addresslogInfo.getHeight()) {
-            addresslogInfo.scrollTo(0, offset - addresslogInfo.getHeight());
+        if (logView.getParent() != null && addresslogInfo.getParent() != null) {
+            ((ViewGroup) logView.getParent()).removeView(logView);
+            ((ViewGroup) addresslogInfo.getParent()).removeView(addresslogInfo);
         }
+        mLinearLayout.addView(addresslogInfo);
+        mLinearLayout.addView(logView);
     }
 
     @Override

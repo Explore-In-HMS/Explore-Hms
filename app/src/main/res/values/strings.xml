@@ -724,6 +724,7 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="btn_txt_scan_multiproc_sync">Multi-Processor Syncronous Mode</string>
     <string name="btn_txt_scan_multiproc_async">Multi-Processor Asyncronous Mode</string>
     <string name="btn_txt_scan_generateqr">Generate QR Code</string>
+    <string name="scan_kit_link_documentation_link">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050041994</string>
 
     <string name="barcode_width">Barcode width:</string>
     <string name="barcode_height">Barcode height:</string>

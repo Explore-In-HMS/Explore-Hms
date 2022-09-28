@@ -20,7 +20,11 @@ package com.hms.explorehms.huawei.feature_awarenesskit.ui.fragments;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -33,6 +37,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
+import com.hms.explorehms.BuildConfig;
 import com.hms.explorehms.huawei.feature_awarenesskit.R;
 import com.hms.explorehms.huawei.feature_awarenesskit.databinding.FragmentWeatherAwarenessBinding;
 import com.huawei.hms.kit.awareness.Awareness;
@@ -103,8 +108,11 @@ public class WeatherAwarenessFragment extends Fragment {
                 .addOnFailureListener(e -> {
                     binding.progressBarWeatherawareness.setVisibility(View.INVISIBLE);
                     clearUI();
-                    Toast.makeText(requireContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(requireContext(), "Please allow location permission from Hms Core", Toast.LENGTH_SHORT).show();
                     Log.e(weatherAwarenessTag, "get weather failed" + e.getMessage() + ", ");
+                    startActivity(new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                            Uri.parse("package:" + "com.huawei.hwid")).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                    requireActivity().finish();
                 });
 
     }
