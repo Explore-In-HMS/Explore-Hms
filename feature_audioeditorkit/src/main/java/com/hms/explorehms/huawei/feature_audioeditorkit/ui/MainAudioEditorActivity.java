@@ -43,6 +43,7 @@ import com.google.android.material.button.MaterialButton;
 import com.huawei.hms.audioeditor.common.agc.HAEApplication;
 import com.huawei.hms.audioeditor.sdk.AudioExtractCallBack;
 import com.huawei.hms.audioeditor.sdk.HAEAudioExpansion;
+import com.huawei.hms.audioeditor.sdk.util.FileUtil;
 import com.huawei.hms.audioeditor.ui.api.AudioEditorLaunchOption;
 import com.huawei.hms.audioeditor.ui.api.AudioExportCallBack;
 import com.huawei.hms.audioeditor.ui.api.AudioInfo;
@@ -79,7 +80,7 @@ public class MainAudioEditorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mContext = this;
         setContentView(R.layout.activity_main_audio_editor);
-        HAEApplication.getInstance().setApiKey("CV8RiFSCwQTFPxl1ET8PWacetyb/E3+HjejRkuQHJ/RSczHVZzPXC7pNRBPPpSoJvuigzxm5tRMzvee57oVD3djKVLNc");
+        HAEApplication.getInstance().setApiKey("DAEDANXEHRMAKYD9OeCctP9Ze1Lbo2iNvm8fjlYjQkTCoxBmPbdUFzflbRlMqFcUfZ4/L+vUFqTkl/gsRqiro22UcVAXrkneP37cOg==");
         Toolbar toolBar = findViewById(R.id.tb_main_audioeditor);
         setSupportActionBar(toolBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -271,6 +272,7 @@ public class MainAudioEditorActivity extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, false);
         intent.setType("video/*");
         startActivityForResult(intent, REQUEST_CODE_FOR_SELECT_VIDEO);
+
     }
 
     /**
@@ -281,12 +283,26 @@ public class MainAudioEditorActivity extends AppCompatActivity {
     private void beginExtractAudio(String path) {
         fragmentDialog = ProgressDialog.newInstance("Extracting");
         fragmentDialog.show(getSupportFragmentManager(), "ProgressDialogFragment");
+        String outPutDir = FileUtil.getAudioExtractStorageDirectory(this);
+        String name = "audio_extract";
+        if (path != null) {
+            int slashIndex = path.lastIndexOf("/");
+            if (slashIndex == -1) {
+                name = path;
+            } else {
+                name = path.substring(slashIndex + 1);
+            }
+            int dotIndex = name.lastIndexOf(".");
+            if (dotIndex >= 0) {
+                name = name.substring(0, dotIndex);
+            }
+        }
         HAEAudioExpansion.getInstance()
                 .extractAudio(
                         this,
                         path,
-                        null,
-                        null,
+                        outPutDir,
+                        name,
                         new AudioExtractCallBack() {
                             @Override
                             public void onSuccess(String audioPath) {

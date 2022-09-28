@@ -7,16 +7,30 @@
     tools:context=".ui.AssetActivity">
 
     <Button
-        android:id="@+id/selectFileBtn"
+        android:id="@+id/selectVideoFileBtn"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:layout_marginStart="@dimen/dp_16"
         android:layout_marginEnd="@dimen/dp_16"
-        android:text="@string/choose_file_for_getting_information"
+        android:text="@string/choose_video_for_getting_information"
+        android:textSize="@dimen/sp_13"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/selectAudioFileBtn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:text="@string/choose_audio_for_getting_information"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectVideoFileBtn" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textViewInfo"
@@ -28,7 +42,7 @@
         android:layout_marginStart="@dimen/dp_16"
         android:layout_marginEnd="@dimen/dp_16"
         android:scrollbars="vertical"
-        app:layout_constraintTop_toBottomOf="@id/selectFileBtn"
+        app:layout_constraintTop_toBottomOf="@id/selectAudioFileBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

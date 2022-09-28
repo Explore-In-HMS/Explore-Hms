@@ -19,7 +19,9 @@
 package com.hms.explorehms.huawei.feature_scenekit.faceview;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.CompoundButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
@@ -85,9 +87,14 @@ public class FaceViewActivity extends AppCompatActivity {
                     int index = faceView.loadAsset("FaceView/fox.glb", LandmarkType.TIP_OF_NOSE);
                     // Optional) Set the initial status of a face.
                     faceView.setInitialPose(index, position, rotation, scale);
+                    Toast.makeText(getApplicationContext(), "Your device may not support this feature, please check the official document!", Toast.LENGTH_LONG).show();
+
                 }
             }
+
         });
+
+
     }
 
     /**

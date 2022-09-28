@@ -21,6 +21,7 @@ package com.hms.explorehms.huawei.feature_avpipelinekit.ui;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -34,6 +35,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.hms.explorehms.huawei.feature_avpipelinekit.R;
@@ -132,7 +134,7 @@ public class AssetActivity extends AppCompatActivity {
 
     void makeToastAndRecordLog(int priority, String msg) {
         Log.println(priority, TAG, msg);
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -140,12 +142,30 @@ public class AssetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asset);
         mHandler.sendEmptyMessage(MSG_CREATE);
-        Button selectBtn = findViewById(R.id.selectFileBtn);
+        Button selectBtn = findViewById(R.id.selectVideoFileBtn);
         selectBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.i(TAG, "user is choosing file");
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("video/*");
+                intent.addCategory(Intent.CATEGORY_DEFAULT);
+                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                try {
+                    startActivityForResult(Intent.createChooser(intent, "\n" +
+                            "Please select file"), 1);
+                } catch (ActivityNotFoundException e) {
+                    e.printStackTrace();
+                    Toast.makeText(AssetActivity.this, "Please install a file manager", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        Button selectAudioBtn = findViewById(R.id.selectAudioFileBtn);
+        selectAudioBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Log.i(TAG, "user is choosing file");
                 Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-                intent.setType("*/*");
+                intent.setType("audio/*");
                 intent.addCategory(Intent.CATEGORY_DEFAULT);
                 intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 try {
@@ -174,6 +194,7 @@ public class AssetActivity extends AppCompatActivity {
         mTextView.setText("");
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.R)
     @SuppressWarnings("deprecation")
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.i(TAG, "onActivityResult");
@@ -189,15 +210,17 @@ public class AssetActivity extends AppCompatActivity {
         }
         String uriAuthority = fileuri.getAuthority();
         if (!uriAuthority.equals("com.android.externalstorage.documents")) {
-            makeToastAndRecordLog(Log.ERROR, "this uri is:" + uriAuthority + ", but we need external storage document");
+            makeToastAndRecordLog(Log.ERROR, "this uri is:" + uriAuthority + ", please select a document from external storage");
             return;
         }
+
         String docId = DocumentsContract.getDocumentId(fileuri);
         String[] split = docId.split(":");
         if (!split[0].equals("primary")) {
             makeToastAndRecordLog(Log.ERROR, "this document id is:" + docId + ", but we need primary:*");
             return;
         }
+
         mFilePath = Environment.getExternalStorageDirectory() + "/" + split[1];
     }
 }

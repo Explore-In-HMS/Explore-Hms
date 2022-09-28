@@ -88,7 +88,6 @@ public class TopicDialogPushKit extends Dialog {
 
         edTopic.setOnEditorActionListener((textView, i, keyEvent) -> {
             if (i == EditorInfo.IME_ACTION_UNSPECIFIED) {
-                //
                 InputMethodManager imm =
                         (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
                 if (imm != null) {
