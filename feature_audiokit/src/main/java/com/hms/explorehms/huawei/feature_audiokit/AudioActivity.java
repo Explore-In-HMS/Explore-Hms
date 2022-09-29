@@ -29,6 +29,7 @@ import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.media.AudioManager;
 import android.media.MediaMetadataRetriever;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -70,6 +71,7 @@ import java.util.concurrent.TimeUnit;
 public class AudioActivity extends AppCompatActivity implements CurrentPlaylistAdapter.OnItemClickListener {
 
     private static final String TAG = "AudioActivity";
+    AudioManager audioManager;
     private static final String CHANNEL_ID = "4";
     private static final String MEDIACENTER_CANCEL_NOTIFICATION = "com.huawei.hms.mediacenter.cancel_notification";
     private final List<HwAudioStatusListener> mTempListeners = new CopyOnWriteArrayList<>();
@@ -151,11 +153,11 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
     private List<HwAudioPlayItem> wholeOnlinePlayList;
     private List<Integer> indexList = new ArrayList<>();
 
-    @SuppressLint("UseCompatLoadingForDrawables")
+    @SuppressLint({"UseCompatLoadingForDrawables", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         //Custom service to stop playback when the activity is destroyed.
         //This service will destroy itself along with the music in the background.
         Intent intent = new Intent(this, AudioKillService.class);
@@ -187,14 +189,16 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
 
         initializeManagerAndGetPlayList(this);
 
-        binding.volumeSeekBar.setMax(100); //sound has 100 levels
-        binding.volumeSeekBar.setProgress(100);
+        binding.volumeSeekBar.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
+        binding.volumeTextView.setText(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)+"");
+        binding.volumeSeekBar.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
         binding.volumeSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 binding.volumeSeekBar.setProgress(progress);
                 if (mHwAudioPlayerManager != null) {
                     mHwAudioPlayerManager.setVolume(progress);
+                    audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, progress, 0);
                 }
                 String progressString = progress + "";
                 binding.volumeTextView.setText(progressString);
@@ -274,6 +278,7 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
             public void onClick(View view) {
                 if (mHwAudioPlayerManager != null) {
                     mHwAudioPlayerManager.setPlaySpeed(2f);
+                    //audioManager.setStreamVolume(AudioManager.STREAM_MUSIC,  audioManager.getStreamVolume(AudioManager.STREAM_MUSIC), 0);
                 }
             }
         });

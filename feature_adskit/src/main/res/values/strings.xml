@@ -20,17 +20,16 @@
     <string name="app_name">D6AdsKit</string>
 
 
-
     /*
     *******************************************
-    Banner Ads testID 		: testw6vs28auh3
-    Native Ad Video testID  : testy63txaom86
-    Native Ads testID       : testu7m3hc4gvm
-    Native Ad Small testID  : testb65czjivt9
-    Rewarded Ads testID 	: testx9dtjwj8hp
+    Banner Ads testID : testw6vs28auh3
+    Native Ad Video testID : testy63txaom86
+    Native Ads testID : testu7m3hc4gvm
+    Native Ad Small testID : testb65czjivt9
+    Rewarded Ads testID : testx9dtjwj8hp
     Interstitial Ads testID : testb4znbuh3n2 video
     Interstitial Ads testID : teste9ih9j0rc3 image
-    Splash  Ads testID 		: testq6zq98hecj
+    Splash Ads testID : testq6zq98hecj
     *******************************************
     */
 
@@ -60,6 +59,10 @@
 
     <!-- Roll ad -->
     <string name="ad_id_roll">testy3cglm3pj0</string>
+    <string name="roll_add_introduction">"Roll ads are displayed as short videos or images, before, during, or after the video content is played.
+                                         \nPre-roll: displayed before the video content.
+                                           \nMid-roll: displayed in the middle of the video content.
+                                           \nPost-roll: displayed after the video content."</string>
 
     <string name="BannerActivityTitle">Banner Ad Activity</string>
     <string name="BannerActivityInfoText">ReCreate Banner AD</string>

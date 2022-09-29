@@ -49,8 +49,8 @@ enum DataTypeGameService {
 
 public class CustomDialogGameServices<T> {
 
-    private static final String SHOOTER_ID = "FA9677A5A94F84497F1ECBDE747B2A6623546F331833434DFB366D643796053A";
-    private static final String SURVIVOR_ID = "DBE6181356738641A3E0621D8B2BF65DB0E72A756F7F51D18B1AC0BB655AE20C";
+    private static final String SHOOTER_ID = "7618DBEFF87A659F698CBE28DF8C478492377057B97EF9DA12030F6FD6D34278";
+    private static final String SURVIVOR_ID = "E3229FB852205D4ECCF43452FB61C2331D84C5C3D8A1AFEB320B352AFA9B36F4";
     private Context context;
     private Dialog dialog;
     private ItemCustomviewGameservicesBinding binding;
