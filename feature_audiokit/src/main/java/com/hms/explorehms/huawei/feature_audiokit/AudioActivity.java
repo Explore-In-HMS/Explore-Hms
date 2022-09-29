@@ -31,6 +31,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.AudioManager;
 import android.media.MediaMetadataRetriever;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -39,6 +40,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.RemoteException;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RemoteViews;
 import android.widget.SeekBar;
@@ -69,7 +71,7 @@ import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 
-public class AudioActivity extends AppCompatActivity implements CurrentPlaylistAdapter.OnItemClickListener {
+public class AudioActivity extends AppCompatActivity implements CurrentPlaylistAdapter.OnItemClickListener, OnAudioVolumeChangedListener {
 
     private static final String TAG = "AudioActivity";
     private static final String CHANNEL_ID = "4";
@@ -85,6 +87,8 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
     PlaylistCreator playlistCreator = new PlaylistCreator(this);
     private HwAudioManager mHwAudioManager;
     private HwAudioPlayerManager mHwAudioPlayerManager;
+    private AudioManager mAudioManager;
+    protected int countVolume;
     HwAudioStatusListener mPlayListener = new HwAudioStatusListener() {
         @Override
         public void onSongChange(HwAudioPlayItem hwAudioPlayItem) {
@@ -152,6 +156,7 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
     private List<HwAudioPlayItem> wholeLocalPlayList;
     private List<HwAudioPlayItem> wholeOnlinePlayList;
     private List<Integer> indexList = new ArrayList<>();
+    private AudioVolumeObserver mAudioVolumeObserver;
 
     @SuppressLint("UseCompatLoadingForDrawables")
     @Override
@@ -189,14 +194,18 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
 
         initializeManagerAndGetPlayList(this);
 
-        binding.volumeSeekBar.setMax(100); //sound has 100 levels
-        binding.volumeSeekBar.setProgress(100);
+        mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        binding.volumeSeekBar.setMax(mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)); //sound has 100 levels
+        binding.volumeSeekBar.setProgress(mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
+        binding.volumeTextView.setText(String.valueOf(mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC)));
+        countVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
         binding.volumeSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 binding.volumeSeekBar.setProgress(progress);
                 if (mHwAudioPlayerManager != null) {
                     mHwAudioPlayerManager.setVolume(progress);
+                    mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, progress, AudioManager.STREAM_MUSIC);
                 }
                 String progressString = progress + "";
                 binding.volumeTextView.setText(progressString);
@@ -212,7 +221,7 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
             @SuppressLint("UseCompatLoadingForDrawables")
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                if (seekBar.getProgress() == 0) {
+                if (seekBar.getProgress() == 0 || mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC) == 0) {
                     binding.volumeImageView.setImageDrawable(getDrawable(R.drawable.ic_volume_off));
                 } else {
                     binding.volumeImageView.setImageDrawable(getDrawable(R.drawable.ic_volume_up));
@@ -732,10 +741,47 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        // initialize audio observer
+        if (mAudioVolumeObserver == null) {
+            mAudioVolumeObserver = new AudioVolumeObserver(this);
+        }
+        /*
+         * register audio observer to identify the volume changes
+         * of audio streams for music playback.
+         *
+         * It is also possible to listen for changes in other audio stream types:
+         * STREAM_RING: phone ring, STREAM_ALARM: alarms, STREAM_SYSTEM: system sounds, etc.
+         */
+        mAudioVolumeObserver.register(AudioManager.STREAM_MUSIC, this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        // release audio observer
+        if (mAudioVolumeObserver != null) {
+            mAudioVolumeObserver.unregister();
+        }
+    }
+
+    @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
         // Initialize the SDK in the activity.
         FeatureCompat.install(newBase);
+    }
+
+    @Override
+    public void onAudioVolumeChanged(int currentVolume, int maxVolume) {
+        binding.volumeSeekBar.setProgress(currentVolume);
+        binding.volumeTextView.setText(String.valueOf(currentVolume));
+        if (currentVolume <= 0) {
+            binding.volumeImageView.setImageDrawable(getDrawable(R.drawable.ic_volume_off));
+        } else {
+            binding.volumeImageView.setImageDrawable(getDrawable(R.drawable.ic_volume_up));
+        }
     }
 
     // Receives intents when closing from notification bar
@@ -748,6 +794,45 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
                 mHwAudioPlayerManager.stop();
             }
         }
+    }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+
+        int action, keycode;
+
+        action = event.getAction();
+        keycode = event.getKeyCode();
+        countVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+        switch (keycode) {
+            case KeyEvent.KEYCODE_VOLUME_UP:
+                if (KeyEvent.ACTION_UP == action) {
+                    if (countVolume >= mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)) {
+                        binding.volumeSeekBar.setProgress(mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
+                    } else {
+                        countVolume += 1;
+                        binding.volumeSeekBar.setProgress(countVolume);
+                    }
+                }
+                return true;
+            case KeyEvent.KEYCODE_VOLUME_DOWN:
+                if (KeyEvent.ACTION_DOWN == action) {
+                    if (countVolume <= 0) {
+                        binding.volumeSeekBar.setProgress(0);
+                    } else {
+                        countVolume -= 1;
+                        binding.volumeSeekBar.setProgress(countVolume);
+                    }
+                }
+                return true;
+            default:
+                return super.dispatchKeyEvent(event);
+        }
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 
     // Relying on getConstantState() alone can result in false negatives.

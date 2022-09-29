@@ -26,6 +26,7 @@
     <string name="playlist">Playlist</string>
     <string name="adjust_sound">Adjust In-App Sound</string>
     <string name="_100">100</string>
+    <string name="_15">15</string>
     <string name="please_select_one_playlist_type">Please select one playlist type</string>
     <string name="online_playlist">Online Playlist</string>
     <string name="local_playlist">Local Playlist</string>

@@ -252,7 +252,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/_100"
+        android:text="@string/_15"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/playButtonImageView"
         app:layout_constraintHorizontal_bias="0.50"
