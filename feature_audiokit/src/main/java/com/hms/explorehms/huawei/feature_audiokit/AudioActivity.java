@@ -28,6 +28,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaMetadataRetriever;
 import android.os.AsyncTask;
@@ -247,11 +249,11 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
             @SuppressLint("UseCompatLoadingForDrawables")
             @Override
             public void onClick(View view) {
-                if (binding.playButtonImageView.getDrawable().getConstantState().equals(drawablePlay.getConstantState()) && mHwAudioPlayerManager != null) {
+                if (areDrawablesIdentical(binding.playButtonImageView.getDrawable(), drawablePlay) && mHwAudioPlayerManager != null) {
                     mHwAudioPlayerManager.play();
                     binding.playButtonImageView.setImageDrawable(getDrawable(R.drawable.ic_pause));
                     isReallyPlaying = true;
-                } else if (binding.playButtonImageView.getDrawable().getConstantState().equals(drawablePause.getConstantState()) && mHwAudioPlayerManager != null) {
+                } else if (areDrawablesIdentical(binding.playButtonImageView.getDrawable(), drawablePause) && mHwAudioPlayerManager != null) {
                     mHwAudioPlayerManager.pause();
                     binding.playButtonImageView.setImageDrawable(getDrawable(R.drawable.ic_play_arrow));
                     isReallyPlaying = false;
@@ -272,8 +274,32 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
         binding.speedImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mHwAudioPlayerManager != null) {
-                    mHwAudioPlayerManager.setPlaySpeed(2f);
+                //String speed = String.valueOf((mHwAudioPlayerManager.getPlaySpeed()));
+                if (mHwAudioPlayerManager != null && String.valueOf((mHwAudioPlayerManager.getPlaySpeed())).equals("1.0")) {
+                    mHwAudioPlayerManager.setPlaySpeed(1.5F);
+                    binding.speedTextView.setText(R.string.speed_text_1_5X);
+                } else if (mHwAudioPlayerManager != null && String.valueOf((mHwAudioPlayerManager.getPlaySpeed())).equals("0.5")) {
+                    mHwAudioPlayerManager.setPlaySpeed(1F);
+                    binding.speedTextView.setText(R.string.speed_text_1X);
+                } else {
+                    mHwAudioPlayerManager.setPlaySpeed(2F);
+                    binding.speedTextView.setText(R.string.speed_text_2X);
+                }
+            }
+        });
+
+        binding.speedImageViewDecrease.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mHwAudioPlayerManager != null && String.valueOf((mHwAudioPlayerManager.getPlaySpeed())).equals("1.5")) {
+                    mHwAudioPlayerManager.setPlaySpeed(1F);
+                    binding.speedTextView.setText(R.string.speed_text_1X);
+                } else if (mHwAudioPlayerManager != null && String.valueOf((mHwAudioPlayerManager.getPlaySpeed())).equals("2.0")) {
+                    mHwAudioPlayerManager.setPlaySpeed(1.5F);
+                    binding.speedTextView.setText(R.string.speed_text_1_5X);
+                } else {
+                    mHwAudioPlayerManager.setPlaySpeed(0.5F);
+                    binding.speedTextView.setText(R.string.speed_text_0_5X);
                 }
             }
         });
@@ -343,13 +369,13 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
             @Override
             public void onClick(View view) {
                 if (mHwAudioPlayerManager != null) {
-                    if (binding.shuffleButtonImageView.getDrawable().getConstantState().equals(shuffleDrawable.getConstantState())) {
+                    if (areDrawablesIdentical(binding.shuffleButtonImageView.getDrawable(), shuffleDrawable)) {
                         mHwAudioPlayerManager.setPlayMode(0);
                         binding.shuffleButtonImageView.setImageDrawable(getDrawable(R.drawable.ic_normal_playlist_mode));
                         Toast.makeText(AudioActivity.this, "Normal order", Toast.LENGTH_SHORT).show();
-                    } else if (binding.shuffleButtonImageView.getDrawable().getConstantState().equals(orderDrawable.getConstantState())) {
+                    } else if (areDrawablesIdentical(binding.shuffleButtonImageView.getDrawable(), orderDrawable)) {
                         mHwAudioPlayerManager.setPlayMode(1);
-                        binding.shuffleButtonImageView.setImageDrawable(getDrawable(R.drawable.ic_normal_playlist_mode));
+                        binding.shuffleButtonImageView.setImageDrawable(getDrawable(R.drawable.ic_shuffle));
                         Toast.makeText(AudioActivity.this, "Shuffle songs", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -360,11 +386,11 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
             @Override
             public void onClick(View view) {
                 if (mHwAudioPlayerManager != null) {
-                    if (binding.loopButtonImageView.getDrawable().getConstantState().equals(loopItself.getConstantState())) {
+                    if (areDrawablesIdentical(binding.loopButtonImageView.getDrawable(), loopItself)) {
                         mHwAudioPlayerManager.setPlayMode(2);
                         binding.loopButtonImageView.setImageDrawable(getDrawable(R.drawable.ic_repeat));
                         Toast.makeText(AudioActivity.this, "Loop playlist", Toast.LENGTH_SHORT).show();
-                    } else if (binding.loopButtonImageView.getDrawable().getConstantState().equals(loopPlaylist.getConstantState())) {
+                    } else if (areDrawablesIdentical(binding.loopButtonImageView.getDrawable(), loopPlaylist)) {
                         mHwAudioPlayerManager.setPlayMode(3);
                         binding.loopButtonImageView.setImageDrawable(getDrawable(R.drawable.ic_repeat_one));
                         Toast.makeText(AudioActivity.this, "Loop the song", Toast.LENGTH_SHORT).show();
@@ -722,5 +748,39 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
                 mHwAudioPlayerManager.stop();
             }
         }
+    }
+
+    // Relying on getConstantState() alone can result in false negatives.
+    public static boolean areDrawablesIdentical(Drawable drawableA, Drawable drawableB) {
+        Drawable.ConstantState stateA = drawableA.getConstantState();
+        Drawable.ConstantState stateB = drawableB.getConstantState();
+        // If the constant state is identical, they are using the same drawable resource.
+        // However, the opposite is not necessarily true.
+        return (stateA != null && stateB != null && stateA.equals(stateB))
+                || getBitmap(drawableA).sameAs(getBitmap(drawableB));
+    }
+
+    // Relying on getConstantState() alone can result in false negatives.
+    public static Bitmap getBitmap(Drawable drawable) {
+        Bitmap result;
+        if (drawable instanceof BitmapDrawable) {
+            result = ((BitmapDrawable) drawable).getBitmap();
+        } else {
+            int width = drawable.getIntrinsicWidth();
+            int height = drawable.getIntrinsicHeight();
+            // Some drawables have no intrinsic width - e.g. solid colours.
+            if (width <= 0) {
+                width = 1;
+            }
+            if (height <= 0) {
+                height = 1;
+            }
+
+            result = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(result);
+            drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+            drawable.draw(canvas);
+        }
+        return result;
     }
 }
