@@ -97,23 +97,28 @@ public class DualWifiFragment extends Fragment {
         View view2= inflater.inflate(R.layout.fragment_dual_wifi, container, false);
 
         initWidget(view2);
+        bindDualWifiService();
+
         if(!checkDeviceProcessor()){
             showDualWifiText.setText(R.string.check_below);
         }
         startListener();
-        bindDualWifiService();
 
         mEnableDualWifiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mDualWifiService != null) {
                     try {
-                        showDualWifiText.setText("");
+                        showDualWifiText.setText("Enabled");
                         mDualWifiService.enableDualWifi(PACKAGE_NAME, callBack);
                         Log.e(TAG, "enable dual wifi");
                     } catch (RemoteException e) {
                         Log.e(TAG, "no unregisterDualWifiCallback api when enable dual wifi");
                     }
+                }
+                else if(mDualWifiService == null){
+                    showDualWifiText.setText("Null dual");
+
                 }
             }
         });
@@ -182,6 +187,10 @@ public class DualWifiFragment extends Fragment {
                         Log.e(TAG, "no unregisterDualWifiCallback api when get getLinkProperties for slave wifi");
                     }
                 }
+                else if(mDualWifiService == null){
+                    showDualWifiText.setText("Null dual link");
+
+                }
             }
         });
     }
@@ -199,6 +208,10 @@ public class DualWifiFragment extends Fragment {
                     } catch (RemoteException e) {
                         Log.e(TAG, "no unregisterDualWifiCallback api when get getNetworkInfo for slave wifi");
                     }
+                }
+                else if(mDualWifiService == null){
+                    showDualWifiText.setText("Null dual network");
+
                 }
             }
         });
@@ -232,10 +245,11 @@ public class DualWifiFragment extends Fragment {
                                 Intent intent = wirelessResult.getIntent();
                                 if (intent == null) {
                                     Log.i(TAG, "onSuccess: intent is null");
+                                    return;
                                 }
-                               /* boolean isBind = DualWifiActivity.this.bindService(intent, mServiceConnection,
-                                        Context.BIND_AUTO_CREATE);*/
-                               /* Log.d(TAG, "isBind: " + isBind);*/
+                                boolean isBind = requireActivity().bindService(intent, mServiceConnection,
+                                        Context.BIND_AUTO_CREATE);
+                                Log.d(TAG, "isBind: " + isBind);
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {

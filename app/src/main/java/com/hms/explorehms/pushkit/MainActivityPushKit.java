@@ -47,6 +47,8 @@ import com.hms.explorehms.pushkit.dialog.GetNotificationDialog;
 import com.hms.explorehms.pushkit.dialog.PushMessageDialogPushKit;
 import com.hms.explorehms.pushkit.dialog.TopicDialogPushKit;
 import com.github.clemp6r.futuroid.Async;
+import com.huawei.agconnect.AGConnectOptions;
+import com.huawei.agconnect.AGConnectOptionsBuilder;
 import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hmf.tasks.Task;
 import com.huawei.hms.aaid.HmsInstanceId;
@@ -157,6 +159,7 @@ public class MainActivityPushKit extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == PERMISSION_REQUEST && (grantResults.length != 0 && (grantResults[0] == PackageManager.PERMISSION_DENIED))) {
             isPermissionGranted();
         }
@@ -315,7 +318,8 @@ public class MainActivityPushKit extends AppCompatActivity {
     private void getToken() {
         Async.submit(() -> {
             // read from agconnect-services.json
-            String appId = AGConnectServicesConfig.fromContext(getApplicationContext()).getString("client/app_id");
+            AGConnectOptions agConnectOptionsBuilder = new AGConnectOptionsBuilder().build(getApplicationContext());
+            String appId = agConnectOptionsBuilder.getString("client/app_id");
             String token = HmsInstanceId.getInstance(getApplicationContext()).getToken(appId, "HCM");
             Log.i(TAG, "get token:" + token);
             if (!TextUtils.isEmpty(token)) {
@@ -338,7 +342,8 @@ public class MainActivityPushKit extends AppCompatActivity {
         new Thread(() -> {
             try {
                 // Apply for a token for the sender.
-                String projectId = AGConnectServicesConfig.fromContext(getApplicationContext()).getString("client/project_id");
+                AGConnectOptions agConnectOptionsBuilder = new AGConnectOptionsBuilder().build(getApplicationContext());
+                String projectId = agConnectOptionsBuilder.getString("client/project_id");
                 String token = HmsInstanceId.getInstance(MainActivityPushKit.this).getToken(projectId);
                 Log.i(TAG, "get token:" + token);
 
@@ -392,7 +397,8 @@ public class MainActivityPushKit extends AppCompatActivity {
         new Thread(() -> {
             try {
                 // read from agconnect-services.json
-                String appId = AGConnectServicesConfig.fromContext(getApplicationContext()).getString("client/app_id");
+                AGConnectOptions agConnectOptionsBuilder = new AGConnectOptionsBuilder().build(getApplicationContext());
+                String appId = agConnectOptionsBuilder.getString("client/app_id");
                 HmsInstanceId.getInstance(getApplicationContext()).deleteToken(appId, "HCM");
                 Log.i(TAG, "deleteToken success.");
 
