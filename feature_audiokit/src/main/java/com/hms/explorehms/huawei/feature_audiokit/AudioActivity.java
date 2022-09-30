@@ -291,6 +291,7 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
                     mHwAudioPlayerManager.setPlaySpeed(1F);
                     binding.speedTextView.setText(R.string.speed_text_1X);
                 } else {
+                    assert mHwAudioPlayerManager != null;
                     mHwAudioPlayerManager.setPlaySpeed(2F);
                     binding.speedTextView.setText(R.string.speed_text_2X);
                 }
