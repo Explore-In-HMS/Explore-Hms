@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~
   ~   Copyright 2020. Explore in HMS. All rights reserved.
   ~
@@ -126,9 +125,9 @@
         android:layout_marginStart="16dp"
         android:text="@string/progress_text_default_value"
         android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@id/musicSeekBar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/musicSeekBar"
-        app:layout_constraintBottom_toBottomOf="@id/musicSeekBar"/>
+        app:layout_constraintTop_toTopOf="@+id/musicSeekBar" />
 
     <TextView
         android:id="@+id/totalDurationTextView"
@@ -138,9 +137,9 @@
         android:layout_marginEnd="16dp"
         android:text="@string/progress_text_default_value"
         android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@id/musicSeekBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/musicSeekBar"
-        app:layout_constraintBottom_toBottomOf="@id/musicSeekBar"/>
+        app:layout_constraintTop_toTopOf="@+id/musicSeekBar" />
 
     <ImageView
         android:id="@+id/playButtonImageView"
@@ -235,18 +234,17 @@
         app:srcCompat="@drawable/ic_volume_up" />
 
 
-
     <SeekBar
         android:id="@+id/volumeSeekBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/volumeImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/volumeImageView"
-        app:layout_constraintTop_toTopOf="@+id/volumeImageView"
-        app:layout_constraintBottom_toBottomOf="@id/volumeImageView"/>
+        app:layout_constraintTop_toTopOf="@+id/volumeImageView" />
 
     <TextView
         android:id="@+id/volumeTextView"
@@ -254,7 +252,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text=""
+        android:text="@string/_15"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/playButtonImageView"
         app:layout_constraintHorizontal_bias="0.50"
@@ -265,10 +263,28 @@
         android:id="@+id/speedImageView"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/playButtonImageView"
+        app:layout_constraintStart_toEndOf="@+id/playButtonImageView"
         app:layout_constraintTop_toBottomOf="@+id/volumeTextView"
-        app:layout_constraintStart_toStartOf="@+id/playButtonImageView"
+        app:srcCompat="@drawable/ic_speed_up" />
+
+    <TextView
+        android:id="@+id/speedTextView"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1X"
+        app:layout_constraintBottom_toBottomOf="@+id/speedImageViewDecrease"
+        app:layout_constraintEnd_toStartOf="@+id/speedImageView"
+        app:layout_constraintStart_toEndOf="@+id/speedImageViewDecrease"
+        app:layout_constraintTop_toTopOf="@+id/speedImageView" />
+
+    <ImageView
+        android:id="@+id/speedImageViewDecrease"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:rotation="180"
+        app:layout_constraintEnd_toStartOf="@+id/playButtonImageView"
+        app:layout_constraintTop_toTopOf="@+id/speedImageView"
         app:srcCompat="@drawable/ic_speed_up" />
 
     <androidx.constraintlayout.widget.ConstraintLayout

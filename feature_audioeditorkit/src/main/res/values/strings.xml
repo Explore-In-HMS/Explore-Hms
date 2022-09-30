@@ -10,7 +10,7 @@
     <string name="cancels">cancel</string>
     <string name="select_none_video">No video selected</string>
     <string name="extract_success">Audio extraction succeeded: %s</string>
-    <string name="extract_fail">Audio extraction failed.</string>
+    <string name="extract_fail">Audio extraction failed. This file already exists. Please select different file.</string>
     <string name="main_extract">Audio extraction</string>
     <string name="main_format">Format conversion</string>
     <string name="main_withdraw">Audio extraction</string>

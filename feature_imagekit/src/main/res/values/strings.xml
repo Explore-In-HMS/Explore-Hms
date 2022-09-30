@@ -148,6 +148,7 @@
     <string name="txt_not_record_process_finished_image_kit">Record Saving...</string>
     <string name="txt_not_recording_image_render_image_kit">Not Recording</string>
 
+    <string name="urlToken">https://login.cloud.huawei.com/oauth2/v2/token</string>
 
     <string name="url_txt_imagekitmain">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050199011</string>
 </resources>

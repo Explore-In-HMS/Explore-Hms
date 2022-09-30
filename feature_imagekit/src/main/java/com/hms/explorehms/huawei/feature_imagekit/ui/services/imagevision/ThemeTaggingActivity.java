@@ -66,6 +66,9 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textview.MaterialTextView;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.huawei.agconnect.AGConnectOptionsBuilder;
+import com.huawei.hms.aaid.HmsInstanceId;
+import com.huawei.hms.common.ApiException;
 import com.huawei.hms.image.vision.ImageVision;
 import com.huawei.hms.image.vision.ImageVisionImpl;
 import com.huawei.hms.image.vision.bean.ImageVisionResult;
@@ -73,6 +76,7 @@ import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.luaj.vm2.ast.Str;
 
 import java.util.ArrayList;
 
@@ -183,7 +187,9 @@ public class ThemeTaggingActivity extends AppCompatActivity {
 
         });
 
-        btnGetToken.setOnClickListener(v -> getToken());
+        btnGetToken.setOnClickListener(v -> {
+            getToken();
+        });
     }
 
     /**
@@ -281,13 +287,12 @@ public class ThemeTaggingActivity extends AppCompatActivity {
         return requestObject;
     }
 
-    private void getToken() {
+    private void getToken()  {
         Future<TokenResponseModel> token = Async.submit(ApplicationUtils::getToken);
 
         token.addSuccessCallback(result -> {
             if (result != null && result.accessToken != null && !result.accessToken.equals("")) {
                 requestToken = result.accessToken;
-
                 btnGetToken.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorWhiteImageKit));
                 btnGetToken.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary));
 

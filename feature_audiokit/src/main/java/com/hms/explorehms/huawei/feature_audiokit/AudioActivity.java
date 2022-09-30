@@ -28,6 +28,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.media.MediaMetadataRetriever;
@@ -38,6 +40,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.RemoteException;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RemoteViews;
 import android.widget.SeekBar;
@@ -68,10 +71,9 @@ import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 
-public class AudioActivity extends AppCompatActivity implements CurrentPlaylistAdapter.OnItemClickListener {
+public class AudioActivity extends AppCompatActivity implements CurrentPlaylistAdapter.OnItemClickListener, OnAudioVolumeChangedListener {
 
     private static final String TAG = "AudioActivity";
-    AudioManager audioManager;
     private static final String CHANNEL_ID = "4";
     private static final String MEDIACENTER_CANCEL_NOTIFICATION = "com.huawei.hms.mediacenter.cancel_notification";
     private final List<HwAudioStatusListener> mTempListeners = new CopyOnWriteArrayList<>();
@@ -85,6 +87,8 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
     PlaylistCreator playlistCreator = new PlaylistCreator(this);
     private HwAudioManager mHwAudioManager;
     private HwAudioPlayerManager mHwAudioPlayerManager;
+    private AudioManager mAudioManager;
+    protected int countVolume;
     HwAudioStatusListener mPlayListener = new HwAudioStatusListener() {
         @Override
         public void onSongChange(HwAudioPlayItem hwAudioPlayItem) {
@@ -152,12 +156,13 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
     private List<HwAudioPlayItem> wholeLocalPlayList;
     private List<HwAudioPlayItem> wholeOnlinePlayList;
     private List<Integer> indexList = new ArrayList<>();
+    private AudioVolumeObserver mAudioVolumeObserver;
 
-    @SuppressLint({"UseCompatLoadingForDrawables", "SetTextI18n"})
+    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+
         //Custom service to stop playback when the activity is destroyed.
         //This service will destroy itself along with the music in the background.
         Intent intent = new Intent(this, AudioKillService.class);
@@ -189,16 +194,18 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
 
         initializeManagerAndGetPlayList(this);
 
-        binding.volumeSeekBar.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
-        binding.volumeTextView.setText(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)+"");
-        binding.volumeSeekBar.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
+        mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        binding.volumeSeekBar.setMax(mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)); //sound has 100 levels
+        binding.volumeSeekBar.setProgress(mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
+        binding.volumeTextView.setText(String.valueOf(mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC)));
+        countVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
         binding.volumeSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 binding.volumeSeekBar.setProgress(progress);
                 if (mHwAudioPlayerManager != null) {
                     mHwAudioPlayerManager.setVolume(progress);
-                    audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, progress, 0);
+                    mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, progress, AudioManager.STREAM_MUSIC);
                 }
                 String progressString = progress + "";
                 binding.volumeTextView.setText(progressString);
@@ -214,7 +221,7 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
             @SuppressLint("UseCompatLoadingForDrawables")
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                if (seekBar.getProgress() == 0) {
+                if (seekBar.getProgress() == 0 || mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC) == 0) {
                     binding.volumeImageView.setImageDrawable(getDrawable(R.drawable.ic_volume_off));
                 } else {
                     binding.volumeImageView.setImageDrawable(getDrawable(R.drawable.ic_volume_up));
@@ -251,11 +258,11 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
             @SuppressLint("UseCompatLoadingForDrawables")
             @Override
             public void onClick(View view) {
-                if (binding.playButtonImageView.getDrawable().getConstantState().equals(drawablePlay.getConstantState()) && mHwAudioPlayerManager != null) {
+                if (areDrawablesIdentical(binding.playButtonImageView.getDrawable(), drawablePlay) && mHwAudioPlayerManager != null) {
                     mHwAudioPlayerManager.play();
                     binding.playButtonImageView.setImageDrawable(getDrawable(R.drawable.ic_pause));
                     isReallyPlaying = true;
-                } else if (binding.playButtonImageView.getDrawable().getConstantState().equals(drawablePause.getConstantState()) && mHwAudioPlayerManager != null) {
+                } else if (areDrawablesIdentical(binding.playButtonImageView.getDrawable(), drawablePause) && mHwAudioPlayerManager != null) {
                     mHwAudioPlayerManager.pause();
                     binding.playButtonImageView.setImageDrawable(getDrawable(R.drawable.ic_play_arrow));
                     isReallyPlaying = false;
@@ -276,9 +283,32 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
         binding.speedImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mHwAudioPlayerManager != null) {
-                    mHwAudioPlayerManager.setPlaySpeed(2f);
-                    //audioManager.setStreamVolume(AudioManager.STREAM_MUSIC,  audioManager.getStreamVolume(AudioManager.STREAM_MUSIC), 0);
+                //String speed = String.valueOf((mHwAudioPlayerManager.getPlaySpeed()));
+                if (mHwAudioPlayerManager != null && String.valueOf((mHwAudioPlayerManager.getPlaySpeed())).equals("1.0")) {
+                    mHwAudioPlayerManager.setPlaySpeed(1.5F);
+                    binding.speedTextView.setText(R.string.speed_text_1_5X);
+                } else if (mHwAudioPlayerManager != null && String.valueOf((mHwAudioPlayerManager.getPlaySpeed())).equals("0.5")) {
+                    mHwAudioPlayerManager.setPlaySpeed(1F);
+                    binding.speedTextView.setText(R.string.speed_text_1X);
+                } else {
+                    mHwAudioPlayerManager.setPlaySpeed(2F);
+                    binding.speedTextView.setText(R.string.speed_text_2X);
+                }
+            }
+        });
+
+        binding.speedImageViewDecrease.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mHwAudioPlayerManager != null && String.valueOf((mHwAudioPlayerManager.getPlaySpeed())).equals("1.5")) {
+                    mHwAudioPlayerManager.setPlaySpeed(1F);
+                    binding.speedTextView.setText(R.string.speed_text_1X);
+                } else if (mHwAudioPlayerManager != null && String.valueOf((mHwAudioPlayerManager.getPlaySpeed())).equals("2.0")) {
+                    mHwAudioPlayerManager.setPlaySpeed(1.5F);
+                    binding.speedTextView.setText(R.string.speed_text_1_5X);
+                } else {
+                    mHwAudioPlayerManager.setPlaySpeed(0.5F);
+                    binding.speedTextView.setText(R.string.speed_text_0_5X);
                 }
             }
         });
@@ -348,13 +378,13 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
             @Override
             public void onClick(View view) {
                 if (mHwAudioPlayerManager != null) {
-                    if (binding.shuffleButtonImageView.getDrawable().getConstantState().equals(shuffleDrawable.getConstantState())) {
+                    if (areDrawablesIdentical(binding.shuffleButtonImageView.getDrawable(), shuffleDrawable)) {
                         mHwAudioPlayerManager.setPlayMode(0);
                         binding.shuffleButtonImageView.setImageDrawable(getDrawable(R.drawable.ic_normal_playlist_mode));
                         Toast.makeText(AudioActivity.this, "Normal order", Toast.LENGTH_SHORT).show();
-                    } else if (binding.shuffleButtonImageView.getDrawable().getConstantState().equals(orderDrawable.getConstantState())) {
+                    } else if (areDrawablesIdentical(binding.shuffleButtonImageView.getDrawable(), orderDrawable)) {
                         mHwAudioPlayerManager.setPlayMode(1);
-                        binding.shuffleButtonImageView.setImageDrawable(getDrawable(R.drawable.ic_normal_playlist_mode));
+                        binding.shuffleButtonImageView.setImageDrawable(getDrawable(R.drawable.ic_shuffle));
                         Toast.makeText(AudioActivity.this, "Shuffle songs", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -365,11 +395,11 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
             @Override
             public void onClick(View view) {
                 if (mHwAudioPlayerManager != null) {
-                    if (binding.loopButtonImageView.getDrawable().getConstantState().equals(loopItself.getConstantState())) {
+                    if (areDrawablesIdentical(binding.loopButtonImageView.getDrawable(), loopItself)) {
                         mHwAudioPlayerManager.setPlayMode(2);
                         binding.loopButtonImageView.setImageDrawable(getDrawable(R.drawable.ic_repeat));
                         Toast.makeText(AudioActivity.this, "Loop playlist", Toast.LENGTH_SHORT).show();
-                    } else if (binding.loopButtonImageView.getDrawable().getConstantState().equals(loopPlaylist.getConstantState())) {
+                    } else if (areDrawablesIdentical(binding.loopButtonImageView.getDrawable(), loopPlaylist)) {
                         mHwAudioPlayerManager.setPlayMode(3);
                         binding.loopButtonImageView.setImageDrawable(getDrawable(R.drawable.ic_repeat_one));
                         Toast.makeText(AudioActivity.this, "Loop the song", Toast.LENGTH_SHORT).show();
@@ -711,10 +741,47 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        // initialize audio observer
+        if (mAudioVolumeObserver == null) {
+            mAudioVolumeObserver = new AudioVolumeObserver(this);
+        }
+        /*
+         * register audio observer to identify the volume changes
+         * of audio streams for music playback.
+         *
+         * It is also possible to listen for changes in other audio stream types:
+         * STREAM_RING: phone ring, STREAM_ALARM: alarms, STREAM_SYSTEM: system sounds, etc.
+         */
+        mAudioVolumeObserver.register(AudioManager.STREAM_MUSIC, this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        // release audio observer
+        if (mAudioVolumeObserver != null) {
+            mAudioVolumeObserver.unregister();
+        }
+    }
+
+    @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
         // Initialize the SDK in the activity.
         FeatureCompat.install(newBase);
+    }
+
+    @Override
+    public void onAudioVolumeChanged(int currentVolume, int maxVolume) {
+        binding.volumeSeekBar.setProgress(currentVolume);
+        binding.volumeTextView.setText(String.valueOf(currentVolume));
+        if (currentVolume <= 0) {
+            binding.volumeImageView.setImageDrawable(getDrawable(R.drawable.ic_volume_off));
+        } else {
+            binding.volumeImageView.setImageDrawable(getDrawable(R.drawable.ic_volume_up));
+        }
     }
 
     // Receives intents when closing from notification bar
@@ -727,5 +794,78 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
                 mHwAudioPlayerManager.stop();
             }
         }
+    }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+
+        int action, keycode;
+
+        action = event.getAction();
+        keycode = event.getKeyCode();
+        countVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+        switch (keycode) {
+            case KeyEvent.KEYCODE_VOLUME_UP:
+                if (KeyEvent.ACTION_UP == action) {
+                    if (countVolume >= mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)) {
+                        binding.volumeSeekBar.setProgress(mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
+                    } else {
+                        countVolume += 1;
+                        binding.volumeSeekBar.setProgress(countVolume);
+                    }
+                }
+                return true;
+            case KeyEvent.KEYCODE_VOLUME_DOWN:
+                if (KeyEvent.ACTION_DOWN == action) {
+                    if (countVolume <= 0) {
+                        binding.volumeSeekBar.setProgress(0);
+                    } else {
+                        countVolume -= 1;
+                        binding.volumeSeekBar.setProgress(countVolume);
+                    }
+                }
+                return true;
+            default:
+                return super.dispatchKeyEvent(event);
+        }
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
+    }
+
+    // Relying on getConstantState() alone can result in false negatives.
+    public static boolean areDrawablesIdentical(Drawable drawableA, Drawable drawableB) {
+        Drawable.ConstantState stateA = drawableA.getConstantState();
+        Drawable.ConstantState stateB = drawableB.getConstantState();
+        // If the constant state is identical, they are using the same drawable resource.
+        // However, the opposite is not necessarily true.
+        return (stateA != null && stateB != null && stateA.equals(stateB))
+                || getBitmap(drawableA).sameAs(getBitmap(drawableB));
+    }
+
+    // Relying on getConstantState() alone can result in false negatives.
+    public static Bitmap getBitmap(Drawable drawable) {
+        Bitmap result;
+        if (drawable instanceof BitmapDrawable) {
+            result = ((BitmapDrawable) drawable).getBitmap();
+        } else {
+            int width = drawable.getIntrinsicWidth();
+            int height = drawable.getIntrinsicHeight();
+            // Some drawables have no intrinsic width - e.g. solid colours.
+            if (width <= 0) {
+                width = 1;
+            }
+            if (height <= 0) {
+                height = 1;
+            }
+
+            result = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(result);
+            drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+            drawable.draw(canvas);
+        }
+        return result;
     }
 }

@@ -26,6 +26,8 @@ import android.util.Log;
 
 import com.hms.explorehms.huawei.feature_imagekit.model.TokenResponseModel;
 import com.hms.explorehms.huawei.feature_imagekit.ui.interfaces.APIServiceImageKit;
+import com.huawei.agconnect.AGConnectOptions;
+import com.huawei.agconnect.AGConnectOptionsBuilder;
 import com.huawei.agconnect.config.AGConnectServicesConfig;
 
 import org.json.JSONException;
@@ -43,7 +45,7 @@ public class ApplicationUtils {
         throw new IllegalStateException("Utility class");
     }
 
-    private static final String TAG = "IMAGEAKIT";
+    private static final String TAG = "IMAGEKIT";
     private static final String TOKEN_URL = "https://login.cloud.huawei.com/";
 
     public static String CLIENT_ID_TOKEN;
@@ -56,11 +58,17 @@ public class ApplicationUtils {
     public static JSONObject createAuthJson(Context context) {
 
         JSONObject authJson = new JSONObject();
-        CLIENT_ID_TOKEN = AGConnectServicesConfig.fromContext(context).getString("client/app_id");
-        CLIENT_SECRET_TOKEN = AGConnectServicesConfig.fromContext(context).getString("client/client_secret");
-        PROJECT_ID = AGConnectServicesConfig.fromContext(context).getString("client/project_id");
-        AUTH_API_KEY = AGConnectServicesConfig.fromContext(context).getString("client/api_key");
-        CLIENT_ID = AGConnectServicesConfig.fromContext(context).getString("client/client_id");
+        AGConnectOptions agConnectOptionsBuilder = new AGConnectOptionsBuilder().build(context);
+        CLIENT_ID_TOKEN = agConnectOptionsBuilder.getString("client/app_id");
+        Log.d("CLIENT ID TOKEN", CLIENT_ID_TOKEN);
+        CLIENT_SECRET_TOKEN = agConnectOptionsBuilder.getString("client/client_secret");
+        Log.d("CLIENT SECRET TOKEN", CLIENT_SECRET_TOKEN);
+
+        PROJECT_ID = agConnectOptionsBuilder.getString("client/project_id");
+        AUTH_API_KEY = agConnectOptionsBuilder.getString("client/api_key");
+        CLIENT_ID = agConnectOptionsBuilder.getString("client/client_id");
+
+
         try {
             authJson.put("projectId", PROJECT_ID);
             authJson.put("appId", CLIENT_ID_TOKEN);
@@ -86,7 +94,7 @@ public class ApplicationUtils {
         APIServiceImageKit apiServiceImageKit = retrofit.create(APIServiceImageKit.class);
 
 
-        Call<TokenResponseModel> call = apiServiceImageKit.getToken("client_credentials", CLIENT_ID_TOKEN, CLIENT_SECRET_TOKEN);
+        Call<TokenResponseModel> call = apiServiceImageKit.getToken("client_credentials", CLIENT_ID_TOKEN, "8316388b7d593328b3003b44bbcf5c5247266f6e22920eef883c9810586c1e45");
 
         try {
             Response<TokenResponseModel> responseModel = call.execute();

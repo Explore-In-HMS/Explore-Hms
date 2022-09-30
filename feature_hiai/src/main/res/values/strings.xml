@@ -106,6 +106,7 @@
                 <string name="txt_image_super_resolution_result_code_hiai">Result Code</string>
                 <string name="txt_image_super_resolution_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/image-super-resolution-introduction-0000001053970397</string>
                 <string name="msg_image_super_resolution_hiai">Image Super Resolution is with the deep learning technologies, an image can be intelligently upscaled, or the compressed noise can be removed without changing the resolution, so as to obtain an image that is clearer and sharper than with conventional image processing</string>
+                <string name="txt_image_super_resolution_result_code">Wait for result.</string>
         <!-- Scene Detection -->
                 <string name="txt_scene_detection_hiai">Scene Detection</string>
                 <string name="txt_scene_detection_scene_id_hiai">Scene ID</string>

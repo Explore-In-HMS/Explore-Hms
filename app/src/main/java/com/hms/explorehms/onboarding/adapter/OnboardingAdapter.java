@@ -45,9 +45,9 @@ public class OnboardingAdapter extends FragmentStateAdapter {
         } else if (position == 1) {
             return new SecondOnboardingFragment();
         } else if (position == 2) {
-            return new FourthOnboardingFragment();
-        } else if (position == 3) {
             return new ThirdOnboardingFragment();
+        } else if (position == 3) {
+            return new FourthOnboardingFragment();
         } else if (position == 4) {
             return new SixthOnboardingFragment();
         } else if( position ==5){

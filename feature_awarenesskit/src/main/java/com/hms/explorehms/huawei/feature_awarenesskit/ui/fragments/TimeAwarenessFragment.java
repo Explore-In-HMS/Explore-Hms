@@ -98,14 +98,17 @@ public class TimeAwarenessFragment extends Fragment {
                 switch (position) {
                     case 0: {
                         duringPeriodOfDay();
+                        binding.edtBarrierLabelTimeawareness.setText("");
                         break;
                     }
                     case 1: {
                         duringPeriodOfWeek();
+                        binding.edtBarrierLabelTimeawareness.setText("");
                         break;
                     }
                     case 2: {
                         forInTimeCategory();
+                        binding.edtBarrierLabelTimeawareness.setText("");
                         break;
                     }
                     default:
@@ -123,14 +126,17 @@ public class TimeAwarenessFragment extends Fragment {
             switch (binding.spinnetTimeAwarenessMethod.getSelectedItemPosition()) {
                 case 0: {
                     timeAwarenessCaseFirst();
+                    binding.edtBarrierLabelTimeawareness.setText("");
                     break;
                 }
                 case 1: {
                     timeAwarenessCaseSecond();
+                    binding.edtBarrierLabelTimeawareness.setText("");
                     break;
                 }
                 case 2: {
                     timeAwarenessCaseThird();
+                    binding.edtBarrierLabelTimeawareness.setText("");
                     break;
                 }
                 default:

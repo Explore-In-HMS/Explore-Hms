@@ -9,7 +9,9 @@
     <string name="screen_resolution_disabled_player">Screen Resolution (Disabled) Player</string>
     <string name="screen_resolution_enabled_player">Screen Resolution (Enabled) Player</string>
     <string name="sound_detect_player">Sound Detect Player</string>
-    <string name="choose_file_for_getting_information">Choose File For Getting Info</string>
+    <string name="choose_video_for_getting_information">Choose Video File to Get Info</string>
+    <string name="choose_audio_for_getting_information">Choose Audio File to Get Info</string>
     <string name="choose_file">choose file</string>
     <string name="tv_sound_info">Sound Detection can detect these voices : Laughter, Baby-cry, Snoring, Sneeze, Children-playing, Meow, Bark, Water, Car-alarm, Doorbell, Knock, Alarm, Steam-whistle, Noise</string>
+    <string name="please_select_file_from_external_storage_like_in_the_picture_below">Please select file from external storage like in the picture below.</string>
 </resources>

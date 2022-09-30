@@ -21,6 +21,10 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.hms.explorehms.huawei.feature_wirelesskit">
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
     <dist:module
         dist:instant="false"
         dist:title="@string/title_feature_wirelesskit">
@@ -32,7 +36,7 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_wirelesskit.MainWirelessActivity"></activity>
+        <activity android:name="com.hms.explorehms.huawei.feature_wirelesskit.MainWirelessActivity" />
     </application>
 
 </manifest>

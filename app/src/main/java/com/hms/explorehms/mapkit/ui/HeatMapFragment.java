@@ -11,12 +11,8 @@ import androidx.annotation.Nullable;
 import com.hms.explorehms.R;
 import com.hms.explorehms.databinding.FragmentHeatMapBinding;
 import com.hms.explorehms.mapkit.base.BaseFragment;
-import com.huawei.hms.maps.model.BitmapDescriptor;
-import com.huawei.hms.maps.model.BitmapDescriptorFactory;
-import com.huawei.hms.maps.model.GroundOverlayOptions;
 import com.huawei.hms.maps.model.HeatMap;
 import com.huawei.hms.maps.model.HeatMapOptions;
-import com.huawei.hms.maps.model.LatLng;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,13 +25,12 @@ public class HeatMapFragment extends BaseFragment {
         return FragmentHeatMapBinding.inflate(getLayoutInflater()).getRoot();
     }
 
-
     @Override
     public void initializeUI() {
         HeatMapOptions heatMapOptions = new HeatMapOptions();
         heatMapOptions.intensity(2f);
 // Set the heatmap dataset.
-        heatMapOptions.dataSet(R.raw.population_density);
+        heatMapOptions.dataSet(R.raw.earthquakes);
 // Add the heatmap to a map.
         HeatMap heatMap = hMap.addHeatMap("id", heatMapOptions);
         Map<Float, Integer> map = new HashMap<>();
@@ -49,7 +44,4 @@ public class HeatMapFragment extends BaseFragment {
         heatMap.setRadius(10f);
 
     }
-
-
-
 }
