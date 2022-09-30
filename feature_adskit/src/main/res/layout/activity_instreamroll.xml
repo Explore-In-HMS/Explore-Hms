@@ -63,6 +63,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/service_introduction"
+            android:layout_marginTop="@dimen/dimens_8"
+            android:layout_marginBottom="@dimen/dimens_8"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar" />
         <TextView
@@ -86,19 +88,19 @@
         <RelativeLayout
             android:id="@+id/your_video_content"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
+            android:layout_height="300dp"
             android:background="@android:color/black">
 
             <VideoView
                 android:id="@+id/video"
                 android:layout_width="match_parent"
-                android:layout_height="350dp" />
+                android:layout_height="300dp" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/instream_ad_container"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
+            android:layout_height="300dp"
             android:visibility="gone">
 
             <TextView

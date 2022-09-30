@@ -277,7 +277,7 @@ public class GeneralTextRecognitionActivity extends BaseServiceActivity implemen
             VisionTextConfiguration configuration = new VisionTextConfiguration.Builder()
                     .setAppType(VisionTextConfiguration.APP_NORMAL)
                     .setProcessMode(VisionTextConfiguration.MODE_IN)
-                    .setDetectMode(TextDetectType.TYPE_TEXT_DETECT_SCREEN_SHOT)
+                    .setDetectMode(TextDetectType.TYPE_TEXT_DETECT_FOCUS_SHOOT)
                     .setLanguage(textLanguage)
                     .build();
 
@@ -285,6 +285,7 @@ public class GeneralTextRecognitionActivity extends BaseServiceActivity implemen
 
             TextConfiguration textConfiguration = new TextConfiguration();
             textConfiguration.setLanguage(textLanguage);
+            textConfiguration.setEngineType(TextDetectType.TYPE_TEXT_DETECT_FOCUS_SHOOT);
 
 
             textDetector.setTextConfiguration(textConfiguration);
