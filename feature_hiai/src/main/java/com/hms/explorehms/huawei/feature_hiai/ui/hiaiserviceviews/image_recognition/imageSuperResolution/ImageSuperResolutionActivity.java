@@ -293,7 +293,6 @@ public class ImageSuperResolutionActivity extends BaseServiceActivity implements
 
                     if (imageResult != null) {
                         int resultCode = imageResult.getResultCode();
-                        tvResultCode.setText(String.valueOf(resultCode));
 
                         if (resultCode != 0) {
                             Toast.makeText(getApplicationContext(), "Failed to run super-resolution, return :" + imageResult, Toast.LENGTH_LONG).show();
@@ -304,6 +303,7 @@ public class ImageSuperResolutionActivity extends BaseServiceActivity implements
                                 runOnUiThread(() -> {
                                     hasResult = true;
                                     Glide.with(ImageSuperResolutionActivity.this).load(bitmapResult).into(ivImageResult);
+                                    tvResultCode.setText(String.valueOf(resultCode));
                                 });
                             } else {
                                 Toast.makeText(getApplicationContext(), "Result bitmap is null!", Toast.LENGTH_LONG).show();
@@ -326,8 +326,10 @@ public class ImageSuperResolutionActivity extends BaseServiceActivity implements
 
             if (resultCode == 700) {
                 Log.d(TAG, "Wait for result.");
+                tvResultCode.setText(R.string.txt_image_super_resolution_result_code);
             } else if (resultCode != 0) {
                 Log.e(TAG, "Failed to run super-resolution, return : " + resultCode);
+                tvResultCode.setText(String.valueOf(resultCode));
             }
         }
     }
