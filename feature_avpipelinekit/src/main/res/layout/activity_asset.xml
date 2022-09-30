@@ -32,6 +32,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/selectVideoFileBtn" />
 
+    <TextView
+        android:id="@+id/fileSelectionInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/dimens_3"
+        android:text="@string/please_select_file_from_external_storage_like_in_the_picture_below"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectAudioFileBtn"/>
+
+    <ImageView
+        android:id="@+id/ext_storage_info_img"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/external_storage_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fileSelectionInfo"/>
+
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textViewInfo"
         style="@style/TextAppearance.ExploreHMS.Body2"
@@ -42,9 +62,11 @@
         android:layout_marginStart="@dimen/dp_16"
         android:layout_marginEnd="@dimen/dp_16"
         android:scrollbars="vertical"
-        app:layout_constraintTop_toBottomOf="@id/selectAudioFileBtn"
+        app:layout_constraintTop_toBottomOf="@id/ext_storage_info_img"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

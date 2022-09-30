@@ -342,7 +342,7 @@ public class MainAudioEditorActivity extends AppCompatActivity {
                                                 Toast.makeText(
                                                         MainAudioEditorActivity.this,
                                                         getResources().getString(R.string.extract_fail)
-                                                                + " , errCode : "
+                                                                + "errCode : "
                                                                 + errCode,
                                                         Toast.LENGTH_LONG)
                                                         .show();

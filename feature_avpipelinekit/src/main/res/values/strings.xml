@@ -13,4 +13,5 @@
     <string name="choose_audio_for_getting_information">Choose Audio File to Get Info</string>
     <string name="choose_file">choose file</string>
     <string name="tv_sound_info">Sound Detection can detect these voices : Laughter, Baby-cry, Snoring, Sneeze, Children-playing, Meow, Bark, Water, Car-alarm, Doorbell, Knock, Alarm, Steam-whistle, Noise</string>
+    <string name="please_select_file_from_external_storage_like_in_the_picture_below">Please select file from external storage like in the picture below.</string>
 </resources>

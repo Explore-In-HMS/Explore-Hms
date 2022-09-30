@@ -18,6 +18,7 @@
 
 package com.hms.explorehms.huawei.feature_scenekit.faceview;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.CompoundButton;
@@ -30,6 +31,13 @@ import androidx.appcompat.widget.Toolbar;
 import com.hms.explorehms.huawei.feature_scenekit.R;
 import com.huawei.hms.scene.sdk.FaceView;
 import com.huawei.hms.scene.sdk.common.LandmarkType;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class FaceViewActivity extends AppCompatActivity {
 
@@ -47,7 +55,9 @@ public class FaceViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faceview);
-
+        if(!checkDeviceProcessor()){
+            Toast.makeText(FaceViewActivity.this,"Your device is not supported by FaceView feature",Toast.LENGTH_SHORT).show();
+        }
         setupToolbar();
         initUI();
         initListener();
@@ -87,7 +97,6 @@ public class FaceViewActivity extends AppCompatActivity {
                     int index = faceView.loadAsset("FaceView/fox.glb", LandmarkType.TIP_OF_NOSE);
                     // Optional) Set the initial status of a face.
                     faceView.setInitialPose(index, position, rotation, scale);
-                    Toast.makeText(getApplicationContext(), "Your device may not support this feature, please check the official document!", Toast.LENGTH_LONG).show();
 
                 }
             }
@@ -123,5 +132,52 @@ public class FaceViewActivity extends AppCompatActivity {
         super.onDestroy();
         faceView.destroy();
     }
+
+    public static Boolean checkDeviceProcessor(){
+
+        boolean processorOK = false;
+        String hardware = "Hardware";
+        try(BufferedReader br = new BufferedReader (new FileReader("/proc/cpuinfo"))) {
+
+            String str;
+
+            Map<String, String> output = new HashMap<>();
+
+            while ((str = br.readLine ()) != null) {
+
+                String[] data = str.split (":");
+
+                if (data.length > 1) {
+
+                    String key = data[0].trim ().replace (" ", "_");
+                    if (key.equals(hardware)){
+                        output.put(key, data[1].trim ());
+                        break;
+                    }
+                }
+            }
+
+            /**
+             * Farklı şekillerde kullanılabilir
+             */
+
+            if(output.get(hardware) != null && !Objects.equals(output.get(hardware), "")){
+                String processorHardware = output.get(hardware);
+
+                processorOK = processorHardware != null && (
+                        processorHardware.contains("Kirin970") ||
+                                processorHardware.contains("Kirin990") );
+
+            }
+            br.close();
+
+        }catch (IOException e) {
+            Log.e("ProcessorInfo",e.toString());
+            processorOK = false;
+        }
+
+        return processorOK;
+    }
+
 
 }
