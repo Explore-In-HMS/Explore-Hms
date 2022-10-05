@@ -19,7 +19,6 @@
 
 <resources>
     <string name="toolbar_title">Wear Engine</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="service_introduction">Service Introduction</string>
     <string name="overview_desc">Wear Engine is designed for you to access the open capabilities of Huawei wearable devices.\n\nBy integrating Wear Engine, it will be possible for your app or service on a phone to send and transfer data to Huawei wearable devices, as well as obtaining the status of wearable devices. This also works the other way round, which means that an app or service on a Huawei wearable is able to send messages and transfer data to a phone.\n\nWear Engine pools the phone and the watch\'s resources and capabilities, which include apps and services, creating benefits for consumers and developers alike. It enables your users to use their devices in more diversified scenarios and receive more convenient services, with a smoother experience. It also expands the reach of your business, and takes your apps and services to the next level.</string>
     <string name="overview_title">Open Capabilities</string>

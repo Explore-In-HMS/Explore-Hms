@@ -106,5 +106,4 @@
     <string name="msg_mode_not_supported_camera_engine">Selected mode is not supported on this phone</string>
     <string name="msg_wait_for_current_process_camera_engine">Please wait for the current process to finish</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

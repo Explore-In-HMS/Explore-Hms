@@ -32,7 +32,6 @@
   ~    See the License for the specific language governing permissions and
   ~    limitations under the License.
   -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="btn_continue_with_login">Continue with login</string>
     <string name="btn_continue_without_login">Continue without login</string>
