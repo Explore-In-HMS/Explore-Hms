@@ -22,13 +22,10 @@
 
     <string name="title_authService">AppGallery AuthService</string>
     <string name="text_results">RESULTS</string>
-    <string name="text_results_s">Results</string>
-    <string name="sub_title_authService">Select a Desired AuthService Key Function</string>
     <string name="tv_service_introduction">Service Introduction</string>
     <string name="text_service_introduction">Auth Service can quickly build a secure and reliable user authentication system for your app. You only need to access Auth Service capabilities in your app without caring about the facilities and implementation on the cloud.</string>
 
     <string name="login_with_anonymously">Login With Anonymously</string>
-    <string name="logout_with_anonymously">Logout Anonymously</string>
     <string name="register_or_login_with_phone_number">Register or Login With Number</string>
     <string name="login_with_phone_number">Login With Phone Number</string>
     <string name="login_with_phone_number_and_password">Login With Number and Password</string>
@@ -37,10 +34,8 @@
     <string name="change_password_for_phone_login">Change Password</string>
     <string name="do_not_have_account">Do Not Have a Account?</string>
     <string name="forgot_my_password_mail">Forgot My Password!</string>
-    <string name="forgot_my_password_phone">Forgot My Password!</string>
     <string name="show_login_buttons">Show Login Buttons</string>
     <string name="register_with_phone_number">Register With Number and Code</string>
-    <string name="logout_with_phone_number">Logout Phone Number</string>
     <string name="login_with_mail">Login With Mail</string>
     <string name="register_or_login_with_mail">Register or Login With Mail</string>
     <string name="login_with_mail_and_password">Login With Mail And Password</string>
@@ -48,32 +43,21 @@
     <string name="change_mail_for_mail_login">Change Mail Adress</string>
     <string name="change_password_for_mail_login">Change Password</string>
     <string name="register_with_mail">Register With Mail and Code</string>
-    <string name="logout_with_mail">Logout Mail</string>
     <string name="login_with_huaweiid">Login With HuaweiId</string>
-    <string name="logout_with_huaweiid">Logout HuaweiId</string>
     <string name="login_with_huawei_game_service">Login With GameService</string>
-    <string name="logout_with_huawei_game_service">Logout Huawei GameService</string>
     <string name="login_with_google">Login With Google</string>
-    <string name="logout_with_google">Logout Google</string>
     <string name="login_with_google_play_game">Login With GooglePlayGame</string>
-    <string name="logout_with_google_play_game">Logout GooglePlayGame</string>
     <string name="login_with_facebook">Login With Facebook</string>
-    <string name="logout_with_facebook">Logout Facebook</string>
     <string name="login_with_twitter">Login With Twitter</string>
-    <string name="logout_with_twitter">Logout Twitter</string>
     <string name="supported_other_third_party">Supported Other Third Party</string>
-    <string name="supported_other_third_party_hyperlink">Supported Other Third Party on : <a href="https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-getstarted-0000001053053922">HuaweiDeveloperPage</a></string>
 
     <string name="verify_code_send">VerifyCode Send to Phone</string>
     <string name="verify_code_send_mail">VerifyCode Send to Email</string>
-    <string name="register_user_with_phone">RegisterUser with Phone</string>
-    <string name="register_user_with_mail">RegisterUser with Email</string>
     <string name="register_user_and_signed_in_with_phone">RegisterUser and SignedIn with Phone</string>
     <string name="register_user_and_signed_in_with_mail">RegisterUser and SignedIn with Email</string>
     <string name="verify_code_send_update_phone">VerifyCode Send For Phone Update</string>
     <string name="verify_code_send_update_email">VerifyCode Send For Email Update</string>
     <string name="verify_code_send_update_password">VerifyCode Send For Update Password</string>
-    <string name="verify_code_send_reset_password">VerifyCode Send For Reset Password</string>
     <string name="phone_number_update">Phone Number Update</string>
     <string name="email_address_update">Emaile Address Update</string>
     <string name="update_password">Update Password</string>
@@ -86,22 +70,15 @@
     <string name="feature_supported_but_not_use_in_app_now">Feature supported.\nBut not use in this app now.</string>
 
     <string name="text_countryCode">CountryCode</string>
-    <string name="text_countryCodeDefaultText">+90 : Turkey</string>
     <string name="text_countryCodeDefault">+90</string>
     <string name="text_phone">Phone</string>
     <string name="text_email">Email : xyz@abc.com</string>
-    <string name="text_emailDefault">xyz@abc.com</string>
-    <string name="text_phoneDefault">555 555 55 55</string>
     <string name="text_password">Password</string>
-    <string name="text_passwordDefault">p45w0rd</string>
     <string name="text_verifyCode">Code For Login</string>
     <string name="text_verifyCodePhone">Code For Change Phone</string>
     <string name="text_verifyCodeMail">Code For Change Mail</string>
     <string name="text_verifyCodePassword">Code For Change Password</string>
     <string name="text_send">Send Code</string>
-    <string name="text_login">Login</string>
-
-    <string name="url_auth_service_get_started">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-getstarted-0000001053053922</string>
 
     <string name="url_auth_service_anonymous">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-anonymous-0000001053532658</string>
     <string name="url_auth_service_phone">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-phone-0000001053333941</string>
@@ -119,13 +96,6 @@
     <string name="url_txt_authservicemain">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-introduction-0000001053732605</string>
 <string name="url_reauthenticate">"https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-reauthenticate-0000001127287737"</string>
 
-    <string name="fb_app_id">1012640882577435</string>
-    <string name="fb_app_secret">f0c789db544e9b0424d2274d5eafa609</string>
-
-    <string name="twitter_api_key">eG2RQrkFuRhmNaltJMEkiN1HV</string>
-    <string name="twitter_api_secret">5ZBJpTNMsV49VelPyyo5VrVCGbFBx9hgppuRTxJHGbdbqsjrGz</string>
-
-    <string name="txt_for_profile_details_sign_in_message">AGConnectAuth.getInstance signIn Exception : </string>
     <string name="txt_for_profile_details_log_out_message">InstanceUser logged out!</string>
     <string name="txt_for_tv_profile_detail_log_out_message">No logged in user</string>
     <string name="txt_for_logged_user_message">No logged in user</string>

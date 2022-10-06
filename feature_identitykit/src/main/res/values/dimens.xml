@@ -17,6 +17,4 @@
   ~
   -->
 
-<resources>
-    <dimen name="btn_text_size">16sp</dimen>
-</resources>
+<resources></resources>

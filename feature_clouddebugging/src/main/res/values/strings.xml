@@ -31,10 +31,6 @@
     <string name="desc_debugging_app_real_device">In AppGallery Connect, go to Quality > Cloud Debugging. Devices can be filtered by series, Android version, EMUI version and resolution. Select the device you desired and apply for device model. Set debug duration based on your needs, the options are 30 minutes, 1 hours and 2 hours.\n\nClick upload to upload an APK. If you have uploaded APKs before, the apps are also displayed on tab page. In the displayed dialog box indicating that the app is being installed, click OK. When the installation is complete, you can see the app icon on the device screen on the left. Operate the device by moving or clicking your cursor on the device screen, or clicking the power button, home button, menu button, or back button. The device will respond like your own phone. You can click the question mark next to the device model to view the information about the device. \n</string>
     <string name="desc_releasing_real_device">In order to release a device in use but the test duration does not end, devices can be released on the occupied device tab page and on the my info tab page.\n\nIn both methods, press stop debugging and when the displayed dialog box appears click OK. The device will be released successfully and the device list will be displayed.\n</string>
 
-    <string name="main_page">Main Page</string>
-    <string name="docs">Docs</string>
-
-    <string name="link_developer_cloud_debugging">https://developer.huawei.com/consumer/en/agconnect/cloud-adjust</string>
     <string name="link_cloud_debugging_documentation_introduction">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-clouddebug-introduction</string>
 
     <string name="open_testing_explanation1">Cloud Debugging tests your app using mainstream Huawei devices provided by Huawei. You can run your app on the latest and most popular Huawei devices to test app functions. The testing experience is smooth and pleasant, like running an app on your own phone. You can perform operations such as rotating the screen, taking screenshots, and exporting logs. \n\n</string>

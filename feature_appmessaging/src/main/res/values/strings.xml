@@ -40,7 +40,6 @@
     <string name="text_for_app_messaging_toolbar_test_btn_banner">Show Banner Message</string>
     <string name="text_for_app_messaging_toolbar_test_btn_image">Show Image Message</string>
 
-    <string name="txt_for_app_messaging_hyperlink"><a href="">Click here to learn more about AGC In-App Messaging</a></string>
     <string name="txt_for_app_messaging_hyperlink_link">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-appmessage-introduction</string>
 
     <string name="banner_for_app_message">AGC In-App Messaging Banner</string>

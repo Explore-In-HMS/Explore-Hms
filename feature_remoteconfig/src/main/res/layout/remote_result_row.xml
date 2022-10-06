@@ -18,8 +18,7 @@
   -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/ll_scene_detection_result"
-        android:layout_width="match_parent"
+    android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/btn_scene_detection_run"
     android:layout_marginBottom="16dp"

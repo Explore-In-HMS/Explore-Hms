@@ -32,7 +32,6 @@
         app:title="Nearby WiFi" />
 
     <LinearLayout
-        android:id="@+id/ll_top"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -55,7 +54,6 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/txt_connect_wifi"
                 style="@style/TextAppearance.ExploreHMS.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -117,7 +115,6 @@
             android:background="@color/gray" />
 
         <LinearLayout
-            android:id="@+id/ll_aesthetics_score_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"

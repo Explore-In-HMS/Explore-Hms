@@ -35,7 +35,6 @@
             app:title="@string/title_health_kit" />
 
         <ImageView
-            android:id="@+id/health_kit_icon"
             style="@style/health_kit_icon"
             android:src="@drawable/health_kit_icon"
             android:contentDescription="@string/app_icon" />
@@ -51,7 +50,6 @@
             android:text="@string/health_auth_health_kit_waitting" />
 
         <TextView
-            android:id="@+id/health_auth_desc"
             style="@style/TextAppearance.ExploreHMS.Body1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

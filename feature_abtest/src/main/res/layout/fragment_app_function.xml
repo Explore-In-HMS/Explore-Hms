@@ -47,7 +47,6 @@
             app:layout_constraintTop_toBottomOf="@+id/txt_app_function" />
 
         <ImageView
-            android:id="@+id/img_appfunction"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"

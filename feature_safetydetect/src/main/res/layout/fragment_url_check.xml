@@ -61,7 +61,6 @@
         app:layout_constraintTop_toBottomOf="@+id/fg_url_spinner" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/result_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="16dp"

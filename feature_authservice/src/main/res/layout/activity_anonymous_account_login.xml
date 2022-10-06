@@ -100,7 +100,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvLoginWithAnonymous"
             style="@style/TextAppearance.ExploreHMS.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -132,7 +131,6 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/tvLogout"
             style="@style/TextAppearance.ExploreHMS.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -144,7 +142,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/ivLogout"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/icon_close_auth"

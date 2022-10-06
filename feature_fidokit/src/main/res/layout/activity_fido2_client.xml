@@ -74,7 +74,6 @@
         android:orientation="vertical">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_net_register"
             style="@style/ButtonAppearance.ExploreHMS.Normal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -82,7 +81,6 @@
             android:text="@string/btn_net_test_register" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_net_auth"
             style="@style/ButtonAppearance.ExploreHMS.Normal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

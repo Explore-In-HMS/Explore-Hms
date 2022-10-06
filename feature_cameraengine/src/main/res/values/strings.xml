@@ -27,10 +27,7 @@
     <string name="txt_photo_introduction_camera_engine">Photo Mode Introduction</string>
     <string name="txt_recording_introduction_camera_engine">Recording Mode Introduction</string>
     <string name="txt_super_slow_mo_introduction_camera_engine">Super Slow Mode Introduction</string>
-    <string name="txt_slow_mo_introduction_camera_engine">Slow Mode Introduction</string>
-    <string name="txt_pro_p_introduction_camera_engine">Pro Mode (Photo) Introduction</string>
-    <string name="txt_pro_v_introduction_camera_engine">Pro Mode (Video) Introduction</string>
-     <string name="txt_dual_view">DUAL-VIEW VIDEO</string>
+    <string name="txt_dual_view">DUAL-VIEW VIDEO</string>
     <string name="txt_hdr_mode_camera_engine">HDR Mode</string>
     <string name="txt_night_mode_camera_engine">Night Mode</string>
     <string name="txt_ultra_wide_angle_mode_camera_engine">Ultra-wide Angle Mode</string>
@@ -38,14 +35,11 @@
     <string name="txt_photo_mode_camera_engine">Photo Mode</string>
     <string name="txt_recording_mode_camera_engine">Recording Mode</string>
     <string name="txt_super_slow_mode_camera_engine">Super Slow Mode</string>
-    <string name="txt_slow_mode_camera_engine">Slow Mode</string>
     <string name="txt_pro_p_camera_engine">Pro (Photo) Mode</string>
     <string name="txt_pro_v_camera_engine">Pro (Video) Mode</string>
 
-    <string name="txt_service_introduction_camera_engine">Service Introduction</string>
     <string name="txt_show_mode_intro_camera_engine">Show Mode Introduction</string>
     <string name="txt_zoom_level_camera_engine">x%.1f</string>
-    <string name="txt_zoom_level_0_camera_engine">Zoom : 1.0</string>
     <string name="txt_record_timer_camera_engine">%d:%d</string>
 
     <string name="txt_no_picture_camera_engine">No Picture</string>
@@ -99,7 +93,6 @@
     <string name="msg_recording_mode_camera_engine">This mode helps you record HD videos with effects such as different colors, filters, and AI film</string>
     <string name="msg_portrait_mode_camera_engine">This mode can be used for taking portraits and close-ups</string>
     <string name="msg_super_slow_mo_recording_mode_camera_engine">This mode allows you to record super slow-motion videos with a frame rate of over 960 FPS in manual or automatic (motion detection) mode</string>
-    <string name="msg_slow_mo_recording_mode_camera_engine">This mode allows you to record slow-motion videos with a frame rate lower than 960 FPS</string>
     <string name="msg_pro_mode_photo_camera_engine">This mode allows you to adjust the following camera parameters to obtain the same shooting capabilities as those of Huawei camera: Metering mode, ISO, exposure compensation, exposure duration, focus mode, and automatic white balance</string>
     <string name="msg_pro_mode_video_camera_engine">The Pro mode is designed to open the professional photography and recording capabilities of the Huawei camera to apps to meet diversified shooting requirements</string>
     <string name="msg_dual_view">This mode enables you to record a video in two views at the same time. You will be able to record the panoramic and close-up videos simultaneously.The close-up view will be automatically focused on the center of the panoramic view you are recording (manual adjustment is not supported). You can spread or pinch your fingers to adjust the zoom.</string>

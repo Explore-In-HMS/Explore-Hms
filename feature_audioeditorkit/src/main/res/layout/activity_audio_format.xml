@@ -18,7 +18,6 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/recycler_view_fragment_audio_format"
         android:layout_width="@dimen/dp_0"
         android:layout_height="@dimen/dp_0"
         android:layout_marginStart="@dimen/hiad_16_dp"

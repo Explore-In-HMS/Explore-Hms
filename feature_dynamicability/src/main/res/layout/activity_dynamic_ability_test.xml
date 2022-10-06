@@ -34,7 +34,6 @@
         app:title="@string/text_for_dynamic_ability_toolbar" />
 
     <ScrollView
-        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -52,14 +51,12 @@
             android:orientation="vertical">
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/textView7"
                 style="@style/TextAppearance.ExploreHMS.Headline6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/text_for_dynamic_ability_test_header" />
 
             <LinearLayout
-                android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"

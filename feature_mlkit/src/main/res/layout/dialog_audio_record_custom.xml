@@ -50,7 +50,6 @@
                 android:text="@string/asr_please_speak" />
 
             <ImageView
-                android:id="@+id/id_recorder_dialog_icon"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"

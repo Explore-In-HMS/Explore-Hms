@@ -21,7 +21,6 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -36,7 +35,6 @@
             android:orientation="vertical">
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/textView21"
                 style="@style/TextAppearance.ExploreHMS.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -78,7 +76,6 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
@@ -86,7 +83,6 @@
             android:orientation="horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter a keyword"

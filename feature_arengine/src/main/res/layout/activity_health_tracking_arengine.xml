@@ -63,7 +63,6 @@
                 android:src="@drawable/img_health_track_fill_arengine" />
 
             <ImageView
-                android:id="@+id/iv_health_face_arengine"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"

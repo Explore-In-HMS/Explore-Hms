@@ -103,7 +103,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/tv_hint_ensure_user_info_security_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

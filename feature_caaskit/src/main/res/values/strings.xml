@@ -24,16 +24,12 @@
     <string name="header_screen_sharing">Screen Sharing</string>
     <string name="header_in_app_calling">In-app Calling</string>
     <string name="header_custom_calls">Coming Soon - Custom Calls</string>
-    <string name="link_to_hms_page">Link to HMS Page</string>
     <string name="desc_voice_and_video">CaaS Engine provides open APIs that are based on the HUAWEI MeeTime service. It allows app and hardware developers to easily incorporate video calling into their apps, and directly tailor the video source to their preferences with the help of HUAWEI DeviceVirtualization service.\n\n\u2022CaaS Engine provides seamless communication and connectivity between third-party devices and Huawei devices.\n\u2022By integrating CaaS Engine, developers can harness the newest communications capabilities available on Huawei devices to drive innovation.\n</string>
     <string name="desc_in_app_calling">CaaS Engine provides open APIs based on the MeeTime service, and helps app and hardware developers quickly implement real-time content sharing within their apps.\n\nCaaS Engine can be used for screen sharing scenarios by helping users share app content in real time.\n</string>
     <string name="desc_screen_sharing">CaaS Engine provides open APIs that are based on the HUAWEI MeeTime service. It enables app developers to incorporate voice and video calling into their apps social framework such as contacts and friends with ease.\n\nCaaS Engine can be used for both voice and video calls. By integrating CaaS Engine, app developers can harness the newest communications capabilities available on Huawei devices to drive innovation.\n</string>
     <string name="desc_custom_calls">HUAWEI CaaS Kit-Custom Call provides open APIs based on the MeeTime service, and helps developers quickly implement voice and video call services directly from social framework (such as contacts and friends) within their app.\n\nDevelopers can customize the text displayed on the incoming and outgoing call screens, to enhance user experience for calls made to strangers, and safeguard user privacy by hiding the real mobile numbers of both parties from view.\n</string>
-    <string name="main_page">Main Page</string>
-    <string name="docs">Docs</string>
     <string name="explanation">Explanation</string>
 
-    <string name="link_developer_walletkit">https://developer.huawei.com/consumer/en/caas-kit</string>
     <string name="link_walletkit_documentation_introduction">https://developer.huawei.com/consumer/en/doc/development/connectivity-Guides/virtualized-devices-calling-introduction-0000001051089010</string>
 
     <string name="caas_engine__explanation1">HUAWEI CaaS Engine provides app and hardware developers access to open abilities based on the HUAWEI MeeTime service. This engine makes video calling achievable for Huawei phones as well as a variety of apps and partnered smart devices, building a giant real-time communication network for the ultimate user experience.\n\n</string>

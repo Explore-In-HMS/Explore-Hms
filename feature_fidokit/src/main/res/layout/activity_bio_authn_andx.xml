@@ -40,7 +40,6 @@
         android:text="@string/bio_auth_text" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_text_finger_auth_without_crpObj"
         style="@style/ButtonAppearance.ExploreHMS.Normal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,7 +69,6 @@
         android:text="@string/facial_auth" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_text_face_auth_with_crpObj"
         style="@style/ButtonAppearance.ExploreHMS.Normal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

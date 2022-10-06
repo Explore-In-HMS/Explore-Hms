@@ -155,7 +155,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <HorizontalScrollView
-                    android:id="@+id/scroll_objects"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"

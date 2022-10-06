@@ -19,6 +19,5 @@
 <resources>
     <color name="colorPrimaryArEngine">#ff4d4d</color>
     <color name="colorWhiteArEngine">#ffffff</color>
-    <color name="colorRedArEngine">#ff0000</color>
     <color name="colorGrayLightArEngine">#c0bdc4</color>
 </resources>

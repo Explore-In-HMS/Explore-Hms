@@ -21,9 +21,7 @@
     <string name="descappgallery">descAppGallery</string>
     <string name="desccomingsoon">descComingSoon</string>
     <string name="descdeeplink">descDeepLink</string>
-    <string name="hms_quick_app">HMS Quick App</string>
     <string name="explanation">Explanation</string>
-    <string name="link_to_hms_page">Link to HMS Page</string>
     <string name="deschomescreenicon">descHomeScreenIcon</string>
     <string name="descquickappcenter">descQuickAppCenter</string>
     <string name="desc_long_app_gallery">Users can open AppGallery and go to quick apps section, or search for quick apps.</string>
@@ -31,9 +29,6 @@
     <string name="desc_long_deep_link">Quick apps can be opened via a deep link that can be accessed through numerous mediums, such as HTML5 pages, apps, or quick apps themselves.</string>
     <string name="desc_long_home_screen_icon">After adding quick apps to the home screen, users can open them directly by touching the app icons.</string>
     <string name="desc_long_quick_app_center"><![CDATA[Users can go to AppGallery > Manager > Quick App manager >  Quick App Center to search for, access, and manage quick apps. Quick App Center can be added to the home screen.]]></string>
-    <string name="main_page">Main Page</string>
-    <string name="docs">Docs</string>
-    <string name="link_developer_quickapp">https://developer.huawei.com/consumer/en/huawei-quickApp</string>
     <string name="link_quickapp_documentation_introduction">https://developer.huawei.com/consumer/en/doc/development/quickApp-Guides/quickapp-introduction</string>
 
     <string name="quickapp_explanation1">Quick apps are a new form of installation-free apps developed based on industry standards. They are developed based on the frontend technology stack and support native rendering, therefore possessing the advantages of both HTML5 apps and native apps. Users do not need to install quick apps and only need to tap them open and enjoy the same experience and performance as native apps.\n\n</string>

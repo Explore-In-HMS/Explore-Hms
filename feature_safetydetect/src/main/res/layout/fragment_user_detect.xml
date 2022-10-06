@@ -65,7 +65,6 @@
         app:layout_constraintTop_toBottomOf="@+id/fg_text_hint" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/result_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="16dp"
@@ -114,7 +113,6 @@
             app:layout_constraintTop_toBottomOf="@+id/separator" />
 
         <TextView
-            android:id="@+id/fg_text_alert"
             style="@style/TextAppearance.ExploreHMS.Body1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

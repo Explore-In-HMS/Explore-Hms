@@ -135,7 +135,6 @@
                         android:layout_height="wrap_content" />
 
                     <View
-                        android:id="@+id/identity_address_log_info_view"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/hiad_1_dp"
                         android:layout_marginTop="2dp"

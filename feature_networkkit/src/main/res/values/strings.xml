@@ -17,7 +17,6 @@
   -->
 
 <resources>
-    <string name="app_name">NetworkUrl</string>
     <string name="httpExcute">HTTPCLIENT SYNC REQUEST</string>
     <string name="httpEnqueue">HTTPCLIENT ASYNC REQUEST</string>
     <string name="restClientExcute">RESTCLIENT ANNOTATION SYNC REQUEST</string>

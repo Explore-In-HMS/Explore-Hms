@@ -337,7 +337,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tv_iso_val_pro_vid_camera_engine"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             style="@style/TextAppearance.ExploreHMS.Body2"
@@ -376,7 +375,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tv_exp_comp_pro_vid_camera_engine"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             style="@style/TextAppearance.ExploreHMS.Body2"
@@ -416,7 +414,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tv_exposure_hint_pro_vid_camera_engine"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             style="@style/TextAppearance.ExploreHMS.Body2"
@@ -455,7 +452,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tv_awb_type_pro_vid_camera_engine"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             style="@style/TextAppearance.ExploreHMS.Body2"
@@ -494,7 +490,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tv_man_wb_pro_vid_camera_engine"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             style="@style/TextAppearance.ExploreHMS.Body2"
@@ -534,7 +529,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tv_foc_dist_pro_vid_camera_engine"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             style="@style/TextAppearance.ExploreHMS.Body2"
@@ -574,7 +568,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tv_pro_m_pro_vid_camera_engine"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             style="@style/TextAppearance.ExploreHMS.Body2"
@@ -614,7 +607,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tv_face_det_pro_vid_camera_engine"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             style="@style/TextAppearance.ExploreHMS.Body2"
@@ -654,7 +646,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tv_target_fps_pro_vid_camera_engine"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             style="@style/TextAppearance.ExploreHMS.Body2"
@@ -694,7 +685,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tv_noise_red_pro_vid_camera_engine"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             style="@style/TextAppearance.ExploreHMS.Body2"
@@ -734,7 +724,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tv_edge_mode_pro_vid_camera_engine"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             style="@style/TextAppearance.ExploreHMS.Body2"
@@ -774,7 +763,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tv_edge_mod_pro_vid_camera_engine"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             style="@style/TextAppearance.ExploreHMS.Body2"
@@ -814,7 +802,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tv_color_corr_mode_vid_camera_engine"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             style="@style/TextAppearance.ExploreHMS.Body2"
@@ -854,7 +841,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tv_contr_aelock_vid_camera_engine"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             style="@style/TextAppearance.ExploreHMS.Body2"
@@ -895,7 +881,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tv_ccontr_awblock_vid_camera_engine"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             style="@style/TextAppearance.ExploreHMS.Body2"
