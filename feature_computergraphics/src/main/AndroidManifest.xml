@@ -33,11 +33,9 @@
 
     <application>
         <activity
-            android:name="android.app.NativeActivity"
-            android:alwaysRetainTaskState="true"
-            android:clearTaskOnLaunch="false"
+            android:name=".CustomNativeActivity"
             android:configChanges="orientation|screenSize"
-            android:launchMode="singleInstance">
+            android:launchMode="singleTask">
 
             <!-- android:screenOrientation="portrait"> -->
             <meta-data
