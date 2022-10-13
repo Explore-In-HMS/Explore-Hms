@@ -18,6 +18,8 @@
 package com.hms.explorehms.huawei.feature_networkkit;
 
 import android.content.Context;
+import android.net.Uri;
+import android.os.Environment;
 import android.util.Log;
 
 import com.huawei.hms.network.file.api.GlobalRequestConfig;
@@ -33,6 +35,7 @@ import com.huawei.hms.network.file.upload.api.UploadManager;
 
 import java.io.Closeable;
 import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -54,8 +57,8 @@ public class UploadEngine extends AUpDownloadEngine {
         GlobalRequestConfig commonConfig = UploadManager.newGlobalRequestConfigBuilder()
                 .retryTimes(1)
                 .build();
-        upManager = (UploadManager) new UploadManager
-                .Builder("upoloadManager")
+        upManager = new UploadManager
+                .Builder("uploadManager")
                 .commonConfig(commonConfig)
                 .build(context);
 
@@ -134,54 +137,80 @@ public class UploadEngine extends AUpDownloadEngine {
 
     @Override
     void uploadForPost() {
-        testUpload(false);
+        testUpload(true);
     }
 
     void testUpload(boolean usePut) {
-        Map<String, String> httpHeader = new HashMap<>();
-        httpHeader.put("header1", "value1");
-        httpHeader.put("header2", "value2");
 
-        Map<String, String> httpParams = new HashMap<>();
-        httpParams.put("param1", "value1");
-        httpParams.put("param2", "value2");
+        try {
+            Map<String, String> httpHeader = new HashMap<>();
+            httpHeader.put("header1", "value1");
+            httpHeader.put("header2", "value2");
 
-        // replace the url for upload
-        final String normalUrl = "https://path/upload";
-        if (usePut) {
-            // upload file for http put
-            List<FileEntity> fileList = new ArrayList<>();
-            // replace the file path
-            String filePath1 = context.getString(R.string.filepath1);
-            fileList.add(new FileEntity(new File(filePath1)));
+            Map<String, String> httpParams = new HashMap<>();
+            httpParams.put("param1", "value1");
+            httpParams.put("param2", "value2");
 
-            request = UploadManager.newPutRequestBuilder()
-                    .url(normalUrl)
-                    .fileParams(fileList)
-                    .params(httpParams)
-                    .headers(httpHeader)
-                    .build();
-        } else {
-            // upload file for http post
-            // replace the file path
-            String filePath1 = context.getString(R.string.filepath1);
-            String filePath2 = context.getString(R.string.filepath2);
+            // replace the url for upload
+            final String normalUrl = "https://path/upload";
 
-            request = UploadManager.newPostRequestBuilder()
-                    .url(normalUrl)
-                    .fileParams("file1", new FileEntity(new File(filePath1)))
-                    .fileParams("file2", new FileEntity(new File(filePath2)))
-                    .params(httpParams)
-                    .headers(httpHeader)
-                    .build();
+
+            if (usePut) {
+
+                File root = new File(Environment.getExternalStorageDirectory(), "Notes");
+                if (!root.exists()) {
+                    root.mkdirs();
+                }
+                File gpxfile = new File(root, "aaa");
+                FileWriter writer = new FileWriter(gpxfile);
+                writer.append("xx");
+                writer.flush();
+                writer.close();
+                // upload file for http put
+                List<FileEntity> fileList = new ArrayList<>();
+                // replace the file path
+                String filePath1 = gpxfile.getPath();
+
+                fileList.add(new FileEntity(Uri.fromFile(new File(filePath1))));
+
+                request = UploadManager.newPutRequestBuilder()
+                        .url(normalUrl)
+                        .fileParams(fileList)
+                        .params(httpParams)
+                        .headers(httpHeader)
+                        .build();
+            } else {
+                // upload file for http post
+                // replace the file path
+                String filePath1 = context.getString(R.string.filepath1);
+                String filePath2 = context.getString(R.string.filepath2);
+
+                request = UploadManager.newPostRequestBuilder()
+                        .url(normalUrl)
+                        .fileParams("file1", new FileEntity(Uri.fromFile(new File(filePath1))))
+                        .fileParams("file2", new FileEntity(Uri.fromFile(new File(filePath2))))
+                        .params(httpParams)
+                        .headers(httpHeader)
+                        .build();
+            }
+            if (upManager == null) {
+                Log.e(TAG, "nothing to cancel");
+                return;
+            }
+
+            Result result = upManager.start(request, callback);
+            checkResult(result);
+        }catch (Exception e) {
+            Log.e(TAG, "exception:" + e.getMessage());
         }
 
-        if (upManager == null) {
-            Log.e(TAG, "nothing to cancel");
-            return;
-        }
 
-        Result result = upManager.start(request, callback);
-        checkResult(result);
+
+
+
+
+
+
+
     }
 }

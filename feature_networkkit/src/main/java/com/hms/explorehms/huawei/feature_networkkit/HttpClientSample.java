@@ -57,9 +57,9 @@ public class HttpClientSample {
     public HttpClient createClient() {
         httpClient = new HttpClient.Builder()
                 // (Optional) Set the request timeout interval, in milliseconds.
-                .callTimeout(1000)
+                .callTimeout(10000)
                 // (Optional) Set the connect timeout interval, in milliseconds.
-                .connectTimeout(1000)
+                .connectTimeout(10000)
                 // (Optional) Execute only once upon each call.
                 .addInterceptor(new TestCustomInterceptor())
                 // (Optional) Determine the number of execution times based on the number of retry times.
