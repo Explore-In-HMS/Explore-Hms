@@ -1,72 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.AssetActivity">
 
-    <Button
-        android:id="@+id/selectVideoFileBtn"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:layout_marginStart="@dimen/dp_16"
-        android:layout_marginEnd="@dimen/dp_16"
-        android:text="@string/choose_video_for_getting_information"
-        android:textSize="@dimen/sp_13"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/selectAudioFileBtn"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:layout_marginStart="@dimen/dp_16"
-        android:layout_marginEnd="@dimen/dp_16"
-        android:text="@string/choose_audio_for_getting_information"
-        android:textSize="@dimen/sp_13"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectVideoFileBtn" />
+        <Button
+            android:id="@+id/selectVideoFileBtn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:gravity="center"
+            android:text="@string/choose_video_for_getting_information"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/fileSelectionInfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:layout_margin="@dimen/dimens_3"
-        android:text="@string/please_select_file_from_external_storage_like_in_the_picture_below"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectAudioFileBtn"/>
+        <Button
+            android:id="@+id/selectAudioFileBtn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:gravity="center"
+            android:text="@string/choose_audio_for_getting_information"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selectVideoFileBtn" />
 
-    <ImageView
-        android:id="@+id/ext_storage_info_img"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:src="@drawable/external_storage_image"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fileSelectionInfo"/>
+        <TextView
+            android:id="@+id/fileSelectionInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimens_16"
+            android:text="@string/please_select_file_from_external_storage_like_in_the_picture_below"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selectAudioFileBtn" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/textViewInfo"
-        style="@style/TextAppearance.ExploreHMS.Body2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="@dimen/dp_16"
-        android:layout_marginEnd="@dimen/dp_16"
-        android:scrollbars="vertical"
-        app:layout_constraintTop_toBottomOf="@id/ext_storage_info_img"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <ImageView
+            android:id="@+id/ext_storage_info_img"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:layout_marginTop="@dimen/dimens_8"
+            android:src="@drawable/external_storage_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fileSelectionInfo" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewInfo"
+            style="@style/TextAppearance.ExploreHMS.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimens_16"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ext_storage_info_img" />
 
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
