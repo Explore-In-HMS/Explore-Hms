@@ -21,6 +21,6 @@
     <string name="httpEnqueue">HTTPCLIENT ASYNC REQUEST</string>
     <string name="restClientExcute">RESTCLIENT ANNOTATION SYNC REQUEST</string>
     <string name="restClientEnqueue">RESTCLIENT ANNOTATION ASYNC REQUEST</string>
-    <string name="filepath1">/sdcard/tmpuploadfile/filetxt</string>
-    <string name="filepath2">/sdcard/tmpuploadfile/filelog</string>
+    <string name="filepath1">/storage/emulated/0/eSpace/eSpaceAppLog/eSpacelog.txt</string>
+    <string name="filepath2">/storage/emulated/0/eSpace/eSpaceAppLog/kmc_log.txt</string>
 </resources>

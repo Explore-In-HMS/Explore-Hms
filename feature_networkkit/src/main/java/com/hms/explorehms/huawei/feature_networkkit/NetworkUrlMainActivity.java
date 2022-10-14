@@ -162,7 +162,13 @@ public class NetworkUrlMainActivity extends Activity implements AUpDownloadEngin
 
     @Override
     public void onSuccess(String message) {
-        showMessage("success->" + message, Color.GREEN);
+        try {
+            showMessage("onProgress:" + 100);
+            Thread.sleep(200);
+            showMessage("success->" + message, Color.GREEN);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
     }
 
 

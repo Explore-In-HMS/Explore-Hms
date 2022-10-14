@@ -35,43 +35,59 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <com.google.android.material.button.MaterialButton
-        style="@style/ButtonAppearance.ExploreHMS.Normal"
         android:id="@+id/btn_httpclient_execute"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_gravity="center"
-        android:text="@string/httpExcute" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/httpExcute"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <com.google.android.material.button.MaterialButton
-        style="@style/ButtonAppearance.ExploreHMS.Normal"
         android:id="@+id/btn_httpclient_enqueue"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/httpEnqueue" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/httpEnqueue"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <com.google.android.material.button.MaterialButton
-        style="@style/ButtonAppearance.ExploreHMS.Normal"
         android:id="@+id/btn_restclient_execute"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/restClientExcute" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/restClientExcute"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <com.google.android.material.button.MaterialButton
-        style="@style/ButtonAppearance.ExploreHMS.Normal"
         android:id="@+id/btn_restclient_enqueue"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/restClientEnqueue" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/restClientEnqueue"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintVertical_chainStyle="packed" />
+
 
     <TextView
         android:id="@+id/call_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
+        android:layout_margin="16dp"
         android:scrollbars="vertical" />
 
 </LinearLayout>
