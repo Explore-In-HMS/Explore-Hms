@@ -51,7 +51,6 @@
 
 
     <string name="score_gameservices_dialog">Score: %1$s point</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="show_floating_window">Show floating window</string>
     <string name="hide_floating_window">Hide floating window</string>
     <string name="event_samples">Event samples:</string>

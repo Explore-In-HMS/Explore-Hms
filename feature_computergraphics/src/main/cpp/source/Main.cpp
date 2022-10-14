@@ -4,15 +4,18 @@
  */
 
 #include "MainApplication.h"
+
 using namespace CGKit;
 
-void android_main(android_app* state)
-{
+void android_main(android_app *state) {
     auto app = CreateMainApplication();
     if (app == nullptr) {
         return;
     }
-    app->Start((void*)(state));
+    app->Start((void *) (state));
     app->MainLoop();
     CG_SAFE_DELETE(app);
+    //ANativeActivity_finish(state->activity);
+
+
 }

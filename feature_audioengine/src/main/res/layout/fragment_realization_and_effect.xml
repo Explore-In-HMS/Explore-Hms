@@ -49,7 +49,6 @@
         app:layout_constraintTop_toBottomOf="@+id/explanation3" />
 
     <ImageView
-        android:id="@+id/imageView1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"

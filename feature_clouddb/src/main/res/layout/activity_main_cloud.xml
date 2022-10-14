@@ -47,13 +47,11 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <LinearLayout
-            android:id="@+id/linearLayout6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView18"
                 style="@style/TextAppearance.ExploreHMS.Body1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -62,7 +60,6 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView19"
                 style="@style/TextAppearance.ExploreHMS.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -71,7 +68,6 @@
                 android:textColor="#000000" />
 
             <ImageView
-                android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -82,7 +78,6 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">

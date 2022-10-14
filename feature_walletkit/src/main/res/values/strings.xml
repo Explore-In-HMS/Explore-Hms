@@ -18,7 +18,6 @@
 
 <resources>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="you_should_not_be_seeing_this_if_you_are_seeing_this_there_is_a_grave_error_occurred">YOU SHOULD NOT BE SEEING THIS! IF YOU ARE SEEING THIS, THERE IS A GRAVE ERROR OCCURRED.</string>
     <string name="desc_default_string">Wallet Kit</string>
     <string name="header_transit_passes">Transit Passes</string>
@@ -32,9 +31,7 @@
     <string name="header_car_keys">Car Keys</string>
     <string name="header_access_cards">Access Cards</string>
     <string name="header_all_in_one_cards">All-in-One Cards</string>
-    <string name="hms_walletkit_app">HMS Wallet Kit</string>
     <string name="explanation">Explanation</string>
-    <string name="link_to_hms_page">Link to HMS Page</string>
     <string name="desc_loyalty_cards">Users can add various types of loyalty cards to HUAWEI Wallet, view their exclusive benefits such as bonus points and levels anytime, and enjoy a wide range of offers such as discounts for services or products.</string>
     <string name="desc_gift_cards">Gift cards are prepaid cards that can be used only at specified stores and in specified periods such as gift cards issued by shopping malls and supermarkets. \n\nA user can purchase a gift card with a specified face value and show the payment code corresponding to the gift card for payment.\n</string>
     <string name="desc_coupons">Coupons are issued and distributed to users, providing a financial discount or rebate to promote sales.</string>
@@ -46,10 +43,7 @@
     <string name="desc_all_in_one_card">A mobile phone can function as an all-in-one pass with "chip-device-cloud" technologies of HUAWEI, which is more convenient and secure than physical cards. The NFC technology can be used to achieve smart cards. \n\nThis is an access control solution provided for company employees. Users can add their admission credentials such as employee ID cards to HUAWEI Wallet and use their phones to enter or exit their workplaces. \n\nAll-in-one cards can guarantee security based on the integrated chip-device-cloud capabilities of Huawei phones.\n</string>
     <string name="desc_car_keys">A user can use their NFC-enabled phone to unlock their car, instead of using a physical key. A car key can be shared with others, such as family members. It will not be long before this technology is widely applied in the automotive industry of the Chinese mainland. \n\nWallet Kit provides the digital car key capability to simulate physical car keys based on "chip-device-cloud" technologies of HUAWEI. \n\nSuch digital car keys are more secure and meet the Intelligent Car Connectivity Industry Ecosystem Alliance (ICCE) standards. \n\nCurrently, this mode is available only in the Chinese mainland.\n</string>
     <string name="desc_smart_locks">This function is launched by HUAWEI Wallet together with hotels and lock vendors for users to emulate key cards onto their phones. During hotel check-in, users can add a key pass to their NFC-enabled phone and then will be able to swipe the phone to access their room. For a home key pass, a user also needs to pair the key pass with a specified door lock. \n\nHUAWEI Wallet Kit enables your users to emulate key cards of hotel and home door locks into the HUAWEI Wallet app. After applying for the Wallet Kit service on HUAWEI Developers, configure the promotion service. HUAWEI Developers will deliver your product content to the content display area in HUAWEI Wallet. When a user taps your product, HUAWEI Wallet delivers and displays an unpaired or unauthorized key pass to the user. When the user taps the pair or authorize button and moves their phone to a specified pass writer, the pass writer writes personal data into HUAWEI Wallet and completes pairing or authorization. Then, the key pass is ready for use. \n\nCurrently, this mode is available only in the Chinese mainland.\n</string>
-    <string name="main_page">Main Page</string>
-    <string name="docs">Docs</string>
 
-    <string name="link_developer_walletkit">https://developer.huawei.com/consumer/en/hms/huawei-walletkit</string>
     <string name="link_walletkit_documentation_introduction">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050042318</string>
 
     <string name="walletkit_explanation1">Wallet Kit is an open capability that integrates full-stack "chip-device-cloud" technologies in Huawei to provide digital passes such as cards (including ID cards), coupons, tickets and keys on an integrated platform. It enables users to add their tickets, boarding passes, loyalty cards, coupons, gift cards, and other cards or passes on their mobile phones for convenient, anytime use. It also facilitates interactions between apps and users through location-based notifications, real-time status updates, and NFC capabilities.\n\n</string>

@@ -33,7 +33,6 @@
 
     <string name="awarenesskit_more_information"><a href="">Click here to learn more about Awareness Kit.</a></string>
     <string name="awarenesskit_more_information_link_documentation_link">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050031140</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
     <string name="time_awareness_info_text">The time awareness capability can obtain holiday information of most countries/regions and sunrise and sunset time of all cities around the world. Holiday information is updated periodically to ensure data timeliness and accuracy.</string>

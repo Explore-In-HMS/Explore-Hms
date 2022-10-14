@@ -18,7 +18,6 @@
 
 <resources>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="you_should_not_be_seeing_this_if_you_are_seeing_this_there_is_a_grave_error_occurred">YOU SHOULD NOT BE SEEING THIS! IF YOU ARE SEEING THIS, THERE IS A GRAVE ERROR OCCURRED.</string>
     <string name="desc_default_string">OneHop Engine</string>
     <string name="header_development_scenario">Development Scenarios</string>
@@ -31,11 +30,8 @@
     <string name="desc_application_scenario">Currently, there are three different application scenarios.\n\n\u2022Huawei OneHop: It lets users transfer files from their device to another device with an NFC tag, like the OneHop File Sharing feature.\n\u2022Projection: IT lets users project their device to an external display with an NFC tag.\n\u2022Connection: It lets users connect or pair other devices. \n</string>
     <string name="desc_key_features">Currently, there are three powerful features in OneHop Engine.\n\n\u2022Fast: Faster connecting with just a tap by using NFC technology, instead of QR code scanning to connect.\n\u2022Simple: Accurate recognition of third-party devices achieved with simple and unified language makes quick operations effective and convenient.\n\u2022Seamless: Enables seamless interaction between different devices by compacting triggering, detection, device connection, transfer, and app launching into one simple step for users. All connections are initiated locally to ensure data privacy and keep any private data stored on their device.\n</string>
 
-    <string name="main_page">Main Page</string>
-    <string name="docs">Docs</string>
     <string name="explanation">Explanation</string>
 
-    <string name="link_developer_onehop_engine">https://developer.huawei.com/consumer/en/onehop-kit</string>
     <string name="link_onehop_engine_documentation_introduction">https://developer.huawei.com/consumer/en/doc/development/connectivity-Guides/OneHop-introduction</string>
 
     <string name="onehop_engine__explanation1">The HUAWEI OneHop Engine serves as a full scenario solution for seamless interaction between multiple devices. By leveraging NFC technology, HUAWEI OneHop Engine simplifies the collaboration and interaction between your smartphones and other devices with a simple tap. New feature of Huawei Multi-Screen Collaboration released with the EMUI 10.0 system allows users to use their phone on their tablet or laptop with a simple tap, allowing users to expand their productivity without buying more things. The one-tap connection is made possible with HUAWEI OneHop.\n\n</string>

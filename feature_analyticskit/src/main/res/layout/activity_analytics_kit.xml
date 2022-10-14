@@ -264,7 +264,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_predefinedEventInfo" />
 
             <TextView
-                android:id="@+id/tv_predefinedEventText22"
                 style="@style/TextAppearance.ExploreHMS.Headline5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -21,7 +21,6 @@
     <color name="colorPrimaryCameraEngine">#ff4d4d</color>
     <color name="colorGray1CameraEngine">#50c0bdc4</color>
     <color name="colorTransparentCameraEngine">#F2FFFFFF</color>
-    <color name="colorTransparent2CameraEngine">#80000000</color>
     <color name="colorBlackCameraEngine">#000000</color>
     <color name="colorWhiteCameraEngine">#FFFFFF</color>
 <!--    <color name="colorGray2HiAi">#546d79</color>-->

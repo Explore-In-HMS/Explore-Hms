@@ -52,14 +52,12 @@
             android:orientation="vertical" >
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/textView3"
                 style="@style/TextAppearance.ExploreHMS.Headline6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/text_for_dynamic_ability_banner_message" />
 
             <ImageView
-                android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"

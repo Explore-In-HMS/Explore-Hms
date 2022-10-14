@@ -26,7 +26,6 @@
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
         style="@style/ToolbarAppearance.ExploreHMS.Normal"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"

@@ -17,7 +17,6 @@
   -->
 
 <resources>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_ab_test">A/B Testing</string>
     <string name="txt_abtest">A/B Testing provides a collection of refined operation tools to optimize app experience and improve key conversion and growth indicators. You can use the service to create one or more A/B tests engaging different user groups to compare your variants of app UI design, copywriting, product functions, or marketing activities for performance metrics and find the best one that meets user requirements. This helps you make correct decisions. A/B Testing is commonly used by large Internet companies, with hundreds of A/B tests conducted every week.</string>
     <string name="txt_main_func">A/B Testing can help you when you:\nCannot decide which variant to choose for the optimal effect.\nWorry that great updates of your app may not get positive feedback from users.</string>
@@ -27,6 +26,5 @@
     <string name="txt_app_copyright_exp">Operations personnel can push notifications to engage users or wake up inactive users. The push effect significantly lies on whether the notification copywriting is attractive enough. A/B Testing can help evaluate your variants. For example, the following two figures are variants for the update notification of the HUAWEI Video app. The A/B test result shows that variant A gets more taps, and operations personnel then release variant A to all users. A/B Testing also applies to other types of copywriting.</string>
     <string name="txt_app_function">App Function Testing</string>
     <string name="txt_app_function_exp">Function updates are common for an app. A/B Testing can help you distribute your function updates to some users for responsiveness and feedback, which can be used as a reference for you to determine whether to officially release the updates to all users. For example, the following two figures show the update of the Free area in the HUAWEI AppGallery app.</string>
-    <string name="txt_click"><a href="">Click here to learn more about A/B Testing.</a></string>
     <string name="txt__link">https://developer.huawei.com/consumer/en/agconnect/abtest-introduction/</string>
 </resources>

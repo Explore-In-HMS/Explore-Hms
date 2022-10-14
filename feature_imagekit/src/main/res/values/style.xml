@@ -16,9 +16,4 @@
   ~   limitations under the License.
   ~
   -->
-<resources>
-    <style name="custom_imagekit_theme_black">
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:windowContentOverlay">@null</item>
-    </style>
-</resources>
+<resources></resources>

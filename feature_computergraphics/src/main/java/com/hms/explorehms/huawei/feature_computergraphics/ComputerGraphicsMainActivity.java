@@ -25,6 +25,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.hms.explorehms.ExploreHMSApplication;
 import com.hms.explorehms.Util;
 import com.hms.explorehms.huawei.feature_computergraphics.databinding.ActivityComputerGraphicsMainBinding;
 import com.huawei.hms.feature.dynamicinstall.FeatureCompat;
@@ -67,7 +68,8 @@ public class ComputerGraphicsMainActivity extends AppCompatActivity {
         );
 
         binding.btnLetsTryComputergraphics.setOnClickListener(view -> {
-            Intent intent = new Intent(ComputerGraphicsMainActivity.this, NativeActivity.class);
+            Intent intent = new Intent(ComputerGraphicsMainActivity.this, CustomNativeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         });
 
@@ -79,4 +81,5 @@ public class ComputerGraphicsMainActivity extends AppCompatActivity {
         // Initialize the SDK in the activity.
         FeatureCompat.install(newBase);
     }
+
 }

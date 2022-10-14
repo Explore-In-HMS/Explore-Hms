@@ -30,8 +30,6 @@
     <string name="button_in_app_video">Display In App Video</string>
     <string name="panorama_service_introduction">360° showcases and interactions in a 3D space are the future of image viewing. Immerse your users in an all-encompassing experience.</string>
     <string name="service_header">Panorama Kit</string>
-    <string name="panorama_kit_information"><a href="">Click here to learn more about Panorama Kit.</a></string>
-    <string name="panorama_kit_information_link">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001050042264</string>
 
 
 </resources>

@@ -17,7 +17,6 @@
         app:title="InStreamRoll Ad Activity">
 
         <Button
-            android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:background="@drawable/bg_white_sq_ads"
@@ -34,7 +33,6 @@
             android:visibility="gone" />
 
         <TextView
-            android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -79,14 +77,12 @@
     </LinearLayout>
 
     <RelativeLayout
-        android:id="@+id/rl_video"
         android:layout_margin="@dimen/dimens_16"
         app:layout_constraintTop_toBottomOf="@+id/ln_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <RelativeLayout
-            android:id="@+id/your_video_content"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:background="@android:color/black">

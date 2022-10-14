@@ -29,7 +29,6 @@
     <string name="text_for_remote_config_second_priority">If no value is fetched from the cloud or the value fetched from the cloud does not take effect, your app uses the default value.</string>
     <string name="text_for_remote_config_third_priority">If no default value is set in the app, the app uses the default value of a specified data type (for example, false is used for the boolean type by default).</string>
 
-    <string name="txt_for_remote_config_hyper"><a href="">Click here to learn more about AGC Remote Configuration</a></string>
     <string name="txt_for_remote_config_link">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-remoteconfig-introduction-0000001055149778</string>
 
     <string name="txt_for_remote_config_example">Example Of Remote Configuration</string>
@@ -47,7 +46,5 @@
     <string name="txt_remote_config_second_option">Condition management is used to define rules and if that rule criteria is met, value can be configured in the application. These rules are used based on App version, OS version, language, country, region etc.</string>
 
     <string name="txt_remote_config_result">Result Of Remote Configuration</string>
-    <string name="txt_remote_config_key">Key : </string>
-    <string name="txt_remote_config_val">Value : </string>
 
 </resources>

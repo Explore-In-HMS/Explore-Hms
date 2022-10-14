@@ -107,7 +107,6 @@
             <TextView
                 android:layout_marginStart="@dimen/h16"
                 style="@style/TextAppearance.ExploreHMS.Body1"
-                android:id="@+id/tvShareFile1"
                 android:overScrollMode="always"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
