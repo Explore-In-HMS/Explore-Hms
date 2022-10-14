@@ -249,7 +249,7 @@ public class MainActivityAREngine extends AppCompatActivity {
             }
 
             /**
-             * Farklı şekillerde kullanılabilir
+             * Can be used in different ways
              */
 
             if(output.get(hardware) != null && !Objects.equals(output.get(hardware), "")){

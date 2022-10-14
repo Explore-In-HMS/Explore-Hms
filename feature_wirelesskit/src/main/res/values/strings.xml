@@ -20,7 +20,9 @@
     <string name="connected">Connected</string>
     <string name="disconnected">Disconnected</string>
     <string name="network_qoe_long">Network Quality of Experience</string>
-    <string name="check_below">Error! Please check the prerequisites.</string>
+    <string name="check_below">Error! This device is not supported.</string>
+    <string name="check_explanation_processor"><b>Processor information: </b></string>
+    <string name="check_explanation_supported_device">\n<b>Some supported devices:</b> Mate 40 Pro, Mate 40 Pro+, Mate 40 RS Porsche Design, Mate X2</string>
     <string name="unregistered">Unregistered!</string>
     <string name="long_general_explanation"><b>Prerequisites for using Wireless Kit</b>\n\nWireless kit requirements are given in the table above.\n\nAs can be
     seen, out of four features available, two of them requires EMUI 11 and other two requires at least EMUI 10.1 version, alongside

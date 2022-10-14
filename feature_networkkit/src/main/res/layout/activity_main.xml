@@ -91,19 +91,21 @@
                     tools:layout_editor_absoluteX="80dp" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:layout_marginRight="@dimen/h16"
-                    android:layout_marginLeft="@dimen/h16"
+                    android:id="@+id/btn_fdau"
                     style="@style/ButtonAppearance.ExploreHMS.Normal"
                     android:layout_width="match_parent"
-                    android:id="@+id/btn_fdau"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/h16"
                     android:layout_marginTop="8dp"
+                    android:layout_marginRight="@dimen/h16"
                     android:clickable="true"
                     android:text="File Upload and Download"
                     android:textColor="@color/whiteBG"
+                    android:visibility="gone"
                     app:layout_constraintTop_toBottomOf="@+id/btn_url"
-                    tools:layout_editor_absoluteX="80dp" />
+                    tools:layout_editor_absoluteX="80dp"
+                    tools:visibility="visible" />
 
             </LinearLayout>
         </ScrollView>

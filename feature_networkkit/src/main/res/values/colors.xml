@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~
   ~   Copyright 2020. Explore in HMS. All rights reserved.
@@ -17,12 +18,5 @@
   -->
 
 <resources>
-    <string name="httpExcute">HTTPCLIENT SYNC REQUEST</string>
-    <string name="httpEnqueue">HTTPCLIENT ASYNC REQUEST</string>
-    <string name="restClientExcute">RESTCLIENT ANNOTATION SYNC REQUEST</string>
-    <string name="restClientEnqueue">RESTCLIENT ANNOTATION ASYNC REQUEST</string>
-    <string name="filepath1">/storage/emulated/0/eSpace/eSpaceAppLog/eSpacelog.txt</string>
-    <string name="filepath2">/storage/emulated/0/eSpace/eSpaceAppLog/kmc_log.txt</string>
-    <string name="txt_result_network">RESULT</string>
-    <string name="txt_request_network">Request</string>
+    <color name="colorGray1Network">#50c0bdc4</color>
 </resources>
