@@ -25,4 +25,5 @@
     <string name="filepath2">/storage/emulated/0/eSpace/eSpaceAppLog/kmc_log.txt</string>
     <string name="txt_result_network">RESULT</string>
     <string name="txt_request_network">Request</string>
+    <string name="service_introduction_for_url">Network Kit allows you to send requests using either an HttpClient object (an HTTP client similar to OkHttp) or a RestClient object (a RESTful client similar to Retrofit). The two modes use two different sets of APIs to provide the same network communication capabilities. You can choose to use either mode as needed.</string>
 </resources>
