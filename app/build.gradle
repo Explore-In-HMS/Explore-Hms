@@ -406,7 +406,7 @@ dependencies {
     api 'com.huawei.hms:awareness:3.1.0.300'
 
     //Push Kit
-    api 'com.huawei.hms:push:6.3.0.302'
+    api 'com.huawei.hms:push:6.7.0.300'
 
     //MAP kit
     api "com.huawei.hms:maps:6.3.1.300"

@@ -109,7 +109,7 @@ public class MainActivityPushKit extends AppCompatActivity {
     private TextView tvSubUnsubResult;
     private TextView tvAutoInitOnOffResult;
     private TextView tvSubTopic;
-    private HmsMessaging messaging;
+    private Boolean isFirst=true;
 
     /**
      * Push Message related variables
@@ -123,7 +123,6 @@ public class MainActivityPushKit extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_pushkit);
-        messaging=HmsMessaging.getInstance(MainActivityPushKit.this);
         setupToolbar();
         initUI();
         initListener();
@@ -458,9 +457,23 @@ public class MainActivityPushKit extends AppCompatActivity {
         edTopic = view.findViewById(R.id.ed_push_topic);
         TextInputLayout edLayout = view.findViewById(R.id.et_Layout);
         edLayout.setHint(isAdd ? "Subscribe topic name" : "Unsubscribe topic name");
+        //HmsMessaging messaging=HmsMessaging.getInstance(MainActivityPushKit.this);
+        if(isFirst){
+            try {
+                HmsMessaging.getInstance(MainActivityPushKit.this)
+                        .subscribe("text")
+                        .addOnCompleteListener(task -> {
+                        });
+            } catch (Exception e) {
+                Log.i(TAG, "subscribe Failed" + e);
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.msg_topic_sub_exception), Toast.LENGTH_LONG).show();
+            }
+            isFirst=false;
+        }
         btnConfirm.setOnClickListener(v -> {
             try {
-                messaging.subscribe(Objects.requireNonNull(edTopic.getText()).toString())
+                HmsMessaging.getInstance(MainActivityPushKit.this)
+                .subscribe(Objects.requireNonNull(edTopic.getText()).toString())
                         .addOnCompleteListener(task -> {
                             if (task.isSuccessful()) {
                                 tvSubUnsubResult.setText(getResources().getString(R.string.txt_success_pushkit));
