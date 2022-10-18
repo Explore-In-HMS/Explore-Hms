@@ -62,6 +62,7 @@ public class DualWifiFragment extends Fragment {
     private static final String PACKAGE_NAME = "com.hms.explorehms.huawei.feature_wirelesskit";
     private static final String RSSI_CHANGED_ACTION = "huawei.net.slave_wifi.RSSI_CHANGED";
     private static final String WIFI_STATE_CHANGED_ACTION = "huawei.net.slave_wifi.WIFI_STATE_CHANGED";
+    private static String processorHardware = "";
 
     private IDualWifiService mDualWifiService = null;
     private Button mBindServiceButton;
@@ -73,6 +74,7 @@ public class DualWifiFragment extends Fragment {
     private Button mUnbindServiceButton;
     private BroadcastReceiver receiver = null;
     private TextView showDualWifiText;
+    private TextView explanationTextView;
 
     private final ServiceConnection mServiceConnection = new ServiceConnection() {
         @Override
@@ -100,7 +102,10 @@ public class DualWifiFragment extends Fragment {
         bindDualWifiService();
 
         if(!checkDeviceProcessor()){
+            String checkExplanationProcessor = getResources().getString(R.string.check_explanation_processor);
+            String checkExplanationSupportedDevice = getResources().getString(R.string.check_explanation_supported_device);
             showDualWifiText.setText(R.string.check_below);
+            explanationTextView.setText(checkExplanationProcessor + processorHardware + checkExplanationSupportedDevice);
         }
         startListener();
 
@@ -151,6 +156,7 @@ public class DualWifiFragment extends Fragment {
         mGetNetworkInfoButton = view.findViewById(R.id.getNetworkInfo);
         mUnbindServiceButton = view.findViewById(R.id.unBindService);
         showDualWifiText = view.findViewById(R.id.wifiinfo);
+        explanationTextView = view.findViewById(R.id.explanationTextView);
     }
 
 
@@ -343,15 +349,13 @@ public class DualWifiFragment extends Fragment {
             }
 
             /**
-             * Farklı şekillerde kullanılabilir
+             * Can be used in different ways
              */
 
             if(output.get(hardware) != null && !Objects.equals(output.get(hardware), "")){
-                String processorHardware = output.get(hardware);
+                processorHardware = output.get(hardware);
 
-                processorOK = processorHardware != null && (
-                        processorHardware.contains("Kirin970") ||
-                                processorHardware.contains("Kirin990") );
+                processorOK = processorHardware != null && processorHardware.contains("Kirin9000");
 
             }
             br.close();

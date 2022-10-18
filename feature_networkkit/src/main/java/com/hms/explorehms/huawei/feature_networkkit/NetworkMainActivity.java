@@ -28,13 +28,17 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.huawei.hms.network.NetworkKit;
 
-public class NetworkMainActivity extends Activity implements View.OnClickListener, EventListener {
+public class NetworkMainActivity extends AppCompatActivity implements View.OnClickListener, EventListener {
     private static final String TAG = "NetworkKit";
     private HttpClientSample httpClientSample;
     private RestClientSample restClientSample;
     private TextView callText;
+    private TextView tvRequestNetwork;
     String title = "";
 
     @Override
@@ -69,12 +73,14 @@ public class NetworkMainActivity extends Activity implements View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_network_main);
+        setupToolbar();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         findViewById(R.id.btn_httpclient_execute).setOnClickListener(this);
         findViewById(R.id.btn_httpclient_enqueue).setOnClickListener(this);
         findViewById(R.id.btn_restclient_execute).setOnClickListener(this);
         findViewById(R.id.btn_restclient_enqueue).setOnClickListener(this);
         callText = findViewById(R.id.call_text);
+        tvRequestNetwork = findViewById(R.id.tvRequestNetwork);
         NetworkKit.init(
                 getApplicationContext(),
                 new NetworkKit.Callback() {
@@ -93,6 +99,20 @@ public class NetworkMainActivity extends Activity implements View.OnClickListene
 
     }
 
+    private void setupToolbar() {
+        Toolbar toolbar = findViewById(R.id.networkMainToolBar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
     @Override
     public void onClick(View view) {
         // Initiate a request using either the RestClient (annotation mode) or HttpClient mode.
@@ -101,21 +121,25 @@ public class NetworkMainActivity extends Activity implements View.OnClickListene
             case R.id.btn_httpclient_execute:
                 title = "httpclient_execute";
                 httpClientExecute();
+                tvRequestNetwork.setText(R.string.httpExcute);
                 Log.i(TAG, "RestClientSample btn_httpclient_execute");
                 break;
             case R.id.btn_httpclient_enqueue:
                 title = "httpclient_enqueue";
                 httpClientEnqueue();
+                tvRequestNetwork.setText(R.string.httpEnqueue);
                 Log.i(TAG, "RestClientSample btn_httpclient_enqueue");
                 break;
             case R.id.btn_restclient_execute:
                 title = "annotation_execute";
                 restClientAnnoExecute();
+                tvRequestNetwork.setText(R.string.restClientExcute);
                 Log.i(TAG, "RestClientSample btn_restclient_execute");
                 break;
             case R.id.btn_restclient_enqueue:
                 title = "annotation_enqueue";
                 restClientAnnoAsync();
+                tvRequestNetwork.setText(R.string.restClientEnqueue);
                 Log.i(TAG, "RestClientSample btn_restclient_enqueue");
                 break;
             default:

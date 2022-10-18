@@ -207,4 +207,5 @@
                 <string name="msg_video_portrait_segmentation_stream_results_hiai">Stream Results</string>
                 <string name="msg_video_portrait_segmentation_doc_link_hiai">https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/videoportrait-ocr-introduction-0000001054468190</string>
                 <string name="msg_video_portrait_segmentation_hiai">Video portrait segmentation supports real-time processing of video streams. You can pass every frame of image in real-time video streams to HUAWEI HiAI Engine to segment the portrait in the frames and obtain the result</string>
+                <string name="not_detected">Not Detected</string>
 </resources>

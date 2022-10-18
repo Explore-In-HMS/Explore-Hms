@@ -57,11 +57,11 @@ public class MainActivity extends AppCompatActivity {
         onBackPressed();
         return true;
     }
-    @OnClick(R.id.btn_fdau)
+   /* @OnClick(R.id.btn_fdau)
     public void fileDownloadAndUpload() {
         Intent intent = new Intent(this, NetworkUrlMainActivity.class);
         startActivity(intent);
-    }
+    }*/
     @OnClick(R.id.btn_url)
     public void url(){
         Intent intent = new Intent(this, NetworkMainActivity.class);
