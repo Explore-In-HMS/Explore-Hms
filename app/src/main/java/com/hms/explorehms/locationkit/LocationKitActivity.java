@@ -106,7 +106,7 @@ public class LocationKitActivity extends AppCompatActivity {
     private static final int activityResultCodeGpsForCallback = 5;
     private static final int activityResultCodeGpsForIntent = 6;
 
-    private Unbinder unbinder;
+    //private Unbinder unbinder;
 
     //@SuppressLint("NonConstantResourceId")
     //@BindView(R.id.tv_request_count)
@@ -798,7 +798,7 @@ public class LocationKitActivity extends AppCompatActivity {
         //if (mLocationCallback != null) {
         //    removeLocationUpdatesWithCallback();
         //}
-        unbinder.unbind();
+        //unbinder.unbind();
     }
 
     @Override
