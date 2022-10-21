@@ -270,7 +270,7 @@ dependencies {
     implementation 'com.huawei.hms:location:6.4.0.300'
 
     //Site Kit
-    implementation 'com.huawei.hms:site:6.2.0.301'
+    implementation 'com.huawei.hms:site:6.4.0.304'
 
     //Account Kit
     api 'com.huawei.hms:hwid:6.7.0.300'
@@ -279,7 +279,7 @@ dependencies {
     implementation 'com.huawei.hms:scan:2.4.0.301'
 
     //Cloud functions sdk
-    api 'com.huawei.agconnect:agconnect-function:1.6.3.300'
+    api 'com.huawei.agconnect:agconnect-function:1.7.1.300'
 
     //audio kit
     api 'com.huawei.hms:audiokit-player:1.5.0.300'
@@ -429,7 +429,7 @@ dependencies {
     api 'com.huawei.agconnect:agconnect-cloud-database:1.5.0.300'
 
     //Drive Kit
-    api 'com.huawei.hms:drive:5.0.0.305'
+    api 'com.huawei.hms:drive:5.0.0.307'
 
     //Crash Service
     api 'com.huawei.agconnect:agconnect-crash:1.7.1.300'
@@ -438,7 +438,7 @@ dependencies {
     api 'com.huawei.agconnect:agconnect-remoteconfig:1.6.4.300'
 
     //App Messaging
-    api 'com.huawei.agconnect:agconnect-appmessaging:1.6.4.300'
+    api 'com.huawei.agconnect:agconnect-appmessaging:1.7.1.300'
 
     //AR Engine
     api 'com.huawei.hms:arenginesdk:3.6.0.5'
@@ -468,7 +468,7 @@ dependencies {
     //api 'com.huawei.hms:video-editor-sdk:1.7.0.300'
 
     //Keyring Service
-    implementation "com.huawei.hms:keyring-credential:6.4.0.300"
+    implementation "com.huawei.hms:keyring-credential:6.4.0.302"
 }
 
 /*apply from: '../sonarqube.gradle'

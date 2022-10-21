@@ -49,7 +49,7 @@ android {
 
 dependencies {
     implementation project(":app")
-    implementation 'com.huawei.hms:safetydetect:6.3.0.301'
+    implementation 'com.huawei.hms:safetydetect:6.4.0.301'
 }
 
 /*apply from: '../sonarqube.gradle'
