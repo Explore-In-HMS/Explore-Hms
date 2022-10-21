@@ -108,24 +108,24 @@ public class LocationKitActivity extends AppCompatActivity {
 
     private Unbinder unbinder;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.tv_request_count)
+    //@SuppressLint("NonConstantResourceId")
+    //@BindView(R.id.tv_request_count)
     TextView tvRequestCount;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.tv_accuracy)
+    //@SuppressLint("NonConstantResourceId")
+    //@BindView(R.id.tv_accuracy)
     TextView tvAccuracy;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.tv_latitude)
+    //@SuppressLint("NonConstantResourceId")
+    //@BindView(R.id.tv_latitude)
     TextView tvLatitude;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.tv_longitude)
+    //@SuppressLint("NonConstantResourceId")
+    //@BindView(R.id.tv_longitude)
     TextView tvLongitude;
 
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.resultLogs)
+    //@SuppressLint("NonConstantResourceId")
+    //@BindView(R.id.resultLogs)
     TextView tvResultLogs;
 
     @SuppressLint("StaticFieldLeak")
@@ -142,7 +142,8 @@ public class LocationKitActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_kit);
         setupToolbar();
-        unbinder = ButterKnife.bind(this);
+        initView();
+        //unbinder = ButterKnife.bind(this);
 
         instance = this;
         mLocationGnss = new LocationSettingsStates();
@@ -177,6 +178,14 @@ public class LocationKitActivity extends AppCompatActivity {
             updateLogResults("You Can Get Navigation Context State with Selected NavContextState : " + mContextType);
         });
 
+    }
+
+    private void initView(){
+        tvResultLogs = findViewById(R.id.resultLogs);
+        tvLongitude = findViewById(R.id.tv_longitude);
+        tvLatitude = findViewById(R.id.tv_latitude);
+        tvAccuracy = findViewById(R.id.tv_accuracy);
+        tvRequestCount = findViewById(R.id.tv_request_count);
     }
 
 
@@ -621,6 +630,12 @@ public class LocationKitActivity extends AppCompatActivity {
             Log.e(TAG, "LocationUpdates WithIntent  Exception : " + e.getMessage(), e);
             updateLogResults("LocationUpdates WithIntent  Exception : " + e.getMessage());
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        removeLocationUpdatesWithIntent();
     }
 
     /**
