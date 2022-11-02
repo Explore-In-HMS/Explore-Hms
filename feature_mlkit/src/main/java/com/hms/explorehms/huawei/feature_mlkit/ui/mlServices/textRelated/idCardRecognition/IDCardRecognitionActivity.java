@@ -37,6 +37,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hms.mlplugin.card.icr.cn.MLCnIcrCapture;
 import com.huawei.hms.mlplugin.card.icr.cn.MLCnIcrCaptureConfig;
 import com.huawei.hms.mlplugin.card.icr.cn.MLCnIcrCaptureFactory;
@@ -78,7 +79,7 @@ public class IDCardRecognitionActivity extends AppCompatActivity implements View
             return;
         }
         setupToolbar();
-        MLApplication.getInstance().setApiKey("CV8RiFSCwQTFPxl1ET8PWacetyb%E3%HjejRkuQHJ%RSczHVZzPXC7pNRBPPpSoJvuigzxm5tRMzvee57oVD3djKVLNc");
+        MLApplication.getInstance().setApiKey(AGConnectServicesConfig.fromContext(this).getString("client/api_key"));
 
     }
     private void setupToolbar() {

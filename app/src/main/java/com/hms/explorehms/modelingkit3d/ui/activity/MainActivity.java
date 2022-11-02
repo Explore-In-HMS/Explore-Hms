@@ -30,6 +30,7 @@ import com.hms.explorehms.modelingkit3d.ui.fragment.HomeFragment;
 import com.hms.explorehms.modelingkit3d.utils.BaseUtils;
 import com.hms.explorehms.modelingresource.db.DatabaseAppUtils;
 import com.hms.explorehms.modelingresource.materialdb.DatabaseMaterialAppUtils;
+import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hms.materialgeneratesdk.MaterialGenApplication;
 import com.huawei.hms.objreconstructsdk.ReconstructApplication;
 
@@ -55,8 +56,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_3d);
-        MaterialGenApplication.getInstance().setApiKey("CV8RiFSCwQTFPxl1ET8PWacetyb/E3+HjejRkuQHJ/RSczHVZzPXC7pNRBPPpSoJvuigzxm5tRMzvee57oVD3djKVLNc");
-        ReconstructApplication.getInstance().setApiKey("CV8RiFSCwQTFPxl1ET8PWacetyb/E3+HjejRkuQHJ/RSczHVZzPXC7pNRBPPpSoJvuigzxm5tRMzvee57oVD3djKVLNc");
+        MaterialGenApplication.getInstance().setApiKey(AGConnectServicesConfig.fromContext(this).getString("client/api_key"));
+        ReconstructApplication.getInstance().setApiKey(AGConnectServicesConfig.fromContext(this).getString("client/api_key"));
         Toolbar toolBar = findViewById(R.id.tb_main_modeling3d);
         setSupportActionBar(toolBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

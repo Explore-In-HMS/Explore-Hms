@@ -40,6 +40,7 @@ import com.hms.explorehms.huawei.feature_audioeditorkit.util.FileUtils;
 import com.hms.explorehms.huawei.feature_audioeditorkit.util.PermissionUtils;
 import com.hms.explorehms.huawei.feature_audioeditorkit.widget.ProgressDialog;
 import com.google.android.material.button.MaterialButton;
+import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hms.audioeditor.common.agc.HAEApplication;
 import com.huawei.hms.audioeditor.sdk.AudioExtractCallBack;
 import com.huawei.hms.audioeditor.sdk.HAEAudioExpansion;
@@ -80,7 +81,7 @@ public class MainAudioEditorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mContext = this;
         setContentView(R.layout.activity_main_audio_editor);
-        HAEApplication.getInstance().setApiKey("DAEDANXEHRMAKYD9OeCctP9Ze1Lbo2iNvm8fjlYjQkTCoxBmPbdUFzflbRlMqFcUfZ4/L+vUFqTkl/gsRqiro22UcVAXrkneP37cOg==");
+        HAEApplication.getInstance().setApiKey(AGConnectServicesConfig.fromContext(this).getString("client/api_key"));
         Toolbar toolBar = findViewById(R.id.tb_main_audioeditor);
         setSupportActionBar(toolBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

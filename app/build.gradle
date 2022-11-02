@@ -50,7 +50,6 @@ android {
         targetSdkVersion 32
         versionCode gradleVersionCode
         versionName gradleVersionName
-        resConfigs "en", "zh-rCN"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -158,6 +157,7 @@ android {
             ]
 
     packagingOptions {
+        pickFirst '**/*.so'
         pickFirst 'okhttp3/internal/publicsuffix/publicsuffixes.gz'
         pickFirst 'lib/x86_64/libAudioAdjustmentJni.so'
         pickFirst 'lib/armeabi/libAudioAdjustmentJni.so'
@@ -387,13 +387,13 @@ dependencies {
     api "com.huawei.hms:videokit-player:1.0.10.302"
 
     //Scene kit
-    api 'com.huawei.scenekit:full-sdk:6.0.0.301'
+/*    api 'com.huawei.scenekit:full-sdk:6.0.0.301'
     api 'com.huawei.scenekit:scenekit-render-foundation:6.0.0.301'
     api 'com.huawei.scenekit:scenekit-render-extension:6.0.0.301'
     api 'com.huawei.scenekit:scenekit-math:6.0.0.301'
     api 'com.huawei.scenekit:scenekit-fluid-extension:6.0.0.301'
     api 'com.huawei.scenekit:scenekit-fluid-foundation:6.0.0.301'
-    api 'com.huawei.scenekit:scenekit-iphysics-utils:6.0.0.301'
+    api 'com.huawei.scenekit:scenekit-iphysics-utils:6.0.0.301'*/
 
     //App linking
     api 'com.huawei.agconnect:agconnect-applinking:1.7.1.300'
