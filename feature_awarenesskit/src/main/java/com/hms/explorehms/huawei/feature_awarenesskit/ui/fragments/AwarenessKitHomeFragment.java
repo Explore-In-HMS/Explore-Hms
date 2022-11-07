@@ -78,5 +78,8 @@ public class AwarenessKitHomeFragment extends Fragment {
 
         binding.btnPhoneStatusAwarenessAwarenesskit.setOnClickListener(view1 ->
                 navController.navigate(R.id.action_gotoPhoneStatusAwareness));
+
+        binding.btnDataDonationAwarenessAwarenesskit.setOnClickListener(view1 ->
+                navController.navigate(R.id.action_gotoDataDonationAwareness));
     }
 }

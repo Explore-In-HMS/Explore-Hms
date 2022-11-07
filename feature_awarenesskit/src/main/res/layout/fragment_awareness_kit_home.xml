@@ -124,7 +124,7 @@
         android:layout_marginTop="32dp"
         android:drawableTop="@drawable/ic_headset_awareness"
         android:padding="16dp"
-        android:text="Audio Device\nAwareness"
+        android:text="Audio\n Device\nAwareness"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnPhoneStatusAwareness_awarenesskit"
@@ -140,13 +140,29 @@
         android:layout_height="wrap_content"
         android:drawableTop="@drawable/ic_phone_status_awareness"
         android:padding="16dp"
-        android:text="Phone Status\nAwareness"
+        android:text="Phone\n Status\nAwareness"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="@+id/btnAudioDeviceAwareness_awarenesskit"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnDataDonationAwareness_awarenesskit"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnAudioDeviceAwareness_awarenesskit"
         app:layout_constraintTop_toTopOf="@+id/btnAudioDeviceAwareness_awarenesskit" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDataDonationAwareness_awarenesskit"
+        style="@style/ButtonAppearance.ExploreHMS.Outline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_data_donation_awareness"
+        android:padding="16dp"
+        android:text="Data\n Donation\nAwareness"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/btnAudioDeviceAwareness_awarenesskit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnPhoneStatusAwareness_awarenesskit"
+        app:layout_constraintTop_toTopOf="@+id/btnAudioDeviceAwareness_awarenesskit"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
