@@ -276,7 +276,7 @@ dependencies {
     api 'com.huawei.hms:hwid:6.7.0.300'
 
     // Scan Kit
-    implementation 'com.huawei.hms:scan:2.4.0.301'
+    implementation 'com.huawei.hms:scan:2.7.0.302'
 
     //Cloud functions sdk
     api 'com.huawei.agconnect:agconnect-function:1.7.1.300'
@@ -378,7 +378,7 @@ dependencies {
     // ML KIT END
 
     //Analytics Kit
-    api 'com.huawei.hms:hianalytics:6.4.0.300'
+    implementation 'com.huawei.hms:hianalytics:6.7.0.300'
 
     //nearby
     api 'com.huawei.hms:nearby:6.2.0.300'
@@ -399,11 +399,11 @@ dependencies {
     api 'com.huawei.agconnect:agconnect-applinking:1.7.1.300'
 
     //FIDO
-    api 'com.huawei.hms:fido-fido2:6.3.0.304'
+    api 'com.huawei.hms:fido-fido2:6.3.0.302'
     api 'com.huawei.hms:fido-bioauthn-androidx:6.3.0.302'
 
     //Awareness Kit
-    api 'com.huawei.hms:awareness:3.1.0.300'
+    api 'com.huawei.hms:awareness:3.4.0.300'
 
     //Push Kit
     api 'com.huawei.hms:push:6.5.0.300'
@@ -441,7 +441,7 @@ dependencies {
     api 'com.huawei.agconnect:agconnect-appmessaging:1.7.1.300'
 
     //AR Engine
-    api 'com.huawei.hms:arenginesdk:3.6.0.5'
+    api 'com.huawei.hms:arenginesdk:3.7.0.3'
 
     //Hem Kit
     api 'com.huawei.hms:hemsdk:1.0.4.303'
