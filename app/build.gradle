@@ -447,7 +447,7 @@ dependencies {
     api 'com.huawei.hms:hemsdk:1.0.4.303'
 
     //Audio Editor Kit
-    api 'com.huawei.hms:audio-editor-ui:1.4.0.301'
+    api 'com.huawei.hms:audio-editor-ui:1.7.0.300'
     api 'com.huawei.hms:audio-editor-sdk:1.4.0.301'
 
     // AV Pipeline Kit

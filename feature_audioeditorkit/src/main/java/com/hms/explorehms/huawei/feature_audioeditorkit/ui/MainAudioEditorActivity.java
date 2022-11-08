@@ -51,6 +51,7 @@ import com.huawei.hms.audioeditor.ui.api.AudioInfo;
 import com.huawei.hms.audioeditor.ui.api.HAEUIManager;
 import com.huawei.hms.audioeditor.ui.api.MenuCommon;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainAudioEditorActivity extends AppCompatActivity {
@@ -98,13 +99,13 @@ public class MainAudioEditorActivity extends AppCompatActivity {
         return true;
     }
 
-    private void requestPermission() {
+    private void requestPermission() throws IOException {
         PermissionUtils.checkMorePermissions(
                 mContext,
                 PERMISSIONS,
                 new PermissionUtils.PermissionCheckCallBack() {
                     @Override
-                    public void onHasPermission() {
+                    public void onHasPermission() throws IOException {
                         if (currentPermissionType == PERMISSION_TYPE_EDIT) {
                             startUIActivity();
                         } else if (currentPermissionType == PERMISSION_TYPE_EXTRACT) {
@@ -137,7 +138,11 @@ public class MainAudioEditorActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         currentPermissionType = PERMISSION_TYPE_EDIT;
-                        MainAudioEditorActivity.this.requestPermission();
+                        try {
+                            MainAudioEditorActivity.this.requestPermission();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 });
         formatMain.setOnClickListener(
@@ -145,7 +150,11 @@ public class MainAudioEditorActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         currentPermissionType = PERMISSION_TYPE_FORMAT;
-                        MainAudioEditorActivity.this.requestPermission();
+                        try {
+                            MainAudioEditorActivity.this.requestPermission();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 });
 
@@ -153,7 +162,11 @@ public class MainAudioEditorActivity extends AppCompatActivity {
         extractAudio.setOnClickListener(
                 v -> {
                     currentPermissionType = PERMISSION_TYPE_EXTRACT;
-                    requestPermission();
+                    try {
+                        requestPermission();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 });
 
     }
@@ -169,7 +182,7 @@ public class MainAudioEditorActivity extends AppCompatActivity {
     /**
      * Import audio and enter the audio editing interface management class.
      */
-    private void startUIActivity() {
+    private void startUIActivity() throws IOException {
         //Old way
         /*HAEUIManager.getInstance().launchEditorActivity(this);
         HAEUIManager.getInstance().setCallback(callBack);*/
@@ -242,28 +255,32 @@ public class MainAudioEditorActivity extends AppCompatActivity {
             int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == PERMISSION_REQUESTS) {
-            PermissionUtils.onRequestMorePermissionsResult(
-                    mContext,
-                    PERMISSIONS,
-                    new PermissionUtils.PermissionCheckCallBack() {
-                        @Override
-                        public void onHasPermission() {
-                            if (currentPermissionType == PERMISSION_TYPE_EDIT) {
-                                startUIActivity();
-                            } else if (currentPermissionType == PERMISSION_TYPE_EXTRACT) {
-                                extractAudio();
+            try {
+                PermissionUtils.onRequestMorePermissionsResult(
+                        mContext,
+                        PERMISSIONS,
+                        new PermissionUtils.PermissionCheckCallBack() {
+                            @Override
+                            public void onHasPermission() throws IOException {
+                                if (currentPermissionType == PERMISSION_TYPE_EDIT) {
+                                    startUIActivity();
+                                } else if (currentPermissionType == PERMISSION_TYPE_EXTRACT) {
+                                    extractAudio();
+                                }
                             }
-                        }
 
-                        @Override
-                        public void onUserHasAlreadyTurnedDown(String... permission) {
-                        }
+                            @Override
+                            public void onUserHasAlreadyTurnedDown(String... permission) {
+                            }
 
-                        @Override
-                        public void onUserHasAlreadyTurnedDownAndDontAsk(String... permission) {
-                            showToAppSettingDialog();
-                        }
-                    });
+                            @Override
+                            public void onUserHasAlreadyTurnedDownAndDontAsk(String... permission) {
+                                showToAppSettingDialog();
+                            }
+                        });
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
