@@ -1,0 +1,36 @@
+plugins {
+    id 'com.android.dynamic-feature'
+}
+
+def gradleVersionsFile = rootProject.file("version.properties")
+def gradleVersionInfo = new Properties()
+gradleVersionInfo.load(new FileInputStream(gradleVersionsFile))
+def gradleVersionCode = gradleVersionInfo['versionCode'].toInteger()
+def gradleVersionName = gradleVersionInfo['versionName']
+
+android {
+    compileSdkVersion 32
+
+    defaultConfig {
+        minSdkVersion 24
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(":app")
+    implementation 'com.huawei.hms:navisdk:6.8.0.300'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+}

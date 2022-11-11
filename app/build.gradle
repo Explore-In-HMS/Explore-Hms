@@ -146,7 +146,7 @@ android {
                     ':feature_wearengine',
                     ':feature_hemkit',
                     ':dynamicfeaturetest',
-                    //':feature_hiaifoundation',
+                    ':feature_hiaifoundation',
                     ':feature_connectapi',
                     ':feature_networkkit',
                     ':feature_audioeditorkit',
@@ -154,7 +154,8 @@ android {
                     ':feature_cameraengine',
                     ':feature_devicevirtualizationengine',
                     ':feature_modem5g_kit',
-                    ':feature_videoeditorkit'
+                    ':feature_videoeditorkit',
+                    ':feature_navikit'
             ]
 
     packagingOptions {

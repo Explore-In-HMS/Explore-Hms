@@ -70,7 +70,7 @@ include ':feature_appgallerykit'
 include ':feature_wearengine'
 include ':feature_hemkit'
 include ':dynamicfeaturetest'
-//include ':feature_hiaifoundation'
+include ':feature_hiaifoundation'
 include ':feature_connectapi'
 include ':feature_networkkit'
 include ':feature_audioeditorkit'
@@ -79,7 +79,7 @@ include ':feature_cameraengine'
 include ':feature_devicevirtualizationengine'
 include ':feature_modem5g_kit'
 include ':feature_videoeditorkit'
-
+include ':feature_navikit'
 
 include ':app'
 rootProject.name = "ExploreHMS"

@@ -116,6 +116,13 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="TextAppearance.ExploreHMS.Body3" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:fontFamily">@font/din_pro_light</item>
+        <item name="fontFamily">@font/din_pro_light</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
     <style name="TabLayoutAppearance.ExploreHMS.Normal" parent="Widget.MaterialComponents.TabLayout">
         <item name="android:fontFamily">@font/din_pro</item>
         <item name="fontFamily">@font/din_pro</item>
