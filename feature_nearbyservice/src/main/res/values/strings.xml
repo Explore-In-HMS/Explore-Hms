@@ -46,5 +46,10 @@
     <string name="auth_code">Auth code: </string>
     <string name="string_share_wifi_title">if your device is connected Wi-Fi, click Share Wi-Fi</string>
     <string name="string_connect_wifi_title">If you are not connected Wi-Fi, click Connect Wi-Fi</string>
+    <string name="region_code">Region Code</string>
+    <string name="cn">CN</string>
+    <string name="ru">RU</string>
+    <string name="de">DE</string>
+    <string name="sg">SG</string>
 
 </resources>
