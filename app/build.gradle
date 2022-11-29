@@ -436,7 +436,7 @@ dependencies {
     api 'com.huawei.agconnect:agconnect-crash:1.7.1.300'
 
     //Remote Configuration
-    api 'com.huawei.agconnect:agconnect-remoteconfig:1.6.4.300'
+    api 'com.huawei.agconnect:agconnect-remoteconfig:1.7.1.300'
 
     //App Messaging
     api 'com.huawei.agconnect:agconnect-appmessaging:1.7.1.300'

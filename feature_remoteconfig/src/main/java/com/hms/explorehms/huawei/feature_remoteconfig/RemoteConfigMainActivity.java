@@ -60,6 +60,7 @@ public class RemoteConfigMainActivity extends AppCompatActivity {
     private void setActivityConfiguration() {
 
         Button btnChangeActivity = findViewById(R.id.btnRemoteConfigExample);
+        Button btnCustomAttributesActivity = findViewById(R.id.btnRemoteCustomAttributesExample);
 
         btnChangeActivity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +70,13 @@ public class RemoteConfigMainActivity extends AppCompatActivity {
             }
         });
 
+        btnCustomAttributesActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mainIntent = new Intent(getApplicationContext(), CustomAttributesExampleActivity.class);
+                startActivity(mainIntent);
+            }
+        });
     }
 
     @Override

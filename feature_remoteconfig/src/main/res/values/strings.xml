@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~
   ~   Copyright 2020. Explore in HMS. All rights reserved.
   ~
@@ -46,5 +45,7 @@
     <string name="txt_remote_config_second_option">Condition management is used to define rules and if that rule criteria is met, value can be configured in the application. These rules are used based on App version, OS version, language, country, region etc.</string>
 
     <string name="txt_remote_config_result">Result Of Remote Configuration</string>
+    <string name="example_custom_attributes">Example Custom Attributes</string>
+    <string name="example_custom_map_attributes">Example Custom Map Attributes</string>
 
 </resources>
