@@ -133,6 +133,18 @@
             android:textAllCaps="false"
             android:textColor="@color/white" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_fluid_simulation3d_view"
+            style="@style/ButtonAppearance.ExploreHMS.Normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/h16"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="@dimen/h16"
+            android:text="@string/btn_simulation3d_view"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
         <TextView
             style="@style/TextAppearance.ExploreHMS.Body1"
             android:layout_width="match_parent"
