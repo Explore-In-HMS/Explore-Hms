@@ -13,7 +13,7 @@ android {
     defaultConfig {
         applicationId "com.hms.explorehms.huawei.feature_videoeditorkit"
         minSdkVersion 28
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode gradleVersionCode
         versionName gradleVersionName
 
@@ -34,7 +34,6 @@ android {
 
 dependencies {
     implementation project(":app")
-
 }
 
 /*apply from: '../sonarqube.gradle'

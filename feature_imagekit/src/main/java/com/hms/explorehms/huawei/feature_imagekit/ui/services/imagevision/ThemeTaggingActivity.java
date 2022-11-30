@@ -66,9 +66,6 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textview.MaterialTextView;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.huawei.agconnect.AGConnectOptionsBuilder;
-import com.huawei.hms.aaid.HmsInstanceId;
-import com.huawei.hms.common.ApiException;
 import com.huawei.hms.image.vision.ImageVision;
 import com.huawei.hms.image.vision.ImageVisionImpl;
 import com.huawei.hms.image.vision.bean.ImageVisionResult;
@@ -76,7 +73,6 @@ import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.luaj.vm2.ast.Str;
 
 import java.util.ArrayList;
 

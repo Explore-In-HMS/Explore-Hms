@@ -1,6 +1,7 @@
 
 package com.hms.explorehms.huawei.feature_videoeditorkit.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,7 +31,7 @@ public class DraftAdapter extends RecyclerView.Adapter<DraftAdapter.WorksHolder>
 
     public DraftAdapter(Context context) {
         this.context = context;
-        mSimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
+        mSimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
     }
 
     public void setData(List<DraftInfo> list) {
@@ -45,7 +46,7 @@ public class DraftAdapter extends RecyclerView.Adapter<DraftAdapter.WorksHolder>
     }
 
     @Override
-    public void onBindViewHolder(@NonNull WorksHolder holder, int position) {
+    public void onBindViewHolder(@NonNull WorksHolder holder, @SuppressLint("RecyclerView") int position) {
         draftInfo = list.get(position);
         Glide.with(context).load(list.get(position).getDraftCoverPath()).into(holder.mWorkimage);
         holder.mTime.setText(mSimpleDateFormat.format(draftInfo.getDraftCreateTime()));

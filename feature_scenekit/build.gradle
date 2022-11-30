@@ -39,6 +39,11 @@ android {
         resConfigs "en", "zh-rCN", "tr"
     }
 
+    packagingOptions {
+        exclude 'lib/arm64-v8a/libc++_shared.so'
+        exclude 'lib/armeabi-v7a/libc++_shared.so'
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -48,6 +53,13 @@ android {
 
 dependencies {
     implementation project(":app")
+    implementation 'com.huawei.scenekit:full-sdk:6.6.0.301'
+    implementation 'com.huawei.scenekit:scenekit-render-foundation:6.6.0.301'
+    implementation 'com.huawei.scenekit:scenekit-render-extension:6.6.0.301'
+    implementation 'com.huawei.scenekit:scenekit-math:6.6.0.301'
+    implementation 'com.huawei.scenekit:scenekit-fluid-extension:6.6.0.301'
+    implementation 'com.huawei.scenekit:scenekit-fluid-foundation:6.6.0.301'
+    implementation 'com.huawei.scenekit:scenekit-iphysics-utils:6.6.0.301'
 }
 
 /*apply from: '../sonarqube.gradle'

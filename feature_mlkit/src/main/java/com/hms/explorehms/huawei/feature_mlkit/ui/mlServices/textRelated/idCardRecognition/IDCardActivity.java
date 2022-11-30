@@ -26,6 +26,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.hms.explorehms.huawei.feature_mlkit.R;
+import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hms.mlsdk.common.MLApplication;
 
 
@@ -38,7 +39,7 @@ public class IDCardActivity extends AppCompatActivity implements View.OnClickLis
         findViewById(R.id.btn_icr_cn).setOnClickListener(this);
         findViewById(R.id.btn_icr_vn).setOnClickListener(this);
         setupToolbar();
-        MLApplication.getInstance().setApiKey("CV8RiFSCwQTFPxl1ET8PWacetyb/E3+HjejRkuQHJ/RSczHVZzPXC7pNRBPPpSoJvuigzxm5tRMzvee57oVD3djKVLNc");
+        MLApplication.getInstance().setApiKey(AGConnectServicesConfig.fromContext(this).getString("client/api_key"));
     }
 
     @Override
