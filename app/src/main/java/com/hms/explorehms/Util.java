@@ -38,6 +38,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.hms.explorehms.baseapp.adapter.KitAdapter;
 import com.hms.explorehms.baseapp.library.ProgressDialogScreen;
 import com.hms.explorehms.baseapp.library.ZoomableImageView;
@@ -90,7 +91,7 @@ public class Util {
         return false;
     }*/
 
-    private static void requestFeature(Activity activity, String dynamicFeatureName, KitAdapter.KitViewHolder viewHolder, IDownloadListener listener){
+    private static void requestFeature(Activity activity, String dynamicFeatureName, KitAdapter.KitViewHolder viewHolder, IDownloadListener listener,View view){
         FeatureInstallManager mFeatureInstallManager;
         mFeatureInstallManager = FeatureInstallManagerFactory.create(activity);
 
@@ -118,7 +119,8 @@ public class Util {
                     Log.i(TAG,"installed success ,can use new feature");
                     listener.onSuccessfullyDownloaded(viewHolder.getAdapterPosition());
 
-                    Util.showInfoDialog(activity, activity.getResources().getString(R.string.loadFeatureOnSuccess), true);
+                    //Util.showInfoDialog(activity, activity.getResources().getString(R.string.loadFeatureOnSuccess), true);
+                    Snackbar.make(view,activity.getResources().getString(R.string.loadFeatureOnSuccess),Snackbar.LENGTH_SHORT).show();
 
                     return;
                 }
@@ -151,7 +153,8 @@ public class Util {
                     if (exception instanceof FeatureInstallException) {
                         int errorCode = ((FeatureInstallException) exception).getErrorCode();
                         Log.d(TAG, activity.getResources().getString(R.string.loadFeatureOnFailure) + errorCode);
-                        Util.showInfoDialog(activity,"Error", activity.getResources().getString(R.string.loadFeatureOnFailure), true);
+                       // Util.showInfoDialog(activity,"Error", activity.getResources().getString(R.string.loadFeatureOnFailure), true);
+                        Snackbar.make(view,"Error: "+activity.getResources().getString(R.string.loadFeatureOnFailure),Snackbar.LENGTH_SHORT).show();
 
                     } else {
                         Log.e(TAG, activity.getResources().getString(R.string.error) , exception);
@@ -179,13 +182,13 @@ public class Util {
     }
 
 
-    public static void showFeatureInstallDialog(Activity activity, KitModel feature,KitAdapter.KitViewHolder viewHolder, IDownloadListener listener){
+    public static void showFeatureInstallDialog(Activity activity, KitModel feature,KitAdapter.KitViewHolder viewHolder, IDownloadListener listener,View view){
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(activity);
 
         //Setting message manually and performing action on button click
         alertBuilder.setMessage("Do you want to install '" + feature.getKitName() + "' module?")
                 .setCancelable(false)
-                .setPositiveButton("Yes", (dialog, id) -> Util.requestFeature(activity,feature.getFeatureName(), viewHolder, listener))
+                .setPositiveButton("Yes", (dialog, id) -> Util.requestFeature(activity,feature.getFeatureName(), viewHolder, listener,view))
                 .setNegativeButton("No", (dialog, id) -> {
                     //  Action for 'NO' Button
                     dialog.cancel();
@@ -197,12 +200,12 @@ public class Util {
         alert.show();
     }
 
-    public static void showFeatureUninstallDialog(Context ctx, KitModel feature, KitAdapter.KitViewHolder viewHolder){
+    public static void showFeatureUninstallDialog(Context ctx, KitModel feature, KitAdapter.KitViewHolder viewHolder,View view){
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(ctx);
 
         alertBuilder.setMessage("Do you want to uninstall '" + feature.getKitName() + "' module?")
                 .setCancelable(false)
-                .setPositiveButton("Uninstall", (dialog, id) -> Util.uninstallFeature(ctx, feature, viewHolder))
+                .setPositiveButton("Uninstall", (dialog, id) -> Util.uninstallFeature(ctx, feature, viewHolder,view))
                 .setNegativeButton("No", (dialog, id) -> {
                     //  Action for 'NO' Button
                     dialog.cancel();
@@ -214,7 +217,7 @@ public class Util {
         alert.show();
     }
 
-    private static void uninstallFeature(Context context, KitModel kit, KitAdapter.KitViewHolder viewHolder){
+    private static void uninstallFeature(Context context, KitModel kit, KitAdapter.KitViewHolder viewHolder,View view){
         FeatureInstallManager mFeatureInstallManager;
         mFeatureInstallManager = FeatureInstallManagerFactory.create(context);
 
@@ -227,10 +230,11 @@ public class Util {
                 if (featureTask.isComplete()) {
                     if (featureTask.isSuccessful()) {
                         viewHolder.refreshUI();
-                        Util.showInfoDialog(context,kit.getKitName() + " is uninstalled successfully", true);
+                        //Util.showInfoDialog(context,kit.getKitName() + " is uninstalled successfully", true);
+                        Snackbar.make(view,kit.getKitName() + " is uninstalled successfully",Snackbar.LENGTH_SHORT).show();
                     } else {
-                        Util.showInfoDialog(context,"Error", kit.getKitName() + " could not be deleted! Try again later", true);
-
+                        Snackbar.make(view,"Error :"+ kit.getKitName() + " could not be deleted! Try again later",Snackbar.LENGTH_LONG).show();
+                        //Util.showInfoDialog(context,"Error", kit.getKitName() + " could not be deleted! Try again later", true);
                         Exception exception = featureTask.getException();
                         Logger.e(TAG, exception.toString());
                     }
@@ -239,7 +243,7 @@ public class Util {
         });
     }
 
-    public static void showInfoDialog(Context context, String infoMessage, boolean cancellable){
+    /*public static void showInfoDialog(Context context, String infoMessage, boolean cancellable){
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(context);
 
         alertBuilder.setMessage(infoMessage)
@@ -262,7 +266,7 @@ public class Util {
         //Setting the title manually
         alert.setTitle(dialogTitle);
         alert.show();
-    }
+    }*/
 
     public static void alertDialog(Context context, String title, String message){
 

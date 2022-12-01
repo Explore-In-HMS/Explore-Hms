@@ -54,7 +54,6 @@
             app:layout_constraintTop_toBottomOf="@+id/txt_copyright" />
 
         <ImageView
-            android:id="@+id/banner_app_copywright"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/h16"

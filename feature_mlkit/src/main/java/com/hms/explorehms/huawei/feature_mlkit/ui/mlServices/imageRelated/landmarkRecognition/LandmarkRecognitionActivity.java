@@ -167,7 +167,7 @@ public class LandmarkRecognitionActivity extends AppCompatActivity {
 
 
     private void createLandmarkRecognitionTransactors() {
-        landmarkTransactor = new LandmarkTransactor();
+        landmarkTransactor = new LandmarkTransactor(this);
     }
 
 

@@ -40,15 +40,18 @@ import com.hms.explorehms.huawei.feature_audioeditorkit.util.FileUtils;
 import com.hms.explorehms.huawei.feature_audioeditorkit.util.PermissionUtils;
 import com.hms.explorehms.huawei.feature_audioeditorkit.widget.ProgressDialog;
 import com.google.android.material.button.MaterialButton;
+import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hms.audioeditor.common.agc.HAEApplication;
 import com.huawei.hms.audioeditor.sdk.AudioExtractCallBack;
 import com.huawei.hms.audioeditor.sdk.HAEAudioExpansion;
+import com.huawei.hms.audioeditor.sdk.util.FileUtil;
 import com.huawei.hms.audioeditor.ui.api.AudioEditorLaunchOption;
 import com.huawei.hms.audioeditor.ui.api.AudioExportCallBack;
 import com.huawei.hms.audioeditor.ui.api.AudioInfo;
 import com.huawei.hms.audioeditor.ui.api.HAEUIManager;
 import com.huawei.hms.audioeditor.ui.api.MenuCommon;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainAudioEditorActivity extends AppCompatActivity {
@@ -79,7 +82,7 @@ public class MainAudioEditorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mContext = this;
         setContentView(R.layout.activity_main_audio_editor);
-        HAEApplication.getInstance().setApiKey("CV8RiFSCwQTFPxl1ET8PWacetyb/E3+HjejRkuQHJ/RSczHVZzPXC7pNRBPPpSoJvuigzxm5tRMzvee57oVD3djKVLNc");
+        HAEApplication.getInstance().setApiKey(AGConnectServicesConfig.fromContext(this).getString("client/api_key"));
         Toolbar toolBar = findViewById(R.id.tb_main_audioeditor);
         setSupportActionBar(toolBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -96,13 +99,13 @@ public class MainAudioEditorActivity extends AppCompatActivity {
         return true;
     }
 
-    private void requestPermission() {
+    private void requestPermission() throws IOException {
         PermissionUtils.checkMorePermissions(
                 mContext,
                 PERMISSIONS,
                 new PermissionUtils.PermissionCheckCallBack() {
                     @Override
-                    public void onHasPermission() {
+                    public void onHasPermission() throws IOException {
                         if (currentPermissionType == PERMISSION_TYPE_EDIT) {
                             startUIActivity();
                         } else if (currentPermissionType == PERMISSION_TYPE_EXTRACT) {
@@ -135,7 +138,11 @@ public class MainAudioEditorActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         currentPermissionType = PERMISSION_TYPE_EDIT;
-                        MainAudioEditorActivity.this.requestPermission();
+                        try {
+                            MainAudioEditorActivity.this.requestPermission();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 });
         formatMain.setOnClickListener(
@@ -143,7 +150,11 @@ public class MainAudioEditorActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         currentPermissionType = PERMISSION_TYPE_FORMAT;
-                        MainAudioEditorActivity.this.requestPermission();
+                        try {
+                            MainAudioEditorActivity.this.requestPermission();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 });
 
@@ -151,7 +162,11 @@ public class MainAudioEditorActivity extends AppCompatActivity {
         extractAudio.setOnClickListener(
                 v -> {
                     currentPermissionType = PERMISSION_TYPE_EXTRACT;
-                    requestPermission();
+                    try {
+                        requestPermission();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 });
 
     }
@@ -167,7 +182,7 @@ public class MainAudioEditorActivity extends AppCompatActivity {
     /**
      * Import audio and enter the audio editing interface management class.
      */
-    private void startUIActivity() {
+    private void startUIActivity() throws IOException {
         //Old way
         /*HAEUIManager.getInstance().launchEditorActivity(this);
         HAEUIManager.getInstance().setCallback(callBack);*/
@@ -240,28 +255,32 @@ public class MainAudioEditorActivity extends AppCompatActivity {
             int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == PERMISSION_REQUESTS) {
-            PermissionUtils.onRequestMorePermissionsResult(
-                    mContext,
-                    PERMISSIONS,
-                    new PermissionUtils.PermissionCheckCallBack() {
-                        @Override
-                        public void onHasPermission() {
-                            if (currentPermissionType == PERMISSION_TYPE_EDIT) {
-                                startUIActivity();
-                            } else if (currentPermissionType == PERMISSION_TYPE_EXTRACT) {
-                                extractAudio();
+            try {
+                PermissionUtils.onRequestMorePermissionsResult(
+                        mContext,
+                        PERMISSIONS,
+                        new PermissionUtils.PermissionCheckCallBack() {
+                            @Override
+                            public void onHasPermission() throws IOException {
+                                if (currentPermissionType == PERMISSION_TYPE_EDIT) {
+                                    startUIActivity();
+                                } else if (currentPermissionType == PERMISSION_TYPE_EXTRACT) {
+                                    extractAudio();
+                                }
                             }
-                        }
 
-                        @Override
-                        public void onUserHasAlreadyTurnedDown(String... permission) {
-                        }
+                            @Override
+                            public void onUserHasAlreadyTurnedDown(String... permission) {
+                            }
 
-                        @Override
-                        public void onUserHasAlreadyTurnedDownAndDontAsk(String... permission) {
-                            showToAppSettingDialog();
-                        }
-                    });
+                            @Override
+                            public void onUserHasAlreadyTurnedDownAndDontAsk(String... permission) {
+                                showToAppSettingDialog();
+                            }
+                        });
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -271,6 +290,7 @@ public class MainAudioEditorActivity extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, false);
         intent.setType("video/*");
         startActivityForResult(intent, REQUEST_CODE_FOR_SELECT_VIDEO);
+
     }
 
     /**
@@ -281,12 +301,26 @@ public class MainAudioEditorActivity extends AppCompatActivity {
     private void beginExtractAudio(String path) {
         fragmentDialog = ProgressDialog.newInstance("Extracting");
         fragmentDialog.show(getSupportFragmentManager(), "ProgressDialogFragment");
+        String outPutDir = FileUtil.getAudioExtractStorageDirectory(this);
+        String name = "audio_extract";
+        if (path != null) {
+            int slashIndex = path.lastIndexOf("/");
+            if (slashIndex == -1) {
+                name = path;
+            } else {
+                name = path.substring(slashIndex + 1);
+            }
+            int dotIndex = name.lastIndexOf(".");
+            if (dotIndex >= 0) {
+                name = name.substring(0, dotIndex);
+            }
+        }
         HAEAudioExpansion.getInstance()
                 .extractAudio(
                         this,
                         path,
-                        null,
-                        null,
+                        outPutDir,
+                        name,
                         new AudioExtractCallBack() {
                             @Override
                             public void onSuccess(String audioPath) {
@@ -326,7 +360,7 @@ public class MainAudioEditorActivity extends AppCompatActivity {
                                                 Toast.makeText(
                                                         MainAudioEditorActivity.this,
                                                         getResources().getString(R.string.extract_fail)
-                                                                + " , errCode : "
+                                                                + "errCode : "
                                                                 + errCode,
                                                         Toast.LENGTH_LONG)
                                                         .show();

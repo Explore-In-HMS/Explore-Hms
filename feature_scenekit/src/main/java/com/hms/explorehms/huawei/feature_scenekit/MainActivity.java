@@ -23,6 +23,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -30,11 +31,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.android.material.button.MaterialButton;
 import com.hms.explorehms.Util;
 import com.hms.explorehms.huawei.feature_scenekit.arview.ARViewActivity;
 import com.hms.explorehms.huawei.feature_scenekit.faceview.FaceViewActivity;
 import com.hms.explorehms.huawei.feature_scenekit.sceneview.SceneViewActivity;
-import com.google.android.material.button.MaterialButton;
 import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hms.feature.dynamicinstall.FeatureCompat;
 import com.huawei.hms.scene.common.base.error.exception.ModuleException;
@@ -42,7 +43,13 @@ import com.huawei.hms.scene.common.base.error.exception.StateException;
 import com.huawei.hms.scene.common.base.error.exception.UpdateNeededException;
 import com.huawei.hms.scene.sdk.fluid.SceneKitFluid;
 import com.huawei.hms.scene.sdk.render.SceneKit;
-import com.huawei.hms.videokit.player.common.Constants;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean initialized = false;
     private static final int RES_CODE_UPDATE_SUCCESS = -1;
     private static final int RES_CODE_UPDATE_SUCCESS_2D = -1;
-    private  String APP_ID;
+    private String APP_ID;
 
 
     /**
@@ -69,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_scenekit);
-        APP_ID= AGConnectServicesConfig.fromContext(this).getString("client/app_id");
+        APP_ID = AGConnectServicesConfig.fromContext(this).getString("client/app_id");
         setupToolbar();
         initUI();
         initListener();
@@ -173,8 +180,8 @@ public class MainActivity extends AppCompatActivity {
         btnSceneView = findViewById(R.id.btn_scene_view);
         btnArView = findViewById(R.id.btn_ar_view);
         btnFaceView = findViewById(R.id.btn_face_view);
-        btnRenderView=findViewById(R.id.btn_render_view);
-        btn2dSimulationView=findViewById(R.id.btn_fluid_simulation_view);
+        btnRenderView = findViewById(R.id.btn_render_view);
+        btn2dSimulationView = findViewById(R.id.btn_fluid_simulation_view);
     }
 
 
@@ -188,19 +195,28 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnArView.setOnClickListener(v -> {
-            Intent arviewIntent = new Intent(MainActivity.this, ARViewActivity.class);
-            isPermissionsGranted(arviewIntent);
+            if (!checkDeviceProcessor()) {
+                Toast.makeText(this, "Your device is not supported by FaceView feature", Toast.LENGTH_LONG).show();
+            }
+            else{
+                Intent arviewIntent = new Intent(MainActivity.this, ARViewActivity.class);
+                isPermissionsGranted(arviewIntent);
+            }
+
         });
 
         btnFaceView.setOnClickListener(v -> {
-            Intent faceviewIntent = new Intent(MainActivity.this, FaceViewActivity.class);
-            isPermissionsGranted(faceviewIntent);
+            if (!checkDeviceProcessor()) {
+                Toast.makeText(this, "Your device is not supported by FaceView feature", Toast.LENGTH_SHORT).show();
+            } else {
+                Intent faceviewIntent = new Intent(MainActivity.this, FaceViewActivity.class);
+                isPermissionsGranted(faceviewIntent);
+            }
         });
 
         btnRenderView.setOnClickListener(v -> {
             if (!initialized) {
                 initializeSceneKit();
-                return;
             }
             Intent renderViewIntent = new Intent(MainActivity.this, SampleRenderActivity.class);
             isPermissionsGranted(renderViewIntent);
@@ -209,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
         btn2dSimulationView.setOnClickListener(v -> {
             if (!initialized2D) {
                 initializeSceneKitFluid();
-                return;
+                Toast.makeText(this, "Initialized click again to open", Toast.LENGTH_SHORT).show();
             }
             Intent simulationViewIntent = new Intent(MainActivity.this, FluidSimulation2D.class);
             isPermissionsGranted(simulationViewIntent);
@@ -241,5 +257,51 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == PERMISSION_REQUEST && grantResults.length != 0 && (grantResults[0] == PackageManager.PERMISSION_DENIED)) {
             Toast.makeText(getApplicationContext(), getResources().getString(R.string.msg_prm_req_scene_kit), Toast.LENGTH_LONG).show();
         }
+    }
+
+    public static Boolean checkDeviceProcessor() {
+
+        boolean processorOK = false;
+        String hardware = "Hardware";
+        try (BufferedReader br = new BufferedReader(new FileReader("/proc/cpuinfo"))) {
+
+            String str;
+
+            Map<String, String> output = new HashMap<>();
+
+            while ((str = br.readLine()) != null) {
+
+                String[] data = str.split(":");
+
+                if (data.length > 1) {
+
+                    String key = data[0].trim().replace(" ", "_");
+                    if (key.equals(hardware)) {
+                        output.put(key, data[1].trim());
+                        break;
+                    }
+                }
+            }
+
+            /**
+             * Farklı şekillerde kullanılabilir
+             */
+
+            if (output.get(hardware) != null && !Objects.equals(output.get(hardware), "")) {
+                String processorHardware = output.get(hardware);
+
+                processorOK = processorHardware != null && (
+                        processorHardware.contains("Kirin970") ||
+                                processorHardware.contains("Kirin990"));
+
+            }
+            br.close();
+
+        } catch (IOException e) {
+            Log.e("ProcessorInfo", e.toString());
+            processorOK = false;
+        }
+
+        return processorOK;
     }
 }

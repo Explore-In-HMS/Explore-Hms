@@ -22,6 +22,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -53,16 +54,17 @@ public class UpdateCommentFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        selectedComment = (BookComment)getArguments().getSerializable("selectedComment");
-
-        updateCommentFragmentVM=new ViewModelProvider(this).get(UpdateFragmentVM.class);
+        selectedComment = (BookComment) getArguments().getSerializable("selectedComment");
+        updateCommentFragmentVM = new ViewModelProvider(this).get(UpdateFragmentVM.class);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        updateCommentFragmentView =inflater.inflate(R.layout.fragment_update_comment, container, false);
+        updateCommentFragmentView = inflater.inflate(R.layout.fragment_update_comment, container, false);
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         setComponents();
         setButtonClick();
         fillComponentsWithSelectedComments();
@@ -72,13 +74,13 @@ public class UpdateCommentFragment extends Fragment {
     /*
          Button click events
     */
-    private void setButtonClick(){
+    private void setButtonClick() {
         btnUpdateComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 updateCommentFragmentVM.updateBookComment(updateData());
-                Toast.makeText(getContext(),"Updated successfully",Toast.LENGTH_SHORT).show();
-                FragmentOperation.changeFragment(view,R.id.action_updateCommentFragment_to_allCommentFragment);
+                Toast.makeText(getContext(), "Updated successfully", Toast.LENGTH_SHORT).show();
+                FragmentOperation.changeFragment(view, R.id.action_updateCommentFragment_to_allCommentFragment);
             }
         });
 
@@ -86,43 +88,44 @@ public class UpdateCommentFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 clearAllComponents();
-                Log.i("CLEAR","Cleaned all components");
+                Log.i("CLEAR", "Cleaned all components");
             }
         });
     }
 
-    private BookComment updateData(){
+    private BookComment updateData() {
 
         String commentMessage = edtTxtUComment.getText().toString().trim();
-        selectedComment.setComment(commentMessage.isEmpty()?"Empty comment":commentMessage);
+        selectedComment.setComment(commentMessage.isEmpty() ? "Empty comment" : commentMessage);
 
         String authorFullName = edtTxtUAuthor.getText().toString().trim();
-        selectedComment.setAuthor(authorFullName.isEmpty()?"Author name":authorFullName);
+        selectedComment.setAuthor(authorFullName.isEmpty() ? "Author name" : authorFullName);
 
         String printingHouse = edtTxtUPrintingHouse.getText().toString().trim();
-        selectedComment.setPrintingHouse(printingHouse.isEmpty()?"Empty Printing House":printingHouse);
+        selectedComment.setPrintingHouse(printingHouse.isEmpty() ? "Empty Printing House" : printingHouse);
 
-        String personFullName =edtTxtUPersonName.getText().toString().trim();
-        selectedComment.setPersonFullname(personFullName.isEmpty()?"Empty Comment":personFullName);
+        String personFullName = edtTxtUPersonName.getText().toString().trim();
+        selectedComment.setPersonFullname(personFullName.isEmpty() ? "Empty Comment" : personFullName);
 
         String bookName = edtTxtUBookName.getText().toString().trim();
-        selectedComment.setBookName(bookName.isEmpty()?"Empty book name":bookName);
+        selectedComment.setBookName(bookName.isEmpty() ? "Empty book name" : bookName);
 
         return selectedComment;
     }
 
-    private void setComponents(){
-        edtTxtUAuthor= updateCommentFragmentView.findViewById(R.id.edtTxtUAuthorName);
+    private void setComponents() {
+        edtTxtUAuthor = updateCommentFragmentView.findViewById(R.id.edtTxtUAuthorName);
         edtTxtUBookName = updateCommentFragmentView.findViewById(R.id.edtTxtUBookName);
         edtTxtUPersonName = updateCommentFragmentView.findViewById(R.id.edtTxtUPersonelName);
         edtTxtUPrintingHouse = updateCommentFragmentView.findViewById(R.id.edtTxtUPrintedHouse);
-        edtTxtUComment= updateCommentFragmentView.findViewById(R.id.edtTxtUComment);
+        edtTxtUComment = updateCommentFragmentView.findViewById(R.id.edtTxtUComment);
 
-        btnUpdateComment= updateCommentFragmentView.findViewById(R.id.btnCommentUpdateFromUpdatePage);
-        btnClearUpdateData= updateCommentFragmentView.findViewById(R.id.btnClearAllComponentsFromUpdatePage);
+        btnUpdateComment = updateCommentFragmentView.findViewById(R.id.btnCommentUpdateFromUpdatePage);
+        btnClearUpdateData = updateCommentFragmentView.findViewById(R.id.btnClearAllComponentsFromUpdatePage);
     }
+
     //All components will be filled with selected Comment contents
-    private void fillComponentsWithSelectedComments(){
+    private void fillComponentsWithSelectedComments() {
         edtTxtUAuthor.setText(selectedComment.getAuthor());
         edtTxtUBookName.setText(selectedComment.getBookName());
         edtTxtUPersonName.setText(selectedComment.getPersonFullname());
@@ -130,11 +133,11 @@ public class UpdateCommentFragment extends Fragment {
         edtTxtUComment.setText(selectedComment.getComment());
     }
 
-    private void clearAllComponents(){
-        edtTxtUAuthor .setText("");
-        edtTxtUBookName .setText("");
+    private void clearAllComponents() {
+        edtTxtUAuthor.setText("");
+        edtTxtUBookName.setText("");
         edtTxtUPersonName.setText("");
         edtTxtUPrintingHouse.setText("");
-        edtTxtUComment .setText("");
+        edtTxtUComment.setText("");
     }
 }

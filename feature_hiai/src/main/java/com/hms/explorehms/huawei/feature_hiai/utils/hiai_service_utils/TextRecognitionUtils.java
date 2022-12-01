@@ -25,20 +25,13 @@ public class TextRecognitionUtils {
     private TextRecognitionUtils() {
     }
 
-    private static final HashMap<Integer,String> TEXT_LANGUAGES = new HashMap<>();
+    private static final HashMap<Integer, String> TEXT_LANGUAGES = new HashMap<>();
 
-    public static Map<Integer,String> getTextLanguages(){
-        if(TEXT_LANGUAGES.size() == 0){
-            TEXT_LANGUAGES.put(1,"CHINESE");
-            TEXT_LANGUAGES.put(2,"SPANISH");
-            TEXT_LANGUAGES.put(3,"ENGLISH");
-            TEXT_LANGUAGES.put(4,"PORTUGUESE");
-            TEXT_LANGUAGES.put(5,"ITALIAN");
-            TEXT_LANGUAGES.put(6,"GERMAN");
-            TEXT_LANGUAGES.put(7,"FRENCH");
-            TEXT_LANGUAGES.put(8,"RUSSIAN");
-            TEXT_LANGUAGES.put(9,"JAPANESE");
-            TEXT_LANGUAGES.put(10,"KOREAN");
+    public static Map<Integer, String> getTextLanguages() {
+        if (TEXT_LANGUAGES.size() == 0) {
+            TEXT_LANGUAGES.put(0, "CHINESE");
+            TEXT_LANGUAGES.put(2, "OTHER");
+            TEXT_LANGUAGES.put(6, "ENGLISH");
         }
 
         return TEXT_LANGUAGES;

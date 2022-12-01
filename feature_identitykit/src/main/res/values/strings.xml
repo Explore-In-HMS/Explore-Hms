@@ -20,9 +20,6 @@
     <string name="show_address_desc">Address: </string>
     <string name="query_address_button_desc">Get Huawei User Address</string>
     <string name="demo_introduction">Demo introduction This demo simulates a third-party application calling the Huawei User Identity Service API to obtain user address information.\n\nThe user clicks the Get Huawei User Address button to enter the address selection interface. selects a specific address. After clicking OK, the user name, phone number, and address information are displayed on the interface.</string>
-    <string name="result_output">Result output：</string>
-    <string name="show_shipping_address">Show shipping address</string>
-    <string name="print">Print : \n</string>
     <string name="error">Failed to get user address.</string>
     <string name="url_txt_identitykit">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001050040471</string>
 

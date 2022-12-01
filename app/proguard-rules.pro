@@ -32,3 +32,5 @@
 -keep class com.huawei.cloud.base.** {*;}
 -keep class com.huawei.cloud.client.** {*;}
 -keep class com.huawei.agconnect.** {*;}
+-keep class com.huawei.openalliance.ad.** { *; }
+-keep class com.huawei.hms.ads.** { *; }

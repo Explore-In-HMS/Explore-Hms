@@ -32,7 +32,6 @@
         app:title="Image Cropping Service"/>
 
     <ScrollView
-        android:id="@+id/sv_crop_service_image_kit"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="16dp"
@@ -164,7 +163,6 @@
                     android:background="@color/colorGray1" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_imagekit_crop_cropstyle"
                     style="@style/TextAppearance.ExploreHMS.Body1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -338,7 +336,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/ll_image_crop_result_image_kit" />
 
             <LinearLayout
-                android:id="@+id/ll_image_super_res_result"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"

@@ -34,6 +34,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hms.mlsdk.common.MLApplication;
 
 import java.security.SecureRandom;
@@ -43,7 +44,7 @@ import static android.content.Context.CONNECTIVITY_SERVICE;
 public class Utils {
 
 
-    private static final String API_KEY = "CV8RiFSCwQTFPxl1ET8PWacetyb/E3+HjejRkuQHJ/RSczHVZzPXC7pNRBPPpSoJvuigzxm5tRMzvee57oVD3djKVLNc";
+    private static  String API_KEY = "";
 
     // Setting ApiKey For SDK Data Security and use Remote Analyzer:
     //
@@ -54,7 +55,8 @@ public class Utils {
     //
     // You can use the following API to initialize the api_key when the app is started.
     // The api_key does not need to be set again once being initialized.
-    public static void setApiKeyForRemoteMLApplication(){
+    public static void setApiKeyForRemoteMLApplication(Context context){
+        API_KEY= AGConnectServicesConfig.fromContext(context).getString("client/api_key");
         MLApplication.getInstance().setApiKey(API_KEY);
     }
 

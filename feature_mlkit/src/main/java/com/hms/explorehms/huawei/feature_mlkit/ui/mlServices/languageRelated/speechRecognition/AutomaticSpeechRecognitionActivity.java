@@ -136,7 +136,7 @@ public class AutomaticSpeechRecognitionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_automatic_speech_recognition);
 
-        Utils.setApiKeyForRemoteMLApplication();
+        Utils.setApiKeyForRemoteMLApplication(getApplicationContext());
         setupToolbar();
 
         unbinder = ButterKnife.bind(this);

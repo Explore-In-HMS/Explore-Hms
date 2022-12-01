@@ -186,7 +186,7 @@ public class ProductVisualSearchActivity extends AppCompatActivity {
     }
 
     private void createMLProductVisionSearchTransactors() {
-        productTransactor = new ProductTransactor();
+        productTransactor = new ProductTransactor(this);
     }
 
 

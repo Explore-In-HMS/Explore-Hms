@@ -77,7 +77,7 @@ public class KitModel implements Parcelable {
             new KitModel("Video Kit", "com.hms.explorehms.huawei.feature_videokit.activity.HomePageActivity", true, "feature_videokit", R.drawable.icon_videokit, KitModel.HmsCategory.Media),
             new KitModel("Camera Engine", "com.hms.explorehms.huawei.feature_cameraengine.MainActivityCameraEngine", true, "feature_cameraengine", R.drawable.icon_cameraengine, KitModel.HmsCategory.Media),
             new KitModel("ML Kit", "com.hms.explorehms.huawei.feature_mlkit.MLMainActivity", true, "feature_mlkit", R.drawable.icon_mlkit, KitModel.HmsCategory.AI),
-            new KitModel("Dynamic Tag Manager", "com.hms.explorehms.huawei.reference.dynamictagmanager.DynamicActivity", false, null, R.drawable.icon_dynamictagmanager, KitModel.HmsCategory.AppServices),
+            new KitModel("Dynamic Tag Manager", "com.hms.explorehms.reference.dynamictagmanager.DynamicActivity", false, null, R.drawable.icon_dynamictagmanager, KitModel.HmsCategory.AppServices),
             new KitModel("Nearby Service", "com.hms.explorehms.huawei.feature_nearbyservice.NearbyServiceActivity", true, "feature_nearbyservice", R.drawable.icon_nearbyservices, KitModel.HmsCategory.System),
             new KitModel("Panorama Kit", "com.hms.explorehms.huawei.feature_panorama.PanoramaActivity", true, "feature_panorama", R.drawable.icon_panoramakit, KitModel.HmsCategory.Media),
             new KitModel("Image Kit", "com.hms.explorehms.huawei.feature_imagekit.MainActivityImageKit", true, "feature_imagekit", R.drawable.icon_imagekit, KitModel.HmsCategory.Media),

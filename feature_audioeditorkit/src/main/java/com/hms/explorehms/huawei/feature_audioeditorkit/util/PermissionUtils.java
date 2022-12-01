@@ -26,6 +26,7 @@ import android.os.Build;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -92,7 +93,7 @@ public class PermissionUtils {
      * @param permissions Permission
      * @param callBack    Callback Listening
      */
-    public static void checkMorePermissions(Context context, String[] permissions, PermissionCheckCallBack callBack) {
+    public static void checkMorePermissions(Context context, String[] permissions, PermissionCheckCallBack callBack) throws IOException {
         List<String> permissionList = checkMorePermissions(context, permissions);
         if (permissionList.size() == 0) { // User Granted Permissions
             callBack.onHasPermission();
@@ -125,7 +126,7 @@ public class PermissionUtils {
      * @param callback Callback Listening
      */
     public static void onRequestMorePermissionsResult(
-            Context context, String[] permissions, PermissionCheckCallBack callback) {
+            Context context, String[] permissions, PermissionCheckCallBack callback) throws IOException {
         boolean isBannedPermission = false;
         List<String> permissionList = checkMorePermissions(context, permissions);
         if (permissionList.size() == 0) {
@@ -172,7 +173,7 @@ public class PermissionUtils {
         /**
          * User Granted Permissions
          */
-        void onHasPermission();
+        void onHasPermission() throws IOException;
 
         /**
          * User Denied Permissions

@@ -22,7 +22,6 @@
     android:layout_height="match_parent">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/coordinatorLayout_detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,7 +46,6 @@
                 app:toolbarId="@+id/toolbar">
 
                 <RelativeLayout
-                    android:id="@+id/rl_header"
                     android:layout_width="match_parent"
                     android:layout_height="142dp"
                     android:layout_alignParentTop="true"
@@ -90,7 +88,6 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.core.widget.NestedScrollView
-            android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scrollbarSize="4dp"
@@ -99,7 +96,6 @@
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layout_main"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -134,7 +130,6 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/textView_fd"
                                 style="@style/TextAppearance.ExploreHMS.Body1"
                                 android:layout_width="120dp"
                                 android:layout_height="wrap_content"
@@ -176,7 +171,6 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/textView_dor"
                                 style="@style/TextAppearance.ExploreHMS.Body1"
                                 android:layout_width="120dp"
                                 android:layout_height="wrap_content"
@@ -230,7 +224,6 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/textView_bcr"
                                 style="@style/TextAppearance.ExploreHMS.Body1"
                                 android:layout_width="120dp"
                                 android:layout_height="wrap_content"
@@ -272,7 +265,6 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/textView_hkd"
                                 style="@style/TextAppearance.ExploreHMS.Body1"
                                 android:layout_width="120dp"
                                 android:layout_height="wrap_content"
@@ -325,7 +317,6 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/textView_fv"
                                 style="@style/TextAppearance.ExploreHMS.Body1"
                                 android:layout_width="120dp"
                                 android:layout_height="wrap_content"
@@ -367,7 +358,6 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/textView_3d"
                                 style="@style/TextAppearance.ExploreHMS.Body1"
                                 android:layout_width="120dp"
                                 android:layout_height="wrap_content"
@@ -420,7 +410,6 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/textView_gesture"
                                 style="@style/TextAppearance.ExploreHMS.Body1"
                                 android:layout_width="120dp"
                                 android:layout_height="wrap_content"
@@ -444,7 +433,6 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/cv_face_body_related_null"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"

@@ -23,7 +23,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
+import android.text.Html;
 import android.text.SpannableString;
 import android.text.TextWatcher;
 import android.text.style.UnderlineSpan;
@@ -39,6 +41,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.android.material.tabs.TabLayout;
 import com.hms.explorehms.Util;
 import com.hms.explorehms.huawei.feature_searchkit.adapter.AutoSuggestionAdapter;
 import com.hms.explorehms.huawei.feature_searchkit.adapter.SearchKitGeneralAdapter;
@@ -48,7 +51,6 @@ import com.hms.explorehms.huawei.feature_searchkit.databinding.ActivitySearchKit
 import com.hms.explorehms.huawei.feature_searchkit.listeners.AutoSuggestClickListenerSearchKit;
 import com.hms.explorehms.huawei.feature_searchkit.network.NetworkManager;
 import com.hms.explorehms.huawei.feature_searchkit.network.QueryService;
-import com.google.android.material.tabs.TabLayout;
 import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hms.feature.dynamicinstall.FeatureCompat;
 import com.huawei.hms.searchkit.SearchKitInstance;
@@ -90,8 +92,8 @@ public class SearchKitMainActivity extends AppCompatActivity implements AutoSugg
     public static final CommonSearchRequest commonSearchRequest = new CommonSearchRequest();
     private static final String TAG = "SEARCH KIT";
     private static final String BASE_URL = "https://oauth-login.cloud.huawei.com/";
-    private  String CLIENT_ID_TOKEN = "";
-    private  String CLIENT_SECRET_TOKEN = "";
+    private String CLIENT_ID_TOKEN = "";
+    private String CLIENT_SECRET_TOKEN = "";
     private ActivitySearchKitMainBinding binding;
     private AutoSuggestionAdapter autoSuggestionAdapter;
 
@@ -113,10 +115,10 @@ public class SearchKitMainActivity extends AppCompatActivity implements AutoSugg
         super.onCreate(savedInstanceState);
 
         binding = ActivitySearchKitMainBinding.inflate(getLayoutInflater());
-        CLIENT_ID_TOKEN= AGConnectServicesConfig.fromContext(this).getString("client/app_id");
-        CLIENT_SECRET_TOKEN=AGConnectServicesConfig.fromContext(this).getString("client/client_secret");
-        Log.i("SearchkitID",CLIENT_ID_TOKEN);
-        Log.i("SearchkitSecret",CLIENT_SECRET_TOKEN);
+        CLIENT_ID_TOKEN = AGConnectServicesConfig.fromContext(this).getString("client/app_id");
+        CLIENT_SECRET_TOKEN = AGConnectServicesConfig.fromContext(this).getString("client/client_secret");
+        Log.i("SearchkitID", CLIENT_ID_TOKEN);
+        Log.i("SearchkitSecret", CLIENT_SECRET_TOKEN);
         setContentView(binding.getRoot());
         setupToolbar();
 
@@ -330,16 +332,16 @@ public class SearchKitMainActivity extends AppCompatActivity implements AutoSugg
     private void makeSuggestion(String query) {
 
         Observable.create((ObservableOnSubscribe<List<SuggestObject>>) emitter -> {
-            AutoSuggestResponse response =
-                    SearchKitInstance.getInstance()
-                            .getSearchHelper()
-                            .suggest(query, Language.ENGLISH);
-            if (response != null && response.getSuggestions() != null && !response.getSuggestions().isEmpty()) {
-                emitter.onNext(response.getSuggestions());
-            }
+                    AutoSuggestResponse response =
+                            SearchKitInstance.getInstance()
+                                    .getSearchHelper()
+                                    .suggest(query, Language.ENGLISH);
+                    if (response != null && response.getSuggestions() != null && !response.getSuggestions().isEmpty()) {
+                        emitter.onNext(response.getSuggestions());
+                    }
 
-            emitter.onComplete();
-        }).subscribeOn(Schedulers.newThread())
+                    emitter.onComplete();
+                }).subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(suggestObjects -> {
                     autoSuggestionAdapter.clearData();
@@ -355,17 +357,17 @@ public class SearchKitMainActivity extends AppCompatActivity implements AutoSugg
     @SuppressLint("CheckResult")
     private void getSpellCheck(String query) {
         Observable.create((ObservableOnSubscribe<String>) emitter -> {
-            SpellCheckResponse response =
-                    SearchKitInstance.getInstance()
-                            .getSearchHelper()
-                            .spellCheck(query, Language.ENGLISH);
-            if (response != null && response.getCorrectedQuery() != null) {
-                emitter.onNext(response.getCorrectedQuery());
-            } else {
-                Log.e(TAG, "spell error");
-                emitter.onNext("");
-            }
-        }).subscribeOn(Schedulers.newThread()).
+                    SpellCheckResponse response =
+                            SearchKitInstance.getInstance()
+                                    .getSearchHelper()
+                                    .spellCheck(query, Language.ENGLISH);
+                    if (response != null && response.getCorrectedQuery() != null) {
+                        emitter.onNext(response.getCorrectedQuery());
+                    } else {
+                        Log.e(TAG, "spell error");
+                        emitter.onNext("");
+                    }
+                }).subscribeOn(Schedulers.newThread()).
                 observeOn(AndroidSchedulers.mainThread())
                 .subscribe(s -> {
                     binding.tvSpellingCheck.setText("Spelling check result:");
@@ -386,61 +388,61 @@ public class SearchKitMainActivity extends AppCompatActivity implements AutoSugg
 
             progressDialogScreen.showProgressDialog();
             Observable.create((ObservableOnSubscribe<BaseSearchResponse>) emitter -> {
-                /**
-                 * We are making service request in below.
-                 *
-                 */
-                switch (tabState) {
-                    case WEB:
-                        webSearchRequest.setQ(query);
-                        BaseSearchResponse<List<WebItem>> webResponse = SearchKitInstance.getInstance().getWebSearcher().search(webSearchRequest);
-                        if (webResponse != null && !webResponse.getData().isEmpty())
-                            emitter.onNext(webResponse);
-                        else {
-                            progressDialogScreen.dismissProgressDialog();
-                            runOnUiThread(() -> binding.recyclerViewSearchkit.setVisibility(View.GONE));
+                        /**
+                         * We are making service request in below.
+                         *
+                         */
+                        switch (tabState) {
+                            case WEB:
+                                webSearchRequest.setQ(query);
+                                BaseSearchResponse<List<WebItem>> webResponse = SearchKitInstance.getInstance().getWebSearcher().search(webSearchRequest);
+                                if (webResponse != null && !webResponse.getData().isEmpty())
+                                    emitter.onNext(webResponse);
+                                else {
+                                    progressDialogScreen.dismissProgressDialog();
+                                    runOnUiThread(() -> binding.recyclerViewSearchkit.setVisibility(View.GONE));
+                                }
+                                break;
+
+                            case IMAGE:
+                                commonSearchRequest.setQ(query);
+                                BaseSearchResponse<List<ImageItem>> imageResponse = SearchKitInstance.getInstance().getImageSearcher().search(commonSearchRequest);
+                                if (imageResponse != null && !imageResponse.getData().isEmpty())
+                                    emitter.onNext(imageResponse);
+                                else {
+                                    progressDialogScreen.dismissProgressDialog();
+                                    runOnUiThread(() -> binding.recyclerViewSearchkit.setVisibility(View.GONE));
+                                }
+
+
+                                break;
+
+                            case VIDEO:
+                                commonSearchRequest.setQ(query);
+                                BaseSearchResponse<List<VideoItem>> videoResponse = SearchKitInstance.getInstance().getVideoSearcher().search(commonSearchRequest);
+                                if (videoResponse != null && !videoResponse.getData().isEmpty())
+                                    emitter.onNext(videoResponse);
+                                else {
+                                    progressDialogScreen.dismissProgressDialog();
+                                    runOnUiThread(() -> binding.recyclerViewSearchkit.setVisibility(View.GONE));
+                                }
+                                break;
+
+                            case NEWS:
+                                commonSearchRequest.setQ(query);
+                                BaseSearchResponse<List<NewsItem>> newsResponse = SearchKitInstance.getInstance().getNewsSearcher().search(commonSearchRequest);
+                                if (newsResponse != null && !newsResponse.getData().isEmpty())
+                                    emitter.onNext(newsResponse);
+                                else {
+                                    progressDialogScreen.dismissProgressDialog();
+                                    runOnUiThread(() -> binding.recyclerViewSearchkit.setVisibility(View.GONE));
+                                }
+                                break;
+
+                            default:
+                                break;
                         }
-                        break;
-
-                    case IMAGE:
-                        commonSearchRequest.setQ(query);
-                        BaseSearchResponse<List<ImageItem>> imageResponse = SearchKitInstance.getInstance().getImageSearcher().search(commonSearchRequest);
-                        if (imageResponse != null && !imageResponse.getData().isEmpty())
-                            emitter.onNext(imageResponse);
-                        else {
-                            progressDialogScreen.dismissProgressDialog();
-                            runOnUiThread(() -> binding.recyclerViewSearchkit.setVisibility(View.GONE));
-                        }
-
-
-                        break;
-
-                    case VIDEO:
-                        commonSearchRequest.setQ(query);
-                        BaseSearchResponse<List<VideoItem>> videoResponse = SearchKitInstance.getInstance().getVideoSearcher().search(commonSearchRequest);
-                        if (videoResponse != null && !videoResponse.getData().isEmpty())
-                            emitter.onNext(videoResponse);
-                        else {
-                            progressDialogScreen.dismissProgressDialog();
-                            runOnUiThread(() -> binding.recyclerViewSearchkit.setVisibility(View.GONE));
-                        }
-                        break;
-
-                    case NEWS:
-                        commonSearchRequest.setQ(query);
-                        BaseSearchResponse<List<NewsItem>> newsResponse = SearchKitInstance.getInstance().getNewsSearcher().search(commonSearchRequest);
-                        if (newsResponse != null && !newsResponse.getData().isEmpty())
-                            emitter.onNext(newsResponse);
-                        else {
-                            progressDialogScreen.dismissProgressDialog();
-                            runOnUiThread(() -> binding.recyclerViewSearchkit.setVisibility(View.GONE));
-                        }
-                        break;
-
-                    default:
-                        break;
-                }
-            })
+                    })
                     .subscribeOn(Schedulers.newThread())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(baseSearchResponse -> {
@@ -505,11 +507,10 @@ public class SearchKitMainActivity extends AppCompatActivity implements AutoSugg
                 TextView tv = itemView.findViewById(R.id.tvWebText1);
                 TextView tv2 = itemView.findViewById(R.id.tvWebText2);
                 TextView tv3 = itemView.findViewById(R.id.tvWebText3);
-                tv.setText(((WebItem) model).title);
-                tv2.setText(((WebItem) model).snippet);
-                tv3.setText(((WebItem) model).click_url);
-                tv3.setText(getResources().getString(R.string.linked_text, ((WebItem) model).click_url));
-
+                tv.setText(Html.fromHtml(((WebItem) model).title));
+                tv2.setText(Html.fromHtml(((WebItem) model).snippet));
+                tv3.setText(Html.fromHtml(((WebItem) model).click_url));
+                tv3.setText(Html.fromHtml(getResources().getString(R.string.linked_text, ((WebItem) model).click_url)));
 
                 tv3.setOnClickListener(view -> {
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW);
@@ -618,43 +619,53 @@ public class SearchKitMainActivity extends AppCompatActivity implements AutoSugg
      * We are sending request to the OAuth server to get token.
      */
     public void initRetrofit() {
-        QueryService service = NetworkManager.getInstance().createService(this, BASE_URL);
-        service.getRequestToken(
-                "client_credentials",
-                CLIENT_ID_TOKEN,
-                CLIENT_SECRET_TOKEN)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<TokenResponse>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-                        Log.e(TAG, "onSubscribe");
-                    }
 
-                    @Override
-                    public void onNext(TokenResponse tokenResponse) {
-                        if (tokenResponse != null) {
-                            if (tokenResponse.getAccessToken() != null) {
-                                SearchKitInstance.getInstance().setInstanceCredential(tokenResponse.getAccessToken());
-                                SearchKitInstance.getInstance().getWebSearcher().setCredential(tokenResponse.getAccessToken());
-                            } else {
-                                Log.e(TAG, "get responseBody token is null");
+        Handler mainHandler = new Handler(this.getMainLooper());
+
+        Runnable myRunnable = new Runnable() {
+            @Override
+            public void run() {
+                QueryService service = NetworkManager.getInstance().createService(SearchKitMainActivity.this, BASE_URL);
+                service.getRequestToken(
+                                "client_credentials",
+                                CLIENT_ID_TOKEN,
+                                "8316388b7d593328b3003b44bbcf5c5247266f6e22920eef883c9810586c1e45")
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new Observer<TokenResponse>() {
+                            @Override
+                            public void onSubscribe(Disposable d) {
+                                Log.e(TAG, "onSubscribe");
                             }
-                        } else {
-                            Log.e(TAG, "get responseBody is null");
-                        }
-                    }
 
-                    @Override
-                    public void onError(Throwable e) {
-                        Log.e(TAG, "get token error: " + e.getMessage());
-                    }
+                            @Override
+                            public void onNext(TokenResponse tokenResponse) {
+                                if (tokenResponse != null) {
+                                    if (tokenResponse.getAccessToken() != null) {
+                                        SearchKitInstance.getInstance().setInstanceCredential(tokenResponse.getAccessToken());
+                                        SearchKitInstance.getInstance().getWebSearcher().setCredential(tokenResponse.getAccessToken());
+                                    } else {
+                                        Log.e(TAG, "get responseBody token is null");
+                                    }
+                                } else {
+                                    Log.e(TAG, "get responseBody is null");
+                                }
+                            }
 
-                    @Override
-                    public void onComplete() {
-                        Log.e(TAG, "onComplete");
-                    }
-                });
+                            @Override
+                            public void onError(Throwable e) {
+                                Log.e(TAG, "get token error: " + e.getMessage());
+                            }
+
+                            @Override
+                            public void onComplete() {
+                                Log.e(TAG, "onComplete");
+                            }
+                        });
+            }
+        };
+        mainHandler.post(myRunnable);
+
     }
 
     @Override

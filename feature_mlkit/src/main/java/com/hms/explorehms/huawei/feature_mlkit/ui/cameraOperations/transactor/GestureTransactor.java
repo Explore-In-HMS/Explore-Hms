@@ -81,7 +81,7 @@ public class GestureTransactor extends BaseTransactor<List<MLGesture>> {
             graphicOverlay.addGraphic(imageGraphic);
             for (int i = 0; i < results.size(); i++) {
                 MLGesture mlGesture = results.get(0);
-                one = mlGesture.category;
+                one = mlGesture.getCategory();
              
             }
             if (one == MLGesture.GOOD) {

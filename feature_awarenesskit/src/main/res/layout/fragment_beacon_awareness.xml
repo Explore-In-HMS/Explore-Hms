@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~
   ~   Copyright 2020. Explore in HMS. All rights reserved.
   ~
@@ -16,137 +15,139 @@
   ~   limitations under the License.
   ~
   -->
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragments.BeaconAwarenessFragment">
+    android:layout_height="match_parent">
 
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvHeadText_beaconawareness"
-        style="@style/TextAppearance.ExploreHMS.Headline6"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Introduction"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.BeaconAwarenessFragment">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvBeaconAwarenessInfo"
-        style="@style/TextAppearance.ExploreHMS.Body1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="@string/beacon_awareness_info"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvHeadText_beaconawareness" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layEdt1_beaconawareness"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="@string/beacon_name_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBeaconAwarenessInfo">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtBeaconName_beaconawareness"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layEdt2_beaconawareness"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="@string/beacon_type_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layEdt1_beaconawareness">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtBeaconType_beaconawareness"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnFilterBeacons_beaconawareness"
-        style="@style/ButtonAppearance.ExploreHMS.Normal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Filter"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layEdt2_beaconawareness" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/result_layout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:background="@drawable/bg_gray_result"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnFilterBeacons_beaconawareness">
-
-        <TextView
-            android:id="@+id/result"
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvHeadText_beaconawareness"
             style="@style/TextAppearance.ExploreHMS.Headline6"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="Result"
+            android:text="Introduction"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:id="@+id/separator2"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorGray1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/result" />
-
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvBeaconList_beaconawareness"
+            android:id="@+id/tvBeaconAwarenessInfo"
             style="@style/TextAppearance.ExploreHMS.Body1"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:autoSizeMaxTextSize="36sp"
-            android:autoSizeMinTextSize="12sp"
-            android:autoSizeStepGranularity="2sp"
-            android:autoSizeTextType="uniform"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/beacon_awareness_info"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/separator2" />
+            app:layout_constraintTop_toBottomOf="@+id/tvHeadText_beaconawareness" />
 
-        <ProgressBar
-            android:id="@+id/progress_beaconawareness"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layEdt1_beaconawareness"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@id/tvBeaconList_beaconawareness"
-            app:layout_constraintEnd_toEndOf="@id/tvBeaconList_beaconawareness"
-            app:layout_constraintStart_toStartOf="@id/tvBeaconList_beaconawareness"
-            app:layout_constraintTop_toTopOf="@id/tvBeaconList_beaconawareness" />
+            android:layout_margin="16dp"
+            android:hint="@string/beacon_name_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBeaconAwarenessInfo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtBeaconName_beaconawareness"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layEdt2_beaconawareness"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="@string/beacon_type_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layEdt1_beaconawareness">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtBeaconType_beaconawareness"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFilterBeacons_beaconawareness"
+            style="@style/ButtonAppearance.ExploreHMS.Normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Filter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layEdt2_beaconawareness" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/result_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/bg_gray_result"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnFilterBeacons_beaconawareness">
+
+            <TextView
+                android:id="@+id/result"
+                style="@style/TextAppearance.ExploreHMS.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Result"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/separator2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorGray1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/result" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvBeaconList_beaconawareness"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="16dp"
+                android:autoSizeMaxTextSize="36sp"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/separator2" />
+
+            <ProgressBar
+                android:id="@+id/progress_beaconawareness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/tvBeaconList_beaconawareness"
+                app:layout_constraintEnd_toEndOf="@id/tvBeaconList_beaconawareness"
+                app:layout_constraintStart_toStartOf="@id/tvBeaconList_beaconawareness"
+                app:layout_constraintTop_toTopOf="@id/tvBeaconList_beaconawareness" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

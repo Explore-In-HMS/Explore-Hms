@@ -24,21 +24,13 @@
     <string name="tab_body">Face &amp; Body</string>
     <string name="tab_custom">Custom</string>
     <string name="text_results">RESULTS</string>
-    <string name="text_results_s">Results</string>
 
     <string name="frg_text_header">MACHINE LEARNING\nTEXT RELATED SERVICES</string>
     <string name="frg_language_header">MACHINE LEARNING\nLANGUAGE RELATED SERVICES</string>
     <string name="frg_image_header">MACHINE LEARNING\nIMAGE RELATED SERVICES</string>
     <string name="frg_body_header">MACHINE LEARNING\nFACE &amp; BODY RELATED SERVICES</string>
-    <string name="frg_custom_header">MACHINE LEARNING\nCUSTOM MODEL RELATED SERVICES</string>
 
     <!-- short representations of Text Related Services -->
-    <string name="ter">TDR</string>
-    <string name="dor">Document</string>
-    <string name="bcr">BCR</string>
-    <string name="gcr">GCR</string>
-    <string name="icr">ICR</string>
-    <string name="t_embed">T EMBED</string>
 
     <!-- full representations of Text Related Services -->
     <string name="ter_s">Text Detection &amp; Recognition</string>
@@ -86,18 +78,10 @@
 
     <string name="dic_versions">Version  : </string>
     <string name="dic_dimension">Dimension : </string>
-    <string name="dic_size">Size : </string>
     <string name="embedding_result_descriptions_will_be_here">Text Embedding Result Descriptions Will Be Here!</string>
 
-    <string name="bcr_tips_personal_information_protected">Your personal information will be protected in accordance with the law.</string>
     <string name="gcr_tips_personal_information_not_processed">Your personal information will not be processed in any way.</string>
-    <string name="bcr_tips_please_take_and_upload_bank_card_picture">Please Take and Upload Bank Card Picture</string>
-    <string name="bcr_take_card_photo">Take Card Photo</string>
     <string name="bcr_card_number_will_be_here">Card Number Will Be Here</string>
-    <string name="gcr_upload_photos_of_card">Upload photos of your card with</string>
-    <string name="gcr_pick_from_storage">Pick From Storage</string>
-    <string name="gcr_take_photo">Take Photo</string>
-    <string name="gcr_video_stream">Video Stream</string>
     <string name="gcr_hong_kong_identity_card">Hong Kong Identity Card</string>
     <string name="gcr_hong_kong_macao_and_taiwan_pass">Hong Kong, Macao and Taiwan pass</string>
     <string name="gcr_mainland_travel_permit">Mainland Travel Permit \n(Hong Kong, Macao, and Taiwan residents)</string>
@@ -111,7 +95,6 @@
     <string name="te_sentence_vector">Sentence Vector：</string>
     <string name="te_word_similarity">Word Similarity：</string>
     <string name="te_sentence_similarity">Sentence Similarity：</string>
-    <string name="te_similar_words">Similar Words：</string>
 
 
     <string name="t_embed_ver">Search Dictionary Version Information</string>
@@ -123,18 +106,8 @@
     <string name="t_embed_sim_w">Search Top K Similar Word Analysis</string>
 
     <!-- short representations of Language Related Services -->
-    <string name="trn">TT</string>
-    <string name="lng_dtc">LNGD</string>
-    <string name="asr">ASR</string>
-    <string name="tts">TTS</string>
-    <string name="aft">AFT</string>
-    <string name="vcc">VCC</string>
-    <string name="rtt">RTT</string>
-    <string name="sdtc">SDTC</string>
 
     <!-- full representations of Language Related Services -->
-    <string name="trn_s">Text Translation</string>
-    <string name="lng_dtc_s">Language Detection</string>
     <string name="asr_s">Automatic Speech Recognition</string>
     <string name="tts_s">Text to Speech</string>
     <string name="aft_s">Audio File Transcription</string>
@@ -144,7 +117,6 @@
     <string name="sdtc_s1">Sound Detection - Voice Recognition</string>
     <string name="lng_dtc_trn_s">Language Detection &amp;\nText Translation</string>
 
-    <string name="you_may_speak_now">"You may speak now…"</string>
     <string name="you_may_speak_your_speak_will_be_text">"You may speak now… Your speech will be transcribed automatically."</string>
     <string name="real_time_transcription_result_will_be_here">"Real time transcription result of your speech will be here when stop"</string>
     <string name="speech_recognizer_turned_off">"Speech recognizer turned off!"</string>
@@ -160,10 +132,7 @@
         <item>Chinese</item>
     </string-array>
 
-    <string name="tips_coming_soon">"ComingSoon.."</string>
 
-
-    <string name="only_available_for_huawei_phones">* This service is only available for Huawei mobile phones</string>
     <string name="text_to_speech_result_descriptions_will_be_here">Text To Speech Result Descriptions Will Be Here!</string>
     <string name="tts_play">Play</string>
     <string name="tts_pause">Pause</string>
@@ -180,7 +149,6 @@
     <string name="btn_download">Download</string>
     <string name="ttr_sample_text_somewhere_something">Somewhere, something incredible is waiting to be discovered.</string>
     <string name="ttr_translate">Translate</string>
-    <string name="ttr_language_recognition">Language Recognition</string>
     <string name="ttr_language_detect">Language Detect</string>
     <string name="ttr_elapsed_time">Elapsed Time :</string>
     <string name="ttr_sample_text_actually_there_are_two_things">Actually, there are two things in life: science and personal thoughts. The first leads to knowledge, the second to ignorance.</string>
@@ -190,7 +158,6 @@
     <string name="asr_sample_sentence1">The book that I read was very interesting.</string>
     <string name="asr_sample_sentence2">When I first saw her she was walking on the beach</string>
     <string name="asr_sample_sentence3">Yes, I am a software engineer in Huawei Company</string>
-    <string name="text_start">START</string>
     <string name="asr_please_speak">Please Speak</string>
     <string name="aft_sample_sentence1">The book that I read was very interesting.</string>
     <string name="aft_sample_sentence2">When I first saw her she was walking on the beach</string>
@@ -198,22 +165,9 @@
 
 
     <!-- short representations of Image Related Services -->
-    <string name="img_c">IC</string>
-    <string name="obj_dtc">OD</string>
-    <string name="lnd_rec">LR</string>
-    <string name="img_sgm">IS</string>
-    <string name="prd_vs">PVS</string>
-    <string name="img_sp_res">ISR</string>
-    <string name="doc_sc">DSC</string>
-    <string name="tab_form_rec">DSC</string>
-    <string name="form_tb_rec">FTR</string>
-    <string name="text_img_sp_res">TISR</string>
-    <string name="scene_dtc">SCDT</string>
     <string name="isr_image_original">Original</string>
     <string name="isr_image_1x">1 PX</string>
     <string name="isr_image_3x">3 PX</string>
-    <string name="isr_image_width">"width: "</string>
-    <string name="isr_image_height">"height: "</string>
     <string name="dialog_text_show_source_page">"Source Page"</string>
     <string name="dialog_text_cancel">"Cancel"</string>
 
@@ -238,7 +192,6 @@
     <string name="service_introduction">"Service Introduction"</string>
     <string name="dialog_text_title">"Title"</string>
     <string name="dialog_text_descriptions">"Descriptions"</string>
-    <string name="web_source_descriptions">"Source Descriptions"</string>
 
     <string name="isr_tips_content">Before using the image super-resolution service, you need to convert the image into a bitmap in ARGB format, and the output bitmap format is also ARGB. \nIn the 3x super resolution scenario, the maximum size of the input image is 800 x 800 pixels, and the minimum size is not less than 64 x 64 pixels. \nIn the 1x super resolution scenario, the maximum size of an input image is 1024px x 768px or 768px x 1024px, the minimum size is 64px x 64px. \nThe effect is not obvious when the input picture is of good quality and definition.</string>
     <string name="tisr_tips_content">Before using the text image super-resolution service, you need to convert the image into a bitmap in ARGB format, and the output bitmap format is also ARGB. \nOnly 3x super resolution is supported. The maximum size of an input image is 800px x 800px, and the minimum size is 64px x 64px. \nThe effect is not obvious when the input picture is of good quality and definition. </string>
@@ -247,11 +200,6 @@
     <string name="btn_text_substitution">"Substitution"</string>
     <string name="btn_text_cutout">"CutOut"</string>
     <string name="btn_text_segmentation">"Segmentation"</string>
-
-    <string name="btn_text_select_pic">"Select Picture"</string>
-    <string name="btn_text_cut">"Cut"</string>
-    <string name="btn_text_bg">"Background"</string>
-    <string name="btn_text_save">"Save"</string>
 
     <string name="irl_select_picture">Select Picture</string>
     <string name="irl_cut_picture">Cut / Crop</string>
@@ -262,10 +210,6 @@
     <string name="irl_sgm_object">Object</string>
 
     <!-- short representations of Face & Body Related Services -->
-    <string name="fd">FD</string>
-    <string name="sd">SKLD</string>
-    <string name="livd">LVD</string>
-    <string name="hkd">HKD</string>
 
     <!-- full representations of Face & Body Related Services -->
     <string name="fd_s">Face Detection</string>
@@ -277,13 +221,10 @@
 
     <!-- Button Texts -->
 
-    <string name="back">Back</string>
-
-    <string name="voice_type">Voice Types</string>"
+    "
 
     <string name="sdtc_start">Sound Detection Start</string>
     <string name="sdtc_stop">Sound Detection Stop</string>
-    <string name="sdtc_error">Sound Detection Error : </string>
 
     <string-array name="sdtc_voice_type_ordered_13">
         <item>Laughter</item>
@@ -315,8 +256,6 @@
 
     <string name="bcr_with_take_a_picture">Recognition with Take a Picture</string>
 
-    <string name="ttr_process_results_will_be_here">Process Descriptions Will Be Here!</string>
-
     <string name="dtc_rcg_results_will_be_here">Voice Type Detection and Recognition Results Will Be Here!</string>
 
     <string name="record_transcription_result">Record Transcription Result Will Be Here.</string>
@@ -330,19 +269,16 @@
     <string name="recognition_with_storage">Recognition with Storage</string>
     <string name="recognition_result_export">Recognition Result Export</string>
     <string name="recognition_with_take_a_picture">Recognition with Take a Picture</string>
-    <string name="recognition_with_camera_stream">Recognition with Camera Stream</string>
     <string name="recognition_result_descriptions_will_be_here">Recognition Result Descriptions Will Be Here!</string>
 
     <string name="detection_with_image_view">Detection with ImageView</string>
     <string name="detection_with_storage">Detection with Storage</string>
-    <string name="detection_result_export">Detection Result Export</string>
     <string name="detection_with_take_a_picture">Detection with Take a Picture</string>
     <string name="detection_with_camera_stream">Detection with Camera Stream</string>
     <string name="detection_result_descriptions_will_be_here">Detection Result Descriptions Will Be Here!</string>
 
     <string name="classification_with_image_view">Classification with ImageView</string>
     <string name="classification_with_storage">Classification with Storage</string>
-    <string name="classification_result_export">Classification Result Export</string>
     <string name="classification_with_take_a_picture">Classification with Take a Picture</string>
     <string name="classification_with_camera_stream">Classification with Camera Stream</string>
     <string name="classification_result_descriptions_will_be_here">Classification Result Descriptions Will Be Here!</string>
@@ -358,15 +294,11 @@
 
     <string name="correction_with_image_view">Correction with ImageView</string>
     <string name="correction_with_storage">Correction with Storage</string>
-    <string name="correction_result_export">Correction Result Export</string>
     <string name="correction_with_take_a_picture">Correction with Take a Picture</string>
-    <string name="correction_with_camera_stream">Correction with Camera Stream</string>
     <string name="correction_result_descriptions_will_be_here">Correction Result Descriptions Will Be Here!</string>
 
 
     <!-- ML Kit Links -->
-    <string name="link_ml_version">https://developer.huawei.com/consumer/en/doc/HMSCore-Guides-V5/version-changehistory-0000001050040023-V5</string>
-    <string name="link_ml_functions">https://developer.huawei.com/consumer/en/hms/huawei-mlkit</string>
 
     <!-- Text Related Services Links -->
     <string name="link_trs_ter">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides-V5/text-recognition-0000001050040053</string>
@@ -377,8 +309,6 @@
     <string name="link_trs_temb">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides-V5/text-embedding-0000001055002819-V5</string>
 
     <!-- Language Related Services Links -->
-    <string name="link_lrs_rt_ldt">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides-V5/real-time-language-detection-0000001050038134-V5</string>
-    <string name="link_lrs_od_ldt">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides-V5/on-device-language-detection-0000001058122069-V5</string>
     <string name="link_lrs_rt_tt">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides-V5/real-time-translation-0000001050040079-V5</string>
     <string name="link_lrs_od_tt">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides-V5/on-device-translation-0000001058271775-V5</string>
     <string name="link_lrs_asr">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides-V5/ml-asr-0000001050066212-V5</string>
@@ -446,8 +376,6 @@
     <string name="norwegian">Norwegian</string>
     <string name="thai">Thai</string>
     <string name="en_us">en-US</string>
-    <string name="en_us_st_one">en-US-st-1</string>
-    <string name="en_us_st_two">en-US-st-2</string>
     <string name="yes_go">YES GO</string>
     <string name="cancel">Cancel</string>
     <string name="resume">Resume</string>
@@ -493,6 +421,5 @@
     <string name="gesture_others">Other gestures</string>
     <string name="cloud_handkeypoint">HandKeyPoint</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

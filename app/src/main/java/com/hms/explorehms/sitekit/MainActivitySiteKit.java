@@ -20,15 +20,17 @@ package com.hms.explorehms.sitekit;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.hms.explorehms.BuildConfig;
 import com.hms.explorehms.R;
 import com.hms.explorehms.Util;
 import com.hms.explorehms.databinding.ActivityMainSiteKitBinding;
@@ -89,9 +91,9 @@ public class MainActivitySiteKit extends AppCompatActivity {
         if (requestCode == LOCATION_REQ_CODE && grantResults.length != 0 && (grantResults[0] == PackageManager.PERMISSION_DENIED) &&
                 (grantResults[1] == PackageManager.PERMISSION_DENIED)
         ) {
-            Toast.makeText(this, "Permission denied.", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                    Uri.parse("package:" + BuildConfig.APPLICATION_ID)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
             this.finish();
-
         }
     }
 }

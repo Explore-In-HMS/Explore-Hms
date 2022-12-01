@@ -32,19 +32,15 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.button.MaterialButton;
 import com.hms.explorehms.Util;
 import com.hms.explorehms.huawei.feature_hiai.R;
 import com.hms.explorehms.huawei.feature_hiai.constant.ServiceGroupConstants;
@@ -52,7 +48,6 @@ import com.hms.explorehms.huawei.feature_hiai.ui.hiaiserviceviews.base.BaseServi
 import com.hms.explorehms.huawei.feature_hiai.ui.hiaiserviceviews.base.BaseServiceInterface;
 import com.hms.explorehms.huawei.feature_hiai.utils.ImageUtils;
 import com.hms.explorehms.huawei.feature_hiai.utils.hiai_service_utils.TextRecognitionUtils;
-import com.google.android.material.button.MaterialButton;
 import com.huawei.hiai.vision.common.ConnectionCallback;
 import com.huawei.hiai.vision.common.VisionBase;
 import com.huawei.hiai.vision.common.VisionImage;
@@ -63,6 +58,8 @@ import com.huawei.hiai.vision.visionkit.text.config.TextConfiguration;
 import com.huawei.hiai.vision.visionkit.text.config.VisionTextConfiguration;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
+
+import java.util.Objects;
 
 public class GeneralTextRecognitionActivity extends BaseServiceActivity implements BaseServiceInterface {
 
@@ -76,22 +73,13 @@ public class GeneralTextRecognitionActivity extends BaseServiceActivity implemen
 
     private MaterialButton btnGallery;
     private MaterialButton btnCamera;
-    private MaterialButton btnTextLangAuto;
-    private MaterialButton btnTextLangManuel;
     private MaterialButton btnGetResult;
 
     private ImageView ivImage;
     private ImageView ivResultImage;
 
-    private Spinner spinnerTextLanguage;
-
-    private ConstraintLayout cLayoutSpinner;
-
     private TextView tvResultText;
     private TextView tvResultTextLang;
-    private TextView tvResultProbability;
-
-    private View selectedModeView;
 
     private boolean hasResult = false;
 
@@ -113,8 +101,6 @@ public class GeneralTextRecognitionActivity extends BaseServiceActivity implemen
         } catch (Exception e) {
             Log.e(TAG, "Initialization Error : " + e.toString());
         }
-
-        setSpinnerAdapter();
     }
 
     @Override
@@ -123,14 +109,9 @@ public class GeneralTextRecognitionActivity extends BaseServiceActivity implemen
         btnCamera = findViewById(R.id.btn_general_text_recognition_camera);
         ivImage = findViewById(R.id.iv_general_text_recognition_image);
         ivResultImage = findViewById(R.id.iv_general_text_recognition_result_image);
-        btnTextLangAuto = findViewById(R.id.btn_general_text_recognition_lang_auto);
-        btnTextLangManuel = findViewById(R.id.btn_general_text_recognition_lang_manuel);
         btnGetResult = findViewById(R.id.btn_general_text_recognition_run);
-        spinnerTextLanguage = findViewById(R.id.spinner_general_text_recognition_text_languages);
-        cLayoutSpinner = findViewById(R.id.cl_general_text_recognition_spinner_hiai);
         tvResultText = findViewById(R.id.tv_general_text_recognition_result_text);
         tvResultTextLang = findViewById(R.id.tv_general_text_recognition_result_language);
-        tvResultProbability = findViewById(R.id.tv_general_text_recognition_result_probability);
     }
 
     private void setupToolbar() {
@@ -158,42 +139,6 @@ public class GeneralTextRecognitionActivity extends BaseServiceActivity implemen
             }
         });
 
-        btnTextLangAuto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setQualityButtonsColor(btnTextLangAuto);
-                textLanguage = TextConfiguration.AUTO;
-                cLayoutSpinner.setVisibility(View.GONE);
-                setConstraintsOfTextLanguagesButtons(btnTextLangAuto);
-
-
-            }
-        });
-
-        btnTextLangManuel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setQualityButtonsColor(btnTextLangManuel);
-                cLayoutSpinner.setVisibility(View.VISIBLE);
-                setConstraintsOfTextLanguagesButtons(btnTextLangManuel);
-            }
-        });
-
-        spinnerTextLanguage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                /**
-                 * TextConfiguration.CHINESE is 1 SPANISH is 2...
-                 */
-                textLanguage = position + 1;
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                Log.i(TAG, "onNothingSelected");
-            }
-        });
-
         btnGetResult.setOnClickListener(v -> {
             try {
                 getResult();
@@ -214,8 +159,6 @@ public class GeneralTextRecognitionActivity extends BaseServiceActivity implemen
                 Util.showDialogImagePeekView(this, getApplicationContext(), ivResultImage);
             }
         });
-
-        btnTextLangAuto.performClick();
     }
 
     @Override
@@ -233,13 +176,6 @@ public class GeneralTextRecognitionActivity extends BaseServiceActivity implemen
                 Toast.makeText(getApplicationContext(), "Service Disconnected", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    private void setSpinnerAdapter() {
-        ArrayAdapter<String> adapter =
-                new ArrayAdapter<>(this, R.layout.spinner_item_general_text_recognition_language_hiai, getResources().getStringArray(R.array.GeneralTextRecognitionLanguageList));
-
-        spinnerTextLanguage.setAdapter(adapter);
     }
 
     private void openGallery() {
@@ -264,7 +200,6 @@ public class GeneralTextRecognitionActivity extends BaseServiceActivity implemen
 
         tvResultText.setText("");
         tvResultTextLang.setText("");
-        tvResultProbability.setText("");
 
         if (imageBitmap != null) {
 
@@ -277,7 +212,7 @@ public class GeneralTextRecognitionActivity extends BaseServiceActivity implemen
             VisionTextConfiguration configuration = new VisionTextConfiguration.Builder()
                     .setAppType(VisionTextConfiguration.APP_NORMAL)
                     .setProcessMode(VisionTextConfiguration.MODE_IN)
-                    .setDetectMode(TextDetectType.TYPE_TEXT_DETECT_SCREEN_SHOT)
+                    .setDetectMode(TextDetectType.TYPE_TEXT_DETECT_FOCUS_SHOOT)
                     .setLanguage(textLanguage)
                     .build();
 
@@ -285,6 +220,7 @@ public class GeneralTextRecognitionActivity extends BaseServiceActivity implemen
 
             TextConfiguration textConfiguration = new TextConfiguration();
             textConfiguration.setLanguage(textLanguage);
+            textConfiguration.setEngineType(TextDetectType.TYPE_TEXT_DETECT_FOCUS_SHOOT);
 
 
             textDetector.setTextConfiguration(textConfiguration);
@@ -299,20 +235,20 @@ public class GeneralTextRecognitionActivity extends BaseServiceActivity implemen
                 /**
                  * TEXT
                  */
-                if (result.getValue() != null)
+                if (result.getValue() != null && !Objects.equals(result.getValue(), "")) {
                     tvResultText.setText(result.getValue());
+                }
 
                 /**
                  * LANG
                  */
                 int langID = result.getPageLanguage();
                 String languageName = TextRecognitionUtils.getTextLanguages().get(langID);
-                tvResultTextLang.setText(languageName);
-
-                /**
-                 * PROBABILITY
-                 */
-                tvResultProbability.setText(String.valueOf(result.getProbability()));
+                if (result.getValue() != null && !Objects.equals(result.getValue(), "")) {
+                    tvResultTextLang.setText(languageName);
+                } else {
+                    tvResultTextLang.setText(R.string.not_detected);
+                }
 
                 drawTextPointsOnImage(result);
             } else
@@ -445,32 +381,5 @@ public class GeneralTextRecognitionActivity extends BaseServiceActivity implemen
             });
 
         }
-    }
-
-    private void setConstraintsOfTextLanguagesButtons(View view) {
-        ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams) btnTextLangAuto.getLayoutParams();
-
-        if (view.equals(btnTextLangManuel)) {
-            params.bottomToBottom = R.id.btn_general_text_recognition_lang_auto;
-
-        } else if (view.equals(btnTextLangAuto)) {
-            params.bottomToBottom = R.id.btn_general_text_recognition_lang_auto;
-        }
-
-        params.bottomMargin = Math.round(16 * getApplicationContext().getResources().getDisplayMetrics().density);
-        btnTextLangAuto.requestLayout();
-    }
-
-    private void setQualityButtonsColor(View view) {
-
-        if (selectedModeView != null) {
-            selectedModeView.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary));
-            ((MaterialButton) selectedModeView).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorWhiteHiAi));
-        }
-
-        view.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorWhiteHiAi));
-        ((MaterialButton) view).setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary));
-
-        selectedModeView = view;
     }
 }

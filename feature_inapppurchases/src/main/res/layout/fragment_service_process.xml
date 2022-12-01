@@ -37,7 +37,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="16dp"
@@ -47,7 +46,6 @@
         app:layout_constraintTop_toBottomOf="@+id/serviceScenarioImageView">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/insideScrollViewConstraintLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -76,7 +74,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/headerApplicationScenario" />
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/applicationScenarioImageView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"

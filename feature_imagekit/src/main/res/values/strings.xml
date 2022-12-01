@@ -22,7 +22,6 @@
     <!-- BASE -->
     <string name="btn_basic_and_advanced_animation_image_kit">Basic &amp; Advanced Animations</string>
     <string name="txt_filter_service_image_kit">Filter Service</string>
-    <string name="txt_smart_layout_service_image_kit">Smart Layout Service</string>
     <string name="txt_theme_tagging_image_kit">Theme Tagging Service</string>
     <string name="txt_sticker_service_image_kit">Sticker Service</string>
     <string name="txt_image_cropping_image_kit">Image Cropping Service</string>
@@ -49,8 +48,6 @@
     <string name="txt_ok_image_kit">OK</string>
 
     <!-- FILTER -->
-    <string name="txT_parameters_filter_image_kit">Parameters</string>
-    <string name="txt_parameters_info_filter_image_kit">Filter Type: 0&#8211;24 / Intensity: 0&#8211;1 / Compress: 0.1&#8211;1</string>
     <string name="msg_image_filter_service_info_image_kit">Provides 24 unique color filters, such as freesia and reed.\nFilter Type: 0&#8211;24 / Intensity: 0&#8211;1 / Compress: 0.1&#8211;1</string>
     <string name="txt_filter_type_filter_image_kit">Filter Type : </string>
     <string name="txt_filter_type_type_filter_image_kit">Filter Type : 0- Original</string>
@@ -85,7 +82,6 @@
     <!-- SMART -->
     <string name="msg_mandatory_input_smart_image_kit">Please insert mandatory inputs</string>
     <string name="msg_smart_layout_service_service_info_image_kit">This service provides nine styles for smart image and text layout</string>
-    <string name="txt_options_smart_image_kit">Options</string>
     <string name="txt_title_smart_image_kit">Title</string>
     <string name="txt_mandatory_smart_image_kit">Mandatory</string>
     <string name="txt_description_smart_image_kit">Description</string>
@@ -115,7 +111,6 @@
     <string name="txt_theme_possibility_theme_image_kit">Theme Possibility</string>
     <string name="txt_show_on_image_theme_image_kit">Show on Image</string>
     <string name="txt_tag_name_theme_image_kit">Tag Name</string>
-    <string name="txt_tag_confidence_theme_image_kit">Tag Confidence</string>
 
     <!-- IMAGE RENDER -->
     <string name="msg_image_render_service_info_image_kit">The Image Render service provides five basic animation effects and nine advanced animation effects. Basic animation effects can be used in flexible combinations to suit different user needs. Advanced animation effects are not only stunning but easy to use and interesting, bringing more fun to user interactions</string>
@@ -135,7 +130,6 @@
     <string name="msg_mesh_image">Divides an image into multiple meshes and separately operates image parts in different meshes</string>
     <string name="msg_start_record_warning_render_image_kit">Start recording animation?
         This process will create 10 second video and gif</string>
-    <string name="msg_stop_record_on_backpress_render_image_kit">Stop recording animation?</string>
     <string name="msg_record_success_render_image_kit">Record Success</string>
     <string name="msg_record_stopped_render_image_kit">Record Stopped</string>
     <string name="msg_animation_info_render_image_kit">Changes the position of an image within the specified period to implement the translation effect</string>
@@ -147,7 +141,6 @@
     <string name="txt_recording_image_render_image_kit">Progress : %d/100 , Recording…</string>
     <string name="txt_not_record_process_finished_image_kit">Record Saving...</string>
     <string name="txt_not_recording_image_render_image_kit">Not Recording</string>
-
 
     <string name="url_txt_imagekitmain">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050199011</string>
 </resources>

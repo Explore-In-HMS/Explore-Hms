@@ -34,6 +34,7 @@ import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.hms.explorehms.R;
 import com.hms.explorehms.Util;
 import com.hms.explorehms.baseapp.listeners.IDownloadListener;
@@ -52,6 +53,7 @@ public class KitAdapter extends RecyclerView.Adapter<KitAdapter.KitViewHolder> i
     private static final String TAG = "KitRecyclerViewAdapter";
 
     Activity activity;
+    View view;
     List<KitModel> kitList;
 
     public KitAdapter(Activity activity, List<KitModel> kitList){
@@ -63,7 +65,7 @@ public class KitAdapter extends RecyclerView.Adapter<KitAdapter.KitViewHolder> i
     @Override
     public KitViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(activity).inflate(R.layout.rv_kit_item,parent, false);
+         view = LayoutInflater.from(activity).inflate(R.layout.rv_kit_item,parent, false);
 
         return new KitViewHolder(view);
     }
@@ -136,7 +138,7 @@ public class KitAdapter extends RecyclerView.Adapter<KitAdapter.KitViewHolder> i
             if (kit.isDynamicFeature()) {
                 if (!Util.isFeatureInstalled(activity, kit.getFeatureName())) {
                     setItemColorUnavailable(iv_kitIcon);
-                    cv_container.setOnClickListener(v -> Util.showFeatureInstallDialog(activity, kit, KitViewHolder.this, listener));
+                    cv_container.setOnClickListener(v -> Util.showFeatureInstallDialog(activity, kit, KitViewHolder.this, listener,view));
                 } else {
                     setItemColorAvailable(iv_kitIcon);
                     cv_container.setOnClickListener(v -> {
@@ -161,10 +163,11 @@ public class KitAdapter extends RecyclerView.Adapter<KitAdapter.KitViewHolder> i
             cv_container.setOnLongClickListener(v -> {
                 if (kit.isDynamicFeature()) {
                     if(Util.isFeatureInstalled(activity, kit.getFeatureName())){
-                        Util.showFeatureUninstallDialog(activity,kit,KitViewHolder.this);
+                        Util.showFeatureUninstallDialog(activity,kit,KitViewHolder.this,view);
                     }
                 }else{
-                    Util.showInfoDialog(activity,kit.getKitName() + " is a base module and can not be uninstalled!", true);
+                   // Util.showInfoDialog(activity,kit.getKitName() + " is a base module and can not be uninstalled!", true);
+                    Snackbar.make(view,kit.getKitName() + " is a base module and can not be uninstalled!",Snackbar.LENGTH_LONG).show();
                 }
                 return false;
             });

@@ -286,7 +286,7 @@ public class TextRecognitionActivity extends AppCompatActivity {
                         // MLRemoteTextSetting.ARC: Return the corner points of a polygon border in an arc. The coordinates of up to 72 corner points
                         .create();
 
-        Utils.setApiKeyForRemoteMLApplication();
+        Utils.setApiKeyForRemoteMLApplication(this);
 
         this.analyzerRemote = MLAnalyzerFactory.getInstance().getRemoteTextAnalyzer(setting);
 

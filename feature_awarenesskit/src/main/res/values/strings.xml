@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~
   ~   Copyright 2020. Explore in HMS. All rights reserved.
   ~
@@ -33,7 +32,6 @@
 
     <string name="awarenesskit_more_information"><a href="">Click here to learn more about Awareness Kit.</a></string>
     <string name="awarenesskit_more_information_link_documentation_link">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050031140</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
     <string name="time_awareness_info_text">The time awareness capability can obtain holiday information of most countries/regions and sunrise and sunset time of all cities around the world. Holiday information is updated periodically to ensure data timeliness and accuracy.</string>
@@ -79,5 +77,14 @@
         <item>In time category</item>
     </string-array>
 
-
+    <string name="data_donation_introduction_title">Introduction</string>
+    <string name="data_donation_introduction_body">The Donate API allows partners of Awareness Kit to donate labels of their apps/services to Awareness Kit. In this way, Awareness Kit can further standardize and elaborate its definitions for different scenarios and open up its scenario-based capabilities. This enables Awareness Kit to verify user information before feature prediction to realize more accurate service recommendation. Consequently, Awareness Kit helps deliver a higher click-through rate and better user experience.</string>
+    <string name="data_donation_example">Data Donation Example</string>
+    <string name="message_name">Message Name : </string>
+    <string name="message_id">Message Id :</string>
+    <string name="device_category">Device Category :</string>
+    <string name="device_name">Device Name :</string>
+    <string name="message_version">Message Version :</string>
+    <string name="package_name">Package Name :</string>
+    <string name="data_donation_donate_btn">Go Donate Data</string>
 </resources>

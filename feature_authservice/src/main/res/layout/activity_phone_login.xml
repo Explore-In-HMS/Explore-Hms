@@ -67,7 +67,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/ti_layout_etCountryCode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/text_countryCode"
@@ -109,7 +108,6 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/ti_layout_etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/h16"
@@ -152,7 +150,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/ti_layout_etVerifyCode"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/h10"
@@ -215,7 +212,6 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tvLogin"
                         style="@style/TextAppearance.ExploreHMS.Body1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -255,7 +251,6 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tvLogin1"
                         style="@style/TextAppearance.ExploreHMS.Body1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -307,7 +302,6 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tvReg"
                         style="@style/TextAppearance.ExploreHMS.Body1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -360,7 +354,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/ti_layout_etVerifyCodeForPhone"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/h10"
@@ -420,7 +413,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/btnChangePhone">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/ti_layout_etVerifyCodeForPasswordPhone"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/h10"
@@ -490,7 +482,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
-                android:id="@+id/llResults"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
@@ -546,7 +537,6 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/tvLogout"
             style="@style/TextAppearance.ExploreHMS.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -559,7 +549,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/ivLogout"
             style="@style/TextAppearance.ExploreHMS.Body1"
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -572,7 +561,6 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ProgressBar
-        android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="60dp"
         android:layout_height="60dp"

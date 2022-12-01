@@ -17,11 +17,13 @@
   -->
 
 <resources>
-    <string name="app_name">NetworkUrl</string>
     <string name="httpExcute">HTTPCLIENT SYNC REQUEST</string>
     <string name="httpEnqueue">HTTPCLIENT ASYNC REQUEST</string>
     <string name="restClientExcute">RESTCLIENT ANNOTATION SYNC REQUEST</string>
     <string name="restClientEnqueue">RESTCLIENT ANNOTATION ASYNC REQUEST</string>
-    <string name="filepath1">/sdcard/tmpuploadfile/filetxt</string>
-    <string name="filepath2">/sdcard/tmpuploadfile/filelog</string>
+    <string name="filepath1">/storage/emulated/0/eSpace/eSpaceAppLog/eSpacelog.txt</string>
+    <string name="filepath2">/storage/emulated/0/eSpace/eSpaceAppLog/kmc_log.txt</string>
+    <string name="txt_result_network">RESULT</string>
+    <string name="txt_request_network">Request</string>
+    <string name="service_introduction_for_url">Network Kit allows you to send requests using either an HttpClient object (an HTTP client similar to OkHttp) or a RestClient object (a RESTful client similar to Retrofit). The two modes use two different sets of APIs to provide the same network communication capabilities. You can choose to use either mode as needed.</string>
 </resources>

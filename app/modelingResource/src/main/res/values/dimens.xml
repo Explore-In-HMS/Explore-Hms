@@ -53,6 +53,7 @@
     <dimen name="dimens_2">2dp</dimen>
     <dimen name="dimens_106">106dp</dimen>
     <dimen name="dimens_114">114dp</dimen>
+    <dimen name="dimens_128">114dp</dimen>
     <dimen name="dimens_87">87dp</dimen>
     <dimen name="dimens_66">66dp</dimen>
     <dimen name="dimens_45sp">45sp</dimen>

@@ -60,6 +60,10 @@
             android:id="@+id/action_gotoPhoneStatusAwareness"
             app:destination="@id/phoneStatusAwarenessFragment" />
 
+        <action
+            android:id="@+id/action_gotoDataDonationAwareness"
+            app:destination="@id/dataDonationAwarenessFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/timeAwarenessFragment"
@@ -101,4 +105,10 @@
         android:name="com.hms.explorehms.huawei.feature_awarenesskit.ui.fragments.PhoneStatusAwarenessFragment"
         android:label="fragment_phone_status_awareness"
         tools:layout="@layout/fragment_phone_status_awareness" />
+
+    <fragment
+        android:id="@+id/dataDonationAwarenessFragment"
+        android:name="com.hms.explorehms.huawei.feature_awarenesskit.ui.fragments.DataDonationAwarenessFragment"
+        android:label="fragment_data_donation_awareness"
+        tools:layout="@layout/fragment_data_donation_awareness" />
 </navigation>

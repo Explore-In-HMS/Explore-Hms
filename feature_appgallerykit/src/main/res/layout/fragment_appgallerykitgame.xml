@@ -36,7 +36,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:id="@+id/scrollview"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="16dp"
@@ -46,7 +45,6 @@
         app:layout_constraintTop_toBottomOf="@+id/keyFeaturesImageView">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/insideScrollViewConstraintLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -75,7 +73,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/headerAppGalleryKitGame" />
 
             <LinearLayout
-                android:id="@+id/linearLayoutGeneral"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
@@ -90,7 +87,6 @@
                     android:orientation="horizontal">
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/textView1"
                         style="@style/TextAppearance.ExploreHMS.Body2"
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
@@ -98,7 +94,6 @@
                         android:text="@string/appgallerykit_app_third_step" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/textView2"
                         style="@style/TextAppearance.ExploreHMS.Body2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -113,7 +108,6 @@
                     android:orientation="horizontal">
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/textView3"
                         style="@style/TextAppearance.ExploreHMS.Body2"
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
@@ -121,7 +115,6 @@
                         android:text="@string/appgallerykit_game_developing_game_functions" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/textView4"
                         style="@style/TextAppearance.ExploreHMS.Body2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -136,7 +129,6 @@
                     android:orientation="horizontal">
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/textView5"
                         style="@style/TextAppearance.ExploreHMS.Body2"
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
@@ -144,7 +136,6 @@
                         android:text="@string/appgallerykit_game_game_update" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/textView6"
                         style="@style/TextAppearance.ExploreHMS.Body2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -159,7 +150,6 @@
                     android:orientation="horizontal">
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/textView7"
                         style="@style/TextAppearance.ExploreHMS.Body2"
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
@@ -167,7 +157,6 @@
                         android:text="@string/appgallerykit_app_fourth_step" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/textView8"
                         style="@style/TextAppearance.ExploreHMS.Body2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

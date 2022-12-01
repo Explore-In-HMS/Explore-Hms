@@ -32,13 +32,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.huawei.hms.network.NetworkKit;
 
 
 
 
-public class NetworkUrlMainActivity extends Activity implements AUpDownloadEngine.EventListener {
+public class NetworkUrlMainActivity extends AppCompatActivity implements AUpDownloadEngine.EventListener {
     static String TAG = "FileManagerActivity";
     TextView tvInfo;
     AUpDownloadEngine downloadEngine;
@@ -66,6 +68,7 @@ public class NetworkUrlMainActivity extends Activity implements AUpDownloadEngin
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_network_url_main);
+        setupToolbar();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         if (Build.VERSION.SDK_INT >= 23) {
             if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
@@ -144,6 +147,20 @@ public class NetworkUrlMainActivity extends Activity implements AUpDownloadEngin
         });
     }
 
+    private void setupToolbar() {
+        Toolbar toolbar = findViewById(R.id.networkMainToolBar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
     @Override
     public void onEngineStart() {
         showMessage("onEngineStart");
@@ -162,7 +179,13 @@ public class NetworkUrlMainActivity extends Activity implements AUpDownloadEngin
 
     @Override
     public void onSuccess(String message) {
-        showMessage("success->" + message, Color.GREEN);
+        try {
+            showMessage("onProgress:" + 100);
+            Thread.sleep(200);
+            showMessage("success->" + message, Color.GREEN);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
     }
 
 

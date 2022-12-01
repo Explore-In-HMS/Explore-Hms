@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout_recycler_view_layout_audio_format_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/transparent"
@@ -29,7 +28,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/status_select_recycler_view_layout_audio_format_item"
         android:layout_width="@dimen/dp_24"
         android:layout_height="@dimen/dp_24"
         android:background="@drawable/audio_import_select_audio_selector"

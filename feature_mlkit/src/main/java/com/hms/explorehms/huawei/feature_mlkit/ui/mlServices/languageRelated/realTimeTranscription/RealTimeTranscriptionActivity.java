@@ -109,7 +109,7 @@ public class RealTimeTranscriptionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_real_time_transcription);
 
-        Utils.setApiKeyForRemoteMLApplication();
+        Utils.setApiKeyForRemoteMLApplication(getApplicationContext());
         setupToolbar();
 
         unbinder = ButterKnife.bind(this);

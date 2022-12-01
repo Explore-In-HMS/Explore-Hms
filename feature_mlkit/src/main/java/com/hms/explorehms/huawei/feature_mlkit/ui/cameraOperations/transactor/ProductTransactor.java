@@ -17,6 +17,7 @@
  */
 package com.hms.explorehms.huawei.feature_mlkit.ui.cameraOperations.transactor;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
 
@@ -39,9 +40,9 @@ public class ProductTransactor extends BaseTransactor<List<MLProductVisionSearch
 
     private final MLRemoteProductVisionSearchAnalyzer detector;
 
-    public ProductTransactor() {
+    public ProductTransactor(Context context) {
         super();
-        Utils.setApiKeyForRemoteMLApplication();
+        Utils.setApiKeyForRemoteMLApplication(context);
         this.detector = createCustomAnalyzer();
     }
 

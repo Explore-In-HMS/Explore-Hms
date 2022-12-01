@@ -36,7 +36,6 @@
         app:title="@string/title_feature_scenekit" />
 
     <LinearLayout
-        android:id="@+id/ll_imagekit_services"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -145,7 +144,6 @@
             android:text="Note : "/>
 
         <TextView
-            android:id="@+id/tv_scenekit_information"
             style="@style/TextAppearance.ExploreHMS.Body1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

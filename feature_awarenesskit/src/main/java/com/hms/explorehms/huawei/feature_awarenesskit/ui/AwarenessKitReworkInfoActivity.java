@@ -18,27 +18,38 @@
 
 package com.hms.explorehms.huawei.feature_awarenesskit.ui;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.hms.explorehms.Util;
 import com.hms.explorehms.huawei.feature_awarenesskit.R;
 import com.hms.explorehms.huawei.feature_awarenesskit.databinding.ActivityAwarenessKitReworkInfoBinding;
+import com.hms.explorehms.locationkit.LocationKitActivity;
+import com.hms.explorehms.locationkit.Utils;
 
 
 public class AwarenessKitReworkInfoActivity extends AppCompatActivity {
 
     private ActivityAwarenessKitReworkInfoBinding binding;
+    private static final String TAG = AwarenessKitReworkInfoActivity.class.getSimpleName();
+    private static final int permissionRequestCode = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityAwarenessKitReworkInfoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        statusCheck();
         initUI();
         setupToolbar();
     }
@@ -68,5 +79,23 @@ public class AwarenessKitReworkInfoActivity extends AppCompatActivity {
                                 AwarenessKitReworkMainActivity.class)
                         )
         );
+    }
+
+    public void statusCheck() {
+        final LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            showNeedPermissionWarning();
+
+        }
+    }
+
+    public void showNeedPermissionWarning() {
+        Utils.showDialogGpsWarning(this,
+                "Location is NULL!\nNEED GPS Settings Check",
+                getString(com.hms.explorehms.R.string.permissionSettings),
+                com.hms.explorehms.R.drawable.icon_settings_loc,
+                "You can not use Location Features without GPS!",
+                getString(com.hms.explorehms.R.string.yesGo), getString(com.hms.explorehms.R.string.cancel));
     }
 }
