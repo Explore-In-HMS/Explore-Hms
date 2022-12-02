@@ -26,6 +26,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.hms.explorehms.R;
 import com.hms.explorehms.databinding.ActivitySiteKitWidgetBinding;
+import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hms.site.api.model.SearchStatus;
 import com.huawei.hms.site.api.model.Site;
 import com.huawei.hms.site.widget.SearchFragment;
@@ -46,7 +47,7 @@ public class SiteKitWidgetActivity extends AppCompatActivity {
 
         binding = ActivitySiteKitWidgetBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        String API_KEY = getResources().getString(R.string.site_kit_API_KEY);
+        String API_KEY = AGConnectServicesConfig.fromContext(this).getString("client/api_key");
 
         SearchFragment searchFragment = (SearchFragment) getSupportFragmentManager().findFragmentById(R.id.widget_sitekit);
 

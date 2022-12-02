@@ -216,8 +216,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnArView.setOnClickListener(v -> {
-            Intent arviewIntent = new Intent(MainActivity.this, ARViewActivity.class);
-            isPermissionsGranted(arviewIntent);
+            if (!checkDeviceProcessor()) {
+                Toast.makeText(this, "Your device is not supported by FaceView feature", Toast.LENGTH_LONG).show();
+            }
+            else{
+                Intent arviewIntent = new Intent(MainActivity.this, ARViewActivity.class);
+                isPermissionsGranted(arviewIntent);
+            }
+
         });
 
         btnFaceView.setOnClickListener(v -> {
@@ -232,7 +238,6 @@ public class MainActivity extends AppCompatActivity {
         btnRenderView.setOnClickListener(v -> {
             if (!initialized) {
                 initializeSceneKit();
-                return;
             }
             Intent renderViewIntent = new Intent(MainActivity.this, SampleRenderActivity.class);
             isPermissionsGranted(renderViewIntent);
@@ -241,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
         btn2dSimulationView.setOnClickListener(v -> {
             if (!initialized2D) {
                 initializeSceneKitFluid();
-                return;
+                Toast.makeText(this, "Initialized click again to open", Toast.LENGTH_SHORT).show();
             }
             Intent simulationViewIntent = new Intent(MainActivity.this, FluidSimulation2D.class);
             isPermissionsGranted(simulationViewIntent);

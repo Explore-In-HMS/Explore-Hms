@@ -25,6 +25,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
+import android.text.Html;
 import android.text.SpannableString;
 import android.text.TextWatcher;
 import android.text.style.UnderlineSpan;
@@ -506,11 +507,10 @@ public class SearchKitMainActivity extends AppCompatActivity implements AutoSugg
                 TextView tv = itemView.findViewById(R.id.tvWebText1);
                 TextView tv2 = itemView.findViewById(R.id.tvWebText2);
                 TextView tv3 = itemView.findViewById(R.id.tvWebText3);
-                tv.setText(((WebItem) model).title);
-                tv2.setText(((WebItem) model).snippet);
-                tv3.setText(((WebItem) model).click_url);
-                tv3.setText(getResources().getString(R.string.linked_text, ((WebItem) model).click_url));
-
+                tv.setText(Html.fromHtml(((WebItem) model).title));
+                tv2.setText(Html.fromHtml(((WebItem) model).snippet));
+                tv3.setText(Html.fromHtml(((WebItem) model).click_url));
+                tv3.setText(Html.fromHtml(getResources().getString(R.string.linked_text, ((WebItem) model).click_url)));
 
                 tv3.setOnClickListener(view -> {
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW);

@@ -82,6 +82,7 @@ public class GestureTransactor extends BaseTransactor<List<MLGesture>> {
             for (int i = 0; i < results.size(); i++) {
                 MLGesture mlGesture = results.get(0);
                 one = mlGesture.getCategory();
+             
             }
             if (one == MLGesture.GOOD) {
                 Log.d("GestureTransactorOne", "isaret:like, "+one);

@@ -38,6 +38,7 @@ import com.hms.explorehms.sitekit.common.SiteKitResultItemClickListener;
 import com.hms.explorehms.sitekit.fragments_sitekit.adapters.SiteKitGeneralAdapter;
 import com.hms.explorehms.sitekit.model.AddressInfo;
 import com.hms.explorehms.sitekit.model.POIType;
+import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hms.site.api.SearchResultListener;
 import com.huawei.hms.site.api.SearchService;
 import com.huawei.hms.site.api.SearchServiceFactory;
@@ -98,7 +99,7 @@ public class SiteKitNearbySearchFragment extends Fragment implements SiteKitResu
 
         navController = Navigation.findNavController(view);
         try {
-            String API_KEY = getResources().getString(R.string.site_kit_API_KEY);
+            String API_KEY = AGConnectServicesConfig.fromContext(requireContext()).getString("client/api_key");
             searchService = SearchServiceFactory.create(view.getContext(), URLEncoder.encode(API_KEY, "utf-8"));
         } catch (UnsupportedEncodingException e) {
             Log.e(TAG, "encode apikey error");
