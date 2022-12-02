@@ -385,7 +385,12 @@ dependencies {
     api 'com.huawei.hms:nearby:6.2.0.300'
 
     //Video Kit
-    api "com.huawei.hms:videokit-player:1.0.10.302"
+   // api "com.huawei.hms:videokit-player:1.0.10.302"
+    api 'com.huawei.hms:videokit-player:1.0.13.300'
+    api 'com.huawei.hms:videokit-player-fallback:1.0.13.300'
+    api 'com.huawei.hms:videokit-hdrvivid:1.0.13.300'
+    api 'com.huawei.hms:videokit-hdrability:1.0.13.300'
+
 
     //Scene kit
 /*    api 'com.huawei.scenekit:full-sdk:6.0.0.301'

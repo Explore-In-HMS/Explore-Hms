@@ -33,6 +33,7 @@ import com.hms.explorehms.huawei.feature_videokit.utils.LogUtil;
 import com.hms.explorehms.huawei.feature_videokit.utils.PlayControlUtil;
 import com.hms.explorehms.huawei.feature_videokit.utils.StringUtil;
 import com.huawei.hms.videokit.player.AudioTrackInfo;
+import com.huawei.hms.videokit.player.CreateComponentException;
 import com.huawei.hms.videokit.player.InitBitrateParam;
 import com.huawei.hms.videokit.player.StreamInfo;
 import com.huawei.hms.videokit.player.VideoInfo;
@@ -85,7 +86,7 @@ public class PlayControl {
      * @param context Context
      * @param onWisePlayerListener Player listener
      */
-    public PlayControl(Context context, OnWisePlayerListener onWisePlayerListener) {
+    public PlayControl(Context context, OnWisePlayerListener onWisePlayerListener) throws CreateComponentException {
         this.context = context;
         this.onWisePlayerListener = onWisePlayerListener;
         init();
@@ -94,7 +95,7 @@ public class PlayControl {
     /**
      * Init
      */
-    public void init() {
+    public void init() throws CreateComponentException {
         initPlayer();
         setPlayListener();
     }
@@ -133,7 +134,7 @@ public class PlayControl {
     /**
      * Init the player
      */
-    private void initPlayer() {
+    private void initPlayer() throws CreateComponentException {
         if (ExploreHMSApplication.getWisePlayerFactory() == null) {
             return;
         }

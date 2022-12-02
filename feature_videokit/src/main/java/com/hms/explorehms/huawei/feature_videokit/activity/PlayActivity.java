@@ -52,6 +52,7 @@ import com.hms.explorehms.huawei.feature_videokit.utils.SelectDialog;
 import com.hms.explorehms.huawei.feature_videokit.utils.StringUtil;
 import com.hms.explorehms.huawei.feature_videokit.view.PlayView;
 import com.huawei.hms.videokit.player.AudioTrackInfo;
+import com.huawei.hms.videokit.player.CreateComponentException;
 import com.huawei.hms.videokit.player.SubtitleTrackInfo;
 import com.huawei.hms.videokit.player.WisePlayer;
 import com.huawei.hms.videokit.player.common.PlayerConstants;
@@ -116,7 +117,11 @@ public class PlayActivity extends AppCompatActivity implements OnPlayWindowListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
-        playControl = new PlayControl(this, this);
+        try {
+            playControl = new PlayControl(this, this);
+        } catch (CreateComponentException e) {
+            e.printStackTrace();
+        }
         // Some of the properties of preserving vertical screen
         systemUiVisibility = getWindow().getDecorView().getSystemUiVisibility();
 

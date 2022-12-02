@@ -41,6 +41,7 @@ import com.hms.explorehms.huawei.feature_videokit.utils.LogUtil;
 import com.hms.explorehms.huawei.feature_videokit.utils.PermissionUtils;
 import com.hms.explorehms.huawei.feature_videokit.utils.PlayControlUtil;
 import com.hms.explorehms.huawei.feature_videokit.view.HomePageView;
+import com.huawei.hms.videokit.player.CreateComponentException;
 import com.huawei.hms.videokit.player.WisePlayer;
 import com.huawei.hms.videokit.player.bean.recommend.RecommendOptions;
 import com.huawei.hms.videokit.player.bean.recommend.RecommendVideo;
@@ -253,11 +254,15 @@ public class HomePageActivity extends AppCompatActivity implements OnHomePageLis
             case R.id.recommend_video_info:
                 RecommendOptions recommendOptions = new RecommendOptions();
                 recommendOptions.setLanguage("zh_CN");
-                ExploreHMSApplication.getWisePlayerFactory()
-                        .createWisePlayer()
-                        .getRecommendVideoList("8859289", recommendOptions,
-                                "CgB6e3x9cDTitEyidsqxd/Q6cmh/" + PARMS_CONTEXT,
-                                recommendVideoCallback);
+                try {
+                    ExploreHMSApplication.getWisePlayerFactory()
+                            .createWisePlayer()
+                            .getRecommendVideoList("8859289", recommendOptions,
+                                    "CgB6e3x9cDTitEyidsqxd/Q6cmh/" + PARMS_CONTEXT,
+                                    recommendVideoCallback);
+                } catch (CreateComponentException e) {
+                    e.printStackTrace();
+                }
                 break;
             case R.id.subtitle_preset_language_setting:
                 DialogUtil.showSubtitlePresetLanguageDialog(this);

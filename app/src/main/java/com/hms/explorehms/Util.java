@@ -46,7 +46,6 @@ import com.hms.explorehms.baseapp.listeners.IDownloadListener;
 import com.hms.explorehms.baseapp.model.KitModel;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.hms.explorehms.R;
 import com.huawei.hms.common.util.Logger;
 import com.huawei.hms.feature.install.FeatureInstallManager;
 import com.huawei.hms.feature.install.FeatureInstallManagerFactory;
