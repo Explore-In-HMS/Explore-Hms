@@ -53,7 +53,6 @@ public class KitAdapter extends RecyclerView.Adapter<KitAdapter.KitViewHolder> i
     private static final String TAG = "KitRecyclerViewAdapter";
 
     Activity activity;
-    View view;
     List<KitModel> kitList;
 
     public KitAdapter(Activity activity, List<KitModel> kitList){
@@ -65,7 +64,7 @@ public class KitAdapter extends RecyclerView.Adapter<KitAdapter.KitViewHolder> i
     @Override
     public KitViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-         view = LayoutInflater.from(activity).inflate(R.layout.rv_kit_item,parent, false);
+        View  view = LayoutInflater.from(activity).inflate(R.layout.rv_kit_item,parent, false);
 
         return new KitViewHolder(view);
     }
@@ -110,6 +109,7 @@ public class KitAdapter extends RecyclerView.Adapter<KitAdapter.KitViewHolder> i
 
     public class KitViewHolder extends RecyclerView.ViewHolder{
         KitModel kit;
+        View view;
         @BindView(R.id.cv_kit) CardView cv_container;
         @BindView(R.id.kitItem_image) ImageView iv_kitIcon;
         @BindView(R.id.tv_name) TextView tv_kitName;
@@ -117,7 +117,7 @@ public class KitAdapter extends RecyclerView.Adapter<KitAdapter.KitViewHolder> i
 
         KitViewHolder(View itemView){
             super(itemView);
-
+            view=itemView;
             ButterKnife.bind(this, itemView);
         }
 
@@ -163,10 +163,10 @@ public class KitAdapter extends RecyclerView.Adapter<KitAdapter.KitViewHolder> i
             cv_container.setOnLongClickListener(v -> {
                 if (kit.isDynamicFeature()) {
                     if(Util.isFeatureInstalled(activity, kit.getFeatureName())){
-                        Util.showFeatureUninstallDialog(activity,kit,KitViewHolder.this,view);
+                        Util.showFeatureUninstallDialog(activity,kit,KitViewHolder.this,itemView);
                     }
                 }else{
-                   // Util.showInfoDialog(activity,kit.getKitName() + " is a base module and can not be uninstalled!", true);
+                    // Util.showInfoDialog(activity,kit.getKitName() + " is a base module and can not be uninstalled!", true);
                     Snackbar.make(view,kit.getKitName() + " is a base module and can not be uninstalled!",Snackbar.LENGTH_LONG).show();
                 }
                 return false;

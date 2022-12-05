@@ -40,7 +40,25 @@ public class OnboardingAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        if (position == 0) {
+        switch (position) {
+            case 0:
+                return new FirstOnboardingFragment();
+            case 1:
+                return new SecondOnboardingFragment();
+            case 2:
+                return new ThirdOnboardingFragment();
+            case 3:
+                return new FourthOnboardingFragment();
+            case 4:
+                return new SixthOnboardingFragment();
+            case 5:
+                return new FifthOnboardingFragment();
+            default:
+                return new ContainerOnboardingFragment();
+        }
+
+
+      /*  if (position == 0) {
             return new FirstOnboardingFragment();
         } else if (position == 1) {
             return new SecondOnboardingFragment();
@@ -54,7 +72,9 @@ public class OnboardingAdapter extends FragmentStateAdapter {
             return new FifthOnboardingFragment();
         } else {
             return new ContainerOnboardingFragment();//placeholder, it should never enter here
-        }
+        }*/
+
+
     }
 
     @Override
