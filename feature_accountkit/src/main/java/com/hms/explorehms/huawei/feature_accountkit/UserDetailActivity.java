@@ -32,9 +32,18 @@ import com.hms.explorehms.Util;
 import com.huawei.hmf.tasks.OnCompleteListener;
 import com.huawei.hmf.tasks.Task;
 import com.huawei.hms.common.ApiException;
+import com.huawei.hms.support.account.AccountAuthManager;
+import com.huawei.hms.support.account.request.AccountAuthParams;
+import com.huawei.hms.support.account.request.AccountAuthParamsHelper;
+import com.huawei.hms.support.account.service.AccountAuthService;
+import com.huawei.hms.support.api.entity.auth.Scope;
+import com.huawei.hms.support.hwid.HuaweiIdAuthAPIManager;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,6 +51,9 @@ import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserDetailActivity extends AppCompatActivity {
+    private AccountAuthService mAuthManager;
+    private AccountAuthParams mAuthParam;
+    private static final int SIGNATURE_ALGORITHM_TYPE = 2;
 
     @BindView(R.id.detail_profile_image)
     CircleImageView profileImage;
@@ -108,7 +120,17 @@ public class UserDetailActivity extends AppCompatActivity {
 
     @OnClick(R.id.detail_btn_logOut)
     public void logOut() {
-        Task<Void> signOutTask = CredentialManager.getHuaweiIdAuthService().signOut();
+        List<Scope> scopeList = new ArrayList<>();
+        scopeList.add(HuaweiIdAuthAPIManager.HUAWEIID_BASE_SCOPE);
+        mAuthParam = new AccountAuthParamsHelper(AccountAuthParams.DEFAULT_AUTH_REQUEST_PARAM)
+                .setEmail()
+                .setIdTokenSignAlg(SIGNATURE_ALGORITHM_TYPE)
+                .setIdToken()
+                .setScopeList(scopeList)
+                .setCarrierId()
+                .createParams();
+        mAuthManager = AccountAuthManager.getService(UserDetailActivity.this, mAuthParam);
+        Task<Void> signOutTask = mAuthManager.signOut();
 
         Activity activity = this;
         signOutTask.addOnCompleteListener(task -> {
@@ -122,7 +144,12 @@ public class UserDetailActivity extends AppCompatActivity {
     @OnClick(R.id.detail_btn_revoke)
     public void revoke() {
         Activity activity = this;
-        CredentialManager.getHuaweiIdAuthService().cancelAuthorization().addOnCompleteListener(new OnCompleteListener<Void>() {
+        mAuthParam = new AccountAuthParamsHelper(AccountAuthParams.DEFAULT_AUTH_REQUEST_PARAM)
+                .setProfile()
+                .setAuthorizationCode()
+                .createParams();
+        mAuthManager = AccountAuthManager.getService(UserDetailActivity.this, mAuthParam);
+        mAuthManager.cancelAuthorization().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(Task<Void> task) {
                 if (task.isSuccessful()) {

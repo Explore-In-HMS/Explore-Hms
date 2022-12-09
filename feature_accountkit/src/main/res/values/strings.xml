@@ -21,7 +21,6 @@
     <string name="label_username">Username</string>
     <string name="label_email">E-mail</string>
     <string name="label_idtoken">Id Token</string>
-    <string name="label_agerange">Age Range</string>
     <string name="btn_txt_revoke">Revoke Authorization</string>
     <string name="url_doc_accountkit">https://developer.huawei.com/consumer/en/hms/huawei-accountkit</string>
     <string name="LoginviaSMS">Log in via SMS</string>

@@ -48,7 +48,7 @@ public class ImageClassificationTransactorRemote extends BaseTransactor<List<MLI
         // You can use default or custom analyzer type and setting options with createCustomMLClassificationAnalyzer()
         this.detector = createCustomMLClassificationAnalyzer();
         this.mContext = context;
-        Utils.setApiKeyForRemoteMLApplication();
+        Utils.setApiKeyForRemoteMLApplication(context);
     }
 
     /**

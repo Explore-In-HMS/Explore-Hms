@@ -19,6 +19,7 @@ package com.hms.explorehms;
 
 import android.net.Uri;
 
+import com.huawei.hms.support.account.service.AccountAuthService;
 import com.huawei.hms.support.hwid.result.AuthHuaweiId;
 import com.huawei.hms.support.hwid.service.HuaweiIdAuthService;
 
@@ -28,17 +29,17 @@ public class CredentialManager {
         // Empty constructor
     }
 
-    private static HuaweiIdAuthService mHuaweiIdAuthService;
+    private static AccountAuthService  mHuaweiIdAuthService;
 
     private static AuthHuaweiId huaweiId;
 
     public static boolean isSignedOut = true;
 
-    public static HuaweiIdAuthService getHuaweiIdAuthService() {
+    public static AccountAuthService getHuaweiIdAuthService() {
         return mHuaweiIdAuthService;
     }
 
-    public static void setHuaweiIdAuthService(HuaweiIdAuthService mHuaweiIdAuthService) {
+    public static void setHuaweiIdAuthService(AccountAuthService mHuaweiIdAuthService) {
         CredentialManager.mHuaweiIdAuthService = mHuaweiIdAuthService;
     }
     public static String getIDToken() {

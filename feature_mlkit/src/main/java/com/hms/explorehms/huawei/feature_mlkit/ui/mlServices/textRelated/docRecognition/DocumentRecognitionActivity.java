@@ -95,7 +95,7 @@ public class DocumentRecognitionActivity extends AppCompatActivity {
         unbinder = ButterKnife.bind(this);
         setupToolbar();
 
-        Utils.setApiKeyForRemoteMLApplication();
+        Utils.setApiKeyForRemoteMLApplication(this);
 
         // this is important for get image of imageView by Bitmap and use with localAnalyzerWithImage
         imageViewDocRecognition.setDrawingCacheEnabled(true);

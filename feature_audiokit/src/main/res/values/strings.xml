@@ -16,7 +16,7 @@
   ~   limitations under the License.
   ~
   -->
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="delete_from_list">Delete from list</string>
     <string name="playlist_name">Playlist Name:</string>
     <string name="song_name">Song Name</string>
@@ -26,6 +26,7 @@
     <string name="playlist">Playlist</string>
     <string name="adjust_sound">Adjust In-App Sound</string>
     <string name="_100">100</string>
+    <string name="_15">15</string>
     <string name="please_select_one_playlist_type">Please select one playlist type</string>
     <string name="online_playlist">Online Playlist</string>
     <string name="local_playlist">Local Playlist</string>
@@ -45,4 +46,8 @@
     <string name="channel_description">Displays real-time music control notification bar</string>
     <string name="right_top_of_screen">It is at right-top of the screen</string>
     <string name="url_txt_audiokit">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001050749665</string>
+    <string name="speed_text_0_5X">0.5X</string>
+    <string name="speed_text_1X">1X</string>
+    <string name="speed_text_1_5X">1.5X</string>
+    <string name="speed_text_2X">2X</string>
 </resources>

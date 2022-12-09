@@ -53,18 +53,6 @@
         &#8226;  View the user quantity and MoM growth rate of the top 10 products in your app on the Buyers statistics by product tab page.
     </string>
 
-    <string name="desc7">
-        &#8226;  View data by one or more countries/regions, currency (CNY, USD, or EUR), or time period (last day, last 7 days, last 30 days, or all time).\n\n
-        &#8226;  View the ARPPU statistics of the last day, last seven days, last 30 days, and all time.\n\n
-        &#8226;  View the ARPPU and its MoM rate over the statistical period on the ARPPU list. The statistical data is displayed in descending order by ARPPU.
-    </string>
-
-    <string name="desc8">
-        &#8226;  View data by one or more countries/regions.\n\n
-        &#8226;  View the payment rate (number of paying accounts divided by number of installs) of the last 30 days, 6 months, 12 months, and all time.\n\n
-        &#8226;  View the user account payment rate of top 10 in-app products on day 0, and in the last 30 days, last 6 months, and last 12 months.
-    </string>
-
     <string name="desc9">
         &#8226;  View data by one or more countries/regions or currency (CNY, USD, or EUR).\n\n
         &#8226;  View the average number of times that a user pays and average payment amount of a user in your app in each month on the Payment conversion rate list.

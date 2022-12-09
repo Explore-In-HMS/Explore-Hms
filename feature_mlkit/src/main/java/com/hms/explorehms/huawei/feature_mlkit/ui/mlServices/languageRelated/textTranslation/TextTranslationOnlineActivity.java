@@ -171,7 +171,7 @@ public class TextTranslationOnlineActivity extends AppCompatActivity {
 
         unbinder = ButterKnife.bind(this);
 
-        Utils.setApiKeyForRemoteMLApplication();
+        Utils.setApiKeyForRemoteMLApplication(this);
         setupToolbar();
 
         createAndSetSpinner();
@@ -490,8 +490,12 @@ public class TextTranslationOnlineActivity extends AppCompatActivity {
     //region Lang Detection Operations
     private void doLanguageRecognition() {
         showProgress();
-        mlRemoteLangDetectorSetting = new MLRemoteLangDetectorSetting.Factory().setTrustedThreshold(0.01f).create();
-        mlRemoteLangDetector = MLLangDetectorFactory.getInstance().getRemoteLangDetector(mlRemoteLangDetectorSetting);
+        MLRemoteLangDetectorSetting setting = new MLRemoteLangDetectorSetting.Factory()
+                // Set the minimum confidence threshold for language detection.
+                .setTrustedThreshold(0.01f)
+                .create();
+        MLRemoteLangDetector mlRemoteLangDetector = MLLangDetectorFactory.getInstance()
+                .getRemoteLangDetector(setting);
         Task<List<MLDetectedLang>> probabilityDetectTask = mlRemoteLangDetector.probabilityDetect(getInputText());
         final long startTime = System.currentTimeMillis();
         probabilityDetectTask.addOnSuccessListener(result -> {
@@ -508,8 +512,9 @@ public class TextTranslationOnlineActivity extends AppCompatActivity {
         }).addOnFailureListener(e -> {
             Log.e(TAG, "onFailure MLRemoteLangDetector : ", e);
             displayFailureAnalyseResults(e.getMessage());
+            mlRemoteLangDetector.stop();
         });
-        mlRemoteLangDetector.stop();
+
     }
 
     private String getEnLanguageName(String code) {

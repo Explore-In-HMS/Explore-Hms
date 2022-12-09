@@ -34,7 +34,6 @@ import com.huawei.agconnect.appmessaging.AGConnectAppMessagingOnDismissListener;
 import com.huawei.agconnect.appmessaging.AGConnectAppMessagingOnDisplayListener;
 import com.huawei.agconnect.appmessaging.model.Action;
 import com.huawei.agconnect.appmessaging.model.AppMessage;
-import com.huawei.hms.ads.HwAds;
 
 public class AppMessagingTestActivity extends AppCompatActivity {
 
@@ -45,8 +44,7 @@ public class AppMessagingTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_messaging_test);
 
-        //Set Ads kit initialization
-        HwAds.init(getApplicationContext());
+
 
         setupToolbar();
         setPopUpMessage();
@@ -100,7 +98,6 @@ public class AppMessagingTestActivity extends AppCompatActivity {
         popUpListener();
     }
 
-
     public void popUpListener(){
         agConnectAppMessaging.addOnDisplayListener(new AGConnectAppMessagingOnDisplayListener() {
             @Override
@@ -124,9 +121,4 @@ public class AppMessagingTestActivity extends AppCompatActivity {
 
         });
     }
-
-  
-
-
-
 }

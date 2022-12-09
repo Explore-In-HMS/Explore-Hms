@@ -40,7 +40,10 @@ import androidx.annotation.Nullable;
 import com.hms.explorehms.huawei.feature_gameservice.R;
 import com.hms.explorehms.huawei.feature_gameservice.databinding.FragmentGameServiceGameBinding;
 import com.hms.explorehms.huawei.feature_gameservice.databinding.ItemSavedialogGameserviceBinding;
+import com.huawei.hmf.tasks.OnFailureListener;
+import com.huawei.hmf.tasks.OnSuccessListener;
 import com.huawei.hmf.tasks.Task;
+import com.huawei.hms.common.ApiException;
 import com.huawei.hms.jos.games.AchievementsClient;
 import com.huawei.hms.jos.games.ArchivesClient;
 import com.huawei.hms.jos.games.Games;
@@ -52,15 +55,16 @@ import com.huawei.hms.jos.games.archive.ArchiveSummaryUpdate;
 import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 
 
 public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGameServiceGameBinding> implements ViewTreeObserver.OnGlobalLayoutListener {
 
 
     private static final String TAG = "GameServiceGameFragment";
-    private static final String SHOOTER_ID = "FA9677A5A94F84497F1ECBDE747B2A6623546F331833434DFB366D643796053A";
-    private static final String SURVIVOR_ID = "DBE6181356738641A3E0621D8B2BF65DB0E72A756F7F51D18B1AC0BB655AE20C";
-    private static final String LEADERBOARD_ID = "7608C79D49FEA84F4659E5D6F4D93D74CCD1AC847D62B26A0E8784E2E652E738";
+    private static final String SHOOTER_ID = "7618DBEFF87A659F698CBE28DF8C478492377057B97EF9DA12030F6FD6D34278";
+    private static final String SURVIVOR_ID = "E3229FB852205D4ECCF43452FB61C2331D84C5C3D8A1AFEB320B352AFA9B36F4";
+    private static final String LEADERBOARD_ID = "51DDC52647C5919D169FD6CAB0607A10CA9DE5F8A62E365C8DFE74BFB0CDF5EE";
     CountDownTimer slowerTimer;
     CountDownTimer addTimeTimer;
     private Handler handler;
@@ -139,7 +143,7 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         view.btnStopGameGameservices.setOnClickListener(view1 -> pauseGame());
 
         view.btnAchievementsGameservices.setOnClickListener(view1 -> {
-            pauseGame();
+           // pauseGame();
             getAchievementList();
         });
 
@@ -533,15 +537,22 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
     }
 
     private void getAchievementList() {
-        achievementsClient.getAchievementList(true).addOnSuccessListener(achievements -> {
+        Task<List<Achievement>> task = achievementsClient.getAchievementList(true);
+        task.addOnSuccessListener(achievements -> {
+            // If a null value is returned:
             if (achievements == null) {
-                Log.e("Achievement", "achievement list is null");
+                Log.w("Achievement", "achievement list is null");
+                Toast.makeText(getContext(), "achievement list is null", Toast.LENGTH_SHORT).show();
                 return;
             }
             new CustomDialogGameServices<>(requireContext(), "Achievements", DataTypeGameService.ACHIEVEMENTS, achievements).showDialog();
-
+        }).addOnFailureListener(e -> {
+            if (e instanceof ApiException) {
+                String result = "rtnCode:" +
+                        ((ApiException) e).getStatusCode();
+                Log.e("Achievement", result);
+            }
         });
-
     }
 
     private void switchLeaderboardOn() {
@@ -560,6 +571,11 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
     private void checkLeaderboards() {
         rankingsClient.getRankingSummary(LEADERBOARD_ID, true).addOnSuccessListener(ranking -> {
             Log.i(TAG, "onSuccess: Ranking retrieval Success");
+            if (ranking == null) {
+                Log.e("Leaderboard", "leaderboard list is null");
+                Toast.makeText(getContext(), "leaderboard list is null", Toast.LENGTH_SHORT).show();
+                return;
+            }
             showLeaderboard(ranking.getRankingId());
         });
     }

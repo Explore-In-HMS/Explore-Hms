@@ -90,7 +90,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_introduction" />
 
                 <ImageView
-                    android:id="@+id/iv_textEmbedding"
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
                     android:layout_gravity="center"
@@ -106,7 +105,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clMain"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -169,7 +167,6 @@
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/clEmbeddingApiTypes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -437,7 +434,6 @@
                                 android:textIsSelectable="true" />
 
                             <TextView
-                                android:id="@+id/textView3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
@@ -534,7 +530,6 @@
                                 android:textIsSelectable="true" />
 
                             <TextView
-                                android:id="@+id/textView4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
@@ -631,7 +626,6 @@
                                 android:textIsSelectable="true" />
 
                             <TextView
-                                android:id="@+id/textView5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"

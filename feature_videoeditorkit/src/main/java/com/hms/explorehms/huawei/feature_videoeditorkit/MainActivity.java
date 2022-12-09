@@ -16,6 +16,8 @@
 
 package com.hms.explorehms.huawei.feature_videoeditorkit;
 
+import static com.huawei.hms.videoeditor.ui.api.MediaApplication.START_MODE_IMPORT_FROM_MEDIA;
+
 import android.Manifest;
 import android.content.Context;
 import android.os.Bundle;
@@ -35,6 +37,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.hms.explorehms.huawei.feature_videoeditorkit.adapter.DraftAdapter;
 import com.hms.explorehms.huawei.feature_videoeditorkit.util.PermissionUtils;
 import com.google.android.material.button.MaterialButton;
+import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hms.videoeditor.ui.api.DraftInfo;
 import com.huawei.hms.videoeditor.ui.api.MediaApplication;
 import com.huawei.hms.videoeditor.ui.api.MediaExportCallBack;
@@ -111,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         MediaApplication.getInstance().setLicenseId(uuid.toString());
 
         // Setting the APIKey of an Application
-        MediaApplication.getInstance().setApiKey("CV8RiFSCwQTFPxl1ET8PWacetyb/E3+HjejRkuQHJ/RSczHVZzPXC7pNRBPPpSoJvuigzxm5tRMzvee57oVD3djKVLNc");
+        MediaApplication.getInstance().setApiKey(AGConnectServicesConfig.fromContext(this).getString("client/api_key"));
 
         // Setting the Application Token
         // MediaApplication.getInstance().setAccessToken(config.getString("client/api_key"));

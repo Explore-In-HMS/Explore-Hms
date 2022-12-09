@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -44,7 +45,8 @@ public class AddCommentFragment extends Fragment {
     private EditText edtTxtBookName;
     private EditText edtTxtPersonName;
     private EditText edtTxtPrintingHouse;
-    private EditText edtTxtComment;;
+    private EditText edtTxtComment;
+    ;
 
     private Button btnInsertComment;
     private Button btnClearData;
@@ -60,13 +62,15 @@ public class AddCommentFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         addCommentFragmentView = inflater.inflate(R.layout.fragment_add_comment, container, false);
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
         setComponents();
         setButtonClickEvent();
         return addCommentFragmentView;
     }
 
-    private void setComponents(){
+    private void setComponents() {
         edtTxtAuthor = addCommentFragmentView.findViewById(R.id.edtTxtAddAuthorName);
         edtTxtBookName = addCommentFragmentView.findViewById(R.id.edtTxtAddBookName);
         edtTxtPersonName = addCommentFragmentView.findViewById(R.id.edtTxtAddPersonelName);
@@ -74,17 +78,17 @@ public class AddCommentFragment extends Fragment {
         edtTxtComment = addCommentFragmentView.findViewById(R.id.edtTxtAddComment);
 
         btnInsertComment = addCommentFragmentView.findViewById(R.id.btnInsertCommentInAdd);
-        btnClearData=addCommentFragmentView.findViewById(R.id.btnContentInAddFragment);
+        btnClearData = addCommentFragmentView.findViewById(R.id.btnContentInAddFragment);
     }
 
-    private void setButtonClickEvent(){
+    private void setButtonClickEvent() {
         btnInsertComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 addCommentFragmentVM.addNewComment(addNewBookComment());
-                Toast.makeText(getContext(),"Inserted successfully",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Inserted successfully", Toast.LENGTH_SHORT).show();
                 clearData();
-                FragmentOperation.changeFragment(view,R.id.action_addCommentFragment_to_allCommentFragment);
+                FragmentOperation.changeFragment(view, R.id.action_addCommentFragment_to_allCommentFragment);
             }
         });
 
@@ -96,31 +100,31 @@ public class AddCommentFragment extends Fragment {
         });
     }
 
-    private BookComment addNewBookComment(){
+    private BookComment addNewBookComment() {
         BookComment comment = new BookComment();
 
         String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("M/d/y H:m:ss"));
         comment.setCommentDate(date);
 
         String commentMessage = edtTxtComment.getText().toString().trim();
-        comment.setComment(commentMessage.isEmpty()?"Empty comment":commentMessage);
+        comment.setComment(commentMessage.isEmpty() ? "Empty comment" : commentMessage);
 
         String authorFullName = edtTxtAuthor.getText().toString().trim();
-        comment.setAuthor(authorFullName.isEmpty()?"Author name":authorFullName);
+        comment.setAuthor(authorFullName.isEmpty() ? "Author name" : authorFullName);
 
         String printingHouse = edtTxtPrintingHouse.getText().toString().trim();
-        comment.setPrintingHouse(printingHouse.isEmpty()?"Empty Printing House":printingHouse);
+        comment.setPrintingHouse(printingHouse.isEmpty() ? "Empty Printing House" : printingHouse);
 
-        String personFullName =edtTxtPersonName.getText().toString().trim();
-        comment.setPersonFullname(personFullName.isEmpty()?"Empty Comment":personFullName);
+        String personFullName = edtTxtPersonName.getText().toString().trim();
+        comment.setPersonFullname(personFullName.isEmpty() ? "Empty Comment" : personFullName);
 
         String bookName = edtTxtBookName.getText().toString().trim();
-        comment.setBookName(bookName.isEmpty()?"Empty book name":bookName);
+        comment.setBookName(bookName.isEmpty() ? "Empty book name" : bookName);
 
         return comment;
     }
 
-    private void clearData(){
+    private void clearData() {
         edtTxtAuthor.setText("");
         edtTxtBookName.setText("");
         edtTxtPersonName.setText("");

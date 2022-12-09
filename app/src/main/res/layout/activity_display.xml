@@ -19,7 +19,7 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
-        android:src="@drawable/text"></ImageView>
+        android:src="@drawable/text" />
 
     <TextView
         android:id="@+id/diplay_text"
@@ -27,9 +27,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/diplay_icon"
+        android:layout_gravity="center"
         android:layout_marginTop="@dimen/hiad_16_dp"
         android:gravity="center"
-        android:layout_gravity="center"
         android:text="@string/text">
 
     </TextView>

@@ -45,7 +45,6 @@ public class FaceViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faceview);
-
         setupToolbar();
         initUI();
         initListener();
@@ -85,9 +84,13 @@ public class FaceViewActivity extends AppCompatActivity {
                     int index = faceView.loadAsset("FaceView/fox.glb", LandmarkType.TIP_OF_NOSE);
                     // Optional) Set the initial status of a face.
                     faceView.setInitialPose(index, position, rotation, scale);
+
                 }
             }
+
         });
+
+
     }
 
     /**

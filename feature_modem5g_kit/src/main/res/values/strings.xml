@@ -1,12 +1,7 @@
 <resources>
-    <string name="app_name">Hms5GKitDemo</string>
 
-    <string name="hello_blank_fragment">Hello blank fragmen1t</string>
-    <string name="_5ghmskit">5GHmsKit TEST TOOL</string>
-    <string name="_5g_kit_test">5G KIT TEST</string>
     <string name="_5g_hms_kit_test">5G Hms Kit Test</string>
 
-    <string name="fe">FAILUREEVENT</string>
     <string name="fe_scg">FE.SCG</string>
     <string name="fe_rach">FE.RACH</string>
     <string name="fe_rl">FE.RL</string>
@@ -47,13 +42,6 @@
     <string name="n_sc_basic">N.S.BASIC</string>
     <string name="n_sc_cfg">N.S.CFG</string>
     <string name="n_sc_dml">N.S.DML</string>
-    <string name="n_sc_dt">N.S.DT</string>
-    <string name="n_sc_srp">N.S.SRp</string>
-    <string name="n_sc_srq">N.S.SRq</string>
-    <string name="n_sc_ssr">N.S.SSr</string>
-    <string name="n_sc_crp">N.S.CRp</string>
-    <string name="n_sc_crq">N.S.CRq</string>
-    <string name="n_sc_csr">N.S.CSr</string>
     <string name="bearer">BEARER</string>
     <string name="b_dinfo">B.DInfo</string>
     <string name="b_d_rbid">B.D.RbId</string>

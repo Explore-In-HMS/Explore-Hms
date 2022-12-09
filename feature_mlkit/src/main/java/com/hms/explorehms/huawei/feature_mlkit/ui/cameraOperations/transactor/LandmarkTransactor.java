@@ -17,6 +17,7 @@
  */
 package com.hms.explorehms.huawei.feature_mlkit.ui.cameraOperations.transactor;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
 
@@ -38,9 +39,9 @@ public class LandmarkTransactor extends BaseTransactor<List<MLRemoteLandmark>> {
 
     private final MLRemoteLandmarkAnalyzer detector;
 
-    public LandmarkTransactor() {
+    public LandmarkTransactor(Context context) {
         super();
-        Utils.setApiKeyForRemoteMLApplication();
+        Utils.setApiKeyForRemoteMLApplication(context);
         this.detector = createCustomAnalyzer();
     }
 

@@ -25,6 +25,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -66,7 +67,6 @@ public class AllCommentFragment extends Fragment implements OnCommentItemClickLi
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         provideViewModelClass();
     }
 
@@ -75,6 +75,7 @@ public class AllCommentFragment extends Fragment implements OnCommentItemClickLi
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         allCommentFragmentView =inflater.inflate(R.layout.fragment_all_comment, container, false);
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         //Declare all View Components
         declareAllViewComponents();
 

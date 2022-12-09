@@ -22,5 +22,11 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="hiad_16_dp">16dp</dimen>
+    <dimen name="hiad_12_dp">12dp</dimen>
+    <dimen name="hiad_8_dp">8dp</dimen>
+    <dimen name="hiad_6_dp">6dp</dimen>
+    <dimen name="hiad_4_dp">4dp</dimen>
+    <dimen name="hiad_2_dp">2dp</dimen>
+    <dimen name="hiad_1_dp">1dp</dimen>
 </resources>

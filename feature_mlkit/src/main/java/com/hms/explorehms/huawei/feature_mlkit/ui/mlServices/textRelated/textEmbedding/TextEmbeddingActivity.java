@@ -145,7 +145,7 @@ public class TextEmbeddingActivity extends AppCompatActivity {
         unbinder = ButterKnife.bind(this);
         setupToolbar();
 
-        Utils.setApiKeyForRemoteMLApplication();
+        Utils.setApiKeyForRemoteMLApplication(this);
 
         createTextEmbeddingAnalyzer(MLTextEmbeddingSetting.LANGUAGE_EN);
 

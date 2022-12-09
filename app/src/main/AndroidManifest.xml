@@ -19,11 +19,18 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+
     <application
         android:name="com.hms.explorehms.ExploreHMSApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/app_icon"
+        android:configChanges="keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:resizeableActivity="false"

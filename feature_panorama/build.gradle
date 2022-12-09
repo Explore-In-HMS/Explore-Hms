@@ -46,8 +46,8 @@ android {
 
 dependencies {
     implementation project(":app")
-    implementation 'com.huawei.hms:panorama:5.0.2.306'
-    implementation 'com.huawei.hms:panorama-local:5.0.2.306'
+    implementation 'com.huawei.hms:panorama:5.0.2.308'
+    implementation 'com.huawei.hms:panorama-local:5.0.2.308'
 }
 
 /*apply from: '../sonarqube.gradle'

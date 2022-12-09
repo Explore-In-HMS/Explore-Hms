@@ -37,14 +37,12 @@
     <string name="video_view_setting">View</string>
     <string name="video_surfaceview_setting">SurfaceView</string>
     <string name="video_textureview_setting">TextureView</string>
-    <string name="video_load_view_setting">View loading mode</string>
     <string name="video_mute_setting">Mute/Unmute</string>
     <string name="video_mute">Mute</string>
     <string name="video_not_mute">Unmute</string>
     <string name="video_init_bitrate_setting">Playback start bitrate</string>
     <string name="video_init_bitrate_use">Use specified playback start bitrate</string>
     <string name="video_init_bitrate_not_use">Use adaptive playback start bitrate</string>
-    <string name="video_close_logo_setting">Watermark</string>
     <string name="video_open_logo_setting">Enable watermark</string>
     <string name="video_close_logo_one">Valid only for the next video</string>
     <string name="video_close_logo_all">Valid for all videos</string>

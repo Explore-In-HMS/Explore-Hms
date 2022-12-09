@@ -20,17 +20,16 @@
     <string name="app_name">D6AdsKit</string>
 
 
-
     /*
     *******************************************
-    Banner Ads testID 		: testw6vs28auh3
-    Native Ad Video testID  : testy63txaom86
-    Native Ads testID       : testu7m3hc4gvm
-    Native Ad Small testID  : testb65czjivt9
-    Rewarded Ads testID 	: testx9dtjwj8hp
+    Banner Ads testID : testw6vs28auh3
+    Native Ad Video testID : testy63txaom86
+    Native Ads testID : testu7m3hc4gvm
+    Native Ad Small testID : testb65czjivt9
+    Rewarded Ads testID : testx9dtjwj8hp
     Interstitial Ads testID : testb4znbuh3n2 video
     Interstitial Ads testID : teste9ih9j0rc3 image
-    Splash  Ads testID 		: testq6zq98hecj
+    Splash Ads testID : testq6zq98hecj
     *******************************************
     */
 
@@ -39,9 +38,6 @@
 
     <string name="owner">HUAWEI Developer UA</string>
     <string name="copyright_info">Copyright 2020. Explore in HMS</string>
-    <string name="status_load_ad_success">Ad loading state: loaded successfully.</string>
-    <string name="status_load_ad_fail">Ad loading state: failed to be loaded. Error code: </string>
-    <string name="status_ad_dismissed">Ad is dismissed.</string>
 
     <!-- Banner ad -->
     <string name="ad_id_banner">testw6vs28auh3</string>
@@ -60,19 +56,17 @@
 
     <!-- Roll ad -->
     <string name="ad_id_roll">testy3cglm3pj0</string>
+    <string name="roll_add_introduction">"Roll ads are displayed as short videos or images, before, during, or after the video content is played.
+                                         \nPre-roll: displayed before the video content.
+                                           \nMid-roll: displayed in the middle of the video content.
+                                           \nPost-roll: displayed after the video content."</string>
 
     <string name="BannerActivityTitle">Banner Ad Activity</string>
     <string name="BannerActivityInfoText">ReCreate Banner AD</string>
     <string name="BannerActivityButtonText">Banner ads are rectangular images that occupy a spot at the top, middle, or bottom within an apps layout. Banner ads refresh automatically at regular intervals. When a user taps a banner ad, the user is redirected to the advertisers page in most cases</string>
-    <string name="your_video_content">Your video content</string>
     <string name="skipad">SkipAd</string>
     <string name="ad_flag">Ad Flag</string>
     <string name="learn_more">Learn more</string>
-    <string name="load_ad">Load Ad</string>
-    <string name="play_instreamad">Play InStreamAd</string>
-    <string name="mute">Mute</string>
-    <string name="pause">Pause</string>
-    <string name="recreate_instream_ad">ReCreate InStream AD</string>
     <string name="video_native_ad_example">Video Native Ad example</string>
     <string name="small_native_ad_example">Small Native Ad example</string>
     <string name="large_image_native_ad_example">Large Image Native Ad example</string>

@@ -93,7 +93,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/iv_title_dialog_tip" />
 
             <ScrollView
-                android:id="@+id/sv_tips_detail"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="16dp"

@@ -60,7 +60,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".InStreamRollActivity"
-            android:screenOrientation="portrait" />
+            android:usesCleartextTraffic="true"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|touchscreen"
+            android:exported="false"
+            android:screenOrientation="fullSensor" />
     </application>
 
 </manifest>

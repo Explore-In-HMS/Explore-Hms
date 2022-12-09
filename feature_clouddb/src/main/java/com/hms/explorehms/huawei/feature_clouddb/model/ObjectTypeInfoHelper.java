@@ -26,7 +26,7 @@ import java.util.Arrays;
 
 public final class ObjectTypeInfoHelper {
     private static final int FORMAT_VERSION = 2;
-    private static final int OBJECT_TYPE_VERSION = 1;
+    private static final int OBJECT_TYPE_VERSION = 3;
 
     private ObjectTypeInfoHelper(){}
 

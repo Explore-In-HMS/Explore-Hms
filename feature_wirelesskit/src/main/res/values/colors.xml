@@ -19,6 +19,4 @@
 
 <resources>
     <color name="colorPrimary">#ff4d4d</color>
-    <color name="colorPrimaryDark">#ff3838</color>
-    <color name="colorPrimaryLight">#ffaf40</color>
 </resources>

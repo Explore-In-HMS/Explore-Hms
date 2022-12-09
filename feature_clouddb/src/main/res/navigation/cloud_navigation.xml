@@ -17,7 +17,7 @@
   ~
   -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/cloud_navigation"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     app:startDestination="@id/allCommentFragment">
 
     <fragment
@@ -26,7 +26,9 @@
         android:label="AddCommentFragment" >
         <action
             android:id="@+id/action_addCommentFragment_to_allCommentFragment"
-            app:destination="@id/allCommentFragment" />
+            app:destination="@id/allCommentFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/allCommentFragment" />
     </fragment>
     <fragment
         android:id="@+id/updateCommentFragment"
@@ -34,7 +36,9 @@
         android:label="UpdateCommentFragment" >
         <action
             android:id="@+id/action_updateCommentFragment_to_allCommentFragment"
-            app:destination="@id/allCommentFragment" />
+            app:destination="@id/allCommentFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/allCommentFragment" />
     </fragment>
     <fragment
         android:id="@+id/allCommentFragment"

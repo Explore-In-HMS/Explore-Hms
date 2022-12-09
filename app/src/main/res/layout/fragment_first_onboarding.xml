@@ -54,7 +54,7 @@
         android:id="@+id/ivAppIcon_onboarding1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/icon_app_onboarding"
+        android:src="@drawable/app_logo"
         android:scaleType="fitXY"
         android:layout_marginTop="@dimen/h16"
         app:layout_constraintTop_toBottomOf="@+id/tvAppInfoHeadline_onboarding1"

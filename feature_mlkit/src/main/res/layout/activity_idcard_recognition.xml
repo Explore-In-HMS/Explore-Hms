@@ -19,7 +19,6 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/currentview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -53,7 +52,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/rn_eid_upload_self_photo_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -111,7 +109,6 @@
                         android:src="@drawable/icon_card_add" />
 
                     <TextView
-                        android:id="@+id/rn_eid_upload_face_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -126,7 +123,6 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/avatar_errot_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -154,7 +150,6 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/rn_front_not_complete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -213,7 +208,6 @@
                         android:src="@drawable/icon_card_add" />
 
                     <TextView
-                        android:id="@+id/rn_eid_upload_back_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -228,7 +222,6 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/emblem_errot_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -258,7 +251,6 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/rn_eid_hint_ensure_user_info_security_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -273,7 +265,6 @@
 
 
             <TextView
-                android:id="@+id/take_id_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

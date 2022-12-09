@@ -36,7 +36,6 @@ public class GameServicesMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityGameServicesMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         setupToolbar();
     }
 
@@ -50,6 +49,7 @@ public class GameServicesMainActivity extends AppCompatActivity {
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
+        GameConstants.isSecondTime = true;
         return true;
     }
 

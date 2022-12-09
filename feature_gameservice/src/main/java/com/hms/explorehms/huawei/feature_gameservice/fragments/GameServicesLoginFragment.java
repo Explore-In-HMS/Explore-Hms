@@ -33,6 +33,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.hms.explorehms.CredentialManager;
+import com.hms.explorehms.huawei.feature_gameservice.GameConstants;
 import com.hms.explorehms.huawei.feature_gameservice.R;
 import com.hms.explorehms.huawei.feature_gameservice.databinding.FragmentGameServicesLoginBinding;
 import com.huawei.hmf.tasks.OnFailureListener;
@@ -65,6 +66,7 @@ public class GameServicesLoginFragment extends Fragment {
 
     private static final String TAG = "GameServicesLoginFragment";
     private static final int ACTIVITY_REQUEST_LOGIN_WITH_HUAWEI_ID = 101;
+
 
     private FragmentGameServicesLoginBinding binding;
 
@@ -100,6 +102,10 @@ public class GameServicesLoginFragment extends Fragment {
     }
 
     private void signIn() {
+        if (!GameConstants.isSecondTime) {
+            Toast.makeText(getContext(), "Click one more time to open game", Toast.LENGTH_SHORT).show();
+            GameConstants.isSecondTime = true;
+        }
         List<Scope> scopes = new ArrayList<>();
         scopes.add(GameScopes.DRIVE_APP_DATA);
         HuaweiIdAuthParams authParams = new HuaweiIdAuthParamsHelper(HuaweiIdAuthParams.DEFAULT_AUTH_REQUEST_PARAM_GAME)
@@ -164,7 +170,7 @@ public class GameServicesLoginFragment extends Fragment {
                             int statusCode = apiException.getStatusCode();
                             // Result code 7401 indicates that the user does not agree to Huawei's joint operations privacy agreement.
                             if (statusCode == JosStatusCodes.JOS_PRIVACY_PROTOCOL_REJECTED) {
-                                Log.d("GameServicesLoginFragmentFailure","has reject the protocol");
+                                Log.d("GameServicesLoginFragmentFailure", "has reject the protocol");
                                 // Exit the game.
                             }
                             // Process other result codes.
@@ -184,4 +190,9 @@ public class GameServicesLoginFragment extends Fragment {
         }).addOnFailureListener(e -> Log.e(TAG, "getGamePlayer: " + e.getMessage()));
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        GameConstants.isSecondTime = true;
+    }
 }

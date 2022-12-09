@@ -90,7 +90,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_tips_title" />
 
                 <ImageView
-                    android:id="@+id/iv_imageSegmentation"
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
                     android:layout_gravity="center"

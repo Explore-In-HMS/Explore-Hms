@@ -87,33 +87,41 @@ dependencies {
     // General Card Recognition ------------------------------------- //
     implementation 'com.huawei.hms:ml-computer-card-gcr-plugin:2.0.1.300'
     // Bank Card Recognition ---------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-card-bcr:3.5.0.300'
+    //implementation 'com.huawei.hms:ml-computer-card-bcr:3.5.0.300'
 
     // ID Card Recognition ------------------------------------------ //
     implementation 'com.huawei.hms:ml-computer-card-icr-vn:2.1.0.301'
     implementation 'com.huawei.hms:ml-computer-card-icr-cn:2.0.3.303'
 
     // Language Detection ------------------------------------------ //
-    implementation 'com.huawei.hms:ml-computer-language-detection:2.2.0.300'
+    //implementation 'com.huawei.hms:ml-computer-language-detection:2.2.0.300'
+    // Import the base SDK.
+    //implementation 'com.huawei.hms:ml-computer-language-detection:3.6.0.312'
+    // Import the language detection algorithm package.
+    //implementation 'com.huawei.hms:ml-computer-language-detection-model:3.6.0.312'
 
     // Language Translate ------------------------------------------ //
-    implementation 'com.huawei.hms:ml-computer-translate:2.2.0.300'
-    implementation 'com.huawei.hms:ml-computer-translate-model:2.0.3.300'
+   // implementation 'com.huawei.hms:ml-computer-translate:3.6.0.312'
+    // Import the translation algorithm package.
+    //implementation 'com.huawei.hms:ml-computer-translate-model:3.6.0.312'
     // Automatic Speech recognition -------------------------------- //
-    implementation'com.huawei.hms:ml-computer-voice-asr:2.2.0.300'
+    //implementation'com.huawei.hms:ml-computer-voice-asr:3.5.0.301'
     // implementation 'com.huawei.hms:ml-computer-voice-asr-plugin:2.0.3.300'
     // Text To Speech procedure ----------------------------------------------------------------- //
-    implementation  'com.huawei.hms:ml-computer-voice-tts:2.2.0.300'
+    // Import the base SDK.
+   // implementation 'com.huawei.hms:ml-computer-voice-tts:3.6.0.300'
+    // Import the bee voice package.
+    //implementation 'com.huawei.hms:ml-computer-voice-tts-model-bee:3.6.0.300'
+    // Import the eagle voice package.
+    //implementation 'com.huawei.hms:ml-computer-voice-tts-model-eagle:3.6.0.300'
     // Audio File Transcription  ---------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-voice-aft:2.0.1.300'
-    // Real Time Transcription  ----------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-voice-realtimetranscription:2.2.0.300'
+    //implementation 'com.huawei.hms:ml-computer-voice-aft:3.5.0.300'
 
     // Real- Time Transcription ---------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-voice-realtimetranscription:2.0.3.300'
+    //implementation 'com.huawei.hms:ml-computer-voice-realtimetranscription:3.5.0.303'
     // Sound Detection  ------------------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-speech-semantics-sounddect-sdk:2.0.3.300'
-    implementation 'com.huawei.hms:ml-speech-semantics-sounddect-model:2.0.3.300'
+    //implementation 'com.huawei.hms:ml-speech-semantics-sounddect-sdk:3.5.0.302'
+    //implementation 'com.huawei.hms:ml-speech-semantics-sounddect-model:3.5.0.302'
 
     // Image Classification --------------------------------------------------------------------- //
     implementation 'com.huawei.hms:ml-computer-vision-classification:2.0.1.300'
@@ -169,7 +177,7 @@ dependencies {
     implementation 'com.huawei.hms:ml-computer-vision-gesture-model:2.1.0.300'
 
     // Text Embedding --------------------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-nlp-textembedding:2.0.4.300'
+   // implementation 'com.huawei.hms:ml-nlp-textembedding:3.5.0.300'
     implementation 'com.huawei.hms:ml-computer-model-executor:2.1.0.300'
     implementation 'mindspore:mindspore-lite:5.0.5.300'
     // automatically Updating the Machine Learning Model manifest metadata

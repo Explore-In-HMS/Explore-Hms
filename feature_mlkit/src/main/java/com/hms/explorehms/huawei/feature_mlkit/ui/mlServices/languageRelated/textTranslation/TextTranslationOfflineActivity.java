@@ -177,7 +177,7 @@ public class TextTranslationOfflineActivity extends AppCompatActivity {
 
         mlLocalModelManager = MLLocalModelManager.getInstance();
 
-        Utils.setApiKeyForRemoteMLApplication();
+        Utils.setApiKeyForRemoteMLApplication(this);
 
         createAndSetSpinner();
 

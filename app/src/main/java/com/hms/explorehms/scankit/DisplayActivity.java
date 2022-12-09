@@ -42,6 +42,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
+import com.hms.explorehms.Util;
 import com.hms.explorehms.scankit.action.CalendarEventAction;
 import com.hms.explorehms.scankit.action.ContactInfoAction;
 import com.hms.explorehms.scankit.action.DialAction;
@@ -72,7 +73,6 @@ public class DisplayActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_display);
         setupToolbar();
 
@@ -83,11 +83,6 @@ public class DisplayActivity extends AppCompatActivity {
         rawResult = findViewById(R.id.barcode_rawValue);
         resultTypeTitle = findViewById(R.id.result_t);
         copyButton = findViewById(R.id.button_operate);
-        Window window = getWindow();
-        this.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-        if (window != null) {
-            window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-        }
 
         //Obtain the scanning result.
         HmsScan obj = (HmsScan) getIntent().getParcelableArrayExtra(ScanUtil.RESULT)[0];
@@ -103,8 +98,9 @@ public class DisplayActivity extends AppCompatActivity {
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar_result);
         setSupportActionBar(toolbar);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        Util.setToolbar(this, toolbar, getResources().getString(R.string.scan_kit_link_documentation_link));
     }
 
     @Override

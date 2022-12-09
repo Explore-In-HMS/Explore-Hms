@@ -50,12 +50,16 @@ android {
         targetSdkVersion 32
         versionCode gradleVersionCode
         versionName gradleVersionName
-        resConfigs "en", "zh-rCN"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+
+        packagingOptions {
+            //solve com.android.builder.merge.DuplicateRelativeFileException: More than one file was found with OS independent path 'META-INF/rxjava.properties'
+            exclude 'META-INF/rxjava.properties'
         }
     }
     buildTypes {
@@ -68,6 +72,13 @@ android {
             signingConfig signingConfigs.release
             debuggable true
         }
+    }
+
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                outputFileName = "ExploreHMS.apk"
+            }
     }
 
     compileOptions {
@@ -133,7 +144,8 @@ android {
                     ':feature_appgallerykit',
                     ':feature_wearengine',
                     ':feature_hemkit',
-                    ':feature_hiaifoundation',
+                    ':dynamicfeaturetest',
+                    //':feature_hiaifoundation',
                     ':feature_connectapi',
                     ':feature_networkkit',
                     ':feature_audioeditorkit',
@@ -145,6 +157,7 @@ android {
             ]
 
     packagingOptions {
+        pickFirst '**/*.so'
         pickFirst 'okhttp3/internal/publicsuffix/publicsuffixes.gz'
         pickFirst 'lib/x86_64/libAudioAdjustmentJni.so'
         pickFirst 'lib/armeabi/libAudioAdjustmentJni.so'
@@ -230,6 +243,7 @@ dependencies {
     //card view
     implementation 'androidx.cardview:cardview:1.0.0'
 
+
     //gson
     implementation 'com.google.code.gson:gson:2.8.6'
 
@@ -244,31 +258,31 @@ dependencies {
     api "com.huawei.agconnect:agconnect-storage:1.5.0.100"
 
     //DTM
-    api 'com.huawei.hms:dtm-api:6.2.0.304'
+    api 'com.huawei.hms:dtm-api:6.6.0.300'
 
     //hquic
     implementation 'com.huawei.hms:hquic-provider:5.0.1.300'
 
     //Dynamic Ability
-    api 'com.huawei.hms:dynamicability:1.0.16.301'
+    api 'com.huawei.hms:dynamicability:1.0.17.300'
 
     //Location Kit
-    implementation 'com.huawei.hms:location:6.3.0.300'
+    implementation 'com.huawei.hms:location:6.4.0.300'
 
     //Site Kit
-    implementation 'com.huawei.hms:site:6.2.0.301'
+    implementation 'com.huawei.hms:site:6.4.0.304'
 
     //Account Kit
-    api 'com.huawei.hms:hwid:6.4.0.300'
+    api 'com.huawei.hms:hwid:6.7.0.300'
 
     // Scan Kit
-    implementation 'com.huawei.hms:scan:2.4.0.301'
+    implementation 'com.huawei.hms:scan:2.7.0.302'
 
     //Cloud functions sdk
-    api 'com.huawei.agconnect:agconnect-function:1.6.3.300'
+    api 'com.huawei.agconnect:agconnect-function:1.7.1.300'
 
     //audio kit
-    api 'com.huawei.hms:audiokit-player:1.4.0.302'
+    api 'com.huawei.hms:audiokit-player:1.5.0.300'
 
     /**
      * Some module dependencies are implemented here because of a crash.
@@ -284,11 +298,14 @@ dependencies {
     api 'com.huawei.hms:ml-computer-vision-ocr-jk-model:3.6.0.300'
     // Import the Chinese and English model package.
     api 'com.huawei.hms:ml-computer-vision-ocr-cn-model:3.6.0.300'
-
     // Bank Card Recognition
     api 'com.huawei.hms:ml-computer-card-bcr:3.5.0.300'
-
     api 'com.huawei.hms:ml-computer-card-gcr-plugin:2.0.1.300'
+
+    //Text Embedding
+    api 'com.huawei.hms:ml-nlp-textembedding:3.5.0.300'
+
+    //ID card
     api 'com.huawei.hms:ml-computer-card-icr-cn:2.0.3.303'
     api 'com.huawei.hms:ml-computer-card-icr-vn:2.1.0.301'
 
@@ -327,23 +344,41 @@ dependencies {
     api 'com.huawei.hms:ml-computer-vision-gesture-model:2.1.0.300'
 
     // Language detection
-    implementation 'com.huawei.hms:ml-computer-language-detection:2.2.0.300'
+    //implementation 'com.huawei.hms:ml-computer-language-detection:2.2.0.300'
+    // Import the base SDK.
+    api 'com.huawei.hms:ml-computer-language-detection:3.6.0.312'
+    // Import the language detection algorithm package.
+    api 'com.huawei.hms:ml-computer-language-detection-model:3.6.0.312'
 
     // translate
-    implementation 'com.huawei.hms:ml-computer-translate:2.0.3.300'
-    implementation 'com.huawei.hms:ml-computer-translate-model:2.0.3.300'
+    api 'com.huawei.hms:ml-computer-translate:3.6.0.312'
+    // Import the translation algorithm package.
+    api 'com.huawei.hms:ml-computer-translate-model:3.6.0.312'
 
     // Real time transcription
-    implementation 'com.huawei.hms:ml-computer-voice-realtimetranscription:2.2.0.300'
+    api 'com.huawei.hms:ml-computer-voice-realtimetranscription:3.5.0.303'
 
     // Voice
-    implementation 'com.huawei.hms:ml-computer-voice-aft:2.0.1.300'
-    implementation 'com.huawei.hms:ml-computer-voice-tts:2.2.0.300'
-    implementation 'com.huawei.hms:ml-computer-voice-asr:2.2.0.300'
+    api 'com.huawei.hms:ml-computer-voice-aft:3.5.0.300'
+    //implementation 'com.huawei.hms:ml-computer-voice-tts:2.2.0.300'
+    // Import the base SDK.
+    api 'com.huawei.hms:ml-computer-voice-tts:3.6.0.300'
+    // Import the bee voice package.
+    api 'com.huawei.hms:ml-computer-voice-tts-model-bee:3.6.0.300'
+    // Import the eagle voice package.
+    api 'com.huawei.hms:ml-computer-voice-tts-model-eagle:3.6.0.300'
+
+    //ASR
+    api 'com.huawei.hms:ml-computer-voice-asr:3.5.0.301'
+
+    //Sound detection
+    api 'com.huawei.hms:ml-speech-semantics-sounddect-sdk:3.5.0.302'
+    api 'com.huawei.hms:ml-speech-semantics-sounddect-model:3.5.0.302'
+
     // ML KIT END
 
     //Analytics Kit
-    api 'com.huawei.hms:hianalytics:6.4.0.300'
+    implementation 'com.huawei.hms:hianalytics:6.7.0.300'
 
     //nearby
     api 'com.huawei.hms:nearby:6.2.0.300'
@@ -352,38 +387,40 @@ dependencies {
     api "com.huawei.hms:videokit-player:1.0.10.302"
 
     //Scene kit
-    api 'com.huawei.scenekit:full-sdk:6.0.0.301'
+/*    api 'com.huawei.scenekit:full-sdk:6.0.0.301'
     api 'com.huawei.scenekit:scenekit-render-foundation:6.0.0.301'
     api 'com.huawei.scenekit:scenekit-render-extension:6.0.0.301'
     api 'com.huawei.scenekit:scenekit-math:6.0.0.301'
     api 'com.huawei.scenekit:scenekit-fluid-extension:6.0.0.301'
     api 'com.huawei.scenekit:scenekit-fluid-foundation:6.0.0.301'
-    api 'com.huawei.scenekit:scenekit-iphysics-utils:6.0.0.301'
+    api 'com.huawei.scenekit:scenekit-iphysics-utils:6.0.0.301'*/
 
     //App linking
-    api 'com.huawei.agconnect:agconnect-applinking:1.6.4.300'
+    api 'com.huawei.agconnect:agconnect-applinking:1.7.1.300'
 
     //FIDO
     api 'com.huawei.hms:fido-fido2:6.3.0.302'
     api 'com.huawei.hms:fido-bioauthn-androidx:6.3.0.302'
 
     //Awareness Kit
-    api 'com.huawei.hms:awareness:3.1.0.300'
+    api 'com.huawei.hms:awareness:3.4.0.300'
 
     //Push Kit
-    api 'com.huawei.hms:push:6.3.0.302'
+    api 'com.huawei.hms:push:6.5.0.300'
 
     //MAP kit
     api "com.huawei.hms:maps:6.3.1.300"
 
     //Ads Kit
-    api 'com.huawei.hms:ads-lite:13.4.52.300'
+    //api 'com.huawei.hms:ads-lite:13.4.54.300'
+    //api 'com.huawei.hms:ads-consent:3.4.54.300'
+    //api 'com.huawei.hms:ads-omsdk:1.3.35'
 
     // Image Kit
-    api 'com.huawei.hms:image-vision:1.0.3.304'
+    api 'com.huawei.hms:image-vision:1.0.3.306'
 
     // Auth Service
-    implementation 'com.huawei.agconnect:agconnect-auth:1.6.4.300'
+    implementation 'com.huawei.agconnect:agconnect-auth:1.7.1.300'
 
     //Game Kit
     api "com.huawei.hms:game:6.1.0.301"
@@ -392,25 +429,25 @@ dependencies {
     api 'com.huawei.agconnect:agconnect-cloud-database:1.5.0.300'
 
     //Drive Kit
-    api 'com.huawei.hms:drive:5.0.0.305'
+    api 'com.huawei.hms:drive:5.0.0.307'
 
     //Crash Service
-    api 'com.huawei.agconnect:agconnect-crash:1.6.4.300'
+    api 'com.huawei.agconnect:agconnect-crash:1.7.1.300'
 
     //Remote Configuration
     api 'com.huawei.agconnect:agconnect-remoteconfig:1.6.4.300'
 
     //App Messaging
-    api 'com.huawei.agconnect:agconnect-appmessaging:1.6.4.300'
+    api 'com.huawei.agconnect:agconnect-appmessaging:1.7.1.300'
 
     //AR Engine
-    api 'com.huawei.hms:arenginesdk:3.6.0.5'
+    api 'com.huawei.hms:arenginesdk:3.7.0.3'
 
     //Hem Kit
-    api 'com.huawei.hms:hemsdk:1.0.3.300'
+    api 'com.huawei.hms:hemsdk:1.0.4.303'
 
     //Audio Editor Kit
-    api 'com.huawei.hms:audio-editor-ui:1.4.0.301'
+    api 'com.huawei.hms:audio-editor-ui:1.7.0.300'
     api 'com.huawei.hms:audio-editor-sdk:1.4.0.301'
 
     // AV Pipeline Kit
@@ -427,10 +464,11 @@ dependencies {
     implementation 'me.jessyan:autosize:1.2.1'
 
     //Video Editor Kit
-    api 'com.huawei.hms:video-editor-ui:1.1.0.302'
+    api 'com.huawei.hms:video-editor-ui:1.1.0.305'
+    //api 'com.huawei.hms:video-editor-sdk:1.7.0.300'
 
     //Keyring Service
-    implementation "com.huawei.hms:keyring-credential:6.4.0.300"
+    implementation "com.huawei.hms:keyring-credential:6.4.0.302"
 }
 
 /*apply from: '../sonarqube.gradle'

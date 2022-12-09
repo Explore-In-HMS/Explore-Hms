@@ -131,7 +131,7 @@ public class AudioFileTranscriptionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio_file_transcription);
 
-        Utils.setApiKeyForRemoteMLApplication();
+        Utils.setApiKeyForRemoteMLApplication(getApplicationContext());
 
         unbinder = ButterKnife.bind(this);
         setupToolbar();

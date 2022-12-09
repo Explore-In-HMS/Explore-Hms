@@ -35,6 +35,7 @@ import com.hms.explorehms.R;
 import com.hms.explorehms.databinding.FragmentSiteKitAutocompleteBinding;
 import com.hms.explorehms.sitekit.common.ProgressDialogScreenSitekit;
 import com.hms.explorehms.sitekit.fragments_sitekit.adapters.AutocompleteAdapter;
+import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hms.site.api.SearchResultListener;
 import com.huawei.hms.site.api.SearchService;
 import com.huawei.hms.site.api.SearchServiceFactory;
@@ -95,7 +96,7 @@ public class SiteKitAutocompleteFragment extends Fragment {
 
         progressDialogScreenSitekit = new ProgressDialogScreenSitekit(requireContext());
         try {
-            String API_KEY = getResources().getString(R.string.site_kit_API_KEY);
+            String API_KEY = AGConnectServicesConfig.fromContext(requireContext()).getString("client/api_key");
             searchService = SearchServiceFactory.create(view.getContext(), URLEncoder.encode(API_KEY, "utf-8"));
         } catch (UnsupportedEncodingException e) {
             Log.e(TAG, "encode apikey error");

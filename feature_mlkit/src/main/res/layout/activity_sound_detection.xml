@@ -103,7 +103,10 @@
                     style="@style/TextAppearance.ExploreHMS.Body1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/dimens_8"
+                    android:layout_marginBottom="@dimen/dimens_8"
+                    android:layout_marginEnd="16dp"
                     android:gravity="center"
                     android:text="@string/text_results" />
 
@@ -118,58 +121,69 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_margin="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
                     android:text="@string/dtc_rcg_results_will_be_here"
                     android:textIsSelectable="true" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="@dimen/hiad_16_dp"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_record_time"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/bg_white_rec_border_blue"
+                    android:gravity="center"
+                    android:text="00:00" />
+
+                <ImageView
+                    android:id="@+id/iv_record_sdtc_audio"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/shape_layout_circle_white"
+                    android:clickable="true"
+                    android:elevation="10dp"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/icons_start_record"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:elevation="8dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
 
             </LinearLayout>
 
         </ScrollView>
-
-
-        <TextView
-            android:id="@+id/tv_record_time"
-            style="@style/TextAppearance.ExploreHMS.Body1"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="10dp"
-            android:background="@drawable/bg_white_rec_border_blue"
-            android:gravity="center"
-            android:text="00:00"
-            app:layout_constraintBottom_toTopOf="@+id/iv_record_sdtc_audio"
-            app:layout_constraintEnd_toEndOf="@+id/iv_record_sdtc_audio"
-            app:layout_constraintStart_toStartOf="@+id/iv_record_sdtc_audio" />
-
-        <ImageView
-            android:id="@+id/iv_record_sdtc_audio"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="32dp"
-            android:background="@drawable/shape_layout_circle_white"
-            android:clickable="true"
-            android:elevation="10dp"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/icons_start_record"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:elevation="8dp"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

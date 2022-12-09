@@ -28,8 +28,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.ViewGroup;
-import android.view.WindowManager;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -37,17 +36,20 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.widget.Toolbar;
 
+import com.github.clemp6r.futuroid.Async;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.hms.explorehms.R;
 import com.hms.explorehms.Util;
 import com.hms.explorehms.pushkit.dialog.GetNotificationDialog;
 import com.hms.explorehms.pushkit.dialog.PushMessageDialogPushKit;
-import com.hms.explorehms.pushkit.dialog.TopicDialogPushKit;
-import com.github.clemp6r.futuroid.Async;
-import com.huawei.agconnect.config.AGConnectServicesConfig;
+import com.huawei.agconnect.AGConnectOptions;
+import com.huawei.agconnect.AGConnectOptionsBuilder;
 import com.huawei.hmf.tasks.Task;
 import com.huawei.hms.aaid.HmsInstanceId;
 import com.huawei.hms.aaid.entity.AAIDResult;
@@ -62,6 +64,10 @@ public class MainActivityPushKit extends AppCompatActivity {
 
     private static final String TAG = "PUSH_KIT";
     private static final int PERMISSION_REQUEST = 99;
+    private Thread AIDThread;
+    private Thread subjectTokenThread;
+    private Thread deleteTokenWithStringThread;
+    private Thread deleteTokenThread;
 
 
     /**
@@ -76,6 +82,7 @@ public class MainActivityPushKit extends AppCompatActivity {
     private Button btnNext;
     private Button btnGetNotification;
     private ViewFlipper viewFlipper;
+    private AlertDialog dialog;
 
     /**
      * AAID related views
@@ -106,11 +113,12 @@ public class MainActivityPushKit extends AppCompatActivity {
     private TextView tvSubUnsubResult;
     private TextView tvAutoInitOnOffResult;
     private TextView tvSubTopic;
+    private Boolean isFirst = true;
 
     /**
      * Push Message related variables
      */
-    private static final String EXPLOREHMS_ACTION = "com.hms.explorehms.huawei.feature_pushkit.action";
+    private static final String EXPLOREHMS_ACTION = "com.hms.explorehms.feature_pushkit.action";
     private PushMessageDialogPushKit pushMessageDialog;
     private GetNotificationDialog getNotificationDialog;
 
@@ -120,8 +128,6 @@ public class MainActivityPushKit extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_pushkit);
         setupToolbar();
-
-
         initUI();
         initListener();
         initReceiver();
@@ -157,6 +163,7 @@ public class MainActivityPushKit extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == PERMISSION_REQUEST && (grantResults.length != 0 && (grantResults[0] == PackageManager.PERMISSION_DENIED))) {
             isPermissionGranted();
         }
@@ -294,16 +301,19 @@ public class MainActivityPushKit extends AppCompatActivity {
                 tvAAIDOprResult.setText(getResources().getString(R.string.txt_opr_res_failed_pushkit));
             });
         } else {
-            new Thread(() -> {
+            AIDThread = new Thread(() -> {
                 try {
                     HmsInstanceId.getInstance(MainActivityPushKit.this).deleteAAID();
-                    tvAAIDResult.setText("");
-                    tvAAIDOprResult.setText(getResources().getString(R.string.txt_opr_res_success_pushkit));
+                    runOnUiThread(() -> {
+                        tvAAIDResult.setText("");
+                        tvAAIDOprResult.setText(getResources().getString(R.string.txt_opr_res_success_pushkit));
+                    });
                 } catch (Exception e) {
                     Log.e(TAG, "deleteAAID failed. " + e);
-                    tvAAIDOprResult.setText(getResources().getString(R.string.txt_opr_res_failed_pushkit));
+                    runOnUiThread(() -> tvAAIDOprResult.setText(getResources().getString(R.string.txt_opr_res_failed_pushkit)));
                 }
-            }).start();
+            });
+            AIDThread.start();
         }
     }
 
@@ -315,7 +325,8 @@ public class MainActivityPushKit extends AppCompatActivity {
     private void getToken() {
         Async.submit(() -> {
             // read from agconnect-services.json
-            String appId = AGConnectServicesConfig.fromContext(getApplicationContext()).getString("client/app_id");
+            AGConnectOptions agConnectOptionsBuilder = new AGConnectOptionsBuilder().build(getApplicationContext());
+            String appId = agConnectOptionsBuilder.getString("client/app_id");
             String token = HmsInstanceId.getInstance(getApplicationContext()).getToken(appId, "HCM");
             Log.i(TAG, "get token:" + token);
             if (!TextUtils.isEmpty(token)) {
@@ -335,40 +346,42 @@ public class MainActivityPushKit extends AppCompatActivity {
    */
     private void getSubjectToken() {
         // Create a thread.
-        new Thread(() -> {
+        subjectTokenThread = new Thread(() -> {
             try {
                 // Apply for a token for the sender.
-                String projectId = AGConnectServicesConfig.fromContext(getApplicationContext()).getString("client/project_id");
+                AGConnectOptions agConnectOptionsBuilder = new AGConnectOptionsBuilder().build(getApplicationContext());
+                String projectId = agConnectOptionsBuilder.getString("client/project_id");
                 String token = HmsInstanceId.getInstance(MainActivityPushKit.this).getToken(projectId);
                 Log.i(TAG, "get token:" + token);
 
                 // Check whether the token is empty.
-                if(!TextUtils.isEmpty(token)) {
+                if (!TextUtils.isEmpty(token)) {
                     sendRegTokenToServer(token);
                 }
             } catch (ApiException e) {
                 Log.e(TAG, "get token failed, " + e);
             }
-        }).start();
+        });
+        subjectTokenThread.start();
     }
 
     /*
     using for multi sender scenario to delete the token with sender projectId
      */
     private void deleteToken(String projectID) {
-        new Thread(() -> {
+        deleteTokenWithStringThread = new Thread(() -> {
             try {
                 // read from agconnect-services.json
                 HmsInstanceId.getInstance(getApplicationContext()).deleteToken(projectID);
                 Log.i(TAG, "deleteToken multi sender success.");
-
                 tvTokenResult.setText("");
                 tvTokenOprResult.setText(getResources().getString(R.string.txt_opr_res_success_pushkit));
             } catch (ApiException e) {
                 Log.e(TAG, "deleteToken multi sender failed." + e);
                 tvTokenOprResult.setText(getResources().getString(R.string.txt_opr_res_failed_pushkit));
             }
-        }).start();
+        });
+        deleteTokenWithStringThread.start();
     }
 
 
@@ -389,10 +402,11 @@ public class MainActivityPushKit extends AppCompatActivity {
      * This method is a synchronous method. Do not call it in the main thread. Otherwise, the main thread may be blocked.
      */
     private void deleteToken() {
-        new Thread(() -> {
+        deleteTokenThread = new Thread(() -> {
             try {
                 // read from agconnect-services.json
-                String appId = AGConnectServicesConfig.fromContext(getApplicationContext()).getString("client/app_id");
+                AGConnectOptions agConnectOptionsBuilder = new AGConnectOptionsBuilder().build(getApplicationContext());
+                String appId = agConnectOptionsBuilder.getString("client/app_id");
                 HmsInstanceId.getInstance(getApplicationContext()).deleteToken(appId, "HCM");
                 Log.i(TAG, "deleteToken success.");
 
@@ -402,7 +416,8 @@ public class MainActivityPushKit extends AppCompatActivity {
                 Log.e(TAG, "deleteToken failed." + e);
                 tvTokenOprResult.setText(getResources().getString(R.string.txt_opr_res_failed_pushkit));
             }
-        }).start();
+        });
+        deleteTokenThread.start();
     }
 
     /**
@@ -434,66 +449,62 @@ public class MainActivityPushKit extends AppCompatActivity {
      * to subscribe to topics in asynchronous mode.
      */
     private void addTopic() {
+        createDialog(getResources().getString(R.string.txt_sub_name_pushkit), true);
+    }
 
-        TopicDialogPushKit dialog = new TopicDialogPushKit(MainActivityPushKit.this, true, topic -> {
+    private void createDialog(String text, boolean isAdd) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View view = getLayoutInflater().inflate(R.layout.dialog_add_topic_pushkit, null);
+        TextInputEditText edTopic;
+        Button btnCancel;
+        Button btnConfirm;
+        btnConfirm = view.findViewById(R.id.btn_push_topic_confirm);
+        btnCancel = view.findViewById(R.id.btn_push_topic_cancel);
+        edTopic = view.findViewById(R.id.ed_push_topic);
+        TextInputLayout edLayout = view.findViewById(R.id.et_Layout);
+        edLayout.setHint(isAdd ? "Subscribe topic name" : "Unsubscribe topic name");
+        //HmsMessaging messaging=HmsMessaging.getInstance(MainActivityPushKit.this);
+        if (isFirst) {
             try {
                 HmsMessaging.getInstance(MainActivityPushKit.this)
-                        .subscribe(topic)
+                        .subscribe("text")
+                        .addOnCompleteListener(task -> {
+                        });
+            } catch (Exception e) {
+                Log.i(TAG, "subscribe Failed" + e);
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.msg_topic_sub_exception), Toast.LENGTH_LONG).show();
+            }
+            isFirst = false;
+        }
+        btnConfirm.setOnClickListener(v -> {
+            try {
+                HmsMessaging.getInstance(MainActivityPushKit.this)
+                        .subscribe(Objects.requireNonNull(edTopic.getText()).toString())
                         .addOnCompleteListener(task -> {
                             if (task.isSuccessful()) {
                                 tvSubUnsubResult.setText(getResources().getString(R.string.txt_success_pushkit));
-                                //Txt will be displayed -> (Subscribed : topic);
-                                tvSubTopic.setText(String.format(getResources().getString(R.string.txt_sub_name_pushkit), topic));
+                                tvSubTopic.setText(String.format(text, Objects.requireNonNull(edTopic.getText())));
                             } else {
                                 tvSubUnsubResult.setText(getResources().getString(R.string.txt_failed_pushkit));
                             }
                         });
             } catch (Exception e) {
-                Log.i(TAG, "subscribe Failed" + e.toString());
+                Log.i(TAG, "subscribe Failed" + e);
                 Toast.makeText(getApplicationContext(), getResources().getString(R.string.msg_topic_sub_exception), Toast.LENGTH_LONG).show();
             }
+            dialog.dismiss();
         });
-        try {
-            WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
-            lp.copyFrom(Objects.requireNonNull(dialog.getWindow()).getAttributes());
-            lp.width = ViewGroup.LayoutParams.MATCH_PARENT;
-            lp.height = ViewGroup.LayoutParams.WRAP_CONTENT;
-            dialog.getWindow().setAttributes(lp);
-            dialog.show();
-        } catch (Exception e) {
-            Log.e(TAG, e.toString());
-        }
+        btnCancel.setOnClickListener(v -> dialog.dismiss());
+        builder.setView(view);
+        dialog = builder.create();
+        dialog.show();
     }
 
     /**
      * to subscribe to topics in asynchronous mode.
      */
     private void deleteTopic() {
-        TopicDialogPushKit dialog = new TopicDialogPushKit(MainActivityPushKit.this, false, topic -> {
-            try {
-                HmsMessaging.getInstance(MainActivityPushKit.this)
-                        .unsubscribe(topic)
-                        .addOnCompleteListener(task -> {
-                            if (task.isSuccessful()) {
-                                tvSubUnsubResult.setText(getResources().getString(R.string.txt_success_pushkit));
-                                //Txt will be displayed -> (Unsubscribed : topic);
-                                tvSubTopic.setText(String.format(getResources().getString(R.string.txt_unsub_name_pushkit), topic));
-
-                            } else {
-                                tvSubUnsubResult.setText(getResources().getString(R.string.txt_failed_pushkit));
-                            }
-                        });
-            } catch (Exception e) {
-                Log.i(TAG, "unsubscribe Failed" + e.toString());
-            }
-        });
-        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
-        lp.copyFrom(Objects.requireNonNull(dialog.getWindow()).getAttributes());
-        lp.width = ViewGroup.LayoutParams.MATCH_PARENT;
-        lp.height = ViewGroup.LayoutParams.WRAP_CONTENT;
-        dialog.getWindow().setAttributes(lp);
-        dialog.show();
-
+        createDialog(getResources().getString(R.string.txt_unsub_name_pushkit), false);
     }
 
     /**
@@ -547,5 +558,22 @@ public class MainActivityPushKit extends AppCompatActivity {
         IntentFilter filter = new IntentFilter();
         filter.addAction(EXPLOREHMS_ACTION);
         registerReceiver(messageReceiver, filter);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(AIDThread!=null){
+            AIDThread.interrupt();
+        }
+        if(subjectTokenThread!=null){
+            subjectTokenThread.interrupt();
+        }
+        if(deleteTokenWithStringThread!=null){
+            deleteTokenWithStringThread.interrupt();
+        }
+        if(deleteTokenThread!=null){
+            deleteTokenThread.interrupt();
+        }
     }
 }
