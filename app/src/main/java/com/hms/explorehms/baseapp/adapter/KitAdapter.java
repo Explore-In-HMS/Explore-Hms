@@ -64,7 +64,7 @@ public class KitAdapter extends RecyclerView.Adapter<KitAdapter.KitViewHolder> i
     @Override
     public KitViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-          View  view = LayoutInflater.from(activity).inflate(R.layout.rv_kit_item,parent, false);
+        View  view = LayoutInflater.from(activity).inflate(R.layout.rv_kit_item,parent, false);
 
         return new KitViewHolder(view);
     }
@@ -166,7 +166,7 @@ public class KitAdapter extends RecyclerView.Adapter<KitAdapter.KitViewHolder> i
                         Util.showFeatureUninstallDialog(activity,kit,KitViewHolder.this,itemView);
                     }
                 }else{
-                   // Util.showInfoDialog(activity,kit.getKitName() + " is a base module and can not be uninstalled!", true);
+                    // Util.showInfoDialog(activity,kit.getKitName() + " is a base module and can not be uninstalled!", true);
                     Snackbar.make(view,kit.getKitName() + " is a base module and can not be uninstalled!",Snackbar.LENGTH_LONG).show();
                 }
                 return false;

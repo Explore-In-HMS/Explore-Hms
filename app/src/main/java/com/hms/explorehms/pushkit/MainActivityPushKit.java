@@ -64,6 +64,10 @@ public class MainActivityPushKit extends AppCompatActivity {
 
     private static final String TAG = "PUSH_KIT";
     private static final int PERMISSION_REQUEST = 99;
+    private Thread AIDThread;
+    private Thread subjectTokenThread;
+    private Thread deleteTokenWithStringThread;
+    private Thread deleteTokenThread;
 
 
     /**
@@ -109,7 +113,7 @@ public class MainActivityPushKit extends AppCompatActivity {
     private TextView tvSubUnsubResult;
     private TextView tvAutoInitOnOffResult;
     private TextView tvSubTopic;
-    private Boolean isFirst=true;
+    private Boolean isFirst = true;
 
     /**
      * Push Message related variables
@@ -297,7 +301,7 @@ public class MainActivityPushKit extends AppCompatActivity {
                 tvAAIDOprResult.setText(getResources().getString(R.string.txt_opr_res_failed_pushkit));
             });
         } else {
-            new Thread(() -> {
+            AIDThread = new Thread(() -> {
                 try {
                     HmsInstanceId.getInstance(MainActivityPushKit.this).deleteAAID();
                     runOnUiThread(() -> {
@@ -308,8 +312,8 @@ public class MainActivityPushKit extends AppCompatActivity {
                     Log.e(TAG, "deleteAAID failed. " + e);
                     runOnUiThread(() -> tvAAIDOprResult.setText(getResources().getString(R.string.txt_opr_res_failed_pushkit)));
                 }
-                ;
-            }).start();
+            });
+            AIDThread.start();
         }
     }
 
@@ -342,7 +346,7 @@ public class MainActivityPushKit extends AppCompatActivity {
    */
     private void getSubjectToken() {
         // Create a thread.
-        new Thread(() -> {
+        subjectTokenThread = new Thread(() -> {
             try {
                 // Apply for a token for the sender.
                 AGConnectOptions agConnectOptionsBuilder = new AGConnectOptionsBuilder().build(getApplicationContext());
@@ -357,26 +361,27 @@ public class MainActivityPushKit extends AppCompatActivity {
             } catch (ApiException e) {
                 Log.e(TAG, "get token failed, " + e);
             }
-        }).start();
+        });
+        subjectTokenThread.start();
     }
 
     /*
     using for multi sender scenario to delete the token with sender projectId
      */
     private void deleteToken(String projectID) {
-        new Thread(() -> {
+        deleteTokenWithStringThread = new Thread(() -> {
             try {
                 // read from agconnect-services.json
                 HmsInstanceId.getInstance(getApplicationContext()).deleteToken(projectID);
                 Log.i(TAG, "deleteToken multi sender success.");
-
                 tvTokenResult.setText("");
                 tvTokenOprResult.setText(getResources().getString(R.string.txt_opr_res_success_pushkit));
             } catch (ApiException e) {
                 Log.e(TAG, "deleteToken multi sender failed." + e);
                 tvTokenOprResult.setText(getResources().getString(R.string.txt_opr_res_failed_pushkit));
             }
-        }).start();
+        });
+        deleteTokenWithStringThread.start();
     }
 
 
@@ -397,7 +402,7 @@ public class MainActivityPushKit extends AppCompatActivity {
      * This method is a synchronous method. Do not call it in the main thread. Otherwise, the main thread may be blocked.
      */
     private void deleteToken() {
-        new Thread(() -> {
+        deleteTokenThread = new Thread(() -> {
             try {
                 // read from agconnect-services.json
                 AGConnectOptions agConnectOptionsBuilder = new AGConnectOptionsBuilder().build(getApplicationContext());
@@ -411,7 +416,8 @@ public class MainActivityPushKit extends AppCompatActivity {
                 Log.e(TAG, "deleteToken failed." + e);
                 tvTokenOprResult.setText(getResources().getString(R.string.txt_opr_res_failed_pushkit));
             }
-        }).start();
+        });
+        deleteTokenThread.start();
     }
 
     /**
@@ -458,7 +464,7 @@ public class MainActivityPushKit extends AppCompatActivity {
         TextInputLayout edLayout = view.findViewById(R.id.et_Layout);
         edLayout.setHint(isAdd ? "Subscribe topic name" : "Unsubscribe topic name");
         //HmsMessaging messaging=HmsMessaging.getInstance(MainActivityPushKit.this);
-        if(isFirst){
+        if (isFirst) {
             try {
                 HmsMessaging.getInstance(MainActivityPushKit.this)
                         .subscribe("text")
@@ -468,12 +474,12 @@ public class MainActivityPushKit extends AppCompatActivity {
                 Log.i(TAG, "subscribe Failed" + e);
                 Toast.makeText(getApplicationContext(), getResources().getString(R.string.msg_topic_sub_exception), Toast.LENGTH_LONG).show();
             }
-            isFirst=false;
+            isFirst = false;
         }
         btnConfirm.setOnClickListener(v -> {
             try {
                 HmsMessaging.getInstance(MainActivityPushKit.this)
-                .subscribe(Objects.requireNonNull(edTopic.getText()).toString())
+                        .subscribe(Objects.requireNonNull(edTopic.getText()).toString())
                         .addOnCompleteListener(task -> {
                             if (task.isSuccessful()) {
                                 tvSubUnsubResult.setText(getResources().getString(R.string.txt_success_pushkit));
@@ -552,5 +558,22 @@ public class MainActivityPushKit extends AppCompatActivity {
         IntentFilter filter = new IntentFilter();
         filter.addAction(EXPLOREHMS_ACTION);
         registerReceiver(messageReceiver, filter);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(AIDThread!=null){
+            AIDThread.interrupt();
+        }
+        if(subjectTokenThread!=null){
+            subjectTokenThread.interrupt();
+        }
+        if(deleteTokenWithStringThread!=null){
+            deleteTokenWithStringThread.interrupt();
+        }
+        if(deleteTokenThread!=null){
+            deleteTokenThread.interrupt();
+        }
     }
 }
