@@ -44,6 +44,10 @@ public class ExploreHMSApplication extends Application {
 
     private static WisePlayerFactory wisePlayerFactory = null;
 
+    public static void release(Context context) {
+        WisePlayerFactory.release(context);
+    }
+
 
     @Override
     public void onCreate() {
@@ -116,7 +120,7 @@ public class ExploreHMSApplication extends Application {
         return wisePlayerFactory;
     }
 
-    private static void setWisePlayerFactory(WisePlayerFactory wisePlayerFactory) {
+    public static void setWisePlayerFactory(WisePlayerFactory wisePlayerFactory) {
         ExploreHMSApplication.wisePlayerFactory = wisePlayerFactory;
     }
 
