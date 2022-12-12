@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2021. Explore in HMS. All rights reserved.
  * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");

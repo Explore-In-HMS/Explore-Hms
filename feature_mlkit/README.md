@@ -166,7 +166,7 @@ Version : 2.0.3.300 ( 2020-09-27 )
 * [Version Change History V5](https://developer.huawei.com/consumer/en/doc/HMSCore-Guides-V5/version-changehistory-0000001050040023-V5)
 
 ## :information_source: Licence
-Copyright 2020. Explore in HMS. All rights reserved.
+Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
