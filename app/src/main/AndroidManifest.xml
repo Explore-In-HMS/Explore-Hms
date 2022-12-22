@@ -165,6 +165,9 @@
                 android:value="30.0.2"
                 tools:replace="resource,android:value" />
         </provider>
+        <meta-data
+            android:name="com.huawei.hms.client.appid"
+            android:value="106890093"/>
     </application>
 
 </manifest>

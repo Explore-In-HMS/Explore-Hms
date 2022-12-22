@@ -43,11 +43,6 @@
     </dist:module>
 
     <application>
-
-        <meta-data
-            android:name="com.huawei.hms.client.appid"
-            android:value="102418005" />
-
         <activity android:name=".HealthKitMainActivity"/>
         <activity android:name=".HealthKitDataControllerActivity" />
         <activity android:name=".HealthKitAutoRecorderControllerActivity" />
