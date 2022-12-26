@@ -18,9 +18,13 @@
 package com.hms.explorehms.huawei.feature_fidokit;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CancellationSignal;
 import android.os.Handler;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -126,7 +130,7 @@ public class BioAuthnAndxActivity extends AppCompatActivity {
             @Override
             public void onAuthError(int errMsgId, @NonNull CharSequence errString) {
                 // Authentication error.
-                showResult(getString(R.string.auth_error) + errMsgId + getString(R.string.error_message) + errString
+                showResultCameraPermission(getString(R.string.auth_error) + errMsgId + getString(R.string.error_message) + errString
                         + (errMsgId == 1012 ? " The camera permission may not be enabled." : ""));
                 logger(getString(R.string.auth_error) + errMsgId + getString(R.string.error_message) + errString
                         + (errMsgId == 1012 ? " The camera permission may not be enabled." : ""));
@@ -161,7 +165,8 @@ public class BioAuthnAndxActivity extends AppCompatActivity {
         if (errorCode != 0) {
             // Authentication is not supported.
             resultTextView.setText("");
-            showResult(getString(R.string.cannot_auth) + errorCode);
+            showBiometricMsg();
+            //showResult(getString(R.string.cannot_auth) + errorCode);
             logger(getString(R.string.cannot_auth) + errorCode);
             return;
         }
@@ -194,6 +199,51 @@ public class BioAuthnAndxActivity extends AppCompatActivity {
         if (offset > resultTextView.getHeight()) {
             resultTextView.scrollTo(0, offset - resultTextView.getHeight());
         }
+    }
+
+    private void showBiometricMsg() {
+        androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(BioAuthnAndxActivity.this);
+        builder.setTitle("Authentication failed.");
+        builder.setMessage("Please define for finger for your device");
+        builder.setPositiveButton("Settings", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(Settings.ACTION_SETTINGS);
+                startActivity(intent);
+            }
+        });
+        builder.setNegativeButton("Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+                    }
+                }
+        );
+        builder.show();
+    }
+
+    private void showResultCameraPermission(final String msg) {
+        runOnUiThread(() -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(BioAuthnAndxActivity.this);
+            builder.setTitle("Authentication Result");
+            builder.setMessage(msg);
+            builder.setPositiveButton("Settings", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+                    Uri uri = Uri.fromParts("package", getPackageName(), null);
+                    intent.setData(uri);
+                    startActivity(intent);
+                }
+            });
+            builder.setNegativeButton("Cancel",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            dialog.dismiss();
+                        }
+                    }
+            );
+            builder.show();
+            resultTextView.append(msg + "\n");
+        });
     }
 }
 

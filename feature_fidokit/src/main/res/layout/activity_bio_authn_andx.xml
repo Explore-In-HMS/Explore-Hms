@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~
   ~   Copyright 2020. Explore in HMS. All rights reserved.
   ~
@@ -30,6 +29,19 @@
         android:layout_height="?attr/actionBarSize"
         app:title="@string/fido_bioAuthn" />
 
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_service_intro_title_fido"
+        style="@style/TextAppearance.ExploreHMS.Headline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="start"
+        android:text="@string/service_introduction"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         style="@style/TextAppearance.ExploreHMS.Body1"
         android:layout_width="match_parent"
@@ -39,6 +51,15 @@
         android:layout_marginRight="16dp"
         android:text="@string/bio_auth_text" />
 
+    <TextView
+        style="@style/TextAppearance.ExploreHMS.Body1.Bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="@dimen/h16"
+        android:layout_marginRight="16dp"
+        android:text="Info: Before use this methods, you should add fingerprint and faceId with help of device settings" />
+
     <com.google.android.material.button.MaterialButton
         style="@style/ButtonAppearance.ExploreHMS.Normal"
         android:layout_width="match_parent"
@@ -47,26 +68,9 @@
         android:layout_marginLeft="@dimen/h16"
         android:layout_marginTop="16dp"
         android:layout_marginRight="@dimen/h16"
-        android:layout_marginBottom="16dp"
         android:onClick="btnFingerAuthenticateWithoutCryptoObjectClicked"
         android:text="@string/btn_text_finger_auth_no_crpObj" />
 
-
-    <View
-        android:id="@+id/separator"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/colorGray1" />
-
-    <TextView
-        style="@style/TextAppearance.ExploreHMS.Body1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
-        android:text="@string/facial_auth" />
 
     <com.google.android.material.button.MaterialButton
         style="@style/ButtonAppearance.ExploreHMS.Normal"

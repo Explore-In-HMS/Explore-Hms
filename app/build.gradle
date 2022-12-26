@@ -400,8 +400,8 @@ dependencies {
     api 'com.huawei.agconnect:agconnect-applinking:1.7.1.300'
 
     //FIDO
-    api 'com.huawei.hms:fido-fido2:6.3.0.302'
-    api 'com.huawei.hms:fido-bioauthn-androidx:6.3.0.302'
+    api 'com.huawei.hms:fido-fido2:6.3.0.304'
+    api 'com.huawei.hms:fido-bioauthn-androidx:6.3.0.304'
 
     //Awareness Kit
     api 'com.huawei.hms:awareness:3.4.0.300'
