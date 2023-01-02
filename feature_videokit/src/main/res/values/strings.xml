@@ -37,12 +37,14 @@
     <string name="video_view_setting">View</string>
     <string name="video_surfaceview_setting">SurfaceView</string>
     <string name="video_textureview_setting">TextureView</string>
+    <string name="video_load_view_setting">View loading mode</string>
     <string name="video_mute_setting">Mute/Unmute</string>
     <string name="video_mute">Mute</string>
     <string name="video_not_mute">Unmute</string>
     <string name="video_init_bitrate_setting">Playback start bitrate</string>
     <string name="video_init_bitrate_use">Use specified playback start bitrate</string>
     <string name="video_init_bitrate_not_use">Use adaptive playback start bitrate</string>
+    <string name="video_close_logo_setting">Watermark</string>
     <string name="video_open_logo_setting">Enable watermark</string>
     <string name="video_close_logo_one">Valid only for the next video</string>
     <string name="video_close_logo_all">Valid for all videos</string>
@@ -131,4 +133,12 @@
 
     <string name="speed">Speed</string>
     <string name="one_times_speed">1.0x</string>
+    <string name="wait_init_play">Please wait for player initialization to complete</string>
+    <string name="init_player">Init Player</string>
+    <string name="release_player">Release Player</string>
+    <string name="need_init_player">Need init player</string>
+    <string name="seek_mode">Seek mode</string>
+    <string name="seek_previous_sync">Seek previous sync</string>
+    <string name="seek_closest">Seek closest</string>
+    <string name="resume_start_frame_mode">Resume start frame mode</string>
 </resources>

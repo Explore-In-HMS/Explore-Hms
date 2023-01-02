@@ -32,12 +32,15 @@ import com.huawei.hms.ads.AdListener;
 import com.huawei.hms.ads.AdParam;
 import com.huawei.hms.ads.HwAds;
 import com.huawei.hms.ads.VideoOperator;
+import com.huawei.hms.ads.nativead.DetailedCreativeType;
 import com.huawei.hms.ads.nativead.MediaView;
 import com.huawei.hms.ads.nativead.NativeAd;
 import com.huawei.hms.ads.nativead.NativeAdConfiguration;
 import com.huawei.hms.ads.nativead.NativeAdLoader;
 import com.huawei.hms.ads.nativead.NativeView;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class NativeActivity extends AppCompatActivity {
@@ -57,9 +60,9 @@ public class NativeActivity extends AppCompatActivity {
         // Initialize the HUAWEI Ads SDK.
         HwAds.init(this);
         // load ads based on ad id to native ad views
-        loadAd(getString(R.string.ad_id_native_video), videoNativeView);
-        loadAd(getString(R.string.ad_id_native_small), smallNativeView);
-        loadAd(getString(R.string.ad_id_native), largeNativeView);
+        loadAd(getString(R.string.ad_id_native_video), videoNativeView,0);
+        loadAd(getString(R.string.ad_id_native_small), smallNativeView,0);
+        loadAd(getString(R.string.ad_id_native),largeNativeView, DetailedCreativeType.BIG_IMG);
 
     }
 
@@ -76,8 +79,8 @@ public class NativeActivity extends AppCompatActivity {
         return true;
     }
 
-    private void loadAd(String adId, final NativeView nativeView) {
-
+    private void loadAd(String adId, final NativeView nativeView,int type) {
+        List<Integer> detailedCreativeTypeList = new ArrayList<>();
         final NativeAdLoader.Builder builder = new NativeAdLoader.Builder(this, adId);
         builder.setNativeAdLoadedListener(nativeAd -> {
 
@@ -104,11 +107,25 @@ public class NativeActivity extends AppCompatActivity {
         Log.d(TAG, "loadAd() : nativeAdLoader.loadAd() ");
 
         Location location = new Location(LocationManager.GPS_PROVIDER);
-        nativeAdLoader.loadAd(new AdParam.Builder()
-                //Set the location information passed by the app
-                .setLocation(location)
-                .setContentBundle(Utils.contentBundle)
-                .build());
+
+        // Add a specified creative type (large image).
+        if(type!=0){
+            detailedCreativeTypeList.add(type);
+            nativeAdLoader.loadAd(new AdParam.Builder()
+                    //Set the location information passed by the app
+                    .setLocation(location)
+                    .setDetailedCreativeTypeList(detailedCreativeTypeList)
+                    .setContentBundle(Utils.contentBundle)
+                    .build());
+        }
+        else{
+            nativeAdLoader.loadAd(new AdParam.Builder()
+                    //Set the location information passed by the app
+                    .setLocation(location)
+                    .setContentBundle(Utils.contentBundle)
+                    .build());
+        }
+
 
     }
 

@@ -39,6 +39,10 @@
             android:name=".faceview.FaceViewActivity"
             android:label="Face View" />
 
+        <activity
+            android:name=".fluidSimulation3D.Fluid3DActivity"
+            android:label="Fluid Simulation 3D" />
+
         <meta-data
             android:name="android.support.FILE_PROVIDER_PATHS"
             android:value="30.0.2"
