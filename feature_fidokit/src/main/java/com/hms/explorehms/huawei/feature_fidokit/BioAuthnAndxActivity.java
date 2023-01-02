@@ -94,8 +94,8 @@ public class BioAuthnAndxActivity extends AppCompatActivity {
             @Override
             public void onAuthSucceeded(BioAuthnResult result) {
                 // Authentication success.
-                showResult(getString(R.string.auth_succeed) + result.getCryptoObject());
-                logger(getString(R.string.auth_succeed) + result.getCryptoObject());
+                showResult(getString(R.string.auth_succeed));
+                logger(getString(R.string.auth_succeed));
             }
 
             @Override
@@ -139,15 +139,14 @@ public class BioAuthnAndxActivity extends AppCompatActivity {
             @Override
             public void onAuthHelp(int helpMsgId, @NonNull CharSequence helpString) {
                 // Help.
-                resultTextView
-                        .append("Authentication help. helpMsgId=" + helpMsgId + ",helpString=" + helpString + "\n");
+                //resultTextView.append("Authentication help. helpMsgId=" + helpMsgId + ",helpString=" + helpString + "\n");
             }
 
             @Override
             public void onAuthSucceeded(BioAuthnResult result) {
                 // Authentication success.
-                showResult(getString(R.string.auth_succeed) + result.getCryptoObject());
-                logger(getString(R.string.auth_succeed) + result.getCryptoObject());
+                showResult(getString(R.string.auth_succeed));
+                logger(getString(R.string.auth_succeed));
             }
 
             @Override

@@ -150,7 +150,7 @@ public class Fido2ClientActivity extends AppCompatActivity {
                             // Start the FIDO client registration process through Fido2Client.REGISTRATION_REQUEST.
                             fido2Intent.launchFido2Activity(Fido2ClientActivity.this, Fido2Client.REGISTRATION_REQUEST);
                             resultView.setText("");
-                            logger(getString(R.string.registration_call_success));
+                            //logger(getString(R.string.registration_call_success));
                         }
 
                         @Override
@@ -207,7 +207,7 @@ public class Fido2ClientActivity extends AppCompatActivity {
                             // Start the FIDO client authentication process through Fido2Client.AUTHENTICATION_REQUEST.
                             fido2Intent.launchFido2Activity(Fido2ClientActivity.this, Fido2Client.AUTHENTICATION_REQUEST);
                             resultView.setText("");
-                            logger(getString(R.string.authentication_call_success));
+                            //logger(getString(R.string.authentication_call_success));
                         }
 
                         @Override
