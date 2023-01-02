@@ -1,6 +1,7 @@
 package com.hms.explorehms.huawei.feature_navikit;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.RadioGroup;
 import androidx.annotation.Nullable;
 
 import com.hms.explorehms.huawei.feature_navikit.utils.CommonUtil;
+import com.hms.explorehms.huawei.feature_navikit.utils.ConstantNaviUtil;
 import com.hms.explorehms.huawei.feature_navikit.utils.DefaultMapNavi;
 import com.hms.explorehms.huawei.feature_navikit.utils.ToastUtil;
 import com.huawei.hms.navi.navibase.MapNavi;
@@ -32,13 +34,15 @@ public class BusResultActivity extends Activity implements View.OnClickListener,
 
     private Button busPlan;
 
-    private EditText busEnd, busStart, alternatives, returnArray, pedestrianMaxDistance, changes, pedestrianSpeed, keyValue, conversationId;
+    private EditText busEnd, busStart, alternatives, returnArray, pedestrianMaxDistance, changes, pedestrianSpeed, conversationId;
 
     private RadioButton dr1, dr2, dr3, dr4;
 
     private RadioGroup operationEntity;
 
     private MapNavi mapNavi;
+
+    private Context context;
 
     private MapNaviListener mapNaviListener = new DefaultMapNavi() {
         @Override
@@ -56,6 +60,7 @@ public class BusResultActivity extends Activity implements View.OnClickListener,
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bus_result);
+        context = this;
         initNavi();
         initView();
         initServerSite();
@@ -64,7 +69,6 @@ public class BusResultActivity extends Activity implements View.OnClickListener,
     private void initView() {
         busPlan = findViewById(R.id.btn_bus_routing);
         busPlan.setOnClickListener(this);
-
         busEnd = findViewById(R.id.bus_end_point);
         busStart = findViewById(R.id.bus_start_point);
         alternatives = findViewById(R.id.bus_alternatives);
@@ -72,9 +76,7 @@ public class BusResultActivity extends Activity implements View.OnClickListener,
         pedestrianMaxDistance = findViewById(R.id.bus_pedestrianMaxDistance);
         changes = findViewById(R.id.bus_changes);
         pedestrianSpeed = findViewById(R.id.bus_pedestrianSpeed);
-        keyValue = findViewById(R.id.user_apikey_var2);
         conversationId = findViewById(R.id.conversation_id_var2);
-
         dr1 = findViewById(R.id.bus_dr1);
         dr2 = findViewById(R.id.bus_dr2);
         dr3 = findViewById(R.id.bus_dr3);
@@ -163,11 +165,11 @@ public class BusResultActivity extends Activity implements View.OnClickListener,
     }
 
     private void setImportantParam() {
-        if ("".equals(keyValue.getText().toString())) {
+        if ("".equals(new ConstantNaviUtil(context).API_KEY)) {
             ToastUtil.showToast(this, "please input apiKey");
             return;
         } else {
-            setApiKey(keyValue.getText().toString().trim());
+            setApiKey(new ConstantNaviUtil(context).API_KEY);
         }
 
         String clientId = conversationId.getText().toString();

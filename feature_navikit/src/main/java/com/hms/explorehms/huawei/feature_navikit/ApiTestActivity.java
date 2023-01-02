@@ -1,6 +1,7 @@
 package com.hms.explorehms.huawei.feature_navikit;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.hms.explorehms.huawei.feature_navikit.utils.CommonUtil;
+import com.hms.explorehms.huawei.feature_navikit.utils.ConstantNaviUtil;
 import com.hms.explorehms.huawei.feature_navikit.utils.DefaultMapNavi;
 import com.hms.explorehms.huawei.feature_navikit.utils.ToastUtil;
 import com.huawei.hms.navi.navibase.MapNavi;
@@ -56,7 +58,7 @@ public class ApiTestActivity extends Activity implements RadioGroup.OnCheckedCha
 
     private NaviLatLng hwFrom, hwTo;
 
-    private EditText mStartPoint, mEndPoint, mWayPoint1, mWayPoint2, keyValue, conversationId;
+    private EditText mStartPoint, mEndPoint, mWayPoint1, mWayPoint2, conversationId;
 
     private RadioButton dr1, dr2, dr3, dr4;
 
@@ -65,6 +67,8 @@ public class ApiTestActivity extends Activity implements RadioGroup.OnCheckedCha
     private ArrayList<NaviLatLng> mWayPoints = new ArrayList<>();
 
     private boolean saveTime, avoidFerry, avoidHighway, avoidToll, saveDistance, smartRecommend, priorityRoad, priorityHighway, saveMoney, avoidCongestion, isRouteCalculateSuccess = false;
+
+    private Context context;
 
     private MapNaviListener mapNaviListener = new DefaultMapNavi() {
         @Override
@@ -111,6 +115,7 @@ public class ApiTestActivity extends Activity implements RadioGroup.OnCheckedCha
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_api_test);
+        context = this;
         initView();
         initListener();
         initServerSite();
@@ -125,7 +130,6 @@ public class ApiTestActivity extends Activity implements RadioGroup.OnCheckedCha
         mEndPoint = (EditText) findViewById(R.id.m_end_point);
         mWayPoint1 = (EditText) findViewById(R.id.way_one_point);
         mWayPoint2 = (EditText) findViewById(R.id.way_two_point);
-        keyValue = findViewById(R.id.user_apikey_var);
         conversationId = findViewById(R.id.conversation_id_var);
         spStrategy = findViewById(R.id.sp_navi_strategy);
         spMode = findViewById(R.id.sp_navi_mode);
@@ -325,11 +329,11 @@ public class ApiTestActivity extends Activity implements RadioGroup.OnCheckedCha
 
     private void routing() {
         isRouteCalculateSuccess = false;
-        if ("".equals(keyValue.getText().toString())) {
+        if ("".equals(new ConstantNaviUtil(context).API_KEY)) {
             ToastUtil.showToast(this, "please input apiKey");
             return;
         } else {
-            setApiKey(keyValue.getText().toString().trim());
+            setApiKey(new ConstantNaviUtil(context).API_KEY);
         }
 
         String clientId = conversationId.getText().toString();
