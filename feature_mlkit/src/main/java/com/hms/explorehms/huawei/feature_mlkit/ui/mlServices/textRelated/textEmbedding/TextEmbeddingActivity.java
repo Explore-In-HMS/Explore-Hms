@@ -20,6 +20,7 @@ package com.hms.explorehms.huawei.feature_mlkit.ui.mlServices.textRelated.textEm
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -140,6 +141,7 @@ public class TextEmbeddingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         setContentView(R.layout.activity_text_embedding);
 
         unbinder = ButterKnife.bind(this);

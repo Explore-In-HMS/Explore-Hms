@@ -21,6 +21,7 @@ package com.hms.explorehms.huawei.feature_mlkit.ui.mlServices.textRelated.idCard
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -35,6 +36,7 @@ public class IDCardActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         setContentView(R.layout.activity_id_card);
         findViewById(R.id.btn_icr_cn).setOnClickListener(this);
         findViewById(R.id.btn_icr_vn).setOnClickListener(this);

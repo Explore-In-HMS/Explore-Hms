@@ -29,6 +29,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.hms.explorehms.huawei.feature_mlkit.R;
 import com.hms.explorehms.huawei.feature_mlkit.utils.DialogUtils;
@@ -49,6 +50,7 @@ public class GestureMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         setContentView(R.layout.activity_gesture_main);
         unbinder = ButterKnife.bind(this);
         setupToolbar();

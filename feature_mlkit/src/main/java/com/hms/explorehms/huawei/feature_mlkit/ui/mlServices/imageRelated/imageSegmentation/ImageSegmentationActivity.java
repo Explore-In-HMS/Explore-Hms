@@ -22,6 +22,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.hms.explorehms.Util;
 import com.hms.explorehms.huawei.feature_mlkit.R;
@@ -56,6 +57,7 @@ public class ImageSegmentationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         setContentView(R.layout.activity_image_segmentation);
         unbinder = ButterKnife.bind(this);
         setupToolbar();

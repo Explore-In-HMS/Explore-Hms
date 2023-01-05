@@ -26,6 +26,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.hms.explorehms.huawei.feature_mlkit.R;
@@ -112,6 +113,7 @@ public class SegmentationWithCutOutOfObjectsActivity extends AppCompatActivity i
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         setContentView(R.layout.activity_segmentation_with_cutout_of_objects);
 
         unbinder =  ButterKnife.bind(this);

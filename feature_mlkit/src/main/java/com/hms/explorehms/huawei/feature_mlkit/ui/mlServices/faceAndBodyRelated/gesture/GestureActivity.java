@@ -25,6 +25,7 @@ import android.hardware.Camera;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -84,6 +85,7 @@ public final class GestureActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         this.setContentView(R.layout.activity_handkeypoint);
         this.preview = this.findViewById(R.id.preview);
         this.graphicOverlay = this.findViewById(R.id.overlay);
