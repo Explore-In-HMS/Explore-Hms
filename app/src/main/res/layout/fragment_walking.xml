@@ -28,13 +28,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <include
-        android:id="@+id/map_mapkit"
-        layout="@layout/map_layout_mapkit"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="0dp"
-        android:layout_height="450dp"
-        android:layout_width="match_parent"/>
+        <include
+            android:id="@+id/map_mapkit"
+            layout="@layout/map_layout_mapkit"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="0dp" />
 
     <LinearLayout
         android:layout_below="@+id/map_mapkit"

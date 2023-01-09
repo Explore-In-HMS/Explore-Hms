@@ -29,6 +29,7 @@ import androidx.fragment.app.Fragment;
 
 import com.hms.explorehms.R;
 import com.hms.explorehms.mapkit.data.Constants;
+import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hms.maps.CameraUpdateFactory;
 import com.huawei.hms.maps.HuaweiMap;
 import com.huawei.hms.maps.HuaweiMapOptions;
@@ -63,7 +64,8 @@ public abstract class BaseFragment extends Fragment implements OnMapReadyCallbac
         if (savedInstanceState != null) {
             mapViewBundle = savedInstanceState.getBundle(Constants.MAP_BUNDLE);
         }
-        MapsInitializer.setApiKey(Constants.MAP_KEY);
+        String API_KEY = AGConnectServicesConfig.fromContext(requireContext()).getString("client/api_key");
+        MapsInitializer.setApiKey(API_KEY);
         mapView.onCreate(mapViewBundle);
         mapView.getMapAsync(this);
 

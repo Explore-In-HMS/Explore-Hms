@@ -27,6 +27,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.hms.explorehms.mapkit.model.response.DirectionResponse;
 import com.google.gson.Gson;
+import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hms.maps.HuaweiMap;
 
 import org.jetbrains.annotations.NotNull;
@@ -82,7 +83,8 @@ public final class MyVolleyRequest {
 
     @Nullable
     public final String getUrl(@NotNull String directionType) throws UnsupportedEncodingException {
-        return "https://mapapi.cloud.huawei.com/mapApi/v1/routeService/" + directionType + "?key=" + URLEncoder.encode((Constants.MAP_KEY), "utf-8");
+        String API_KEY = AGConnectServicesConfig.fromContext(context).getString("client/api_key");
+        return "https://mapapi.cloud.huawei.com/mapApi/v1/routeService/" + directionType + "?key=" + URLEncoder.encode((API_KEY), "utf-8");
     }
 
     public MyVolleyRequest(Context context, IVolley iVolley) {
