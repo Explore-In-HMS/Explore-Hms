@@ -334,6 +334,11 @@ dependencies {
     api 'com.huawei.hms:ml-computer-vision-faceverify:3.6.0.304'
     api 'com.huawei.hms:ml-computer-vision-faceverify-model:3.6.0.304'
 
+    // Image Segmentation
+    api 'com.huawei.hms:ml-computer-vision-segmentation:3.5.0.303'
+    api 'com.huawei.hms:ml-computer-vision-image-segmentation-multiclass-model:3.5.0.303'
+    api 'com.huawei.hms:ml-computer-vision-image-segmentation-body-model:3.5.0.303'
+
     // Skeleton detection
     api 'com.huawei.hms:ml-computer-vision-skeleton:3.5.0.300'
     api 'com.huawei.hms:ml-computer-vision-skeleton-model:3.5.0.300'
