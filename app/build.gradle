@@ -60,6 +60,7 @@ android {
         packagingOptions {
             //solve com.android.builder.merge.DuplicateRelativeFileException: More than one file was found with OS independent path 'META-INF/rxjava.properties'
             exclude 'META-INF/rxjava.properties'
+            //exclude '/assets/kpms-unpack/open_source_software_statment.xml'
         }
     }
     buildTypes {
@@ -92,7 +93,7 @@ android {
     }
 
 
-    dynamicFeatures =
+dynamicFeatures =
             [
                     ':feature_hiai',
                     ':feature_panorama',
@@ -145,7 +146,7 @@ android {
                     ':feature_wearengine',
                     ':feature_hemkit',
                     ':dynamicfeaturetest',
-                    ':feature_hiaifoundation',
+                    //':feature_hiaifoundation',
                     ':feature_connectapi',
                     ':feature_networkkit',
                     ':feature_audioeditorkit',
@@ -167,6 +168,8 @@ android {
         pickFirst 'lib/arm64-v8a/libAudioAdjustmentJni.so'
         pickFirst 'lib/arm64-v8a/libc++_shared.so'
         pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+        pickFirst 'lib/arm64-v8a/libnative-lib.so'
+        pickFirst 'lib/arm64-v8a/libnative-lib.so'
     }
 
 }
@@ -312,14 +315,6 @@ dependencies {
 
     // object detection
     api 'com.huawei.hms:ml-computer-vision-livenessdetection:3.6.0.300'
-    api 'com.huawei.hms:ml-computer-vision-object-detection-model:3.5.0.307'
-    api 'com.huawei.hms:ml-computer-vision-image-classification-model:3.5.0.302'
-
-
-
-    // Product Search
-    api 'com.huawei.hms:ml-computer-vision-cloud:3.7.0.302'
-    api 'com.huawei.hms:ml-product-visual-search-plugin:3.7.0.302'
 
     api 'com.huawei.hms:ml-computer-voice-asr-plugin:3.5.0.301'
 
@@ -339,6 +334,36 @@ dependencies {
     api 'com.huawei.hms:ml-computer-vision-image-segmentation-multiclass-model:3.5.0.303'
     api 'com.huawei.hms:ml-computer-vision-image-segmentation-body-model:3.5.0.303'
 
+    /**
+    * Don't change this dependencies for successfully release
+    **/
+
+    // Product Visual Search -------------------------------------------------------------------- //
+    api 'com.huawei.hms:ml-product-visual-search-plugin:3.7.0.302'
+
+    // Image Super Resolution ------------------------------------------------------------------- //
+    api 'com.huawei.hms:ml-computer-vision-imagesuperresolution:3.5.0.301'
+    api 'com.huawei.hms:ml-computer-vision-imagesuperresolution-model:3.5.0.301'
+
+    // Document Skew Correction ----------------------------------------------------------------- //
+    api 'com.huawei.hms:ml-computer-vision-documentskew:3.5.0.301'
+    api 'com.huawei.hms:ml-computer-vision-documentskew-model:3.5.0.301'
+
+    // Text Image Super-Resolution -------------------------------------------------------------- //
+    api 'com.huawei.hms:ml-computer-vision-textimagesuperresolution:3.5.0.300'
+    api 'com.huawei.hms:ml-computer-vision-textimagesuperresolution-model:3.5.0.300'
+
+    // Scene Detection -------------------------------------------------------------------------- //
+    api 'com.huawei.hms:ml-computer-vision-scenedetection:3.6.0.300'
+
+    api 'com.huawei.hms:ml-computer-vision-image-classification-model:3.5.0.302'
+    api 'com.huawei.hms:ml-computer-vision-object-detection-model:3.5.0.307'
+    api 'com.huawei.hms:ml-computer-vision-cloud:3.5.0.301'
+    api 'com.huawei.hms:ml-computer-vision-formrecognition-model:3.5.0.302'
+    api 'com.huawei.hms:ml-computer-vision-handkeypoint:3.5.0.301'
+    api 'com.huawei.hms:ml-computer-vision-handkeypoint-model:3.5.0.301'
+    api 'com.huawei.hms:ml-computer-vision-gesture-model:3.5.0.301'
+
     // Skeleton detection
     api 'com.huawei.hms:ml-computer-vision-skeleton:3.5.0.300'
     api 'com.huawei.hms:ml-computer-vision-skeleton-model:3.5.0.300'
@@ -346,9 +371,6 @@ dependencies {
 
     // hand detection
     api 'com.huawei.hms:ml-computer-vision-yoga-model:2.0.4.300'
-    api 'com.huawei.hms:ml-computer-vision-handkeypoint:3.5.0.301'
-    api 'com.huawei.hms:ml-computer-vision-handkeypoint-model:3.5.0.301'
-    api 'com.huawei.hms:ml-computer-vision-gesture-model:3.5.0.301'
 
     // Language detection
     //implementation 'com.huawei.hms:ml-computer-language-detection:2.2.0.300'
@@ -421,7 +443,8 @@ dependencies {
     api 'com.huawei.hms:push:6.5.0.300'
 
     //MAP kit
-    api "com.huawei.hms:maps:6.3.1.300"
+    api "com.huawei.hms:maps:6.4.1.300"
+    api 'com.huawei.hms:maps-advance:6.7.1.302'
 
     //Ads Kit
     //api 'com.huawei.hms:ads-lite:13.4.54.300'

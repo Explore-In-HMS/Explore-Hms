@@ -17,11 +17,15 @@
   ~
   -->
 
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        android:background="@color/colorGray1">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvThreadCount"
@@ -30,7 +34,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity="start|center_horizontal"
-            android:text="Thread Count: 3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/tvTimeAccelerateKit"
             app:layout_constraintHorizontal_bias="0.5"
@@ -43,7 +46,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="end|center_horizontal"
-            android:text="Time: 2 [2706) sn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/tvThreadCount"
@@ -58,3 +60,5 @@
             app:layout_constraintTop_toBottomOf="@+id/tvTimeAccelerateKit" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

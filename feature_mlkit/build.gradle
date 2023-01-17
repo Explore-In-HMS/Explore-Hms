@@ -84,14 +84,9 @@ dependencies {
 
     // Document Recognition ----------------------------------------- //
    // implementation 'com.huawei.hms:ml-computer-vision-cloud:2.0.1.300'
-    // General Card Recognition ------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-card-gcr-plugin:2.0.1.300'
     // Bank Card Recognition ---------------------------------------- //
     //implementation 'com.huawei.hms:ml-computer-card-bcr:3.5.0.300'
 
-    // ID Card Recognition ------------------------------------------ //
-    implementation 'com.huawei.hms:ml-computer-card-icr-vn:3.5.0.300'
-    implementation 'com.huawei.hms:ml-computer-card-icr-cn:2.0.3.303'
 
     // Language Detection ------------------------------------------ //
     //implementation 'com.huawei.hms:ml-computer-language-detection:2.2.0.300'
@@ -123,54 +118,30 @@ dependencies {
     //implementation 'com.huawei.hms:ml-speech-semantics-sounddect-sdk:3.5.0.302'
     //implementation 'com.huawei.hms:ml-speech-semantics-sounddect-model:3.5.0.302'
 
+    /**
+     * Don't change this dependencies for successfully release
+     **/
+
     // Image Classification --------------------------------------------------------------------- //
     implementation 'com.huawei.hms:ml-computer-vision-classification:3.5.0.302'
-    implementation 'com.huawei.hms:ml-computer-vision-image-classification-model:3.5.0.302'
 
     // Object Detection and Tracking ------------------------------------------------------------ //
     implementation 'com.huawei.hms:ml-computer-vision-object:3.5.0.307'
-    implementation 'com.huawei.hms:ml-computer-vision-object-detection-model:3.5.0.307'
 
     // Landmark Recognition --------------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-cloud:3.5.0.301'
-
-    // Product Visual Search -------------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-cloud:3.7.0.302'
-    implementation 'com.huawei.hms:ml-product-visual-search-plugin:3.7.0.302'
-
-    // Image Super Resolution ------------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-imagesuperresolution:3.5.0.301'
-    implementation 'com.huawei.hms:ml-computer-vision-imagesuperresolution-model:3.5.0.301'
-
-    // Document Skew Correction ----------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-documentskew:3.5.0.301'
-    implementation 'com.huawei.hms:ml-computer-vision-documentskew-model:3.5.0.301'
-
-    // Text Image Super-Resolution -------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-textimagesuperresolution:3.5.0.300'
-    implementation 'com.huawei.hms:ml-computer-vision-textimagesuperresolution-model:3.5.0.300'
 
     // Text Image Super-Resolution -------------------------------------------------------------- //
     implementation 'it.sephiroth.android.library.imagezoom:imagezoom:2.3.0'
 
-    // Scene Detection -------------------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-scenedetection:3.6.0.300'
-    implementation 'com.huawei.hms:ml-computer-vision-scenedetection-model:3.6.0.300'
-
     // Form Table Recognition ------------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-formrecognition-model:3.5.0.302'
     implementation 'com.huawei.hms:ml-computer-vision-formrecognition:3.5.0.302'
     // manifest <meta-data android:name="com.huawei.hms.ml.DEPENDENCY" android:value= "fr"/>
     implementation group: 'net.sourceforge.jexcelapi', name: 'jxl', version: '2.6.12'
 
     // Liveness Detection ----------------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-livenessdetection:3.6.0.300'
     // automatically Updating the Machine Learning Model manifest metadata
     // manifest <meta-data android:name="com.huawei.hms.ml.DEPENDENCY" android:value= "livenessdetection"/>
     // Hand KeyPoint Detection ------------------------------------------------------------------ //
-    implementation 'com.huawei.hms:ml-computer-vision-handkeypoint:3.5.0.301'
-    implementation 'com.huawei.hms:ml-computer-vision-handkeypoint-model:3.5.0.301'
-    implementation 'com.huawei.hms:ml-computer-vision-gesture-model:3.5.0.301'
 
     // Text Embedding --------------------------------------------------------------------------- //
    // implementation 'com.huawei.hms:ml-nlp-textembedding:3.5.0.300'

@@ -33,7 +33,7 @@
     </dist:module>
 
     <application
-        android:theme="@style/AppTheme"
+        android:theme="@style/AppTheme.Material"
         tools:replace="theme">
         <activity android:name="com.hms.explorehms.huawei.feature_acceleratekit.AccelerateKitMainActivity"/>
     </application>
