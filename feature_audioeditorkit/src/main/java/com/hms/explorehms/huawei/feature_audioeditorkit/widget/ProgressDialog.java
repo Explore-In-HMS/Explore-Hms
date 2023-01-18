@@ -33,11 +33,6 @@ import androidx.fragment.app.DialogFragment;
 import com.hms.explorehms.huawei.feature_audioeditorkit.R;
 import com.huawei.hms.audioeditor.sdk.HAEAudioExpansion;
 
-/**
- * @author wWX1043449
- * @date 2021/5/11
- * @since 2021/5/11
- */
 public class ProgressDialog extends DialogFragment implements View.OnClickListener {
     public ProgressBar rd_progress;
     private TextView tv_progress;
