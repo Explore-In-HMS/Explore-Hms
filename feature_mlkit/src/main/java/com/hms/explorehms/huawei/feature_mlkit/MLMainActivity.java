@@ -23,6 +23,7 @@ import butterknife.ButterKnife;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.WindowManager;
 
 import com.hms.explorehms.huawei.feature_mlkit.ui.tabsfragments.ViewPagerTabsAdapter;
 import com.google.android.material.tabs.TabLayout;
@@ -45,6 +46,7 @@ public class MLMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         setContentView(R.layout.activity_ml_main);
 
         ButterKnife.bind(this);

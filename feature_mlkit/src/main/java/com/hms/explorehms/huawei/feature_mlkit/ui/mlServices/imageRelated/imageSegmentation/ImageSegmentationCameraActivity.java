@@ -28,6 +28,7 @@ import android.renderscript.RenderScript;
 import android.util.Log;
 import android.view.OrientationEventListener;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.hms.explorehms.huawei.feature_mlkit.R;
@@ -98,6 +99,7 @@ public class ImageSegmentationCameraActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         setContentView(R.layout.activity_image_segmentation_camera);
 
         unbinder = ButterKnife.bind(this);

@@ -54,6 +54,7 @@ android {
     packagingOptions {
         exclude 'lib/arm64-v8a/libc++_shared.so'
         exclude 'lib/armeabi-v7a/libc++_shared.so'
+        exclude 'lib/arm64-v8a/libnative-lib.so'
     }
 
     buildTypes {

@@ -31,6 +31,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
     }
 
     /**
@@ -62,8 +63,9 @@ public class BaseActivity extends AppCompatActivity {
 
     /**
      * Set status bar's color.
+     *
      * @param activity Activity of page.
-     * @param colorId Color ID.
+     * @param colorId  Color ID.
      */
     public static void setStatusBarColor(Activity activity, int colorId) {
         try {

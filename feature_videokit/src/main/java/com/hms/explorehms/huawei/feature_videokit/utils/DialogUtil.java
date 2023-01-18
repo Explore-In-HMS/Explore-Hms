@@ -37,6 +37,7 @@ import com.hms.explorehms.huawei.feature_videokit.contract.OnHomePageListener;
 import com.hms.explorehms.huawei.feature_videokit.contract.OnPlaySettingListener;
 import com.hms.explorehms.huawei.feature_videokit.view.PlaySettingDialog;
 import com.huawei.hms.videokit.player.CacheInfo;
+import com.huawei.hms.videokit.player.CreateComponentException;
 import com.huawei.hms.videokit.player.InitBufferTimeStrategy;
 import com.huawei.hms.videokit.player.Preloader;
 import com.huawei.hms.videokit.player.WisePlayerFactory;
@@ -311,7 +312,12 @@ public class DialogUtil {
         okBt.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Preloader preloader = ExploreHMSApplication.getWisePlayerFactory().createPreloader();
+                Preloader preloader = null;
+                try {
+                    preloader = ExploreHMSApplication.getWisePlayerFactory().createPreloader();
+                } catch (CreateComponentException e) {
+                    e.printStackTrace();
+                }
                 if (preloader != null && !TextUtils.isEmpty(bitrateMinSetting.getText())
                     && !TextUtils.isEmpty(bitrateMaxSetting.getText())) {
                     PlayControlUtil.setPreloader(preloader);

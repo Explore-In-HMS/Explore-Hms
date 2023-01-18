@@ -16,6 +16,8 @@
 
 package com.hms.explorehms.huawei.feature_nearbyservice.connection;
 
+import static com.huawei.hms.nearby.Nearby.setAgcRegion;
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -34,6 +36,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupMenu;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -46,8 +49,10 @@ import com.hms.explorehms.huawei.feature_nearbyservice.connection.utils.ToastUti
 import com.hms.explorehms.huawei.feature_nearbyservice.permission.PermissionHelper;
 import com.hms.explorehms.huawei.feature_nearbyservice.permission.PermissionInterface;
 import com.google.android.material.textfield.TextInputLayout;
+import com.huawei.hms.image.vision.bean.ResultCode;
 import com.huawei.hms.nearby.Nearby;
 import com.huawei.hms.nearby.StatusCode;
+import com.huawei.hms.nearby.common.RegionCode;
 import com.huawei.hms.nearby.discovery.BroadcastOption;
 import com.huawei.hms.nearby.discovery.ConnectCallback;
 import com.huawei.hms.nearby.discovery.ConnectInfo;
@@ -88,6 +93,8 @@ public class ChatActivity extends AppCompatActivity implements PermissionInterfa
     private TransferEngine mTransferEngine = null;
     private DiscoveryEngine mDiscoveryEngine = null;
 
+    private int mDiscoveryEngine2;
+
     private PermissionHelper mPermissionHelper;
 
     private EditText myNameEt;
@@ -100,6 +107,7 @@ public class ChatActivity extends AppCompatActivity implements PermissionInterfa
 
     private ChatAdapter adapter;
 
+    private RadioButton rb1, rb2, rb3, rb4;
 
     private Button connectBtn;
 
@@ -154,6 +162,10 @@ public class ChatActivity extends AppCompatActivity implements PermissionInterfa
         friendNameEt = findViewById(R.id.et_friend_name);
         msgEt = findViewById(R.id.et_msg);
         connectBtn = findViewById(R.id.btn_connect);
+        rb1 = findViewById(R.id.rb1_nearby);
+        rb2 = findViewById(R.id.rb2_nearby);
+        rb3 = findViewById(R.id.rb3_nearby);
+        rb4 = findViewById(R.id.rb4_nearby);
 
 
         menuBtn = findViewById(R.id.btnPopupMenu);
@@ -234,7 +246,7 @@ public class ChatActivity extends AppCompatActivity implements PermissionInterfa
 
     @Override
     public void requestPermissionsFail() {
-        Toast.makeText(this, R.string.error_missing_permissions, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, StatusCode.STATUS_SELECT_CLOUD_POLICY_IS_AUTO, Toast.LENGTH_LONG).show();
         finish();
     }
 
@@ -380,11 +392,27 @@ public class ChatActivity extends AppCompatActivity implements PermissionInterfa
         friendNameEt.setEnabled(false);
         Context context = getApplicationContext();
         mDiscoveryEngine = Nearby.getDiscoveryEngine(context);
+        setAgcRegion(context, initRegionCode());
         if (myNameStr.compareTo(friendNameStr) > 0) {
             doStartScan(view);
         } else {
             doStartBroadcast(view);
         }
+    }
+
+    public RegionCode initRegionCode(){
+        if (rb1.isChecked()) {
+            return RegionCode.CN;
+        } else if (rb2.isChecked()) {
+            return RegionCode.RU;
+        } else if (rb3.isChecked()) {
+            return RegionCode.DE;
+        } else if (rb4.isChecked()) {
+            return RegionCode.SG;
+        } else {
+            ToastUtil.showShortToastTop(getApplicationContext(), String.valueOf(StatusCode.STATUS_NOT_SET_CLOUD_POLICY));
+        }
+        return RegionCode.DE;
     }
 
     /**

@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
- <!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~
-  ~   Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
+  ~   Copyright 2020. Explore in HMS. All rights reserved.
   ~
   ~   Licensed under the Apache License, Version 2.0 (the "License");
   ~   You may not use this file except in compliance with the License.
@@ -31,8 +30,13 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_remoteconfig.RemoteConfigMainActivity2"></activity>
-        <activity android:name="com.hms.explorehms.huawei.feature_remoteconfig.RemoteConfigMainActivity" />
+        <activity
+            android:name=".CustomAttributesExampleActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+        <activity
+            android:name=".RemoteConfigMainActivity2"
+            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+        <activity android:name=".RemoteConfigMainActivity" />
     </application>
 
 </manifest>

@@ -77,6 +77,12 @@
         </activity>
 
 
+        <activity
+            android:name=".ui.ConnectAppMarketActivity"
+            android:label="ConnectAppMarketActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+
     </application>
 
 </manifest>

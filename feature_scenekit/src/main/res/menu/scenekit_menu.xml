@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/add_item"
+    android:title="@string/Add_fluid"/>
+
+    <item android:id="@+id/reduce_item"
+        android:title="@string/Reduce_fluid"/>
+
+</menu>

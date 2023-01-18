@@ -115,7 +115,8 @@ public class KitModel implements Parcelable {
             new KitModel("Video Editor Kit", "com.hms.explorehms.huawei.feature_videoeditorkit.ServiceIntroductionActivity", true, "feature_videoeditorkit", R.drawable.icon_video_editor_kit, KitModel.HmsCategory.Media),
             new KitModel("3D Modeling Kit", "com.hms.explorehms.modelingkit3d.ui.activity.MainActivity", false, null, R.drawable.icon_modeling3d_kit, KitModel.HmsCategory.Graphics),
             new KitModel("5G Modem Kit", "com.hms.explorehms.huawei.feature_modem5g_kit.ServiceIntroductionActivity", true,"feature_modem5g_kit" , R.drawable.icon_modem5g_kit, HmsCategory.System),
-            new KitModel("Keyring Service", "com.hms.explorehms.keyring.KeyringServiceIntroductionActivity", false,null , R.drawable.icon_keyservice, HmsCategory.Security)
+            new KitModel("Keyring Service", "com.hms.explorehms.keyring.KeyringServiceIntroductionActivity", false,null , R.drawable.icon_keyservice, HmsCategory.Security),
+            new KitModel("Navi Kit", "com.hms.explorehms.huawei.feature_navikit.MainActivity", true,"feature_navikit" , R.drawable.icon_navikit, HmsCategory.AppServices)
     );
 
     public static List<KitModel> getKitsByCategory(HmsCategory category) {

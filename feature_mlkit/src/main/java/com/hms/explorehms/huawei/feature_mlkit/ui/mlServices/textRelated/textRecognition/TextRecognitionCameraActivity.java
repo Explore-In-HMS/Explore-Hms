@@ -75,6 +75,7 @@ public class TextRecognitionCameraActivity extends AppCompatActivity implements 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         setContentView(R.layout.activity_text_recognition_camera);
 
         Utils.hideNavigationBarActivity(this);

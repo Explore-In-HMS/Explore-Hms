@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.OrientationEventListener;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 
@@ -82,6 +83,7 @@ public class SkeletonDetectionCameraActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         setContentView(R.layout.activity_skeleton_detection_camera);
 
         Utils.hideNavigationBarActivity(this);

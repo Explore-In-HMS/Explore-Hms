@@ -23,7 +23,7 @@ public class Constants {
 
     public static final String MAP_BUNDLE = "MapViewBundleKey";
 
-    public static final String MAP_KEY = "CV8RiFSCwQTFPxl1ET8PWacetyb/E3+HjejRkuQHJ/RSczHVZzPXC7pNRBPPpSoJvuigzxm5tRMzvee57oVD3djKVLNc";
+    public static final String MAP_KEY = "";
 
     public static final Double ORIGIN_LAT=40.970888;
 

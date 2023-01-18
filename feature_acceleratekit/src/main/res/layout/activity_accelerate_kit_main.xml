@@ -22,7 +22,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/AppTheme.Material"
+    android:theme="@style/AppTheme"
     tools:context=".AccelerateKitMainActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -94,13 +94,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:hint="Set thread count"
-                app:layout_constraintStart_toStartOf="parent"
+                android:enabled="false"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ivHeader_acceleratekit">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtThreadCount_acceleratekit"
                     android:layout_width="match_parent"
+                    android:text="3"
                     android:layout_height="match_parent"
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -116,7 +118,8 @@
                 android:drawableTint="@color/colorPrimary"
                 android:gravity="center_vertical"
                 android:text="@string/set_thread_count_should_be"
-                app:layout_constraintTop_toBottomOf="@+id/layEdtText_accelerateKit" />
+                app:layout_constraintTop_toBottomOf="@+id/layEdtText_accelerateKit"
+                tools:layout_editor_absoluteX="16dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnStartThread"
@@ -126,9 +129,10 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:visibility="gone"
                 android:text="@string/calculate_pi_button_text"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvInfoThreadCount_acceleratekit" />
 
 
@@ -169,6 +173,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
+                    android:text="Calculated PI value: 3.1415926525893240751"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator" />
@@ -182,11 +187,21 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
                     android:orientation="vertical"
-                    tools:listitem="@layout/item_acceleratekit_list"
-                    tools:itemCount="3"
+                    android:visibility="gone"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvPIResult_acceleratekit" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvPIResult_acceleratekit"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_acceleratekit_list" />
+
+                <include
+                    layout="@layout/item_acceleratekit_list"
+                    android:id="@+id/iViewAccelerateKit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimens_16"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPIResult_acceleratekit">
+                </include>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

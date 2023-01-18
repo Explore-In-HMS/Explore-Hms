@@ -67,9 +67,9 @@
     <string name="skipad">SkipAd</string>
     <string name="ad_flag">Ad Flag</string>
     <string name="learn_more">Learn more</string>
-    <string name="video_native_ad_example">Video Native Ad example</string>
-    <string name="small_native_ad_example">Small Native Ad example</string>
-    <string name="large_image_native_ad_example">Large Image Native Ad example</string>
+    <string name="video_native_ad_example">Video Native Ad</string>
+    <string name="small_native_ad_example">Small Native Ad</string>
+    <string name="large_image_native_ad_example">Large Image Native Ad</string>
     <string name="score">Score :</string>
     <string name="play_for_point">Play For Point</string>
     <string name="watch_video_for_reward">Watch video for Reward</string>

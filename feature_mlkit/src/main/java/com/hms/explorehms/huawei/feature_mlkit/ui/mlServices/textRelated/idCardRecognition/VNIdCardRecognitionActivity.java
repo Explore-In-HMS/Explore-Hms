@@ -65,6 +65,7 @@ public class VNIdCardRecognitionActivity extends AppCompatActivity implements Vi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         this.setContentView(R.layout.activity_idcard_recognition);
         rnBack = findViewById(R.id.rn_back);
         rnBack.setVisibility(View.GONE);

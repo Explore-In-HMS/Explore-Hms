@@ -21,6 +21,7 @@ import android.hardware.Camera;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
@@ -76,6 +77,7 @@ public class Live3DFaceAnalyseActivity extends AppCompatActivity implements View
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         this.setContentView(R.layout.activity_face_detection_3d);
         this.mPreview = this.findViewById(R.id.face_preview);
         this.graphicOverlay = this.findViewById(R.id.face_overlay);

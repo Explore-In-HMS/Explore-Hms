@@ -138,6 +138,18 @@ public class PlayControlUtil {
      */
     private static boolean isDownloadLinkSingle = false;
 
+    /**
+     * Set seek mode. 0: inexact mode, 1: exact frame mode
+     * default inexact mode
+     */
+    private static int seekMode = 0;
+
+    /**
+     * Whether to use the precise seek mode to switch between the background and the foreground and the pure tone and
+     * picture modes
+     */
+    private static int resumeStartFrameMode = 0;
+
     private static Proxy socksProxy = null;
 
     private static boolean isWakeOn = true;
@@ -428,5 +440,21 @@ public class PlayControlUtil {
 
     public static void setSubtitleRenderByDemo(boolean renderByDemo) {
         isSubtitleRenderByDemo = renderByDemo;
+    }
+
+    public static int getSeekMode() {
+        return seekMode;
+    }
+
+    public static void setSeekMode(int seekMode) {
+        PlayControlUtil.seekMode = seekMode;
+    }
+
+    public static int getResumeStartFrameMode() {
+        return resumeStartFrameMode;
+    }
+
+    public static void setResumeStartFrameMode(int resumeStartFrameMode) {
+        PlayControlUtil.resumeStartFrameMode = resumeStartFrameMode;
     }
 }

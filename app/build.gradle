@@ -58,6 +58,7 @@ android {
         packagingOptions {
             //solve com.android.builder.merge.DuplicateRelativeFileException: More than one file was found with OS independent path 'META-INF/rxjava.properties'
             exclude 'META-INF/rxjava.properties'
+            //exclude '/assets/kpms-unpack/open_source_software_statment.xml'
         }
     }
     buildTypes {
@@ -90,7 +91,7 @@ android {
     }
 
 
-    dynamicFeatures =
+dynamicFeatures =
             [
                     ':feature_hiai',
                     ':feature_panorama',
@@ -143,7 +144,7 @@ android {
                     ':feature_wearengine',
                     ':feature_hemkit',
                     ':dynamicfeaturetest',
-                    //':feature_hiaifoundation',
+                    ':feature_hiaifoundation',
                     ':feature_connectapi',
                     ':feature_networkkit',
                     ':feature_audioeditorkit',
@@ -151,11 +152,12 @@ android {
                     ':feature_cameraengine',
                     ':feature_devicevirtualizationengine',
                     ':feature_modem5g_kit',
-                    ':feature_videoeditorkit'
+                    ':feature_videoeditorkit',
+                    ':feature_navikit'
             ]
 
     packagingOptions {
-        pickFirst '**/*.so'
+        pickFirst 'lib/arm64-v8a/libmindspore-lite.so'
         pickFirst 'okhttp3/internal/publicsuffix/publicsuffixes.gz'
         pickFirst 'lib/x86_64/libAudioAdjustmentJni.so'
         pickFirst 'lib/armeabi/libAudioAdjustmentJni.so'
@@ -164,6 +166,8 @@ android {
         pickFirst 'lib/arm64-v8a/libAudioAdjustmentJni.so'
         pickFirst 'lib/arm64-v8a/libc++_shared.so'
         pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+        pickFirst 'lib/arm64-v8a/libnative-lib.so'
+        pickFirst 'lib/arm64-v8a/libnative-lib.so'
     }
 
 }
@@ -305,41 +309,66 @@ dependencies {
 
     //ID card
     api 'com.huawei.hms:ml-computer-card-icr-cn:2.0.3.303'
-    api 'com.huawei.hms:ml-computer-card-icr-vn:2.1.0.301'
+    api 'com.huawei.hms:ml-computer-card-icr-vn:3.5.0.300'
 
     // object detection
-    api 'com.huawei.hms:ml-computer-vision-livenessdetection:2.0.2.300'
-    api 'com.huawei.hms:ml-computer-vision-object-detection-model:2.0.3.300'
-    api 'com.huawei.hms:ml-computer-vision-image-classification-model:2.0.1.300'
+    api 'com.huawei.hms:ml-computer-vision-livenessdetection:3.6.0.300'
 
-    api 'com.huawei.hms:ml-computer-vision-cloud:2.0.3.300'
-
-    // Product Search
-    api 'com.huawei.hms:ml-product-visual-search-plugin:2.0.3.300'
-
-    api 'com.huawei.hms:ml-computer-voice-asr-plugin:2.0.3.300'
+    api 'com.huawei.hms:ml-computer-voice-asr-plugin:3.5.0.301'
 
     // Face Shape
-    api 'com.huawei.hms:ml-computer-vision-face:2.0.5.300'
-    api 'com.huawei.hms:ml-computer-vision-face-shape-point-model:2.0.5.300'
-    api 'com.huawei.hms:ml-computer-vision-face-emotion-model:2.0.5.300'
-    api 'com.huawei.hms:ml-computer-vision-face-feature-model:2.0.5.300'
-    api 'com.huawei.hms:ml-computer-vision-face-3d-model:2.0.5.300'
+    api 'com.huawei.hms:ml-computer-vision-face:3.5.0.302'
+    api 'com.huawei.hms:ml-computer-vision-face-shape-point-model:3.5.0.302'
+    api 'com.huawei.hms:ml-computer-vision-face-emotion-model:3.5.0.302'
+    api 'com.huawei.hms:ml-computer-vision-face-feature-model:3.5.0.302'
+    api 'com.huawei.hms:ml-computer-vision-face-3d-model:3.5.0.302'
 
     // Face Verification
-    api 'com.huawei.hms:ml-computer-vision-faceverify:2.1.0.300'
-    api 'com.huawei.hms:ml-computer-vision-faceverify-model:2.1.0.300'
+    api 'com.huawei.hms:ml-computer-vision-faceverify:3.6.0.304'
+    api 'com.huawei.hms:ml-computer-vision-faceverify-model:3.6.0.304'
+
+    // Image Segmentation
+    api 'com.huawei.hms:ml-computer-vision-segmentation:3.5.0.303'
+    api 'com.huawei.hms:ml-computer-vision-image-segmentation-multiclass-model:3.5.0.303'
+    api 'com.huawei.hms:ml-computer-vision-image-segmentation-body-model:3.5.0.303'
+
+    /**
+    * Don't change this dependencies for successfully release
+    **/
+
+    // Product Visual Search -------------------------------------------------------------------- //
+    api 'com.huawei.hms:ml-product-visual-search-plugin:3.7.0.302'
+
+    // Image Super Resolution ------------------------------------------------------------------- //
+    api 'com.huawei.hms:ml-computer-vision-imagesuperresolution:3.5.0.301'
+    api 'com.huawei.hms:ml-computer-vision-imagesuperresolution-model:3.5.0.301'
+
+    // Document Skew Correction ----------------------------------------------------------------- //
+    api 'com.huawei.hms:ml-computer-vision-documentskew:3.5.0.301'
+    api 'com.huawei.hms:ml-computer-vision-documentskew-model:3.5.0.301'
+
+    // Text Image Super-Resolution -------------------------------------------------------------- //
+    api 'com.huawei.hms:ml-computer-vision-textimagesuperresolution:3.5.0.300'
+    api 'com.huawei.hms:ml-computer-vision-textimagesuperresolution-model:3.5.0.300'
+
+    // Scene Detection -------------------------------------------------------------------------- //
+    api 'com.huawei.hms:ml-computer-vision-scenedetection:3.6.0.300'
+
+    api 'com.huawei.hms:ml-computer-vision-image-classification-model:3.5.0.302'
+    api 'com.huawei.hms:ml-computer-vision-object-detection-model:3.5.0.307'
+    api 'com.huawei.hms:ml-computer-vision-cloud:3.5.0.301'
+    api 'com.huawei.hms:ml-computer-vision-formrecognition-model:3.5.0.302'
+    api 'com.huawei.hms:ml-computer-vision-handkeypoint:3.5.0.301'
+    api 'com.huawei.hms:ml-computer-vision-handkeypoint-model:3.5.0.301'
+    api 'com.huawei.hms:ml-computer-vision-gesture-model:3.5.0.301'
 
     // Skeleton detection
-    api 'com.huawei.hms:ml-computer-vision-skeleton:2.0.4.300'
-    api 'com.huawei.hms:ml-computer-vision-skeleton-model:2.0.4.300'
-    api 'com.huawei.hms:ml-computer-vision-skeleton-model:2.0.4.300'
+    api 'com.huawei.hms:ml-computer-vision-skeleton:3.5.0.300'
+    api 'com.huawei.hms:ml-computer-vision-skeleton-model:3.5.0.300'
+    api 'com.huawei.hms:ml-computer-vision-skeleton-model:3.5.0.300'
 
     // hand detection
     api 'com.huawei.hms:ml-computer-vision-yoga-model:2.0.4.300'
-    api 'com.huawei.hms:ml-computer-vision-handkeypoint:2.1.0.300'
-    api 'com.huawei.hms:ml-computer-vision-handkeypoint-model:2.1.0.300'
-    api 'com.huawei.hms:ml-computer-vision-gesture-model:2.1.0.300'
 
     // Language detection
     //implementation 'com.huawei.hms:ml-computer-language-detection:2.2.0.300'
@@ -379,10 +408,15 @@ dependencies {
     implementation 'com.huawei.hms:hianalytics:6.7.0.300'
 
     //nearby
-    api 'com.huawei.hms:nearby:6.2.0.300'
+    api 'com.huawei.hms:nearby:6.7.0.300'
 
     //Video Kit
-    api "com.huawei.hms:videokit-player:1.0.10.302"
+   // api "com.huawei.hms:videokit-player:1.0.10.302"
+    api 'com.huawei.hms:videokit-player:1.0.13.300'
+    api 'com.huawei.hms:videokit-player-fallback:1.0.13.300'
+    api 'com.huawei.hms:videokit-hdrvivid:1.0.13.300'
+    api 'com.huawei.hms:videokit-hdrability:1.0.13.300'
+
 
     //Scene kit
 /*    api 'com.huawei.scenekit:full-sdk:6.0.0.301'
@@ -397,8 +431,8 @@ dependencies {
     api 'com.huawei.agconnect:agconnect-applinking:1.7.1.300'
 
     //FIDO
-    api 'com.huawei.hms:fido-fido2:6.3.0.302'
-    api 'com.huawei.hms:fido-bioauthn-androidx:6.3.0.302'
+    api 'com.huawei.hms:fido-fido2:6.3.0.304'
+    api 'com.huawei.hms:fido-bioauthn-androidx:6.3.0.304'
 
     //Awareness Kit
     api 'com.huawei.hms:awareness:3.4.0.300'
@@ -407,7 +441,8 @@ dependencies {
     api 'com.huawei.hms:push:6.5.0.300'
 
     //MAP kit
-    api "com.huawei.hms:maps:6.3.1.300"
+    api "com.huawei.hms:maps:6.4.1.300"
+    api 'com.huawei.hms:maps-advance:6.7.1.302'
 
     //Ads Kit
     //api 'com.huawei.hms:ads-lite:13.4.54.300'
@@ -433,7 +468,7 @@ dependencies {
     api 'com.huawei.agconnect:agconnect-crash:1.7.1.300'
 
     //Remote Configuration
-    api 'com.huawei.agconnect:agconnect-remoteconfig:1.6.4.300'
+    api 'com.huawei.agconnect:agconnect-remoteconfig:1.7.1.300'
 
     //App Messaging
     api 'com.huawei.agconnect:agconnect-appmessaging:1.7.1.300'
@@ -456,8 +491,11 @@ dependencies {
     api 'com.huawei.hms:avpipeline-fallback-sounddetect:6.0.0.302'
 
     //3D modelling kit
-    implementation 'com.huawei.hms:modeling3d-object-reconstruct:1.4.0.300'
-    implementation 'com.huawei.hms:modeling3d-material-generate:1.4.0.300'
+    implementation 'com.huawei.hms:modeling3d-object-reconstruct:1.7.0.301'
+    implementation 'com.huawei.hms:modeling3d-material-generate:1.7.0.301'
+    implementation 'com.huawei.hms:modeling3d-objectreconstruct-slam:1.7.0.301'
+    implementation 'com.huawei.hms:modeling3d-motion-capture:1.7.0.301'
+    implementation 'com.huawei.hms:modeling3d-motion-capture-model:1.7.0.301'
     implementation 'pub.devrel:easypermissions:3.0.0'
     implementation 'me.jessyan:autosize:1.2.1'
 

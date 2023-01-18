@@ -1,17 +1,19 @@
 /*
- * Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ *   Copyright 2020. Explore in HMS. All rights reserved.
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   You may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
  */
 apply plugin: "com.android.dynamic-feature"
 
@@ -78,18 +80,13 @@ dependencies {
     // ViewPager2
     implementation 'androidx.viewpager2:viewpager2:1.1.0-alpha01'
 
-    implementation 'com.huawei.hms:ml-computer-sdkbase-inner:2.0.3.300'
+    implementation 'com.huawei.hms:ml-computer-sdkbase-inner:3.7.0.302'
 
     // Document Recognition ----------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-cloud:2.0.1.300'
-    // General Card Recognition ------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-card-gcr-plugin:2.0.1.300'
+   // implementation 'com.huawei.hms:ml-computer-vision-cloud:2.0.1.300'
     // Bank Card Recognition ---------------------------------------- //
     //implementation 'com.huawei.hms:ml-computer-card-bcr:3.5.0.300'
 
-    // ID Card Recognition ------------------------------------------ //
-    implementation 'com.huawei.hms:ml-computer-card-icr-vn:2.1.0.301'
-    implementation 'com.huawei.hms:ml-computer-card-icr-cn:2.0.3.303'
 
     // Language Detection ------------------------------------------ //
     //implementation 'com.huawei.hms:ml-computer-language-detection:2.2.0.300'
@@ -121,62 +118,34 @@ dependencies {
     //implementation 'com.huawei.hms:ml-speech-semantics-sounddect-sdk:3.5.0.302'
     //implementation 'com.huawei.hms:ml-speech-semantics-sounddect-model:3.5.0.302'
 
+    /**
+     * Don't change this dependencies for successfully release
+     **/
+
     // Image Classification --------------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-classification:2.0.1.300'
-    implementation 'com.huawei.hms:ml-computer-vision-image-classification-model:2.0.1.300'
+    implementation 'com.huawei.hms:ml-computer-vision-classification:3.5.0.302'
 
     // Object Detection and Tracking ------------------------------------------------------------ //
-    implementation 'com.huawei.hms:ml-computer-vision-object:2.0.3.300'
-    implementation 'com.huawei.hms:ml-computer-vision-object-detection-model:2.0.3.300'
+    implementation 'com.huawei.hms:ml-computer-vision-object:3.5.0.307'
 
     // Landmark Recognition --------------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-cloud:2.0.3.300'
-    // Image Segmentation ----------------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-segmentation:2.0.4.300'
-    implementation 'com.huawei.hms:ml-computer-vision-image-segmentation-multiclass-model:2.0.4.300'
-    implementation 'com.huawei.hms:ml-computer-vision-image-segmentation-body-model:2.0.4.300'
-
-    // Product Visual Search -------------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-cloud:2.0.3.300'
-    implementation 'com.huawei.hms:ml-product-visual-search-plugin:2.0.3.300'
-
-    // Image Super Resolution ------------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-imagesuperresolution:2.0.4.300'
-    implementation 'com.huawei.hms:ml-computer-vision-imagesuperresolution-model:2.0.4.300'
-
-    // Document Skew Correction ----------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-documentskew:2.0.4.300'
-    implementation 'com.huawei.hms:ml-computer-vision-documentskew-model:2.0.4.300'
-
-    // Text Image Super-Resolution -------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-textimagesuperresolution:2.0.4.300'
-    implementation 'com.huawei.hms:ml-computer-vision-textimagesuperresolution-model:2.0.4.300'
 
     // Text Image Super-Resolution -------------------------------------------------------------- //
     implementation 'it.sephiroth.android.library.imagezoom:imagezoom:2.3.0'
 
-    // Scene Detection -------------------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-scenedetection:2.0.3.300'
-    implementation 'com.huawei.hms:ml-computer-vision-scenedetection-model:2.0.3.300'
-
     // Form Table Recognition ------------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-formrecognition-model:2.0.4.300'
-    implementation 'com.huawei.hms:ml-computer-vision-formrecognition:2.2.0.300'
+    implementation 'com.huawei.hms:ml-computer-vision-formrecognition:3.5.0.302'
     // manifest <meta-data android:name="com.huawei.hms.ml.DEPENDENCY" android:value= "fr"/>
     implementation group: 'net.sourceforge.jexcelapi', name: 'jxl', version: '2.6.12'
 
     // Liveness Detection ----------------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-livenessdetection:2.0.2.300'
     // automatically Updating the Machine Learning Model manifest metadata
     // manifest <meta-data android:name="com.huawei.hms.ml.DEPENDENCY" android:value= "livenessdetection"/>
     // Hand KeyPoint Detection ------------------------------------------------------------------ //
-    implementation 'com.huawei.hms:ml-computer-vision-handkeypoint:2.1.0.300'
-    implementation 'com.huawei.hms:ml-computer-vision-handkeypoint-model:2.1.0.300'
-    implementation 'com.huawei.hms:ml-computer-vision-gesture-model:2.1.0.300'
 
     // Text Embedding --------------------------------------------------------------------------- //
    // implementation 'com.huawei.hms:ml-nlp-textembedding:3.5.0.300'
-    implementation 'com.huawei.hms:ml-computer-model-executor:2.1.0.300'
+    //implementation 'com.huawei.hms:ml-computer-model-executor:2.1.0.300'
     // automatically Updating the Machine Learning Model manifest metadata
 
     //    implementation fileTree(dir: "libs", include: ["*.jar"])

@@ -28,16 +28,16 @@ public class Constants {
     /**
      * The delay time
      */
-    public static final long DELAY_MILLIS_500 = 500;
+    public static final long DELAY_MILLIS_500 = 500L;
 
-    public static final long DELAY_MILLIS_3000 = 3000;
+    public static final long DELAY_MILLIS_3000 = 3000L;
 
-    public static final long DELAY_MILLIS_1000 = 1000;
+    public static final long DELAY_MILLIS_1000 = 1000L;
 
     /**
      * Under the vertical screen SurfaceView height
      */
-    public static final float HEIGHT_DP = 300;
+    public static final float HEIGHT_DP = 300.0f;
 
     /**
      * present Current Position
@@ -173,6 +173,16 @@ public class Constants {
      * Home page setting menu
      */
     public static final int SET_HOME_SETTING = 15;
+
+    /**
+     * Set seek mode
+     */
+    public static final int SET_SEEK_MODE = 16;
+
+    /**
+     * Set resume start frame mode
+     */
+    public static final int SET_RESUME_START_FRAME_MODE = 17;
 
     /**
      * The first options dialog
