@@ -49,7 +49,9 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar",'*.aar'])
     implementation project(":app")
-    implementation "com.huawei.hms:hemsdk:1.0.3.300"
+
+    //Hem Kit
+    implementation 'com.huawei.hms:hemsdk:1.0.4.303'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

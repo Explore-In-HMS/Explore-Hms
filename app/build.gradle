@@ -146,7 +146,7 @@ dynamicFeatures =
                     ':feature_wearengine',
                     ':feature_hemkit',
                     ':dynamicfeaturetest',
-                    ':feature_hiaifoundation',
+                    //':feature_hiaifoundation',
                     ':feature_connectapi',
                     ':feature_networkkit',
                     ':feature_audioeditorkit',
@@ -406,9 +406,6 @@ dependencies {
 
     // ML KIT END
 
-    //Analytics Kit
-    implementation 'com.huawei.hms:hianalytics:6.7.0.300'
-
     //nearby
     api 'com.huawei.hms:nearby:6.7.0.300'
 
@@ -454,14 +451,8 @@ dependencies {
     // Image Kit
     api 'com.huawei.hms:image-vision:1.0.3.306'
 
-    // Auth Service
-    implementation 'com.huawei.agconnect:agconnect-auth:1.7.1.300'
-
     //Game Kit
     api "com.huawei.hms:game:6.1.0.301"
-
-    //Cloud DB
-    api 'com.huawei.agconnect:agconnect-cloud-database:1.5.0.300'
 
     //Drive Kit
     api 'com.huawei.hms:drive:5.0.0.307'
@@ -477,9 +468,6 @@ dependencies {
 
     //AR Engine
     api 'com.huawei.hms:arenginesdk:3.7.0.3'
-
-    //Hem Kit
-    api 'com.huawei.hms:hemsdk:1.0.4.303'
 
     //Audio Editor Kit
     api 'com.huawei.hms:audio-editor-ui:1.7.0.300'
