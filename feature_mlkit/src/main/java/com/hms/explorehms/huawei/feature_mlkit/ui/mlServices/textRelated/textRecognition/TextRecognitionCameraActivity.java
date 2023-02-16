@@ -39,7 +39,7 @@ import java.io.IOException;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class TextRecognitionCameraActivity extends AppCompatActivity implements View.OnClickListener {
+public class TextRecognitionCameraActivity extends AppCompatActivity implements View.OnClickListener  {
 
     //region variables
 
@@ -63,6 +63,7 @@ public class TextRecognitionCameraActivity extends AppCompatActivity implements 
     private TextView textJN;
     private TextView textKN;
     private TextView textLN;
+    private TextView languageText;
 
     //endregion
 
@@ -88,6 +89,8 @@ public class TextRecognitionCameraActivity extends AppCompatActivity implements 
 
         graphicOverlay = findViewById(R.id.live_overlay);
 
+        languageText= findViewById(R.id.language_setting);
+
         cameraConfiguration = new CameraConfiguration();
         cameraConfiguration.setCameraFacing(facing);
 
@@ -103,7 +106,7 @@ public class TextRecognitionCameraActivity extends AppCompatActivity implements 
 
     private void initViews() {
         findViewById(R.id.back).setOnClickListener(this);
-        findViewById(R.id.language_setting).setOnClickListener(this);
+        languageText.setOnClickListener(this);
         findViewById(R.id.ivInfo).setOnClickListener(this);
         createLanguageDialog();
     }
@@ -111,27 +114,62 @@ public class TextRecognitionCameraActivity extends AppCompatActivity implements 
 
     @Override
     public void onClick(View view) {
+
         switch (view.getId()) {
             case R.id.language_setting:
                 showLanguageDialog();
                 break;
             case R.id.tv_select_english:
+                textEN.setSelected(true);
+                textLN.setSelected(false);
+                textCN.setSelected(false);
+                textJN.setSelected(false);
+                textKN.setSelected(false);
+                languageText.setText("English");
+                languageDialog.dismiss();
+                preview.release();
+                restartLensEngine();
+                break;
             case R.id.tv_select_latin:
+                textLN.setSelected(true);
+                textEN.setSelected(false);
+                textCN.setSelected(false);
+                textJN.setSelected(false);
+                textKN.setSelected(false);
+                languageText.setText("Latin");
                 languageDialog.dismiss();
                 preview.release();
                 restartLensEngine();
                 break;
             case R.id.tv_select_simple_cn:
+                textCN.setSelected(true);
+                textEN.setSelected(false);
+                textLN.setSelected(false);
+                textJN.setSelected(false);
+                textKN.setSelected(false);
+                languageText.setText("Simplified Chinese");
                 languageDialog.dismiss();
                 preview.release();
                 restartLensEngine();
                 break;
             case R.id.tv_select_japanese:
+                textJN.setSelected(true);
+                textCN.setSelected(false);
+                textEN.setSelected(false);
+                textLN.setSelected(false);
+                textKN.setSelected(false);
+                languageText.setText("Japanese");
                 languageDialog.dismiss();
                 preview.release();
                 restartLensEngine();
                 break;
             case R.id.tv_select_korean:
+                textKN.setSelected(true);
+                textJN.setSelected(false);
+                textCN.setSelected(false);
+                textEN.setSelected(false);
+                textLN.setSelected(false);
+                languageText.setText("Korean");
                 languageDialog.dismiss();
                 preview.release();
                 restartLensEngine();
@@ -181,11 +219,6 @@ public class TextRecognitionCameraActivity extends AppCompatActivity implements 
 
 
     private void showLanguageDialog() {
-        textEN.setSelected(true);
-        textLN.setSelected(false);
-        textCN.setSelected(false);
-        textJN.setSelected(false);
-        textKN.setSelected(false);
         languageDialog.show();
     }
 
