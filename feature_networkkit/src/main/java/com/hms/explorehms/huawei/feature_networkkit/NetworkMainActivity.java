@@ -59,9 +59,6 @@ public class NetworkMainActivity extends AppCompatActivity implements View.OnCli
                 @Override
                 public void run() {
                     String showMsg = title + ":\n\n" + message;
-                    if (!TextUtils.isEmpty(message)) {
-                        Toast.makeText(NetworkMainActivity.this, message, Toast.LENGTH_SHORT).show();
-                    }
                     callText.setText(showMsg);
                     callText.setTextColor(color);
                 }

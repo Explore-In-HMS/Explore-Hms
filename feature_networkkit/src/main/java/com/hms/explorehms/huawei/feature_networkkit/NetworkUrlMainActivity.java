@@ -55,9 +55,6 @@ public class NetworkUrlMainActivity extends AppCompatActivity implements AUpDown
         tvInfo.post(new Runnable() {
             @Override
             public void run() {
-                if (!TextUtils.isEmpty(message) && !message.contains("onProgress:")) {
-                    Toast.makeText(NetworkUrlMainActivity.this, message, Toast.LENGTH_SHORT).show();
-                }
                 tvInfo.setText(message);
                 tvInfo.setTextColor(color);
             }
