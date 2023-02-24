@@ -292,7 +292,7 @@ dependencies {
      *   ML kit
      */
     //Text Recognition SDK
-    api 'com.huawei.hms:ml-computer-vision-ocr:3.6.0.300'
+    api 'com.huawei.hms:ml-computer-vision-ocr:3.8.0.303'
     // Import the Latin-based language model package.
     api 'com.huawei.hms:ml-computer-vision-ocr-latin-model:3.6.0.300'
     // Import the Japanese and Korean model package.
@@ -300,36 +300,36 @@ dependencies {
     // Import the Chinese and English model package.
     api 'com.huawei.hms:ml-computer-vision-ocr-cn-model:3.6.0.300'
     // Bank Card Recognition
-    api 'com.huawei.hms:ml-computer-card-bcr:3.5.0.300'
+    api 'com.huawei.hms:ml-computer-card-bcr:3.7.0.302'
     api 'com.huawei.hms:ml-computer-card-gcr-plugin:2.0.1.300'
 
     //Text Embedding
-    api 'com.huawei.hms:ml-nlp-textembedding:3.5.0.300'
+    api 'com.huawei.hms:ml-nlp-textembedding:3.9.0.300'
 
     //ID card
     api 'com.huawei.hms:ml-computer-card-icr-cn:2.0.3.303'
-    api 'com.huawei.hms:ml-computer-card-icr-vn:3.5.0.300'
+    api 'com.huawei.hms:ml-computer-card-icr-vn:3.7.0.303'
 
     // object detection
-    api 'com.huawei.hms:ml-computer-vision-livenessdetection:3.6.0.300'
+    api 'com.huawei.hms:ml-computer-vision-livenessdetection:3.7.0.302'
 
     api 'com.huawei.hms:ml-computer-voice-asr-plugin:3.5.0.301'
 
     // Face Shape
-    api 'com.huawei.hms:ml-computer-vision-face:3.5.0.302'
-    api 'com.huawei.hms:ml-computer-vision-face-shape-point-model:3.5.0.302'
-    api 'com.huawei.hms:ml-computer-vision-face-emotion-model:3.5.0.302'
-    api 'com.huawei.hms:ml-computer-vision-face-feature-model:3.5.0.302'
-    api 'com.huawei.hms:ml-computer-vision-face-3d-model:3.5.0.302'
+    api 'com.huawei.hms:ml-computer-vision-face:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-face-shape-point-model:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-face-emotion-model:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-face-feature-model:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-face-3d-model:3.7.0.301'
 
     // Face Verification
     api 'com.huawei.hms:ml-computer-vision-faceverify:3.6.0.304'
     api 'com.huawei.hms:ml-computer-vision-faceverify-model:3.6.0.304'
 
     // Image Segmentation
-    api 'com.huawei.hms:ml-computer-vision-segmentation:3.5.0.303'
-    api 'com.huawei.hms:ml-computer-vision-image-segmentation-multiclass-model:3.5.0.303'
-    api 'com.huawei.hms:ml-computer-vision-image-segmentation-body-model:3.5.0.303'
+    api 'com.huawei.hms:ml-computer-vision-segmentation:3.7.0.302'
+    api 'com.huawei.hms:ml-computer-vision-image-segmentation-multiclass-model:3.7.0.302'
+    api 'com.huawei.hms:ml-computer-vision-image-segmentation-body-model:3.7.0.302'
 
     /**
     * Don't change this dependencies for successfully release
@@ -339,32 +339,32 @@ dependencies {
     api 'com.huawei.hms:ml-product-visual-search-plugin:3.7.0.302'
 
     // Image Super Resolution ------------------------------------------------------------------- //
-    api 'com.huawei.hms:ml-computer-vision-imagesuperresolution:3.5.0.301'
+    api 'com.huawei.hms:ml-computer-vision-imagesuperresolution:3.7.0.302'
     api 'com.huawei.hms:ml-computer-vision-imagesuperresolution-model:3.5.0.301'
 
     // Document Skew Correction ----------------------------------------------------------------- //
-    api 'com.huawei.hms:ml-computer-vision-documentskew:3.5.0.301'
-    api 'com.huawei.hms:ml-computer-vision-documentskew-model:3.5.0.301'
+    api 'com.huawei.hms:ml-computer-vision-documentskew:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-documentskew-model:3.7.0.301'
 
     // Text Image Super-Resolution -------------------------------------------------------------- //
-    api 'com.huawei.hms:ml-computer-vision-textimagesuperresolution:3.5.0.300'
-    api 'com.huawei.hms:ml-computer-vision-textimagesuperresolution-model:3.5.0.300'
+    api 'com.huawei.hms:ml-computer-vision-textimagesuperresolution:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-textimagesuperresolution-model:3.7.0.301'
 
     // Scene Detection -------------------------------------------------------------------------- //
-    api 'com.huawei.hms:ml-computer-vision-scenedetection:3.6.0.300'
+    api 'com.huawei.hms:ml-computer-vision-scenedetection:3.7.0.303'
 
     api 'com.huawei.hms:ml-computer-vision-image-classification-model:3.5.0.302'
-    api 'com.huawei.hms:ml-computer-vision-object-detection-model:3.5.0.307'
-    api 'com.huawei.hms:ml-computer-vision-cloud:3.5.0.301'
+    api 'com.huawei.hms:ml-computer-vision-object-detection-model:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-cloud:3.9.0.300'
     api 'com.huawei.hms:ml-computer-vision-formrecognition-model:3.5.0.302'
-    api 'com.huawei.hms:ml-computer-vision-handkeypoint:3.5.0.301'
-    api 'com.huawei.hms:ml-computer-vision-handkeypoint-model:3.5.0.301'
+    api 'com.huawei.hms:ml-computer-vision-handkeypoint:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-handkeypoint-model:3.7.0.301'
     api 'com.huawei.hms:ml-computer-vision-gesture-model:3.5.0.301'
 
     // Skeleton detection
-    api 'com.huawei.hms:ml-computer-vision-skeleton:3.5.0.300'
-    api 'com.huawei.hms:ml-computer-vision-skeleton-model:3.5.0.300'
-    api 'com.huawei.hms:ml-computer-vision-skeleton-model:3.5.0.300'
+    api 'com.huawei.hms:ml-computer-vision-skeleton:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-skeleton-model:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-skeleton-model:3.7.0.301'
 
     // hand detection
     api 'com.huawei.hms:ml-computer-vision-yoga-model:2.0.4.300'
@@ -372,30 +372,30 @@ dependencies {
     // Language detection
     //implementation 'com.huawei.hms:ml-computer-language-detection:2.2.0.300'
     // Import the base SDK.
-    api 'com.huawei.hms:ml-computer-language-detection:3.6.0.312'
+    api 'com.huawei.hms:ml-computer-language-detection:3.9.0.300'
     // Import the language detection algorithm package.
     api 'com.huawei.hms:ml-computer-language-detection-model:3.6.0.312'
 
     // translate
-    api 'com.huawei.hms:ml-computer-translate:3.6.0.312'
+    api 'com.huawei.hms:ml-computer-translate:3.9.0.300'
     // Import the translation algorithm package.
     api 'com.huawei.hms:ml-computer-translate-model:3.6.0.312'
 
     // Real time transcription
-    api 'com.huawei.hms:ml-computer-voice-realtimetranscription:3.5.0.303'
+    api 'com.huawei.hms:ml-computer-voice-realtimetranscription:3.9.0.300'
 
     // Voice
-    api 'com.huawei.hms:ml-computer-voice-aft:3.5.0.300'
+    api 'com.huawei.hms:ml-computer-voice-aft:3.9.0.300'
     //implementation 'com.huawei.hms:ml-computer-voice-tts:2.2.0.300'
     // Import the base SDK.
-    api 'com.huawei.hms:ml-computer-voice-tts:3.6.0.300'
+    api 'com.huawei.hms:ml-computer-voice-tts:3.9.0.301'
     // Import the bee voice package.
     api 'com.huawei.hms:ml-computer-voice-tts-model-bee:3.6.0.300'
     // Import the eagle voice package.
     api 'com.huawei.hms:ml-computer-voice-tts-model-eagle:3.6.0.300'
 
     //ASR
-    api 'com.huawei.hms:ml-computer-voice-asr:3.5.0.301'
+    api 'com.huawei.hms:ml-computer-voice-asr:3.9.0.300'
 
     //Sound detection
     api 'com.huawei.hms:ml-speech-semantics-sounddect-sdk:3.5.0.302'
@@ -467,8 +467,8 @@ dependencies {
     api 'com.huawei.hms:arenginesdk:4.0.0.5'
 
     //Audio Editor Kit
-    api 'com.huawei.hms:audio-editor-ui:1.7.0.300'
-    api 'com.huawei.hms:audio-editor-sdk:1.4.0.301'
+    api 'com.huawei.hms:audio-editor-ui:1.8.0.301'
+    api 'com.huawei.hms:audio-editor-sdk:1.8.0.301'
 
     // AV Pipeline Kit
     api 'com.huawei.hms:avpipelinesdk:6.0.0.302'

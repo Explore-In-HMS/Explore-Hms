@@ -80,17 +80,17 @@ dependencies {
     // ViewPager2
     implementation 'androidx.viewpager2:viewpager2:1.1.0-alpha01'
 
-    implementation 'com.huawei.hms:ml-computer-sdkbase-inner:3.7.0.302'
+    implementation 'com.huawei.hms:ml-computer-sdkbase-inner:3.9.0.300'
 
     /**
      * Don't change this dependencies for successfully release
      **/
 
     // Image Classification --------------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-classification:3.5.0.302'
+    implementation 'com.huawei.hms:ml-computer-vision-classification:3.7.0.301'
 
     // Object Detection and Tracking ------------------------------------------------------------ //
-    implementation 'com.huawei.hms:ml-computer-vision-object:3.5.0.307'
+    implementation 'com.huawei.hms:ml-computer-vision-object:3.7.0.301'
 
     // Landmark Recognition --------------------------------------------------------------------- //
 
@@ -98,7 +98,7 @@ dependencies {
     implementation 'it.sephiroth.android.library.imagezoom:imagezoom:2.3.0'
 
     // Form Table Recognition ------------------------------------------------------------------- //
-    implementation 'com.huawei.hms:ml-computer-vision-formrecognition:3.5.0.302'
+    implementation 'com.huawei.hms:ml-computer-vision-formrecognition:3.7.0.301'
     // manifest <meta-data android:name="com.huawei.hms.ml.DEPENDENCY" android:value= "fr"/>
     implementation group: 'net.sourceforge.jexcelapi', name: 'jxl', version: '2.6.12'
 
