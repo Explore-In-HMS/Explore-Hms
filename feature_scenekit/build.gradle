@@ -53,13 +53,13 @@ android {
 
 dependencies {
     implementation project(":app")
-    implementation 'com.huawei.scenekit:full-sdk:6.6.0.301'
-    implementation 'com.huawei.scenekit:scenekit-render-foundation:6.6.0.301'
-    implementation 'com.huawei.scenekit:scenekit-render-extension:6.6.0.301'
-    implementation 'com.huawei.scenekit:scenekit-math:6.6.0.301'
-    implementation 'com.huawei.scenekit:scenekit-fluid-extension:6.6.0.301'
-    implementation 'com.huawei.scenekit:scenekit-fluid-foundation:6.6.0.301'
-    implementation 'com.huawei.scenekit:scenekit-iphysics-utils:6.6.0.301'
+    implementation 'com.huawei.scenekit:full-sdk:6.8.0.300'
+    implementation 'com.huawei.scenekit:scenekit-render-foundation:6.8.0.300'
+    implementation 'com.huawei.scenekit:scenekit-render-extension:6.8.0.300'
+    implementation 'com.huawei.scenekit:scenekit-math:6.8.0.300'
+    implementation 'com.huawei.scenekit:scenekit-fluid-extension:6.8.0.300'
+    implementation 'com.huawei.scenekit:scenekit-fluid-foundation:6.8.0.300'
+    implementation 'com.huawei.scenekit:scenekit-iphysics-utils:6.8.0.300'
 }
 
 /*apply from: '../sonarqube.gradle'

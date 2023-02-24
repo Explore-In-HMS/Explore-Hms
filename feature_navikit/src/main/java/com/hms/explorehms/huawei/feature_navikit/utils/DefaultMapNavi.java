@@ -350,6 +350,21 @@ public class DefaultMapNavi implements MapNaviListener {
     }
 
     @Override
+    public void onUpdateRouteSuccess(RouteChangeInfo routeChangeInfo) {
+
+    }
+
+    @Override
+    public void onUpdateRouteFail() {
+
+    }
+
+    @Override
+    public void onAuthenticationFail() {
+
+    }
+
+    @Override
     public void onRecommendBetterRoute(RouteRecommendInfo routeRecommendInfo) {
 
     }

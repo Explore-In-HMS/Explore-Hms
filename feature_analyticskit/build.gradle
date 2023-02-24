@@ -56,7 +56,7 @@ dependencies {
     implementation project(":app")
 
     //Analytics Kit
-    implementation 'com.huawei.hms:hianalytics:6.7.0.300'
+    //implementation 'com.huawei.hms:hianalytics:6.9.0.302'
 }
 
 /*apply from: '../sonarqube.gradle'

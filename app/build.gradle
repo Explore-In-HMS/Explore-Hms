@@ -238,7 +238,6 @@ dependencies {
     api 'com.squareup.retrofit2:converter-gson:2.5.0'
     api 'com.squareup.retrofit2:retrofit:2.9.0'
 
-
     //card view
     implementation 'androidx.cardview:cardview:1.0.0'
 
@@ -253,35 +252,38 @@ dependencies {
     //agconnect version
     api 'com.huawei.agconnect:agconnect-core:1.6.1.300'
 
+    //Analytics Kit
+    api 'com.huawei.hms:hianalytics:6.9.0.302'
+
     //cloud storage
     api "com.huawei.agconnect:agconnect-storage:1.5.0.100"
 
     //DTM
-    api 'com.huawei.hms:dtm-api:6.6.0.300'
+    api 'com.huawei.hms:dtm-api:6.6.0.304'
 
     //hquic
     implementation 'com.huawei.hms:hquic-provider:5.0.1.300'
 
     //Dynamic Ability
-    api 'com.huawei.hms:dynamicability:1.0.17.300'
+    api 'com.huawei.hms:dynamicability:1.0.18.300'
 
     //Location Kit
-    implementation 'com.huawei.hms:location:6.4.0.300'
+    implementation 'com.huawei.hms:location:6.9.0.300'
 
     //Site Kit
-    implementation 'com.huawei.hms:site:6.4.0.304'
+    implementation 'com.huawei.hms:site:6.5.1.300'
 
     //Account Kit
-    api 'com.huawei.hms:hwid:6.7.0.300'
+    api 'com.huawei.hms:hwid:6.9.0.301'
 
     // Scan Kit
-    implementation 'com.huawei.hms:scan:2.7.0.302'
+    implementation 'com.huawei.hms:scan:2.9.0.300'
 
     //Cloud functions sdk
-    api 'com.huawei.agconnect:agconnect-function:1.7.1.300'
+    api 'com.huawei.agconnect:agconnect-function:1.8.0.300'
 
     //audio kit
-    api 'com.huawei.hms:audiokit-player:1.5.0.300'
+    api 'com.huawei.hms:audiokit-player:1.6.0.300'
 
     /**
      * Some module dependencies are implemented here because of a crash.
@@ -402,14 +404,14 @@ dependencies {
     // ML KIT END
 
     //nearby
-    api 'com.huawei.hms:nearby:6.7.0.300'
+    api 'com.huawei.hms:nearby:6.9.0.300'
 
     //Video Kit
    // api "com.huawei.hms:videokit-player:1.0.10.302"
-    api 'com.huawei.hms:videokit-player:1.0.13.300'
-    api 'com.huawei.hms:videokit-player-fallback:1.0.13.300'
-    api 'com.huawei.hms:videokit-hdrvivid:1.0.13.300'
-    api 'com.huawei.hms:videokit-hdrability:1.0.13.300'
+    api 'com.huawei.hms:videokit-player:1.0.14.301'
+    api 'com.huawei.hms:videokit-player-fallback:1.0.14.301'
+    api 'com.huawei.hms:videokit-hdrvivid:1.0.14.301'
+    api 'com.huawei.hms:videokit-hdrability:1.0.14.301'
 
 
     //Scene kit
@@ -422,20 +424,20 @@ dependencies {
     api 'com.huawei.scenekit:scenekit-iphysics-utils:6.0.0.301'*/
 
     //App linking
-    api 'com.huawei.agconnect:agconnect-applinking:1.7.1.300'
+    api 'com.huawei.agconnect:agconnect-applinking:1.8.0.300'
 
     //FIDO
-    api 'com.huawei.hms:fido-fido2:6.3.0.304'
-    api 'com.huawei.hms:fido-bioauthn-androidx:6.3.0.304'
+    api 'com.huawei.hms:fido-fido2:6.7.0.300'
+    api 'com.huawei.hms:fido-bioauthn-androidx:6.7.0.300'
 
     //Awareness Kit
-    api 'com.huawei.hms:awareness:3.4.0.300'
+    api 'com.huawei.hms:awareness:3.4.0.302'
 
     //Push Kit
-    api 'com.huawei.hms:push:6.5.0.300'
+    api 'com.huawei.hms:push:6.9.0.300'
 
     //MAP kit
-    api "com.huawei.hms:maps:6.4.1.300"
+    api "com.huawei.hms:maps:6.9.0.300"
     //api 'com.huawei.hms:maps-advance:6.4.1.300'
 
     //Ads Kit
@@ -447,22 +449,22 @@ dependencies {
     api 'com.huawei.hms:image-vision:1.0.3.306'
 
     //Game Kit
-    api "com.huawei.hms:game:6.1.0.301"
+    api "com.huawei.hms:game:6.8.0.300"
 
     //Drive Kit
     api 'com.huawei.hms:drive:5.0.0.307'
 
     //Crash Service
-    api 'com.huawei.agconnect:agconnect-crash:1.7.1.300'
+    api 'com.huawei.agconnect:agconnect-crash:1.8.0.300'
 
     //Remote Configuration
-    api 'com.huawei.agconnect:agconnect-remoteconfig:1.7.1.300'
+    api 'com.huawei.agconnect:agconnect-remoteconfig:1.8.0.300'
 
     //App Messaging
-    api 'com.huawei.agconnect:agconnect-appmessaging:1.7.1.300'
+    api 'com.huawei.agconnect:agconnect-appmessaging:1.8.0.300'
 
     //AR Engine
-    api 'com.huawei.hms:arenginesdk:3.7.0.3'
+    api 'com.huawei.hms:arenginesdk:4.0.0.5'
 
     //Audio Editor Kit
     api 'com.huawei.hms:audio-editor-ui:1.7.0.300'
@@ -476,9 +478,9 @@ dependencies {
     api 'com.huawei.hms:avpipeline-fallback-sounddetect:6.0.0.302'
 
     //3D modelling kit
-    implementation 'com.huawei.hms:modeling3d-object-reconstruct:1.7.0.301'
-    implementation 'com.huawei.hms:modeling3d-material-generate:1.7.0.301'
-    implementation 'com.huawei.hms:modeling3d-objectreconstruct-slam:1.7.0.301'
+    implementation 'com.huawei.hms:modeling3d-object-reconstruct:1.9.0.300'
+    implementation 'com.huawei.hms:modeling3d-material-generate:1.9.0.300'
+    implementation 'com.huawei.hms:modeling3d-objectreconstruct-slam:1.9.0.300'
     implementation 'com.huawei.hms:modeling3d-motion-capture:1.7.0.301'
     implementation 'com.huawei.hms:modeling3d-motion-capture-model:1.7.0.301'
     implementation 'pub.devrel:easypermissions:3.0.0'
@@ -489,7 +491,7 @@ dependencies {
     //api 'com.huawei.hms:video-editor-sdk:1.7.0.300'
 
     //Keyring Service
-    implementation "com.huawei.hms:keyring-credential:6.4.0.302"
+    implementation "com.huawei.hms:keyring-credential:6.7.0.303"
 }
 
 /*apply from: '../sonarqube.gradle'

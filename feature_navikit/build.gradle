@@ -36,6 +36,6 @@ android {
 
 dependencies {
     implementation project(":app")
-    implementation 'com.huawei.hms:navisdk:6.8.0.300'
+    implementation 'com.huawei.hms:navisdk:6.9.0.301'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }
