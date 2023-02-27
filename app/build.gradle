@@ -250,7 +250,7 @@ dependencies {
     // end of 3rd party Libraries
 
     //agconnect version
-    api 'com.huawei.agconnect:agconnect-core:1.6.1.300'
+    api 'com.huawei.agconnect:agconnect-core:1.8.0.300'
 
     //Analytics Kit
     api 'com.huawei.hms:hianalytics:6.9.0.302'

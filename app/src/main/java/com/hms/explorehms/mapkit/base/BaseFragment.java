@@ -49,6 +49,11 @@ public abstract class BaseFragment extends Fragment implements OnMapReadyCallbac
 
     public abstract void initializeUI();
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        MapsInitializer.initialize(requireActivity());
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -114,8 +119,8 @@ public abstract class BaseFragment extends Fragment implements OnMapReadyCallbac
 
     @Override
     public void onPause() {
-        mapView.onPause();
         super.onPause();
+        mapView.onPause();
     }
 
     @Override
