@@ -146,7 +146,7 @@ dynamicFeatures =
                     ':feature_wearengine',
                     ':feature_hemkit',
                     ':dynamicfeaturetest',
-                    //':feature_hiaifoundation',
+                    ':feature_hiaifoundation',
                     ':feature_connectapi',
                     ':feature_networkkit',
                     ':feature_audioeditorkit',

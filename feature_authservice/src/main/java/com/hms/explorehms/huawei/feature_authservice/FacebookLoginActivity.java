@@ -168,7 +168,7 @@ public class FacebookLoginActivity extends AppCompatActivity {
             @Override
             public void onCancel() {
                 Log.d(TAG, getResources().getString(R.string.login_with_facebook) + " : onCancel");
-                Utils.showToastMessage(getApplicationContext(), getResources().getString(R.string.login_with_facebook) + " : onCancel");
+                Utils.showToastMessage(getApplicationContext(), getResources().getString(R.string.login_with_facebook_download) + " : onCancel");
 
             }
 

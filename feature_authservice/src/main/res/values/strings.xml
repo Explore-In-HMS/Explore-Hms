@@ -48,7 +48,9 @@
     <string name="login_with_google">Login With Google</string>
     <string name="login_with_google_play_game">Login With GooglePlayGame</string>
     <string name="login_with_facebook">Login With Facebook</string>
+    <string name="login_with_facebook_download">You Should Download Facebook To Log In</string>
     <string name="login_with_twitter">Login With Twitter</string>
+    <string name="login_with_twitter_download">You Should Download Twitter To Log In</string>
     <string name="supported_other_third_party">Supported Other Third Party</string>
 
     <string name="verify_code_send">VerifyCode Send to Phone</string>

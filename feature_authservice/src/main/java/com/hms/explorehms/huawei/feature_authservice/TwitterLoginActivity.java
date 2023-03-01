@@ -220,8 +220,8 @@ public class TwitterLoginActivity extends AppCompatActivity {
                 @Override
                 public void failure(TwitterException e) {
                     Log.e(TAG, "loginWithTwitter onFailure : " + e.getMessage(), e);
-                    Utils.showToastMessage(getApplicationContext(), getResources().getString(R.string.login_with_twitter) + TWITTER_LOGIN_ON_FAILURE + e.getMessage());
-                    tvProfileDetails.setText(String.format("%s%s%s%s%s", tvProfileDetails.getText(), ESCAPE_STRING, getResources().getString(R.string.login_with_twitter), TWITTER_LOGIN_ON_FAILURE, e.getMessage()));
+                    Utils.showToastMessage(getApplicationContext(), getResources().getString(R.string.login_with_twitter) + TWITTER_LOGIN_ON_FAILURE + getResources().getString(R.string.login_with_twitter_download));
+                    tvProfileDetails.setText(String.format("%s%s%s%s%s", tvProfileDetails.getText(), ESCAPE_STRING, getResources().getString(R.string.login_with_twitter), TWITTER_LOGIN_ON_FAILURE, getResources().getString(R.string.login_with_twitter_download)));
                 }
             });
         } catch (Exception ex) {
