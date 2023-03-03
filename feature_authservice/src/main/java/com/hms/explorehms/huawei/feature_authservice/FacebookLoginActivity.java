@@ -79,7 +79,7 @@ public class FacebookLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // important to call before setContentView
         FacebookSdk.sdkInitialize(getApplicationContext());
-        activity=this;
+        activity = this;
 
         setContentView(R.layout.activity_facebook_login);
         setupToolbar();
@@ -110,7 +110,7 @@ public class FacebookLoginActivity extends AppCompatActivity {
                 logOut();
                 break;
             default:
-                Log.e(TAG,"Default case");
+                Log.e(TAG, "Default case");
                 break;
         }
     }
@@ -120,7 +120,7 @@ public class FacebookLoginActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        Util.setToolbar(this, toolbar,  getResources().getString(R.string.url_auth_service_facebook));
+        Util.setToolbar(this, toolbar, getResources().getString(R.string.url_auth_service_facebook));
     }
 
     @Override
@@ -130,10 +130,10 @@ public class FacebookLoginActivity extends AppCompatActivity {
     }
 
     private void loginWithFacebook() {
-        if(tvProfileDetails == null){
+        if (tvProfileDetails == null) {
             return;
         }
-        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "email"));
+        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "email", "user_friends"));
         LoginManager.getInstance().registerCallback(facebookCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -168,13 +168,13 @@ public class FacebookLoginActivity extends AppCompatActivity {
             @Override
             public void onCancel() {
                 Log.d(TAG, getResources().getString(R.string.login_with_facebook) + " : onCancel");
-                Utils.showToastMessage(getApplicationContext(), getResources().getString(R.string.login_with_facebook_download) + " : onCancel");
+                Utils.showToastMessage(getApplicationContext(), getResources().getString(R.string.login_with_facebook) + " : onCancel");
 
             }
 
             @Override
             public void onError(FacebookException error) {
-                if(tvProfileDetails == null){
+                if (tvProfileDetails == null) {
                     return;
                 }
                 Log.e(TAG, getResources().getString(R.string.login_with_facebook) + " : onError : " + error.getMessage(), error);
@@ -185,7 +185,7 @@ public class FacebookLoginActivity extends AppCompatActivity {
     }
 
     private void transmitFacebookAccessTokenIntoAGC(String accessToken) {
-        if(tvProfileDetails == null){
+        if (tvProfileDetails == null) {
             return;
         }
         try {
@@ -212,7 +212,7 @@ public class FacebookLoginActivity extends AppCompatActivity {
 
 
     public void showResultDetail(String msg, AGConnectUser signInResult) {
-        if(tvProfileDetails == null){
+        if (tvProfileDetails == null) {
             return;
         }
         String signMsg = "\n\nAGConnectAuth " + msg + " onSuccess : \n" +
@@ -238,19 +238,19 @@ public class FacebookLoginActivity extends AppCompatActivity {
         tvProfileDetails.setText(getString(R.string.txt_for_facebook_login_message));
 
         if (Utils.isLoggedInAgcUser()) {
-            try{
+            try {
                 AGConnectAuth.getInstance().signOut();
                 String logOutResultMessage = "InstanceUser logged out.";
                 tvProfileDetails.setText(logOutResultMessage);
                 Log.d(TAG, logOutResultMessage);
-                Utils.showToastMessage(getApplicationContext(),logOutResultMessage );
-            }catch (Exception e){
+                Utils.showToastMessage(getApplicationContext(), logOutResultMessage);
+            } catch (Exception e) {
                 String resultTvProfileDetailsText = "AGConnectAuth.getInstance signOut Exception :\n" + e.getMessage();
                 Log.e(TAG, resultTvProfileDetailsText, e);
                 tvProfileDetails.setText(resultTvProfileDetailsText);
             }
-        }else{
-            Log.w(TAG, "logOut : "+ getString(R.string.txt_for_logged_user_message));
+        } else {
+            Log.w(TAG, "logOut : " + getString(R.string.txt_for_logged_user_message));
             tvProfileDetails.setText(getString(R.string.txt_for_logged_user_message));
         }
     }

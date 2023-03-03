@@ -62,7 +62,7 @@ public class TwitterLoginActivity extends AppCompatActivity {
 
 
     //region variablesAndObjects
-    private static final String REMOTE_ERR ="REMOTE_ERR";
+    private static final String REMOTE_ERR = "REMOTE_ERR";
     private AGConnectConfig remoteConfig;
     private String twitterApiSecret;
     private String twitterApiKey;
@@ -93,7 +93,7 @@ public class TwitterLoginActivity extends AppCompatActivity {
 
     }
 
-    private void setRemoteConfigurationSettings(){
+    private void setRemoteConfigurationSettings() {
         remoteConfig = AGConnectConfig.getInstance();
         remoteConfig.applyDefault(R.xml.remote_config);
 
@@ -108,37 +108,36 @@ public class TwitterLoginActivity extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(Exception e) {
-                Log.e(REMOTE_ERR,e.toString());
+                Log.e(REMOTE_ERR, e.toString());
             }
         });
     }
 
-    private void obtainData(){
+    private void obtainData() {
 
-        Map<String,Object> allValues = remoteConfig.getMergedAll();
-        if(allValues != null && allValues.size() > 0){
-           // ArrayList<RemoteResult> allResultFromRemote = new ArrayList<>();
+        Map<String, Object> allValues = remoteConfig.getMergedAll();
+        if (allValues != null && allValues.size() > 0) {
+            // ArrayList<RemoteResult> allResultFromRemote = new ArrayList<>();
 
             Set set = allValues.entrySet();
             Iterator iterator = set.iterator();
-            while (iterator.hasNext()){
-                Map.Entry entry = (Map.Entry)iterator.next();
-                System.out.println(entry.getKey()+" "+entry.getValue());
-                if(entry.getKey().toString().equalsIgnoreCase("twitter_api_secret")){
-                    twitterApiSecret=entry.getValue().toString();
+            while (iterator.hasNext()) {
+                Map.Entry entry = (Map.Entry) iterator.next();
+                System.out.println(entry.getKey() + " " + entry.getValue());
+                if (entry.getKey().toString().equalsIgnoreCase("twitter_api_secret")) {
+                    twitterApiSecret = entry.getValue().toString();
                 }
-                if(entry.getKey().toString().equalsIgnoreCase("twitter_api_key")){
-                    twitterApiKey=entry.getValue().toString();
+                if (entry.getKey().toString().equalsIgnoreCase("twitter_api_key")) {
+                    twitterApiKey = entry.getValue().toString();
                 }
-               // allResultFromRemote.add(new RemoteResult(entry.getKey().toString(), entry.getValue().toString()));
+                // allResultFromRemote.add(new RemoteResult(entry.getKey().toString(), entry.getValue().toString()));
             }
             initializeTwitterApi();
 
-        }else{
-            Toast.makeText(getApplicationContext(),"There is no value on Cloud",Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "There is no value on Cloud", Toast.LENGTH_SHORT).show();
         }
     }
-
 
 
     @OnClick({R.id.clLogin, R.id.clLogout})

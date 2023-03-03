@@ -74,14 +74,14 @@
     <string name="text_countryCode">CountryCode</string>
     <string name="text_countryCodeDefault">+90</string>
     <string name="text_phone">Phone</string>
-    <string name="text_email">Email : xyz@abc.com</string>
+    <string name="text_email">Email : xyz@abc.com</string>p3xaec  wicwqp
     <string name="text_password">Password</string>
     <string name="text_verifyCode">Code For Login</string>
     <string name="text_verifyCodePhone">Code For Change Phone</string>
     <string name="text_verifyCodeMail">Code For Change Mail</string>
     <string name="text_verifyCodePassword">Code For Change Password</string>
     <string name="text_send">Send Code</string>
-
+    <string name="server_client_id">200485273031-quhooj49acgnr8q2n5kuqq5is01f548s.apps.googleusercontent.com</string>
     <string name="url_auth_service_anonymous">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-anonymous-0000001053532658</string>
     <string name="url_auth_service_phone">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-phone-0000001053333941</string>
     <string name="url_auth_service_mail">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-email-0000001053213912</string>
