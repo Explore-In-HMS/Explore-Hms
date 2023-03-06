@@ -75,6 +75,8 @@ dependencies {
     // Twitter
     implementation 'com.twitter.sdk.android:twitter-core:3.3.0'
 
+    //Google
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
 }
 
 /*apply from: '../sonarqube.gradle'
