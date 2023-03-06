@@ -93,17 +93,17 @@ App Bundle On-Demand feature provides us the capability of downloading the reque
 
 ## Implemented Kits And Services  
 
- ### A/B Testing
+ ### [A/B Testing](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-abtest-introduction-0000001058210679)
 
 A/B Testing provides a collection of refined operation tools to optimize app experience and improve key conversion and growth indicators. You can use the service to create one or more A/B tests engaging different user groups to compare your variants of app UI design, copywriting, product functions, or marketing activities for performance metrics and find the best one that meets user requirements. This helps you make correct decisions. A/B Testing is commonly used by large Internet companies, with hundreds of A/B tests conducted every week.
 
- ### Accelerate Kit
+ ### [Accelerate Kit](https://developer.huawei.com/consumer/en/hms/huawei-acceleratekit/)
 
 HUAWEI Accelerate Kit provides the multi-thread acceleration capability that efficiently improves concurrent execution of multiple threads. It is located above the kernel in the OS and opened to developers as a set of C language APIs.
 
 Most of current Android devices run a multi-core system. To give full play to the system, programs that can execute multiple tasks concurrently are preferred. Generally, multi-thread programs at the Native layer control task execution by managing threads. Accelerate Kit provides a new multi-thread programming method by using the multi-thread library (multithread-lib). It frees you from the thread management details so that you can focus on developing apps that can fully utilize the multi-core hardware capability of the OS, promising more efficient running.
 
- ### Account Kit
+ ### [Account Kit](https://developer.huawei.com/consumer/en/hms/huawei-accountkit)
 
 *Version: 5.2.0.300*
 
@@ -119,7 +119,7 @@ Features:
 
 
 
- ### Ads Kit
+ ### [Ads Kit](https://developer.huawei.com/consumer/en/hms/huawei-adskit/)
 
 *Version: 13.4.47.302*
 
@@ -127,15 +127,15 @@ HUAWEI Ads Publisher Service is a monetization service that leverages Huawei's e
 
 Features:
 
-- Banner Ads
-- Native Ads
-- Rewarded Ads
-- Interstitial Ads
-- Splash Ads
-- In Stream Roll Ads  
+- [Banner Ads](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/publisher-service-banner-0000001050066915)
+- [Native Ads](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/publisher-service-native-0000001050064968)
+- [Rewarded Ads](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/publisher-service-reward-0000001050066917)
+- [Interstitial Ads](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/publisher-service-interstitial-0000001050064970)
+- [Splash Ads](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/publisher-service-splash-0000001050066919)
+- [In Stream Roll Ads](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/publisher-service-instream-0000001058253743)
 
 
- ### Analytics Kit
+ ### [Analytics Kit](https://developer.huawei.com/consumer/en/hms/huawei-analyticskit/)
 
 *Version: 6.3.0.300*
 
@@ -144,18 +144,18 @@ HUAWEI Analytics Kit offers a rich array of preset analytics models that help yo
 
 Features:
 
-- Custom Event
-- Predefined Event  
+- [Custom Event](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/javascript-custom-events-0000001051597159)
+- [Predefined Event](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/android-predefined-events-general-0000001051997159)
 
- ### APM
+ ### [APM](https://developer.huawei.com/consumer/en/agconnect/apm/)
 
 App Performance Management (APM) of HUAWEI AppGallery Connect provides minute-level app performance monitoring capabilities. You can view and analyze app performance data collected by APM in AppGallery Connect to comprehensively understand online performance of apps in real time, helping you quickly and accurately rectify app performance problems and continuously improve user experience.
 
- ### App Bundle Release
+ ### [App Bundle Release](https://developer.huawei.com/consumer/en/doc/distribution/app/agc-help-releasebundle-0000001100316672)
 
 Users are generally more willing to download smaller apps. Therefore, reducing the size of your app package to the greatest possible extent, is essential for boosting its download and installation success rate. App Bundle does this for you, and has become the preferred service for an increasing number of developers. HUAWEI AppGallery Connect allows you to release your app in App Bundle format, with the relevant Huawei SDKs integrated, ensuring that users only need to download the required content, bundled in a smaller, more streamlined app package.
 
- ### App Linking
+ ### [App Linking](https://developer.huawei.com/consumer/en/agconnect/App-linking/)
 
 *Version: 1.5.1.300*
 
@@ -167,7 +167,7 @@ Features:
 - Creating short & long app link
 - Feature Analyse  
 
- ### App Messaging
+ ### [App Messaging](https://developer.huawei.com/consumer/en/agconnect/app-messaging/)
 
 *Version: 1.5.1.300*
 
@@ -177,7 +177,7 @@ Features:
 
 - Displaying an In-App Message 
 
- ### App Release
+ ### [App Release](https://developer.huawei.com/consumer/en/doc/distribution/app/agc-help-release-overview-0000001272395372)
 
 After an app is developed, you need to submit it to Huawei for review in HUAWEI AppGallery Connect.
 
@@ -198,15 +198,15 @@ Steps :
 - Adjusting the Release Date for Your App
 - Appendix: App Languages  
 
- ### App Signing
+ ### [App Signing](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-appsigning-introduction-0000001051379577)
 
 Android apps use a signature key for signing. Each signature key has an associated key certificate. Devices and services can use the certificate to check whether the app is from a trusted source. For trusted app updates, ensure that the app signature of the update package is the same as that of the installed app so that your app update will be accepted. However, if the signature key is lost or stolen, you cannot update your app. In this case, you will have to use a new package name to release the updated app. This will lead to risks such as user loss.
 
- ### Audio Engine
+ ### [Audio Engine](https://developer.huawei.com/consumer/en/audioengine/)
 
 Audio Engine provides the karaoke headset monitoring feature with open APIs to help you integrate the headset monitoring to your app, facilitating the utilization of Huawei's hardware-enabled headset monitoring capability, and achieving a low-latency and low-noise headset real-time listening experience.
 
- ### Audio Kit
+ ### [Audio Kit](https://developer.huawei.com/consumer/en/hms/huawei-audiokit/)
 
 *Version: 1.4.0.300*
 
@@ -227,7 +227,7 @@ Features:
 - Synchronize seek bar with audio playback 
 
 
- ### Audio Editor Kit
+ ### [Audio Editor Kit](https://developer.huawei.com/consumer/en/hms/huawei-audio-editor/)
 
 *Version: 1.3.0.300*
 
@@ -243,7 +243,7 @@ Features:
 - AI Debugging with Editing  
 
 
- ### Auth Service
+ ### [Auth Service](https://developer.huawei.com/consumer/en/agconnect/auth-service/)
 
 *Version: 1.6.0.300*
 
@@ -256,7 +256,7 @@ Features:
 - Deregistration / Delete User
 - Sign-out  
 
- ### AV Pipeline Kit
+ ### [AV Pipeline Kit](https://developer.huawei.com/consumer/en/hms/huawei-av-pipeline/)
 
 *Version: 6.0.0.302*
 
@@ -270,7 +270,7 @@ Features:
 - Screen Resolution
 - Video Sound Detection  
 
- ### Awareness Kit
+ ### [Awareness Kit](https://developer.huawei.com/consumer/en/hms/huawei-awarenesskit/)
 
 *Version: 1.0.8.301*
 
@@ -278,28 +278,28 @@ HUAWEI Awareness Kit provides your app with the ability to obtain contextual inf
 
 Features:
 
-- Time Awareness
-- Location Awareness
-- Behavior Awareness
-- Ambient Light Awareness
-- Weather Awareness
-- Headset Awareness
-- Bluetooth Car Stereo Awareness
-- Beacon Awareness
-- Phone Status Awareness
-- Screen Status Awareness
-- Wi-Fi Status Awareness
-- Dark Mode Awareness  
+- [Time Awareness](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/use-cases-0000001050033091#section559782819013)
+- [Location Awareness](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/use-cases-0000001050033091#section175051512110)
+- [Behavior Awareness](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/use-cases-0000001050033091#section5982164917314)
+- [Ambient Light Awareness](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/use-cases-0000001050033091#section33001951596)
+- [Weather Awareness](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/use-cases-0000001050033091#section15818131610102)
+- [Headset Awareness](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/headsets-awareness-0000001050031156)
+- [Bluetooth Car Stereo Awareness](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/bluetooth-car-stereo-awareness-0000001050121036)
+- [Beacon Awareness](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/use-cases-0000001050033091#section176721242413)
+- [Phone Status Awareness](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/use-cases-0000001050033091#section472331118233)
+- [Screen Status Awareness](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/screen-awareness-0000001052618943)
+- [Wi-Fi Status Awareness](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/wifi--awareness-0000001052978918)
+- [Dark Mode Awareness](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/dark--awareness-0000001053471955)
 
- ### CaaS Engine
+ ### [CaaS Engine](https://developer.huawei.com/consumer/en/doc/development/connectivity-Guides/virtualized-devices-calling-introduction-0000001051089010)
 
 CaaS Engine provides open APIs that are based on the HUAWEI MeeTime service. It allows app and hardware developers to easily incorporate video calling into their apps, and directly tailor the video source to their preferences with the help of HUAWEI DeviceVirtualization service.
 
- ### Cast Engine
+ ### [Cast Engine](https://developer.huawei.com/consumer/en/cast-kit/)
 
 Designed to provide multi-screen collaboration revolving around mobile phones, HUAWEI Cast Engine enables fast, stable, and low-latency collaboration between mobile phones and external large screens, delivering a seamless, cross-device collaborative experience.
 
- ### Cloud DB (Beta)
+ ### [Cloud DB (Beta)](https://developer.huawei.com/consumer/en/agconnect/cloud-base/)
 
 *Version: 1.4.9.300*
 
@@ -311,28 +311,28 @@ Features:
 - Querying Data
 - Updating Data  
 
- ### Cloud Debugging
+ ### [Cloud Debugging](https://developer.huawei.com/consumer/en/agconnect/cloud-adjust/)
 
 Cloud Debugging tests your app using mainstream Huawei devices provided by Huawei. You can run your app on the latest and most popular Huawei devices to test app functions.
 
 The testing experience is smooth and pleasant, like running an app on your own phone. The service is easy to use. You can perform operations such as rotating the screen, taking screenshots, and exporting logs.
 
- ### Cloud Functions (Beta)
+ ### [Cloud Functions (Beta)](https://developer.huawei.com/consumer/en/agconnect/cloud-function/)
 
 Cloud Functions enables serverless computing. It provides the Function as a Service (FaaS) capabilities to simplify app development and O&M so your functions can be implemented more easily and your service capabilities can be built more quickly.
 
 
- ### Cloud Hosting (Beta)
+ ### [Cloud Hosting (Beta)](https://developer.huawei.com/consumer/en/agconnect/cloud-hosting/)
 
 Cloud Hosting makes web page deployment easier. You can focus on the UI interaction, UI layout design, and service logic, and do not need to pay attention to security configurations (such as domain name application and certificate management) and page distribution. In this way, you can build a highly secure and fast-accessed web page.
 
- ### Cloud Storage (Beta)
+ ### [Cloud Storage (Beta)](https://developer.huawei.com/consumer/en/agconnect/cloud-storage/)
 
 Cloud Storage is scalable and maintenance-free. It allows you to store high volumes of data such as images, audios, and videos generated by your users securely and economically with direct device access.
 
 The service is stable, secure, efficient, and easy-to-use, and can free you from development, deployment, O&M, and capacity expansion of storage servers. You do not need to pay attention to indicators such as availability, reliability, and durability and can focus on service capability building and operations, improving user experience.
 
- ### Cloud Testing
+ ### [Cloud Testing](https://developer.huawei.com/consumer/en/agconnect/cloud-test/)
 
 Cloud Testing provides a complete set of automatic test processes based on real mobile phone use. It automatically tests the compatibility, stability, performance, and power consumption of Android apps, without manual intervention. In Cloud Testing, you can test your app against the full range of Huawei phones, to determine if there are any potential issues, well in advance.
 
@@ -341,11 +341,11 @@ Cloud Testing provides a complete set of automatic test processes based on real 
 To provide more convenient and high-quality services and further optimize user experience, we enabled the Comments menu in AppGallery Connect. You can sign in to AppGallery Connect, select your app, and manage comments on the Comments page.
 
 
- ### Computer Graphics Kit
+ ### [Computer Graphics Kit](https://developer.huawei.com/consumer/en/hms/huawei-computer-graphics/)
 
 CG Rendering Framework, a key capability of HUAWEI Computer Graphics (CG) Kit, is a Vulkan-based high-performance rendering framework that consists of the physically based rendering (PBR) material, model, texture, light, and component subsystems. This rendering framework is designed for Huawei device development kit (DDK) features and implementation details to provide the best 3D rendering capabilities on Huawei devices using Kirin SoCs. In addition, the framework supports secondary development, which reduces app development difficulty and complexity and therefore increases your development efficiency.
 
- ### Crash
+ ### [Crash](https://developer.huawei.com/consumer/en/agconnect/crash/)
 
 The AppGallery Connect Crash service provides a powerful yet lightweight solution to app crash problems. With the service, you can quickly detect, locate, and resolve app crashes (unexpected exits of apps), and have access to highly readable crash reports in real time, without the need to write any code.
 
@@ -364,7 +364,7 @@ Quick app:
 
 - You can learn about the user and running data of your quick app through the Quick app user report and Quick app running report menus.  
 
- ### Drive Kit
+ ### [Drive Kit](https://developer.huawei.com/consumer/en/hms/huawei-drivekit/)
 
 *Version: 5.0.0.305*
 
@@ -379,7 +379,7 @@ Features:
 - Search File
  
 
- ### Dynamic Ability
+ ### [Dynamic Ability](https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-dynamicability-introduction-0000001057944549)
 
 *Version: 1.0.16.301*
 
@@ -396,7 +396,7 @@ Features:
 
  
 
- ### Dynamic Tag Manager
+ ### [Dynamic Tag Manager](https://developer.huawei.com/consumer/en/hms/huawei-dynamic-tag-manager/)
 
 *Version: 5.3.0.300*
 
@@ -414,11 +414,11 @@ Features:
 - Set Variable  
 
 
- ### Early Access
+ ### [Early Access](https://developer.huawei.com/consumer/en/agconnect/early-access/)
 
 This service tests how well your game adapts to Huawei devices and provides gameplay data to optimize versions for upcoming release. Early access data will also be used as an important reference for rating games and allocating promotion resources. Therefore, it is strongly recommended that you perform early access on the game.
 
- ### FIDO
+ ### [FIDO](https://developer.huawei.com/consumer/en/hms/huawei-fido/)
 
 *Version :5.2.0.301*
 
@@ -430,7 +430,7 @@ Features:
 - BioAuthn  
 
 
- ### Game Service
+ ### [Game Service](https://developer.huawei.com/consumer/en/hms/huawei-game/)
 
 *Version: 6.1.0.301*
 
@@ -447,21 +447,21 @@ Game Service helps you build basic game functions such as achievements, leaderbo
 - Player statistics
 - Access to basic game information  
 
- ### Gift Management
+ ### Gift Management(https://developer.huawei.com/consumer/en/doc/distribution/app/agc-help-gifts-management-0000001146519949)
 
 1. New Users Gift Packages and Regular Gift Packages
 
-   1.1 New Users Gift Packages
+   1.1 [New Users Gift Packages](https://developer.huawei.com/consumer/en/doc/distribution/app/agc-help-gifts-management-0000001146519949#section111133453378)
 
    New users gift packages target users of specific Huawei device models and are provided as one of the selling points of new devices. Involved apps will be promoted via wide-ranging marketing resources including but not limited to product launch events, product overview pages, and official social accounts. That's not all, these apps will be pushed to users whose newly purchased devices are connected to the Internet for the first time.
 
-   1.2 Regular Gift Packages
+   1.2 [Regular Gift Packages](https://developer.huawei.com/consumer/en/doc/distribution/app/agc-help-gifts-management-0000001146519949#section13468043687)
 
    Regular gift packages are classified into common gift packages and activity gift packages. These packages will be promoted using resources of HUAWEI AppGallery (including Kids Center, GameCenter, and EduCenter), including but not limited to the gift zone, app details page, and activity zone. Gift packages that meet specific conditions will have more exposure chances.
 
 
 
- ### Health Kit
+ ### [Health Kit](https://developer.huawei.com/consumer/en/hms/huaweihealth/)
 
 *Version: 6.1.0.301*
 
@@ -475,7 +475,7 @@ Features:
 - Data Controller
 - Signing in and applying for scopes  
 
- ### Hem Kit
+ ### [Hem Kit](https://developer.huawei.com/consumer/en/hms/huawei-hemkit/)
 
 *Version: 1.0.0.303*
 
@@ -487,11 +487,11 @@ Features:
 - Active Call
 - De-active Call  
 
- ### hQUIC Kit
+ ### [hQUIC Kit](https://developer.huawei.com/consumer/en/hms/huawei-hQUIC/)
 
 hQUIC Kit gives your apps low latency, high throughput, and secure and reliable communications capabilities. It supports the gQUIC protocol and provides intelligent congestion control algorithms to avoid congestions in different network environments, giving your apps faster connection establishment, reduced packet loss, and higher throughput.
 
- ### Identity Kit
+ ### [Identity Kit](https://developer.huawei.com/consumer/en/hms/huawei-identitykit/)
 
 *Version: 5.3.0.300*
 
@@ -501,7 +501,7 @@ Features:
 
 - Obtain User Address  
 
- ### Image Kit
+ ### [Image Kit](https://developer.huawei.com/consumer/en/hms/huawei-imagekit/)
 
 *Version: 1.0.3.303*
 
@@ -513,17 +513,17 @@ Features:
 - Image Render Service  
 
 
- ### In App Purchases
+ ### [In App Purchases](https://developer.huawei.com/consumer/en/hms/huawei-iap/)
 
 IAP provides convenient in-app payment experience, which helps you boost monetization. Users can purchase a variety of virtual products, including one-time virtual products and subscriptions, directly within your app.
 
 
- ### Integration Check
+ ### [Integration Check](https://developer.huawei.com/consumer/en/doc/distribution/app/agc-help-self-check-0000001100158786)
 
 HUAWEI Developers provides a tool that fully automates the checking of apps. You simply fill in the app information and upload the app package, and the tool will scan your package and provide you with a report. You can then optimize your app based on the report for improved performance.
 
 
- ### Location Kit
+ ### [Location Kit](https://developer.huawei.com/consumer/en/hms/huawei-locationkit/)
 
 *Version: 6.0.0.302*
 
@@ -545,7 +545,7 @@ Features:
 - Mock Mode
 - Mock Location  
 
- ### Map Kit
+ ### [Map Kit](https://developer.huawei.com/consumer/en/hms/huawei-MapKit/)
 
 *Version: 6.0.0.301*
 
@@ -560,7 +560,7 @@ Features:
 - Show Direction Routing 
 - Open Petal Map  
 
- ### ML Kit
+ ### [ML Kit](https://developer.huawei.com/consumer/en/hms/huawei-mlkit/)
 
 
 HUAWEI ML Kit allows your apps to easily leverage Huawei's long-term proven expertise in machine learning to support diverse artificial intelligence (AI) applications throughout a wide range of industries. Thanks to Huawei's technology accumulation, ML Kit provides diversified leading machine learning capabilities that are easy to use, helping you develop various AI apps.
@@ -611,7 +611,7 @@ Natural Language Processing Services
 - Text Embedding - *2.0.3.300*
 - ML Kit Version : *2.0.3.300*   
 
- ### Nearby Service
+ ### [Nearby Service](https://developer.huawei.com/consumer/en/hms/huawei-nearbyservice/)
 
 *Version: 6.1.0.301*
 
@@ -623,7 +623,7 @@ Features:
 - Nearby Message 
 
 
- ### Network Kit
+ ### [Network Kit](https://developer.huawei.com/consumer/en/hms/huawei-networkkit/)
 
 *Version: 5.0.7.300*
 
@@ -640,13 +640,13 @@ Features:
 - RestClient Annotation Sync Request 
 - RestClient Annotation ASync Request  
 
- ### OneHop Engine
+ ### [OneHop Engine](https://developer.huawei.com/consumer/en/onehop-kit/)
 
 The HUAWEI OneHop Engine serves as a full scenario solution for seamless interaction between multiple devices. By leveraging NFC technology, HUAWEI OneHop Engine simplifies the collaboration and interaction between your smartphones and other devices with a simple tap. Huawei's new feature Multi-Screen Collaboration released with the EMUI 10.0 system allows users to use their phone on their tablet or laptop with a simple tap, allowing users to expand their productivity without buying more things. The one-tap connection is made possible with HUAWEI OneHop.
 
 In addition, the HUAWEI OneHop Engine supports third-party apps and devices. Third-party developers can work jointly with Huawei to provide seamless and efficient interaction between the smartphones and other devices across all scenarios.
 
- ### Open Testing
+ ### [Open Testing](https://developer.huawei.com/consumer/en/agconnect/open-test/)
 
 You can use the open testing function to easily distribute your app to trusted test users for testing. In this way, you can receive user feedback and improve your app in a timely manner.
 
@@ -664,7 +664,7 @@ AppGallery Connect enables consumers to download high-quality apps and pay throu
 You can integrate the AppGallery DRM Service SDK to check whether a user has successfully purchased your paid app based on your needs.
 
 
- ### Panorama Kit
+ ### [Panorama Kit](https://developer.huawei.com/consumer/en/hms/huawei-panoramakit/)
 
 *Version: 5.0.2.304*
 
@@ -700,7 +700,7 @@ Products can be classified into subscriptions and non-subscriptions:
 You can add products either by adding a single product, or by importing products in batches.
 
 
- ### Push Kit
+ ### [Push Kit](https://developer.huawei.com/consumer/en/hms/huawei-pushkit/)
 
 *Version: 5.1.1.301*
 
@@ -715,11 +715,11 @@ Features:
 - Enhanced Capabilities  
 
 
- ### Quick App
+ ### [Quick App](https://developer.huawei.com/consumer/en/huawei-quickApp/)
 
 Quick apps are a new form of installation-free apps developed based on industry standards. They are developed based on the frontend technology stack and support native rendering, therefore possessing the advantages of both HTML5 apps and native apps. Users do not need to install quick apps and only need to tap them open and enjoy the same experience and performance as native apps.
 
- ### Remote Configuration
+ ### [Remote Configuration](https://developer.huawei.com/consumer/en/agconnect/remote-configuration/)
 
 *Version: 1.6.0.300*
 
@@ -729,7 +729,7 @@ Features:
 
 - Fetching Values from Remote Configuration  
 
- ### Safety Detect
+ ### [Safety Detect](https://developer.huawei.com/consumer/en/hms/huawei-safetydetectkit/)
 
 *Version: 6.1.0.302*
 
@@ -744,7 +744,7 @@ Features:
 - WifiDetect API: Checks whether the Wi-Fi to be connected is secure.  
 
 
- ### Scan Kit
+ ### [Scan Kit](https://developer.huawei.com/consumer/en/hms/huawei-scankit/)
 
 *Version: 2.0.0.300*
 
@@ -762,7 +762,7 @@ Features:
 - Generate QR Code  
 
 
- ### Scene Kit
+ ### [Scene Kit](https://developer.huawei.com/consumer/en/hms/huawei-scenekit/)
 
 *Version: 6.0.0.301*
 
@@ -776,7 +776,7 @@ Features:
 - Render View
 - 2d Fluid Simulation View  
 
- ### Search Kit
+ ### [Search Kit](https://developer.huawei.com/consumer/en/hms/huawei-searchkit/)
 
 *Version: 5.0.4.303*
 
@@ -788,11 +788,11 @@ HUAWEI Search Kit fully opens Petal Search capabilities through the device-side 
 - Auto Suggestion
 - Spelling Check  
 
- ### Share Engine
+ ### Share Engine(https://developer.huawei.com/consumer/en/share-kit/)
 
 Share Engine allows for high-speed file transfers between phones, PCs, and other devices by using Bluetooth to discover nearby devices and authenticate connections, and then setting up peer-to-peer Wi-Fi channels. File transfer speeds can be up to 80 MB/s when the device and environment permit it.
 
- ### Site Kit
+ ### [Site Kit](https://developer.huawei.com/consumer/en/hms/huawei-sitekit/)
 
 *Version: 6.0.1.303*
 
@@ -806,7 +806,7 @@ Features:
 - Place Search Suggestion: Returns a list of suggested places.
 - Autocomplete: Returns an autocomplete place and a list of suggested places based on the entered keyword.  
 
- ### Video Kit
+ ### [Video Kit](https://developer.huawei.com/consumer/en/hms/huawei-videokit/)
 
 *Version: 1.0.10.300*
 
@@ -825,7 +825,7 @@ Features:
 - Use Preloader to enhance the playback (incomplete)  
 
 
- ### Video Editor Kit
+ ### [Video Editor Kit](https://developer.huawei.com/consumer/en/hms/huawei-video-editor/)
 
 *Version: 1.1.0.301*
 
@@ -841,11 +841,11 @@ Features:
 - And More Editing Capabilities  
 
 
- ### Wallet Kit
+ ### [Wallet Kit](https://developer.huawei.com/consumer/en/hms/huawei-walletkit/)
 
 HUAWEI Wallet Kit is an open capability that integrates Huawei's full-stack "chip-device-cloud" technologies to provide digital passes such as cards (including ID cards), coupons, tickets and keys on an integrated platform. It enables users to add their tickets, boarding passes, loyalty cards, coupons, gift cards, and other cards or passes on their mobile phones for convenient, anytime use. It also facilitates interactions between apps and users through location-based notifications, real-time status updates, and NFC capabilities.
 
- ### Wireless Kit
+ ### [Wireless Kit](https://developer.huawei.com/consumer/en/hms/huawei-wirelesskit/)
 
 *Version: 5.3.0.311*
 
