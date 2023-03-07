@@ -78,7 +78,6 @@ dependencies {
     //Google
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
     implementation "com.huawei.agconnect:agconnect-auth-google:1.8.1.300"
-
 }
 
 /*apply from: '../sonarqube.gradle'
