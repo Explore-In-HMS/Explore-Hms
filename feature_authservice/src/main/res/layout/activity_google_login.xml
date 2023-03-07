@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~
   ~   Copyright 2020. Explore in HMS. All rights reserved.
   ~
@@ -29,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="@string/login_with_google"/>
+        app:title="@string/login_with_google" />
 
 
     <LinearLayout
@@ -56,21 +55,25 @@
             android:layout_height="1dp"
             android:background="@color/gray200" />
 
-        <TextView
-            android:id="@+id/tvProfileDetails"
-            style="@style/TextAppearance.ExploreHMS.Body1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:autoLink="web"
-            android:gravity="center_vertical"
-            android:linksClickable="true"
-            android:text="@string/profile_details"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:id="@+id/tvProfileDetails"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:autoLink="web"
+                android:gravity="center_vertical"
+                android:linksClickable="true"
+                android:text="@string/profile_details"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </ScrollView>
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

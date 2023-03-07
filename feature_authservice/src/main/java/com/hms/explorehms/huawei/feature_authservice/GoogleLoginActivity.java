@@ -6,18 +6,20 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.hms.explorehms.huawei.feature_authservice.util.Utils;
 import com.huawei.agconnect.auth.AGConnectAuth;
-import com.huawei.agconnect.auth.AGConnectAuthCredential;
-import com.huawei.agconnect.auth.AGConnectUser;
-import com.huawei.agconnect.auth.GoogleAuthProvider;
 
 public class GoogleLoginActivity extends AppCompatActivity {
     protected AGConnectAuth auth;
@@ -35,19 +37,14 @@ public class GoogleLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_google_login);
         tvProfileDetails = findViewById(R.id.tvProfileDetails);
-        auth = AGConnectAuth.getInstance();
-
-        if (auth.getCurrentUser() != null) {
-            showResultDetail(auth.getCurrentUser());
-        }
 
         GoogleSignInOptions options =
                 new GoogleSignInOptions
                         .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                         .requestIdToken(getString(R.string.server_client_id))
+                        .requestProfile()
                         .build();
         client = GoogleSignIn.getClient(this, options);
-
 
         loginBtn = findViewById(R.id.clLogin);
         logoutBtn = findViewById(R.id.clLogout);
@@ -68,7 +65,8 @@ public class GoogleLoginActivity extends AppCompatActivity {
     }
 
     public void login() {
-        startActivityForResult(client.getSignInIntent(), SIGN_CODE);
+        Intent signInIntent = client.getSignInIntent();
+        startActivityForResult(signInIntent, SIGN_CODE);
     }
 
     public void logout() {
@@ -96,21 +94,21 @@ public class GoogleLoginActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == SIGN_CODE) {
-            GoogleSignIn.getSignedInAccountFromIntent(data)
-                    .addOnSuccessListener(googleSignInAccount -> {
-                        // create google credential
-                        AGConnectAuthCredential credential = GoogleAuthProvider.credentialWithToken(googleSignInAccount.getIdToken());
-                        // signIn with google credential
-                        auth.signIn(credential)
-                                .addOnSuccessListener(
-                                        signInResult -> {
-                                            showResultDetail(auth.getCurrentUser());
-                                            loginSuccess();
-                                        }
-                                )
-                                .addOnFailureListener(e -> Utils.showToastMessage(this, e.getMessage()));
-                    })
-                    .addOnFailureListener(e -> Utils.showToastMessage(this, e.getMessage()));
+
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            task.addOnSuccessListener(new OnSuccessListener<GoogleSignInAccount>() {
+                @Override
+                public void onSuccess(GoogleSignInAccount googleSignInAccount) {
+                    //String idToken = googleSignInAccount.getIdToken();
+                    showResultDetail(googleSignInAccount);
+                    loginSuccess();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+
+                }
+            });
         }
     }
 
@@ -119,14 +117,13 @@ public class GoogleLoginActivity extends AppCompatActivity {
         Log.d(TAG, getString(R.string.success_login_with_google));
     }
 
-    public void showResultDetail(AGConnectUser signInResult) {
+    public void showResultDetail(GoogleSignInAccount googleSignInAccount) {
         if (tvProfileDetails == null) {
             return;
         }
         String signMsg = "Google " + " onSuccess : \n" +
-                "profile Uid         : " + signInResult.getUid() + "\n" +
-                "profile ProviderId  : " + signInResult.getProviderId() + "\n" +
-                "profile DisplayName : " + signInResult.getDisplayName();
+                "profile DisplayName  : " + googleSignInAccount.getGivenName() + "\n" +
+                "profile Id Token     : " + googleSignInAccount.getIdToken();
 
         Log.i(TAG, signMsg);
         tvProfileDetails.setText(signMsg);
