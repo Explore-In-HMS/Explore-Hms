@@ -21,7 +21,6 @@ import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
-import androidx.multidex.MultiDex;
 
 import com.huawei.hms.network.NetworkKit;
 
@@ -31,7 +30,7 @@ public class NetworkKitApp extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-        MultiDex.install(this);
+        //MultiDex.install(this);
     }
 
     @Override
