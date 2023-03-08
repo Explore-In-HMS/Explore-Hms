@@ -109,4 +109,5 @@
     <string name="success_login_with_google">Success login with Google</string>
     <string name="log_out_user">logOut : No logged in user</string>
     <string name="log_out_instance_user">InstanceUser logged out</string>
+    <string name="you_need_gms_supported_device">You need a gms supported device for Google Sign In.</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.hms.explorehms.huawei.feature_authservice;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.material.snackbar.Snackbar;
 import com.hms.explorehms.huawei.feature_authservice.util.Utils;
 import com.huawei.agconnect.auth.AGConnectAuth;
 import com.huawei.agconnect.auth.AGConnectAuthCredential;
@@ -35,8 +39,8 @@ public class GoogleLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_google_login);
         tvProfileDetails = findViewById(R.id.tvProfileDetails);
-        auth = AGConnectAuth.getInstance();
 
+        auth = AGConnectAuth.getInstance();
         if (auth.getCurrentUser() != null) {
             showResultDetail(auth.getCurrentUser());
         }
@@ -55,7 +59,11 @@ public class GoogleLoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login();
+                if (isGooglePlayServicesAvailable(getApplicationContext())) {
+                    login();
+                } else {
+                    showSnackbarIfGmsNotSupported();
+                }
             }
         });
 
@@ -130,5 +138,16 @@ public class GoogleLoginActivity extends AppCompatActivity {
 
         Log.i(TAG, signMsg);
         tvProfileDetails.setText(signMsg);
+    }
+
+    public boolean isGooglePlayServicesAvailable(final Context context) {
+        return GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(context) == ConnectionResult.SUCCESS;
+    }
+
+    public void showSnackbarIfGmsNotSupported() {
+        View rootOfLayout = findViewById(R.id.clGoogleLogin);
+        Snackbar snackbar = Snackbar
+                .make(rootOfLayout, R.string.you_need_gms_supported_device, Snackbar.LENGTH_LONG);
+        snackbar.show();
     }
 }
