@@ -36,7 +36,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        tools:replace="name, icon, label, theme, resizeableActivity, allowBackup, hardwareAccelerated,android:networkSecurityConfig">
+        tools:replace="name, icon, label, theme, resizeableActivity, allowBackup, hardwareAccelerated,android:networkSecurityConfig, android:configChanges">
         <activity android:name=".keyring.KeyringServiceIntroductionActivity" />
         <activity android:name=".keyring.KeyringServiceActivity" />
         <activity android:name=".baseapp.activity.BaseActivity" />

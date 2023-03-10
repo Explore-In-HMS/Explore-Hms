@@ -146,7 +146,7 @@ dynamicFeatures =
                     ':feature_wearengine',
                     ':feature_hemkit',
                     ':dynamicfeaturetest',
-                    ':feature_hiaifoundation',
+                    //':feature_hiaifoundation',
                     ':feature_connectapi',
                     ':feature_networkkit',
                     ':feature_audioeditorkit',
@@ -155,7 +155,8 @@ dynamicFeatures =
                     ':feature_devicevirtualizationengine',
                     ':feature_modem5g_kit',
                     ':feature_videoeditorkit',
-                    ':feature_navikit'
+                    ':feature_navikit',
+                    ':feature_videoeditorkitai'
             ]
 
     packagingOptions {
@@ -170,6 +171,7 @@ dynamicFeatures =
         pickFirst 'lib/armeabi-v7a/libc++_shared.so'
         pickFirst 'lib/arm64-v8a/libnative-lib.so'
         pickFirst 'lib/arm64-v8a/libnative-lib.so'
+        pickFirst 'lib/arm64-v8a/libhiai_ir_build.so'
     }
 
 }

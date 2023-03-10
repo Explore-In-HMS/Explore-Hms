@@ -907,5 +907,6 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="title_feature_modem5g_kit">5G Modem Kit</string>
     <string name="keyring_service_example">Keyring Service Example</string>
     <string name="title_feature_navikit">NaviKit</string>
+    <string name="title_sdkdemo">Video Editor Kit AI</string>
 
 </resources>
