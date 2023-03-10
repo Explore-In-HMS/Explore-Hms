@@ -99,8 +99,7 @@ public class MainActivityAuth extends AppCompatActivity {
                 break;
 
             case R.id.clLoginWithGoogle2:
-                showSupportMessage("LoginWith Google");
-                Utils.openWebPage(MainActivityAuth.this, getResources().getString(R.string.url_auth_service_google));
+                Utils.startActivity(MainActivityAuth.this, GoogleLoginActivity.class);
                 break;
             case R.id.clLoginWithGooglePlay2:
                 showSupportMessage("LoginWith GooglePlay");

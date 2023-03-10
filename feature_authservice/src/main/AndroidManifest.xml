@@ -24,7 +24,12 @@
         android:theme="@style/AppTheme"
         tools:node="replace"
         tools:replace="theme, screenOrientation">
-        <activity android:name=".ReauthenticateActivity"></activity>
+        <activity
+            android:name=".GoogleLoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            tools:node="replace" />
+        <activity android:name=".ReauthenticateActivity" />
         <activity
             android:name=".MainActivityAuth"
             android:screenOrientation="portrait"
@@ -85,6 +90,20 @@
                 <data android:scheme="@string/facebook_app_secret" />
             </intent-filter>
         </activity>
-    </application>
+        <activity
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivityAuth"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.google.android.gms.auth.GOOGLE_SIGN_IN" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="12451000" />
+    </application>
 </manifest>
