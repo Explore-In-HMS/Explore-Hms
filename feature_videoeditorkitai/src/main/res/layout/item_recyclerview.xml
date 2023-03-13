@@ -11,8 +11,8 @@
 
     <ImageView
         android:id="@+id/iv_logo"
-        android:layout_width="@dimen/dp_25"
-        android:layout_height="@dimen/dp_25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
@@ -36,7 +36,7 @@
             android:fontFamily="HarmonyHeiTi"
             android:maxLines="4"
             android:textColor="@color/white"
-            android:textSize="@dimen/dp_14"
+            android:textSize="@dimen/dp_18"
             tools:ignore="SpUsage" />
 
         <TextView
@@ -49,7 +49,7 @@
             android:fontFamily="HarmonyHeiTi"
             android:maxLines="4"
             android:textColor="@color/white"
-            android:textSize="@dimen/dp_10"
+            android:textSize="@dimen/dp_14"
             tools:ignore="SpUsage" />
     </LinearLayout>
 

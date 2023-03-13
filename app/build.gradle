@@ -172,6 +172,8 @@ dynamicFeatures =
         pickFirst 'lib/arm64-v8a/libnative-lib.so'
         pickFirst 'lib/arm64-v8a/libnative-lib.so'
         pickFirst 'lib/arm64-v8a/libhiai_ir_build.so'
+        pickFirst 'lib/armeabi-v7a/libVariableSpeed.so'
+        pickFirst 'lib/arm64-v8a/libVariableSpeed.so'
     }
 
 }
@@ -242,6 +244,9 @@ dependencies {
 
     //card view
     implementation 'androidx.cardview:cardview:1.0.0'
+
+    //ViewPager
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
 
     //gson

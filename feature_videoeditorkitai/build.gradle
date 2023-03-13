@@ -52,7 +52,7 @@ android {
 }
 dependencies {
     implementation project(":app")
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    //implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.startup:startup-runtime:1.0.0'
     //implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -65,7 +65,7 @@ dependencies {
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
     //implementation 'androidx.navigation:navigation-fragment:2.3.5'
     //implementation 'androidx.navigation:navigation-ui:2.3.5'
-    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    //implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
     //implementation 'com.google.code.gson:gson:2.8.9'
     //implementation 'com.google.android.material:material:1.2.1'
