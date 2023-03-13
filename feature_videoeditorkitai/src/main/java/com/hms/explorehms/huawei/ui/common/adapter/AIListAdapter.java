@@ -51,8 +51,8 @@ public class AIListAdapter extends RecyclerView.Adapter<AIListAdapter.ViewHolder
             return;
         }
         ViewGroup.LayoutParams layoutParams = holder.itemView.getLayoutParams();
-        int width = (ScreenUtil.getScreenWidth(holder.itemView.getContext()) - ScreenUtil.dp2px(44)) / 2;
-        int height = width / 11 * 5;
+        int width = (ScreenUtil.getScreenWidth(holder.itemView.getContext()) - ScreenUtil.dp2px(44));
+        int height = (width / 11 * 5) / 2;
         layoutParams.width = width;
         layoutParams.height = height;
 
