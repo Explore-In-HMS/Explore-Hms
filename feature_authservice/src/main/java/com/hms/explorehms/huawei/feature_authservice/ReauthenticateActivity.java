@@ -18,27 +18,36 @@
 
 package com.hms.explorehms.huawei.feature_authservice;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import android.os.Bundle;
 
 import com.hms.explorehms.Util;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
+/**
+ * This shows how we Reauthenticate by Auth Service
+ */
 public class ReauthenticateActivity extends AppCompatActivity {
     private Unbinder unbinder;
 
+    /**
+     * The method initializes the sets up necessary for variables.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reauthenticate);
         setupToolbar();
         unbinder = ButterKnife.bind(this);
-
     }
+
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -46,11 +55,17 @@ public class ReauthenticateActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         Util.setToolbar(this, toolbar, getString(R.string.url_reauthenticate));
     }
+
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();

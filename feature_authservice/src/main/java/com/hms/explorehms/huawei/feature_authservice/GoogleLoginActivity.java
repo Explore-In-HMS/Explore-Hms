@@ -23,6 +23,9 @@ import com.huawei.agconnect.auth.AGConnectAuthCredential;
 import com.huawei.agconnect.auth.AGConnectUser;
 import com.huawei.agconnect.auth.GoogleAuthProvider;
 
+/**
+ * This shows how we login with Google Sign In with Auth Service.
+ */
 public class GoogleLoginActivity extends AppCompatActivity {
     protected AGConnectAuth auth;
     private static final int SIGN_CODE = 9901;
@@ -34,6 +37,10 @@ public class GoogleLoginActivity extends AppCompatActivity {
 
     private static final String TAG = GoogleLoginActivity.class.getSimpleName();
 
+    /**
+     * The method initializes the sets up necessary for variables.
+     * It also initializes Google requirements.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,10 +82,16 @@ public class GoogleLoginActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * It starts to login with Google
+     */
     public void login() {
         startActivityForResult(client.getSignInIntent(), SIGN_CODE);
     }
 
+    /**
+     * It allows to user log out.
+     */
     public void logout() {
         client.signOut();
         if (tvProfileDetails == null) {
@@ -100,6 +113,10 @@ public class GoogleLoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * It handles sign in requests.
+     * If the sign in gives an error, a toast message will on the screen.
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -122,11 +139,17 @@ public class GoogleLoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * If the login successfully, it shows a toast message
+     */
     protected void loginSuccess() {
         Utils.showToastMessage(this, getString(R.string.success_login_with_google));
         Log.d(TAG, getString(R.string.success_login_with_google));
     }
 
+    /**
+     * It displays the details of sign-in user's information, including a message.
+     */
     public void showResultDetail(AGConnectUser signInResult) {
         if (tvProfileDetails == null) {
             return;
@@ -140,10 +163,18 @@ public class GoogleLoginActivity extends AppCompatActivity {
         tvProfileDetails.setText(signMsg);
     }
 
+    /**
+     * The Google Sign In need to Google SDK
+     * Here It returns whether the phone has the Google SDK.
+     * In this way, It informs the user if the Google SDK is not available.
+     */
     public boolean isGooglePlayServicesAvailable(final Context context) {
         return GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(context) == ConnectionResult.SUCCESS;
     }
 
+    /**
+     * If the user does not have the Google SDK, it shows a snackbar that the user cannot using Google Sign In.
+     */
     public void showSnackbarIfGmsNotSupported() {
         View rootOfLayout = findViewById(R.id.clGoogleLogin);
         Snackbar snackbar = Snackbar

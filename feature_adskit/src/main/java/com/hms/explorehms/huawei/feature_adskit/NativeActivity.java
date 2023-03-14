@@ -43,11 +43,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * This shows how we display Native Ad with Ads Kit.
+ */
 public class NativeActivity extends AppCompatActivity {
 
 
     private static final String TAG = NativeActivity.class.getSimpleName();
 
+    /**
+     * The method initializes the sets up necessary for UI, toolbar and Ads.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,12 +66,15 @@ public class NativeActivity extends AppCompatActivity {
         // Initialize the HUAWEI Ads SDK.
         HwAds.init(this);
         // load ads based on ad id to native ad views
-        loadAd(getString(R.string.ad_id_native_video), videoNativeView,0);
-        loadAd(getString(R.string.ad_id_native_small), smallNativeView,0);
-        loadAd(getString(R.string.ad_id_native),largeNativeView, DetailedCreativeType.BIG_IMG);
+        loadAd(getString(R.string.ad_id_native_video), videoNativeView, 0);
+        loadAd(getString(R.string.ad_id_native_small), smallNativeView, 0);
+        loadAd(getString(R.string.ad_id_native), largeNativeView, DetailedCreativeType.BIG_IMG);
 
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -73,13 +82,20 @@ public class NativeActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
-    private void loadAd(String adId, final NativeView nativeView,int type) {
+    /**
+     * The method loads ads with showNativeAd
+     */
+    private void loadAd(String adId, final NativeView nativeView, int type) {
         List<Integer> detailedCreativeTypeList = new ArrayList<>();
         final NativeAdLoader.Builder builder = new NativeAdLoader.Builder(this, adId);
         builder.setNativeAdLoadedListener(nativeAd -> {
@@ -109,7 +125,7 @@ public class NativeActivity extends AppCompatActivity {
         Location location = new Location(LocationManager.GPS_PROVIDER);
 
         // Add a specified creative type (large image).
-        if(type!=0){
+        if (type != 0) {
             detailedCreativeTypeList.add(type);
             nativeAdLoader.loadAd(new AdParam.Builder()
                     //Set the location information passed by the app
@@ -117,8 +133,7 @@ public class NativeActivity extends AppCompatActivity {
                     .setDetailedCreativeTypeList(detailedCreativeTypeList)
                     .setContentBundle(Utils.contentBundle)
                     .build());
-        }
-        else{
+        } else {
             nativeAdLoader.loadAd(new AdParam.Builder()
                     //Set the location information passed by the app
                     .setLocation(location)
@@ -176,7 +191,9 @@ public class NativeActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * The method handles playing and ending videos
+     */
     private VideoOperator.VideoLifecycleListener videoLifecycleListener = new VideoOperator.VideoLifecycleListener() {
         @Override
         public void onVideoStart() {
@@ -198,7 +215,9 @@ public class NativeActivity extends AppCompatActivity {
         }
     };
 
-
+    /**
+     * The method handles Ads attitudes
+     */
     private AdListener adListener = new AdListener() {
         @Override
         public void onAdLoaded() {

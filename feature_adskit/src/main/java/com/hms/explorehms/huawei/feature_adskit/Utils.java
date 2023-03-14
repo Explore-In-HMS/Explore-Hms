@@ -26,6 +26,9 @@ import org.json.JSONObject;
 
 import java.security.SecureRandom;
 
+/**
+ * It is utils class, it handles common process
+ */
 public class Utils {
 
 
@@ -42,21 +45,24 @@ public class Utils {
         try {
             //Sample string for setContentBundle() method
             contentBundle = new JSONObject()
-                    .put("channelCategoryCode","TV series")
-                    .put("title","Game of Thrones")
-                    .put("tags","fantasy")
-                    .put("relatedPeople","David Benioff")
-                    .put("content","Nine noble families fight for control over the lands of Westeros.")
-                    .put("contentID","123123")
-                    .put("category","classics")
-                    .put("subcategory","historical drama")
-                    .put("thirdCategory","mystery")
+                    .put("channelCategoryCode", "TV series")
+                    .put("title", "Game of Thrones")
+                    .put("tags", "fantasy")
+                    .put("relatedPeople", "David Benioff")
+                    .put("content", "Nine noble families fight for control over the lands of Westeros.")
+                    .put("contentID", "123123")
+                    .put("category", "classics")
+                    .put("subcategory", "historical drama")
+                    .put("thirdCategory", "mystery")
                     .toString();
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * It shows a toast message
+     */
     public static void showToast(Context context, String message) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }

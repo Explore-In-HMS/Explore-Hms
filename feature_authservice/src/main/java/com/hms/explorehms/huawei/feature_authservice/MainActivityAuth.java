@@ -37,7 +37,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
-
+/**
+ * This activity shows the all sign-in options
+ */
 public class MainActivityAuth extends AppCompatActivity {
 
     //region variablesAndObjects
@@ -51,6 +53,9 @@ public class MainActivityAuth extends AppCompatActivity {
 
     //endregion views
 
+    /**
+     * The method initializes the sets up necessary for variables.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -128,6 +133,9 @@ public class MainActivityAuth extends AppCompatActivity {
         }
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -136,19 +144,28 @@ public class MainActivityAuth extends AppCompatActivity {
         Util.setToolbar(this, toolbar, getString(R.string.url_txt_authservicemain));
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
+    /**
+     * It handles sign in requests.
+     */
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Log.i(TAG, "onActivityResult : requestCode : " + requestCode + " - resultCode : " + resultCode);
 
     }
 
-
+    /**
+     * It shows a toast message for support new features.
+     */
     private void showSupportMessage(String which) {
         Utils.showToastMessage(getApplicationContext(), which + " " + getResources().getString(R.string.feature_supported_but_not_use_in_app_now));
     }
@@ -160,6 +177,10 @@ public class MainActivityAuth extends AppCompatActivity {
         unbinder.unbind();
     }
 
+    /**
+     * Called when the activity is attaching to its context.
+     * It creates a new base context for the activity.
+     */
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);

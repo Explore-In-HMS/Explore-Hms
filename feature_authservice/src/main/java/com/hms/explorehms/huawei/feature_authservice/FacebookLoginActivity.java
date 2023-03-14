@@ -18,6 +18,8 @@
 
 package com.hms.explorehms.huawei.feature_authservice;
 
+import static com.huawei.agconnect.auth.AGConnectAuthCredential.Facebook_Provider;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -52,8 +54,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
-import static com.huawei.agconnect.auth.AGConnectAuthCredential.Facebook_Provider;
-
+/**
+ * This shows how we login with Facebook with Auth Service.
+ */
 public class FacebookLoginActivity extends AppCompatActivity {
 
     //region variablesAndObjects
@@ -74,6 +77,10 @@ public class FacebookLoginActivity extends AppCompatActivity {
 
     //endregion views
 
+    /**
+     * The method initializes the sets up necessary for variables.
+     * It also initializes Facebook SDK requirements.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,6 +122,9 @@ public class FacebookLoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -123,12 +133,20 @@ public class FacebookLoginActivity extends AppCompatActivity {
         Util.setToolbar(this, toolbar, getResources().getString(R.string.url_auth_service_facebook));
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
+    /**
+     * It allows to login with Facebook.
+     * It also sends details of sign in user with a message.
+     */
     private void loginWithFacebook() {
         if (tvProfileDetails == null) {
             return;
@@ -184,6 +202,9 @@ public class FacebookLoginActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * It generates a credential using the obtained access token, and then call AGConnectAuth.
+     */
     private void transmitFacebookAccessTokenIntoAGC(String accessToken) {
         if (tvProfileDetails == null) {
             return;
@@ -210,7 +231,9 @@ public class FacebookLoginActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * It displays the details of sign-in user's information, including a message.
+     */
     public void showResultDetail(String msg, AGConnectUser signInResult) {
         if (tvProfileDetails == null) {
             return;
@@ -226,7 +249,9 @@ public class FacebookLoginActivity extends AppCompatActivity {
         tvProfileDetails.setText(signMsg);
     }
 
-
+    /**
+     * It allows to user log out.
+     */
     private void logOut() {
 
         LoginManager.getInstance().logOut();
@@ -262,6 +287,9 @@ public class FacebookLoginActivity extends AppCompatActivity {
         unbinder.unbind();
     }
 
+    /**
+     * It handles sign in requests.
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

@@ -38,8 +38,10 @@ import com.huawei.hms.ads.splash.SplashView;
 
 import java.util.Locale;
 
+/**
+ * This shows how we display Splash Ad with Ads Kit.
+ */
 public class SplashActivity extends AppCompatActivity {
-
 
     private static final String TAG = SplashActivity.class.getSimpleName();
 
@@ -59,6 +61,9 @@ public class SplashActivity extends AppCompatActivity {
 
     private SplashView splashView;
 
+    /**
+     * The method initializes the sets up necessary for UI and Ads.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +77,9 @@ public class SplashActivity extends AppCompatActivity {
         loadAd();
     }
 
+    /**
+     * It starts load Ad and build AdParam.
+     */
     private void loadAd() {
         Log.i(TAG, "Start to load ad");
         Location location = new Location(LocationManager.GPS_PROVIDER);
@@ -131,6 +139,9 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * when SplashActivity in onPause
+     */
     @Override
     protected void onPause() {
         Log.i(TAG, "SplashActivity onPause.");
@@ -140,6 +151,9 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * when SplashActivity in onResume
+     */
     @Override
     protected void onResume() {
         Log.i(TAG, "SplashActivity onResume.");
@@ -149,6 +163,9 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This listener handle ad process. Listen Loads, Fails and Dismissed.
+     */
     private final SplashView.SplashAdLoadListener splashAdLoadListener = new SplashView.SplashAdLoadListener() {
         @Override
         public void onAdLoaded() {
@@ -175,6 +192,9 @@ public class SplashActivity extends AppCompatActivity {
         }
     };
 
+    /**
+     * This listener handle ad process. Listen onAdShowed, onAdClick
+     */
     private final SplashAdDisplayListener adDisplayListener = new SplashAdDisplayListener() {
         @Override
         public void onAdShowed() {

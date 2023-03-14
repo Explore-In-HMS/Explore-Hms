@@ -35,6 +35,9 @@ import com.huawei.hms.ads.InterstitialAd;
 import java.security.SecureRandom;
 import java.util.Locale;
 
+/**
+ * This shows how we display Interstitial Ad with Ads Kit.
+ */
 public class InterstitialActivity extends AppCompatActivity {
 
     private static final String TAG = InterstitialActivity.class.getSimpleName();
@@ -42,6 +45,9 @@ public class InterstitialActivity extends AppCompatActivity {
     private InterstitialAd interstitialAd;
     MaterialButton refresh;
 
+    /**
+     * The method initializes the sets up necessary for UI, toolbar and Ads.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +61,9 @@ public class InterstitialActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -62,12 +71,19 @@ public class InterstitialActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
+    /**
+     * It initializes the UI, and call loadInterstitialAd if clicked refresh
+     */
     private void initializeUI() {
 
         refresh = findViewById(R.id.btnRefreshInterstitial);
@@ -79,6 +95,9 @@ public class InterstitialActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * It loads Interstitial Ad and build AdParam with location.
+     */
     private void loadInterstitialAd() {
 
         interstitialAd = new InterstitialAd(this);
@@ -95,6 +114,9 @@ public class InterstitialActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * It returns Ad Id, for video is type 1.
+     */
     private String getAdId(int type) {
         if (type == 1) { // video
             return getString(R.string.ad_id_interstitial_video); // The value of video_ad_id is testb4znbuh3n2.
@@ -103,8 +125,9 @@ public class InterstitialActivity extends AppCompatActivity {
         }
     }
 
-
-
+    /**
+     * This listener handle ad process. Listen Loaded, Showed, Failed and Closed, Clicked, Opened.
+     */
     private final AdListener adListener = new AdListener() {
         @Override
         public void onAdLoaded() {
@@ -151,6 +174,9 @@ public class InterstitialActivity extends AppCompatActivity {
         }
     };
 
+    /**
+     * It returns a random number
+     */
     private int getRandomNumber(int max, int min) {
         int randomNum = new SecureRandom().nextInt((max - min) + 1) + min;
         Log.d(TAG, "getRandomNumber.randomNum : " + randomNum);

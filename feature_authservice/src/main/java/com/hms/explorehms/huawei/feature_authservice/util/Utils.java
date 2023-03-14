@@ -18,6 +18,8 @@
 
 package com.hms.explorehms.huawei.feature_authservice.util;
 
+import static android.content.Context.CONNECTIVITY_SERVICE;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -32,22 +34,29 @@ import com.huawei.agconnect.AGConnectInstance;
 import com.huawei.agconnect.auth.AGConnectAuth;
 import com.huawei.agconnect.auth.AGConnectUser;
 
-import static android.content.Context.CONNECTIVITY_SERVICE;
-
+/**
+ * It is utils class, it handles common process
+ */
 public class Utils {
 
     private static final String TAG = Utils.class.getSimpleName();
 
-    private Utils(){
+    private Utils() {
 
     }
 
+    /**
+     * The method initializes the sets up necessary for AGConnect
+     */
     public static void initializeAGConnectInstance(Context context) {
         if (AGConnectInstance.getInstance() == null) {
             AGConnectInstance.initialize(context);
         }
     }
 
+    /**
+     * The method checks is user logged in Agc
+     */
     public static boolean isLoggedInAgcUser() {
         boolean result = false;
         if (AGConnectAuth.getInstance() != null) {
@@ -55,7 +64,7 @@ public class Utils {
                 AGConnectUser user = AGConnectAuth.getInstance().getCurrentUser();
                 result = true;
                 Log.i(TAG, "isLoggedInAgcUser  : userId : " + user.getUid() + " displayName : " + user.getDisplayName() + " isAnonymous : " + user.isAnonymous() + " is already logged in.");
-            }else{
+            } else {
                 Log.i(TAG, "isLoggedInAgcUser  : AGConnectAuth.getInstance().getCurrentUser() is NULL ");
             }
         } else {
@@ -64,34 +73,45 @@ public class Utils {
         return result;
     }
 
-
-    public static void showToastMessage(Context context, String message){
+    /**
+     * The method shows a toast message
+     */
+    public static void showToastMessage(Context context, String message) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * The method opens a web page
+     */
     public static void openWebPage(Activity activity, String url) {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         activity.startActivity(browserIntent);
     }
 
+    /**
+     * The method checks network connection
+     */
     @SuppressLint("MissingPermission")
-    public static boolean haveNetworkConnection(Context context){
+    public static boolean haveNetworkConnection(Context context) {
         boolean haveConnected = false;
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(CONNECTIVITY_SERVICE );
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(CONNECTIVITY_SERVICE);
         NetworkInfo[] networkInfos = cm.getAllNetworkInfo();
 
-        for( NetworkInfo ni : networkInfos ){
+        for (NetworkInfo ni : networkInfos) {
 
-            if( ni != null && ni.isConnected() ){
+            if (ni != null && ni.isConnected()) {
                 haveConnected = true;
             }
         }
 
-        return haveConnected ;
+        return haveConnected;
     }
 
-    public static void startActivity(Activity activity, Class<?> c){
-        activity.startActivity(new Intent(activity,c));
+    /**
+     * The method starts new activity
+     */
+    public static void startActivity(Activity activity, Class<?> c) {
+        activity.startActivity(new Intent(activity, c));
     }
 
 }

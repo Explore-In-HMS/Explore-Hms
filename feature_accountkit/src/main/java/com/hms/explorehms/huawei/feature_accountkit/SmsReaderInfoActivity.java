@@ -17,9 +17,6 @@
  */
 package com.hms.explorehms.huawei.feature_accountkit;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,13 +24,23 @@ import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * This activity is responsible for Sms messages reading and open activity for verification.
+ */
 public class SmsReaderInfoActivity extends AppCompatActivity {
     @BindView(R.id.btn_smscodeverify)
     Button btn_veriffication;
+
+    /**
+     * The method initializes the sets up necessary for variables.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +59,10 @@ public class SmsReaderInfoActivity extends AppCompatActivity {
 
         }
     }
+
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -59,14 +70,23 @@ public class SmsReaderInfoActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
+
+
     @OnClick(R.id.btn_smscodeverify)
-    public void openverification(){
-        Intent intent=new Intent(this,SmsReaderActivity.class);
+    /**
+     * It opens verification activity.
+     */
+    public void openverification() {
+        Intent intent = new Intent(this, SmsReaderActivity.class);
         startActivity(intent);
     }
 }

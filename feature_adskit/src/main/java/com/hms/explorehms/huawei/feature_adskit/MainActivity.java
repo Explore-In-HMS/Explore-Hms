@@ -26,11 +26,14 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.hms.explorehms.Util;
 import com.google.android.material.button.MaterialButton;
+import com.hms.explorehms.Util;
 import com.huawei.hms.ads.HwAds;
 import com.huawei.hms.feature.dynamicinstall.FeatureCompat;
 
+/**
+ * This activity shows the all Ads options
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     //region initializeVariables
@@ -44,6 +47,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Toolbar toolbar;
     //endregion
 
+
+    /**
+     * The method initializes the sets up necessary for UI, toolbar and Ads.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +74,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -75,21 +85,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Util.setToolbar(this, toolbar, getResources().getString(R.string.url_txt_adskit));
     }
 
+    /**
+     * It starts a count down
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
+    /**
+     * It initializes the UI, and click listeners.
+     */
     private void initializeUI() {
 
-        btnCreateSplashAd       = findViewById(R.id.btnCreateSplashAd);
-        btnCreateBannerAd       = findViewById(R.id.btnCreateBannerAd);
+        btnCreateSplashAd = findViewById(R.id.btnCreateSplashAd);
+        btnCreateBannerAd = findViewById(R.id.btnCreateBannerAd);
         btnCreateInterstitialAd = findViewById(R.id.btnCreateInterstitialAd);
-        btnCreateRewardAd       = findViewById(R.id.btnCreateRewardAd);
-        btnCreateNativeAd       = findViewById(R.id.btnCreateNativeAd);
-        btnInsStreamAdRollAd    = findViewById(R.id.btnInsStreamAdRollAd);
-        btnExSplashAd            =findViewById(R.id.btnExSplashAd);
+        btnCreateRewardAd = findViewById(R.id.btnCreateRewardAd);
+        btnCreateNativeAd = findViewById(R.id.btnCreateNativeAd);
+        btnInsStreamAdRollAd = findViewById(R.id.btnInsStreamAdRollAd);
+        btnExSplashAd = findViewById(R.id.btnExSplashAd);
 
         btnCreateSplashAd.setOnClickListener(this);
         btnCreateBannerAd.setOnClickListener(this);
@@ -101,43 +117,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-        @Override
+    @Override
     public void onClick(View v) {
 
-        switch ( v.getId() ) {
+        switch (v.getId()) {
             case R.id.btnCreateSplashAd:
-                createIntentAndStartActivity( SplashActivity.class );
+                createIntentAndStartActivity(SplashActivity.class);
                 Handler mainHandler = new Handler();
                 mainHandler.postDelayed(this::finish, 500);
-            break;
+                break;
             case R.id.btnCreateBannerAd:
-                createIntentAndStartActivity( BannerActivity.class );
-            break;
+                createIntentAndStartActivity(BannerActivity.class);
+                break;
             case R.id.btnCreateInterstitialAd:
-                createIntentAndStartActivity( InterstitialActivity.class );
-            break;
+                createIntentAndStartActivity(InterstitialActivity.class);
+                break;
             case R.id.btnCreateRewardAd:
-                createIntentAndStartActivity( RewardActivity.class );
-            break;
+                createIntentAndStartActivity(RewardActivity.class);
+                break;
             case R.id.btnCreateNativeAd:
-                createIntentAndStartActivity( NativeActivity.class );
+                createIntentAndStartActivity(NativeActivity.class);
                 break;
             case R.id.btnInsStreamAdRollAd:
-                createIntentAndStartActivity( InStreamRollActivity.class );
+                createIntentAndStartActivity(InStreamRollActivity.class);
                 break;
             case R.id.btnExSplashAd:
-                createIntentAndStartActivity( ExSplashActivity.class );
+                createIntentAndStartActivity(ExSplashActivity.class);
                 break;
             default: // default state
                 break;
         }
     }
 
-    public void createIntentAndStartActivity(Class<?> tClass){
+    /**
+     * It creates and starts a activity
+     */
+    public void createIntentAndStartActivity(Class<?> tClass) {
         Intent intent = new Intent(MainActivity.this, tClass);
         startActivity(intent);
     }
 
+    /**
+     * Called when the activity is attaching to its context.
+     */
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);

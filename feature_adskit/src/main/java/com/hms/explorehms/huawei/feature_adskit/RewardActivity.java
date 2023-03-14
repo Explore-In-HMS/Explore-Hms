@@ -38,6 +38,9 @@ import com.huawei.hms.ads.reward.RewardAdStatusListener;
 import java.security.SecureRandom;
 import java.util.Locale;
 
+/**
+ * This shows how we display Reward Ad with Ads Kit.
+ */
 public class RewardActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = RewardActivity.class.getSimpleName();
@@ -54,6 +57,9 @@ public class RewardActivity extends AppCompatActivity implements View.OnClickLis
 
     private RewardAd rewardedAd;
 
+    /**
+     * The method initializes the sets up necessary for UI, toolbar and Ads.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,9 +71,11 @@ public class RewardActivity extends AppCompatActivity implements View.OnClickLis
         initializeUI();
 
         createAndLoadRewardAd();
-
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -75,12 +83,19 @@ public class RewardActivity extends AppCompatActivity implements View.OnClickLis
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
+    /**
+     * It initializes the UI, and build AdParam by user location
+     */
     private void initializeUI() {
         textViewScore = findViewById(R.id.textViewScore);
         setScore(score);
@@ -110,6 +125,9 @@ public class RewardActivity extends AppCompatActivity implements View.OnClickLis
     }
 
 
+    /**
+     * If rewardedAd is null, create it and then load.
+     */
     private void createAndLoadRewardAd() {
 
         if (rewardedAd == null) {
@@ -140,7 +158,9 @@ public class RewardActivity extends AppCompatActivity implements View.OnClickLis
                 .build(), rewardAdLoadListener);
     }
 
-
+    /**
+     * If rewardedAd is loaded, display it Rewarded Ad.
+     */
     private void rewardAdShow() {
         if (rewardedAd.isLoaded()) {
             rewardedAd.show(RewardActivity.this, new RewardAdStatusListener() {
@@ -184,10 +204,16 @@ public class RewardActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+    /**
+     * It sets a score, if the Rewarded Ad is completed successfully.
+     */
     private void setScore(int score) {
         textViewScore.setText("Score : " + score);
     }
 
+    /**
+     * It plays a game.
+     */
     private void play() {
         // If the score is 0, a message is displayed, asking users to watch the ad in exchange for scores.
         if (score == 0) {

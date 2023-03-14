@@ -58,8 +58,10 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
+/**
+ * This shows how we login with Twitter with Auth Service.
+ */
 public class TwitterLoginActivity extends AppCompatActivity {
-
 
     //region variablesAndObjects
     private static final String REMOTE_ERR = "REMOTE_ERR";
@@ -79,6 +81,10 @@ public class TwitterLoginActivity extends AppCompatActivity {
     TextView tvProfileDetails;
 
     //endregion views
+
+    /**
+     * The method initializes the sets up necessary for variables.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,6 +99,9 @@ public class TwitterLoginActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * It allows to set configuration settings remotely
+     */
     private void setRemoteConfigurationSettings() {
         remoteConfig = AGConnectConfig.getInstance();
         remoteConfig.applyDefault(R.xml.remote_config);
@@ -113,6 +122,9 @@ public class TwitterLoginActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * It allows to obtain data from remote
+     */
     private void obtainData() {
 
         Map<String, Object> allValues = remoteConfig.getMergedAll();
@@ -155,6 +167,9 @@ public class TwitterLoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -163,12 +178,19 @@ public class TwitterLoginActivity extends AppCompatActivity {
         Util.setToolbar(this, toolbar, getResources().getString(R.string.url_auth_service_twitter));
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
+    /**
+     * It initialize the Twitter Api
+     */
     private void initializeTwitterApi() {
         try {
             TwitterAuthConfig authConfig = new TwitterAuthConfig(
@@ -189,7 +211,10 @@ public class TwitterLoginActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * It allows to login with Twitter SDK
+     * It also sends message
+     */
     private void loginWithTwitter() {
         if (tvProfileDetails == null) {
             return;
@@ -228,7 +253,9 @@ public class TwitterLoginActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * It generates a credential using the obtained access token, and then call AGConnectAuth.
+     */
     private void transmitTwitterCredentialIntoAGC(AGConnectAuthCredential credential) {
         if (tvProfileDetails == null) {
             return;
@@ -256,6 +283,9 @@ public class TwitterLoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * It displays the details of sign-in user's information, including a message.
+     */
     public void showResultDetail(String msg, AGConnectUser signInResult) {
         if (tvProfileDetails == null) {
             return;
@@ -270,6 +300,9 @@ public class TwitterLoginActivity extends AppCompatActivity {
         tvProfileDetails.setText(signMsg);
     }
 
+    /**
+     * It allows to user log out.
+     */
     private void logOut() {
         twitterAuthClient.cancelAuthorize();
 
@@ -293,7 +326,9 @@ public class TwitterLoginActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * It handles sign in requests.
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
