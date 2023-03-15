@@ -28,22 +28,26 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.huawei.agconnect.appmessaging.AGConnectAppMessaging;
 import com.huawei.agconnect.appmessaging.AGConnectAppMessagingCallback;
-import com.huawei.agconnect.appmessaging.AGConnectAppMessagingDisplay;
 import com.huawei.agconnect.appmessaging.AGConnectAppMessagingOnClickListener;
 import com.huawei.agconnect.appmessaging.AGConnectAppMessagingOnDismissListener;
 import com.huawei.agconnect.appmessaging.AGConnectAppMessagingOnDisplayListener;
 import com.huawei.agconnect.appmessaging.model.Action;
 import com.huawei.agconnect.appmessaging.model.AppMessage;
 
+/**
+ * This activity allows the user to test App Messaging features, such as Pop-up, Banner and Image messages.
+ */
 public class AppMessagingTestActivity extends AppCompatActivity {
 
     private AGConnectAppMessaging agConnectAppMessaging;
 
+    /**
+     * The method initializes the sets up necessary for UI and toolbar.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_messaging_test);
-
 
 
         setupToolbar();
@@ -51,6 +55,9 @@ public class AppMessagingTestActivity extends AppCompatActivity {
         setButtonClicks();
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.appMessagingTestToolBar);
         setSupportActionBar(toolbar);
@@ -58,20 +65,27 @@ public class AppMessagingTestActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
-    private void setPopUpMessage(){
+    /**
+     * It initializes agConnectAppMessaging by AGConnectAppMessaging for using apis of App Messaging
+     */
+    private void setPopUpMessage() {
         agConnectAppMessaging = AGConnectAppMessaging.getInstance();
     }
 
-
-
-
-    private void setButtonClicks(){
+    /**
+     * It handle button clicks to get events
+     */
+    private void setButtonClicks() {
         Button btnPopUpMessage = findViewById(R.id.btnShowPopupMessage);
         btnPopUpMessage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,7 +112,10 @@ public class AppMessagingTestActivity extends AppCompatActivity {
         popUpListener();
     }
 
-    public void popUpListener(){
+    /**
+     * It shows toast message according to message events such as showed, clicked or dismissed.
+     */
+    public void popUpListener() {
         agConnectAppMessaging.addOnDisplayListener(new AGConnectAppMessagingOnDisplayListener() {
             @Override
             public void onMessageDisplay(AppMessage appMessage) {

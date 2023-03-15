@@ -20,6 +20,7 @@ package com.hms.explorehms.huawei.feature_gameservice.dao;
 
 import com.huawei.hms.jos.games.archive.ArchiveSummary;
 
+
 public interface ILoadItemClickListener {
     void onLoadItemClick(ArchiveSummary archiveSummary);
 }

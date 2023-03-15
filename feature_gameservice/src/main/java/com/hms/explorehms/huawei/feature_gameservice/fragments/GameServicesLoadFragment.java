@@ -50,7 +50,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * This loads games
+ */
 public class GameServicesLoadFragment extends BaseFragmentGameServices<FragmentGameServicesLoadBinding> implements ILoadItemClickListener {
 
 
@@ -61,12 +63,17 @@ public class GameServicesLoadFragment extends BaseFragmentGameServices<FragmentG
     private List<ArchiveSummary> data;
     private LoadAdapterGameService adapterGameService;
 
-
+    /**
+     * Sets the binding for the layout.
+     */
     @Override
     FragmentGameServicesLoadBinding bindView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return FragmentGameServicesLoadBinding.inflate(inflater, container, false);
     }
 
+    /**
+     * Initializes the UI to show games.
+     */
     @Override
     void initializeUI() {
 
@@ -80,6 +87,9 @@ public class GameServicesLoadFragment extends BaseFragmentGameServices<FragmentG
         obtainArchiveData();
     }
 
+    /**
+     * It obtains archive data.
+     */
     private void obtainArchiveData() {
         ArchivesClient archivesClient = Games.getArchiveClient(requireActivity());
         Task<List<ArchiveSummary>> task = archivesClient.getArchiveSummaryList(true);
@@ -95,6 +105,9 @@ public class GameServicesLoadFragment extends BaseFragmentGameServices<FragmentG
         });
     }
 
+    /**
+     * if the archive and archive.getSummary are not null, navigate to game fragment with arguments
+     */
     @Override
     public void onLoadItemClick(ArchiveSummary archiveSummary) {
         view.progressLoadScreenGameservices.setVisibility(View.VISIBLE);
@@ -125,6 +138,9 @@ public class GameServicesLoadFragment extends BaseFragmentGameServices<FragmentG
         });
     }
 
+    /**
+     * This callback handles events of recyclerview such as onMove, onSwiped and onChildDraw
+     */
     private void initTouchHelper() {
         ItemTouchHelper.SimpleCallback callback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
             @Override
@@ -180,6 +196,9 @@ public class GameServicesLoadFragment extends BaseFragmentGameServices<FragmentG
         itemTouchHelper = new ItemTouchHelper(callback);
     }
 
+    /**
+     * It handles removing items.
+     */
     private void deleteSave(ArchiveSummary summary, int position) {
         view.progressLoadScreenGameservices.setVisibility(View.VISIBLE);
         Task<String> removeArchiveTask = Games.getArchiveClient((Activity) requireContext()).removeArchive(summary);

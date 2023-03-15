@@ -24,10 +24,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 
+/**
+ * It handles Progress Dialog to show user progress of function.
+ */
 public class ProgressDialogScreen {
 
     private Dialog dialog;
 
+    /**
+     * It initializes dialog by Dialog
+     */
     public ProgressDialogScreen(Context context) {
 
         dialog = new Dialog(context, android.R.style.Theme_Black);
@@ -38,10 +44,16 @@ public class ProgressDialogScreen {
         dialog.setContentView(view);
     }
 
+    /**
+     * It shows Progress Dialog
+     */
     public void showProgressDialog() {
         dialog.show();
     }
 
+    /**
+     * It dismiss Progress Dialog
+     */
     public void dismissProgressDialog() {
         dialog.dismiss();
     }

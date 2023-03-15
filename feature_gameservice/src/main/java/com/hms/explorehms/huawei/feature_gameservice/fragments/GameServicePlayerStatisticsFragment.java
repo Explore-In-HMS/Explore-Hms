@@ -34,17 +34,27 @@ import com.huawei.hms.jos.games.Games;
 import com.huawei.hms.jos.games.playerstats.GamePlayerStatistics;
 import com.huawei.hms.jos.games.playerstats.GamePlayerStatisticsClient;
 
-
+/**
+ * This shows player statistics such as average session length, day since last played or number of purchase
+ */
 public class GameServicePlayerStatisticsFragment extends BaseFragmentGameServices<FragmentGameServicePlayerStatisticsBinding> {
 
 
     private static final String TAG = "GameServicePlayerStatistics";
 
+    /**
+     * Sets the binding for the layout.
+     */
     @Override
     FragmentGameServicePlayerStatisticsBinding bindView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return FragmentGameServicePlayerStatisticsBinding.inflate(inflater, container, false);
     }
 
+    /**
+     * Initializes the UI to show statistics
+     * It creates an instance from GamePlayerStatisticsClient
+     * then call to getGamePlayerStatistics
+     */
     @Override
     void initializeUI() {
         setTitle("Player Statistics");

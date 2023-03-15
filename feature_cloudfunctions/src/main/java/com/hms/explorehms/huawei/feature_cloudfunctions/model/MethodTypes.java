@@ -18,7 +18,9 @@
 
 package com.hms.explorehms.huawei.feature_cloudfunctions.model;
 
-
+/**
+ * It is an enum class that handles method types to using them on functions.
+ */
 public enum MethodTypes {
     SUM("sum", "+"),
     SUB("sub", "-"),
@@ -27,15 +29,22 @@ public enum MethodTypes {
 
     private String methodType;
     private String methodValue;
-    MethodTypes(String methodType, String methodValue){
+
+    MethodTypes(String methodType, String methodValue) {
         this.methodType = methodType;
-        this.methodValue= methodValue;
+        this.methodValue = methodValue;
     }
 
+    /**
+     * It returns method Type.
+     */
     public String getMethodType() {
         return methodType;
     }
 
+    /**
+     * It returns method value.
+     */
     public String getMethodValue() {
         return methodValue;
     }

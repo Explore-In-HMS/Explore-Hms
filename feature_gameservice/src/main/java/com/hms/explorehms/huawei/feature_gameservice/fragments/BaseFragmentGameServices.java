@@ -47,6 +47,11 @@ import com.huawei.hms.support.hwid.HuaweiIdAuthManager;
 import com.huawei.hms.support.hwid.result.AuthHuaweiId;
 import com.huawei.hms.utils.ResourceLoaderUtil;
 
+/**
+ * This base fragment for using on game fragments
+ * It keeps navController for navigation
+ * It also has some common functions
+ */
 abstract class BaseFragmentGameServices<T extends ViewBinding> extends Fragment {
 
     protected AuthHuaweiId authHuaweiId = HuaweiIdAuthManager.getAuthResult();
@@ -55,6 +60,9 @@ abstract class BaseFragmentGameServices<T extends ViewBinding> extends Fragment 
     protected NavController navController;
     protected T view;
 
+    /**
+     * Sets the binding for the layout.
+     */
     abstract T bindView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState);
 
     abstract void initializeUI();
@@ -68,6 +76,9 @@ abstract class BaseFragmentGameServices<T extends ViewBinding> extends Fragment 
         return view.getRoot();
     }
 
+    /**
+     * The method initializes the sets up necessary for all game services fragment
+     */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -100,7 +111,7 @@ abstract class BaseFragmentGameServices<T extends ViewBinding> extends Fragment 
                             int statusCode = apiException.getStatusCode();
                             // Result code 7401 indicates that the user does not agree to Huawei's joint operations privacy agreement.
                             if (statusCode == JosStatusCodes.JOS_PRIVACY_PROTOCOL_REJECTED) {
-                                Log.d("failure","has reject the protocol");
+                                Log.d("failure", "has reject the protocol");
                                 // Exit the game.
                             }
                             // Process other result codes.
@@ -117,6 +128,9 @@ abstract class BaseFragmentGameServices<T extends ViewBinding> extends Fragment 
         initializeUI();
     }
 
+    /**
+     * It sets title of fragment
+     */
     protected void setTitle(String title) {
         getActivity().setTitle(title);
     }

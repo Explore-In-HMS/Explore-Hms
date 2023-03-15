@@ -28,14 +28,22 @@ import androidx.annotation.Nullable;
 import com.hms.explorehms.huawei.feature_gameservice.R;
 import com.hms.explorehms.huawei.feature_gameservice.databinding.FragmentGameServicesHomeBinding;
 
-
+/**
+ * This shows the features that the Game Service has, such as playing games, getting player stats, or Game Turbo Engine.
+ */
 public class GameServicesHomeFragment extends BaseFragmentGameServices<FragmentGameServicesHomeBinding> {
 
+    /**
+     * It handles binding
+     */
     @Override
     FragmentGameServicesHomeBinding bindView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return FragmentGameServicesHomeBinding.inflate(inflater, container, false);
     }
 
+    /**
+     * Initializes the UI to show game services.
+     */
     @Override
     void initializeUI() {
         setTitle("Game Services");

@@ -42,11 +42,18 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * It is an enum class
+ * It holds ACHIEVEMENTS and LEADERBOARDS
+ */
 enum DataTypeGameService {
     ACHIEVEMENTS,
     LEADERBOARDS
 }
 
+/**
+ * It handles custom dialog for game services, it takes a generic type
+ */
 public class CustomDialogGameServices<T> {
 
     private static final String SHOOTER_ID = "7618DBEFF87A659F698CBE28DF8C478492377057B97EF9DA12030F6FD6D34278";
@@ -56,6 +63,9 @@ public class CustomDialogGameServices<T> {
     private ItemCustomviewGameservicesBinding binding;
 
 
+    /**
+     * It creates dialog directly in constructor of CustomDialogGameServices
+     */
     public CustomDialogGameServices(Context context, String title, DataTypeGameService dataTypeGameService, List<T> data) {
         this.context = context;
 
@@ -89,6 +99,9 @@ public class CustomDialogGameServices<T> {
 
     }
 
+    /**
+     * It inits recyclerView for Achievements
+     */
     private void initRecyclerViewForAchievements(List<T> data) {
 
         binding.rvTableGameservices.setAdapter(
@@ -124,6 +137,9 @@ public class CustomDialogGameServices<T> {
 
     }
 
+    /**
+     * It inits recyclerView for LeaderboardS
+     */
     private void initRecyclerViewForLeaderboards(List<T> data) {
 
         binding.rvTableGameservices.setAdapter(
@@ -152,12 +168,18 @@ public class CustomDialogGameServices<T> {
 
     }
 
+    /**
+     * It shows dialog
+     */
     public void showDialog() {
         if (!dialog.isShowing())
             dialog.show();
 
     }
 
+    /**
+     * It dismiss dialog
+     */
     public void dismissDialog() {
         if (dialog.isShowing())
             dialog.dismiss();

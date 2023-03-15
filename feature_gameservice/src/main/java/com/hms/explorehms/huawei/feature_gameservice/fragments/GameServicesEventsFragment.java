@@ -35,15 +35,24 @@ import com.huawei.hms.jos.games.event.Event;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This shows how we handle events such as player's reached levels
+ */
 public class GameServicesEventsFragment extends BaseFragmentGameServices<FragmentGameServicesEventsBinding> {
 
     private static final String TAG = "GameServicesEventsFragment";
 
+    /**
+     * Sets the binding for the layout.
+     */
     @Override
     FragmentGameServicesEventsBinding bindView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return FragmentGameServicesEventsBinding.inflate(inflater, container, false);
     }
 
+    /**
+     * Initializes the UI to show events
+     */
     @Override
     void initializeUI() {
         setTitle("Game Service Events");
@@ -59,7 +68,5 @@ public class GameServicesEventsFragment extends BaseFragmentGameServices<Fragmen
             }
             adapter.updateList(list);
         });
-
-
     }
 }

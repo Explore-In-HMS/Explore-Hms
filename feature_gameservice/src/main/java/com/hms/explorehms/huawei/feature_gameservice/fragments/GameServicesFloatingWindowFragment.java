@@ -35,17 +35,25 @@ import com.huawei.hms.jos.games.buoy.BuoyClient;
 import java.lang.reflect.Field;
 import java.util.Objects;
 
-
+/**
+ * This shows how we can use Huawei GameCenter
+ */
 public class GameServicesFloatingWindowFragment extends BaseFragmentGameServices<FragmentGameServicesFloatingWindowBinding> {
 
 
     private static final String TAG = "GameServicesFloatingWindowFragment";
 
+    /**
+     * Sets the binding for the layout.
+     */
     @Override
     FragmentGameServicesFloatingWindowBinding bindView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return FragmentGameServicesFloatingWindowBinding.inflate(inflater, container, false);
     }
 
+    /**
+     * Initializes the UI to buttons to show or hide floating window
+     */
     @Override
     void initializeUI() {
         setTitle("Floating Window");
@@ -67,6 +75,9 @@ public class GameServicesFloatingWindowFragment extends BaseFragmentGameServices
 
     }
 
+    /**
+     * It returns Emui Version of phone
+     */
     private int getEmuiVersion() {
         Object returnObj = null;
         int emuiVersionCode = 0;
@@ -85,7 +96,7 @@ public class GameServicesFloatingWindowFragment extends BaseFragmentGameServices
             Log.e(TAG, "IllegalAccessException: ");
         } catch (ClassCastException e) {
             Log.e(TAG, "ClassCastException: getEMUIVersionCode is not a number" + Objects.requireNonNull(returnObj).toString());
-        }catch (SecurityException e) {
+        } catch (SecurityException e) {
             Log.e(TAG, e.getLocalizedMessage());
         }
         Log.i(TAG, "emuiVersionCodeValue: " + emuiVersionCode);

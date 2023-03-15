@@ -27,14 +27,22 @@ import androidx.annotation.Nullable;
 
 import com.hms.explorehms.huawei.feature_gameservice.databinding.FragmentGameServiceAddictionPreventionBinding;
 
-
+/**
+ * This shows Addiction Prevention
+ */
 public class GameServiceAddictionPreventionFragment extends BaseFragmentGameServices<FragmentGameServiceAddictionPreventionBinding> {
 
+    /**
+     * Sets the binding for the layout.
+     */
     @Override
     FragmentGameServiceAddictionPreventionBinding bindView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return FragmentGameServiceAddictionPreventionBinding.inflate(inflater, container, false);
     }
 
+    /**
+     * Initializes the title
+     */
     @Override
     void initializeUI() {
         setTitle("Addiction Prevention");
