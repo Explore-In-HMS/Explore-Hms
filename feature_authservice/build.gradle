@@ -70,7 +70,8 @@ dependencies {
     implementation "com.huawei.hms:game:6.1.0.301"
 
     // Facebook Login only
-    implementation 'com.facebook.android:facebook-login:8.1.0'
+    implementation "com.huawei.agconnect:agconnect-auth-facebook:1.8.1.300"
+    implementation "com.facebook.android:facebook-login:9.0.0"
 
     // Twitter
     implementation 'com.twitter.sdk.android:twitter-core:3.3.0'

@@ -18,9 +18,6 @@
 
 package com.hms.explorehms.huawei.feature_authservice;
 
-import static com.huawei.agconnect.auth.AGConnectAuthCredential.Facebook_Provider;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,9 +40,6 @@ import com.huawei.agconnect.auth.AGConnectAuth;
 import com.huawei.agconnect.auth.AGConnectAuthCredential;
 import com.huawei.agconnect.auth.AGConnectUser;
 import com.huawei.agconnect.auth.FacebookAuthProvider;
-import com.huawei.agconnect.auth.SignInResult;
-import com.huawei.hmf.tasks.OnFailureListener;
-import com.huawei.hmf.tasks.OnSuccessListener;
 
 import java.util.Arrays;
 
@@ -67,8 +61,6 @@ public class FacebookLoginActivity extends AppCompatActivity {
 
     private Unbinder unbinder;
 
-    private Activity activity;
-
     private static final int TV_PROFILE_DETAILS = R.id.tvProfileDetails;
 
     @Nullable
@@ -86,7 +78,6 @@ public class FacebookLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // important to call before setContentView
         FacebookSdk.sdkInitialize(getApplicationContext());
-        activity = this;
 
         setContentView(R.layout.activity_facebook_login);
         setupToolbar();
@@ -94,8 +85,6 @@ public class FacebookLoginActivity extends AppCompatActivity {
         unbinder = ButterKnife.bind(this);
 
         Utils.initializeAGConnectInstance(getApplicationContext());
-
-        facebookCallbackManager = CallbackManager.Factory.create();
 
         /*
          * Note :
@@ -151,7 +140,8 @@ public class FacebookLoginActivity extends AppCompatActivity {
         if (tvProfileDetails == null) {
             return;
         }
-        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "email", "user_friends"));
+        LoginManager.getInstance().logOut();
+        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "email"));
         LoginManager.getInstance().registerCallback(facebookCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -166,21 +156,6 @@ public class FacebookLoginActivity extends AppCompatActivity {
                 tvProfileDetails.setText(msg);
 
                 transmitFacebookAccessTokenIntoAGC(token);
-
-                AGConnectAuth.getInstance().getCurrentUser().link(activity, Facebook_Provider)
-                        .addOnSuccessListener(new OnSuccessListener<SignInResult>() {
-                            @Override
-                            public void onSuccess(SignInResult signInResult) {
-                                // onSuccess
-                                AGConnectUser user = signInResult.getUser();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(Exception e) {
-                                Log.d(TAG, "Failed to link account" + " : onCancel");
-                            }
-                        });
             }
 
             @Override
@@ -241,9 +216,7 @@ public class FacebookLoginActivity extends AppCompatActivity {
         String signMsg = "\n\nAGConnectAuth " + msg + " onSuccess : \n" +
                 "profile Uid         : " + signInResult.getUid() + "\n" +
                 "profile ProviderId  : " + signInResult.getProviderId() + "\n" +
-                "profile DisplayName : " + signInResult.getDisplayName() + "\n" +
-                "profile Email       : " + signInResult.getEmail() + "\n" +
-                "profile Phone       : " + signInResult.getPhone() + "\n";
+                "profile DisplayName : " + signInResult.getDisplayName() + "\n";
 
         Log.i(TAG, signMsg);
         tvProfileDetails.setText(signMsg);
