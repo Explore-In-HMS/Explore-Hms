@@ -76,7 +76,7 @@
     <string name="title_feature_mlkit">Machine Learning - ML Kit</string>
     <string name="title_feature_authservice">AuthService</string>
     <string name="title_feature_mapkit">Map Kit</string>
-    <string name="show_direction_routing_mapkit">Show Direction Routing</string>
+    <string name="show_direction_routing_mapkit">Show Routes</string>
     <string name="open_petalMap_MapKit">Open Petal Map</string>
     <string name="heat_Map">Heat Map</string>
     <string name="title_feature_scankit">Scan Kit</string>
@@ -743,9 +743,9 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="map_kit_header_mapkit">Map Kit</string>
     <string name="move_random_location_text_mapkit">Move Random Location</string>
     <string name="animate_random_location_text_mapkit">Animate Random Location</string>
-    <string name="show_marker_text_mapkit">Show Marker</string>
-    <string name="show_custom_marker_text_mapkit">Show Custom Marker</string>
-    <string name="show_shape_text_mapkit">Show Shape</string>
+    <string name="show_marker_text_mapkit">Draw Marker</string>
+    <string name="show_custom_marker_text_mapkit">Draw Custom Marker</string>
+    <string name="show_shape_text_mapkit">Draw Shape</string>
     <string name="you_can_click_the_shapes_text_mapkit">You can click the shapes.</string>
     <string name="you_can_click_the_markers_text_mapkit">You can click the markers.</string>
     <string name="show_tile_overlay_text_mapkit">Show Tile Overlay</string>
