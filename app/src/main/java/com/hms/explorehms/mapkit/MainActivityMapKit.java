@@ -32,9 +32,10 @@ import com.hms.explorehms.Util;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 
+/**
+ * This activity shows the all Map Kit features
+ */
 public class MainActivityMapKit extends AppCompatActivity {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,9 @@ public class MainActivityMapKit extends AppCompatActivity {
         checkPermission();
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -51,12 +55,19 @@ public class MainActivityMapKit extends AppCompatActivity {
         Util.setToolbar(this, toolbar, getResources().getString(R.string.map_kit_information_link));
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
+    /**
+     * It checks location permissions.
+     */
     private void checkPermission() {
         if (ContextCompat.checkSelfPermission(this,
                 ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||

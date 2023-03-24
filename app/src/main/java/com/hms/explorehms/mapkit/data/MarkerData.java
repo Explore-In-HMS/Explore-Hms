@@ -18,6 +18,9 @@
 
 package com.hms.explorehms.mapkit.data;
 
+/**
+ * This class have marker`s data such as lat, lng
+ */
 public class MarkerData {
 
     private Double lat;

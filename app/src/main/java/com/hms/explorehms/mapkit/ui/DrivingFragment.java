@@ -121,6 +121,9 @@ public class DrivingFragment extends BaseFragment implements IVolley {
         return FragmentDrivingBinding.inflate(getLayoutInflater()).getRoot();
     }
 
+    /**
+     * It initializes the UI with calling allSteps
+     */
     @Override
     public void initializeUI() {
         try {
@@ -132,6 +135,9 @@ public class DrivingFragment extends BaseFragment implements IVolley {
         }
     }
 
+    /**
+     * It handles Cycling steps a route
+     */
     void allSteps() throws UnsupportedEncodingException, JSONException {
         origin= new
                 Origin();
@@ -170,6 +176,9 @@ public class DrivingFragment extends BaseFragment implements IVolley {
         hMap.moveCamera(update);
     }
 
+    /**
+     * It adds a marker to map, it takes lat, lot, title, snippet and an icon as parameter.
+     */
     void addMarkerToMap(Double lat, Double lot, String title, String snippet, BitmapDescriptor descriptor) {
         hMap.addMarker(
                 new MarkerOptions()
@@ -179,6 +188,9 @@ public class DrivingFragment extends BaseFragment implements IVolley {
         );
     }
 
+    /**
+     * It shows all steps for the route.
+     */
     void showAllSteps(DirectionResponse directionResponse) {
         mdirectionResponse = directionResponse;
         String mainInfo = mdirectionResponse.getRoutes().get(0).getPaths().get(0).getDurationText() + " " + (mdirectionResponse.getRoutes().get(0).getPaths().get(0).getDistanceText());

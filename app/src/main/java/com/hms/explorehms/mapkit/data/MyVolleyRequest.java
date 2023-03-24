@@ -38,6 +38,9 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
+/**
+ * It handles Volley request
+ */
 public final class MyVolleyRequest {
     private RequestQueue mRequestQueue;
     private Context context;

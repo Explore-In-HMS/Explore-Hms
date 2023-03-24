@@ -29,15 +29,19 @@ import com.huawei.hms.maps.model.PolylineOptions;
 
 import java.util.ArrayList;
 
+/**
+ * This helper class for draw a polyline.
+ * First it determines the path, then it determines route for the path. It then draws a polyline for this route.
+ */
 public class PolylineHelper {
 
     private Polyline mPolyline;
 
     // TODO drawing polyline on map.
-   public void drawPolyline(DirectionResponse directionResponse, HuaweiMap hMap) {
-        ArrayList<LatLng> pathList=new ArrayList<>();
+    public void drawPolyline(DirectionResponse directionResponse, HuaweiMap hMap) {
+        ArrayList<LatLng> pathList = new ArrayList<>();
         if (directionResponse.getRoutes() != null && !directionResponse.getRoutes().isEmpty()) {
-             Route route = directionResponse.getRoutes().get(0);
+            Route route = directionResponse.getRoutes().get(0);
             if (route.getPaths() != null) {
                 findRoute(route, pathList);
             }
@@ -47,21 +51,27 @@ public class PolylineHelper {
         );
     }
 
+    /**
+     * It finds a route for path
+     */
     private void findRoute(
-             Route route,
-             ArrayList<LatLng> pathList
+            Route route,
+            ArrayList<LatLng> pathList
     ) {
         for (Path i : route.getPaths()) {
-            if (i.getSteps()!= null) {
+            if (i.getSteps() != null) {
                 findPath(i, pathList);
             }
 
         }
     }
 
+    /**
+     * It finds path for lat-lng
+     */
     private void findPath(
-             Path path,
-             ArrayList<LatLng> pathList
+            Path path,
+            ArrayList<LatLng> pathList
     ) {
         for (Step j : path.getSteps()) {
             if (j.getPolyline() != null && !j.getPolyline().isEmpty()) {
