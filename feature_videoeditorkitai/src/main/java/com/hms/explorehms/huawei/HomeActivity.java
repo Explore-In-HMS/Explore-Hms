@@ -16,6 +16,9 @@
 
 package com.hms.explorehms.huawei;
 
+import static com.hms.explorehms.huawei.ui.mediaeditor.ai.timelapse.AITimeLapseViewModel.STATE_EDIT;
+import static com.hms.explorehms.huawei.ui.mediaeditor.ai.timelapse.AITimeLapseViewModel.STATE_ERROR;
+import static com.hms.explorehms.huawei.ui.mediaeditor.ai.timelapse.AITimeLapseViewModel.STATE_NO_SKY_WATER;
 import static com.huawei.hms.videoeditor.sdk.ai.HVEAIError.AI_ERROR_EXCEED_CONCURRENT_NUMBER;
 import static com.huawei.hms.videoeditor.sdk.ai.HVEAIError.AI_ERROR_FACE_REENACT_NO_FACE;
 import static com.huawei.hms.videoeditor.sdk.ai.HVEAIError.AI_ERROR_FACE_SMILE_NO_FACE;
@@ -32,6 +35,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -41,6 +45,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -48,6 +53,8 @@ import com.hms.explorehms.huawei.ui.common.BaseActivity;
 import com.hms.explorehms.huawei.ui.common.bean.AIInfoData;
 import com.hms.explorehms.huawei.ui.common.bean.Constant;
 import com.hms.explorehms.huawei.ui.common.bean.MediaData;
+import com.hms.explorehms.huawei.ui.mediaeditor.ai.timelapse.AITimeLapseFragment;
+import com.hms.explorehms.huawei.ui.mediaeditor.ai.timelapse.AITimeLapseViewModel;
 import com.huawei.agconnect.AGConnectInstance;
 import com.hms.explorehms.huawei.ui.common.view.dialog.CommonProgressDialog;
 import com.huawei.hms.videoeditor.ai.HVEAIApplication;
@@ -59,6 +66,7 @@ import com.huawei.hms.videoeditor.ai.HVEAIInitialCallback;
 import com.huawei.hms.videoeditor.ai.HVEAIObjectSeg;
 import com.huawei.hms.videoeditor.ai.HVEAIProcessCallback;
 import com.huawei.hms.videoeditor.ai.HVEAIVideoSelection;
+import com.huawei.hms.videoeditor.ai.HVETimeLapseDetectCallback;
 import com.huawei.hms.videoeditor.ai.util.HVEUtil;
 import com.hms.explorehms.huawei.ui.common.adapter.AIListAdapter;
 import com.hms.explorehms.huawei.ui.common.utils.ArrayUtils;
@@ -124,7 +132,7 @@ public class HomeActivity extends BaseActivity {
 
     private CommonProgressDialog mAIColorDialog;
 
-    //private AITimeLapseViewModel mTimeLapseViewModel;
+    private AITimeLapseViewModel mTimeLapseViewModel;
 
     private String mFilePath = "";
 
@@ -154,16 +162,90 @@ public class HomeActivity extends BaseActivity {
     }
 
     private void initView() {
-        //ImageView ivBanner = findViewById(R.id.iv_banner);
-        //ViewGroup.LayoutParams layoutParams = ivBanner.getLayoutParams();
-        //int width = ScreenUtil.getScreenWidth(this) - ScreenUtil.dp2px(32);
-        //int height = width / 2;
-        //layoutParams.width = width;
-        //layoutParams.height = height;
-
-        //mTimeLapseViewModel = new ViewModelProvider(this, factory).get(AITimeLapseViewModel.class);
 
 
+        findViewById(R.id.fl_video_editor).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mTimeLapseViewModel.getTimeLapseStatus() == STATE_EDIT) {
+                    return;
+                }
+                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                intent.putExtra("fromHome", true);
+                startActivity(intent);
+            }
+        });
+        mTimeLapseViewModel = new ViewModelProvider(this, factory).get(AITimeLapseViewModel.class);
+
+        mTimeLapseViewModel.getTimeLapseStart().observe(this, integer -> {
+            if (integer == -1) {
+                return;
+            }
+            mTimeLapseDialog = new CommonProgressDialog(HomeActivity.this, () -> {
+                if (!isValidActivity()) {
+                    SmartLog.e(TAG, "Activity is valid!");
+                    return;
+                }
+                ToastWrapper.makeText(HomeActivity.this, getString(R.string.time_lapse_cancel)).show();
+                new Thread(() -> mTimeLapseViewModel.stopTimeLapse()).start();
+                mTimeLapseDialog.dismiss();
+                mTimeLapseDialog = null;
+            });
+            mTimeLapseDialog.setTitleValue(getString(R.string.time_lapse_process));
+            mTimeLapseDialog.setCanceledOnTouchOutside(false);
+            mTimeLapseDialog.setCancelable(false);
+            mTimeLapseDialog.show();
+            mTimeLapseViewModel.processTimeLapse(mFilePath, mTimeLapseViewModel.getSkyRiverType(),
+                    (float) mTimeLapseViewModel.getSpeedSky() / 3, mTimeLapseViewModel.getScaleSky(),
+                    (float) mTimeLapseViewModel.getSpeedRiver() / 3, mTimeLapseViewModel.getScaleRiver(),
+                    new HVEAIProcessCallback<String>() {
+                        @Override
+                        public void onProgress(int progress) {
+                            if (!isValidActivity()) {
+                                return;
+                            }
+                            runOnUiThread(() -> {
+                                if (mTimeLapseDialog != null) {
+                                    if (!mTimeLapseDialog.isShowing()) {
+                                        mTimeLapseDialog.show();
+                                    }
+                                    mTimeLapseDialog.updateProgress(progress);
+                                }
+                            });
+                        }
+
+                        @Override
+                        public void onSuccess(String result) {
+                            if (!isValidActivity()) {
+                                return;
+                            }
+                            runOnUiThread(() -> {
+                                if (mTimeLapseDialog != null) {
+                                    mTimeLapseDialog.updateProgress(0);
+                                    mTimeLapseDialog.dismiss();
+                                }
+                                ViewFileActivity.startActivity(HomeActivity.this, result, true);
+                                new Handler(getMainLooper()).postDelayed(() -> {
+                                    mTimeLapseViewModel.stopTimeLapse();
+                                    mTimeLapseViewModel.releaseEngine();
+                                }, 100);
+                            });
+                        }
+
+                        @Override
+                        public void onError(int errorCode, String errorMessage) {
+                            if (!isValidActivity()) {
+                                return;
+                            }
+                            runOnUiThread(() -> {
+                                ToastWrapper.makeText(HomeActivity.this, getString(R.string.ai_exception)).show();
+                            });
+                            mTimeLapseViewModel.stopTimeLapse();
+                            mTimeLapseViewModel.releaseEngine();
+                        }
+                    });
+            mTimeLapseViewModel.setTimeLapseStart(-1);
+        });
     }
 
     private void initAdapter() {
@@ -190,7 +272,9 @@ public class HomeActivity extends BaseActivity {
         listAdapter.setOnItemClickListener(new AIListAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(AIInfoData infoData, int position) {
-
+                if (mTimeLapseViewModel.getTimeLapseStatus() == STATE_EDIT) {
+                    return;
+                }
                 String title = infoData.getTitle();
                 if (title.equals(getString(R.string.motion_photo))) {
                     MediaPickActivity.startActivityForResult(HomeActivity.this, MEDIA_TYPE_PHOTO,
@@ -392,7 +476,73 @@ public class HomeActivity extends BaseActivity {
      */
     private void timeLapse(String imagePath) {
         initTimeLapseProgressDialog();
+        if (mTimeLapseViewModel != null) {
+            mTimeLapseViewModel.initTimeLapse(new HVEAIInitialCallback() {
+                @Override
+                public void onProgress(int progress) {
+                    if (!isValidActivity()) {
+                        return;
+                    }
+                    runOnUiThread(() -> {
+                        if (mTimeLapseDialog != null) {
+                            if (!mTimeLapseDialog.isShowing()) {
+                                mTimeLapseDialog.show();
+                            }
+                            mTimeLapseDialog.updateProgress(progress);
+                        }
+                    });
+                }
 
+                @Override
+                public void onSuccess() {
+                    if (!isValidActivity()) {
+                        return;
+                    }
+                    runOnUiThread(() -> {
+                        if (mTimeLapseDialog != null) {
+                            mTimeLapseDialog.updateProgress(0);
+                            mTimeLapseDialog.dismiss();
+                        }
+                    });
+                    if (mTimeLapseViewModel != null) {
+                        mTimeLapseViewModel.firstDetectTimeLapse(imagePath, new HVETimeLapseDetectCallback() {
+                            @Override
+                            public void onResult(int state) {
+                                runOnUiThread(() -> {
+                                    if (STATE_NO_SKY_WATER == state || STATE_ERROR == state) {
+                                        ToastWrapper
+                                                .makeText(HomeActivity.this, getString(R.string.time_lapse_exception))
+                                                .show();
+                                        mTimeLapseViewModel.stopTimeLapse();
+                                        mTimeLapseViewModel.releaseEngine();
+                                    } else {
+                                        mTimeLapseViewModel.setTimeLapseResult(state);
+                                        getSupportFragmentManager().beginTransaction()
+                                                .add(R.id.fragment_container, AITimeLapseFragment.newInstance(state))
+                                                .commitAllowingStateLoss();
+                                    }
+                                });
+                            }
+                        });
+                    }
+                }
+
+                @Override
+                public void onError(int errorCode, String errorMessage) {
+                    SmartLog.e(TAG, errorMessage);
+                    if (!isValidActivity()) {
+                        return;
+                    }
+                    runOnUiThread(() -> {
+                        if (mTimeLapseDialog != null) {
+                            mTimeLapseDialog.updateProgress(0);
+                            mTimeLapseDialog.dismiss();
+                        }
+                        ToastWrapper.makeText(HomeActivity.this, getString(R.string.ai_exception)).show();
+                    });
+                }
+            });
+        }
     }
 
     private void initTimeLapseProgressDialog() {
