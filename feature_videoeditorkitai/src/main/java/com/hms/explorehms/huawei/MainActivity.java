@@ -24,6 +24,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -71,6 +72,7 @@ public class MainActivity extends BaseActivity {
         //statusBarColor = R.color.home_color_FF181818;
         //navigationBarColor = R.color.home_color_FF181818;
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         //InfoStateUtil.getInstance().checkInfoState(this);
         VideoEditorApplication.getInstance().setContext(this);
         //setTheme(R.style.AppTheme);

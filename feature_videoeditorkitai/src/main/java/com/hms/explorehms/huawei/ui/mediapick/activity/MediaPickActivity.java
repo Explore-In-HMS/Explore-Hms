@@ -31,6 +31,7 @@ import android.os.Handler;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
@@ -216,6 +217,7 @@ public class MediaPickActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         setContentView(R.layout.activity_media_pick);
         initView();
         initObject();

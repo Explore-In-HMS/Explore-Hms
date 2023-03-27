@@ -27,6 +27,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -105,6 +106,7 @@ public class ViewFileActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         setContentView(R.layout.activity_view_file);
         videoView = findViewById(R.id.video_view);
         imageView = findViewById(R.id.image_view);

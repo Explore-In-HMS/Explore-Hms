@@ -19,6 +19,7 @@ package com.hms.explorehms.huawei.ui.mediapick.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.hms.explorehms.huawei.ui.common.BaseActivity;
@@ -57,6 +58,7 @@ public class PicturePickActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         setContentView(R.layout.activity_picture_pick);
 
         SafeIntent safeIntent = new SafeIntent(getIntent());

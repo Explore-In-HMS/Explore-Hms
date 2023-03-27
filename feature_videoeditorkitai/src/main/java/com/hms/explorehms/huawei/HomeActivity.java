@@ -34,6 +34,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -141,6 +142,7 @@ public class HomeActivity extends BaseActivity {
 //        statusBarColor = R.color.home_color_FF181818;
 //        navigationBarColor = R.color.home_color_FF181818;
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         //InfoStateUtil.getInstance().checkInfoState(this);
         VideoEditorApplication.getInstance().setContext(this);
         //setTheme(R.style.AppTheme);
@@ -167,21 +169,21 @@ public class HomeActivity extends BaseActivity {
     private void initAdapter() {
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         List<AIInfoData> infoDataList = new ArrayList<>();
-        //infoDataList.add(new AIInfoData(getString(R.string.motion_photo), getString(R.string.motion_photo_subtitle), R.drawable.ic_motion_photo));
+        infoDataList.add(new AIInfoData(getString(R.string.motion_photo), getString(R.string.motion_photo_subtitle), R.drawable.ic_motion_photo));
         infoDataList.add(new AIInfoData(getString(R.string.face_smile), getString(R.string.face_smile_subtitle), R.drawable.ic_face_smile));
-        //infoDataList.add(new AIInfoData(getString(R.string.ai_color), getString(R.string.ai_color_subtitle), R.drawable.ic_ai_color));
-        //infoDataList.add(new AIInfoData(getString(R.string.cut_second_menu_time_lapse), getString(R.string.time_lapse_subtitle), R.drawable.ic_time_lapse));
-        //infoDataList.add(new AIInfoData(getString(R.string.cut_second_menu_video_selection), getString(R.string.video_selection_subtitle), R.drawable.ic_video_selection));
-        //infoDataList.add(new AIInfoData(getString(R.string.cut_second_menu_segmentation), getString(R.string.object_segmentation_subtitle), R.drawable.edit_menu_segmentation));
-        //infoDataList.add(new AIInfoData(getString(R.string.beauty), getString(R.string.beauty), R.drawable.icon_beautify));
-        //infoDataList.add(new AIInfoData(getString(R.string.cut_second_menu_head_seg), getString(R.string.head_segmentation_subtitle), R.drawable.edit_menu_segmentation));
-        //infoDataList.add(new AIInfoData(getString(R.string.cut_second_menu_ai_hair), getString(R.string.hair_dyeing_subtitle), R.drawable.edit_menu_ai_hair));
+        infoDataList.add(new AIInfoData(getString(R.string.ai_color), getString(R.string.ai_color_subtitle), R.drawable.ic_ai_color));
+        infoDataList.add(new AIInfoData(getString(R.string.cut_second_menu_time_lapse), getString(R.string.time_lapse_subtitle), R.drawable.ic_time_lapse));
+        infoDataList.add(new AIInfoData(getString(R.string.cut_second_menu_video_selection), getString(R.string.video_selection_subtitle), R.drawable.ic_video_selection));
+        infoDataList.add(new AIInfoData(getString(R.string.cut_second_menu_segmentation), getString(R.string.object_segmentation_subtitle), R.drawable.edit_menu_segmentation));
+        infoDataList.add(new AIInfoData(getString(R.string.beauty), getString(R.string.beauty), R.drawable.icon_beautify));
+        infoDataList.add(new AIInfoData(getString(R.string.cut_second_menu_head_seg), getString(R.string.head_segmentation_subtitle), R.drawable.edit_menu_segmentation));
+        infoDataList.add(new AIInfoData(getString(R.string.cut_second_menu_ai_hair), getString(R.string.hair_dyeing_subtitle), R.drawable.edit_menu_ai_hair));
         AIListAdapter listAdapter = new AIListAdapter(infoDataList);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setItemAnimator(null);
         if (recyclerView.getItemDecorationCount() == 0) {
             recyclerView.addItemDecoration(new GridItemDividerDecoration(SizeUtils.dp2Px(this, 12f),
-                SizeUtils.dp2Px(this, 12f), ContextCompat.getColor(this, R.color.maincolorr)));
+                SizeUtils.dp2Px(this, 12f), ContextCompat.getColor(this, R.color.white)));
         }
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(listAdapter);
