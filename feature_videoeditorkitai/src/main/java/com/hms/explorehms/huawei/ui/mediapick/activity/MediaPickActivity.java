@@ -16,6 +16,10 @@
 
 package com.hms.explorehms.huawei.ui.mediapick.activity;
 
+import static com.hms.explorehms.huawei.ui.common.bean.Constant.MAX_AUTO_TEMPLATE;
+import static com.hms.explorehms.huawei.ui.common.bean.Constant.MAX_PICK_NUM;
+import static com.hms.explorehms.huawei.ui.mediaeditor.VideoClipsActivity.CLIPS_VIEW_TYPE;
+import static com.hms.explorehms.huawei.ui.mediaeditor.VideoClipsActivity.VIEW_NORMAL;
 import static com.huawei.hms.videoeditor.sdk.HVEDownSamplingManager.DOWN_SAMPLING_DONE;
 import static com.huawei.hms.videoeditor.sdk.HVEDownSamplingManager.NEED_DOWN_SAMPLING;
 import static com.huawei.hms.videoeditor.sdk.HVEDownSamplingManager.NO_NEED_DOWN_SAMPLING;
@@ -29,9 +33,9 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
@@ -53,21 +57,11 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.hms.explorehms.huawei.feature_videoeditorkitai.R;
 import com.hms.explorehms.huawei.ui.common.BaseActivity;
 import com.hms.explorehms.huawei.ui.common.adapter.comment.RMCommandAdapter;
 import com.hms.explorehms.huawei.ui.common.bean.Constant;
 import com.hms.explorehms.huawei.ui.common.bean.MediaData;
-import com.hms.explorehms.huawei.ui.common.view.EditorTextView;
-import com.hms.explorehms.huawei.ui.common.view.decoration.HorizontalDividerDecoration;
-import com.hms.explorehms.huawei.ui.mediaeditor.VideoClipsActivity;
-import com.hms.explorehms.huawei.ui.mediapick.adapter.MediaFolderAdapter;
-import com.hms.explorehms.huawei.ui.mediapick.bean.MediaFolder;
-import com.hms.explorehms.huawei.ui.mediapick.fragment.GalleryFragment;
-import com.hms.explorehms.huawei.ui.mediapick.viewmodel.MediaFolderViewModel;
-import com.huawei.hms.videoeditor.sdk.HVEDownSamplingManager;
-import com.huawei.hms.videoeditor.sdk.bean.HVEVisibleFormatBean;
-import com.huawei.hms.videoeditor.sdk.util.HVEUtil;
-import com.huawei.hms.videoeditor.sdk.util.SmartLog;
 import com.hms.explorehms.huawei.ui.common.listener.OnClickRepeatedListener;
 import com.hms.explorehms.huawei.ui.common.tools.EditorRuntimeException;
 import com.hms.explorehms.huawei.ui.common.utils.BigDecimalUtils;
@@ -81,10 +75,20 @@ import com.hms.explorehms.huawei.ui.common.utils.StringUtil;
 import com.hms.explorehms.huawei.ui.common.utils.SystemUtils;
 import com.hms.explorehms.huawei.ui.common.utils.TimeUtils;
 import com.hms.explorehms.huawei.ui.common.utils.Utils;
+import com.hms.explorehms.huawei.ui.common.view.EditorTextView;
+import com.hms.explorehms.huawei.ui.common.view.decoration.HorizontalDividerDecoration;
+import com.hms.explorehms.huawei.ui.mediaeditor.VideoClipsActivity;
+import com.hms.explorehms.huawei.ui.mediapick.adapter.MediaFolderAdapter;
 import com.hms.explorehms.huawei.ui.mediapick.adapter.MediaPickSelectAdapter;
+import com.hms.explorehms.huawei.ui.mediapick.bean.MediaFolder;
+import com.hms.explorehms.huawei.ui.mediapick.fragment.GalleryFragment;
 import com.hms.explorehms.huawei.ui.mediapick.manager.MediaPickManager;
 import com.hms.explorehms.huawei.ui.mediapick.manager.MediaSelectDragCallback;
-import com.hms.explorehms.huawei.feature_videoeditorkitai.R;
+import com.hms.explorehms.huawei.ui.mediapick.viewmodel.MediaFolderViewModel;
+import com.huawei.hms.videoeditor.sdk.HVEDownSamplingManager;
+import com.huawei.hms.videoeditor.sdk.bean.HVEVisibleFormatBean;
+import com.huawei.hms.videoeditor.sdk.util.HVEUtil;
+import com.huawei.hms.videoeditor.sdk.util.SmartLog;
 import com.huawei.secure.android.common.intent.SafeBundle;
 import com.huawei.secure.android.common.intent.SafeIntent;
 
@@ -95,116 +99,62 @@ import java.util.List;
 import java.util.Locale;
 
 public class MediaPickActivity extends BaseActivity {
-    private static final String TAG = "MediaPickActivity";
-
     public static final String ACTION_TYPE = "action_type";
-
     public static final String DURATION = "duration";
-
     public static final String SHOW_MEDIA_TYPE = "showMediaType";
-
     public static final int ACTION_ADD_MEDIA_TYPE = 1001;
-
     public static final int ACTION_APPEND_MEDIA_TYPE = 1002;
-
     public static final int ACTION_ADD_PIP_MEDIA_TYPE = 1003;
-
     public static final int ACTION_REPLACE_MEDIA_TYPE = 1004;
-
     public static final int ACTION_AUTO_SYNTHESIS_TYPE = 1005;
-
     public static final int ACTION_AUTO_VIDEO_SELECTION_TYPE = 1006;
-
     public static final int ACTION_AI_TYPE = 1007;
-
     public static final int REQ_PREVIEW_CODE = 1000;
-
-    private FrameLayout mCloseLayout;
-
-    private TextView mTitleGallery;
-
-    private ImageView mDrawImage;
-
-    private FrameLayout mContentLayout;
-
-    private RelativeLayout mDirectoryLayout;
-
-    private RecyclerView mDirectoryRecyclerview;
-
-    private TextView mTitleMaterial;
-
-    private ConstraintLayout mChoiceRootLayout;
-
-    private LinearLayout mChoiceContentLayout;
-
-    private RecyclerView mChoiceRecyclerview;
-
-    private ImageView mQualityIcon;
-
-    private EditorTextView mQualityText;
-
-    private LinearLayout mQualityLayout;
-
-    private TextView mTvTotalTime;
-
-    private TextView mTvSelectVideoNum;
-
-    private TextView mTvSelectPictureNum;
-
-    private TextView mTvPressText;
-
-    private TextView mTvPressCopy;
-
-    private TextView mAddCardView;
-
-    private Context mContext;
-
-    public int mActionType = ACTION_ADD_MEDIA_TYPE;
-
-    public long mCheckDuration;
-
-    private int mShowMediaType = 2; // 0 video 1 photo 2 both
-
-    private boolean isQualitySelect = false;
-
-    private boolean isFolderShow = false;
-
-    private boolean isInitFolder = true;
-
-    private boolean isVideoSelect = true;
-
-    private String mCurrentVideoFolder;
-
-    private String mCurrentImageFolder;
-
-    private MediaFolderViewModel mMediaFolderViewModel;
-
-    private List<MediaFolder> mVideoMediaFolders;
-
-    private List<MediaFolder> mImageMediaFolders;
-
-    private List<MediaFolder> mCurrentFolders;
-
-    private MediaFolderAdapter mMediaFolderAdapter;
-
-    private MediaPickManager mMediaPickManager;
-
-    private ArrayList<MediaData> mSelectList;
-
-    private MediaPickSelectAdapter mSelectAdapter;
-
-    private ArrayList<MediaData> completesList;
-
-    private List<Fragment> fragments;
-
+    private static final String TAG = "MediaPickActivity";
     private static final int GALLERY_FRAGMENT = 0;
-
     private static final int MATERIAL_FRAGMENT = 0;
-
+    private final ArrayList<TimeOutOnTouchListener> onTouchListeners = new ArrayList<TimeOutOnTouchListener>(10);
+    public int mActionType = ACTION_ADD_MEDIA_TYPE;
+    public long mCheckDuration;
+    private FrameLayout mCloseLayout;
+    private TextView mTitleGallery;
+    private ImageView mDrawImage;
+    private FrameLayout mContentLayout;
+    private RelativeLayout mDirectoryLayout;
+    private RecyclerView mDirectoryRecyclerview;
+    private TextView mTitleMaterial;
+    private ConstraintLayout mChoiceRootLayout;
+    private LinearLayout mChoiceContentLayout;
+    private RecyclerView mChoiceRecyclerview;
+    private ImageView mQualityIcon;
+    private EditorTextView mQualityText;
+    private LinearLayout mQualityLayout;
+    private TextView mTvTotalTime;
+    private TextView mTvSelectVideoNum;
+    private TextView mTvSelectPictureNum;
+    private TextView mTvPressText;
+    private TextView mTvPressCopy;
+    private TextView mAddCardView;
+    private Context mContext;
+    private int mShowMediaType = 2; // 0 video 1 photo 2 both
+    private boolean isQualitySelect = false;
+    private boolean isFolderShow = false;
+    private boolean isInitFolder = true;
+    private boolean isVideoSelect = true;
+    private String mCurrentVideoFolder;
+    private String mCurrentImageFolder;
+    private MediaFolderViewModel mMediaFolderViewModel;
+    private List<MediaFolder> mVideoMediaFolders;
+    private List<MediaFolder> mImageMediaFolders;
+    private List<MediaFolder> mCurrentFolders;
+    private MediaFolderAdapter mMediaFolderAdapter;
+    private MediaPickManager mMediaPickManager;
+    private ArrayList<MediaData> mSelectList;
+    private MediaPickSelectAdapter mSelectAdapter;
+    private ArrayList<MediaData> completesList;
+    private List<Fragment> fragments;
     private int mCurrentFragment = GALLERY_FRAGMENT;
-
     private OnClickRepeatedListener galleryListener;
-
     private TextView mSelectSrc;
 
     public static void startActivityForResult(Activity activity, int mediaType, int requestCode) {
@@ -217,7 +167,6 @@ public class MediaPickActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         setContentView(R.layout.activity_media_pick);
         initView();
         initObject();
@@ -267,8 +216,8 @@ public class MediaPickActivity extends BaseActivity {
         }
 
         mSelectSrc.setText(
-            Utils.setNumColor(String.format(Locale.ROOT, getResources().getString(R.string.select_media_has_select), 0),
-                getResources().getColor(R.color.transparent)));
+                Utils.setNumColor(String.format(Locale.ROOT, getResources().getString(R.string.select_media_has_select), 0),
+                        getResources().getColor(R.color.transparent)));
 
     }
 
@@ -292,7 +241,7 @@ public class MediaPickActivity extends BaseActivity {
         switch (mActionType) {
             case ACTION_ADD_MEDIA_TYPE:
             case ACTION_APPEND_MEDIA_TYPE:
-                MediaPickManager.getInstance().setMaxSelectCount(Constant.MAX_PICK_NUM);
+                MediaPickManager.getInstance().setMaxSelectCount(MAX_PICK_NUM);
                 break;
             case ACTION_ADD_PIP_MEDIA_TYPE:
             case ACTION_REPLACE_MEDIA_TYPE:
@@ -303,7 +252,7 @@ public class MediaPickActivity extends BaseActivity {
             case ACTION_AUTO_SYNTHESIS_TYPE:
             case ACTION_AUTO_VIDEO_SELECTION_TYPE:
                 mAddCardView.setText(R.string.auto_template);
-                MediaPickManager.getInstance().setMaxSelectCount(Constant.MAX_AUTO_TEMPLATE);
+                MediaPickManager.getInstance().setMaxSelectCount(MAX_AUTO_TEMPLATE);
                 break;
             case ACTION_AI_TYPE:
                 MediaPickManager.getInstance().setMaxSelectCount(1);
@@ -325,8 +274,8 @@ public class MediaPickActivity extends BaseActivity {
         mChoiceRecyclerview.setLayoutManager(new LinearLayoutManager(mContext, RecyclerView.HORIZONTAL, false));
         if (mChoiceRecyclerview.getItemDecorationCount() == 0) {
             mChoiceRecyclerview
-                .addItemDecoration(new HorizontalDividerDecoration(ContextCompat.getColor(mContext, R.color.black),
-                    SizeUtils.dp2Px(mContext, 68), SizeUtils.dp2Px(mContext, 4)));
+                    .addItemDecoration(new HorizontalDividerDecoration(ContextCompat.getColor(mContext, R.color.black),
+                            SizeUtils.dp2Px(mContext, 68), SizeUtils.dp2Px(mContext, 4)));
         }
         mChoiceRecyclerview.setAdapter(mSelectAdapter);
 
@@ -367,8 +316,8 @@ public class MediaPickActivity extends BaseActivity {
         mMediaFolderViewModel.getGalleryVideoSelect().observe(this, videoSelect -> {
             isVideoSelect = videoSelect;
             mTitleGallery.setText(
-                videoSelect ? (isInitFolder ? getString(R.string.select_media_recent_projects) : mCurrentVideoFolder)
-                    : mCurrentImageFolder);
+                    videoSelect ? (isInitFolder ? getString(R.string.select_media_recent_projects) : mCurrentVideoFolder)
+                            : mCurrentImageFolder);
             if (isInitFolder) {
                 isInitFolder = false;
             }
@@ -520,25 +469,25 @@ public class MediaPickActivity extends BaseActivity {
                 case ACTION_ADD_MEDIA_TYPE:
                 case ACTION_APPEND_MEDIA_TYPE:
                     mAddCardView.setText(selectItemCount > 0
-                        ? (String.format(Locale.ROOT, getResources().getString(R.string.media_import), selectItemCount))
-                        : getString(R.string.media_import_new));
+                            ? (String.format(Locale.ROOT, getResources().getString(R.string.media_import), selectItemCount))
+                            : getString(R.string.media_import_new));
                     break;
                 default:
                     break;
             }
             mAddCardView.setEnabled(selectItemCount > 0);
             mAddCardView.setBackground(
-                selectItemCount > 0 ? ContextCompat.getDrawable(mContext, R.drawable.background_card_selector)
-                    : ContextCompat.getDrawable(mContext, R.drawable.background_card_add_normal));
+                    selectItemCount > 0 ? ContextCompat.getDrawable(mContext, R.drawable.background_card_selector)
+                            : ContextCompat.getDrawable(mContext, R.drawable.background_card_add_normal));
 
             mQualityLayout.setClickable(selectItemCount > 0);
 
             mQualityText.setTextColor(selectItemCount > 0 ? ContextCompat.getColor(mContext, R.color.color_fff_90)
-                : ContextCompat.getColor(mContext, R.color.color_fff_40));
+                    : ContextCompat.getColor(mContext, R.color.color_fff_40));
 
             mQualityIcon.setBackground(
-                selectItemCount > 0 ? ContextCompat.getDrawable(mContext, R.drawable.media_bg_preview_btn_selector)
-                    : ContextCompat.getDrawable(mContext, R.drawable.index_checkbox_unused));
+                    selectItemCount > 0 ? ContextCompat.getDrawable(mContext, R.drawable.media_bg_preview_btn_selector)
+                            : ContextCompat.getDrawable(mContext, R.drawable.index_checkbox_unused));
 
         });
 
@@ -565,7 +514,7 @@ public class MediaPickActivity extends BaseActivity {
             isCompresses();
         } else {
             intent.setClass(MediaPickActivity.this, VideoClipsActivity.class);
-            intent.putExtra(VideoClipsActivity.CLIPS_VIEW_TYPE, VideoClipsActivity.VIEW_NORMAL);
+            intent.putExtra(CLIPS_VIEW_TYPE, VIEW_NORMAL);
             intent.putExtra(VideoClipsActivity.EXTRA_FROM_SELF_MODE, true);
             startActivity(intent);
             finish();
@@ -576,9 +525,9 @@ public class MediaPickActivity extends BaseActivity {
         if (!mSelectList.contains(item) && item.getIndex() > mSelectList.size() - 1) {
             setAssetProperty(item);
             if (FileUtil.isVideo(item.getPath())) {
-                int isNeedCompress =
-                    HVEDownSamplingManager.needDownSampling(item.getPath(), item.getWidth(), item.getHeight());
-                item.setDownSamplingState(isNeedCompress);
+                //int isNeedCompress = HVEDownSamplingManager.needDownSampling(item.getPath(), item.getWidth(), item.getHeight());
+                //item.setDownSamplingState(isNeedCompress);
+                SmartLog.d(TAG, "isNeedCompress: HVEDownSamplingManager is not available");
             } else {
                 item.setDownSamplingState(NO_NEED_DOWN_SAMPLING);
             }
@@ -593,7 +542,7 @@ public class MediaPickActivity extends BaseActivity {
         if (item.isFromCloud()) {
             for (int i = 0; i < mSelectList.size(); i++) {
                 if (!StringUtil.isEmpty(mSelectList.get(i).getPath())
-                    && mSelectList.get(i).getPath().equals(item.getPath())) {
+                        && mSelectList.get(i).getPath().equals(item.getPath())) {
                     removeNewData(i);
                     break;
                 }
@@ -681,15 +630,15 @@ public class MediaPickActivity extends BaseActivity {
         }
 
         mTvTotalTime.setText(
-            Utils.setNumColor(String.format(Locale.ROOT, getResources().getString(R.string.select_media_total_time),
-                TimeUtils.makeTimeString(mContext, duration)), getResources().getColor(R.color.white)));
+                Utils.setNumColor(String.format(Locale.ROOT, getResources().getString(R.string.select_media_total_time),
+                        TimeUtils.makeTimeString(mContext, duration)), getResources().getColor(R.color.white)));
 
         mTvSelectVideoNum
-            .setText(Utils.setNumColor(getResources().getQuantityString(R.plurals.add_video_num, videoSize, videoSize),
-                getResources().getColor(R.color.white)));
+                .setText(Utils.setNumColor(getResources().getQuantityString(R.plurals.add_video_num, videoSize, videoSize),
+                        getResources().getColor(R.color.white)));
         mTvSelectPictureNum
-            .setText(Utils.setNumColor(getResources().getQuantityString(R.plurals.add_image_num, photoSize, photoSize),
-                getResources().getColor(R.color.white)));
+                .setText(Utils.setNumColor(getResources().getQuantityString(R.plurals.add_image_num, photoSize, photoSize),
+                        getResources().getColor(R.color.white)));
     }
 
     private void setAssetProperty(MediaData mediaData) {
@@ -734,11 +683,11 @@ public class MediaPickActivity extends BaseActivity {
 
     private void resetVideoOrPicture() {
         mTitleGallery.setTextColor(mCurrentFragment == 0 ? ContextCompat.getColor(mContext, R.color.tab_text_tint_color)
-            : ContextCompat.getColor(mContext, R.color.tab_text_default_color));
+                : ContextCompat.getColor(mContext, R.color.tab_text_default_color));
         mDrawImage.setSelected(mCurrentFragment == 0);
         mTitleMaterial
-            .setTextColor(mCurrentFragment == 0 ? ContextCompat.getColor(mContext, R.color.tab_text_default_color)
-                : ContextCompat.getColor(mContext, R.color.tab_text_tint_color));
+                .setTextColor(mCurrentFragment == 0 ? ContextCompat.getColor(mContext, R.color.tab_text_default_color)
+                        : ContextCompat.getColor(mContext, R.color.tab_text_tint_color));
         if (mCurrentFragment == 0) {
             mTitleGallery.setTypeface(Typeface.SANS_SERIF, Typeface.BOLD);
             mTitleMaterial.setTypeface(Typeface.SANS_SERIF, Typeface.NORMAL);
@@ -812,22 +761,22 @@ public class MediaPickActivity extends BaseActivity {
             completesList = new ArrayList<>();
             completesList.add(item);
             new MediaDataDownSampleManager(this).downSampleList(completesList,
-                new MediaDataDownSampleManager.DownSampleCallBack() {
-                    @Override
-                    public void onSuccess(ArrayList<MediaData> list) {
-                        backToVideoClipActivity(list.get(0));
-                    }
+                    new MediaDataDownSampleManager.DownSampleCallBack() {
+                        @Override
+                        public void onSuccess(ArrayList<MediaData> list) {
+                            backToVideoClipActivity(list.get(0));
+                        }
 
-                    @Override
-                    public void onCancel() {
-                        SmartLog.e(TAG, "DownloadSampling canceled");
-                    }
+                        @Override
+                        public void onCancel() {
+                            SmartLog.e(TAG, "DownloadSampling canceled");
+                        }
 
-                    @Override
-                    public void onFailed(String message) {
-                        SmartLog.e(TAG, "DownloadSampling failed.");
-                    }
-                });
+                        @Override
+                        public void onFailed(String message) {
+                            SmartLog.e(TAG, "DownloadSampling failed.");
+                        }
+                    });
         }
     }
 
@@ -840,22 +789,22 @@ public class MediaPickActivity extends BaseActivity {
 
     private void isCompresses() {
         new MediaDataDownSampleManager(this).downSampleList(mSelectList,
-            new MediaDataDownSampleManager.DownSampleCallBack() {
-                @Override
-                public void onSuccess(ArrayList<MediaData> list) {
-                    compressesResult(list);
-                }
+                new MediaDataDownSampleManager.DownSampleCallBack() {
+                    @Override
+                    public void onSuccess(ArrayList<MediaData> list) {
+                        compressesResult(list);
+                    }
 
-                @Override
-                public void onCancel() {
-                    SmartLog.e(TAG, "DownloadSampling canceled");
-                }
+                    @Override
+                    public void onCancel() {
+                        SmartLog.e(TAG, "DownloadSampling canceled");
+                    }
 
-                @Override
-                public void onFailed(String message) {
-                    SmartLog.e(TAG, "DownloadSampling failed.");
-                }
-            });
+                    @Override
+                    public void onFailed(String message) {
+                        SmartLog.e(TAG, "DownloadSampling failed.");
+                    }
+                });
     }
 
     private void compressesResult(ArrayList<MediaData> mDownSamplingList) {
@@ -899,12 +848,6 @@ public class MediaPickActivity extends BaseActivity {
         return super.dispatchTouchEvent(ev);
     }
 
-    public interface TimeOutOnTouchListener {
-        boolean onTouch(MotionEvent ev);
-    }
-
-    private final ArrayList<TimeOutOnTouchListener> onTouchListeners = new ArrayList<TimeOutOnTouchListener>(10);
-
     public void registerMyOnTouchListener(TimeOutOnTouchListener onTouchListener) {
         onTouchListeners.add(onTouchListener);
     }
@@ -925,5 +868,9 @@ public class MediaPickActivity extends BaseActivity {
             }
         }
 
+    }
+
+    public interface TimeOutOnTouchListener {
+        boolean onTouch(MotionEvent ev);
     }
 }

@@ -5,7 +5,7 @@
 
     <fixfragment
         android:id="@+id/videoExportSettingFragment"
-        android:name="com.huawei.hms.videoeditor.ui.mediaexport.VideoExportSettingFragment">
+        android:name="com.hms.explorehms.huawei.ui.mediaexport.VideoExportSettingFragment">
 
         <action android:id="@+id/export_fail"
             app:destination="@id/videoExportFailFragment"/>
@@ -14,6 +14,6 @@
 
     <fixfragment
         android:id="@+id/videoExportFailFragment"
-        android:name="com.huawei.hms.videoeditor.ui.mediaexport.VideoExportFailFragment">
+        android:name="com.hms.explorehms.huawei.ui.mediaexport.VideoExportFailFragment">
     </fixfragment>
 </navigation>
