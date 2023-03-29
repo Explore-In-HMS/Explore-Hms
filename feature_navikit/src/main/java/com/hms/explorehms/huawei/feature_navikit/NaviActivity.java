@@ -77,10 +77,10 @@ public class NaviActivity extends AppCompatActivity implements RadioGroup.OnChec
         initView();
         initListener();
         initLocationType();
-        initLocationPemission();
+        initLocationPermission();
     }
 
-    private void initLocationPemission() {
+    private void initLocationPermission() {
         // Permissions required for dynamic application
         // Android SDK<=28
         if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) {

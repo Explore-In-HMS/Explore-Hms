@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import com.hms.explorehms.huawei.feature_navikit.setting.CommonSetting;
 import com.hms.explorehms.huawei.feature_navikit.utils.CommonUtil;
 import com.hms.explorehms.huawei.feature_navikit.utils.ConstantNaviUtil;
 import com.hms.explorehms.huawei.feature_navikit.utils.DefaultMapNavi;
@@ -58,7 +59,7 @@ public class ApiTestActivity extends Activity implements RadioGroup.OnCheckedCha
 
     private NaviLatLng hwFrom, hwTo;
 
-    private EditText mStartPoint, mEndPoint, mWayPoint1, mWayPoint2, conversationId;
+    private EditText mStartPoint, mEndPoint, mWayPoint1, mWayPoint2;
 
     private RadioButton dr1, dr2, dr3, dr4;
 
@@ -105,6 +106,7 @@ public class ApiTestActivity extends Activity implements RadioGroup.OnCheckedCha
         public void onStartNavi(int code) {
             ToastUtil.showToast(ApiTestActivity.this, "startNavi complete code is :" + code);
             if (code == 0) {
+                isRouteCalculateSuccess = false;
                 Intent intent = new Intent(ApiTestActivity.this, NaviActivity.class);
                 startActivity(intent);
             }
@@ -118,8 +120,9 @@ public class ApiTestActivity extends Activity implements RadioGroup.OnCheckedCha
         context = this;
         initView();
         initListener();
-        initServerSite();
+
         initMapNavi();
+        initApiTestSite();
     }
 
     private void initView() {
@@ -130,7 +133,6 @@ public class ApiTestActivity extends Activity implements RadioGroup.OnCheckedCha
         mEndPoint = (EditText) findViewById(R.id.m_end_point);
         mWayPoint1 = (EditText) findViewById(R.id.way_one_point);
         mWayPoint2 = (EditText) findViewById(R.id.way_two_point);
-        conversationId = findViewById(R.id.conversation_id_var);
         spStrategy = findViewById(R.id.sp_navi_strategy);
         spMode = findViewById(R.id.sp_navi_mode);
         operationEntity = (RadioGroup) findViewById(R.id.radioGroup_api);
@@ -178,10 +180,6 @@ public class ApiTestActivity extends Activity implements RadioGroup.OnCheckedCha
         });
 
         busBtn.setOnClickListener(v -> {
-            if (mapNavi != null) {
-                mapNavi.removeMapNaviListener(mapNaviListener);
-            }
-
             Intent intent = new Intent(this, BusResultActivity.class);
             startActivity(intent);
         });
@@ -335,17 +333,6 @@ public class ApiTestActivity extends Activity implements RadioGroup.OnCheckedCha
         } else {
             setApiKey(new ConstantNaviUtil(context).API_KEY);
         }
-
-        String clientId = conversationId.getText().toString();
-        if (clientId.length() != 32) {
-            Log.e(TAG, "conversationId must be 32 bit");
-            ToastUtil.showToast(this, "conversationId must be 32 bit.");
-            return;
-        } else {
-            ClientParas clientParas = new ClientParas();
-            clientParas.setConversationId(clientId);
-            MapNavi.initSettings(clientParas);
-        }
         if (mapNavi != null) {
             mapNavi.setVehicleType(mVehicleType);
             switch (mVehicleType) {
@@ -365,11 +352,11 @@ public class ApiTestActivity extends Activity implements RadioGroup.OnCheckedCha
     }
 
     private void setApiKey(String apiKey) {
-        if (apiKey == null) {
+        if(apiKey == null || mapNavi == null) {
             return;
         }
         try {
-            MapNavi.setApiKey(URLEncoder.encode(apiKey, "UTF-8"));
+            mapNavi.setApiKey(URLEncoder.encode(apiKey, "UTF-8"));
         } catch (UnsupportedEncodingException e) {
             Log.e(TAG, "Failed to set api Key: " + e.getMessage());
         } catch (IllegalArgumentException e) {
@@ -377,20 +364,7 @@ public class ApiTestActivity extends Activity implements RadioGroup.OnCheckedCha
         }
     }
 
-    private void initServerSite() {
-        if (dr1.isChecked()) {
-            MapNavi.setDevServerSite(DevServerSiteConstant.DR1);
-        }
-        if (dr2.isChecked()) {
-            MapNavi.setDevServerSite(DevServerSiteConstant.DR2);
-        }
-        if (dr3.isChecked()) {
-            MapNavi.setDevServerSite(DevServerSiteConstant.DR3);
-        }
-        if (dr4.isChecked()) {
-            MapNavi.setDevServerSite(DevServerSiteConstant.DR4);
-        }
-    }
+
 
     private int latlngCheck(String startStr, String endStr, List<String> wayPointStrList) {
         if (TextUtils.isEmpty(startStr)) {
@@ -506,7 +480,34 @@ public class ApiTestActivity extends Activity implements RadioGroup.OnCheckedCha
     @Override
     protected void onResume() {
         super.onResume();
+        initApiTestSite();
         Log.d(TAG, "============onResume");
+    }
+
+    private void initApiTestSite() {
+        if (mapNavi == null) {
+            return;
+        }
+
+        String site = CommonSetting.getServerSite();
+        switch (site) {
+            case DevServerSiteConstant.DR2:
+                mapNavi.setDevServerSite(DevServerSiteConstant.DR2);
+                dr2.setChecked(true);
+                break;
+            case DevServerSiteConstant.DR3:
+                mapNavi.setDevServerSite(DevServerSiteConstant.DR3);
+                dr3.setChecked(true);
+                break;
+            case DevServerSiteConstant.DR4:
+                mapNavi.setDevServerSite(DevServerSiteConstant.DR4);
+                dr4.setChecked(true);
+                break;
+            default:
+                mapNavi.setDevServerSite(DevServerSiteConstant.DR1);
+                dr1.setChecked(true);
+                break;
+        }
     }
 
     @Override
@@ -527,6 +528,6 @@ public class ApiTestActivity extends Activity implements RadioGroup.OnCheckedCha
 
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
-        CommonUtil.changeServerSite(checkedId);
+        CommonUtil.changeServerSite(checkedId, mapNavi);
     }
 }
