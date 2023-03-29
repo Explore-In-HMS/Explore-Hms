@@ -570,6 +570,10 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="supported_barcodes"> Supports QR Code, Data Matrix, PDF417, Aztec, EAN-8, EAN-13, UPC-A, UPC-E, Codabar, Code 39, Code 93, Code 128, and ITF.</string>
     <string name="dialog_message">Welcome to Alert Dialog</string>
     <string name="dialog_title">Javatpoint Alert Dialog</string>
+    <string name="dialog_title_install_hms_core">Download HMS Core</string>
+    <string name="dialog_message_install_hms_core">Download HMS Core for a better Push Kit experience</string>
+    <string name="dialog_option_positive">Download</string>
+    <string name="dialog_option_negative">No</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -908,5 +912,6 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="keyring_service_example">Keyring Service Example</string>
     <string name="title_feature_navikit">NaviKit</string>
     <string name="title_sdkdemo">Video Editor Kit AI</string>
+
 
 </resources>
