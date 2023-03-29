@@ -123,9 +123,17 @@
                 app:layout_constraintStart_toStartOf="@id/btn_audio_format_conversion"
                 app:layout_constraintTop_toBottomOf="@+id/btn_audio_format_conversion" />
 
-
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_audio_get_type"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/get_audio_type"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="@id/btn_audio_format_conversion"
+                app:layout_constraintStart_toStartOf="@id/btn_audio_format_conversion"
+                app:layout_constraintTop_toBottomOf="@+id/btn_video_audio_extraction" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
+<score-partwise version="3.1">
+  <identification>
+    <encoding>
+      <software>MuseScore 3.6.2</software>
+      <encoding-date>2022-06-22</encoding-date>
+      <supports element="accidental" type="yes"/>
+      <supports element="beam" type="yes"/>
+      <supports element="print" attribute="new-page" type="no"/>
+      <supports element="print" attribute="new-system" type="no"/>
+      <supports element="stem" type="yes"/>
+      </encoding>
+    </identification>
+  <defaults>
+    <scaling>
+      <millimeters>6.99911</millimeters>
+      <tenths>40</tenths>
+      </scaling>
+    <page-layout>
+      <page-height>1697.36</page-height>
+      <page-width>1200.15</page-width>
+      <page-margins type="even">
+        <left-margin>85.7252</left-margin>
+        <right-margin>85.7252</right-margin>
+        <top-margin>85.7252</top-margin>
+        <bottom-margin>85.7252</bottom-margin>
+        </page-margins>
+      <page-margins type="odd">
+        <left-margin>85.7252</left-margin>
+        <right-margin>85.7252</right-margin>
+        <top-margin>85.7252</top-margin>
+        <bottom-margin>85.7252</bottom-margin>
+        </page-margins>
+      </page-layout>
+    <word-font font-family="Edwin" font-size="10"/>
+    <lyric-font font-family="Edwin" font-size="10"/>
+    </defaults>
+  <credit page="1">
+    <credit-type>title</credit-type>
+    <credit-words default-x="600.075" default-y="1612.52" justify="center" valign="top" font-size="22">友谊地久天长</credit-words>
+    </credit>
+  <part-list>
+    <score-part id="P1">
+      <part-name>钢琴, 施坦威大钢琴</part-name>
+      <part-abbreviation>Pno.</part-abbreviation>
+      <score-instrument id="P1-I1">
+        <instrument-name>钢琴</instrument-name>
+        </score-instrument>
+      <midi-device id="P1-I1" port="1"></midi-device>
+      <midi-instrument id="P1-I1">
+        <midi-channel>1</midi-channel>
+        <midi-program>1</midi-program>
+        <volume>78.7402</volume>
+        <pan>0</pan>
+        </midi-instrument>
+      </score-part>
+    </part-list>
+  <part id="P1">
+    <measure number="1" width="241.69">
+      <print>
+        <system-layout>
+          <system-margins>
+            <left-margin>50.00</left-margin>
+            <right-margin>0.00</right-margin>
+            </system-margins>
+          <top-system-distance>170.00</top-system-distance>
+          </system-layout>
+        </print>
+      <attributes>
+        <divisions>12</divisions>
+        <key>
+          <fifths>0</fifths>
+          </key>
+        <time>
+          <beats>3</beats>
+          <beat-type>4</beat-type>
+          </time>
+        <clef>
+          <sign>G</sign>
+          <line>2</line>
+          </clef>
+        </attributes>
+      <note>
+        <rest/>
+        <duration>3</duration>
+        <voice>1</voice>
+        <type>16th</type>
+        </note>
+      <direction placement="above">
+        <direction-type>
+          <metronome parentheses="no" relative-y="20.00">
+            <beat-unit>quarter</beat-unit>
+            <per-minute>77</per-minute>
+            </metronome>
+          </direction-type>
+        <sound tempo="77"/>
+        </direction>
+      <note default-x="91.78" default-y="-60.00" dynamics="120.00">
+        <pitch>
+          <step>A</step>
+          <octave>3</octave>
+          </pitch>
+        <duration>12</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <lyric number="1" default-x="6.50" default-y="-59.92" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>zai</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.09" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>再</text>
+          </lyric>
+        </note>
+      <note default-x="131.58" default-y="-45.00" dynamics="98.89">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="start"/>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <notations>
+          <tied type="start"/>
+          </notations>
+        <lyric number="1" default-y="-59.92" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>jian</text>
+          <extend/>
+          </lyric>
+        <lyric number="2" default-y="-81.09" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>见</text>
+          <extend/>
+          </lyric>
+        </note>
+      <note default-x="171.38" default-y="-45.00">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop"/>
+        <voice>1</voice>
+        <type>eighth</type>
+        <stem>up</stem>
+        <notations>
+          <tied type="stop"/>
+          </notations>
+        </note>
+      <note default-x="200.33" default-y="-45.00" dynamics="110.00">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <voice>1</voice>
+        <type>eighth</type>
+        <stem>up</stem>
+        <lyric number="1" default-x="6.50" default-y="-59.92" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>ma</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.09" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>妈</text>
+          </lyric>
+        </note>
+      </measure>
+    <measure number="2" width="160.66">
+      <note default-x="22.07" default-y="-45.00" dynamics="120.00">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <lyric number="1" default-x="6.50" default-y="-59.92" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>ma</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.09" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>妈</text>
+          </lyric>
+        </note>
+      <note default-x="63.59" default-y="-35.00" dynamics="92.22">
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <accidental>sharp</accidental>
+        <stem>up</stem>
+        <lyric number="1" default-x="6.50" default-y="-59.92" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>jin</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.09" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>今</text>
+          </lyric>
+        </note>
+      <note default-x="105.11" default-y="-40.00" dynamics="68.89">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="start"/>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <notations>
+          <tied type="start"/>
+          </notations>
+        <lyric number="1" default-y="-59.92" relative-y="-30.00">
+          <syllabic>end</syllabic>
+          <text>tian</text>
+          <extend/>
+          </lyric>
+        <lyric number="2" default-y="-81.09" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>天</text>
+          <extend/>
+          </lyric>
+        </note>
+      </measure>
+    <measure number="3" width="211.26">
+      <note default-x="13.00" default-y="-40.00" dynamics="68.89">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop"/>
+        <voice>1</voice>
+        <type>eighth</type>
+        <stem>up</stem>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop"/>
+          </notations>
+        </note>
+      <note default-x="47.38" default-y="-45.00" dynamics="110.00">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <voice>1</voice>
+        <type>eighth</type>
+        <stem>up</stem>
+        <beam number="1">end</beam>
+        <lyric number="1" default-x="6.50" default-y="-59.92" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>wan</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.09" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>晚</text>
+          </lyric>
+        </note>
+      <note default-x="99.46" default-y="-40.00" dynamics="98.89">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <lyric number="1" default-x="6.50" default-y="-59.92" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>shang</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.09" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>上</text>
+          </lyric>
+        </note>
+      <note default-x="154.46" default-y="-35.00" dynamics="62.22">
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <accidental>sharp</accidental>
+        <stem>up</stem>
+        <lyric number="1" default-x="6.50" default-y="-59.92" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>wo</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.09" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>我</text>
+          </lyric>
+        </note>
+      </measure>
+    <measure number="4" width="209.12">
+      <note default-x="21.06" default-y="-45.00" dynamics="98.89">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="start"/>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <notations>
+          <tied type="start"/>
+          </notations>
+        <lyric number="1" default-x="6.50" default-y="-59.92" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>jiu</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.09" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>就</text>
+          </lyric>
+        </note>
+      <note default-x="65.13" default-y="-45.00" dynamics="98.89">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>4</duration>
+        <tie type="stop"/>
+        <voice>1</voice>
+        <type>eighth</type>
+        <time-modification>
+          <actual-notes>3</actual-notes>
+          <normal-notes>2</normal-notes>
+          </time-modification>
+        <stem>up</stem>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop"/>
+          <tuplet type="start" bracket="no"/>
+          </notations>
+        </note>
+      <note default-x="87.72" default-y="-45.00" dynamics="81.11">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>4</duration>
+        <voice>1</voice>
+        <type>eighth</type>
+        <time-modification>
+          <actual-notes>3</actual-notes>
+          <normal-notes>2</normal-notes>
+          </time-modification>
+        <stem>up</stem>
+        <beam number="1">continue</beam>
+        <notations>
+          <articulations>
+            <staccato/>
+            </articulations>
+          </notations>
+        <lyric number="1" default-x="6.50" default-y="-59.92" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>zhun</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.09" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>准</text>
+          </lyric>
+        </note>
+      <note default-x="129.12" default-y="-45.00" dynamics="98.89">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>4</duration>
+        <voice>1</voice>
+        <type>eighth</type>
+        <time-modification>
+          <actual-notes>3</actual-notes>
+          <normal-notes>2</normal-notes>
+          </time-modification>
+        <stem>up</stem>
+        <beam number="1">end</beam>
+        <notations>
+          <tuplet type="stop"/>
+          </notations>
+        <lyric number="1" default-x="6.50" default-y="-59.92" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>bei</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.09" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>备</text>
+          </lyric>
+        </note>
+      <note default-x="163.25" default-y="-35.00" dynamics="74.44">
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <accidental>sharp</accidental>
+        <stem>up</stem>
+        <lyric number="1" default-x="6.50" default-y="-59.92" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>yao</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.09" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>要</text>
+          </lyric>
+        </note>
+      </measure>
+    <measure number="5" width="155.97">
+      <note default-x="31.14" default-y="-25.00" dynamics="110.00">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <lyric number="1" default-x="6.50" default-y="-59.92" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>yuan</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.09" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>远</text>
+          </lyric>
+        </note>
+      <note default-x="78.46" default-y="-20.00" dynamics="120.00">
+        <pitch>
+          <step>B</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>24</duration>
+        <tie type="start"/>
+        <voice>1</voice>
+        <type>half</type>
+        <stem>down</stem>
+        <notations>
+          <tied type="start"/>
+          </notations>
+        <lyric number="1" default-y="-59.92" relative-y="-30.00">
+          <syllabic>end</syllabic>
+          <text>hang</text>
+          <extend/>
+          </lyric>
+        <lyric number="2" default-y="-81.09" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>航</text>
+          <extend/>
+          </lyric>
+        </note>
+      </measure>
+    <measure number="6" width="206.07">
+      <note default-x="58.59" default-y="-20.00" dynamics="120.00">
+        <pitch>
+          <step>B</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="stop"/>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>down</stem>
+        <notations>
+          <tied type="stop"/>
+          </notations>
+        </note>
+      <note>
+        <rest/>
+        <duration>12</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        </note>
+      <note default-x="119.61" default-y="-20.00" dynamics="110.00">
+        <pitch>
+          <step>B</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>down</stem>
+        <lyric number="1" default-x="6.50" default-y="-60.32" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>zai</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.49" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>再</text>
+          </lyric>
+        </note>
+      <note default-x="150.12" default-y="-25.00" dynamics="128.89">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="start"/>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <notations>
+          <tied type="start"/>
+          </notations>
+        <lyric number="1" default-y="-60.32" relative-y="-30.00">
+          <syllabic>end</syllabic>
+          <text>jian</text>
+          <extend/>
+          </lyric>
+        <lyric number="2" default-y="-81.49" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>见</text>
+          <extend/>
+          </lyric>
+        </note>
+      </measure>
+    <measure number="7" width="194.91">
+      <note default-x="13.00" default-y="-25.00" dynamics="128.89">
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop"/>
+        <voice>1</voice>
+        <type>eighth</type>
+        <stem>up</stem>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop"/>
+          </notations>
+        </note>
+      <note default-x="47.64" default-y="-35.00" dynamics="66.67">
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <voice>1</voice>
+        <type>eighth</type>
+        <accidental>sharp</accidental>
+        <stem>up</stem>
+        <beam number="1">end</beam>
+        <lyric number="1" default-x="6.50" default-y="-60.32" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>ma</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.49" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>妈</text>
+          </lyric>
+        </note>
+      <note default-x="82.27" default-y="-35.00" dynamics="91.11">
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <lyric number="1" default-x="6.50" default-y="-60.32" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>ma</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.49" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>妈</text>
+          </lyric>
+        </note>
+      <note default-x="137.69" default-y="-45.00" dynamics="68.89">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <lyric number="1" default-x="6.50" default-y="-60.32" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>cong</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.49" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>从</text>
+          </lyric>
+        </note>
+      </measure>
+    <measure number="8" width="145.68">
+      <note default-x="21.06" default-y="-40.00" dynamics="68.89">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>18</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <dot/>
+        <stem>up</stem>
+        <lyric number="1" default-x="6.50" default-y="-60.32" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>jin</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.49" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>今</text>
+          </lyric>
+        </note>
+      <note default-x="71.89" default-y="-45.00" dynamics="65.56">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <voice>1</voice>
+        <type>eighth</type>
+        <stem>up</stem>
+        <lyric number="1" default-x="6.50" default-y="-60.32" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>yi</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.49" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>以</text>
+          </lyric>
+        </note>
+      <note default-x="102.19" default-y="-40.00" dynamics="98.89">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <lyric number="1" default-x="6.50" default-y="-60.32" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>hou</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.49" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>后</text>
+          </lyric>
+        </note>
+      </measure>
+    <measure number="9" width="237.56">
+      <note default-x="20.96" default-y="-35.00" dynamics="74.44">
+        <pitch>
+          <step>F</step>
+          <alter>1</alter>
+          <octave>4</octave>
+          </pitch>
+        <duration>8</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <accidental>sharp</accidental>
+        <time-modification>
+          <actual-notes>3</actual-notes>
+          <normal-notes>2</normal-notes>
+          <normal-type>eighth</normal-type>
+          </time-modification>
+        <stem>up</stem>
+        <notations>
+          <tuplet type="start" bracket="yes"/>
+          <slur type="start" placement="above" number="1"/>
+          </notations>
+        <lyric number="1" default-y="-60.32" relative-y="-30.00">
+          <syllabic>end</syllabic>
+          <text>ni</text>
+          <extend/>
+          </lyric>
+        <lyric number="2" default-y="-81.49" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>你</text>
+          <extend/>
+          </lyric>
+        </note>
+      <note default-x="60.09" default-y="-40.00" dynamics="68.89">
+        <pitch>
+          <step>E</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>4</duration>
+        <voice>1</voice>
+        <type>eighth</type>
+        <time-modification>
+          <actual-notes>3</actual-notes>
+          <normal-notes>2</normal-notes>
+          <normal-type>eighth</normal-type>
+          </time-modification>
+        <stem>up</stem>
+        <notations>
+          <tuplet type="stop"/>
+          <slur type="stop" number="1"/>
+          </notations>
+        </note>
+      <note default-x="86.65" default-y="-45.00">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="start"/>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <notations>
+          <tied type="start"/>
+          </notations>
+        <lyric number="1" default-y="-60.32" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>jiang</text>
+          <extend/>
+          </lyric>
+        <lyric number="2" default-y="-81.49" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>将</text>
+          <extend/>
+          </lyric>
+        </note>
+      <note default-x="133.21" default-y="-45.00">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>6</duration>
+        <tie type="stop"/>
+        <voice>1</voice>
+        <type>eighth</type>
+        <stem>up</stem>
+        <notations>
+          <tied type="stop"/>
+          </notations>
+        </note>
+      <note default-x="167.07" default-y="-55.00" dynamics="98.89">
+        <pitch>
+          <step>B</step>
+          <octave>3</octave>
+          </pitch>
+        <duration>3</duration>
+        <voice>1</voice>
+        <type>16th</type>
+        <stem>up</stem>
+        <lyric number="1" default-x="6.50" default-y="-60.32" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>shi</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.49" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>失</text>
+          </lyric>
+        </note>
+      <note default-x="196.57" default-y="-55.00">
+        <pitch>
+          <step>B</step>
+          <octave>3</octave>
+          </pitch>
+        <duration>3</duration>
+        <voice>1</voice>
+        <type>16th</type>
+        <stem>up</stem>
+        <lyric number="1" default-x="6.50" default-y="-60.32" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>qu</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.49" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>去</text>
+          </lyric>
+        </note>
+      </measure>
+    <measure number="10" width="159.73">
+      <note default-x="17.03" default-y="-55.00" dynamics="98.89">
+        <pitch>
+          <step>B</step>
+          <octave>3</octave>
+          </pitch>
+        <duration>12</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <lyric number="1" default-x="6.50" default-y="-60.32" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>ni</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.49" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>你</text>
+          </lyric>
+        </note>
+      <note default-x="53.95" default-y="-60.00" dynamics="82.22">
+        <pitch>
+          <step>A</step>
+          <octave>3</octave>
+          </pitch>
+        <duration>12</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <lyric number="1" default-x="6.50" default-y="-60.32" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>de</text>
+          </lyric>
+        <lyric number="2" default-x="6.50" default-y="-81.49" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>的</text>
+          </lyric>
+        </note>
+      <note default-x="90.87" default-y="-45.00" dynamics="81.11">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>12</duration>
+        <tie type="start"/>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <notations>
+          <tied type="start"/>
+          </notations>
+        <lyric number="1" default-y="-60.32" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>wang</text>
+          <extend/>
+          </lyric>
+        <lyric number="2" default-y="-81.49" relative-y="-30.00">
+          <syllabic>single</syllabic>
+          <text>汪</text>
+          <extend/>
+          </lyric>
+        </note>
+      </measure>
+    <measure number="11" width="84.74">
+      <note default-x="13.00" default-y="-45.00" dynamics="81.11">
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+          </pitch>
+        <duration>24</duration>
+        <tie type="stop"/>
+        <voice>1</voice>
+        <type>half</type>
+        <stem>up</stem>
+        <notations>
+          <tied type="stop"/>
+          </notations>
+        </note>
+      <note>
+        <rest/>
+        <duration>12</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        </note>
+      <barline location="right">
+        <bar-style>light-heavy</bar-style>
+        </barline>
+      </measure>
+    </part>
+  </score-partwise>
