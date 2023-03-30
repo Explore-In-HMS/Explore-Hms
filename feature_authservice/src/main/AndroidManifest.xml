@@ -22,8 +22,15 @@
         android:allowBackup="true"
         android:screenOrientation="portrait"
         android:theme="@style/AppTheme"
-        tools:node="replace"
+        tools:node="merge"
         tools:replace="theme, screenOrientation">
+        <activity
+            android:name=".AlipayLoginActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".GoogleLoginActivity"
             android:screenOrientation="portrait"
@@ -32,6 +39,7 @@
         <activity android:name=".ReauthenticateActivity" />
         <activity
             android:name=".MainActivityAuth"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             tools:node="replace"
@@ -106,4 +114,5 @@
             android:name="com.google.android.gms.version"
             android:value="12451000" />
     </application>
+
 </manifest>

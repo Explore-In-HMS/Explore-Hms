@@ -32,7 +32,8 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_productmanagement.ProductManagementActivity"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_productmanagement.ProductManagementActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

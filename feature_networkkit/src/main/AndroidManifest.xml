@@ -42,8 +42,10 @@
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:allowBackup="true">
-        <activity android:name=".MainActivity" />
-        <activity android:name=".NetworkMainActivity"/>
+        <activity android:name=".MainActivity"
+            android:exported="true"/>
+        <activity android:name=".NetworkMainActivity"
+            android:exported="true"/>
         <activity android:name=".NetworkUrlMainActivity"/>
     </application>
 

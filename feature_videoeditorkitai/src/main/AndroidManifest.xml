@@ -27,11 +27,11 @@
     <application>
         <activity android:name="com.hms.explorehms.huawei.HomeActivity"
         android:screenOrientation="portrait"
-		android:exported="false">
+		android:exported="true">
         </activity>
         <activity
             android:name="com.hms.explorehms.huawei.MainActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.hms.explorehms.huawei.ui.mediapick.activity.MediaPickActivity"

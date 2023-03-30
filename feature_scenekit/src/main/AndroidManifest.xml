@@ -28,7 +28,8 @@
 
         <activity
             android:name=".MainActivity"
-            android:label="Scene Kit" />
+            android:label="Scene Kit"
+            android:exported="true"/>
         <activity
             android:name=".sceneview.SceneViewActivity"
             android:label="Scene View" />

@@ -43,7 +43,8 @@
 
     <application>
         <activity android:name=".ui.AwarenessKitReworkMainActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden"/>
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:exported="true"/>
         <activity android:name=".ui.AwarenessKitReworkInfoActivity"
             android:windowSoftInputMode="adjustResize|stateHidden"/>
 

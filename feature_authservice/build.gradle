@@ -57,6 +57,8 @@ android {
 dependencies {
     implementation project(":app")
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.4.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 
     // HMS
@@ -74,6 +76,10 @@ dependencies {
 
     // Twitter
     implementation 'com.twitter.sdk.android:twitter-core:3.3.0'
+
+    // Alipay
+    implementation "com.huawei.agconnect:agconnect-auth-alipay:1.8.1.300"
+    implementation "com.alipay.sdk:alipaysdk-android:+@aar"
 
     //Google
     implementation 'com.google.android.gms:play-services-auth:17.0.0'

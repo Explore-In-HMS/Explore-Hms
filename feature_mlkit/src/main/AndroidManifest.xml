@@ -65,11 +65,13 @@
         tools:node="replace"
         tools:replace="icon, label, theme, screenOrientation, resizeableActivity"
         tools:targetApi="q">
-        <activity android:name=".ui.mlServices.faceAndBodyRelated.gesture.GestureMainActivity"></activity>
+        <activity android:name=".ui.mlServices.faceAndBodyRelated.gesture.GestureMainActivity"
+            android:exported="true"/>
         <activity android:name=".ui.mlServices.faceAndBodyRelated.face3d.Live3DActivity" />
         <activity
             android:name=".MLMainActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/AppTheme" /> <!-- Text Related Services Activities -->
         <activity
             android:name=".ui.mlServices.textRelated.bankCardRecognition.BankCardRecognitionActivity"

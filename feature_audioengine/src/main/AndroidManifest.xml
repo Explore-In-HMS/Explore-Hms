@@ -31,7 +31,8 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_audioengine.MainAudioEngineActivity"></activity>
+        <activity android:name="com.hms.explorehms.huawei.feature_audioengine.MainAudioEngineActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

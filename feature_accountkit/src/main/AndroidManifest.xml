@@ -36,9 +36,9 @@
     </dist:module>
 
     <application>
-        <activity android:name=".SmsReaderInfoActivity"></activity>
+        <activity android:name=".SmsReaderInfoActivity" />
         <activity android:name=".SmsReaderActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".LoginActivity" android:exported="true"/>
         <activity android:name=".UserDetailActivity" />
     </application>
 

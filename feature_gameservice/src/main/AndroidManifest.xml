@@ -31,7 +31,8 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_gameservice.GameServicesMainActivity" />
+        <activity android:name="com.hms.explorehms.huawei.feature_gameservice.GameServicesMainActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

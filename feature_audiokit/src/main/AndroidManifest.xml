@@ -44,8 +44,10 @@
         tools:ignore="AllowBackup">
         <activity android:name=".LocalAudioActivity" />
         <activity android:name=".AudioActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".AudioMainActivity" />
+            android:screenOrientation="portrait"
+            android:exported="true"/>
+        <activity android:name=".AudioMainActivity"
+            android:exported="true"/>
 
         <service
             android:name=".AudioKillService" />

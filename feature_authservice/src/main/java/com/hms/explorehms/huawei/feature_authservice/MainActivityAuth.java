@@ -98,6 +98,9 @@ public class MainActivityAuth extends AppCompatActivity {
             case R.id.clLoginWithTwitter:
                 Utils.startActivity(MainActivityAuth.this, TwitterLoginActivity.class);
                 break;
+            case R.id.clLoginWithAliPay:
+                Utils.startActivity(MainActivityAuth.this, AlipayLoginActivity.class);
+                break;
 
             case R.id.reauthenticate:
                 Utils.startActivity(MainActivityAuth.this, ReauthenticateActivity.class);

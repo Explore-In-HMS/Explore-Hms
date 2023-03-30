@@ -40,7 +40,8 @@
         <activity android:name="com.hms.explorehms.huawei.feature_avpipelinekit.ui.PlayerActivitySound"/>
         <activity android:name="com.hms.explorehms.huawei.feature_avpipelinekit.ui.PlayerActivityBase"/>
         <activity android:name="com.hms.explorehms.huawei.feature_avpipelinekit.ui.AssetActivity"/>
-        <activity android:name="com.hms.explorehms.huawei.feature_avpipelinekit.MainActivity"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_avpipelinekit.MainActivity"
+            android:exported="true"/>
 
 
 

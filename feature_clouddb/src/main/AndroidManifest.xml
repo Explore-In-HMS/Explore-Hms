@@ -32,9 +32,11 @@
 
     <application>
         <activity android:name=".view.MainFragmentActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:exported="true"/>
         <activity android:name=".view.MainActivityCloud"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:exported="true"/>
     </application>
 
 </manifest>
