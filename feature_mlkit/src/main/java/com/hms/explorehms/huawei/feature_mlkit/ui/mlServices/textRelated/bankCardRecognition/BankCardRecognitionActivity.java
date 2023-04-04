@@ -28,9 +28,16 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+
 import com.hms.explorehms.Util;
 import com.hms.explorehms.huawei.feature_mlkit.R;
 import com.hms.explorehms.huawei.feature_mlkit.ui.mlServices.textRelated.textRecognition.TextRecognitionActivity;
+import com.hms.explorehms.huawei.feature_mlkit.utils.BankCardUtils;
 import com.hms.explorehms.huawei.feature_mlkit.utils.DialogUtils;
 import com.hms.explorehms.huawei.feature_mlkit.utils.StringUtils;
 import com.hms.explorehms.huawei.feature_mlkit.utils.Utils;
@@ -38,12 +45,6 @@ import com.huawei.hms.mlplugin.card.bcr.MLBcrCapture;
 import com.huawei.hms.mlplugin.card.bcr.MLBcrCaptureConfig;
 import com.huawei.hms.mlplugin.card.bcr.MLBcrCaptureFactory;
 import com.huawei.hms.mlplugin.card.bcr.MLBcrCaptureResult;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.ActivityCompat;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -56,6 +57,12 @@ public class BankCardRecognitionActivity extends AppCompatActivity {
     private static final String TAG = TextRecognitionActivity.class.getSimpleName();
 
     private Unbinder unbinder;
+
+    String[] cardNumberLength = new String[3500];
+    String[] bankIdentificationNumber = new String[3500];
+    String[] cardIssuer = new String[3500];
+    String[] cardType = new String[3500];
+    String[] bankCardListWithSplit = new String[3500];
 
     @Nullable
     @BindView(R.id.resultLogs)
@@ -99,6 +106,8 @@ public class BankCardRecognitionActivity extends AppCompatActivity {
 
         unbinder = ButterKnife.bind(this);
         setupToolbar();
+
+        bankCardSupportedListCalculate();
 
         // this is important for get image of imageView by Bitmap and use it
         imageViewCard.setDrawingCacheEnabled(true);
@@ -209,6 +218,7 @@ public class BankCardRecognitionActivity extends AppCompatActivity {
             showBankCardImageHideSampleCardImage(result.getOriginalBitmap(), result.getNumberBitmap());
 
             displaySuccessAnalyseResults(result);
+            bankCardSupportedListCalculateResult(result);
 
         }
 
@@ -244,40 +254,90 @@ public class BankCardRecognitionActivity extends AppCompatActivity {
 
         private void displaySuccessAnalyseResults(MLBcrCaptureResult result) {
             hideProgress();
-            String analyseResults = editFormatCardAnalyseResult(result);
+            String analyseResults = bankCardSupportedListCalculateResult(result);
             Utils.createVibration(getApplicationContext(), 200);
             Log.i(TAG, "Success AnalyseResults : " + analyseResults);
             cardNumberText.setText(result.getNumber());
             resultLogs.setText("Success AnalyseResults : with " + analyseResults.length() + " characters :\n" + analyseResults);
         }
 
-        private String editFormatCardAnalyseResult(MLBcrCaptureResult result) {
+        private String bankCardSupportedListCalculateResult(MLBcrCaptureResult result) {
+
+            String getBINNumber = result.getNumber().substring(0, 6);
             StringBuilder resultBuilder = new StringBuilder();
+            Boolean bankCardSupported = false;
 
-            resultBuilder.append("Number：");
-            resultBuilder.append(result.getNumber());
-            resultBuilder.append(System.lineSeparator());
+            for (int i = 1; i <= bankCardListWithSplit.length - 1; i++) {
+                if (getBINNumber.equals(bankIdentificationNumber[i])) {
 
-            resultBuilder.append("Issuer：");
-            resultBuilder.append(result.getIssuer());
-            resultBuilder.append(System.lineSeparator());
+                    resultBuilder.append("Number：");
+                    resultBuilder.append(result.getNumber());
+                    resultBuilder.append(System.lineSeparator());
 
-            resultBuilder.append("Expire: ");
-            resultBuilder.append(result.getExpire());
-            resultBuilder.append(System.lineSeparator());
+                    resultBuilder.append("Length：");
+                    resultBuilder.append(cardNumberLength[i]);
+                    resultBuilder.append(System.lineSeparator());
 
-            resultBuilder.append("Type: ");
-            resultBuilder.append(result.getType());
-            resultBuilder.append(System.lineSeparator());
+                    resultBuilder.append("Issuer：");
+                    resultBuilder.append(cardIssuer[i]);
+                    resultBuilder.append(System.lineSeparator());
 
-            resultBuilder.append("Organization: ");
-            resultBuilder.append(result.getOrganization());
-            resultBuilder.append(System.lineSeparator());
+                    resultBuilder.append("Expire: ");
+                    resultBuilder.append(result.getExpire());
+                    resultBuilder.append(System.lineSeparator());
 
+                    resultBuilder.append("Type: ");
+                    resultBuilder.append(cardType[i]);
+                    resultBuilder.append(System.lineSeparator());
+
+                    resultBuilder.append("Organization: ");
+                    resultBuilder.append(result.getOrganization());
+                    resultBuilder.append(System.lineSeparator());
+                    bankCardSupported = true;
+                    break;
+                }
+            }
+            if (!bankCardSupported) {
+                resultBuilder.append("Number：");
+                resultBuilder.append(result.getNumber());
+                resultBuilder.append(System.lineSeparator());
+
+                resultBuilder.append("Issuer：");
+                resultBuilder.append(result.getIssuer());
+                resultBuilder.append(System.lineSeparator());
+
+                resultBuilder.append("Expire: ");
+                resultBuilder.append(result.getExpire());
+                resultBuilder.append(System.lineSeparator());
+
+                resultBuilder.append("Type: ");
+                resultBuilder.append(result.getType());
+                resultBuilder.append(System.lineSeparator());
+
+                resultBuilder.append("Organization: ");
+                resultBuilder.append(result.getOrganization());
+                resultBuilder.append(System.lineSeparator());
+            }
             return resultBuilder.toString();
         }
     };
 
+    private void bankCardSupportedListCalculate() {
+        String bankCardSupportedListJSON = BankCardUtils.getJsonFromFile(this, "BankCardSupportedList.json", true);
+
+        bankCardListWithSplit = bankCardSupportedListJSON.split("\\{\n");
+
+        for (int i = 1; i <= bankCardListWithSplit.length - 1; i++) {
+            cardNumberLength[i] = BankCardUtils.substringBetween(bankCardListWithSplit[i], "Length\": \"", "\",");
+            bankIdentificationNumber[i] = BankCardUtils.substringBetween(bankCardListWithSplit[i], "(BIN)\": \"", "\",");
+            cardIssuer[i] = BankCardUtils.substringBetween(bankCardListWithSplit[i], "Code)\": \"", "\",");
+            cardType[i] = BankCardUtils.substringBetween(bankCardListWithSplit[i], "Type\": \"", "\"");
+            Log.d("Card Number Length: ", String.valueOf(cardNumberLength[i]));
+            Log.d("Bank Identification Number (BIN): ", String.valueOf(bankIdentificationNumber[i]));
+            Log.d("Card Issuer (Issuer Code): ", String.valueOf(cardIssuer[i]));
+            Log.d("Card Type: ", String.valueOf(cardType[i]));
+        }
+    }
 
     // ------------------------------------------------------------------------------------------ //
 

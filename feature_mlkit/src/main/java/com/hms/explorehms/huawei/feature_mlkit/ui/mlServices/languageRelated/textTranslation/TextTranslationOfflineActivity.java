@@ -33,6 +33,10 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.hms.explorehms.Util;
 import com.hms.explorehms.huawei.feature_mlkit.R;
 import com.hms.explorehms.huawei.feature_mlkit.utils.Utils;
@@ -52,10 +56,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.CountDownLatch;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -142,10 +142,10 @@ public class TextTranslationOfflineActivity extends AppCompatActivity {
     private static List<String> LANGUAGE_LIST;
 
     private static final String[] SOURCE_LANGUAGE_CODE =
-            new String[]{"Auto", "ZH", "EN", "ES", "DE", "RU", "FR", "IT", "PT", "TH", "AR", "TR", "JA"};
+            new String[]{"Auto", "ZH", "EN", "ES", "DE", "RU", "FR", "IT", "PT", "TH", "AR", "TR", "JA", "SQ", "CY", "GA", "HT"};
 
     private static final String[] DEST_LANGUAGE_CODE =
-            new String[]{"ZH", "EN", "ES", "DE", "RU", "FR", "IT", "PT", "TH", "AR", "TR", "JA"};
+            new String[]{"ZH", "EN", "ES", "DE", "RU", "FR", "IT", "PT", "TH", "AR", "TR", "JA", "SQ", "CY", "GA", "HT"};
 
     private static List<String> SP_SOURCE_LIST_EN;
 
@@ -160,18 +160,18 @@ public class TextTranslationOfflineActivity extends AppCompatActivity {
         CODE_LIST = new ArrayList<>(Arrays.asList(getString(R.string.zh), getString(R.string.en), getString(R.string.fr),
                 getString(R.string.th), getString(R.string.ja), getString(R.string.de), getString(R.string.ru),
                 getString(R.string.es), getString(R.string.ar), getString(R.string.tr), getString(R.string.pt),
-                getString(R.string.it), getString(R.string.ro), getString(R.string.no)));
+                getString(R.string.it), getString(R.string.ro), getString(R.string.no), getString(R.string.sq), getString(R.string.cy), getString(R.string.ga), getString(R.string.ht)));
         LANGUAGE_LIST = new ArrayList<>(Arrays.asList(getString(R.string.chinese), getString(R.string.english), getString(R.string.french),
                 getString(R.string.thai), getString(R.string.japanese), getString(R.string.german), getString(R.string.russian),
                 getString(R.string.spanish), getString(R.string.arabic), getString(R.string.turkish), getString(R.string.portuguese),
-                getString(R.string.italian), getString(R.string.romanian), getString(R.string.norwegian)));
+                getString(R.string.italian), getString(R.string.romanian), getString(R.string.norwegian), getString(R.string.Albanian), getString(R.string.Welsh), getString(R.string.Irish), getString(R.string.Haitian)));
         SP_SOURCE_LIST_EN = new ArrayList<>(Arrays.asList(getString(R.string.auto), getString(R.string.chinese), getString(R.string.english),
                 getString(R.string.spanish), getString(R.string.german), getString(R.string.russian),
                 getString(R.string.french), getString(R.string.italian), getString(R.string.portuguese), getString(R.string.thai),
-                getString(R.string.arabic), getString(R.string.turkish), getString(R.string.japanese)));
+                getString(R.string.arabic), getString(R.string.turkish), getString(R.string.japanese), getString(R.string.Albanian), getString(R.string.Welsh), getString(R.string.Irish), getString(R.string.Haitian)));
         SP_DEST_LIST_EN = new ArrayList<>(Arrays.asList(getString(R.string.chinese), getString(R.string.english), getString(R.string.spanish),
                 getString(R.string.german), getString(R.string.russian), getString(R.string.french), getString(R.string.italian),
-                getString(R.string.portuguese), getString(R.string.thai), getString(R.string.arabic), getString(R.string.turkish), getString(R.string.japanese)));
+                getString(R.string.portuguese), getString(R.string.thai), getString(R.string.arabic), getString(R.string.turkish), getString(R.string.japanese), getString(R.string.Albanian), getString(R.string.Welsh), getString(R.string.Irish), getString(R.string.Haitian)));
 
 
         unbinder = ButterKnife.bind(this);

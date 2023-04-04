@@ -301,11 +301,11 @@ dependencies {
     //Text Recognition SDK
     api 'com.huawei.hms:ml-computer-vision-ocr:3.8.0.303'
     // Import the Latin-based language model package.
-    api 'com.huawei.hms:ml-computer-vision-ocr-latin-model:3.6.0.300'
+    api 'com.huawei.hms:ml-computer-vision-ocr-latin-model:3.8.0.303'
     // Import the Japanese and Korean model package.
-    api 'com.huawei.hms:ml-computer-vision-ocr-jk-model:3.6.0.300'
+    api 'com.huawei.hms:ml-computer-vision-ocr-jk-model:3.8.0.303'
     // Import the Chinese and English model package.
-    api 'com.huawei.hms:ml-computer-vision-ocr-cn-model:3.6.0.300'
+    api 'com.huawei.hms:ml-computer-vision-ocr-cn-model:3.8.0.303'
     // Bank Card Recognition
     api 'com.huawei.hms:ml-computer-card-bcr:3.7.0.302'
     api 'com.huawei.hms:ml-computer-card-gcr-plugin:2.0.1.300'
@@ -314,7 +314,7 @@ dependencies {
     api 'com.huawei.hms:ml-nlp-textembedding:3.9.0.300'
 
     //ID card
-    api 'com.huawei.hms:ml-computer-card-icr-cn:2.0.3.303'
+    api 'com.huawei.hms:ml-computer-card-icr-cn:3.7.0.303'
     api 'com.huawei.hms:ml-computer-card-icr-vn:3.7.0.303'
 
     // object detection
@@ -363,7 +363,7 @@ dependencies {
     api 'com.huawei.hms:ml-computer-vision-image-classification-model:3.5.0.302'
     api 'com.huawei.hms:ml-computer-vision-object-detection-model:3.7.0.301'
     api 'com.huawei.hms:ml-computer-vision-cloud:3.9.0.300'
-    api 'com.huawei.hms:ml-computer-vision-formrecognition-model:3.5.0.302'
+    api 'com.huawei.hms:ml-computer-vision-formrecognition-model:3.7.0.301'
     api 'com.huawei.hms:ml-computer-vision-handkeypoint:3.7.0.301'
     api 'com.huawei.hms:ml-computer-vision-handkeypoint-model:3.7.0.301'
     api 'com.huawei.hms:ml-computer-vision-gesture-model:3.5.0.301'
@@ -386,7 +386,7 @@ dependencies {
     // translate
     api 'com.huawei.hms:ml-computer-translate:3.9.0.300'
     // Import the translation algorithm package.
-    api 'com.huawei.hms:ml-computer-translate-model:3.6.0.312'
+    api 'com.huawei.hms:ml-computer-translate-model:3.7.0.301'
 
     // Real time transcription
     api 'com.huawei.hms:ml-computer-voice-realtimetranscription:3.9.0.300'

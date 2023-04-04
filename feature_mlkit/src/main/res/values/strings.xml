@@ -359,6 +359,10 @@
     <string name="it">it</string>
     <string name="ro">ro</string>
     <string name="no">no</string>
+    <string name="sq">sq</string>
+    <string name="cy">cy</string>
+    <string name="ga">ga</string>
+    <string name="ht">ht</string>
 
     <string name="auto">Auto</string>
     <string name="english">English</string>
@@ -375,6 +379,10 @@
     <string name="romanian">Romanian</string>
     <string name="norwegian">Norwegian</string>
     <string name="thai">Thai</string>
+    <string name="Albanian">Albanian</string>
+    <string name="Welsh">Welsh</string>
+    <string name="Irish">Irish</string>
+    <string name="Haitian">Haitian</string>
     <string name="en_us">en-US</string>
     <string name="yes_go">YES GO</string>
     <string name="cancel">Cancel</string>

@@ -37,15 +37,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.hms.explorehms.huawei.feature_mlkit.R;
 import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hms.mlplugin.card.icr.cn.MLCnIcrCapture;
 import com.huawei.hms.mlplugin.card.icr.cn.MLCnIcrCaptureConfig;
 import com.huawei.hms.mlplugin.card.icr.cn.MLCnIcrCaptureFactory;
 import com.huawei.hms.mlplugin.card.icr.cn.MLCnIcrCaptureResult;
-import com.hms.explorehms.huawei.feature_mlkit.R;
 import com.huawei.hms.mlsdk.common.MLApplication;
 
-public class IDCardRecognitionActivity extends AppCompatActivity implements View.OnClickListener{
+public class IDCardRecognitionActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "IDCardRecognition";
 
     private boolean lastType = false; // false: front， true：back.
@@ -81,8 +81,10 @@ public class IDCardRecognitionActivity extends AppCompatActivity implements View
         }
         setupToolbar();
         MLApplication.getInstance().setApiKey(AGConnectServicesConfig.fromContext(this).getString("client/api_key"));
+        regionCode();
 
     }
+
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -96,6 +98,7 @@ public class IDCardRecognitionActivity extends AppCompatActivity implements View
         onBackPressed();
         return true;
     }
+
     private void initComponent() {
         this.frontImg = this.findViewById(R.id.avatar_img);
         this.backImg = this.findViewById(R.id.emblem_img);
@@ -155,7 +158,7 @@ public class IDCardRecognitionActivity extends AppCompatActivity implements View
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if (requestCode !=IDCardRecognitionActivity.REQUEST_CODE) {
+        if (requestCode != IDCardRecognitionActivity.REQUEST_CODE) {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults);
             return;
         }
@@ -238,15 +241,15 @@ public class IDCardRecognitionActivity extends AppCompatActivity implements View
             Bitmap bitmap = idCardResult.cardBitmap;
             if (IDCardRecognitionActivity.this.lastType) {
                 Log.i(IDCardRecognitionActivity.TAG, "Front");
-               IDCardRecognitionActivity.this.showFrontImage(bitmap);
+                IDCardRecognitionActivity.this.showFrontImage(bitmap);
                 IDCardRecognitionActivity.this.lastFrontResult = IDCardRecognitionActivity.this.formatIdCardResult(idCardResult, true);
             } else {
                 Log.i(IDCardRecognitionActivity.TAG, "back");
                 IDCardRecognitionActivity.this.showBackImage(bitmap);
-               IDCardRecognitionActivity.this.lastBackResult = IDCardRecognitionActivity.this.formatIdCardResult(idCardResult, false);
+                IDCardRecognitionActivity.this.lastBackResult = IDCardRecognitionActivity.this.formatIdCardResult(idCardResult, false);
             }
-          IDCardRecognitionActivity.this.showResult.setText(IDCardRecognitionActivity.this.lastFrontResult);
-           IDCardRecognitionActivity.this.showResult.append(IDCardRecognitionActivity.this.lastBackResult);
+            IDCardRecognitionActivity.this.showResult.setText(IDCardRecognitionActivity.this.lastFrontResult);
+            IDCardRecognitionActivity.this.showResult.append(IDCardRecognitionActivity.this.lastBackResult);
         }
 
         @Override
@@ -295,6 +298,18 @@ public class IDCardRecognitionActivity extends AppCompatActivity implements View
         this.backAddView.setVisibility(View.VISIBLE);
         this.backSimpleImg.setVisibility(View.VISIBLE);
         this.backDeleteImg.setVisibility(View.GONE);
+    }
+
+    /*
+     * The value of region can be any one of the following constants:
+     * MLApplication.REGION_DR_CHINA, MLApplication.REGION_DR_GERMAN, MLApplication.REGION_DR_RUSSIA,
+     * and MLApplication.REGION_DR_SINGAPORE.
+     * They correspond to China, Germany, Russia, and Singapore, respectively.
+     * Obtains the country/region code of the data processing location you have specified when you choose to manually manage and specify such a location.
+     */
+    private void regionCode() {
+        MLApplication.getInstance().setUserRegion(MLApplication.REGION_DR_GERMAN);
+        Log.i(IDCardRecognitionActivity.TAG, MLApplication.getInstance().getCountryCode());
     }
 }
 
