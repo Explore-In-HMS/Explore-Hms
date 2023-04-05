@@ -518,7 +518,7 @@ public class LocationKitActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     private void updateLocationInfo(Location location) {
-        tvRequestCount.setText("Request Count : " + reqCount);
+            tvRequestCount.setText("Request Count : " + reqCount);
         tvAccuracy.setText("Accuracy : " + location.getAccuracy());
         if (mMockModeFlag) {
             tvLatitude.setText("Latitude : " + location.getLatitude() + " ( MockLoc )");

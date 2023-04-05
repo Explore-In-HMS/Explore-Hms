@@ -908,5 +908,13 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="keyring_service_example">Keyring Service Example</string>
     <string name="title_feature_navikit">NaviKit</string>
     <string name="title_sdkdemo">Video Editor Kit AI</string>
+    <string name="title_indoor_locationkit">Location Kit Indoor</string>
+    <string name="btn_txt_get_indoor_location">Get Indoor Location</string>
+    <string name="btn_txt_start_indoor_location_update">Start Indoor Location With Callback</string>
+    <string name="btn_txt_stop_indoor_location_update">Stop Indoor Location With Callback</string>
+    <string name="remove_location_update_ex_success">Indoor Location Update Removed Successfully</string>
+    <string name="remove_location_update_ex_failure">"Indoor Location Update Cannot Removed because : "</string>
+    <string name="results_will_be_here">Results will be here</string>
+    <string name="request_location_update_ex_failure">"Indoor Location Update Failed Because : "</string>
 
 </resources>

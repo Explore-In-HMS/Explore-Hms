@@ -37,6 +37,13 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="name, icon, label, theme, resizeableActivity, allowBackup, hardwareAccelerated,android:networkSecurityConfig, android:configChanges">
+        <activity
+            android:name=".IndoorLocationActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity android:name=".keyring.KeyringServiceIntroductionActivity" />
         <activity android:name=".keyring.KeyringServiceActivity" />
         <activity android:name=".baseapp.activity.BaseActivity" />

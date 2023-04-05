@@ -71,6 +71,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_get_location_availability" />
 
+
+
         <Button
             android:id="@+id/btn_start_loc_feed"
             style="@style/ButtonAppearance.ExploreHMS.Normal"
