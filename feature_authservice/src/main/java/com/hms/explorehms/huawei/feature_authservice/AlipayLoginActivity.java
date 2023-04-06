@@ -109,6 +109,8 @@ public class AlipayLoginActivity extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(Exception e) {
+                        String failMsg = "onFailure : Alipay - " + e.getMessage();
+                        tvProfileDetails.setText(failMsg);
                         Utils.showToastMessage(getApplicationContext(), getString(R.string.failed_alipay_login) + e.getMessage());
                     }
                 });

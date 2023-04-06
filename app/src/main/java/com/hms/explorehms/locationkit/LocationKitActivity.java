@@ -137,6 +137,8 @@ public class LocationKitActivity extends AppCompatActivity {
         return instance;
     }
 
+    //INTRODUCTION (OVERVIEW) EKLENECEK - INDOORDA NELER YAPILABİLİYOR VE HANGİ BİNALAR VAR
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

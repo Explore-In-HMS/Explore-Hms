@@ -18,6 +18,7 @@
 
 package com.hms.explorehms.huawei.feature_authservice;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -76,6 +77,7 @@ public class TwitterLoginActivity extends AppCompatActivity {
     private TwitterAuthClient twitterAuthClient;
     private Unbinder unbinder;
 
+    @SuppressLint("NonConstantResourceId")
     @Nullable
     @BindView(R.id.tvProfileDetails)
     TextView tvProfileDetails;
@@ -152,6 +154,7 @@ public class TwitterLoginActivity extends AppCompatActivity {
     }
 
 
+    @SuppressLint("NonConstantResourceId")
     @OnClick({R.id.clLogin, R.id.clLogout})
     public void onItemClick(View v) {
         switch (v.getId()) {
