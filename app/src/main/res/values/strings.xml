@@ -916,5 +916,6 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="remove_location_update_ex_failure">"Indoor Location Update Cannot Removed because : "</string>
     <string name="results_will_be_here">Results will be here</string>
     <string name="request_location_update_ex_failure">"Indoor Location Update Failed Because : "</string>
+    <string name="indoor_location_example">Indoor Location Example</string>
 
 </resources>

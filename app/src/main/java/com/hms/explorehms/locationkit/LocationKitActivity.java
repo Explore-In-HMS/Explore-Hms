@@ -209,7 +209,7 @@ public class LocationKitActivity extends AppCompatActivity {
             R.id.btn_get_location_availability, R.id.btn_start_loc_intent, R.id.btn_stop_loc_intent,
             R.id.btn_start_activity_identification, R.id.btn_start_activity_conversion,
             R.id.btn_setMock_location, R.id.btn_getContext_State,R.id.btn_get_geocoder_availability,
-            R.id.btn_getLocationHD, R.id.btn_start_activity_geoFence})
+            R.id.btn_getLocationHD, R.id.btn_start_activity_geoFence, R.id.btn_get_indoor_location_example})
     public void onItemClick(View v) {
         updateLogResults("Result Logs Will Be Here");
         switch (v.getId()) {
@@ -259,6 +259,9 @@ public class LocationKitActivity extends AppCompatActivity {
                 break;
             case R.id.btn_start_activity_geoFence:
                 Utils.startActivity(LocationKitActivity.this, GeoFenceActivity.class);
+                break;
+            case R.id.btn_get_indoor_location_example:
+                Utils.startActivity(LocationKitActivity.this, IndoorLocationActivity.class);
                 break;
             default:
                 Log.i(TAG, getString(R.string.defaultText));
