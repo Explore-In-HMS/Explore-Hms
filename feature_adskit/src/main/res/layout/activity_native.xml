@@ -45,12 +45,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btn_get_advertiser_info"
-                style="@style/ButtonAppearance.ExploreHMS.Normal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_get_advertiser_info_native"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/icon_info"
+                android:layout_gravity="center"/>
 
             <TextView
                 style="@style/TextAppearance.ExploreHMS.Headline6"

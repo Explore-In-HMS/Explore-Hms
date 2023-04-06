@@ -26,6 +26,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.Toolbar;
 
 import com.huawei.hms.ads.AdListener;
@@ -50,7 +51,7 @@ public class NativeActivity extends AppCompatActivity {
 
 
     private static final String TAG = NativeActivity.class.getSimpleName();
-    private Button btn_get_advertiser_info;
+    private AppCompatButton btnGetAdvertiserInfoNative;
 
     /**
      * The method initializes the sets up necessary for UI, toolbar and Ads.
@@ -77,15 +78,15 @@ public class NativeActivity extends AppCompatActivity {
     }
 
     private void initView(){
-        btn_get_advertiser_info = findViewById(R.id.btn_get_advertiser_info);
+        btnGetAdvertiserInfoNative = findViewById(R.id.btn_get_advertiser_info_native);
     }
 
     private void initAdvertiserButtonClick(NativeAd nativeAd, NativeView nativeView){
-        btn_get_advertiser_info.setOnClickListener(new View.OnClickListener() {
+        btnGetAdvertiserInfoNative.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (nativeAd.hasAdvertiserInfo()){
-                    nativeView.showAdvertiserInfoDialog(btn_get_advertiser_info, true);
+                    nativeView.showAdvertiserInfoDialog(btnGetAdvertiserInfoNative, true);
                 }
             }
         });
@@ -120,7 +121,7 @@ public class NativeActivity extends AppCompatActivity {
         builder.setNativeAdLoadedListener(nativeAd -> {
             //AdvertiserInfo check
             if (!nativeAd.hasAdvertiserInfo()){
-                btn_get_advertiser_info.setVisibility(View.GONE);
+                btnGetAdvertiserInfoNative.setVisibility(View.GONE);
             }else{
                 initAdvertiserButtonClick(nativeAd, nativeView);
             }

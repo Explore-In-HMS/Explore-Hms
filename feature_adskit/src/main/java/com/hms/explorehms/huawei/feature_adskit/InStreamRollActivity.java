@@ -32,6 +32,7 @@ import android.widget.TextView;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.Toolbar;
 
 import com.huawei.hms.ads.AdParam;
@@ -52,6 +53,8 @@ import java.util.List;
  * This shows how we display InStream Roll Ad with Ads Kit.
  */
 public class InStreamRollActivity extends AppCompatActivity {
+
+    private AppCompatButton btnGetAdvertiserInfoInroll;
 
     private TextView skipAd;
     private TextView countDown;
@@ -159,6 +162,10 @@ public class InStreamRollActivity extends AppCompatActivity {
                 });
             } else {
                 whyThisAd.setVisibility(View.GONE);
+            }
+            //Get advertiser info
+            if (null != instreamAd && !instreamAd.hasAdvertiserInfo()) {
+                btnGetAdvertiserInfoInroll.setVisibility(View.GONE); // Hide the advertiser information icon when no advertiser information is delivered.
             }
 
             String cta = instreamAd.getCallToAction();
@@ -299,7 +306,14 @@ public class InStreamRollActivity extends AppCompatActivity {
     private void initButtons() {
         muteIcon = findViewById(R.id.mic_icon);
         muteIcon.setOnClickListener(clickListener);
+        btnGetAdvertiserInfoInroll = findViewById(R.id.btn_get_advertiser_info_inroll);
 
+    }
+
+    private void showAdvertiserInfo(InstreamAd instreamAd, InstreamView instreamView){
+        if (instreamAd.hasAdvertiserInfo()){
+            instreamView.showAdvertiserInfoDialog(btnGetAdvertiserInfoInroll, true);
+        }
     }
 
     /**
@@ -315,6 +329,12 @@ public class InStreamRollActivity extends AppCompatActivity {
             Iterator<InstreamAd> it = ads.iterator();
             while (it.hasNext()) {
                 InstreamAd ad = it.next();
+                btnGetAdvertiserInfoInroll.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        showAdvertiserInfo(ad, instreamView);
+                    }
+                });
                 if (ad.isExpired()) {
                     it.remove();
                 }

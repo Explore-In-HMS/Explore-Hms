@@ -85,4 +85,5 @@
     <string name="url_txt_adskit">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/publisher-service-introduction-0000001070671805</string>
     <string name="ex_splash_ad">The express splash ad service is a new traffic monetization solution provided by HUAWEI Ads to improve splash ad experience without requiring you to integrate any SDK.
         Prerequisites.An app integrated with this service can display express splash ads only after a user agrees to the user agreement.When the user agreement status changes (a user agrees to or withdraws from the agreement), the latest status needs to be synchronized to HUAWEI Ads.</string>
+    <string name="get_advertiser_info">Get adventiser info</string>
 </resources>
