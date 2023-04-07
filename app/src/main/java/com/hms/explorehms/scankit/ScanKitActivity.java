@@ -54,7 +54,7 @@ import java.io.ByteArrayOutputStream;
 
 public class ScanKitActivity extends AppCompatActivity implements View.OnClickListener {
 
-    int mode = 0; //Default Scan QR code/barcode
+    int mode = 0; //Default Scan QR code/barcode parameter for setViewType method
     private static final String TAG = "ScanKitActivity";
 
     public static final String DECODE_MODE = "decode_mode";
@@ -165,12 +165,14 @@ public class ScanKitActivity extends AppCompatActivity implements View.OnClickLi
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         mode = 1;
+                        ScanUtil.startScan(ScanKitActivity.this, SCAN_DEFAULT_VIEW_REQUEST, new HmsScanAnalyzerOptions.Creator().setHmsScanTypes(HmsScanBase.ALL_SCAN_TYPE).setViewType(mode).create());
                     }
                 })
                 .setNegativeButton(getString(R.string.default_barcode_view_negative), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         mode = 0;
+                        ScanUtil.startScan(ScanKitActivity.this, SCAN_DEFAULT_VIEW_REQUEST, new HmsScanAnalyzerOptions.Creator().setHmsScanTypes(HmsScanBase.ALL_SCAN_TYPE).setViewType(mode).create());
                     }
                 })
                 .setNeutralButton(getString(R.string.default_barcode_view_neutral), new DialogInterface.OnClickListener() {
@@ -182,7 +184,6 @@ public class ScanKitActivity extends AppCompatActivity implements View.OnClickLi
                 .create();
         builder.show();
 
-        ScanUtil.startScan(this, SCAN_DEFAULT_VIEW_REQUEST, new HmsScanAnalyzerOptions.Creator().setHmsScanTypes(HmsScanBase.ALL_SCAN_TYPE).setViewType(mode).create());
     }
 
     private void startCustomBarcodeView() {
