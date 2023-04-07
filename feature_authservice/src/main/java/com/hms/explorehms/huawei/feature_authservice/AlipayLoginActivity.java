@@ -78,12 +78,17 @@ public class AlipayLoginActivity extends AppCompatActivity {
                 loginWithAlipay();
                 break;
             case CL_LOG_OUT:
-                //  THIS WILL BE CREATED LATER logOut();
+                logOut();
                 break;
             default:
                 Log.e(TAG, "Default case");
                 break;
         }
+    }
+
+    private void logOut(){
+        AGConnectAuth.getInstance().signOut();
+        Utils.showToastMessage(AlipayLoginActivity.this, getString(R.string.sign_out));
     }
 
     public void loginWithAlipay(){
@@ -95,14 +100,15 @@ public class AlipayLoginActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(SignInResult signInResult) {
 
+                        AGConnectUser user =  signInResult.getUser();
+
                         //onSuccess
                         String msg = "onSuccess : Alipay ProfileDetail : \n" +
-                                "Uid      : " + signInResult.getUser().getUid() + "\n" +
-                                "Token       : " + signInResult.getUser().getToken(true) + "\n" +
-                                "DisplayName : " + signInResult.getUser().getDisplayName();
+                                "Uid      : " + user.getUid() + "\n" +
+                                "Token       : " + user.getToken(true) + "\n" +
+                                "DisplayName : " + user.getDisplayName();
 
                         tvProfileDetails.setText(msg);
-                        AGConnectUser user =  signInResult.getUser();
 
                     }
                 })

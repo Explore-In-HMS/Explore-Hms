@@ -284,7 +284,7 @@ dependencies {
     api 'com.huawei.hms:hwid:6.9.0.301'
 
     // Scan Kit
-    implementation 'com.huawei.hms:scan:2.9.0.300'
+    implementation 'com.huawei.hms:scan:2.10.0.301'
 
     //Cloud functions sdk
     api 'com.huawei.agconnect:agconnect-function:1.8.0.300'

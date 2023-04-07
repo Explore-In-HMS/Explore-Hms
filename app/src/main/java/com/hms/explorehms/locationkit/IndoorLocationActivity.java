@@ -38,7 +38,7 @@ public class IndoorLocationActivity extends AppCompatActivity {
     private TextView tv_floor_acc;
     private TextView tv_time;
 
-    //Global values
+    //Global variables
     int reqCount = 0;
 
     @Override
