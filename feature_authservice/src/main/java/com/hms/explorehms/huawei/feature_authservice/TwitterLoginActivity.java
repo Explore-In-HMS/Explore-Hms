@@ -32,6 +32,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.hms.explorehms.Util;
 import com.hms.explorehms.huawei.feature_authservice.util.Utils;
+import com.huawei.agconnect.api.AGConnectApi;
 import com.huawei.agconnect.auth.AGConnectAuth;
 import com.huawei.agconnect.auth.AGConnectAuthCredential;
 import com.huawei.agconnect.auth.AGConnectUser;
@@ -63,6 +64,9 @@ import butterknife.Unbinder;
  * This shows how we login with Twitter with Auth Service.
  */
 public class TwitterLoginActivity extends AppCompatActivity {
+
+    //unified sign in variables
+
 
     //region variablesAndObjects
     private static final String REMOTE_ERR = "REMOTE_ERR";
@@ -98,6 +102,10 @@ public class TwitterLoginActivity extends AppCompatActivity {
         setupToolbar();
         Utils.initializeAGConnectInstance(getApplicationContext());
         setRemoteConfigurationSettings();
+
+        AGConnectApi.getInstance().getOptions().setOption("/twitter/client_id", "your twitter client_id");
+        AGConnectApi.getInstance().getOptions().setOption("/twitter/redirect_url","your twitter redirect_url");
+
 
     }
 

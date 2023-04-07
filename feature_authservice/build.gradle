@@ -76,6 +76,8 @@ dependencies {
 
     // Twitter
     implementation 'com.twitter.sdk.android:twitter-core:3.3.0'
+    implementation "com.huawei.agconnect:agconnect-auth-twitter:1.8.1.300"
+    implementation "net.openid:appauth:{version}"
 
     // Alipay
     implementation "com.huawei.agconnect:agconnect-auth-alipay:1.8.1.300"

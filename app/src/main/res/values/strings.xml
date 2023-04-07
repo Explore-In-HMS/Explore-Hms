@@ -917,5 +917,10 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="results_will_be_here">Results will be here</string>
     <string name="request_location_update_ex_failure">"Indoor Location Update Failed Because : "</string>
     <string name="indoor_location_example">Indoor Location Example</string>
+    <string name="default_barcode_view_title">Default Barcode View</string>
+    <string name="default_barcode_view_msg">Please choose type of Default Barcode View</string>
+    <string name="default_barcode_view_positive">Scan QR code</string>
+    <string name="default_barcode_view_negative">Scan QR code/barcode</string>
+    <string name="default_barcode_view_neutral">Cancel</string>
 
 </resources>

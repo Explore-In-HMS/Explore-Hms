@@ -20,6 +20,7 @@ package com.hms.explorehms.scankit;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -35,6 +36,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
@@ -52,6 +54,7 @@ import java.io.ByteArrayOutputStream;
 
 public class ScanKitActivity extends AppCompatActivity implements View.OnClickListener {
 
+    int mode = 0; //Default Scan QR code/barcode
     private static final String TAG = "ScanKitActivity";
 
     public static final String DECODE_MODE = "decode_mode";
@@ -154,7 +157,32 @@ public class ScanKitActivity extends AppCompatActivity implements View.OnClickLi
      * Constructs a default barcode scanner for all
      */
     private void startDefaultBarcodeView() {
-        ScanUtil.startScan(this, SCAN_DEFAULT_VIEW_REQUEST, new HmsScanAnalyzerOptions.Creator().setHmsScanTypes(HmsScanBase.ALL_SCAN_TYPE).create());
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(ScanKitActivity.this);
+        builder.setTitle(getString(R.string.default_barcode_view_title))
+                .setMessage(getString(R.string.default_barcode_view_msg))
+                .setPositiveButton(getString(R.string.default_barcode_view_positive), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        mode = 1;
+                    }
+                })
+                .setNegativeButton(getString(R.string.default_barcode_view_negative), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        mode = 0;
+                    }
+                })
+                .setNeutralButton(getString(R.string.default_barcode_view_neutral), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                })
+                .create();
+        builder.show();
+
+        ScanUtil.startScan(this, SCAN_DEFAULT_VIEW_REQUEST, new HmsScanAnalyzerOptions.Creator().setHmsScanTypes(HmsScanBase.ALL_SCAN_TYPE).setViewType(mode).create());
     }
 
     private void startCustomBarcodeView() {
