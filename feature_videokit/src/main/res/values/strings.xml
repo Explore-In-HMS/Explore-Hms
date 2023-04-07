@@ -141,4 +141,5 @@
     <string name="seek_previous_sync">Seek previous sync</string>
     <string name="seek_closest">Seek closest</string>
     <string name="resume_start_frame_mode">Resume start frame mode</string>
+    <string name="your_device_does_not_support_hdr">Your device does not support HDR.</string>
 </resources>
