@@ -114,4 +114,5 @@
     <string name="login_with_alipay">Login With Alipay</string>
     <string name="failed_alipay_login">Alipay login failed for the reason:</string>
     <string name="sign_out">Sign out successfully</string>
+    <string name="alipay_login_introduction">You can sign in application with your AliPay Account (Chinese mainland only right now)</string>
 </resources>

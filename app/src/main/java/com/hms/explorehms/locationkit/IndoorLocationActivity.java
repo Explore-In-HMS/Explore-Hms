@@ -3,6 +3,8 @@ package com.hms.explorehms.locationkit;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Looper;
 import android.view.View;
@@ -37,6 +39,7 @@ public class IndoorLocationActivity extends AppCompatActivity {
     private TextView tv_floor;
     private TextView tv_floor_acc;
     private TextView tv_time;
+    private TextView tv_introduction;
 
     //Global variables
     int reqCount = 0;
@@ -47,6 +50,7 @@ public class IndoorLocationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_indoor_location);
 
         initView();
+        initListeners();
         createFusedLocationProviderClient();
         createLocationInformationRequest();
 
@@ -84,7 +88,20 @@ public class IndoorLocationActivity extends AppCompatActivity {
         tv_floor_acc = findViewById(R.id.tv_floor_acc_indoor);
         tv_time = findViewById(R.id.tv_time_indoor);
         tv_requestCounts = findViewById(R.id.tv_request_count_indoor);
+        tv_introduction = findViewById(R.id.tv_indoor_location_introduction);
 
+    }
+
+    private void initListeners(){
+        tv_introduction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/indoor-positioning-develop-steps-0000001188842631";
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
+            }
+        });
     }
 
     private void createFusedLocationProviderClient(){

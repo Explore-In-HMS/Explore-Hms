@@ -922,5 +922,6 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="default_barcode_view_positive">Scan QR code</string>
     <string name="default_barcode_view_negative">Scan QR code/barcode</string>
     <string name="default_barcode_view_neutral">Cancel</string>
+    <string name="indoor_location_introduction">The indoor location service in Location Kit allows your app to request device locations in indoor environments. This feature is available only Chinese Mainland right now. You can tap here for see supported buildings.</string>
 
 </resources>
