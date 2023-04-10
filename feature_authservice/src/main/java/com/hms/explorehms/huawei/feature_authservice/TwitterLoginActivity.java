@@ -36,6 +36,7 @@ import com.huawei.agconnect.api.AGConnectApi;
 import com.huawei.agconnect.auth.AGConnectAuth;
 import com.huawei.agconnect.auth.AGConnectAuthCredential;
 import com.huawei.agconnect.auth.AGConnectUser;
+import com.huawei.agconnect.auth.SignInResult;
 import com.huawei.agconnect.auth.TwitterAuthProvider;
 import com.huawei.agconnect.remoteconfig.AGConnectConfig;
 import com.huawei.agconnect.remoteconfig.ConfigValues;
@@ -109,6 +110,33 @@ public class TwitterLoginActivity extends AppCompatActivity {
 
     }
 
+    private void unifidSignInWithTwitter(){
+        AGConnectAuth.getInstance().signIn(TwitterLoginActivity.this, AGConnectAuthCredential.Twitter_Provider)
+                .addOnSuccessListener(new OnSuccessListener<SignInResult>() {
+                    @Override
+                    public void onSuccess(SignInResult signInResult) {
+                        AGConnectUser user = signInResult.getUser();
+
+                        String msg = "onSuccess : Twitter ProfileDetail : \n" +
+                                "UserId    : " + user.getUid() + "\n" +
+                                "UserName  : " + user.getDisplayName() + "\n" +
+                                "AuthToken : " + user.getToken(true).toString();
+
+                        if (tvProfileDetails != null) {
+                            tvProfileDetails.setText(msg);
+                        }
+                        Utils.showToastMessage(TwitterLoginActivity.this, getString(R.string.login_with_twitter_successfully));
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(Exception e) {
+                        Utils.showToastMessage(TwitterLoginActivity.this, getString(R.string.login_with_twitter_failed) + e.getMessage());
+                    }
+                });
+    }
+
     /**
      * It allows to set configuration settings remotely
      */
@@ -163,7 +191,7 @@ public class TwitterLoginActivity extends AppCompatActivity {
 
 
     @SuppressLint("NonConstantResourceId")
-    @OnClick({R.id.clLogin, R.id.clLogout})
+    @OnClick({R.id.clLogin, R.id.clLogout, R.id.clLoginUnified})
     public void onItemClick(View v) {
         switch (v.getId()) {
             case R.id.clLogin:
@@ -171,6 +199,9 @@ public class TwitterLoginActivity extends AppCompatActivity {
                 break;
             case R.id.clLogout:
                 logOut();
+                break;
+            case R.id.clLoginUnified:
+                unifidSignInWithTwitter();
                 break;
             default:
                 Log.e(TAG, "Default case");

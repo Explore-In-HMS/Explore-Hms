@@ -32,15 +32,16 @@
         app:title="@string/login_with_twitter"/>
 
     <LinearLayout
+        android:id="@+id/linearLayoutResults"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="16dp"
         android:background="@drawable/bg_gray_sq_auth"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/clLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toTopOf="@id/clLogin">
 
         <TextView
             style="@style/TextAppearance.ExploreHMS.Body1"
@@ -86,9 +87,10 @@
         android:gravity="center"
         android:padding="4dp"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/clLogout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutResults"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/clLoginUnified">
 
         <ImageView
             android:id="@+id/iv"
@@ -113,6 +115,47 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clLoginUnified"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_red_sq_auth"
+        android:clickable="true"
+        android:elevation="4dp"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:padding="4dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/clLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/clLogout">
+
+        <ImageView
+            android:id="@+id/ivUnifiedTwitter"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/icon_twitter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/TextAppearance.ExploreHMS.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="@string/login_with_twitter_unified"
+            android:textColor="@color/whiteBG"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clLogout"
@@ -127,9 +170,10 @@
         android:foreground="?android:attr/selectableItemBackground"
         android:gravity="center"
         android:padding="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clLoginUnified"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
             style="@style/TextAppearance.ExploreHMS.Body1"
