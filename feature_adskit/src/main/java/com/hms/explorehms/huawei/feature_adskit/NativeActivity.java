@@ -87,6 +87,8 @@ public class NativeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (nativeAd.hasAdvertiserInfo()){
                     nativeView.showAdvertiserInfoDialog(btnGetAdvertiserInfoNative, true);
+                }else{
+                    Utils.showToast(NativeActivity.this, getString(R.string.ads_kit_advertiser_info_fail));
                 }
             }
         });
@@ -121,7 +123,7 @@ public class NativeActivity extends AppCompatActivity {
         builder.setNativeAdLoadedListener(nativeAd -> {
             //AdvertiserInfo check
             if (!nativeAd.hasAdvertiserInfo()){
-                btnGetAdvertiserInfoNative.setVisibility(View.GONE);
+                //btnGetAdvertiserInfoNative.setVisibility(View.GONE);
             }else{
                 initAdvertiserButtonClick(nativeAd, nativeView);
             }

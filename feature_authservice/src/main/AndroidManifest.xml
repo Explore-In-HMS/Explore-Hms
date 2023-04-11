@@ -69,14 +69,15 @@
         <activity
             android:name=".TwitterLoginActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             tools:node="replace">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="https://developer.huawei.com"
-                    android:host="https://developer.huawei.com"
-                    android:path="ds"/>
+                <data android:scheme="https://99536292102546105.auth.agconnect.link"
+                    android:host="https://99536292102546105.auth.agconnect.link"
+                    android:path="/"/>
             </intent-filter>
         </activity>
         <activity
@@ -121,7 +122,7 @@
 
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="12451000" />
+            android:value="12451000"/>
     </application>
 
 </manifest>

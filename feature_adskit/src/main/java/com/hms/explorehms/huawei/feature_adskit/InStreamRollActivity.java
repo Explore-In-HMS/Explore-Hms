@@ -164,9 +164,10 @@ public class InStreamRollActivity extends AppCompatActivity {
                 whyThisAd.setVisibility(View.GONE);
             }
             //Get advertiser info
+            /*
             if (null != instreamAd && !instreamAd.hasAdvertiserInfo()) {
                 btnGetAdvertiserInfoInroll.setVisibility(View.GONE); // Hide the advertiser information icon when no advertiser information is delivered.
-            }
+            }*/
 
             String cta = instreamAd.getCallToAction();
             if (!TextUtils.isEmpty(cta)) {
@@ -307,12 +308,21 @@ public class InStreamRollActivity extends AppCompatActivity {
         muteIcon = findViewById(R.id.mic_icon);
         muteIcon.setOnClickListener(clickListener);
         btnGetAdvertiserInfoInroll = findViewById(R.id.btn_get_advertiser_info_inroll);
+        //This button click listener works before ad loaded, it's showing a warning to user.
+        btnGetAdvertiserInfoInroll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Utils.showToast(InStreamRollActivity.this, getString(R.string.inroll_ad_did_not_loaded_yet));
+            }
+        });
 
     }
 
     private void showAdvertiserInfo(InstreamAd instreamAd, InstreamView instreamView){
         if (instreamAd.hasAdvertiserInfo()){
-            instreamView.showAdvertiserInfoDialog(btnGetAdvertiserInfoInroll, true);
+            instreamView.showAdvertiserInfoDialog(btnGetAdvertiserInfoInroll, false);
+        }else{
+            Utils.showToast(InStreamRollActivity.this, getString(R.string.ads_kit_advertiser_info_fail));
         }
     }
 

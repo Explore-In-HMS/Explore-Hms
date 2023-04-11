@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Looper;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.hms.explorehms.R;
@@ -41,6 +42,11 @@ public class IndoorLocationActivity extends AppCompatActivity {
     private TextView tv_time;
     private TextView tv_introduction;
 
+    //Buttons
+    private Button btn_get_indoor_location;
+    private Button btn_start_update;
+    private Button btn_stop_update;
+
     //Global variables
     int reqCount = 0;
 
@@ -52,33 +58,7 @@ public class IndoorLocationActivity extends AppCompatActivity {
         initView();
         initListeners();
         createFusedLocationProviderClient();
-        createLocationInformationRequest();
 
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    @OnClick({R.id.btn_get_indoor_location,
-            R.id.btn_start_indoor_location_update,
-            R.id.btn_stop_indoor_location_update})
-    public void onItemClick(View v){
-        updateLogResults(getString(R.string.results_will_be_here));
-        switch (v.getId()){
-            case R.id.btn_get_indoor_location:
-                    createLocationInformationRequest();
-                break;
-            case R.id.btn_start_indoor_location_update:
-                    requestLocationUpdateEx();
-                break;
-            case R.id.btn_stop_indoor_location_update:
-                    removeLocationUpdateEx();
-                break;
-            default:
-                break;
-        }
-    }
-
-    private void updateLogResults(String msg){
-        tv_resultLogs.setText(msg);
     }
 
     private void initView(){
@@ -89,7 +69,10 @@ public class IndoorLocationActivity extends AppCompatActivity {
         tv_time = findViewById(R.id.tv_time_indoor);
         tv_requestCounts = findViewById(R.id.tv_request_count_indoor);
         tv_introduction = findViewById(R.id.tv_indoor_location_introduction);
-
+        //Buttons
+        btn_get_indoor_location = findViewById(R.id.btn_get_indoor_location);
+        btn_start_update = findViewById(R.id.btn_start_indoor_location_update);
+        btn_stop_update = findViewById(R.id.btn_stop_indoor_location_update);
     }
 
     private void initListeners(){
@@ -102,6 +85,28 @@ public class IndoorLocationActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btn_get_indoor_location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createLocationInformationRequest();
+            }
+        });
+
+        btn_start_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                requestLocationUpdateEx();
+            }
+        });
+
+        btn_stop_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                removeLocationUpdateEx();
+            }
+        });
+
     }
 
     private void createFusedLocationProviderClient(){
@@ -117,24 +122,29 @@ public class IndoorLocationActivity extends AppCompatActivity {
     }
 
     private void createLocationCallback(){
+        try {
+            Utils.showToastMessage(IndoorLocationActivity.this, getString(R.string.indoor_location_requested));
+            mLocationCallback = new LocationCallback(){
+                @Override
+                public void onLocationResult(LocationResult locationResult) {
 
-        mLocationCallback = new LocationCallback(){
-            @Override
-            public void onLocationResult(LocationResult locationResult) {
+                    List<HWLocation> mHWLocations = locationResult.getHWLocationList();
+                    for (HWLocation mHWLocation : mHWLocations){
+                        Map<String, Object> maps = mHWLocation.getExtraInfo();
+                        parseIndoorLocation(maps);
+                    }
 
-                List<HWLocation> mHWLocations = locationResult.getHWLocationList();
-                for (HWLocation mHWLocation : mHWLocations){
-                    Map<String, Object> maps = mHWLocation.getExtraInfo();
-                    parseIndoorLocation(maps);
                 }
 
-            }
+                @Override
+                public void onLocationAvailability(LocationAvailability locationAvailability) {
+                    super.onLocationAvailability(locationAvailability);
+                }
+            };
+        }catch (Exception e){
+            Utils.showToastMessage(IndoorLocationActivity.this, getString(R.string.indoor_location_request_fail) + e.getMessage());
+        }
 
-            @Override
-            public void onLocationAvailability(LocationAvailability locationAvailability) {
-                super.onLocationAvailability(locationAvailability);
-            }
-        };
 
     }
 
@@ -168,21 +178,27 @@ public class IndoorLocationActivity extends AppCompatActivity {
     }
 
     private void requestLocationUpdateEx(){
-        fusedLocationProviderClient
-                .requestLocationUpdatesEx(mLocationRequest, mLocationCallback, Looper.getMainLooper())
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        reqCount++;
-                        tv_requestCounts.setText(String.valueOf(reqCount));
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(Exception e) {
-                        Utils.showToastMessage(IndoorLocationActivity.this, getString(R.string.request_location_update_ex_failure) + e.getMessage());
-                    }
-                });
+        try {
+            Utils.showToastMessage(IndoorLocationActivity.this, getString(R.string.indoor_location_requested));
+            fusedLocationProviderClient
+                    .requestLocationUpdatesEx(mLocationRequest, mLocationCallback, Looper.getMainLooper())
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            reqCount++;
+                            tv_requestCounts.setText(String.valueOf(reqCount));
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(Exception e) {
+                            Utils.showToastMessage(IndoorLocationActivity.this, getString(R.string.request_location_update_ex_failure) + e.getMessage());
+                        }
+                    });
+        }catch (Exception e){
+            Utils.showToastMessage(IndoorLocationActivity.this, getString(R.string.indoor_location_request_update_fail) + e.getMessage());
+        }
+
     }
 
     private void removeLocationUpdateEx(){

@@ -104,9 +104,13 @@ public class TwitterLoginActivity extends AppCompatActivity {
         Utils.initializeAGConnectInstance(getApplicationContext());
         setRemoteConfigurationSettings();
 
-        AGConnectApi.getInstance().getOptions().setOption("/twitter/client_id", "your twitter client_id");
-        AGConnectApi.getInstance().getOptions().setOption("/twitter/redirect_url","your twitter redirect_url");
+        AGConnectApi.getInstance().getOptions().setOption("/twitter/client_id", "TVpJazZmYVF5YXFjZjlLZU8xUjM6MTpjaQ");
+        AGConnectApi.getInstance().getOptions().setOption("/twitter/redirect_url","https://99536292102546105.auth.agconnect.link");
 
+
+    }
+
+    private void loginWithTwitterOAuthTwo(){
 
     }
 
@@ -132,6 +136,9 @@ public class TwitterLoginActivity extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(Exception e) {
+                        if (tvProfileDetails != null) {
+                            tvProfileDetails.setText(e.getMessage());
+                        }
                         Utils.showToastMessage(TwitterLoginActivity.this, getString(R.string.login_with_twitter_failed) + e.getMessage());
                     }
                 });
@@ -201,7 +208,7 @@ public class TwitterLoginActivity extends AppCompatActivity {
                 logOut();
                 break;
             case R.id.clLoginUnified:
-                unifidSignInWithTwitter();
+                loginWithTwitterOAuthTwo();
                 break;
             default:
                 Log.e(TAG, "Default case");
