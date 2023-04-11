@@ -162,19 +162,6 @@ public class HomeActivity extends BaseActivity {
     }
 
     private void initView() {
-
-
-        findViewById(R.id.fl_video_editor).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mTimeLapseViewModel.getTimeLapseStatus() == STATE_EDIT) {
-                    return;
-                }
-                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
-                intent.putExtra("fromHome", true);
-                startActivity(intent);
-            }
-        });
         mTimeLapseViewModel = new ViewModelProvider(this, factory).get(AITimeLapseViewModel.class);
 
         mTimeLapseViewModel.getTimeLapseStart().observe(this, integer -> {
