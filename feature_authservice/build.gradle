@@ -26,15 +26,15 @@ def gradleVersionName = gradleVersionInfo['versionName']
 
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 33
     buildToolsVersion "30.0.2"
 
     defaultConfig {
         minSdkVersion 28
-        targetSdkVersion 30
+        targetSdkVersion 33
         versionCode gradleVersionCode
         versionName gradleVersionName
-
+        manifestPlaceholders = [appAuthRedirectScheme: 'com.redirectScheme.comm']
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -77,7 +77,7 @@ dependencies {
     // Twitter
     implementation 'com.twitter.sdk.android:twitter-core:3.3.0'
     implementation "com.huawei.agconnect:agconnect-auth-twitter:1.8.1.300"
-    implementation "net.openid:appauth:{version}"
+    implementation "net.openid:appauth:0.11.1"
 
     // Alipay
     implementation "com.huawei.agconnect:agconnect-auth-alipay:1.8.1.300"

@@ -32,6 +32,8 @@ public class AlipayLoginActivity extends AppCompatActivity {
 
     private Activity activity;
 
+    private Boolean isLogIn = false;
+
     private static final int TV_PROFILE_DETAILS = R.id.tvProfileDetails;
 
     @Nullable
@@ -78,7 +80,12 @@ public class AlipayLoginActivity extends AppCompatActivity {
                 loginWithAlipay();
                 break;
             case CL_LOG_OUT:
-                logOut();
+                if (isLogIn){
+                    logOut();
+                    isLogIn = false;
+                }else{
+                    Utils.showToastMessage(AlipayLoginActivity.this, getString(R.string.sign_out_failed));
+                }
                 break;
             default:
                 Log.e(TAG, "Default case");
@@ -88,7 +95,20 @@ public class AlipayLoginActivity extends AppCompatActivity {
 
     private void logOut(){
         AGConnectAuth.getInstance().signOut();
-        Utils.showToastMessage(AlipayLoginActivity.this, getString(R.string.sign_out));
+        if (Utils.isLoggedInAgcUser()) {
+            try {
+                AGConnectAuth.getInstance().signOut();
+                tvProfileDetails.setText(getString(R.string.txt_message_for_instance_user_to_log_out));
+                Log.d(TAG, "InstanceUser logged out!");
+                Utils.showToastMessage(getApplicationContext(), "InstanceUser logged out.");
+            } catch (Exception e) {
+                Log.e(TAG, "AGConnectAuth.getInstance signOut Exception : " + e.getMessage(), e);
+                tvProfileDetails.setText(String.format("AGConnectAuth.getInstance signOut Exception :%n%s", e.getMessage()));
+            }
+        } else {
+            Log.w(TAG, "logOut : No logged in user");
+            tvProfileDetails.setText(getString(R.string.txt_message_for_no_logged_user));
+        }
     }
 
     public void loginWithAlipay(){
@@ -99,7 +119,7 @@ public class AlipayLoginActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<SignInResult>() {
                     @Override
                     public void onSuccess(SignInResult signInResult) {
-
+                        isLogIn = true;
                         AGConnectUser user =  signInResult.getUser();
 
                         //onSuccess

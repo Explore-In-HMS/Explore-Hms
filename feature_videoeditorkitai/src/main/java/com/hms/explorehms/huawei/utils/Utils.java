@@ -26,6 +26,8 @@ import android.util.Log;
 
 import com.hms.explorehms.huawei.ui.common.utils.FileUtil;
 
+import java.io.IOException;
+
 public class Utils {
     private static final String TAG = "Utils";
 
@@ -83,7 +85,11 @@ public class Utils {
                         callback.onFail("IllegalArgumentException", "");
                     }
                 } finally {
-                    media.release();
+                    try {
+                        media.release();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }.start();

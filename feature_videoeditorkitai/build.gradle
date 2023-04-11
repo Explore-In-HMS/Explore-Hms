@@ -26,13 +26,13 @@ def gradleVersionName = gradleVersionInfo['versionName']
 
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 33
     buildToolsVersion "30.0.2"
 
     defaultConfig {
         applicationId "com.hms.explorehms.huawei.feature_videoeditorkitai"
         minSdkVersion 28
-        targetSdkVersion 30
+        targetSdkVersion 33
         versionCode gradleVersionCode
         versionName gradleVersionName
 

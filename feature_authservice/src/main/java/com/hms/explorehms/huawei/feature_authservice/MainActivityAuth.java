@@ -74,7 +74,7 @@ public class MainActivityAuth extends AppCompatActivity {
             R.id.clLoginWithGoogle2, R.id.clLoginWithGooglePlay2,
             R.id.clLoginWithFacebook, R.id.clLoginWithTwitter, R.id.reauthenticate,
             R.id.clLoginWithWeChat, R.id.clLoginWithQQ, R.id.clLoginWithWeibo,
-            R.id.clLoginWithVk})
+            R.id.clLoginWithVk, R.id.clLoginWithAliPay})
     public void onItemClick(View v) {
         switch (v.getId()) {
             case R.id.clLoginWithAnonymous:

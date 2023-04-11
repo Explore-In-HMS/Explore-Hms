@@ -40,14 +40,13 @@ android {
             storePassword keystoreProperties['storePassword']
         }
     }
-    compileSdk 32
-
+    compileSdkVersion 33
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.hms.explorehms"
         minSdkVersion 28
-        targetSdkVersion 32
+        targetSdkVersion 33
         versionCode gradleVersionCode
         versionName gradleVersionName
 
@@ -95,7 +94,7 @@ android {
 
 dynamicFeatures =
             [
-                    //':feature_hiai',
+                    ':feature_hiai',
                     ':feature_panorama',
                     ":feature_mlkit",
                     ':feature_imagekit',
@@ -171,7 +170,7 @@ dynamicFeatures =
         pickFirst 'lib/armeabi-v7a/libc++_shared.so'
         pickFirst 'lib/arm64-v8a/libnative-lib.so'
         pickFirst 'lib/arm64-v8a/libnative-lib.so'
-       //pickFirst 'lib/arm64-v8a/libhiai_ir_build.so'
+        pickFirst 'lib/arm64-v8a/libhiai_ir_build.so'
         pickFirst 'lib/armeabi-v7a/libVariableSpeed.so'
         pickFirst 'lib/arm64-v8a/libVariableSpeed.so'
     }
@@ -210,6 +209,8 @@ dependencies {
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0"
 
     /**
      * 3rd party libraries

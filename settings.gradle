@@ -19,7 +19,7 @@
 include ':app:modelingResource'
 include ':app:cameratakelib'
 
-//include ':feature_hiai'
+include ':feature_hiai'
 include ':feature_panorama'
 include ':feature_mlkit'
 include ':feature_imagekit'

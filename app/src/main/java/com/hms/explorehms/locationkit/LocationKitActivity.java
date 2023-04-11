@@ -106,26 +106,26 @@ public class LocationKitActivity extends AppCompatActivity {
     private static final int activityResultCodeGpsForCallback = 5;
     private static final int activityResultCodeGpsForIntent = 6;
 
-    //private Unbinder unbinder;
+    private Unbinder unbinder;
 
-    //@SuppressLint("NonConstantResourceId")
-    //@BindView(R.id.tv_request_count)
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.tv_request_count)
     TextView tvRequestCount;
 
-    //@SuppressLint("NonConstantResourceId")
-    //@BindView(R.id.tv_accuracy)
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.tv_accuracy)
     TextView tvAccuracy;
 
-    //@SuppressLint("NonConstantResourceId")
-    //@BindView(R.id.tv_latitude)
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.tv_latitude)
     TextView tvLatitude;
 
-    //@SuppressLint("NonConstantResourceId")
-    //@BindView(R.id.tv_longitude)
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.tv_longitude)
     TextView tvLongitude;
 
-    //@SuppressLint("NonConstantResourceId")
-    //@BindView(R.id.resultLogs)
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.resultLogs)
     TextView tvResultLogs;
 
     @SuppressLint("StaticFieldLeak")
@@ -145,7 +145,7 @@ public class LocationKitActivity extends AppCompatActivity {
         setContentView(R.layout.activity_location_kit);
         setupToolbar();
         initView();
-        //unbinder = ButterKnife.bind(this);
+        unbinder = ButterKnife.bind(this);
 
         instance = this;
         mLocationGnss = new LocationSettingsStates();

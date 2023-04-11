@@ -22,7 +22,7 @@
         android:allowBackup="true"
         android:screenOrientation="portrait"
         android:theme="@style/AppTheme"
-        tools:node="merge"
+        tools:node="replace"
         tools:replace="theme, screenOrientation">
         <activity
             android:name=".AlipayLoginActivity"
