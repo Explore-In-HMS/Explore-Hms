@@ -109,8 +109,8 @@ public class TwitterLoginActivity extends AppCompatActivity {
         Utils.initializeAGConnectInstance(getApplicationContext());
         setRemoteConfigurationSettings();
 
-        AGConnectApi.getInstance().getOptions().setOption("/twitter/client_id", "TVpJazZmYVF5YXFjZjlLZU8xUjM6MTpjaQ");
-        AGConnectApi.getInstance().getOptions().setOption("/twitter/redirect_url", "https://99536292102546105.auth.agconnect.link");
+        AGConnectApi.getInstance().getOptions().setOption("/twitter/client_id", "<your twitter client id>");
+        AGConnectApi.getInstance().getOptions().setOption("/twitter/redirect_url", "<your redirect url>");
 
         //initTwitterOAuh20Button(); This method can work after Twitter OAuth 2.0 fixed for mobile devices.
     }
