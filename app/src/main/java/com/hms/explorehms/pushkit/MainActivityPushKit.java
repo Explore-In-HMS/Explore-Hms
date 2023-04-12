@@ -21,14 +21,10 @@ package com.hms.explorehms.pushkit;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -61,7 +57,6 @@ import com.huawei.hms.common.ApiException;
 import com.huawei.hms.push.HmsMessaging;
 import com.huawei.hms.push.RemoteMessage;
 
-import java.util.List;
 import java.util.Objects;
 
 @SuppressLint("UseSwitchCompatOrMaterialCode")
@@ -138,15 +133,6 @@ public class MainActivityPushKit extends AppCompatActivity {
         initReceiver();
         isPermissionGranted();
 
-        // Check if the user has HMS Core installed
-        // if not installed, ask to install HMS Core on AppGallery
-        try {
-            PackageManager packageManager = getPackageManager();
-            packageManager.getPackageInfo("com.huawei.hwid", PackageManager.GET_ACTIVITIES);
-        } catch (PackageManager.NameNotFoundException e) {
-            showAlertDialogToAskInstallHMSCore();
-        }
-
         //Enable push notification
         setReceiveNotifyMsg(false);
     }
@@ -164,48 +150,6 @@ public class MainActivityPushKit extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
-    }
-
-    private void openHmsCoreOnAppGalleryToInstall() {
-        Uri detailsUri = Uri.parse("market://details?id=com.huawei.hwid");
-        Intent intent = new Intent(Intent.ACTION_VIEW, detailsUri);
-        List<ResolveInfo> otherApps =
-                getPackageManager().queryIntentActivities(intent, 0);
-
-        for (ResolveInfo app : otherApps) {
-            String packageName = app.activityInfo.applicationInfo.packageName;
-            if (!packageName.equals("com.huawei.appmarket")) {
-                continue;
-            }
-
-            intent.addFlags(
-                    Intent.FLAG_ACTIVITY_NEW_TASK |
-                            Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED |
-                            Intent.FLAG_ACTIVITY_CLEAR_TOP
-            );
-            intent.setComponent(new ComponentName(packageName, app.activityInfo.name));
-            startActivity(intent);
-            return;
-        }
-    }
-
-    private void showAlertDialogToAskInstallHMSCore() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(getResources().getString(R.string.dialog_title_install_hms_core));
-        builder.setMessage(getResources().getString(R.string.dialog_message_install_hms_core));
-        builder.setPositiveButton(getResources().getString(R.string.dialog_option_positive), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                openHmsCoreOnAppGalleryToInstall();
-            }
-        });
-        builder.setNegativeButton(getResources().getString(R.string.dialog_option_negative), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
-            }
-        });
-        builder.show();
     }
 
     private void isPermissionGranted() {
