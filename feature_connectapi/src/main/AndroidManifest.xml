@@ -32,7 +32,8 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_connectapi.HomeActivity"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_connectapi.HomeActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

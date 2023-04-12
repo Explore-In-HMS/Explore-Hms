@@ -41,7 +41,8 @@
         android:theme="@style/AppTheme"
         tools:replace="theme"
         >
-        <activity android:name="com.hms.explorehms.huawei.feature_searchkit.SearchKitMainActivity"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_searchkit.SearchKitMainActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

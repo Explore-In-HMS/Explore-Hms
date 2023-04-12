@@ -39,10 +39,11 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:windowSoftInputMode="adjustPan|adjustResize" />
         <activity
             android:name=".SplashActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity

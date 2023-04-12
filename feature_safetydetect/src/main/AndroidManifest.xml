@@ -38,7 +38,8 @@
 
     <application>
         <activity android:name="com.hms.explorehms.huawei.feature_safetydetect.MainSafetyActivity"
-            android:configChanges="screenSize|keyboardHidden|orientation">
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            android:exported="true">
 
         </activity>
     </application>

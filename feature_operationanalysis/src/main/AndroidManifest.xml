@@ -32,7 +32,8 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_operationanalysis.OperationMainActivity">        </activity>
+        <activity android:name="com.hms.explorehms.huawei.feature_operationanalysis.OperationMainActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

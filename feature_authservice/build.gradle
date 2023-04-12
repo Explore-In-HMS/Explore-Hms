@@ -26,17 +26,21 @@ def gradleVersionName = gradleVersionInfo['versionName']
 
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 33
     buildToolsVersion "30.0.2"
 
     defaultConfig {
         minSdkVersion 28
-        targetSdkVersion 30
+        targetSdkVersion 33
         versionCode gradleVersionCode
         versionName gradleVersionName
-
+        manifestPlaceholders = [appAuthRedirectScheme: 'https://99536292102546105.auth.agconnect.link']
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    android.defaultConfig.manifestPlaceholders = [
+            'appAuthRedirectScheme': 'https://99536292102546105.auth.agconnect.link'
+    ]
 
     buildTypes {
         debug {
@@ -57,6 +61,9 @@ android {
 dependencies {
     implementation project(":app")
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.4.0'
+
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 
     // HMS
@@ -64,7 +71,7 @@ dependencies {
     implementation "com.huawei.hms:hwid:6.1.0.302"
 
     // Auth Service
-    implementation 'com.huawei.agconnect:agconnect-auth:1.7.1.300'
+    implementation 'com.huawei.agconnect:agconnect-auth:1.8.1.300'
 
     //HMS Game
     implementation "com.huawei.hms:game:6.1.0.301"
@@ -75,6 +82,12 @@ dependencies {
 
     // Twitter
     implementation 'com.twitter.sdk.android:twitter-core:3.3.0'
+    implementation "com.huawei.agconnect:agconnect-auth-twitter:1.8.1.300"
+    implementation "net.openid:appauth:0.11.1"
+
+    // Alipay
+    implementation "com.huawei.agconnect:agconnect-auth-alipay:1.8.1.300"
+    implementation "com.alipay.sdk:alipaysdk-android:+@aar"
 
     //Google
     implementation 'com.google.android.gms:play-services-auth:17.0.0'

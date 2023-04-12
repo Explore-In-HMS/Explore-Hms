@@ -50,6 +50,7 @@ public class NativeActivity extends AppCompatActivity {
 
 
     private static final String TAG = NativeActivity.class.getSimpleName();
+    private Button btnGetAdvertiserInfoNative;
 
     /**
      * The method initializes the sets up necessary for UI, toolbar and Ads.
@@ -59,6 +60,9 @@ public class NativeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_native);
         setupToolbar();
+
+        initView();
+
         NativeView smallNativeView = findViewById(R.id.native_ad_small);
         NativeView largeNativeView = findViewById(R.id.native_ad_large);
         NativeView videoNativeView = findViewById(R.id.native_ad_video);
@@ -70,6 +74,24 @@ public class NativeActivity extends AppCompatActivity {
         loadAd(getString(R.string.ad_id_native_small), smallNativeView, 0);
         loadAd(getString(R.string.ad_id_native), largeNativeView, DetailedCreativeType.BIG_IMG);
 
+    }
+
+    private void initView(){
+        btnGetAdvertiserInfoNative = findViewById(R.id.btn_get_advertiser_info_native);
+    }
+
+    private void initAdvertiserButtonClick(NativeAd nativeAd, NativeView nativeView){
+        btnGetAdvertiserInfoNative.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (nativeAd.hasAdvertiserInfo()){
+                    nativeView.showAdvertiserInfoDialog(btnGetAdvertiserInfoNative, true);
+                    Utils.showToast(NativeActivity.this, getString(R.string.advertise_info_showing));
+                }else{
+                    Utils.showToast(NativeActivity.this, getString(R.string.ads_kit_advertiser_info_fail));
+                }
+            }
+        });
     }
 
     /**
@@ -99,7 +121,13 @@ public class NativeActivity extends AppCompatActivity {
         List<Integer> detailedCreativeTypeList = new ArrayList<>();
         final NativeAdLoader.Builder builder = new NativeAdLoader.Builder(this, adId);
         builder.setNativeAdLoadedListener(nativeAd -> {
-
+            //AdvertiserInfo check
+            if (!nativeAd.hasAdvertiserInfo()){
+                //btnGetAdvertiserInfoNative.setVisibility(View.GONE);
+                initAdvertiserButtonClick(nativeAd, nativeView);
+            }else{
+                initAdvertiserButtonClick(nativeAd, nativeView);
+            }
             Log.d(TAG, "onNativeAdLoaded : Ad Loaded successfully.");
             // Display native ad.
             showNativeAd(nativeAd, nativeView);

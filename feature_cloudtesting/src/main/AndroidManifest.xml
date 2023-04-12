@@ -32,7 +32,8 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_cloudtesting.GeneralFeaturesActivity"></activity>
+        <activity android:name="com.hms.explorehms.huawei.feature_cloudtesting.GeneralFeaturesActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

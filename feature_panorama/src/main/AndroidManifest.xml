@@ -34,7 +34,8 @@
     </dist:module>
 
     <application>
-        <activity android:name=".LocalDisplayActivity"></activity>
+        <activity android:name=".LocalDisplayActivity"
+            android:exported="true"/>
         <activity android:name=".PanoramaActivity" />
     </application>
 

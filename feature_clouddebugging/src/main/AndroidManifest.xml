@@ -32,7 +32,8 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_clouddebugging.GeneralFeaturesActivity"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_clouddebugging.GeneralFeaturesActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

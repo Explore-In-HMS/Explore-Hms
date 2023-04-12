@@ -39,11 +39,13 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_drivekit.HistoryVersionActivity"></activity>
+        <activity android:name="com.hms.explorehms.huawei.feature_drivekit.HistoryVersionActivity"
+            android:exported="true"/>
         <activity android:name="com.hms.explorehms.huawei.feature_drivekit.CommentDetailActivity" />
         <activity
             android:name="com.hms.explorehms.huawei.feature_drivekit.FileDetailActivity"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan"
+            android:exported="true"/>
         <activity android:name="com.hms.explorehms.huawei.feature_drivekit.FilesActivity" />
         <activity android:name="com.hms.explorehms.huawei.feature_drivekit.DriveKitLoginActivity" />
     </application>

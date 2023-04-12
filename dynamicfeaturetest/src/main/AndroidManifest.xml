@@ -31,7 +31,8 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_dynamicability.dynamicfeaturetest.DynamicFeatureTestActivity"></activity>
+        <activity android:name="com.hms.explorehms.huawei.feature_dynamicability.dynamicfeaturetest.DynamicFeatureTestActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

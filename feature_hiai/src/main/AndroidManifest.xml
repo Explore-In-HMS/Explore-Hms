@@ -37,7 +37,8 @@
         android:label="HiAI">
         <activity
             android:name=".MainActivityHiAi"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN">
                 </action>

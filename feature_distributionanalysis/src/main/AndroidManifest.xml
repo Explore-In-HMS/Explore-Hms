@@ -32,7 +32,8 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_distributionanalysis.DistributionMainActivity"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_distributionanalysis.DistributionMainActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

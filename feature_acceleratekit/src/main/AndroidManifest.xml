@@ -35,7 +35,8 @@
     <application
         android:theme="@style/AppTheme.Material"
         tools:replace="theme">
-        <activity android:name="com.hms.explorehms.huawei.feature_acceleratekit.AccelerateKitMainActivity"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_acceleratekit.AccelerateKitMainActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

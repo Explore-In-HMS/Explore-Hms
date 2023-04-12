@@ -27,7 +27,7 @@ def gradleVersionName = gradleVersionInfo['versionName']
 
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 33
     buildToolsVersion "30.0.1"
 
     buildTypes {
@@ -38,7 +38,7 @@ android {
 
     defaultConfig {
         minSdkVersion 28
-        targetSdkVersion 30
+        targetSdkVersion 33
         versionCode gradleVersionCode
         versionName gradleVersionName
 
@@ -54,7 +54,8 @@ android {
 
 dependencies {
     implementation project(":app")
-    implementation 'com.huawei.hms:ads-lite:13.4.61.300'
+    implementation 'com.huawei.hms:ads-lite:13.4.61.302'
+    implementation 'androidx.media2:media2-widget:1.2.1'
 }
 
 /*apply from: '../sonarqube.gradle'

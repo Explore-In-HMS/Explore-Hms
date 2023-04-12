@@ -39,7 +39,8 @@
         <activity
             android:name=".NaviActivity" />
         <activity
-            android:name=".MainActivity">
+            android:name=".MainActivity"
+            android:exported="true">
         </activity>
     </application>
 

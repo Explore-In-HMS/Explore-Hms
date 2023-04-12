@@ -38,7 +38,8 @@
 
     <application android:requestLegacyExternalStorage="true">
         <activity android:name="com.hms.explorehms.huawei.feature_cloudstorage.CloudStorageDownloadedFilesActivity" />
-        <activity android:name="com.hms.explorehms.huawei.feature_cloudstorage.CloudStorageMainActivity" />
+        <activity android:name="com.hms.explorehms.huawei.feature_cloudstorage.CloudStorageMainActivity"
+            android:exported="true"/>
 
     </application>
 

@@ -18,7 +18,9 @@
 
 package com.hms.explorehms.huawei.feature_authservice;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,12 +30,16 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.hms.explorehms.Util;
 import com.hms.explorehms.huawei.feature_authservice.util.Utils;
+import com.huawei.agconnect.api.AGConnectApi;
 import com.huawei.agconnect.auth.AGConnectAuth;
 import com.huawei.agconnect.auth.AGConnectAuthCredential;
 import com.huawei.agconnect.auth.AGConnectUser;
+import com.huawei.agconnect.auth.SignInResult;
+import com.huawei.agconnect.auth.TwitterAuthParam;
 import com.huawei.agconnect.auth.TwitterAuthProvider;
 import com.huawei.agconnect.remoteconfig.AGConnectConfig;
 import com.huawei.agconnect.remoteconfig.ConfigValues;
@@ -63,6 +69,9 @@ import butterknife.Unbinder;
  */
 public class TwitterLoginActivity extends AppCompatActivity {
 
+    //unified sign in variables
+
+
     //region variablesAndObjects
     private static final String REMOTE_ERR = "REMOTE_ERR";
     private AGConnectConfig remoteConfig;
@@ -76,11 +85,14 @@ public class TwitterLoginActivity extends AppCompatActivity {
     private TwitterAuthClient twitterAuthClient;
     private Unbinder unbinder;
 
+    @SuppressLint("NonConstantResourceId")
     @Nullable
     @BindView(R.id.tvProfileDetails)
     TextView tvProfileDetails;
+    private ConstraintLayout mBtnTwitter;
 
     //endregion views
+    String authCode = "";
 
     /**
      * The method initializes the sets up necessary for variables.
@@ -96,6 +108,63 @@ public class TwitterLoginActivity extends AppCompatActivity {
         setupToolbar();
         Utils.initializeAGConnectInstance(getApplicationContext());
         setRemoteConfigurationSettings();
+
+        AGConnectApi.getInstance().getOptions().setOption("/twitter/client_id", "<your twitter client id>");
+        AGConnectApi.getInstance().getOptions().setOption("/twitter/redirect_url", "<your redirect url>");
+
+        //initTwitterOAuh20Button(); This method can work after Twitter OAuth 2.0 fixed for mobile devices.
+    }
+
+    private void initTwitterOAuh20Button(){
+
+      /*  mBtnTwitter = findViewById(R.id.clLoginOAuth20);
+        mBtnTwitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AGConnectUser user = AGConnectAuth.getInstance().getCurrentUser();
+                if (user != null) {
+
+                }
+
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://twitter.com/i/oauth2/authorize?client_id=TVpJazZmYVF5YXFjZjlLZU8xUjM6MTpjaQ&response_type=code&scope=tweet.read%20users.read%20offline.access&state=state&redirect_uri=https%3A%2F%2F99536292102546105.auth.agconnect.link&code_challenge_method=plain&code_challenge=challenge"));
+                startActivity(intent);
+
+                Log.e("thread-twitter", Thread.currentThread().getName());
+
+
+
+            }
+        });*/
+
+    }
+    //After getting authCode from Twitter authorization on based OAuth 2.0 this method will publish
+    private void loginWithTwitterOAuthTwo(String authCodeTwitter) {
+
+        /*AGConnectUser user = AGConnectAuth.getInstance().getCurrentUser();
+        if (user != null) {
+
+        }
+
+        TwitterAuthParam param = new TwitterAuthParam("<Client id>", authCodeTwitter, "challenge", "<redirect url>");
+        AGConnectAuthCredential credential = TwitterAuthProvider.credentialWithAuthCode(param, true);
+        AGConnectAuth.getInstance().signIn(credential)
+                .addOnSuccessListener(new OnSuccessListener<SignInResult>() {
+                    @Override
+                    public void onSuccess(SignInResult signInResult) {
+                        // onSuccess
+                        AGConnectUser user = signInResult.getUser();
+                        Log.e("TWITTER OAUTH2.0", "onSuccess");
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(Exception e) {
+                        // onFail
+                        Log.e("TWITTER OAUTH2.0", "onFailure : " + e.getMessage());
+                    }
+                });*/
 
     }
 
@@ -152,6 +221,7 @@ public class TwitterLoginActivity extends AppCompatActivity {
     }
 
 
+    @SuppressLint("NonConstantResourceId")
     @OnClick({R.id.clLogin, R.id.clLogout})
     public void onItemClick(View v) {
         switch (v.getId()) {

@@ -32,7 +32,8 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_quickapp.OtherFeaturesSliderActivity"></activity>
+        <activity android:name="com.hms.explorehms.huawei.feature_quickapp.OtherFeaturesSliderActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

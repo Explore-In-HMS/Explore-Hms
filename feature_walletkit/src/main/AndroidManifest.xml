@@ -33,7 +33,8 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_walletkit.GeneralFeaturesActivity" />
+        <activity android:name="com.hms.explorehms.huawei.feature_walletkit.GeneralFeaturesActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

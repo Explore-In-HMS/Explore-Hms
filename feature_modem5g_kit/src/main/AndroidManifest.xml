@@ -14,12 +14,15 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_modem5g_kit.ServiceIntroductionActivity"></activity>
-        <activity android:name="com.hms.explorehms.huawei.feature_modem5g_kit.hms5gkit.activitys.base.BaseActivity" />
+        <activity android:name="com.hms.explorehms.huawei.feature_modem5g_kit.ServiceIntroductionActivity"
+            android:exported="true"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_modem5g_kit.hms5gkit.activitys.base.BaseActivity"
+            android:exported="true"/>
         <activity android:name="com.hms.explorehms.huawei.feature_modem5g_kit.hms5gkit.activitys.base.PermissionBaseActivity" />
         <activity android:name="com.hms.explorehms.huawei.feature_modem5g_kit.hms5gkit.activitys.impl.HmsKitActivity" />
         <activity android:name="com.hms.explorehms.huawei.feature_modem5g_kit.hms5gkit.activitys.impl.HmsKitBaseActivity" />
-        <activity android:name="com.hms.explorehms.huawei.feature_modem5g_kit.MainActivity" />
+        <activity android:name="com.hms.explorehms.huawei.feature_modem5g_kit.MainActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

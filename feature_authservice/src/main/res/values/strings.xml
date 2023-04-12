@@ -88,6 +88,7 @@
     <string name="url_auth_service_huawei_game">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-hwgame-0000001053692648</string>
     <string name="url_auth_service_facebook">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-facebook-0000001052932663</string>
     <string name="url_auth_service_twitter">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-twitter-0000001053492677</string>
+    <string name="url_auth_service_alipay">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-alipay-0000001412658170</string>
     <string name="url_auth_service_google">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-google-0000001053372648</string>
     <string name="url_auth_service_google_play">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-googlegame-0000001053253973</string>
     <string name="url_auth_service_weibo">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-weibo-0000001053732641</string>
@@ -110,4 +111,13 @@
     <string name="log_out_user">logOut : No logged in user</string>
     <string name="log_out_instance_user">InstanceUser logged out</string>
     <string name="you_need_gms_supported_device">You need a gms supported device for Google Sign In.</string>
+    <string name="login_with_alipay">Login With Alipay</string>
+    <string name="failed_alipay_login">Alipay login failed for the reason:</string>
+    <string name="sign_out">Sign out successfully</string>
+    <string name="sign_out_failed">Sign out failed!</string>
+    <string name="alipay_login_introduction">You can sign in application with your AliPay Account (Chinese mainland only right now) <b> You can tap here for see official documents</b> </string>
+    <string name="login_with_twitter_failed">"Login with Twitter failed because : "</string>
+    <string name="login_with_twitter_unified">Login With Twitter (Unified)</string>
+    <string name="login_with_twitter_successfully">Login with Twitter successfully</string>
+    <string name="alipay_login_redirect">In this version off this app AliPay login is not supported, you can see implementations on our github repository.</string>
 </resources>

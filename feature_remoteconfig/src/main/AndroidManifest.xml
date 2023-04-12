@@ -32,11 +32,13 @@
     <application>
         <activity
             android:name=".CustomAttributesExampleActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:exported="true"/>
         <activity
             android:name=".RemoteConfigMainActivity2"
-            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
-        <activity android:name=".RemoteConfigMainActivity" />
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:exported="true"/>
+        <activity android:name=".RemoteConfigMainActivity" android:exported="true"/>
     </application>
 
 </manifest>

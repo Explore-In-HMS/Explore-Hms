@@ -33,7 +33,7 @@
     </dist:module>
 
     <application>
-        <activity android:name=".AppLinkingDeepLinkActivity">
+        <activity android:name=".AppLinkingDeepLinkActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -41,7 +41,7 @@
                 <data android:host="developer.huawei.com" android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".AppLinkingMainActivity" />
+        <activity android:name=".AppLinkingMainActivity" android:exported="true"/>
     </application>
 
 </manifest>

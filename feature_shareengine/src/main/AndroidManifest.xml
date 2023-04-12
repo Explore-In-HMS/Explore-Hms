@@ -34,8 +34,9 @@
     </dist:module>
 
     <application>
-        <activity android:name=".ShareEngineHuaweiPhonesActivity"></activity>
-        <activity android:name=".ShareEngineMainActivity" />
+        <activity android:name=".ShareEngineHuaweiPhonesActivity" />
+        <activity android:name=".ShareEngineMainActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

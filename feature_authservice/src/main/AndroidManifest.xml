@@ -25,6 +25,13 @@
         tools:node="replace"
         tools:replace="theme, screenOrientation">
         <activity
+            android:name=".AlipayLoginActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".GoogleLoginActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize"
@@ -32,6 +39,7 @@
         <activity android:name=".ReauthenticateActivity" />
         <activity
             android:name=".MainActivityAuth"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             tools:node="replace"
@@ -61,7 +69,17 @@
         <activity
             android:name=".TwitterLoginActivity"
             android:screenOrientation="portrait"
-            tools:node="replace" />
+            android:exported="true"
+            tools:node="replace">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https"
+                    android:host="https://99536292102546105.auth.agconnect.link"
+                    android:path="/"/>
+            </intent-filter>
+        </activity>
         <activity
             android:name=".FacebookLoginActivity"
             android:screenOrientation="portrait"
@@ -104,6 +122,7 @@
 
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="12451000" />
+            android:value="12451000"/>
     </application>
+
 </manifest>

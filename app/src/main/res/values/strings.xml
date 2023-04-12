@@ -743,9 +743,9 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="map_kit_header_mapkit">Map Kit</string>
     <string name="move_random_location_text_mapkit">Move Random Location</string>
     <string name="animate_random_location_text_mapkit">Animate Random Location</string>
-    <string name="show_marker_text_mapkit">Draw Marker</string>
-    <string name="show_custom_marker_text_mapkit">Draw Custom Marker</string>
-    <string name="show_shape_text_mapkit">Draw Shape</string>
+    <string name="show_marker_text_mapkit">Show Marker</string>
+    <string name="show_custom_marker_text_mapkit">Show Custom Marker</string>
+    <string name="show_shape_text_mapkit">Show Shape</string>
     <string name="you_can_click_the_shapes_text_mapkit">You can click the shapes.</string>
     <string name="you_can_click_the_markers_text_mapkit">You can click the markers.</string>
     <string name="show_tile_overlay_text_mapkit">Show Tile Overlay</string>
@@ -908,6 +908,23 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="keyring_service_example">Keyring Service Example</string>
     <string name="title_feature_navikit">NaviKit</string>
     <string name="title_sdkdemo">Video Editor Kit AI</string>
-
+    <string name="title_indoor_locationkit">Location Kit Indoor</string>
+    <string name="btn_txt_get_indoor_location">Get Indoor Location</string>
+    <string name="btn_txt_start_indoor_location_update">Start Indoor Location With Callback</string>
+    <string name="btn_txt_stop_indoor_location_update">Stop Indoor Location With Callback</string>
+    <string name="remove_location_update_ex_success">Indoor Location Update Removed Successfully</string>
+    <string name="remove_location_update_ex_failure">"Indoor Location Update Cannot Removed because : "</string>
+    <string name="results_will_be_here">Results will be here</string>
+    <string name="request_location_update_ex_failure">Indoor Location Update Failed Because : </string>
+    <string name="indoor_location_example">Indoor Location Example</string>
+    <string name="default_barcode_view_title">Default Barcode View</string>
+    <string name="default_barcode_view_msg">Please choose type of Default Barcode View</string>
+    <string name="default_barcode_view_positive">Scan QR code</string>
+    <string name="default_barcode_view_negative">Scan QR code/barcode</string>
+    <string name="default_barcode_view_neutral">Cancel</string>
+    <string name="indoor_location_introduction">The indoor location service in Location Kit allows your app to request device locations in indoor environments. This feature is available only Chinese Mainland right now. <b> You can tap here for see supported buildings. </b> </string>
+    <string name="indoor_location_request_fail">Indoor Location Requst Failed due to : </string>
+    <string name="indoor_location_request_update_fail">Indoor Location Update failed due to : </string>
+    <string name="indoor_location_requested">Indoor Location infos requested!</string>
 
 </resources>

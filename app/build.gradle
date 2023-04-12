@@ -40,14 +40,13 @@ android {
             storePassword keystoreProperties['storePassword']
         }
     }
-    compileSdk 32
-
+    compileSdkVersion 33
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.hms.explorehms"
         minSdkVersion 28
-        targetSdkVersion 32
+        targetSdkVersion 33
         versionCode gradleVersionCode
         versionName gradleVersionName
 
@@ -211,6 +210,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0"
+
     /**
      * 3rd party libraries
      **/
@@ -284,7 +285,7 @@ dependencies {
     api 'com.huawei.hms:hwid:6.9.0.301'
 
     // Scan Kit
-    implementation 'com.huawei.hms:scan:2.9.0.300'
+    implementation 'com.huawei.hms:scan:2.10.0.301'
 
     //Cloud functions sdk
     api 'com.huawei.agconnect:agconnect-function:1.8.0.300'
