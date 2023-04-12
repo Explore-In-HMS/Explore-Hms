@@ -312,7 +312,7 @@ public class InStreamRollActivity extends AppCompatActivity {
         btnGetAdvertiserInfoInroll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utils.showToast(InStreamRollActivity.this, getString(R.string.inroll_ad_did_not_loaded_yet));
+                Utils.showToast(InStreamRollActivity.this, getString(R.string.ads_kit_advertiser_info_fail));
             }
         });
 

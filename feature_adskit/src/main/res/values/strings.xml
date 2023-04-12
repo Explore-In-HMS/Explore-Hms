@@ -88,4 +88,5 @@
     <string name="get_advertiser_info">Get adventiser info</string>
     <string name="ads_kit_advertiser_info_fail">This feature only works for real ads and if advertiser has advertiser info.</string>
     <string name="inroll_ad_did_not_loaded_yet">Ad is not loaded yet, you can not see advertiser infos right now.</string>
+    <string name="advertise_info_showing">Advertiser info is showing</string>
 </resources>
