@@ -23,10 +23,8 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_audioeditorkit.ui.VideoAudioExtractionActivity"
-            android:exported="true"/>
-        <activity android:name="com.hms.explorehms.huawei.feature_audioeditorkit.ui.AudioFilePickerActivity"
-            android:exported="true">
+        <activity android:name="com.hms.explorehms.huawei.feature_audioeditorkit.ui.VideoAudioExtractionActivity" />
+        <activity android:name="com.hms.explorehms.huawei.feature_audioeditorkit.ui.AudioFilePickerActivity">
             <intent-filter>
                 <action android:name="com.huawei.hms.audioeditor.chooseaudio" />
 
@@ -36,6 +34,7 @@
         <activity android:name="com.hms.explorehms.huawei.feature_audioeditorkit.ui.AudioFormatActivity" />
         <activity android:name="com.hms.explorehms.huawei.feature_audioeditorkit.ui.MainAudioEditorActivity"
             android:exported="true"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_audioeditorkit.ui.AudioTypeActivity" />
     </application>
 
 </manifest>
