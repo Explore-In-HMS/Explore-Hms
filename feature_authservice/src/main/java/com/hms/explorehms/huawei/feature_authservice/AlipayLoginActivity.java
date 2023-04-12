@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hms.explorehms.Util;
 import com.hms.explorehms.huawei.feature_authservice.util.Utils;
@@ -33,6 +36,7 @@ public class AlipayLoginActivity extends AppCompatActivity {
     private Activity activity;
 
     private Boolean isLogIn = false;
+    private TextView tv_alipay_introduction;
 
     private static final int TV_PROFILE_DETAILS = R.id.tvProfileDetails;
 
@@ -52,9 +56,27 @@ public class AlipayLoginActivity extends AppCompatActivity {
         unbinder = ButterKnife.bind(this);
         Utils.initializeAGConnectInstance(getApplicationContext());
 
+
         setupToolbar();
         setOptionAGC();
 
+        initViews();
+        initListeners();
+
+    }
+
+    private void initViews(){
+        tv_alipay_introduction = findViewById(R.id.tv_alipay_login_introduction);
+    }
+    private void initListeners(){
+        tv_alipay_introduction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://developer.huawei.com/consumer/jp/doc/development/AppGallery-connect-Guides/agc-auth-android-alipay-0000001412658170"));
+                startActivity(intent);
+            }
+        });
     }
 
     /**
@@ -62,12 +84,12 @@ public class AlipayLoginActivity extends AppCompatActivity {
      * To do so, you need to call an API to set the parameters.
      */
     public void setOptionAGC(){
-        AGConnectApi.getInstance().getOptions().setOption("/alipay/app_id", "your alipay app_id");
+       /* AGConnectApi.getInstance().getOptions().setOption("/alipay/app_id", "your alipay app_id");
         AGConnectApi.getInstance().getOptions().setOption("/alipay/app_name", "your alipay app_name");
         AGConnectApi.getInstance().getOptions().setOption("/alipay/pid", "your alipay pid");
         AGConnectApi.getInstance().getOptions().setOption("/alipay/target_id", "your alipay target_id");
         AGConnectApi.getInstance().getOptions().setOption("/alipay/sign", "your alipay sign");
-        AGConnectApi.getInstance().getOptions().setOption("/alipay/sign_type", "your alipay sign_type");
+        AGConnectApi.getInstance().getOptions().setOption("/alipay/sign_type", "your alipay sign_type");*/
     }
 
     private static final int CL_LOGIN = R.id.clLogin;
@@ -112,7 +134,10 @@ public class AlipayLoginActivity extends AppCompatActivity {
     }
 
     public void loginWithAlipay(){
-        if(tvProfileDetails == null){
+
+        Toast.makeText(AlipayLoginActivity.this, getString(R.string.alipay_login_redirect), Toast.LENGTH_SHORT).show();
+
+       /* if(tvProfileDetails == null){
             return;
         }
         AGConnectAuth.getInstance().signIn(activity, AGConnectAuthCredential.Alipay_Provider)
@@ -139,7 +164,7 @@ public class AlipayLoginActivity extends AppCompatActivity {
                         tvProfileDetails.setText(failMsg);
                         Utils.showToastMessage(getApplicationContext(), getString(R.string.failed_alipay_login) + e.getMessage());
                     }
-                });
+                });*/
     }
 
     /**

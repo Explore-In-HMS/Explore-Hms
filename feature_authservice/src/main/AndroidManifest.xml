@@ -75,7 +75,7 @@
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="https://99536292102546105.auth.agconnect.link"
+                <data android:scheme="https"
                     android:host="https://99536292102546105.auth.agconnect.link"
                     android:path="/"/>
             </intent-filter>
