@@ -18,7 +18,9 @@
 
 package com.hms.explorehms.mapkit.data;
 
-
+/**
+ * Constants for Map
+ */
 public class Constants {
 
     public static final String TAG = "mapKit";

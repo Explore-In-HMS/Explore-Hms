@@ -40,6 +40,9 @@ import com.huawei.hms.maps.model.PolylineOptions;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * It shows Draw Shape feature of Map Kit
+ */
 public class MapKitShapeFragment extends BaseFragment {
 
     @Nullable
@@ -49,6 +52,9 @@ public class MapKitShapeFragment extends BaseFragment {
         return FragmentMapKitShapeBinding.inflate(getLayoutInflater()).getRoot();
     }
 
+    /**
+     * It initializes UI with call drawPolyline, drawPolygon, drawCircle
+     */
     @Override
     public void initializeUI() {
         drawPolyline();
@@ -56,6 +62,9 @@ public class MapKitShapeFragment extends BaseFragment {
         drawCircle();
     }
 
+    /**
+     * It draws Polyline
+     */
     private void drawPolyline() {
         Polyline polyline = hMap.addPolyline(new PolylineOptions()
                 .add(new LatLng(41.031498, 28.926077), new LatLng(41.038655, 28.937485),
@@ -75,15 +84,18 @@ public class MapKitShapeFragment extends BaseFragment {
         hMap.setOnPolylineClickListener(polyline1 -> toast(polyline1.getId()));
     }
 
+    /**
+     * It draws Polygon
+     */
     public void drawPolygon() {
         Polygon polygon1 = hMap.addPolygon(new PolygonOptions().addAll(createRectangle(
-                new LatLng(40.908864, 29.048583), 0.01, 0.01))
+                        new LatLng(40.908864, 29.048583), 0.01, 0.01))
                 .strokeColor(Color.BLACK));
         Polygon polygon2 = hMap.addPolygon(new PolygonOptions().addAll(createRectangle(
-                new LatLng(40.880623, 29.061795), 0.01, 0.01))
+                        new LatLng(40.880623, 29.061795), 0.01, 0.01))
                 .strokeColor(Color.BLACK));
         Polygon polygon3 = hMap.addPolygon(new PolygonOptions().addAll(createRectangle(
-                new LatLng(40.850820, 29.143952), 0.005, 0.005))
+                        new LatLng(40.850820, 29.143952), 0.005, 0.005))
                 .strokeColor(Color.BLACK));
 
         polygon1.setClickable(true);
@@ -99,6 +111,9 @@ public class MapKitShapeFragment extends BaseFragment {
         });
     }
 
+    /**
+     * It draws Circle
+     */
     public void drawCircle() {
         Circle circle1 = hMap.addCircle(new CircleOptions()
                 .center(new LatLng(41.275869, 28.725577))
@@ -126,6 +141,9 @@ public class MapKitShapeFragment extends BaseFragment {
         });
     }
 
+    /**
+     * It creates Rectangle
+     */
     public List<LatLng> createRectangle(LatLng center, double halfWidth, double halfHeight) {
         return Arrays.asList(new LatLng(center.latitude - halfHeight, center.longitude - halfWidth),
                 new LatLng(center.latitude - halfHeight, center.longitude + halfWidth),

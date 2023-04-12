@@ -26,10 +26,16 @@ import android.view.Window;
 
 import com.hms.explorehms.R;
 
+/**
+ * It handles Progress Dialog screen
+ */
 public class ProgressDialogScreenMapKit {
 
     private final Dialog dialog;
 
+    /**
+     * Set up for Progress Dialog
+     */
     public ProgressDialogScreenMapKit(Context context) {
         dialog = new Dialog(context, android.R.style.Theme_Black);
         View view = LayoutInflater.from(context).inflate(R.layout.item_dialog_screen_mapkit, null);

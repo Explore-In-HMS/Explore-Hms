@@ -133,7 +133,6 @@ public class MainActivityPushKit extends AppCompatActivity {
         initReceiver();
         isPermissionGranted();
 
-
         //Enable push notification
         setReceiveNotifyMsg(false);
     }
@@ -152,7 +151,6 @@ public class MainActivityPushKit extends AppCompatActivity {
         onBackPressed();
         return true;
     }
-
 
     private void isPermissionGranted() {
         if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
@@ -563,16 +561,16 @@ public class MainActivityPushKit extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(AIDThread!=null){
+        if (AIDThread != null) {
             AIDThread.interrupt();
         }
-        if(subjectTokenThread!=null){
+        if (subjectTokenThread != null) {
             subjectTokenThread.interrupt();
         }
-        if(deleteTokenWithStringThread!=null){
+        if (deleteTokenWithStringThread != null) {
             deleteTokenWithStringThread.interrupt();
         }
-        if(deleteTokenThread!=null){
+        if (deleteTokenThread != null) {
             deleteTokenThread.interrupt();
         }
     }

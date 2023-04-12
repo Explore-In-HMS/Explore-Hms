@@ -32,7 +32,9 @@ import com.hms.explorehms.mapkit.base.BaseFragment;
 import com.huawei.hms.maps.OnMapReadyCallback;
 import com.huawei.hms.maps.model.MapStyleOptions;
 
-
+/**
+ * It handles style of map such as Dark mode and Light mode.
+ */
 public class MapKitMapStyleFragment extends BaseFragment implements OnMapReadyCallback {
 
     private FragmentMapKitMapStyleBinding binding;
@@ -52,6 +54,9 @@ public class MapKitMapStyleFragment extends BaseFragment implements OnMapReadyCa
         });
     }
 
+    /**
+     * It changes style
+     */
     private void changeStyle() {
         /*        hMap.previewId("661426468651539584");
         hMap.setStyleId("661432858472356992");*/

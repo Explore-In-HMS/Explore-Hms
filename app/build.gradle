@@ -260,7 +260,7 @@ dependencies {
     api 'com.huawei.agconnect:agconnect-core:1.8.0.300'
 
     //Analytics Kit
-    api 'com.huawei.hms:hianalytics:6.9.0.302'
+    api 'com.huawei.hms:hianalytics:6.10.0.300'
 
     //cloud storage
     api "com.huawei.agconnect:agconnect-storage:1.5.0.100"
@@ -491,7 +491,7 @@ dependencies {
     implementation 'com.huawei.hms:modeling3d-motion-capture:1.7.0.301'
     implementation 'com.huawei.hms:modeling3d-motion-capture-model:1.7.0.301'
     implementation 'pub.devrel:easypermissions:3.0.0'
-    implementation 'me.jessyan:autosize:1.2.1'
+    api 'me.jessyan:autosize:1.2.1'
 
     //Video Editor Kit
     api 'com.huawei.hms:video-editor-ui:1.1.0.305'

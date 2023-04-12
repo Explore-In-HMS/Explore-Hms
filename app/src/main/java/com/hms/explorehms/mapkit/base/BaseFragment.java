@@ -38,7 +38,10 @@ import com.huawei.hms.maps.MapsInitializer;
 import com.huawei.hms.maps.OnMapReadyCallback;
 import com.huawei.hms.maps.model.LatLng;
 
-
+/**
+ * This  is a base fragment,
+ * We will handle some common works.
+ */
 public abstract class BaseFragment extends Fragment implements OnMapReadyCallback {
 
     protected HuaweiMap hMap;
@@ -63,6 +66,10 @@ public abstract class BaseFragment extends Fragment implements OnMapReadyCallbac
         initHuaweiMap(savedInstanceState);
     }
 
+    /**
+     * It inits Huawei Map
+     * It takes Api Key from client/api_key
+     */
     private void initHuaweiMap(Bundle savedInstanceState) {
         dialogScreenMapKit.showProgressDialog();
         Bundle mapViewBundle = null;
@@ -76,6 +83,9 @@ public abstract class BaseFragment extends Fragment implements OnMapReadyCallbac
 
     }
 
+    /**
+     * Called when a map is ready to provide a HuaweiMap object that is not null.
+     */
     @Override
     public void onMapReady(HuaweiMap huaweiMap) {
         try {
@@ -93,6 +103,9 @@ public abstract class BaseFragment extends Fragment implements OnMapReadyCallbac
         dialogScreenMapKit.dismissProgressDialog();
     }
 
+    /**
+     * It shows a toast message
+     */
     public void toast(String message) {
         Toast.makeText(this.getActivity(), message, Toast.LENGTH_SHORT).show();
     }
@@ -109,10 +122,16 @@ public abstract class BaseFragment extends Fragment implements OnMapReadyCallbac
         mapView.onStop();
     }
 
+    /**
+     * It shows Progress Dialog via dialogScreenMapKit object
+     */
     public void showProgressDialog() {
         dialogScreenMapKit.showProgressDialog();
     }
 
+    /**
+     * It dismiss Progress Dialog via dialogScreenMapKit object
+     */
     public void dismissProgressDialog() {
         dialogScreenMapKit.dismissProgressDialog();
     }

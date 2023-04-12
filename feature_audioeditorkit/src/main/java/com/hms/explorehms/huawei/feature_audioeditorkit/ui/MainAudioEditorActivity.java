@@ -73,9 +73,11 @@ public class MainAudioEditorActivity extends AppCompatActivity {
     private MaterialButton startEdit;
     private MaterialButton extractAudio;
     private MaterialButton formatMain;
+
+    private MaterialButton getVideoType;
     private Context mContext;
     private final String[] PERMISSIONS =
-            new String[] {android.Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+            new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -169,12 +171,21 @@ public class MainAudioEditorActivity extends AppCompatActivity {
                     }
                 });
 
+        getVideoType.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getApplicationContext(), AudioTypeActivity.class);
+                        startActivity(intent);
+                    }
+                });
     }
 
     private void initView() {
         startEdit = findViewById(R.id.btn_create_audio);
         formatMain = findViewById(R.id.btn_audio_format_conversion);
         extractAudio = findViewById(R.id.btn_video_audio_extraction);
+        getVideoType = findViewById(R.id.btn_audio_get_type);
     }
 
     // The default UI is displayed.
@@ -235,7 +246,8 @@ public class MainAudioEditorActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onAudioExportFailed(int i) {}
+                public void onAudioExportFailed(int i) {
+                }
             };
 
     /**
@@ -332,7 +344,7 @@ public class MainAudioEditorActivity extends AppCompatActivity {
                                                 fragmentDialog.dismiss();
                                                 String format = getResources().getString(R.string.extract_success);
                                                 Intent intent = new Intent(getApplicationContext(), VideoAudioExtractionActivity.class);
-                                                intent.putExtra("audioPath",audioPath);
+                                                intent.putExtra("audioPath", audioPath);
                                                 startActivity(intent);
                                             }
                                         });
@@ -358,11 +370,11 @@ public class MainAudioEditorActivity extends AppCompatActivity {
                                             @Override
                                             public void run() {
                                                 Toast.makeText(
-                                                        MainAudioEditorActivity.this,
-                                                        getResources().getString(R.string.extract_fail)
-                                                                + "errCode : "
-                                                                + errCode,
-                                                        Toast.LENGTH_LONG)
+                                                                MainAudioEditorActivity.this,
+                                                                getResources().getString(R.string.extract_fail)
+                                                                        + "errCode : "
+                                                                        + errCode,
+                                                                Toast.LENGTH_LONG)
                                                         .show();
                                                 fragmentDialog.dismiss();
                                             }
@@ -377,9 +389,9 @@ public class MainAudioEditorActivity extends AppCompatActivity {
                                             @Override
                                             public void run() {
                                                 Toast.makeText(
-                                                        MainAudioEditorActivity.this,
-                                                        getResources().getString(R.string.dm_extract_cancel),
-                                                        Toast.LENGTH_LONG)
+                                                                MainAudioEditorActivity.this,
+                                                                getResources().getString(R.string.dm_extract_cancel),
+                                                                Toast.LENGTH_LONG)
                                                         .show();
                                                 fragmentDialog.dismiss();
                                             }
