@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_45">
+
+    <com.hms.explorehms.huawei.ui.common.view.EditorTextView
+        android:id="@+id/text_layout_seek_bar_spacing"
+        android:layout_width="@dimen/dp_64"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_3"
+        android:fontFamily="HarmonyHeiTi"
+        android:gravity="start|center_vertical"
+        android:maxWidth="@dimen/dp_64"
+        android:maxLines="2"
+        android:minWidth="@dimen/dp_36"
+        android:text="@string/word_spacing"
+        android:textColor="#99FFFFFF"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SpUsage" />
+
+    <com.hms.explorehms.huawei.ui.mediaeditor.preview.view.MySeekBar
+        android:id="@+id/seekbar_spacing"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_45"
+        android:paddingStart="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_layout_seek_bar_spacing"
+        app:layout_constraintTop_toTopOf="parent"
+        app:line_width="@dimen/dp_4"
+        app:progress="10"
+        app:thumb_radius="7dp"
+        app:progress_anchor="0"
+        app:progress_max="100"
+        app:progress_min="0"
+        app:show_text="true" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,17 +1,17 @@
 /*
- * Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.mapkit.base;
@@ -36,7 +36,10 @@ import com.huawei.hms.maps.MapsInitializer;
 import com.huawei.hms.maps.OnMapReadyCallback;
 import com.huawei.hms.maps.model.LatLng;
 
-
+/**
+ * This  is a base fragment,
+ * We will handle some common works.
+ */
 public abstract class BaseFragment extends Fragment implements OnMapReadyCallback {
 
     protected HuaweiMap hMap;
@@ -47,6 +50,11 @@ public abstract class BaseFragment extends Fragment implements OnMapReadyCallbac
 
     public abstract void initializeUI();
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        MapsInitializer.initialize(requireActivity());
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -56,6 +64,10 @@ public abstract class BaseFragment extends Fragment implements OnMapReadyCallbac
         initHuaweiMap(savedInstanceState);
     }
 
+    /**
+     * It inits Huawei Map
+     * It takes Api Key from client/api_key
+     */
     private void initHuaweiMap(Bundle savedInstanceState) {
         dialogScreenMapKit.showProgressDialog();
         Bundle mapViewBundle = null;
@@ -69,6 +81,9 @@ public abstract class BaseFragment extends Fragment implements OnMapReadyCallbac
 
     }
 
+    /**
+     * Called when a map is ready to provide a HuaweiMap object that is not null.
+     */
     @Override
     public void onMapReady(HuaweiMap huaweiMap) {
         try {
@@ -86,6 +101,9 @@ public abstract class BaseFragment extends Fragment implements OnMapReadyCallbac
         dialogScreenMapKit.dismissProgressDialog();
     }
 
+    /**
+     * It shows a toast message
+     */
     public void toast(String message) {
         Toast.makeText(this.getActivity(), message, Toast.LENGTH_SHORT).show();
     }
@@ -102,18 +120,24 @@ public abstract class BaseFragment extends Fragment implements OnMapReadyCallbac
         mapView.onStop();
     }
 
+    /**
+     * It shows Progress Dialog via dialogScreenMapKit object
+     */
     public void showProgressDialog() {
         dialogScreenMapKit.showProgressDialog();
     }
 
+    /**
+     * It dismiss Progress Dialog via dialogScreenMapKit object
+     */
     public void dismissProgressDialog() {
         dialogScreenMapKit.dismissProgressDialog();
     }
 
     @Override
     public void onPause() {
-        mapView.onPause();
         super.onPause();
+        mapView.onPause();
     }
 
     @Override
