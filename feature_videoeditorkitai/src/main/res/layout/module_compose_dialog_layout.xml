@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/dp_200"
+    android:layout_height="@dimen/dp_200"
+    android:layout_gravity="center_horizontal">
+
+    <LinearLayout
+        android:id="@+id/close_layout"
+        android:layout_width="@dimen/dp_24"
+        android:layout_height="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginStart="@dimen/dp_168"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:src="@drawable/close_icon"
+            android:contentDescription="@string/close_wza" />
+
+    </LinearLayout>
+
+    <com.hms.explorehms.huawei.ui.common.view.loading.LoadingIndicatorView
+        android:id="@+id/indicator_community_detail"
+        android:layout_width="@dimen/dp_72"
+        android:layout_height="@dimen/dp_72"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_27"
+        android:layout_gravity="center"
+        tools:ignore="MissingClass" />
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/indicator_community_detail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_34"
+        android:layout_marginEnd="@dimen/dp_34"
+        android:fontFamily="HarmonyHeiTi"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_14"
+        tools:ignore="SpUsage"
+        android:text="@string/module_compose" />
+
+</RelativeLayout>

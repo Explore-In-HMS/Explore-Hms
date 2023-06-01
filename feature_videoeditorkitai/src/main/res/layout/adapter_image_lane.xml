@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:layout_marginStart="@dimen/dp_8"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/content_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:padding="0.1dp">
+
+        <ImageView
+            android:id="@+id/iv_media"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_72"
+            android:clickable="true"
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_trans"
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_16"
+        android:layout_gravity="center"
+        android:background="@drawable/icon_zhuanchang_done"
+        />
+</LinearLayout>

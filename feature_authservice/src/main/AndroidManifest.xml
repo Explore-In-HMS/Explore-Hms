@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  -->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
     xmlns:tools="http://schemas.android.com/tools"
@@ -24,9 +40,22 @@
         android:theme="@style/AppTheme"
         tools:node="replace"
         tools:replace="theme, screenOrientation">
-        <activity android:name=".ReauthenticateActivity"></activity>
+        <activity
+            android:name=".AlipayLoginActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".GoogleLoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            tools:node="replace" />
+        <activity android:name=".ReauthenticateActivity" />
         <activity
             android:name=".MainActivityAuth"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             tools:node="replace"
@@ -56,7 +85,17 @@
         <activity
             android:name=".TwitterLoginActivity"
             android:screenOrientation="portrait"
-            tools:node="replace" />
+            android:exported="true"
+            tools:node="replace">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https"
+                    android:host="https://99536292102546105.auth.agconnect.link"
+                    android:path="/"/>
+            </intent-filter>
+        </activity>
         <activity
             android:name=".FacebookLoginActivity"
             android:screenOrientation="portrait"
@@ -85,6 +124,21 @@
                 <data android:scheme="@string/facebook_app_secret" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivityAuth"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.google.android.gms.auth.GOOGLE_SIGN_IN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="12451000"/>
     </application>
 
 </manifest>
