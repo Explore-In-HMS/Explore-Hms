@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 package com.hms.explorehms.huawei.feature_adskit;
 
@@ -38,8 +36,10 @@ import com.huawei.hms.ads.splash.SplashView;
 
 import java.util.Locale;
 
+/**
+ * This shows how we display Splash Ad with Ads Kit.
+ */
 public class SplashActivity extends AppCompatActivity {
-
 
     private static final String TAG = SplashActivity.class.getSimpleName();
 
@@ -59,6 +59,9 @@ public class SplashActivity extends AppCompatActivity {
 
     private SplashView splashView;
 
+    /**
+     * The method initializes the sets up necessary for UI and Ads.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +75,9 @@ public class SplashActivity extends AppCompatActivity {
         loadAd();
     }
 
+    /**
+     * It starts load Ad and build AdParam.
+     */
     private void loadAd() {
         Log.i(TAG, "Start to load ad");
         Location location = new Location(LocationManager.GPS_PROVIDER);
@@ -131,6 +137,9 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * when SplashActivity in onPause
+     */
     @Override
     protected void onPause() {
         Log.i(TAG, "SplashActivity onPause.");
@@ -140,6 +149,9 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * when SplashActivity in onResume
+     */
     @Override
     protected void onResume() {
         Log.i(TAG, "SplashActivity onResume.");
@@ -149,6 +161,9 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This listener handle ad process. Listen Loads, Fails and Dismissed.
+     */
     private final SplashView.SplashAdLoadListener splashAdLoadListener = new SplashView.SplashAdLoadListener() {
         @Override
         public void onAdLoaded() {
@@ -175,6 +190,9 @@ public class SplashActivity extends AppCompatActivity {
         }
     };
 
+    /**
+     * This listener handle ad process. Listen onAdShowed, onAdClick
+     */
     private final SplashAdDisplayListener adDisplayListener = new SplashAdDisplayListener() {
         @Override
         public void onAdShowed() {

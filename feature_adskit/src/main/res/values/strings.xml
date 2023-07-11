@@ -1,19 +1,17 @@
 <!--
+  ~  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
   ~
-  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
   ~
-  ~   Licensed under the Apache License, Version 2.0 (the "License");
-  ~   You may not use this file except in compliance with the License.
-  ~   You may obtain a copy of the License at
+  ~  http://www.apache.org/licenses/LICENSE-2.0
   ~
-  ~   http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~   Unless required by applicable law or agreed to in writing, software
-  ~   distributed under the License is distributed on an "AS IS" BASIS,
-  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~   See the License for the specific language governing permissions and
-  ~   limitations under the License.
-  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
   -->
 
 <resources>
@@ -67,9 +65,9 @@
     <string name="skipad">SkipAd</string>
     <string name="ad_flag">Ad Flag</string>
     <string name="learn_more">Learn more</string>
-    <string name="video_native_ad_example">Video Native Ad example</string>
-    <string name="small_native_ad_example">Small Native Ad example</string>
-    <string name="large_image_native_ad_example">Large Image Native Ad example</string>
+    <string name="video_native_ad_example">Video Native Ad</string>
+    <string name="small_native_ad_example">Small Native Ad</string>
+    <string name="large_image_native_ad_example">Large Image Native Ad</string>
     <string name="score">Score :</string>
     <string name="play_for_point">Play For Point</string>
     <string name="watch_video_for_reward">Watch video for Reward</string>
@@ -85,4 +83,8 @@
     <string name="url_txt_adskit">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/publisher-service-introduction-0000001070671805</string>
     <string name="ex_splash_ad">The express splash ad service is a new traffic monetization solution provided by HUAWEI Ads to improve splash ad experience without requiring you to integrate any SDK.
         Prerequisites.An app integrated with this service can display express splash ads only after a user agrees to the user agreement.When the user agreement status changes (a user agrees to or withdraws from the agreement), the latest status needs to be synchronized to HUAWEI Ads.</string>
+    <string name="get_advertiser_info">Get adventiser info</string>
+    <string name="ads_kit_advertiser_info_fail">This feature only works for real ads and if advertiser has advertiser info.</string>
+    <string name="inroll_ad_did_not_loaded_yet">Ad is not loaded yet, you can not see advertiser infos right now.</string>
+    <string name="advertise_info_showing">Advertiser info is showing</string>
 </resources>

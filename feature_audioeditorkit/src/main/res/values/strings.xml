@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  -->
+
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="setting">Setting</string>
     <string name="cancels">cancel</string>
@@ -20,10 +36,37 @@
     <string name="audio_editor_kit" translatable="false">Audio Editor Kit</string>
     <string name="service_introduction" translatable="false">Service Introduction</string>
     <string name="audio_editor_kit_info_text" translatable="false">Audio Editor Kit provides a wide range of audio editing capabilities, including audio import, export, editing, extraction, and conversion. You can easily integrate these capabilities into your app as needed through the kit\'s open, powerful, yet easy-to-use APIs.</string>
+    <string name="get_audio_type_info" translatable="false">The HAEAudioAsset class in the Audio Editor Kit allows you to perform operations on a sound. It can modify the sound according to certain types and give you the type with which the sound has been modified. It supports types within the VoiceTypeCommon class.</string>
+
     <string name="create_and_edit_audio" translatable="false">Create and Edit Audio</string>
     <string name="video_audio_extraction" translatable="false">Video Audio Extraction</string>
     <string name="open_extracted_source" translatable="false">Play Extracted Audio</string>
     <string name="extracted_source" translatable="false">Extracted Source</string>
     <string name="audio_format_conversion" translatable="false">Audio Format Conversion</string>
     <string name="play_formatted_audio" translatable="false">Play Formatted Audio</string>
+
+    <string name="begin_change_common" translatable="false">Start Voice FX(common)</string>
+    <string name="begin_play" translatable="false">Play original sound</string>
+    <string name="begin_change" translatable="false">Start Voice FX</string>
+    <string name="audio_types" translatable="false">Audio Types</string>
+    <string name="get_audio_type" translatable="false">Get Audio Type</string>
+    <string name="title_get_audio_type" translatable="false">Get Audio Type</string>
+    <string name="type_will_shown_here" translatable="false">Type will shown here</string>
+    <string name="txt__link" translatable="false">https://developer.huawei.com/consumer/en/hms/huawei-audio-editor/</string>
+
+
+    <string-array name="spinnerItems">
+        <item>Normal</item>
+        <item>Cyberpunk</item>
+        <item>Female</item>
+        <item>Male</item>
+        <item>Mix</item>
+        <item>Monster</item>
+        <item>Cute</item>
+        <item>Seasoned</item>
+        <item>Synth</item>
+        <item>Trill</item>
+        <item>War</item>
+    </string-array>
+
 </resources>

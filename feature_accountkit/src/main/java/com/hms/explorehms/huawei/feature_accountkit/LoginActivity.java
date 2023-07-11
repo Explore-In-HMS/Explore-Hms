@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 package com.hms.explorehms.huawei.feature_accountkit;
 
@@ -52,6 +50,10 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 //Round 5 update
+
+/**
+ * This activity allows the user to log in to the application by Account Kit.
+ */
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "LoginActivity";
@@ -70,6 +72,10 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.btn_signin_viasms)
     Button btnSigninViaSms;
 
+    /**
+     * The method initializes the sets up necessary for variables.
+     * It also allows to user silent log in.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +90,9 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar_accountkit);
         setSupportActionBar(toolbar);
@@ -92,6 +101,10 @@ public class LoginActivity extends AppCompatActivity {
         Util.setToolbar(this, toolbar, getString(R.string.url_doc_accountkit));
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
@@ -124,11 +137,14 @@ public class LoginActivity extends AppCompatActivity {
                 .setCarrierId()
                 .createParams();
         AccountAuthService accountAuthService = AccountAuthManager.getService(LoginActivity.this, accountAuthParams);
-        startActivityForResult(accountAuthService.getSignInIntent(),REQUEST_SIGN_IN_LOGIN);
+        startActivityForResult(accountAuthService.getSignInIntent(), REQUEST_SIGN_IN_LOGIN);
 
     }
 
     @OnClick(R.id.btn_signin_authcode)
+    /**
+     * Sign in with Auth Code.
+     */
     public void signInWithAuthCode() {
         //Old way
         /*HuaweiIdAuthParams authParams = new HuaweiIdAuthParamsHelper(HuaweiIdAuthParams.DEFAULT_AUTH_REQUEST_PARAM)
@@ -143,8 +159,8 @@ public class LoginActivity extends AppCompatActivity {
                 .setIdTokenSignAlg(SIGNATURE_ALGORITHM_TYPE)
                 .setCarrierId()
                 .createParams();
-        AccountAuthService accountAuthService = AccountAuthManager.getService(LoginActivity.this,authParams);
-        startActivityForResult(accountAuthService.getSignInIntent(),REQUEST_SIGN_IN_AUTH_CODE);
+        AccountAuthService accountAuthService = AccountAuthManager.getService(LoginActivity.this, authParams);
+        startActivityForResult(accountAuthService.getSignInIntent(), REQUEST_SIGN_IN_AUTH_CODE);
     }
 
     @OnClick(R.id.btn_signin_silent)
@@ -165,8 +181,8 @@ public class LoginActivity extends AppCompatActivity {
                 .setCarrierId()
                 .createParams();
 
-        AccountAuthService accountAuthService = AccountAuthManager.getService(LoginActivity.this,accountAuthParams);
-        Task<AuthAccount>task = accountAuthService.silentSignIn();
+        AccountAuthService accountAuthService = AccountAuthManager.getService(LoginActivity.this, accountAuthParams);
+        Task<AuthAccount> task = accountAuthService.silentSignIn();
 
         final Activity activity = this;
 
@@ -188,11 +204,18 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.btn_signin_viasms)
+    /**
+     * Sign in via SMS.
+     */
     public void signInViaSms() {
-        Intent intent=new Intent(this,SmsReaderInfoActivity.class);
+        Intent intent = new Intent(this, SmsReaderInfoActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * It handles sign in requests.
+     * If the sign in gives an error, a toast message will on the screen.
+     */
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -231,12 +254,14 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Called when the activity is attaching to its context.
+     * It creates a new base context for the activity.
+     */
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
         // Initialize the SDK in the activity.
         FeatureCompat.install(newBase);
     }
-
-
 }

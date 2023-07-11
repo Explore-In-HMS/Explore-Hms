@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 include ':app:modelingResource'
@@ -67,7 +65,7 @@ include ':feature_audioengine'
 include ':feature_dynamicability'
 include ':feature_arengine'
 include ':feature_appgallerykit'
-include ':feature_wearengine'
+//include ':feature_wearengine'
 include ':feature_hemkit'
 include ':dynamicfeaturetest'
 //include ':feature_hiaifoundation'
@@ -79,7 +77,8 @@ include ':feature_cameraengine'
 include ':feature_devicevirtualizationengine'
 include ':feature_modem5g_kit'
 include ':feature_videoeditorkit'
-
+include ':feature_navikit'
+include ':feature_videoeditorkitai'
 
 include ':app'
 rootProject.name = "ExploreHMS"

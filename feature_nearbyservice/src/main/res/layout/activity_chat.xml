@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
   ~
-  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
   ~
-  ~   Licensed under the Apache License, Version 2.0 (the "License");
-  ~   You may not use this file except in compliance with the License.
-  ~   You may obtain a copy of the License at
+  ~  http://www.apache.org/licenses/LICENSE-2.0
   ~
-  ~   http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~   Unless required by applicable law or agreed to in writing, software
-  ~   distributed under the License is distributed on an "AS IS" BASIS,
-  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~   See the License for the specific language governing permissions and
-  ~   limitations under the License.
-  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/AppTheme.Material">
+    android:theme="@style/AppTheme">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/lay_my_name"
@@ -80,7 +79,8 @@
         android:dividerHeight="10dp"
         android:padding="8dp"
         app:layout_constraintBottom_toTopOf="@+id/laySendPictRece"
-        app:layout_constraintTop_toBottomOf="@+id/lay_friend_name" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup_nearby"
+        tools:layout_editor_absoluteX="8dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/laySendPictRece"
@@ -114,6 +114,67 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/laySendPictRece"
         app:layout_constraintTop_toTopOf="@+id/laySendPictRece" />
+
+    <TextView
+        android:id="@+id/tvOperationEntity_navikit"
+        style="@style/TextAppearance.ExploreHMS.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/region_code"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay_friend_name" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup_nearby"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOperationEntity_navikit">
+
+
+        <RadioButton
+            android:id="@+id/rb1_nearby"
+            style="@style/TextAppearance.ExploreHMS.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimens_8"
+            android:buttonTint="@color/black"
+            android:text="@string/cn" />
+
+        <RadioButton
+            android:id="@+id/rb2_nearby"
+            style="@style/TextAppearance.ExploreHMS.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimens_8"
+            android:buttonTint="@color/black"
+            android:text="@string/ru" />
+
+        <RadioButton
+            android:id="@+id/rb3_nearby"
+            style="@style/TextAppearance.ExploreHMS.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimens_8"
+            android:checked="true"
+            android:buttonTint="@color/black"
+            android:text="@string/de" />
+
+        <RadioButton
+            android:id="@+id/rb4_nearby"
+            style="@style/TextAppearance.ExploreHMS.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimens_8"
+            android:buttonTint="@color/black"
+            android:text="@string/sg" />
+    </RadioGroup>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

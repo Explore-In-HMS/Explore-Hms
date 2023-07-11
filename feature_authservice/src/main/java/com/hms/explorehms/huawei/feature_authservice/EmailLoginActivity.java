@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.huawei.feature_authservice;
@@ -51,6 +49,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
+/**
+ * This shows how we sign-in with email by Auth Service.
+ */
 public class EmailLoginActivity extends AppCompatActivity {
 
     //region variablesAndObjects
@@ -117,6 +118,9 @@ public class EmailLoginActivity extends AppCompatActivity {
     //endregion views
 
 
+    /**
+     * The method initializes the sets up necessary for variables.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -178,6 +182,9 @@ public class EmailLoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -186,12 +193,19 @@ public class EmailLoginActivity extends AppCompatActivity {
         Util.setToolbar(this, toolbar, getResources().getString(R.string.url_auth_service_mail));
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
+    /**
+     * It shows reset value layout
+     */
     public void showResetValueLayout() {
         if (clLogout == null || clResetElements == null || clRegisterAndLoginElements == null) {
             return;
@@ -201,6 +215,9 @@ public class EmailLoginActivity extends AppCompatActivity {
         clRegisterAndLoginElements.setVisibility(View.GONE);
     }
 
+    /**
+     * It hides reset value layout
+     */
     public void hideResetValueLayout() {
         if (clLogout == null || clResetElements == null || clRegisterAndLoginElements == null) {
             return;
@@ -210,6 +227,9 @@ public class EmailLoginActivity extends AppCompatActivity {
         clRegisterAndLoginElements.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * It sends verify code to email
+     */
     private void sendVerifyCodeToEmail() {
         if (etEmail == null) {
             return;
@@ -279,7 +299,9 @@ public class EmailLoginActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * It allows to login with Email and Verification code
+     */
     private void loginWithEmailAndVerificationCode() {
         if (etEmail == null || etPassword == null || etVerifyCode == null) {
             return;
@@ -312,7 +334,9 @@ public class EmailLoginActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * It allows to login with Email and Password
+     */
     private void loginWithEmailAndPassword() {
         if (etEmail == null || etPassword == null) {
             return;
@@ -344,7 +368,9 @@ public class EmailLoginActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * It shows success message detail
+     */
     public void showSuccessMessageDetail(String warning, String message) {
 
         if (!warning.isEmpty()) Utils.showToastMessage(getApplicationContext(), warning);
@@ -353,6 +379,9 @@ public class EmailLoginActivity extends AppCompatActivity {
         tvProfileDetails.setText(message);
     }
 
+    /**
+     * It shows error message detail
+     */
     public void showErrorMessageDetail(String message, Exception e) {
         if (tvProfileDetails == null) {
             return;
@@ -363,6 +392,9 @@ public class EmailLoginActivity extends AppCompatActivity {
         Utils.showToastMessage(getApplicationContext(), message + "\n" + e.getMessage());
     }
 
+    /**
+     * It displays the details of sign-in user's information, including a message.
+     */
     public void showResultDetail(String msg, AGConnectUser signInResult) {
         if (tvProfileDetails == null) {
             return;
@@ -378,6 +410,9 @@ public class EmailLoginActivity extends AppCompatActivity {
 
     // Other Feature Methods
 
+    /**
+     * It sends verify code to change user mail address
+     */
     public void sendVerifyCodeToChangeMailAddress() {
         String emailAddress = etEmail.getText().toString().trim();
         if (emailAddress.isEmpty() || !emailAddress.contains("@")) {
@@ -403,6 +438,9 @@ public class EmailLoginActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * It allows to update email address
+     */
     public void updateEmailAddress() {
         String emailAddress = etEmail.getText().toString().trim();
         String verifyCode = etVerifyCodeForMail.getText().toString().trim();
@@ -424,6 +462,9 @@ public class EmailLoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * It sends verify code to change password
+     */
     public void sendVerifyCodeToChangePassword() {
         String emailAddress = etEmail.getText().toString().trim();
         if (emailAddress.isEmpty() || !emailAddress.contains("@")) {
@@ -451,6 +492,9 @@ public class EmailLoginActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * It allows to update password
+     */
     public void updatePassword() {
         String newPassword = etPassword.getText().toString().trim();
         String verifyCode = etVerifyCodeForPasswordMail.getText().toString().trim();
@@ -472,6 +516,9 @@ public class EmailLoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * It resets the password
+     */
     public void resetPassword() {
         if (etEmail == null || etPassword == null || etVerifyCodeForPasswordMail == null) {
             return;
@@ -497,7 +544,9 @@ public class EmailLoginActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * It allows to user log out.
+     */
     private void logOut() {
         if (tvProfileDetails == null) {
             return;
@@ -517,7 +566,6 @@ public class EmailLoginActivity extends AppCompatActivity {
             tvProfileDetails.setText(getString(R.string.txt_message_for_no_logged_user));
         }
     }
-
 
     @Override
     protected void onDestroy() {

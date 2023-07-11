@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 package com.hms.explorehms.huawei.feature_adskit;
 
@@ -35,6 +33,9 @@ import com.huawei.hms.ads.InterstitialAd;
 import java.security.SecureRandom;
 import java.util.Locale;
 
+/**
+ * This shows how we display Interstitial Ad with Ads Kit.
+ */
 public class InterstitialActivity extends AppCompatActivity {
 
     private static final String TAG = InterstitialActivity.class.getSimpleName();
@@ -42,6 +43,9 @@ public class InterstitialActivity extends AppCompatActivity {
     private InterstitialAd interstitialAd;
     MaterialButton refresh;
 
+    /**
+     * The method initializes the sets up necessary for UI, toolbar and Ads.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +59,9 @@ public class InterstitialActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -62,12 +69,19 @@ public class InterstitialActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
+    /**
+     * It initializes the UI, and call loadInterstitialAd if clicked refresh
+     */
     private void initializeUI() {
 
         refresh = findViewById(R.id.btnRefreshInterstitial);
@@ -79,6 +93,9 @@ public class InterstitialActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * It loads Interstitial Ad and build AdParam with location.
+     */
     private void loadInterstitialAd() {
 
         interstitialAd = new InterstitialAd(this);
@@ -95,6 +112,9 @@ public class InterstitialActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * It returns Ad Id, for video is type 1.
+     */
     private String getAdId(int type) {
         if (type == 1) { // video
             return getString(R.string.ad_id_interstitial_video); // The value of video_ad_id is testb4znbuh3n2.
@@ -103,8 +123,9 @@ public class InterstitialActivity extends AppCompatActivity {
         }
     }
 
-
-
+    /**
+     * This listener handle ad process. Listen Loaded, Showed, Failed and Closed, Clicked, Opened.
+     */
     private final AdListener adListener = new AdListener() {
         @Override
         public void onAdLoaded() {
@@ -151,6 +172,9 @@ public class InterstitialActivity extends AppCompatActivity {
         }
     };
 
+    /**
+     * It returns a random number
+     */
     private int getRandomNumber(int max, int min) {
         int randomNum = new SecureRandom().nextInt((max - min) + 1) + min;
         Log.d(TAG, "getRandomNumber.randomNum : " + randomNum);

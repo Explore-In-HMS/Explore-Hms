@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.pushkit;
@@ -133,7 +131,6 @@ public class MainActivityPushKit extends AppCompatActivity {
         initReceiver();
         isPermissionGranted();
 
-
         //Enable push notification
         setReceiveNotifyMsg(false);
     }
@@ -152,7 +149,6 @@ public class MainActivityPushKit extends AppCompatActivity {
         onBackPressed();
         return true;
     }
-
 
     private void isPermissionGranted() {
         if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
@@ -563,16 +559,16 @@ public class MainActivityPushKit extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(AIDThread!=null){
+        if (AIDThread != null) {
             AIDThread.interrupt();
         }
-        if(subjectTokenThread!=null){
+        if (subjectTokenThread != null) {
             subjectTokenThread.interrupt();
         }
-        if(deleteTokenWithStringThread!=null){
+        if (deleteTokenWithStringThread != null) {
             deleteTokenWithStringThread.interrupt();
         }
-        if(deleteTokenThread!=null){
+        if (deleteTokenThread != null) {
             deleteTokenThread.interrupt();
         }
     }

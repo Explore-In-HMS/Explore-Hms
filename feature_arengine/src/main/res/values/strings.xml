@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+  ~  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
   ~
-  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
   ~
-  ~   Licensed under the Apache License, Version 2.0 (the "License");
-  ~   You may not use this file except in compliance with the License.
-  ~   You may obtain a copy of the License at
+  ~  http://www.apache.org/licenses/LICENSE-2.0
   ~
-  ~   http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~   Unless required by applicable law or agreed to in writing, software
-  ~   distributed under the License is distributed on an "AS IS" BASIS,
-  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~   See the License for the specific language governing permissions and
-  ~   limitations under the License.
-  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
   -->
 <resources>
     <string name="txt_service_introduction_arengine">Service Introduction</string>
@@ -27,7 +25,7 @@
     <string name="txt_install_arengine" priority="translator">Install</string>
 
     <string name="msg_install_app_arengine" priority="translator">Install the latest version of HUAWEI AR Engine to continue.</string>
-    <string name="msg_service_info_arengine">AR Engine is an engine for building augmented reality (AR) apps on Android smartphones. It is based on the HiSilicon chipset, and integrates AR core algorithms to provide basic AR capabilities such as motion tracking, environment tracking, body tracking, and face tracking, allowing your app to bridge virtual world with the real world, for a brand new visually interactive user experience</string>
+    <string name="msg_service_info_arengine">AR Engine is an engine for building augmented reality (AR) apps on Android smartphones. It is based on the HiSilicon chipset, and integrates AR core algorithms to provide basic AR capabilities such as motion tracking, environment tracking, body tracking, and face tracking, allowing your app to bridge virtual world with the real world, for a brand new visually interactive user experience. The capability of placing virtual objects instantly by creating an anchor, without recognizing the plane. Tracking the motion of objects placed instantly.</string>
 
     <string name="txt_doc_link_arengine">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides-V5/introduction-0000001050130900-V5</string>
     <string name="txt_doc_link_face_hand_body_arengine">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides-V5/introduction-0000001050130900-V5#EN-US_TOPIC_0000001064732168__section2239823154511</string>

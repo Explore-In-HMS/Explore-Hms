@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.huawei.feature_authservice;
@@ -61,6 +59,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
+/**
+ * This shows how we login with Huawei Game Service with Auth Service.
+ */
 public class HuaweiGameLoginActivity extends AppCompatActivity {
 
     //region variablesAndObjects
@@ -80,6 +81,9 @@ public class HuaweiGameLoginActivity extends AppCompatActivity {
 
     //endregion views
 
+    /**
+     * The method initializes the sets up necessary for variables.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,6 +115,9 @@ public class HuaweiGameLoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -119,12 +126,20 @@ public class HuaweiGameLoginActivity extends AppCompatActivity {
         Util.setToolbar(this, toolbar, getResources().getString(R.string.url_auth_service_huawei_game));
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
+    /**
+     * It allows to login with Huawei Game Service.
+     * It also sends request code.
+     */
     private void loginWithHuaweiGame() {
         if (tvProfileDetails == null) {
             return;
@@ -160,7 +175,7 @@ public class HuaweiGameLoginActivity extends AppCompatActivity {
                                 int statusCode = apiException.getStatusCode();
                                 // Result code 7401 indicates that the user does not agree to Huawei's joint operations privacy agreement.
                                 if (statusCode == JosStatusCodes.JOS_PRIVACY_PROTOCOL_REJECTED) {
-                                    Log.d("failure","has reject the protocol");
+                                    Log.d("failure", "has reject the protocol");
                                     // Exit the game.
                                 }
                                 // Process other result codes.
@@ -178,7 +193,10 @@ public class HuaweiGameLoginActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * It handles sign in requests.
+     * If the sign in gives an error, a toast message will on the screen.
+     */
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -199,7 +217,9 @@ public class HuaweiGameLoginActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * It gets current player's information by Auth Huawei Id
+     */
     private void getCurrentPlayerInfo(AuthHuaweiId authHuaweiId) {
         PlayersClient playersClient = Games.getPlayersClient(this, authHuaweiId);
         Task<Player> playerTask = playersClient.getCurrentPlayer();
@@ -223,6 +243,9 @@ public class HuaweiGameLoginActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * It generates a credential using the AGConnectAuthCredential.
+     */
     private void transmitHuaweiGamePlayerIntoAGC(final Player player) {
 
         if (tvProfileDetails == null) {
@@ -273,6 +296,9 @@ public class HuaweiGameLoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * It displays the details of player's information, including a message.
+     */
     public void showProfileDetail(Player player) {
         if (tvProfileDetails == null) {
             return;
@@ -286,7 +312,9 @@ public class HuaweiGameLoginActivity extends AppCompatActivity {
         tvProfileDetails.setText(msg);
     }
 
-
+    /**
+     * It displays the details of sign-in user's information, including a message.
+     */
     public void showResultDetail(String msg, AGConnectUser signInResult) {
         if (tvProfileDetails == null) {
             return;
@@ -300,6 +328,9 @@ public class HuaweiGameLoginActivity extends AppCompatActivity {
         tvProfileDetails.setText(signMsg);
     }
 
+    /**
+     * It allows to user log out.
+     */
     private void logOut() {
         if (tvProfileDetails == null) {
             return;

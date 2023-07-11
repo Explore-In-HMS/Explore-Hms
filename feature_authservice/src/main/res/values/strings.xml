@@ -1,20 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
   ~
-  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
   ~
-  ~   Licensed under the Apache License, Version 2.0 (the "License");
-  ~   You may not use this file except in compliance with the License.
-  ~   You may obtain a copy of the License at
+  ~  http://www.apache.org/licenses/LICENSE-2.0
   ~
-  ~   http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~   Unless required by applicable law or agreed to in writing, software
-  ~   distributed under the License is distributed on an "AS IS" BASIS,
-  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~   See the License for the specific language governing permissions and
-  ~   limitations under the License.
-  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
   -->
 <resources>
 
@@ -48,7 +45,9 @@
     <string name="login_with_google">Login With Google</string>
     <string name="login_with_google_play_game">Login With GooglePlayGame</string>
     <string name="login_with_facebook">Login With Facebook</string>
+    <string name="login_with_facebook_download">You Should Download Facebook To Log In</string>
     <string name="login_with_twitter">Login With Twitter</string>
+    <string name="login_with_twitter_download">You Should Download Twitter To Log In</string>
     <string name="supported_other_third_party">Supported Other Third Party</string>
 
     <string name="verify_code_send">VerifyCode Send to Phone</string>
@@ -79,7 +78,7 @@
     <string name="text_verifyCodeMail">Code For Change Mail</string>
     <string name="text_verifyCodePassword">Code For Change Password</string>
     <string name="text_send">Send Code</string>
-
+    <string name="server_client_id">200485273031-oa811sqf1jgcfnac5mt31njtle3u1cro.apps.googleusercontent.com</string>
     <string name="url_auth_service_anonymous">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-anonymous-0000001053532658</string>
     <string name="url_auth_service_phone">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-phone-0000001053333941</string>
     <string name="url_auth_service_mail">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-email-0000001053213912</string>
@@ -87,6 +86,7 @@
     <string name="url_auth_service_huawei_game">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-hwgame-0000001053692648</string>
     <string name="url_auth_service_facebook">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-facebook-0000001052932663</string>
     <string name="url_auth_service_twitter">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-twitter-0000001053492677</string>
+    <string name="url_auth_service_alipay">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-alipay-0000001412658170</string>
     <string name="url_auth_service_google">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-google-0000001053372648</string>
     <string name="url_auth_service_google_play">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-googlegame-0000001053253973</string>
     <string name="url_auth_service_weibo">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-weibo-0000001053732641</string>
@@ -94,7 +94,7 @@
     <string name="url_auth_service_vk">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-vk-0000001214373581</string>
     <string name="url_auth_service_qq">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-qq-0000001053852632</string>
     <string name="url_txt_authservicemain">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-introduction-0000001053732605</string>
-<string name="url_reauthenticate">"https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-reauthenticate-0000001127287737"</string>
+    <string name="url_reauthenticate">"https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-auth-android-reauthenticate-0000001127287737"</string>
 
     <string name="txt_for_profile_details_log_out_message">InstanceUser logged out!</string>
     <string name="txt_for_tv_profile_detail_log_out_message">No logged in user</string>
@@ -104,4 +104,18 @@
     <string name="txt_message_for_no_logged_user">No logged in user</string>
     <string name="reauthenticate">Account Reauthentication</string>
     <string name="reauthenticate_text">Users must have signed in to the system within 5 minutes before performing sensitive operations, such as deregistration, password change, account linking, and mobile account and email account resetting. If users have signed in to the system for more than 5 minutes when performing a sensitive operation, an AGCAuthException is thrown and the result code 203818081 is returned. In this case, you can call AGConnectUser.reauthenticate to reauthenticate the account, and then the users can perform the sensitive operations.</string>
+
+    <string name="success_login_with_google">Success login with Google</string>
+    <string name="log_out_user">logOut : No logged in user</string>
+    <string name="log_out_instance_user">InstanceUser logged out</string>
+    <string name="you_need_gms_supported_device">You need a gms supported device for Google Sign In.</string>
+    <string name="login_with_alipay">Login With Alipay</string>
+    <string name="failed_alipay_login">Alipay login failed for the reason:</string>
+    <string name="sign_out">Sign out successfully</string>
+    <string name="sign_out_failed">Sign out failed!</string>
+    <string name="alipay_login_introduction">You can sign in application with your AliPay Account (Chinese mainland only right now) <b> You can tap here for see official documents</b> </string>
+    <string name="login_with_twitter_failed">"Login with Twitter failed because : "</string>
+    <string name="login_with_twitter_unified">Login With Twitter (Unified)</string>
+    <string name="login_with_twitter_successfully">Login with Twitter successfully</string>
+    <string name="alipay_login_redirect">In this version off this app AliPay login is not supported, you can see implementations on our github repository.</string>
 </resources>

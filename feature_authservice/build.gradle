@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 apply plugin: "com.android.dynamic-feature"
 
@@ -26,17 +24,21 @@ def gradleVersionName = gradleVersionInfo['versionName']
 
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 33
     buildToolsVersion "30.0.2"
 
     defaultConfig {
         minSdkVersion 28
-        targetSdkVersion 30
+        targetSdkVersion 33
         versionCode gradleVersionCode
         versionName gradleVersionName
-
+        manifestPlaceholders = [appAuthRedirectScheme: 'https://99536292102546105.auth.agconnect.link']
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    android.defaultConfig.manifestPlaceholders = [
+            'appAuthRedirectScheme': 'https://99536292102546105.auth.agconnect.link'
+    ]
 
     buildTypes {
         debug {
@@ -57,21 +59,37 @@ android {
 dependencies {
     implementation project(":app")
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.4.0'
+
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 
     // HMS
     implementation "com.huawei.hms:base:6.1.0.302"
     implementation "com.huawei.hms:hwid:6.1.0.302"
 
+    // Auth Service
+    implementation 'com.huawei.agconnect:agconnect-auth:1.8.1.300'
+
     //HMS Game
     implementation "com.huawei.hms:game:6.1.0.301"
 
     // Facebook Login only
-    implementation 'com.facebook.android:facebook-login:8.1.0'
+    implementation "com.huawei.agconnect:agconnect-auth-facebook:1.8.1.300"
+    implementation "com.facebook.android:facebook-login:9.0.0"
 
     // Twitter
     implementation 'com.twitter.sdk.android:twitter-core:3.3.0'
+    implementation "com.huawei.agconnect:agconnect-auth-twitter:1.8.1.300"
+    implementation "net.openid:appauth:0.11.1"
 
+    // Alipay
+    implementation "com.huawei.agconnect:agconnect-auth-alipay:1.8.1.300"
+    implementation "com.alipay.sdk:alipaysdk-android:+@aar"
+
+    //Google
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation "com.huawei.agconnect:agconnect-auth-google:1.8.1.300"
 }
 
 /*apply from: '../sonarqube.gradle'

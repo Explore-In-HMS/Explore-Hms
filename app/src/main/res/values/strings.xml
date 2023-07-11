@@ -1,19 +1,17 @@
 <!--
+  ~  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
   ~
-  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
   ~
-  ~   Licensed under the Apache License, Version 2.0 (the "License");
-  ~   You may not use this file except in compliance with the License.
-  ~   You may obtain a copy of the License at
+  ~  http://www.apache.org/licenses/LICENSE-2.0
   ~
-  ~   http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~   Unless required by applicable law or agreed to in writing, software
-  ~   distributed under the License is distributed on an "AS IS" BASIS,
-  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~   See the License for the specific language governing permissions and
-  ~   limitations under the License.
-  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -76,7 +74,7 @@
     <string name="title_feature_mlkit">Machine Learning - ML Kit</string>
     <string name="title_feature_authservice">AuthService</string>
     <string name="title_feature_mapkit">Map Kit</string>
-    <string name="show_direction_routing_mapkit">Show Direction Routing</string>
+    <string name="show_direction_routing_mapkit">Show Routes</string>
     <string name="open_petalMap_MapKit">Open Petal Map</string>
     <string name="heat_Map">Heat Map</string>
     <string name="title_feature_scankit">Scan Kit</string>
@@ -906,5 +904,25 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="title_feature_videoeditor_kit">Video Editor Kit</string>
     <string name="title_feature_modem5g_kit">5G Modem Kit</string>
     <string name="keyring_service_example">Keyring Service Example</string>
+    <string name="title_feature_navikit">NaviKit</string>
+    <string name="title_sdkdemo">Video Editor Kit AI</string>
+    <string name="title_indoor_locationkit">Location Kit Indoor</string>
+    <string name="btn_txt_get_indoor_location">Get Indoor Location</string>
+    <string name="btn_txt_start_indoor_location_update">Start Indoor Location With Callback</string>
+    <string name="btn_txt_stop_indoor_location_update">Stop Indoor Location With Callback</string>
+    <string name="remove_location_update_ex_success">Indoor Location Update Removed Successfully</string>
+    <string name="remove_location_update_ex_failure">"Indoor Location Update Cannot Removed because : "</string>
+    <string name="results_will_be_here">Results will be here</string>
+    <string name="request_location_update_ex_failure">Indoor Location Update Failed Because : </string>
+    <string name="indoor_location_example">Indoor Location Example</string>
+    <string name="default_barcode_view_title">Default Barcode View</string>
+    <string name="default_barcode_view_msg">Please choose type of Default Barcode View</string>
+    <string name="default_barcode_view_positive">Scan QR code</string>
+    <string name="default_barcode_view_negative">Scan QR code/barcode</string>
+    <string name="default_barcode_view_neutral">Cancel</string>
+    <string name="indoor_location_introduction">The indoor location service in Location Kit allows your app to request device locations in indoor environments. This feature is available only Chinese Mainland right now. <b> You can tap here for see supported buildings. </b> </string>
+    <string name="indoor_location_request_fail">Indoor Location Requst Failed due to : </string>
+    <string name="indoor_location_request_update_fail">Indoor Location Update failed due to : </string>
+    <string name="indoor_location_requested">Indoor Location infos requested!</string>
 
 </resources>

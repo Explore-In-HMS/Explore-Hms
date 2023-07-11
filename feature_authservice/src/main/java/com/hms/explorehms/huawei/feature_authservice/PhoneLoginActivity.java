@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.huawei.feature_authservice;
@@ -50,9 +48,10 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
+/**
+ * This shows how we login with phone number with Auth Service.
+ */
 public class PhoneLoginActivity extends AppCompatActivity {
-
-
     //region variablesAndObjects
 
     private static final String TAG = PhoneLoginActivity.class.getSimpleName();
@@ -106,7 +105,9 @@ public class PhoneLoginActivity extends AppCompatActivity {
 
     //endregion views
 
-
+    /**
+     * The method initializes the sets up necessary for variables.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -167,6 +168,9 @@ public class PhoneLoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -175,12 +179,19 @@ public class PhoneLoginActivity extends AppCompatActivity {
         Util.setToolbar(this, toolbar, getResources().getString(R.string.url_auth_service_phone));
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
+    /**
+     * It shows reset value layout
+     */
     public void showResetValueLayout() {
         if (clLogout == null || clResetElements == null || clRegisterAndLoginElements == null) {
             return;
@@ -190,6 +201,9 @@ public class PhoneLoginActivity extends AppCompatActivity {
         clRegisterAndLoginElements.setVisibility(View.GONE);
     }
 
+    /**
+     * It hides reset value layout
+     */
     public void hideResetValueLayout() {
         if (clLogout == null || clResetElements == null || clRegisterAndLoginElements == null) {
             return;
@@ -199,6 +213,9 @@ public class PhoneLoginActivity extends AppCompatActivity {
         clRegisterAndLoginElements.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * It sends verify code to phone
+     */
     private void sendVerifyCodeToPhone() {
         String countryCode = etCountryCode.getText().toString().trim();
         String phoneNumber = etPhone.getText().toString().trim();
@@ -210,7 +227,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
                     .sendInterval(30)   //shortest send interval ，30-120s
                     .locale(Locale.getDefault())    // Locale.CHINA()
                     .build();
-            Task<VerifyCodeResult> task =  AGConnectAuth.getInstance().requestVerifyCode(countryCode, phoneNumber, settings);
+            Task<VerifyCodeResult> task = AGConnectAuth.getInstance().requestVerifyCode(countryCode, phoneNumber, settings);
             task.addOnSuccessListener(TaskExecutors.uiThread(), new OnSuccessListener<VerifyCodeResult>() {
                 @Override
                 public void onSuccess(VerifyCodeResult verifyCodeResult) {
@@ -223,7 +240,6 @@ public class PhoneLoginActivity extends AppCompatActivity {
                     showErrorMessageDetail(getResources().getString(R.string.verify_code_send) + PHONE_LOGIN_ON_FAILURE, e);
                 }
             });
-
 
 
         }
@@ -263,6 +279,9 @@ public class PhoneLoginActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * It allows to login with phone number and Verification code
+     */
     private void loginWithPhoneAndVerificationCode() {
         String countryCode = etCountryCode.getText().toString().trim();
         String phoneNumber = etPhone.getText().toString().trim();
@@ -293,6 +312,9 @@ public class PhoneLoginActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * It allows to login with phone number and password
+     */
     private void loginWithPhoneAndPassword() {
         String countryCode = etCountryCode.getText().toString().trim();
         String phoneNumber = etPhone.getText().toString().trim();
@@ -323,7 +345,9 @@ public class PhoneLoginActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * It shows success message detail
+     */
     public void showSuccessMessageDetail(String warning, String message) {
         if (tvProfileDetails == null) {
             return;
@@ -335,6 +359,9 @@ public class PhoneLoginActivity extends AppCompatActivity {
         tvProfileDetails.setText(message);
     }
 
+    /**
+     * It shows error message detail
+     */
     public void showErrorMessageDetail(String message, Exception e) {
         if (tvProfileDetails == null) {
             return;
@@ -345,6 +372,9 @@ public class PhoneLoginActivity extends AppCompatActivity {
         Utils.showToastMessage(getApplicationContext(), message + "\n" + e.getMessage());
     }
 
+    /**
+     * It displays the details of sign-in user's information, including a message.
+     */
     public void showResultDetail(String msg, AGConnectUser signInResult) {
         if (tvProfileDetails == null) {
             return;
@@ -360,7 +390,9 @@ public class PhoneLoginActivity extends AppCompatActivity {
     }
 
     // Other Feature Methods
-
+    /**
+     * It sends verify code to change phone number
+     */
     public void sendVerifyCodeToChangePhoneNumber() {
         String countryCode = etCountryCode.getText().toString().trim();
         String phoneNumber = etPhone.getText().toString().trim();
@@ -386,6 +418,9 @@ public class PhoneLoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * It allows to update phone number
+     */
     public void updatePhoneNumber() {
         if (etCountryCode == null || etPhone == null || etVerifyCodeForPhone == null) {
             return;
@@ -398,6 +433,9 @@ public class PhoneLoginActivity extends AppCompatActivity {
         showToastMEssageToUserAboutUpdatePhoneNumber(countryCode, newPhoneNumber, verifyCode);
     }
 
+    /**
+     * It shows toast message to user about update phone number
+     */
     private void showToastMEssageToUserAboutUpdatePhoneNumber(String countryCode, String newPhoneNumber, String verifyCode) {
         if (countryCode.isEmpty() || verifyCode.isEmpty() || newPhoneNumber.length() != 10) {
             Utils.showToastMessage(getApplicationContext(), "Please enter the countryCode, newPhoneNumber and VerifyCodeForPhoneNumber with valid!");
@@ -417,7 +455,9 @@ public class PhoneLoginActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * It sends verify code to change password
+     */
     public void sendVerifyCodeToUpdatePassword() {
         String countryCode = etCountryCode.getText().toString().trim();
         String phoneNumber = etPhone.getText().toString().trim();
@@ -447,6 +487,9 @@ public class PhoneLoginActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * It allows to update password
+     */
     public void updatePassword() {
         String countryCode = etCountryCode.getText().toString().trim();
         String newPassword = etPassword.getText().toString().trim();
@@ -469,6 +512,9 @@ public class PhoneLoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * It allows to reset password
+     */
     public void resetPassword() {
         if (etCountryCode == null || etPhone == null || etPassword == null || etVerifyCodeForPasswordPhone == null) {
             return;
@@ -483,6 +529,9 @@ public class PhoneLoginActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * It shows toast message to user about reset password
+     */
     private void showMessageToUsersAboutRestPassword(String countryCode, String phoneNumber, String newPassword, String verifyCode) {
         if (countryCode.isEmpty() || phoneNumber.isEmpty() || verifyCode.isEmpty() || newPassword.isEmpty()) {
             Utils.showToastMessage(getApplicationContext(), "Please enter the countryCode, phoneNumber, newPassword and VerifyCodeForPhonePassword with valid!");
@@ -503,6 +552,9 @@ public class PhoneLoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * It allows to user log out.
+     */
     private void logOut() {
         if (tvProfileDetails == null) {
             return;
@@ -523,7 +575,6 @@ public class PhoneLoginActivity extends AppCompatActivity {
             tvProfileDetails.setText(getString(R.string.txt_message_for_no_logged_user));
         }
     }
-
 
     @Override
     protected void onDestroy() {

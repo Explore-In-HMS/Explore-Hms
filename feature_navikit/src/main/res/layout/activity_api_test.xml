@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ApiTestActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarNaviKitInfo"
+        style="@style/ToolbarAppearance.ExploreHMS.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Navi Kit" />
+
+    <ScrollView
+        android:id="@+id/layScroll_navikit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarNaviKitInfo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/result_layout_api"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_gray_result"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/btn_bus_page"
+                app:layout_constraintStart_toStartOf="@+id/btn_bus_page"
+                app:layout_constraintTop_toBottomOf="@+id/btn_bus_page">
+
+                <TextView
+                    android:id="@+id/tvThirdDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/distance"
+                    app:layout_constraintStart_toStartOf="@+id/tvThirdRouteApi"
+                    app:layout_constraintTop_toBottomOf="@+id/tvThirdRouteApi" />
+
+                <TextView
+                    android:id="@+id/tvThirdPassTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/pass_time"
+                    app:layout_constraintStart_toStartOf="@+id/tvThirdDistance"
+                    app:layout_constraintTop_toBottomOf="@+id/tvThirdDistance" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvThirdPassTimeResult"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@+id/tvThirdDistanceResult"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline3"
+                    app:layout_constraintTop_toTopOf="@+id/tvThirdPassTime" />
+
+                <TextView
+                    android:id="@+id/tvThirdTrafficNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/traffic_num"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvThirdPassTime"
+                    app:layout_constraintTop_toBottomOf="@+id/tvThirdPassTime" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvThirdTrafficNumResult"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvThirdTrafficNum"
+                    app:layout_constraintEnd_toEndOf="@+id/tvFirstPassTimeResult"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline3"
+                    app:layout_constraintTop_toTopOf="@+id/tvThirdTrafficNum" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvThirdDistanceResult"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvThirdDistance"
+                    app:layout_constraintEnd_toEndOf="@+id/tvFirstDistanceResult"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline3"
+                    app:layout_constraintTop_toTopOf="@+id/tvThirdDistance" />
+
+                <TextView
+                    android:id="@+id/tvSecondPassTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/pass_time"
+                    app:layout_constraintStart_toStartOf="@+id/tvSecondDistance"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSecondDistance" />
+
+                <TextView
+                    android:id="@+id/tvSecondTrafficNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/traffic_num"
+                    app:layout_constraintStart_toStartOf="@+id/tvSecondPassTime"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSecondPassTime" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvSecondPassTimeResult"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvSecondPassTime"
+                    app:layout_constraintEnd_toEndOf="@+id/tvFirstRouteApi"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline3"
+                    app:layout_constraintTop_toTopOf="@+id/tvSecondPassTime" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvSecondDistanceResult"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvSecondDistance"
+                    app:layout_constraintEnd_toEndOf="@+id/tvSecondRouteApi"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline3"
+                    app:layout_constraintTop_toTopOf="@+id/tvSecondDistance" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvSecondTrafficNumResult"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvSecondTrafficNum"
+                    app:layout_constraintEnd_toEndOf="@+id/tvSecondPassTimeResult"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline3"
+                    app:layout_constraintTop_toTopOf="@+id/tvSecondTrafficNum" />
+
+                <TextView
+                    android:id="@+id/tvSecondDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/distance"
+                    app:layout_constraintStart_toStartOf="@+id/tvSecondRouteApi"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSecondRouteApi" />
+
+                <TextView
+                    android:id="@+id/tvResult"
+                    style="@style/TextAppearance.ExploreHMS.Headline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="@string/result"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/separator2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorGray1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvResult" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvFirstRouteApi"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/first_route"
+                    app:layout_constraintEnd_toEndOf="@+id/separator2"
+                    app:layout_constraintStart_toStartOf="@+id/separator2"
+                    app:layout_constraintTop_toTopOf="@+id/separator2" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvFirstDistanceResult"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/firstDistanceApi"
+                    app:layout_constraintEnd_toEndOf="@+id/tvFirstRouteApi"
+                    app:layout_constraintStart_toStartOf="@+id/guideline3"
+                    app:layout_constraintTop_toTopOf="@+id/firstDistanceApi" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvFirstPassTimeResult"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvFirstPassTime"
+                    app:layout_constraintEnd_toEndOf="@+id/tvFirstDistanceResult"
+                    app:layout_constraintStart_toStartOf="@+id/guideline3"
+                    app:layout_constraintTop_toTopOf="@+id/tvFirstPassTime" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvFirstTrafficNumResult"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvFirstTrafficNum"
+                    app:layout_constraintEnd_toEndOf="@+id/tvFirstPassTimeResult"
+                    app:layout_constraintStart_toStartOf="@+id/guideline3"
+                    app:layout_constraintTop_toTopOf="@+id/tvFirstTrafficNum" />
+
+                <View
+                    android:id="@+id/separator2_phonestatusawareness"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorGray1"
+                    app:layout_constraintEnd_toEndOf="@id/separator3_phonestatusawareness"
+                    app:layout_constraintStart_toStartOf="@id/separator3_phonestatusawareness"
+                    app:layout_constraintTop_toBottomOf="@+id/tvFirstTrafficNum" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvSecondRouteApi"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/second_route"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/separator2_phonestatusawareness" />
+
+
+                <View
+                    android:id="@+id/separator3_phonestatusawareness"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorGray1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSecondTrafficNum" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvThirdRouteApi"
+                    style="@style/TextAppearance.ExploreHMS.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="@string/third_route"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/separator3_phonestatusawareness" />
+
+
+                <TextView
+                    android:id="@+id/firstDistanceApi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/distance"
+                    app:layout_constraintStart_toStartOf="@+id/tvFirstRouteApi"
+                    app:layout_constraintTop_toBottomOf="@+id/tvFirstRouteApi" />
+
+                <TextView
+                    android:id="@+id/tvFirstPassTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/pass_time"
+                    app:layout_constraintStart_toStartOf="@+id/firstDistanceApi"
+                    app:layout_constraintTop_toBottomOf="@+id/firstDistanceApi" />
+
+                <TextView
+                    android:id="@+id/tvFirstTrafficNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/traffic_num"
+                    app:layout_constraintStart_toStartOf="@+id/tvFirstPassTime"
+                    app:layout_constraintTop_toBottomOf="@+id/tvFirstPassTime" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="101dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_routing"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/routing"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_apikey" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_start_navi"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/guiding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_routing" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_bus_page"
+                style="@style/ButtonAppearance.ExploreHMS.Normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/bus_test"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_start_navi" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_strategy"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/navigation_strategy"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_mode" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sp_navi_strategy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_default_spinner"
+                android:entries="@array/strategy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/text_strategy" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_mode"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/types_of_traffic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup_api" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sp_navi_mode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_default_spinner"
+                android:entries="@array/naviMode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/text_mode" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/start_text"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/starting_point"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/m_start_point"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/_22_303450_114_174664" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/end_text"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/end_point"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/start_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/m_end_point"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/_22_305932_114_183719" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/way_one_text"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="3dp"
+                android:hint="@string/pathway_point_1"
+                app:layout_constraintEnd_toStartOf="@+id/way_two_text"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/end_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/way_one_point"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/way_two_text"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/pathway_point_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/way_one_text"
+                app:layout_constraintTop_toBottomOf="@+id/end_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/way_two_point"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvOperationEntity_navikit"
+                style="@style/TextAppearance.ExploreHMS.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/operation_entity"
+                app:layout_constraintStart_toStartOf="@+id/way_one_text"
+                app:layout_constraintTop_toBottomOf="@+id/way_one_text" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_api"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOperationEntity_navikit">
+
+
+                <RadioButton
+                    android:id="@+id/dr1"
+                    style="@style/TextAppearance.ExploreHMS.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/china" />
+
+                <RadioButton
+                    android:id="@+id/dr2"
+                    style="@style/TextAppearance.ExploreHMS.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/asia_africa_and_latin_america" />
+
+                <RadioButton
+                    android:id="@+id/dr3"
+                    style="@style/TextAppearance.ExploreHMS.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/europe" />
+
+                <RadioButton
+                    android:id="@+id/dr4"
+                    style="@style/TextAppearance.ExploreHMS.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/russia" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="180dp" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/user_apikey"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/user_apikey"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_strategy"></com.google.android.material.textfield.TextInputLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

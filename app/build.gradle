@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 apply plugin: 'com.android.application'
@@ -40,14 +38,13 @@ android {
             storePassword keystoreProperties['storePassword']
         }
     }
-    compileSdk 32
-
+    compileSdkVersion 33
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.hms.explorehms"
         minSdkVersion 28
-        targetSdkVersion 32
+        targetSdkVersion 33
         versionCode gradleVersionCode
         versionName gradleVersionName
 
@@ -60,6 +57,7 @@ android {
         packagingOptions {
             //solve com.android.builder.merge.DuplicateRelativeFileException: More than one file was found with OS independent path 'META-INF/rxjava.properties'
             exclude 'META-INF/rxjava.properties'
+            //exclude '/assets/kpms-unpack/open_source_software_statment.xml'
         }
     }
     buildTypes {
@@ -92,7 +90,7 @@ android {
     }
 
 
-    dynamicFeatures =
+dynamicFeatures =
             [
                     ':feature_hiai',
                     ':feature_panorama',
@@ -142,7 +140,7 @@ android {
                     ':feature_dynamicability',
                     ':feature_arengine',
                     ':feature_appgallerykit',
-                    ':feature_wearengine',
+                    //':feature_wearengine',
                     ':feature_hemkit',
                     ':dynamicfeaturetest',
                     //':feature_hiaifoundation',
@@ -153,11 +151,13 @@ android {
                     ':feature_cameraengine',
                     ':feature_devicevirtualizationengine',
                     ':feature_modem5g_kit',
-                    ':feature_videoeditorkit'
+                    ':feature_videoeditorkit',
+                    ':feature_navikit',
+                    ':feature_videoeditorkitai'
             ]
 
     packagingOptions {
-        pickFirst '**/*.so'
+        pickFirst 'lib/arm64-v8a/libmindspore-lite.so'
         pickFirst 'okhttp3/internal/publicsuffix/publicsuffixes.gz'
         pickFirst 'lib/x86_64/libAudioAdjustmentJni.so'
         pickFirst 'lib/armeabi/libAudioAdjustmentJni.so'
@@ -166,6 +166,11 @@ android {
         pickFirst 'lib/arm64-v8a/libAudioAdjustmentJni.so'
         pickFirst 'lib/arm64-v8a/libc++_shared.so'
         pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+        pickFirst 'lib/arm64-v8a/libnative-lib.so'
+        pickFirst 'lib/arm64-v8a/libnative-lib.so'
+        pickFirst 'lib/arm64-v8a/libhiai_ir_build.so'
+        pickFirst 'lib/armeabi-v7a/libVariableSpeed.so'
+        pickFirst 'lib/arm64-v8a/libVariableSpeed.so'
     }
 
 }
@@ -187,7 +192,6 @@ dependencies {
     // If you want to additionally use the CameraX Lifecycle library
     implementation "androidx.camera:camera-lifecycle:${camerax_version}"
     // If you want to additionally use the CameraX View class
-    implementation "androidx.camera:camera-view:1.0.0-alpha20"
 
     implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
 
@@ -204,10 +208,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0"
+
     /**
      * 3rd party libraries
      **/
-    api 'com.android.support:multidex:1.0.3'
 
     api 'com.squareup.okhttp3:okhttp:3.14.9'
 
@@ -221,7 +226,6 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 
     api 'com.github.bumptech.glide:glide:4.11.0'
-    api 'com.github.bumptech.glide:glide:4.11.0'
 
     implementation "com.klinkerapps:peekview:1.2.3"
 
@@ -232,16 +236,16 @@ dependencies {
     api 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
     api 'io.reactivex:rxjava:1.0.14'
     api 'io.reactivex:rxandroid:1.0.1'
-    api 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
 
     //Retrofit
-    api 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
     api 'com.squareup.retrofit2:converter-gson:2.5.0'
     api 'com.squareup.retrofit2:retrofit:2.9.0'
 
-
     //card view
     implementation 'androidx.cardview:cardview:1.0.0'
+
+    //ViewPager
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
 
     //gson
@@ -252,37 +256,40 @@ dependencies {
     // end of 3rd party Libraries
 
     //agconnect version
-    api 'com.huawei.agconnect:agconnect-core:1.6.1.300'
+    api 'com.huawei.agconnect:agconnect-core:1.8.0.300'
+
+    //Analytics Kit
+    api 'com.huawei.hms:hianalytics:6.10.0.300'
 
     //cloud storage
     api "com.huawei.agconnect:agconnect-storage:1.5.0.100"
 
     //DTM
-    api 'com.huawei.hms:dtm-api:6.6.0.300'
+    api 'com.huawei.hms:dtm-api:6.6.0.304'
 
     //hquic
     implementation 'com.huawei.hms:hquic-provider:5.0.1.300'
 
     //Dynamic Ability
-    api 'com.huawei.hms:dynamicability:1.0.17.300'
+    api 'com.huawei.hms:dynamicability:1.0.18.300'
 
     //Location Kit
-    implementation 'com.huawei.hms:location:6.4.0.300'
+    implementation 'com.huawei.hms:location:6.9.0.300'
 
     //Site Kit
-    implementation 'com.huawei.hms:site:6.4.0.304'
+    implementation 'com.huawei.hms:site:6.5.1.300'
 
     //Account Kit
-    api 'com.huawei.hms:hwid:6.7.0.300'
+    api 'com.huawei.hms:hwid:6.9.0.301'
 
     // Scan Kit
-    implementation 'com.huawei.hms:scan:2.7.0.302'
+    implementation 'com.huawei.hms:scan:2.10.0.301'
 
     //Cloud functions sdk
-    api 'com.huawei.agconnect:agconnect-function:1.7.1.300'
+    api 'com.huawei.agconnect:agconnect-function:1.8.0.300'
 
     //audio kit
-    api 'com.huawei.hms:audiokit-player:1.5.0.300'
+    api 'com.huawei.hms:audiokit-player:1.6.0.300'
 
     /**
      * Some module dependencies are implemented here because of a crash.
@@ -291,85 +298,110 @@ dependencies {
      *   ML kit
      */
     //Text Recognition SDK
-    api 'com.huawei.hms:ml-computer-vision-ocr:3.6.0.300'
+    api 'com.huawei.hms:ml-computer-vision-ocr:3.8.0.303'
     // Import the Latin-based language model package.
-    api 'com.huawei.hms:ml-computer-vision-ocr-latin-model:3.6.0.300'
+    api 'com.huawei.hms:ml-computer-vision-ocr-latin-model:3.8.0.303'
     // Import the Japanese and Korean model package.
-    api 'com.huawei.hms:ml-computer-vision-ocr-jk-model:3.6.0.300'
+    api 'com.huawei.hms:ml-computer-vision-ocr-jk-model:3.8.0.303'
     // Import the Chinese and English model package.
-    api 'com.huawei.hms:ml-computer-vision-ocr-cn-model:3.6.0.300'
+    api 'com.huawei.hms:ml-computer-vision-ocr-cn-model:3.8.0.303'
     // Bank Card Recognition
-    api 'com.huawei.hms:ml-computer-card-bcr:3.5.0.300'
+    api 'com.huawei.hms:ml-computer-card-bcr:3.7.0.302'
     api 'com.huawei.hms:ml-computer-card-gcr-plugin:2.0.1.300'
 
     //Text Embedding
-    api 'com.huawei.hms:ml-nlp-textembedding:3.5.0.300'
+    api 'com.huawei.hms:ml-nlp-textembedding:3.9.0.300'
 
     //ID card
-    api 'com.huawei.hms:ml-computer-card-icr-cn:2.0.3.303'
-    api 'com.huawei.hms:ml-computer-card-icr-vn:2.1.0.301'
+    api 'com.huawei.hms:ml-computer-card-icr-cn:3.7.0.303'
+    api 'com.huawei.hms:ml-computer-card-icr-vn:3.7.0.303'
 
     // object detection
-    api 'com.huawei.hms:ml-computer-vision-livenessdetection:2.0.2.300'
-    api 'com.huawei.hms:ml-computer-vision-object-detection-model:2.0.3.300'
-    api 'com.huawei.hms:ml-computer-vision-image-classification-model:2.0.1.300'
+    api 'com.huawei.hms:ml-computer-vision-livenessdetection:3.7.0.302'
 
-    api 'com.huawei.hms:ml-computer-vision-cloud:2.0.3.300'
-
-    // Product Search
-    api 'com.huawei.hms:ml-product-visual-search-plugin:2.0.3.300'
-
-    api 'com.huawei.hms:ml-computer-voice-asr-plugin:2.0.3.300'
+    api 'com.huawei.hms:ml-computer-voice-asr-plugin:3.5.0.301'
 
     // Face Shape
-    api 'com.huawei.hms:ml-computer-vision-face:2.0.5.300'
-    api 'com.huawei.hms:ml-computer-vision-face-shape-point-model:2.0.5.300'
-    api 'com.huawei.hms:ml-computer-vision-face-emotion-model:2.0.5.300'
-    api 'com.huawei.hms:ml-computer-vision-face-feature-model:2.0.5.300'
-    api 'com.huawei.hms:ml-computer-vision-face-3d-model:2.0.5.300'
+    api 'com.huawei.hms:ml-computer-vision-face:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-face-shape-point-model:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-face-emotion-model:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-face-feature-model:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-face-3d-model:3.7.0.301'
 
     // Face Verification
-    api 'com.huawei.hms:ml-computer-vision-faceverify:2.1.0.300'
-    api 'com.huawei.hms:ml-computer-vision-faceverify-model:2.1.0.300'
+    api 'com.huawei.hms:ml-computer-vision-faceverify:3.6.0.304'
+    api 'com.huawei.hms:ml-computer-vision-faceverify-model:3.6.0.304'
+
+    // Image Segmentation
+    api 'com.huawei.hms:ml-computer-vision-segmentation:3.7.0.302'
+    api 'com.huawei.hms:ml-computer-vision-image-segmentation-multiclass-model:3.7.0.302'
+    api 'com.huawei.hms:ml-computer-vision-image-segmentation-body-model:3.7.0.302'
+
+    /**
+    * Don't change this dependencies for successfully release
+    **/
+
+    // Product Visual Search -------------------------------------------------------------------- //
+    api 'com.huawei.hms:ml-product-visual-search-plugin:3.7.0.302'
+
+    // Image Super Resolution ------------------------------------------------------------------- //
+    api 'com.huawei.hms:ml-computer-vision-imagesuperresolution:3.7.0.302'
+    api 'com.huawei.hms:ml-computer-vision-imagesuperresolution-model:3.5.0.301'
+
+    // Document Skew Correction ----------------------------------------------------------------- //
+    api 'com.huawei.hms:ml-computer-vision-documentskew:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-documentskew-model:3.7.0.301'
+
+    // Text Image Super-Resolution -------------------------------------------------------------- //
+    api 'com.huawei.hms:ml-computer-vision-textimagesuperresolution:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-textimagesuperresolution-model:3.7.0.301'
+
+    // Scene Detection -------------------------------------------------------------------------- //
+    api 'com.huawei.hms:ml-computer-vision-scenedetection:3.7.0.303'
+
+    api 'com.huawei.hms:ml-computer-vision-image-classification-model:3.5.0.302'
+    api 'com.huawei.hms:ml-computer-vision-object-detection-model:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-cloud:3.9.0.300'
+    api 'com.huawei.hms:ml-computer-vision-formrecognition-model:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-handkeypoint:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-handkeypoint-model:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-gesture-model:3.5.0.301'
 
     // Skeleton detection
-    api 'com.huawei.hms:ml-computer-vision-skeleton:2.0.4.300'
-    api 'com.huawei.hms:ml-computer-vision-skeleton-model:2.0.4.300'
-    api 'com.huawei.hms:ml-computer-vision-skeleton-model:2.0.4.300'
+    api 'com.huawei.hms:ml-computer-vision-skeleton:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-skeleton-model:3.7.0.301'
+    api 'com.huawei.hms:ml-computer-vision-skeleton-model:3.7.0.301'
 
     // hand detection
     api 'com.huawei.hms:ml-computer-vision-yoga-model:2.0.4.300'
-    api 'com.huawei.hms:ml-computer-vision-handkeypoint:2.1.0.300'
-    api 'com.huawei.hms:ml-computer-vision-handkeypoint-model:2.1.0.300'
-    api 'com.huawei.hms:ml-computer-vision-gesture-model:2.1.0.300'
 
     // Language detection
     //implementation 'com.huawei.hms:ml-computer-language-detection:2.2.0.300'
     // Import the base SDK.
-    api 'com.huawei.hms:ml-computer-language-detection:3.6.0.312'
+    api 'com.huawei.hms:ml-computer-language-detection:3.9.0.300'
     // Import the language detection algorithm package.
     api 'com.huawei.hms:ml-computer-language-detection-model:3.6.0.312'
 
     // translate
-    api 'com.huawei.hms:ml-computer-translate:3.6.0.312'
+    api 'com.huawei.hms:ml-computer-translate:3.9.0.300'
     // Import the translation algorithm package.
-    api 'com.huawei.hms:ml-computer-translate-model:3.6.0.312'
+    api 'com.huawei.hms:ml-computer-translate-model:3.7.0.301'
 
     // Real time transcription
-    api 'com.huawei.hms:ml-computer-voice-realtimetranscription:3.5.0.303'
+    api 'com.huawei.hms:ml-computer-voice-realtimetranscription:3.9.0.300'
 
     // Voice
-    api 'com.huawei.hms:ml-computer-voice-aft:3.5.0.300'
+    api 'com.huawei.hms:ml-computer-voice-aft:3.9.0.300'
     //implementation 'com.huawei.hms:ml-computer-voice-tts:2.2.0.300'
     // Import the base SDK.
-    api 'com.huawei.hms:ml-computer-voice-tts:3.6.0.300'
+    api 'com.huawei.hms:ml-computer-voice-tts:3.9.0.301'
     // Import the bee voice package.
     api 'com.huawei.hms:ml-computer-voice-tts-model-bee:3.6.0.300'
     // Import the eagle voice package.
     api 'com.huawei.hms:ml-computer-voice-tts-model-eagle:3.6.0.300'
 
     //ASR
-    api 'com.huawei.hms:ml-computer-voice-asr:3.5.0.301'
+    api 'com.huawei.hms:ml-computer-voice-asr:3.9.0.300'
 
     //Sound detection
     api 'com.huawei.hms:ml-speech-semantics-sounddect-sdk:3.5.0.302'
@@ -377,14 +409,16 @@ dependencies {
 
     // ML KIT END
 
-    //Analytics Kit
-    implementation 'com.huawei.hms:hianalytics:6.7.0.300'
-
     //nearby
-    api 'com.huawei.hms:nearby:6.2.0.300'
+    api 'com.huawei.hms:nearby:6.9.0.300'
 
     //Video Kit
-    api "com.huawei.hms:videokit-player:1.0.10.302"
+   // api "com.huawei.hms:videokit-player:1.0.10.302"
+    api 'com.huawei.hms:videokit-player:1.0.14.301'
+    api 'com.huawei.hms:videokit-player-fallback:1.0.14.301'
+    api 'com.huawei.hms:videokit-hdrvivid:1.0.14.301'
+    api 'com.huawei.hms:videokit-hdrability:1.0.14.301'
+
 
     //Scene kit
 /*    api 'com.huawei.scenekit:full-sdk:6.0.0.301'
@@ -396,20 +430,21 @@ dependencies {
     api 'com.huawei.scenekit:scenekit-iphysics-utils:6.0.0.301'*/
 
     //App linking
-    api 'com.huawei.agconnect:agconnect-applinking:1.7.1.300'
+    api 'com.huawei.agconnect:agconnect-applinking:1.8.0.300'
 
     //FIDO
-    api 'com.huawei.hms:fido-fido2:6.3.0.302'
-    api 'com.huawei.hms:fido-bioauthn-androidx:6.3.0.302'
+    api 'com.huawei.hms:fido-fido2:6.7.0.300'
+    api 'com.huawei.hms:fido-bioauthn-androidx:6.7.0.300'
 
     //Awareness Kit
-    api 'com.huawei.hms:awareness:3.4.0.300'
+    api 'com.huawei.hms:awareness:3.4.0.302'
 
     //Push Kit
-    api 'com.huawei.hms:push:6.5.0.300'
+    api 'com.huawei.hms:push:6.9.0.300'
 
     //MAP kit
-    api "com.huawei.hms:maps:6.3.1.300"
+    api "com.huawei.hms:maps:6.9.0.300"
+    //api 'com.huawei.hms:maps-advance:6.4.1.300'
 
     //Ads Kit
     //api 'com.huawei.hms:ads-lite:13.4.54.300'
@@ -419,36 +454,27 @@ dependencies {
     // Image Kit
     api 'com.huawei.hms:image-vision:1.0.3.306'
 
-    // Auth Service
-    implementation 'com.huawei.agconnect:agconnect-auth:1.7.1.300'
-
     //Game Kit
-    api "com.huawei.hms:game:6.1.0.301"
-
-    //Cloud DB
-    api 'com.huawei.agconnect:agconnect-cloud-database:1.5.0.300'
+    api "com.huawei.hms:game:6.8.0.300"
 
     //Drive Kit
     api 'com.huawei.hms:drive:5.0.0.307'
 
     //Crash Service
-    api 'com.huawei.agconnect:agconnect-crash:1.7.1.300'
+    api 'com.huawei.agconnect:agconnect-crash:1.8.0.300'
 
     //Remote Configuration
-    api 'com.huawei.agconnect:agconnect-remoteconfig:1.6.4.300'
+    api 'com.huawei.agconnect:agconnect-remoteconfig:1.8.0.300'
 
     //App Messaging
-    api 'com.huawei.agconnect:agconnect-appmessaging:1.7.1.300'
+    api 'com.huawei.agconnect:agconnect-appmessaging:1.8.0.300'
 
     //AR Engine
-    api 'com.huawei.hms:arenginesdk:3.7.0.3'
-
-    //Hem Kit
-    api 'com.huawei.hms:hemsdk:1.0.4.303'
+    api 'com.huawei.hms:arenginesdk:4.0.0.5'
 
     //Audio Editor Kit
-    api 'com.huawei.hms:audio-editor-ui:1.7.0.300'
-    api 'com.huawei.hms:audio-editor-sdk:1.4.0.301'
+    api 'com.huawei.hms:audio-editor-ui:1.8.0.301'
+    api 'com.huawei.hms:audio-editor-sdk:1.8.0.301'
 
     // AV Pipeline Kit
     api 'com.huawei.hms:avpipelinesdk:6.0.0.302'
@@ -458,17 +484,20 @@ dependencies {
     api 'com.huawei.hms:avpipeline-fallback-sounddetect:6.0.0.302'
 
     //3D modelling kit
-    implementation 'com.huawei.hms:modeling3d-object-reconstruct:1.4.0.300'
-    implementation 'com.huawei.hms:modeling3d-material-generate:1.4.0.300'
+    implementation 'com.huawei.hms:modeling3d-object-reconstruct:1.9.0.300'
+    implementation 'com.huawei.hms:modeling3d-material-generate:1.9.0.300'
+    implementation 'com.huawei.hms:modeling3d-objectreconstruct-slam:1.9.0.300'
+    implementation 'com.huawei.hms:modeling3d-motion-capture:1.7.0.301'
+    implementation 'com.huawei.hms:modeling3d-motion-capture-model:1.7.0.301'
     implementation 'pub.devrel:easypermissions:3.0.0'
-    implementation 'me.jessyan:autosize:1.2.1'
+    api 'me.jessyan:autosize:1.2.1'
 
     //Video Editor Kit
     api 'com.huawei.hms:video-editor-ui:1.1.0.305'
     //api 'com.huawei.hms:video-editor-sdk:1.7.0.300'
 
     //Keyring Service
-    implementation "com.huawei.hms:keyring-credential:6.4.0.302"
+    implementation "com.huawei.hms:keyring-credential:6.7.0.303"
 }
 
 /*apply from: '../sonarqube.gradle'

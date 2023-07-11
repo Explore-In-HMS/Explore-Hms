@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 package com.hms.explorehms.huawei.feature_adskit;
 
@@ -26,6 +24,9 @@ import org.json.JSONObject;
 
 import java.security.SecureRandom;
 
+/**
+ * It is utils class, it handles common process
+ */
 public class Utils {
 
 
@@ -42,21 +43,24 @@ public class Utils {
         try {
             //Sample string for setContentBundle() method
             contentBundle = new JSONObject()
-                    .put("channelCategoryCode","TV series")
-                    .put("title","Game of Thrones")
-                    .put("tags","fantasy")
-                    .put("relatedPeople","David Benioff")
-                    .put("content","Nine noble families fight for control over the lands of Westeros.")
-                    .put("contentID","123123")
-                    .put("category","classics")
-                    .put("subcategory","historical drama")
-                    .put("thirdCategory","mystery")
+                    .put("channelCategoryCode", "TV series")
+                    .put("title", "Game of Thrones")
+                    .put("tags", "fantasy")
+                    .put("relatedPeople", "David Benioff")
+                    .put("content", "Nine noble families fight for control over the lands of Westeros.")
+                    .put("contentID", "123123")
+                    .put("category", "classics")
+                    .put("subcategory", "historical drama")
+                    .put("thirdCategory", "mystery")
                     .toString();
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * It shows a toast message
+     */
     public static void showToast(Context context, String message) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }

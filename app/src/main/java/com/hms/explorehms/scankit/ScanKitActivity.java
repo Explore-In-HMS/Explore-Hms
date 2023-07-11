@@ -1,25 +1,24 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.scankit;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -35,6 +34,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
@@ -52,6 +52,7 @@ import java.io.ByteArrayOutputStream;
 
 public class ScanKitActivity extends AppCompatActivity implements View.OnClickListener {
 
+    int mode = 0; //Default Scan QR code/barcode parameter for setViewType method
     private static final String TAG = "ScanKitActivity";
 
     public static final String DECODE_MODE = "decode_mode";
@@ -154,7 +155,33 @@ public class ScanKitActivity extends AppCompatActivity implements View.OnClickLi
      * Constructs a default barcode scanner for all
      */
     private void startDefaultBarcodeView() {
-        ScanUtil.startScan(this, SCAN_DEFAULT_VIEW_REQUEST, new HmsScanAnalyzerOptions.Creator().setHmsScanTypes(HmsScanBase.ALL_SCAN_TYPE).create());
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(ScanKitActivity.this);
+        builder.setTitle(getString(R.string.default_barcode_view_title))
+                .setMessage(getString(R.string.default_barcode_view_msg))
+                .setPositiveButton(getString(R.string.default_barcode_view_positive), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        mode = 1;
+                        ScanUtil.startScan(ScanKitActivity.this, SCAN_DEFAULT_VIEW_REQUEST, new HmsScanAnalyzerOptions.Creator().setHmsScanTypes(HmsScanBase.ALL_SCAN_TYPE).setViewType(mode).create());
+                    }
+                })
+                .setNegativeButton(getString(R.string.default_barcode_view_negative), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        mode = 0;
+                        ScanUtil.startScan(ScanKitActivity.this, SCAN_DEFAULT_VIEW_REQUEST, new HmsScanAnalyzerOptions.Creator().setHmsScanTypes(HmsScanBase.ALL_SCAN_TYPE).setViewType(mode).create());
+                    }
+                })
+                .setNeutralButton(getString(R.string.default_barcode_view_neutral), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                })
+                .create();
+        builder.show();
+
     }
 
     private void startCustomBarcodeView() {

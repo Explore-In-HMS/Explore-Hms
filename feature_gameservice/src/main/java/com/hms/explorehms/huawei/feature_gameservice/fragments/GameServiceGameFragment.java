@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.huawei.feature_gameservice.fragments;
@@ -40,8 +38,6 @@ import androidx.annotation.Nullable;
 import com.hms.explorehms.huawei.feature_gameservice.R;
 import com.hms.explorehms.huawei.feature_gameservice.databinding.FragmentGameServiceGameBinding;
 import com.hms.explorehms.huawei.feature_gameservice.databinding.ItemSavedialogGameserviceBinding;
-import com.huawei.hmf.tasks.OnFailureListener;
-import com.huawei.hmf.tasks.OnSuccessListener;
 import com.huawei.hmf.tasks.Task;
 import com.huawei.hms.common.ApiException;
 import com.huawei.hms.jos.games.AchievementsClient;
@@ -57,7 +53,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
-
+/**
+ * This allows to play a game to test Huawei Game Service features.
+ */
 public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGameServiceGameBinding> implements ViewTreeObserver.OnGlobalLayoutListener {
 
 
@@ -89,12 +87,17 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
 
     private int delayN = 10;
 
-
+    /**
+     * It handles binding
+     */
     @Override
     FragmentGameServiceGameBinding bindView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return FragmentGameServiceGameBinding.inflate(inflater, container, false);
     }
 
+    /**
+     * Initializes the UI to show game.
+     */
     @Override
     void initializeUI() {
         setTitle("Let's Play!");
@@ -143,7 +146,7 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         view.btnStopGameGameservices.setOnClickListener(view1 -> pauseGame());
 
         view.btnAchievementsGameservices.setOnClickListener(view1 -> {
-           // pauseGame();
+            // pauseGame();
             getAchievementList();
         });
 
@@ -166,6 +169,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
 
     }
 
+    /**
+     * It makes game slower.
+     */
     private void makeItSlower(Long initValue) {
         if (isGameStarted) {
 
@@ -197,6 +203,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
 
     }
 
+    /**
+     * It adds time for game duration.
+     */
     private void addTime(Long initValue) {
         if (isGameStarted) {
 
@@ -234,6 +243,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         }
     }
 
+    /**
+     * It inits Achievements UI such as Shooter or Survivor
+     */
     private void initAchievementsUI() {
         if (isSurvivor) {
             view.btnSlowerGameservices.setAlpha(1f);
@@ -245,6 +257,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         }
     }
 
+    /**
+     * It adds a view based on the width, height, x and y.
+     */
     private void addView(int width, int height, int x, int y) {
         view.layGameGameservices.removeAllViewsInLayout();
 
@@ -266,6 +281,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         view.layGameGameservices.addView(imageView);
     }
 
+    /**
+     * It pauses game, if game has already started
+     */
     private void pauseGame() {
         if (isGameStarted && !isPaused) {
             isPaused = true;
@@ -278,6 +296,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         }
     }
 
+    /**
+     * It inits timer to use for game duration
+     */
     private void initTimer(long timeInMillis) {
         timer = new CountDownTimer(timeInMillis, 1000) {
             @Override
@@ -335,6 +356,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         super.onDestroyView();
     }
 
+    /**
+     * It handles end of the game.
+     */
     private void gameEnds() {
 
         RankingsClient mRankingsClient = Games.getRankingsClient(((Activity) requireContext()));
@@ -355,6 +379,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         }).addOnFailureListener(e -> Log.e(TAG, "gameEnds: " + e.getMessage()));
     }
 
+    /**
+     * It submits ranking score to save for leaderboard
+     */
     private void submitRankingScore(RankingsClient client) {
         int allTimeRankingResults = 2;
         client.getCurrentPlayerRankingScore(LEADERBOARD_ID, allTimeRankingResults)
@@ -367,6 +394,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
                 .addOnFailureListener(e -> Log.e(TAG, "submitRankingScore: " + e.getMessage()));
     }
 
+    /**
+     * It clears UI for reset game
+     */
     private void clearUI() {
         view.layGameGameservices.removeAllViewsInLayout();
         handler.removeCallbacks(runnable);
@@ -390,6 +420,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         addTimeLeft = 0;
     }
 
+    /**
+     * it init UI for paused
+     */
     @SuppressLint("SetTextI18n")
     private void initUIForPaused() {
         view.layGameGameservices.removeAllViewsInLayout();
@@ -419,6 +452,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         }
     }
 
+    /**
+     * It init UI for un paused
+     */
     private void initUIForUnPaused() {
         view.layStopViewGameservices.setVisibility(View.GONE);
         view.tvStopTextGameservices.setVisibility(View.GONE);
@@ -441,6 +477,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         isGameStarted = false;
     }
 
+    /**
+     * It starts to game, if already not started
+     */
     private void startGame() {
         if (!isGameStarted) {
             isGameStarted = true;
@@ -470,6 +509,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         }
     }
 
+    /**
+     * Adds delay and minus score.
+     */
     private int delay() {
         if (score == 0) {
             return 1000;
@@ -487,6 +529,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
 
     }
 
+    /**
+     * It unlocks Shooter achievement, and gives an alert to user
+     */
     private void unlockShooterAchievement() {
         Task<Void> task = achievementsClient.reachWithResult(SHOOTER_ID);
         task.addOnSuccessListener(aVoid -> {
@@ -500,6 +545,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         }).addOnFailureListener(e -> Log.e(TAG, "unlockShooterAchievement: " + e.getMessage()));
     }
 
+    /**
+     * It unlocks Survivor achievement, and gives an alert to user
+     */
     private void unlockSurvivorAchievement() {
         Task<Void> task = achievementsClient.reachWithResult(SURVIVOR_ID);
         task.addOnSuccessListener(aVoid -> {
@@ -514,7 +562,10 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
 
     }
 
-
+    /**
+     * It inits achievement status, such as isShooter or isSurvivor
+     * It also calls initAchievementsUI()
+     */
     private void initAchievementStatus() {
         achievementsClient.getAchievementList(true).addOnSuccessListener(achievements -> {
             if (achievements == null) {
@@ -536,6 +587,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         });
     }
 
+    /**
+     * It sends achievements to CustomDialogGameServices, if achievements are not null
+     */
     private void getAchievementList() {
         Task<List<Achievement>> task = achievementsClient.getAchievementList(true);
         task.addOnSuccessListener(achievements -> {
@@ -555,6 +609,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         });
     }
 
+    /**
+     * It switch leaderboard to on
+     */
     private void switchLeaderboardOn() {
         rankingsClient.getRankingSwitchStatus().addOnSuccessListener(integer -> {
             if (integer != 1) {
@@ -568,6 +625,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         });
     }
 
+    /**
+     * It checks leaderboards
+     */
     private void checkLeaderboards() {
         rankingsClient.getRankingSummary(LEADERBOARD_ID, true).addOnSuccessListener(ranking -> {
             Log.i(TAG, "onSuccess: Ranking retrieval Success");
@@ -580,6 +640,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         });
     }
 
+    /**
+     * It shows leaderboard
+     */
     @SuppressLint("ShowToast")
     private void showLeaderboard(String rankingId) {
         int timeDimension = 0;
@@ -597,6 +660,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         );
     }
 
+    /**
+     * It saves the title but the game get to be paused
+     */
     private void getSaveTitle() {
         if (isPaused) {
             AlertDialog saveDialog = new AlertDialog.Builder(requireContext()).create();
@@ -623,6 +689,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
         }
     }
 
+    /**
+     * It saves the game with a title
+     */
     private void saveGame(String title) {
         view.progressBarGameGameservices.setVisibility(View.VISIBLE);
         ArchivesClient archiveClient = Games.getArchiveClient(requireActivity());
@@ -651,7 +720,9 @@ public class GameServiceGameFragment extends BaseFragmentGameServices<FragmentGa
 
     }
 
-
+    /**
+     * It returns game info as byte-array type
+     */
     private byte[] getGameInfoAsByteArray() {
         String gameInfos;
         gameInfos = milliLeft + "," + score + ",";

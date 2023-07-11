@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 package com.hms.explorehms.huawei.feature_adskit;
 
@@ -32,24 +30,37 @@ import com.huawei.hms.ads.AdListener;
 import com.huawei.hms.ads.AdParam;
 import com.huawei.hms.ads.HwAds;
 import com.huawei.hms.ads.VideoOperator;
+import com.huawei.hms.ads.nativead.DetailedCreativeType;
 import com.huawei.hms.ads.nativead.MediaView;
 import com.huawei.hms.ads.nativead.NativeAd;
 import com.huawei.hms.ads.nativead.NativeAdConfiguration;
 import com.huawei.hms.ads.nativead.NativeAdLoader;
 import com.huawei.hms.ads.nativead.NativeView;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
+/**
+ * This shows how we display Native Ad with Ads Kit.
+ */
 public class NativeActivity extends AppCompatActivity {
 
 
     private static final String TAG = NativeActivity.class.getSimpleName();
+    private Button btnGetAdvertiserInfoNative;
 
+    /**
+     * The method initializes the sets up necessary for UI, toolbar and Ads.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_native);
         setupToolbar();
+
+        initView();
+
         NativeView smallNativeView = findViewById(R.id.native_ad_small);
         NativeView largeNativeView = findViewById(R.id.native_ad_large);
         NativeView videoNativeView = findViewById(R.id.native_ad_video);
@@ -57,12 +68,33 @@ public class NativeActivity extends AppCompatActivity {
         // Initialize the HUAWEI Ads SDK.
         HwAds.init(this);
         // load ads based on ad id to native ad views
-        loadAd(getString(R.string.ad_id_native_video), videoNativeView);
-        loadAd(getString(R.string.ad_id_native_small), smallNativeView);
-        loadAd(getString(R.string.ad_id_native), largeNativeView);
+        loadAd(getString(R.string.ad_id_native_video), videoNativeView, 0);
+        loadAd(getString(R.string.ad_id_native_small), smallNativeView, 0);
+        loadAd(getString(R.string.ad_id_native), largeNativeView, DetailedCreativeType.BIG_IMG);
 
     }
 
+    private void initView(){
+        btnGetAdvertiserInfoNative = findViewById(R.id.btn_get_advertiser_info_native);
+    }
+
+    private void initAdvertiserButtonClick(NativeAd nativeAd, NativeView nativeView){
+        btnGetAdvertiserInfoNative.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (nativeAd.hasAdvertiserInfo()){
+                    nativeView.showAdvertiserInfoDialog(btnGetAdvertiserInfoNative, true);
+                    Utils.showToast(NativeActivity.this, getString(R.string.advertise_info_showing));
+                }else{
+                    Utils.showToast(NativeActivity.this, getString(R.string.ads_kit_advertiser_info_fail));
+                }
+            }
+        });
+    }
+
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -70,17 +102,30 @@ public class NativeActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
-    private void loadAd(String adId, final NativeView nativeView) {
-
+    /**
+     * The method loads ads with showNativeAd
+     */
+    private void loadAd(String adId, final NativeView nativeView, int type) {
+        List<Integer> detailedCreativeTypeList = new ArrayList<>();
         final NativeAdLoader.Builder builder = new NativeAdLoader.Builder(this, adId);
         builder.setNativeAdLoadedListener(nativeAd -> {
-
+            //AdvertiserInfo check
+            if (!nativeAd.hasAdvertiserInfo()){
+                //btnGetAdvertiserInfoNative.setVisibility(View.GONE);
+                initAdvertiserButtonClick(nativeAd, nativeView);
+            }else{
+                initAdvertiserButtonClick(nativeAd, nativeView);
+            }
             Log.d(TAG, "onNativeAdLoaded : Ad Loaded successfully.");
             // Display native ad.
             showNativeAd(nativeAd, nativeView);
@@ -104,11 +149,24 @@ public class NativeActivity extends AppCompatActivity {
         Log.d(TAG, "loadAd() : nativeAdLoader.loadAd() ");
 
         Location location = new Location(LocationManager.GPS_PROVIDER);
-        nativeAdLoader.loadAd(new AdParam.Builder()
-                //Set the location information passed by the app
-                .setLocation(location)
-                .setContentBundle(Utils.contentBundle)
-                .build());
+
+        // Add a specified creative type (large image).
+        if (type != 0) {
+            detailedCreativeTypeList.add(type);
+            nativeAdLoader.loadAd(new AdParam.Builder()
+                    //Set the location information passed by the app
+                    .setLocation(location)
+                    .setDetailedCreativeTypeList(detailedCreativeTypeList)
+                    .setContentBundle(Utils.contentBundle)
+                    .build());
+        } else {
+            nativeAdLoader.loadAd(new AdParam.Builder()
+                    //Set the location information passed by the app
+                    .setLocation(location)
+                    .setContentBundle(Utils.contentBundle)
+                    .build());
+        }
+
 
     }
 
@@ -159,7 +217,9 @@ public class NativeActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * The method handles playing and ending videos
+     */
     private VideoOperator.VideoLifecycleListener videoLifecycleListener = new VideoOperator.VideoLifecycleListener() {
         @Override
         public void onVideoStart() {
@@ -181,7 +241,9 @@ public class NativeActivity extends AppCompatActivity {
         }
     };
 
-
+    /**
+     * The method handles Ads attitudes
+     */
     private AdListener adListener = new AdListener() {
         @Override
         public void onAdLoaded() {

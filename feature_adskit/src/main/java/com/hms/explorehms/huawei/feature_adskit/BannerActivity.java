@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 package com.hms.explorehms.huawei.feature_adskit;
 
@@ -37,6 +35,9 @@ import com.huawei.hms.ads.banner.BannerView;
 
 import java.util.Locale;
 
+/**
+ * This shows how we display Banner Ad with Ads Kit.
+ */
 public class BannerActivity extends AppCompatActivity {
 
     private static final String TAG = BannerActivity.class.getSimpleName();
@@ -47,6 +48,9 @@ public class BannerActivity extends AppCompatActivity {
     private AdParam adParam;
     private ConstraintLayout rootView;
 
+    /**
+     * The method initializes the sets up necessary for UI, toolbar and Ads.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +60,9 @@ public class BannerActivity extends AppCompatActivity {
         loadDefaultBannerAd();
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -63,7 +70,9 @@ public class BannerActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
-
+    /**
+     * It initializes the UI, and build AdParam by user location
+     */
     private void initializeUI() {
         rootView = findViewById(R.id.root_view);
         MaterialButton loadAd = findViewById(R.id.btnLoadBannerAd);
@@ -85,12 +94,19 @@ public class BannerActivity extends AppCompatActivity {
         //adParam = AdvancedAdUtils.editAndGetAdParam(1, 0, 1, "J"); // eg : ads for child
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
+    /**
+     * It loads default banner ads with test Ad Id
+     */
     private void loadDefaultBannerAd() {
 
         // Load the default banner ad.
@@ -107,6 +123,9 @@ public class BannerActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * It loads banner ads with test Ad Id. if default ads is not null, it removes defBannerView
+     */
     private void loadBannerAd() {
         Log.d(TAG, "adListener.loadBannerAd()....");
 

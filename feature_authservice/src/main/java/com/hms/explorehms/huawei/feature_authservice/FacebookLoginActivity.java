@@ -1,24 +1,21 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.huawei.feature_authservice;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -41,9 +38,6 @@ import com.huawei.agconnect.auth.AGConnectAuth;
 import com.huawei.agconnect.auth.AGConnectAuthCredential;
 import com.huawei.agconnect.auth.AGConnectUser;
 import com.huawei.agconnect.auth.FacebookAuthProvider;
-import com.huawei.agconnect.auth.SignInResult;
-import com.huawei.hmf.tasks.OnFailureListener;
-import com.huawei.hmf.tasks.OnSuccessListener;
 
 import java.util.Arrays;
 
@@ -52,8 +46,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
-import static com.huawei.agconnect.auth.AGConnectAuthCredential.Facebook_Provider;
-
+/**
+ * This shows how we login with Facebook with Auth Service.
+ */
 public class FacebookLoginActivity extends AppCompatActivity {
 
     //region variablesAndObjects
@@ -64,8 +59,6 @@ public class FacebookLoginActivity extends AppCompatActivity {
 
     private Unbinder unbinder;
 
-    private Activity activity;
-
     private static final int TV_PROFILE_DETAILS = R.id.tvProfileDetails;
 
     @Nullable
@@ -74,12 +67,15 @@ public class FacebookLoginActivity extends AppCompatActivity {
 
     //endregion views
 
+    /**
+     * The method initializes the sets up necessary for variables.
+     * It also initializes Facebook SDK requirements.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // important to call before setContentView
         FacebookSdk.sdkInitialize(getApplicationContext());
-        activity=this;
 
         setContentView(R.layout.activity_facebook_login);
         setupToolbar();
@@ -87,8 +83,6 @@ public class FacebookLoginActivity extends AppCompatActivity {
         unbinder = ButterKnife.bind(this);
 
         Utils.initializeAGConnectInstance(getApplicationContext());
-
-        facebookCallbackManager = CallbackManager.Factory.create();
 
         /*
          * Note :
@@ -110,29 +104,41 @@ public class FacebookLoginActivity extends AppCompatActivity {
                 logOut();
                 break;
             default:
-                Log.e(TAG,"Default case");
+                Log.e(TAG, "Default case");
                 break;
         }
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        Util.setToolbar(this, toolbar,  getResources().getString(R.string.url_auth_service_facebook));
+        Util.setToolbar(this, toolbar, getResources().getString(R.string.url_auth_service_facebook));
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
+    /**
+     * It allows to login with Facebook.
+     * It also sends details of sign in user with a message.
+     */
     private void loginWithFacebook() {
-        if(tvProfileDetails == null){
+        if (tvProfileDetails == null) {
             return;
         }
+        LoginManager.getInstance().logOut();
         LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "email"));
         LoginManager.getInstance().registerCallback(facebookCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -148,21 +154,6 @@ public class FacebookLoginActivity extends AppCompatActivity {
                 tvProfileDetails.setText(msg);
 
                 transmitFacebookAccessTokenIntoAGC(token);
-
-                AGConnectAuth.getInstance().getCurrentUser().link(activity, Facebook_Provider)
-                        .addOnSuccessListener(new OnSuccessListener<SignInResult>() {
-                            @Override
-                            public void onSuccess(SignInResult signInResult) {
-                                // onSuccess
-                                AGConnectUser user = signInResult.getUser();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(Exception e) {
-                                Log.d(TAG, "Failed to link account" + " : onCancel");
-                            }
-                        });
             }
 
             @Override
@@ -174,7 +165,7 @@ public class FacebookLoginActivity extends AppCompatActivity {
 
             @Override
             public void onError(FacebookException error) {
-                if(tvProfileDetails == null){
+                if (tvProfileDetails == null) {
                     return;
                 }
                 Log.e(TAG, getResources().getString(R.string.login_with_facebook) + " : onError : " + error.getMessage(), error);
@@ -184,8 +175,11 @@ public class FacebookLoginActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * It generates a credential using the obtained access token, and then call AGConnectAuth.
+     */
     private void transmitFacebookAccessTokenIntoAGC(String accessToken) {
-        if(tvProfileDetails == null){
+        if (tvProfileDetails == null) {
             return;
         }
         try {
@@ -210,23 +204,25 @@ public class FacebookLoginActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * It displays the details of sign-in user's information, including a message.
+     */
     public void showResultDetail(String msg, AGConnectUser signInResult) {
-        if(tvProfileDetails == null){
+        if (tvProfileDetails == null) {
             return;
         }
         String signMsg = "\n\nAGConnectAuth " + msg + " onSuccess : \n" +
                 "profile Uid         : " + signInResult.getUid() + "\n" +
                 "profile ProviderId  : " + signInResult.getProviderId() + "\n" +
-                "profile DisplayName : " + signInResult.getDisplayName() + "\n" +
-                "profile Email       : " + signInResult.getEmail() + "\n" +
-                "profile Phone       : " + signInResult.getPhone() + "\n";
+                "profile DisplayName : " + signInResult.getDisplayName() + "\n";
 
         Log.i(TAG, signMsg);
         tvProfileDetails.setText(signMsg);
     }
 
-
+    /**
+     * It allows to user log out.
+     */
     private void logOut() {
 
         LoginManager.getInstance().logOut();
@@ -238,19 +234,19 @@ public class FacebookLoginActivity extends AppCompatActivity {
         tvProfileDetails.setText(getString(R.string.txt_for_facebook_login_message));
 
         if (Utils.isLoggedInAgcUser()) {
-            try{
+            try {
                 AGConnectAuth.getInstance().signOut();
                 String logOutResultMessage = "InstanceUser logged out.";
                 tvProfileDetails.setText(logOutResultMessage);
                 Log.d(TAG, logOutResultMessage);
-                Utils.showToastMessage(getApplicationContext(),logOutResultMessage );
-            }catch (Exception e){
+                Utils.showToastMessage(getApplicationContext(), logOutResultMessage);
+            } catch (Exception e) {
                 String resultTvProfileDetailsText = "AGConnectAuth.getInstance signOut Exception :\n" + e.getMessage();
                 Log.e(TAG, resultTvProfileDetailsText, e);
                 tvProfileDetails.setText(resultTvProfileDetailsText);
             }
-        }else{
-            Log.w(TAG, "logOut : "+ getString(R.string.txt_for_logged_user_message));
+        } else {
+            Log.w(TAG, "logOut : " + getString(R.string.txt_for_logged_user_message));
             tvProfileDetails.setText(getString(R.string.txt_for_logged_user_message));
         }
     }
@@ -262,6 +258,9 @@ public class FacebookLoginActivity extends AppCompatActivity {
         unbinder.unbind();
     }
 
+    /**
+     * It handles sign in requests.
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

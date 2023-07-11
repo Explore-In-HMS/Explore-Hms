@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.huawei.feature_gameservice.fragments;
@@ -61,6 +59,9 @@ import com.huawei.hms.utils.ResourceLoaderUtil;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This shows sign in user before using Huawei Game Service to use player information.
+ */
 public class GameServicesLoginFragment extends Fragment {
 
 
@@ -73,6 +74,9 @@ public class GameServicesLoginFragment extends Fragment {
     private NavController navController;
     private GameServicesLoginFragmentDirections.ActionGotoGameServicesHomeFragment action;
 
+    /**
+     * Sets the ViewBinding for the layout.
+     */
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -80,6 +84,9 @@ public class GameServicesLoginFragment extends Fragment {
         return binding.getRoot();
     }
 
+    /**
+     * The method initializes the sets up necessary for UI and Navigation library.
+     */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -89,6 +96,10 @@ public class GameServicesLoginFragment extends Fragment {
         initUI();
     }
 
+    /**
+     * The method sets UI
+     * It gives information about features of Huawei Game Service
+     */
     private void initUI() {
 
         binding.tvIntrouctionInfoGameservices.setText(
@@ -101,6 +112,9 @@ public class GameServicesLoginFragment extends Fragment {
         binding.btnLoginGameservices.setOnClickListener(view -> signIn());
     }
 
+    /**
+     * It allows to sign in to use game service functions
+     */
     private void signIn() {
         if (!GameConstants.isSecondTime) {
             Toast.makeText(getContext(), "Click one more time to open game", Toast.LENGTH_SHORT).show();
@@ -117,6 +131,12 @@ public class GameServicesLoginFragment extends Fragment {
         startActivityForResult(authService.getSignInIntent(), ACTIVITY_REQUEST_LOGIN_WITH_HUAWEI_ID);
     }
 
+    /**
+     * It handles sign in requests.
+     * If the signed in successfully, it create an Huawei account via HuaweiIdAuthManager,
+     * then it sends huaweiAccount to getGamePlayer()
+     * If the sign in gives an error, a toast message will on the screen.
+     */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -137,8 +157,11 @@ public class GameServicesLoginFragment extends Fragment {
         }
     }
 
+    /**
+     * It handles to get player
+     * if got player successfully, navigate to GameServicesHomeFragment with huaweiAccount argument
+     */
     public void getGamePlayer(AuthHuaweiId huaweiAccount) {
-
         AccountAuthParams params = AccountAuthParams.DEFAULT_AUTH_REQUEST_PARAM_GAME;
         JosAppsClient appsClient = JosApps.getJosAppsClient(requireActivity());
         Task<Void> initTask;
@@ -190,6 +213,9 @@ public class GameServicesLoginFragment extends Fragment {
         }).addOnFailureListener(e -> Log.e(TAG, "getGamePlayer: " + e.getMessage()));
     }
 
+    /**
+     * When App on onPause, sets isSecondTime to true
+     */
     @Override
     public void onPause() {
         super.onPause();

@@ -1,17 +1,17 @@
-/**
- * Copyright 2020. Explore in HMS. All rights reserved.
- * <p>
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+/*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.huawei.feature_videokit.view;
@@ -21,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -52,6 +53,9 @@ public class HomePageView {
 
     // Play button
     private Button playBt;
+
+    // Menu imageView
+    private ImageView menuBt;
 
     // Load view
     private ProgressBar playLoading;
@@ -93,8 +97,8 @@ public class HomePageView {
         addressEt = (EditText) contentView.findViewById(R.id.input_path_ed);
         playBt = (Button) contentView.findViewById(R.id.main_play_btn);
         playBt.setOnClickListener(onHomePageListener);
-        //menuBt = (ImageView) contentView.findViewById(R.id.play_list_menu);
-       //menuBt.setOnClickListener(onHomePageListener);
+        menuBt = (ImageView) contentView.findViewById(R.id.play_list_menu);
+        menuBt.setOnClickListener(onHomePageListener);
         selectPlayDataAdapter = new SelectPlayDataAdapter(context, onHomePageListener);
         playRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         playRecyclerView.setAdapter(selectPlayDataAdapter);
@@ -142,15 +146,21 @@ public class HomePageView {
      *
      * @return boolean Whether the menu button has focus
      */
-
+    public boolean menuHasFocus() {
+        return menuBt.hasFocus();
+    }
 
     /**
      * Set background color
      */
-
+    public void setMenuBackgroundColor() {
+        menuBt.setBackgroundColor(context.getResources().getColor(R.color.select_color));
+    }
 
     /**
      * Clear background color
      */
-
+    public void clearMenuBackgroundColor() {
+        menuBt.setBackgroundColor(context.getResources().getColor(R.color.transparent_color));
+    }
 }

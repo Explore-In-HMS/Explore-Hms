@@ -1,3 +1,19 @@
+<!--
+  ~  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  -->
+
 <resources>
     <string name="app_name">3DModelingDemo</string>
     <string name="splash_app_name">3DModelingDemo</string>
@@ -154,5 +170,6 @@
     <string name="service_introduction">Service Introduction</string>
     <string name="modeling3d_info_text">3D Modeling Kit provides two capabilities, material generation and 3D object reconstruction, to help with creating 3D content more efficiently at a lower cost. Material generation: Integrate this capability into your app to enable your users to convert images, with just one click, into physically based rendering (PBR) texture maps (diffuse, normal, specular, and roughness maps). These texture maps, supported by mainstream rendering engines, can bring a lighting and shading effect which resembles that in the real world. 3D object reconstruction: Integrate this capability into your app for image data collection and upload, model download, as well as 3D object preview, enabling your users to construct 3D object models from images even on mobile phones without hardware such as RGB-D or light detection and ranging (LiDAR) sensors.</string>
     <string name="create_modeling">Create Modeling</string>
+    <string name="live_modeling">Live Motion Capture</string>
     <string name="create_materials">Create Materials</string>
 </resources>

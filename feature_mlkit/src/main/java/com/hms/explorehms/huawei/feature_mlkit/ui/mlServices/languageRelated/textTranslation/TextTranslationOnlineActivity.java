@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 package com.hms.explorehms.huawei.feature_mlkit.ui.mlServices.languageRelated.textTranslation;
 
@@ -23,6 +21,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -31,6 +30,10 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.hms.explorehms.Util;
 import com.hms.explorehms.huawei.feature_mlkit.R;
@@ -49,10 +52,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -129,44 +128,45 @@ public class TextTranslationOnlineActivity extends AppCompatActivity {
             "zh", "en", "fr", "th", "ja", "de", "ru", "es",
             "ar", "tr", "pt", "it", "ro", "no", "ms", "pl", "sv", "fi", "da", "ko",
             "vi", "id", "cs", "he", "el", "hi", "tl", "sr", "ro", "my",
-            "km", "nl", "et", "fa", "lv", "sk", "ta", "hu"));
+            "km", "nl", "et", "fa", "lv", "sk", "ta", "hu", "sq", "cy", "ga", "ht"));
 
     private static final List<String> LANGUAGE_LIST = new ArrayList<>(Arrays.asList(
             "Chinese", "English", "French", "Thai", "Japanese", "German", "Russian", "Spanish",
             "Arabic", "Turkish", "Portuguese", "Italian", "Romanian", "Norwegian", "Malaysian", "Polish"
             , "Swedish", "Finnish", "Danish", "Korean", "Vietnamese", "Indonesian",
             "Czech", "Hebrew", "Greece", "Hindi", "Filipino", "Serbian", "Myanmar",
-            "Khmer", "Netherlands", "Estonian", "Persian", "Latvian", "Slovak", "Tamil", "Hungarian"));
+            "Khmer", "Netherlands", "Estonian", "Persian", "Latvian", "Slovak", "Tamil", "Hungarian", "Albanian", "Welsh", "Irish", "Haitian"));
 
     private static final String[] SOURCE_LANGUAGE_CODE = new String[]{"Auto",
             "ZH", "EN", "FR", "TH", "JA", "DE", "RU", "ES",
             "AR", "TR", "PT", "IT", "PL", "MS", "SV", "FI", "NO", "DA", "KO", "VI", "ID", "CS", "HE", "EL", "HI", "TL",
-            "SR", "RO", "TA", "HU", "NL", "FA", "SK", "ET", "LV", "KM"};
+            "SR", "RO", "TA", "HU", "NL", "FA", "SK", "ET", "LV", "KM", "SQ", "CY", "GA", "HT"};
 
     private static final String[] DEST_LANGUAGE_CODE = new String[]{
             "ZH", "EN", "FR", "TH", "JA", "DE", "RU", "ES",
             "AR", "TR", "PT", "IT", "PL", "MS", "SV", "FI", "NO", "DA", "KO", "VI", "ID", "CS", "HE", "EL", "HI", "TL",
-            "SR", "RO", "TA", "HU", "NL", "FA", "SK", "ET", "LV", "KM"};
+            "SR", "RO", "TA", "HU", "NL", "FA", "SK", "ET", "LV", "KM", "KM", "SQ", "CY", "GA", "HT"};
 
     private static final List<String> SP_SOURCE_LIST_EN = new ArrayList<>(Arrays.asList("Auto",
             "Chinese", "English", "French", "Thai", "Japanese", "German", "Russian", "Spanish",
             "Arabic", "Turkish", "Portuguese", "Italian", "Polish", "Malaysian", "Swedish", "Finnish", "Norwegian", "Danish", "Korean", "Vietnamese",
             "Indonesian", "Czech", "Hebrew", " Greek", "Hindi", "Filipino", "Serbian",
             "Romanian", "Tamil", "Hungarian", "Netherlands", "Persian", "Slovak", "Estonian",
-            "Latvian", "Khmer"));
+            "Latvian", "Khmer", "Albanian", "Welsh", "Irish", "Haitian"));
 
     private static final List<String> SP_DEST_LIST_EN = new ArrayList<>(Arrays.asList(
             "Chinese", "English", "French", "Thai", "Japanese", "German", "Russian", "Spanish",
             "Arabic", "Turkish", "Portuguese", "Italian", "Polish", "Malaysian", "Swedish", "Finnish", "Norwegian", "Danish", "Korean", "Vietnamese",
             "Indonesian", "Czech", "Hebrew", " Greek", "Hindi", "Filipino", "Serbian",
             "Romanian", "Tamil", "Hungarian", "Netherlands", "Persian", "Slovak", "Estonian",
-            "Latvian", "Khmer"));
+            "Latvian", "Khmer", "Albanian", "Welsh", "Irish", "Haitian"));
 
     //endregion
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         setContentView(R.layout.activity_text_translation_online);
 
         unbinder = ButterKnife.bind(this);

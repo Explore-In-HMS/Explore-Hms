@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.huawei.feature_scenekit;
@@ -35,10 +33,12 @@ import com.google.android.material.button.MaterialButton;
 import com.hms.explorehms.Util;
 import com.hms.explorehms.huawei.feature_scenekit.arview.ARViewActivity;
 import com.hms.explorehms.huawei.feature_scenekit.faceview.FaceViewActivity;
+import com.hms.explorehms.huawei.feature_scenekit.fluidSimulation3D.Fluid3DActivity;
 import com.hms.explorehms.huawei.feature_scenekit.sceneview.SceneViewActivity;
 import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hms.feature.dynamicinstall.FeatureCompat;
 import com.huawei.hms.scene.common.base.error.exception.ModuleException;
+import com.huawei.hms.scene.common.base.error.exception.OperationException;
 import com.huawei.hms.scene.common.base.error.exception.StateException;
 import com.huawei.hms.scene.common.base.error.exception.UpdateNeededException;
 import com.huawei.hms.scene.sdk.fluid.SceneKitFluid;
@@ -53,14 +53,17 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int REQ_CODE_UPDATE = 100001;
+    private static final int REQ_CODE_UPDATE = 10001;
     private boolean initialized2D = false;
     private static final int PERMISSION_REQUEST = 99;
-    private static final int REQ_CODE_UPDATE_SCENE_KIT = 10001;
+    private static final int REQ_CODE_UPDATE_SCENE_KIT = 10002;
     private boolean initialized = false;
+    private boolean initialized3D = false;
     private static final int RES_CODE_UPDATE_SUCCESS = -1;
     private static final int RES_CODE_UPDATE_SUCCESS_2D = -1;
     private String APP_ID;
+    private static final int REQ_CODE_UPDATE_SCENE_KIT3D = 10003;
+    private static final int RES_CODE_UPDATE_SUCCESS3D = -1;
 
 
     /**
@@ -71,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
     private MaterialButton btnFaceView;
     private MaterialButton btnRenderView;
     private MaterialButton btn2dSimulationView;
+    private MaterialButton btn3dSimulationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,6 +150,19 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+        if (requestCode == REQ_CODE_UPDATE_SCENE_KIT3D
+                && resultCode == RES_CODE_UPDATE_SUCCESS3D) {
+            try {
+                SceneKit.getInstance()
+                        .initializeSync(getApplicationContext());
+                initialized = true;
+                Toast.makeText(this, "SceneKit initialized", Toast.LENGTH_SHORT).show();
+            } catch (StateException | ModuleException | OperationException exception) {
+                Toast.makeText(this,
+                        "failed to initialize SceneKit: " + exception.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }
+
         if (requestCode == REQ_CODE_UPDATE
                 && resultCode == RES_CODE_UPDATE_SUCCESS_2D) {
             try {
@@ -182,6 +199,8 @@ public class MainActivity extends AppCompatActivity {
         btnFaceView = findViewById(R.id.btn_face_view);
         btnRenderView = findViewById(R.id.btn_render_view);
         btn2dSimulationView = findViewById(R.id.btn_fluid_simulation_view);
+        btn2dSimulationView = findViewById(R.id.btn_fluid_simulation_view);
+        btn3dSimulationView = findViewById(R.id.btn_fluid_simulation3d_view);
     }
 
 
@@ -230,6 +249,15 @@ public class MainActivity extends AppCompatActivity {
             Intent simulationViewIntent = new Intent(MainActivity.this, FluidSimulation2D.class);
             isPermissionsGranted(simulationViewIntent);
         });
+
+        btn3dSimulationView.setOnClickListener(v -> {
+            if (!initialized3D) {
+                initializeSceneKit3D();
+                return;
+            }
+            Intent simulationViewIntent = new Intent(MainActivity.this, Fluid3DActivity.class);
+            isPermissionsGranted(simulationViewIntent);
+        });
     }
 
     /**
@@ -241,6 +269,28 @@ public class MainActivity extends AppCompatActivity {
             requestPermissions(permission, PERMISSION_REQUEST);
         } else {
             startActivity(intent);
+        }
+    }
+
+    private void initializeSceneKit3D() {
+        if (initialized3D) {
+            return;
+        }
+        SceneKit.Property property = SceneKit.Property.builder()
+                .setAppId(APP_ID)
+                .setGraphicsBackend(SceneKit.Property.GraphicsBackend.VULKAN)
+                .build();
+        try {
+            SceneKit.getInstance()
+                    .setProperty(property)
+                    .initializeSync(getApplicationContext());
+            initialized3D = true;
+            Toast.makeText(this, "SceneKit initialized", Toast.LENGTH_SHORT).show();
+        } catch (UpdateNeededException exception) {
+            startActivityForResult(exception.getIntent(), REQ_CODE_UPDATE_SCENE_KIT3D);
+        } catch (StateException | ModuleException | OperationException exception) {
+            Toast.makeText(this,
+                    "failed to initialize SceneKit: " + exception.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 

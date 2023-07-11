@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 package com.hms.explorehms.huawei.feature_mlkit.ui.mlServices.languageRelated.textToSpeech;
 
@@ -31,6 +29,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.util.Pair;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -109,10 +108,10 @@ public class TextToSpeechActivity extends AppCompatActivity {
     //region languageVariables
 
     private static final List<String> LIST_LANGUAGE = new ArrayList<>(Arrays.asList(
-            "English", "French", "Italian", "Spanish", "German", "Chinese"));
+            "English", "French", "Italian", "Spanish", "German", "Chinese", "Russian", "Turkish", "Polish", "Thai", "Malay", "Arabic"));
 
     private static final List<String> LIST_SOUND_TYPE = new ArrayList<>(
-            Arrays.asList("en-US-st-1", "en-US-st-2", "fr-FR-st-1", "it-IT-st-1", "es-ES-st-1", "de-DE-st-1", "zh-Hans-st-1", "zh-Hans-st-2"));
+            Arrays.asList("en-US-st-1", "en-US-st-2", "fr-FR-st-1", "it-IT-st-1", "es-ES-st-1", "de-DE-st-1", "zh-Hans-st-1", "zh-Hans-st-2", "ru-RU-st-1", "tr-TR-st-1", "pl-PL-st-1", "th-TH-st-1", "ms-MS-st-1", "ar-AR-st-1"));
 
     private static final Map<String, String> LIST_SOUND_TYPE_EN = new HashMap<>();
 
@@ -121,6 +120,12 @@ public class TextToSpeechActivity extends AppCompatActivity {
     private static final Map<String, String> LIST_SOUND_TYPE_ES = new HashMap<>();
     private static final Map<String, String> LIST_SOUND_TYPE_DE = new HashMap<>();
     private static final Map<String, String> LIST_SOUND_TYPE_ZH = new HashMap<>();
+    private static final Map<String, String> LIST_SOUND_TYPE_RU = new HashMap<>();
+    private static final Map<String, String> LIST_SOUND_TYPE_TR = new HashMap<>();
+    private static final Map<String, String> LIST_SOUND_TYPE_PL = new HashMap<>();
+    private static final Map<String, String> LIST_SOUND_TYPE_TH = new HashMap<>();
+    private static final Map<String, String> LIST_SOUND_TYPE_MS = new HashMap<>();
+    private static final Map<String, String> LIST_SOUND_TYPE_AR = new HashMap<>();
 
     private static final List<String> LIST_PLAY_MODE = new ArrayList<>(Arrays.asList("Queuing Mode", "Clear Mode"));
 
@@ -200,6 +205,7 @@ public class TextToSpeechActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         setContentView(R.layout.activity_text_to_speech);
 
         Utils.setApiKeyForRemoteMLApplication(getApplicationContext());
@@ -252,6 +258,12 @@ public class TextToSpeechActivity extends AppCompatActivity {
         LIST_SOUND_TYPE_DE.put("DE Female", "de-DE-st-1");
         LIST_SOUND_TYPE_ZH.put("ZH Female", "zh-Hans-st-1");
         LIST_SOUND_TYPE_ZH.put("ZH Male", "zh-Hans-st-2");
+        LIST_SOUND_TYPE_RU.put("RU Female", "ru-RU-st-1");
+        LIST_SOUND_TYPE_TR.put("TR Female", "tr-TR-st-1");
+        LIST_SOUND_TYPE_PL.put("PL Polish", "pl-PL-st-1");
+        LIST_SOUND_TYPE_TH.put("TH Thai", "th-TH-st-1");
+        LIST_SOUND_TYPE_MS.put("MS Malay", "ms-MS-st-1");
+        LIST_SOUND_TYPE_AR.put("AR Arabic", "ar-AR-st-1");
 
     }
 
@@ -596,6 +608,30 @@ public class TextToSpeechActivity extends AppCompatActivity {
                 speechParamLanguageCode = "zh-Hans";
                 keysList = new ArrayList<>(LIST_SOUND_TYPE_ZH.keySet());
                 break;
+            case 7:
+                speechParamLanguageCode = "ru-RU";
+                keysList = new ArrayList<>(LIST_SOUND_TYPE_RU.keySet());
+                break;
+            case 8:
+                speechParamLanguageCode = "tr-TR";
+                keysList = new ArrayList<>(LIST_SOUND_TYPE_TR.keySet());
+                break;
+            case 9:
+                speechParamLanguageCode = "pl-PL";
+                keysList = new ArrayList<>(LIST_SOUND_TYPE_PL.keySet());
+                break;
+            case 10:
+                speechParamLanguageCode = "th-TH";
+                keysList = new ArrayList<>(LIST_SOUND_TYPE_TH.keySet());
+                break;
+            case 11:
+                speechParamLanguageCode = "ms-MS";
+                keysList = new ArrayList<>(LIST_SOUND_TYPE_MS.keySet());
+                break;
+            case 12:
+                speechParamLanguageCode = "ar-AR";
+                keysList = new ArrayList<>(LIST_SOUND_TYPE_AR.keySet());
+                break;
             default:
                 Log.i(TAG, "Default");
         }
@@ -627,6 +663,24 @@ public class TextToSpeechActivity extends AppCompatActivity {
                 break;
             case "zh-Hans":
                 speechParamSoundType = LIST_SOUND_TYPE_ZH.get(selectedTypeKey);
+                break;
+            case "ru-RU":
+                speechParamSoundType = LIST_SOUND_TYPE_RU.get(selectedTypeKey);
+                break;
+            case "tr-TR":
+                speechParamSoundType = LIST_SOUND_TYPE_TR.get(selectedTypeKey);
+                break;
+            case "pl-PL":
+                speechParamSoundType = LIST_SOUND_TYPE_PL.get(selectedTypeKey);
+                break;
+            case "th-TH":
+                speechParamSoundType = LIST_SOUND_TYPE_TH.get(selectedTypeKey);
+                break;
+            case "ms-MS":
+                speechParamSoundType = LIST_SOUND_TYPE_MS.get(selectedTypeKey);
+                break;
+            case "ar-AR":
+                speechParamSoundType = LIST_SOUND_TYPE_AR.get(selectedTypeKey);
                 break;
             default:
                 speechParamSoundType = LIST_SOUND_TYPE_EN.get(selectedTypeKey);

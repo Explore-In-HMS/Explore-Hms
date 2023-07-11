@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.huawei.feature_gameservice.fragments;
@@ -50,7 +48,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * This loads games
+ */
 public class GameServicesLoadFragment extends BaseFragmentGameServices<FragmentGameServicesLoadBinding> implements ILoadItemClickListener {
 
 
@@ -61,12 +61,17 @@ public class GameServicesLoadFragment extends BaseFragmentGameServices<FragmentG
     private List<ArchiveSummary> data;
     private LoadAdapterGameService adapterGameService;
 
-
+    /**
+     * Sets the binding for the layout.
+     */
     @Override
     FragmentGameServicesLoadBinding bindView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return FragmentGameServicesLoadBinding.inflate(inflater, container, false);
     }
 
+    /**
+     * Initializes the UI to show games.
+     */
     @Override
     void initializeUI() {
 
@@ -80,6 +85,9 @@ public class GameServicesLoadFragment extends BaseFragmentGameServices<FragmentG
         obtainArchiveData();
     }
 
+    /**
+     * It obtains archive data.
+     */
     private void obtainArchiveData() {
         ArchivesClient archivesClient = Games.getArchiveClient(requireActivity());
         Task<List<ArchiveSummary>> task = archivesClient.getArchiveSummaryList(true);
@@ -95,6 +103,9 @@ public class GameServicesLoadFragment extends BaseFragmentGameServices<FragmentG
         });
     }
 
+    /**
+     * if the archive and archive.getSummary are not null, navigate to game fragment with arguments
+     */
     @Override
     public void onLoadItemClick(ArchiveSummary archiveSummary) {
         view.progressLoadScreenGameservices.setVisibility(View.VISIBLE);
@@ -125,6 +136,9 @@ public class GameServicesLoadFragment extends BaseFragmentGameServices<FragmentG
         });
     }
 
+    /**
+     * This callback handles events of recyclerview such as onMove, onSwiped and onChildDraw
+     */
     private void initTouchHelper() {
         ItemTouchHelper.SimpleCallback callback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
             @Override
@@ -180,6 +194,9 @@ public class GameServicesLoadFragment extends BaseFragmentGameServices<FragmentG
         itemTouchHelper = new ItemTouchHelper(callback);
     }
 
+    /**
+     * It handles removing items.
+     */
     private void deleteSave(ArchiveSummary summary, int position) {
         view.progressLoadScreenGameservices.setVisibility(View.VISIBLE);
         Task<String> removeArchiveTask = Games.getArchiveClient((Activity) requireContext()).removeArchive(summary);

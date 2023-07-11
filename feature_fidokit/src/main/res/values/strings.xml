@@ -1,19 +1,17 @@
 <!--
+  ~  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
   ~
-  ~   Copyright 2020. Explore in HMS. All rights reserved.
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
   ~
-  ~   Licensed under the Apache License, Version 2.0 (the "License");
-  ~   You may not use this file except in compliance with the License.
-  ~   You may obtain a copy of the License at
+  ~  http://www.apache.org/licenses/LICENSE-2.0
   ~
-  ~   http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~   Unless required by applicable law or agreed to in writing, software
-  ~   distributed under the License is distributed on an "AS IS" BASIS,
-  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~   See the License for the specific language governing permissions and
-  ~   limitations under the License.
-  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
   -->
 
 <resources>
@@ -21,7 +19,7 @@
     <string name="btn_text_face_auth_with_crpObj">Face Manager Without CryptoObject</string>
     <string name="btn_net_test_register">Register</string>
     <string name="btn_net_test_authenticate">Authenticate</string>
-    <string name="btn_clear_log">Clear Log</string>
+    <string name="btn_clear_log">Clear Registration</string>
     <string name="bioauthn_androidx">BioAuthn-AndroidX</string>
     <string name="FIDO2">FIDO2</string>
     <string name="fido_bioAuthn">Fido BioAuthn</string>
@@ -34,11 +32,15 @@
     <string name="cannot_auth">Can not authenticate. errorCode=</string>
     <string name="auth_error">Authentication error. errorCode=</string>
     <string name="error_message">,errorMessage=</string>
-    <string name="auth_succeed">Authentication succeeded. CryptoObject=</string>
+    <string name="auth_succeed">Authentication succeeded.</string>
     <string name="auth_failed">Authentication failed.</string>
     <string name="fido2_is_not_supported">FIDO2 is not supported.</string>
     <string name="registration_success">Registration success.</string>
+    <string name="registration_call_success">Registration call success.</string>
+    <string name="authentication_call_success">Authentication call success.</string>
+    <string name="already_registered">Already Registered</string>
+    <string name="already_authenticated">Already Authenticated</string>
     <string name="auth_failure">Authentication failure.</string>
     <string name="url_txt_fido">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001051069988</string>
-
+    <string name="service_introduction">Service Introduction</string>
 </resources>

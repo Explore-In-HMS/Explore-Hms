@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  -->
+
+<resources>
+
+    <string name="service_introducttion_text_of_navikit">Navi Kit provides an SDK for navigation development, empowering you to integrate navigation functions into your app with ease to improve user experience.</string>
+    <string name="btn_lets_try">Let\'s Try</string>
+    <string name="service_introduction_body_navikit">\u2022 <b>Extensive navigation modes:</b> Navi Kit can intelligently plan routes for driving, walking, cycling, and public transit and avoid congested, restricted, and rough roads. It can also recommend the faster, safer, and more accurate routes in real time.\n\u2022 <b>Detailed guidance:</b> Navi Kit can provide full-screen lane-level guidance and enlarged intersection views to help users find the desired lane at complex intersections, preventing them from making a wrong turn.\n\u2022 <b>Timely driving reminder:</b> Navi Kit can obtain road information such as the speed limit, traffic cameras, traffic conditions, and unexpected incidents in real time and remind users in a timely manner to safeguard driving safety. Users can also report such information to gain access to a more accurate navigation service in real time.\n\u2022 <b>Accurate road network monitoring:</b> Navi Kit can monitor parallel main and auxiliary roads and overlapped roads on and under bridges in real time.\n\u2022 <b>Intuitive 3D road map layers:</b> Navi Kit can restore the road and surrounding buildings in 1:1 mode to create an easier and comfortable driving experience for users.</string>
+    <string name="navi_more_information_link_documentation_link">https://developer.huawei.com/consumer/en/hms/huawei-navikit/</string>
+    <string name="service_scenarios_body_navikit">\u2022 <b>Daily travel</b>\nPlans optimal routes for users and provides real-time guidance.\n\u2022 <b>Ride-hailing and logistics</b>\nOffers drivers of online ride-hailing vehicles and logistics vehicles with routes that are faster and safer.\n\u2022 <b>Life services</b>\nCalculates routes for takeout delivery riders and domestic service personnel, facilitating safer and more convenient door-to-door services.\n\u2022 <b>Smart devices</b>\nProvides navigation services to smart watches and automobiles with features equivalent to those on smartphones, freeing users hands to do other things.</string>
+    <string name="routing">Routing</string>
+    <string name="guiding">Guiding</string>
+    <string name="bus_test">Bus Test</string>
+    <string name="navigation_strategy">Navigation Strategy:</string>
+    <string name="types_of_traffic">Types of Traffic:</string>
+    <string name="starting_point">Starting Point</string>
+    <string name="_22_303450_114_174664">22.303450,114.174664</string>
+    <string name="end_point">End Point</string>
+    <string name="_22_305932_114_183719">22.305932,114.183719</string>
+    <string name="pathway_point_1">Pathway Point 1</string>
+    <string name="pathway_point_2">Pathway Point 2</string>
+    <string name="operation_entity">Operation Entity</string>
+    <string name="china">China</string>
+    <string name="asia_africa_and_latin_america">Asia, Africa and Latin America</string>
+    <string name="europe">Europe</string>
+    <string name="russia">Russia</string>
+    <string name="conversationid_32_bit">ConversationId (32-bit):</string>
+    <string name="_12345678123456781234567812345678">12345678123456781234567812345678</string>
+    <string name="user_apikey">User Apikey</string>
+    <string name="maximum_number_of_transfers">Maximum number of transfers</string>
+    <string name="_6">6</string>
+    <string name="bus_routing">Bus Routing</string>
+    <string name="begin_point">Begin Point</string>
+    <string name="walking_distance_m">Walking distance (m)</string>
+    <string name="_2000">2000</string>
+    <string name="walking_speed_m_s">Walking speed (m/s)</string>
+    <string name="_1">1</string>
+    <string name="number_of_alternative_routes">Number of Alternative Routes:</string>
+    <string name="_3">3</string>
+    <string name="returned_information">Returned information</string>
+    <string name="intermediate_actions_fares_travelsummary">intermediate,actions,fares,travelSummary</string>
+    <string name="introduction">Introduction</string>
+    <string name="it_mainly_provides_the_following_functions">It mainly provides the following functions</string>
+    <string name="service_scenarios">Service Scenarios</string>
+    <string name="result">Result</string>
+    <string name="location_info">Location info:</string>
+    <string name="remaining_distance">Remaining distance:</string>
+    <string name="remaining_time">Remaining time:</string>
+    <string name="start_emulator_navi">Start Emulator Navi</string>
+    <string name="start_gps_navi">Start Gps Navi</string>
+    <string name="stop_navi">Stop Navi</string>
+    <string name="update_location">Update Location</string>
+    <string name="location_setting">Location setting</string>
+    <string name="internal_location_data">Internal location data</string>
+    <string name="external_location_data">External location data</string>
+    <string name="distance">Distance:</string>
+    <string name="pass_time">Pass Time:</string>
+    <string name="traffic_num">Traffic Num:</string>
+    <string name="first_route">First Route</string>
+    <string name="second_route">Second Route</string>
+    <string name="third_route">Third Route</string>
+
+    <string-array name="strategy">
+        <item>Smart Recommend</item>
+        <item>Save Time</item>
+        <item>Avoid Highway</item>
+        <item>Avoid Ferry</item>
+        <item>Avoid Toll</item>
+        <item>Save Distance</item>
+        <item>Avoid Ferry、Avoid Toll</item>
+        <item>Priority Road</item>
+        <item>Priority Highway</item>
+        <item>Save Money</item>
+        <item>Avoid Congestion</item>
+    </string-array>
+
+    <string-array name="naviMode">
+        <item>Driving</item>
+        <item>Walking</item>
+        <item>Cycling</item>
+    </string-array>
+
+</resources>

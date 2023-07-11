@@ -61,7 +61,7 @@ Version : 1.4.2.301 ( 2020-11-30 )
 * [Codelab](https://developer.huawei.com/consumer/en/codelab/AuthenticationService/index.html#0)
 
 ## :information_source: Licence
-Copyright 2020. Explore in HMS. All rights reserved.
+Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.

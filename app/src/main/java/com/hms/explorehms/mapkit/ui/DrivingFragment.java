@@ -1,17 +1,17 @@
 /*
- * Copyright 2020. Explore in HMS. All rights reserved.
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.mapkit.ui;
@@ -121,6 +121,9 @@ public class DrivingFragment extends BaseFragment implements IVolley {
         return FragmentDrivingBinding.inflate(getLayoutInflater()).getRoot();
     }
 
+    /**
+     * It initializes the UI with calling allSteps
+     */
     @Override
     public void initializeUI() {
         try {
@@ -132,6 +135,9 @@ public class DrivingFragment extends BaseFragment implements IVolley {
         }
     }
 
+    /**
+     * It handles Cycling steps a route
+     */
     void allSteps() throws UnsupportedEncodingException, JSONException {
         origin= new
                 Origin();
@@ -170,6 +176,9 @@ public class DrivingFragment extends BaseFragment implements IVolley {
         hMap.moveCamera(update);
     }
 
+    /**
+     * It adds a marker to map, it takes lat, lot, title, snippet and an icon as parameter.
+     */
     void addMarkerToMap(Double lat, Double lot, String title, String snippet, BitmapDescriptor descriptor) {
         hMap.addMarker(
                 new MarkerOptions()
@@ -179,6 +188,9 @@ public class DrivingFragment extends BaseFragment implements IVolley {
         );
     }
 
+    /**
+     * It shows all steps for the route.
+     */
     void showAllSteps(DirectionResponse directionResponse) {
         mdirectionResponse = directionResponse;
         String mainInfo = mdirectionResponse.getRoutes().get(0).getPaths().get(0).getDurationText() + " " + (mdirectionResponse.getRoutes().get(0).getPaths().get(0).getDistanceText());

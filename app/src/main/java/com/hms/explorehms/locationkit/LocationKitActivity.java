@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.locationkit;
@@ -106,26 +104,26 @@ public class LocationKitActivity extends AppCompatActivity {
     private static final int activityResultCodeGpsForCallback = 5;
     private static final int activityResultCodeGpsForIntent = 6;
 
-    //private Unbinder unbinder;
+    private Unbinder unbinder;
 
-    //@SuppressLint("NonConstantResourceId")
-    //@BindView(R.id.tv_request_count)
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.tv_request_count)
     TextView tvRequestCount;
 
-    //@SuppressLint("NonConstantResourceId")
-    //@BindView(R.id.tv_accuracy)
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.tv_accuracy)
     TextView tvAccuracy;
 
-    //@SuppressLint("NonConstantResourceId")
-    //@BindView(R.id.tv_latitude)
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.tv_latitude)
     TextView tvLatitude;
 
-    //@SuppressLint("NonConstantResourceId")
-    //@BindView(R.id.tv_longitude)
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.tv_longitude)
     TextView tvLongitude;
 
-    //@SuppressLint("NonConstantResourceId")
-    //@BindView(R.id.resultLogs)
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.resultLogs)
     TextView tvResultLogs;
 
     @SuppressLint("StaticFieldLeak")
@@ -143,7 +141,7 @@ public class LocationKitActivity extends AppCompatActivity {
         setContentView(R.layout.activity_location_kit);
         setupToolbar();
         initView();
-        //unbinder = ButterKnife.bind(this);
+        unbinder = ButterKnife.bind(this);
 
         instance = this;
         mLocationGnss = new LocationSettingsStates();
@@ -209,7 +207,7 @@ public class LocationKitActivity extends AppCompatActivity {
             R.id.btn_get_location_availability, R.id.btn_start_loc_intent, R.id.btn_stop_loc_intent,
             R.id.btn_start_activity_identification, R.id.btn_start_activity_conversion,
             R.id.btn_setMock_location, R.id.btn_getContext_State,R.id.btn_get_geocoder_availability,
-            R.id.btn_getLocationHD, R.id.btn_start_activity_geoFence})
+            R.id.btn_getLocationHD, R.id.btn_start_activity_geoFence, R.id.btn_get_indoor_location_example})
     public void onItemClick(View v) {
         updateLogResults("Result Logs Will Be Here");
         switch (v.getId()) {
@@ -259,6 +257,9 @@ public class LocationKitActivity extends AppCompatActivity {
                 break;
             case R.id.btn_start_activity_geoFence:
                 Utils.startActivity(LocationKitActivity.this, GeoFenceActivity.class);
+                break;
+            case R.id.btn_get_indoor_location_example:
+                Utils.startActivity(LocationKitActivity.this, IndoorLocationActivity.class);
                 break;
             default:
                 Log.i(TAG, getString(R.string.defaultText));
@@ -518,7 +519,7 @@ public class LocationKitActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     private void updateLocationInfo(Location location) {
-        tvRequestCount.setText("Request Count : " + reqCount);
+            tvRequestCount.setText("Request Count : " + reqCount);
         tvAccuracy.setText("Accuracy : " + location.getAccuracy());
         if (mMockModeFlag) {
             tvLatitude.setText("Latitude : " + location.getLatitude() + " ( MockLoc )");

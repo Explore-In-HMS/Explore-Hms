@@ -1,44 +1,38 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 package com.hms.explorehms.huawei.feature_adskit;
 
 import android.content.Context;
 import android.content.Intent;
-import android.location.Location;
-import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.Toolbar;
 
-import com.google.android.material.button.MaterialButton;
 import com.huawei.hms.ads.AdParam;
 import com.huawei.hms.ads.HwAds;
 import com.huawei.hms.ads.MediaMuteListener;
@@ -53,7 +47,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * This shows how we display InStream Roll Ad with Ads Kit.
+ */
 public class InStreamRollActivity extends AppCompatActivity {
+
+    private AppCompatButton btnGetAdvertiserInfoInroll;
 
     private TextView skipAd;
     private TextView countDown;
@@ -78,11 +77,14 @@ public class InStreamRollActivity extends AppCompatActivity {
     private VideoView videoView;
     private MediaController mediaController;
 
+    /**
+     * The method initializes the sets up necessary for UI, toolbar and Ads.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = getApplicationContext();
-       // setTitle(R.string.instream_ad);
+        // setTitle(R.string.instream_ad);
         setContentView(R.layout.activity_instreamroll);
         setupToolbar();
         // Initialize the HUAWEI Ads SDK.
@@ -100,6 +102,9 @@ public class InStreamRollActivity extends AppCompatActivity {
         videoView.start();
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar_ads);
         setSupportActionBar(toolbar);
@@ -107,12 +112,19 @@ public class InStreamRollActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
+    /**
+     * It starts a count down
+     */
     private void startCountDown() {
         final Handler handler = new Handler(Looper.getMainLooper());
         handler.postDelayed(new Runnable() {
@@ -129,6 +141,9 @@ public class InStreamRollActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * This listener listens onSegmentMediaChange
+     */
     private InstreamMediaChangeListener mediaChangeListener = new InstreamMediaChangeListener() {
         @Override
         public void onSegmentMediaChange(InstreamAd instreamAd) {
@@ -146,6 +161,11 @@ public class InStreamRollActivity extends AppCompatActivity {
             } else {
                 whyThisAd.setVisibility(View.GONE);
             }
+            //Get advertiser info
+            /*
+            if (null != instreamAd && !instreamAd.hasAdvertiserInfo()) {
+                btnGetAdvertiserInfoInroll.setVisibility(View.GONE); // Hide the advertiser information icon when no advertiser information is delivered.
+            }*/
 
             String cta = instreamAd.getCallToAction();
             if (!TextUtils.isEmpty(cta)) {
@@ -156,6 +176,9 @@ public class InStreamRollActivity extends AppCompatActivity {
         }
     };
 
+    /**
+     * This listener listens onMediaProgress, onMediaStart, onMediaPause, onMediaStop, onMediaCompletion and onMediaError
+     */
     private InstreamMediaStateListener mediaStateListener = new InstreamMediaStateListener() {
         @Override
         public void onMediaProgress(int per, int playTime) {
@@ -192,6 +215,9 @@ public class InStreamRollActivity extends AppCompatActivity {
         }
     };
 
+    /**
+     * This listener listens onMute and onUnmute
+     */
     private MediaMuteListener mediaMuteListener = new MediaMuteListener() {
         @Override
         public void onMute() {
@@ -205,6 +231,9 @@ public class InStreamRollActivity extends AppCompatActivity {
         }
     };
 
+    /**
+     * This methods inits Instream AdView and if clicked skipAd, it starts removeInstream and playVideo
+     */
     private void initInstreamAdView() {
         instreamContainer = findViewById(R.id.instream_ad_container);
         instreamView = new InstreamView(getApplicationContext());
@@ -228,12 +257,15 @@ public class InStreamRollActivity extends AppCompatActivity {
         instreamView.setOnInstreamAdClickListener(new InstreamView.OnInstreamAdClickListener() {
             @Override
             public void onClick() {
-              //  Toast.makeText(context, "ad is clicked.", Toast.LENGTH_SHORT).show();
+                //  Toast.makeText(context, "ad is clicked.", Toast.LENGTH_SHORT).show();
                 //use 3rd party tracking if needed.
             }
         });
     }
 
+    /**
+     * This methods removes Instream
+     */
     private void removeInstream() {
         if (null != instreamView) {
             instreamView.onClose();
@@ -267,12 +299,34 @@ public class InStreamRollActivity extends AppCompatActivity {
         }
     };
 
+    /**
+     * This methods inits buttons
+     */
     private void initButtons() {
         muteIcon = findViewById(R.id.mic_icon);
         muteIcon.setOnClickListener(clickListener);
+        btnGetAdvertiserInfoInroll = findViewById(R.id.btn_get_advertiser_info_inroll);
+        //This button click listener works before ad loaded, it's showing a warning to user.
+        btnGetAdvertiserInfoInroll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Utils.showToast(InStreamRollActivity.this, getString(R.string.ads_kit_advertiser_info_fail));
+            }
+        });
 
     }
 
+    private void showAdvertiserInfo(InstreamAd instreamAd, InstreamView instreamView){
+        if (instreamAd.hasAdvertiserInfo()){
+            instreamView.showAdvertiserInfoDialog(btnGetAdvertiserInfoInroll, false);
+        }else{
+            Utils.showToast(InStreamRollActivity.this, getString(R.string.ads_kit_advertiser_info_fail));
+        }
+    }
+
+    /**
+     * This listener handles onAdLoaded and onAdFailed
+     */
     private InstreamAdLoadListener instreamAdLoadListener = new InstreamAdLoadListener() {
         @Override
         public void onAdLoaded(final List<InstreamAd> ads) {
@@ -283,6 +337,12 @@ public class InStreamRollActivity extends AppCompatActivity {
             Iterator<InstreamAd> it = ads.iterator();
             while (it.hasNext()) {
                 InstreamAd ad = it.next();
+                btnGetAdvertiserInfoInroll.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        showAdvertiserInfo(ad, instreamView);
+                    }
+                });
                 if (ad.isExpired()) {
                     it.remove();
                 }
@@ -303,6 +363,9 @@ public class InStreamRollActivity extends AppCompatActivity {
         }
     };
 
+    /**
+     * It creates InstreamAdLoader with test id
+     */
     private void configAdLoader() {
         /**
          * if the maximum total duration is 60 seconds and the maximum number of roll ads is eight,
@@ -329,16 +392,25 @@ public class InStreamRollActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * It hides AdViews
+     */
     private void hideAdViews() {
         instreamContainer.setVisibility(View.GONE);
     }
 
+    /**
+     * It plays InstreamAds
+     */
     private void playInstreamAds(List<InstreamAd> ads) {
         maxAdDuration = getMaxInstreamDuration(ads);
         instreamContainer.setVisibility(View.VISIBLE);
         instreamView.setInstreamAds(ads);
     }
 
+    /**
+     * It updates CountDown
+     */
     private void updateCountDown(long playTime) {
         final String time = String.valueOf(Math.round((maxAdDuration - playTime) / 1000));
         runOnUiThread(new Runnable() {
@@ -349,6 +421,9 @@ public class InStreamRollActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * It returns maximum of Instream Duration
+     */
     private int getMaxInstreamDuration(List<InstreamAd> ads) {
         int duration = 0;
         for (InstreamAd ad : ads) {

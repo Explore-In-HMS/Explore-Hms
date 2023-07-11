@@ -1,17 +1,17 @@
-/**
- * Copyright 2020. Explore in HMS. All rights reserved.
- * <p>
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+/*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.huawei.feature_videokit.control;
@@ -33,6 +33,7 @@ import com.hms.explorehms.huawei.feature_videokit.utils.LogUtil;
 import com.hms.explorehms.huawei.feature_videokit.utils.PlayControlUtil;
 import com.hms.explorehms.huawei.feature_videokit.utils.StringUtil;
 import com.huawei.hms.videokit.player.AudioTrackInfo;
+import com.huawei.hms.videokit.player.CreateComponentException;
 import com.huawei.hms.videokit.player.InitBitrateParam;
 import com.huawei.hms.videokit.player.StreamInfo;
 import com.huawei.hms.videokit.player.VideoInfo;
@@ -85,7 +86,7 @@ public class PlayControl {
      * @param context Context
      * @param onWisePlayerListener Player listener
      */
-    public PlayControl(Context context, OnWisePlayerListener onWisePlayerListener) {
+    public PlayControl(Context context, OnWisePlayerListener onWisePlayerListener) throws CreateComponentException {
         this.context = context;
         this.onWisePlayerListener = onWisePlayerListener;
         init();
@@ -94,7 +95,7 @@ public class PlayControl {
     /**
      * Init
      */
-    public void init() {
+    public void init() throws CreateComponentException {
         initPlayer();
         setPlayListener();
     }
@@ -133,7 +134,7 @@ public class PlayControl {
     /**
      * Init the player
      */
-    private void initPlayer() {
+    private void initPlayer() throws CreateComponentException {
         if (ExploreHMSApplication.getWisePlayerFactory() == null) {
             return;
         }

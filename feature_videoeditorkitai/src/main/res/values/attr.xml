@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~  http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  -->
+
+<resources>
+    <declare-styleable name="MLTimelineView">
+        <attr name="maxTime" format="integer" />
+        <attr name="textColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="NormalTrackView">
+        <attr name="paintColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="progressbutton">
+        <attr name="progressColor" format="color" />
+        <attr name="progressBgColor" format="color" />
+        <attr name="buttonNormalColor" format="color" />
+        <attr name="buttonPressedColor" format="color" />
+        <attr name="buttonCornerRadius" format="dimension"/>
+        <attr name="showProgressNum" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="MySeekBar">
+        <attr name="main_bg" format="color" />
+        <attr name="outer_circle_bg" format="color" />
+        <attr name="inner_circle_bg" format="color" />
+        <attr name="line_bg" format="color" />
+        <attr name="value_bg" format="color" />
+        <attr name="line_width" format="dimension" />
+        <attr name="seek_text_color" format="color" />
+        <attr name="progress_min" format="integer" />
+        <attr name="progress_max" format="integer" />
+        <attr name="thumb_radius" format="dimension" />
+        <attr name="progress" format="integer" />
+        <attr name="progress_anchor" format="integer" />
+        <attr name="step" format="integer" />
+        <attr name="show_text" format="boolean" />
+        <attr name="text_size" format="dimension"/>
+        <attr name="text_multiple_relative_progress" format="float"/>
+        <attr name="text_is_int" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundAngleImageView">
+        <attr name="roundWidth" format="dimension" />
+        <attr name="roundHeight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="DonutProgress">
+        <attr name="donut_progress" format="float" />
+        <attr name="donut_max" format="integer" />
+
+        <attr name="donut_unfinished_color" format="color" />
+        <attr name="donut_finished_color" format="color" />
+
+        <attr name="donut_finished_stroke_width" format="dimension" />
+        <attr name="donut_unfinished_stroke_width" format="dimension" />
+
+        <attr name="donut_text_size" format="dimension" />
+        <attr name="donut_text_color" format="color" />
+
+        <attr name="donut_prefix_text" format="string" />
+        <attr name="donut_suffix_text" format="string" />
+        <attr name="donut_text" format="string" />
+
+        <attr name="donut_background_color" format="color" />
+
+        <attr name="donut_inner_bottom_text" format="string" />
+        <attr name="donut_inner_bottom_text_size" format="dimension" />
+        <attr name="donut_inner_bottom_text_color" format="color" />
+
+        <attr name="donut_circle_starting_degree" format="integer" />
+        <attr name="donut_show_text" format="boolean" />
+        <attr name="donut_inner_drawable" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundImage">
+        <attr name="radius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="Banner">
+        <attr name="delay_time" format="integer" />
+        <attr name="scroll_time" format="integer" />
+        <attr name="is_auto_play" format="boolean" />
+        <attr name="title_background" format="color|reference" />
+        <attr name="title_textcolor" format="color" />
+        <attr name="title_textsize" format="dimension" />
+        <attr name="title_height" format="dimension" />
+        <attr name="indicator_width" format="dimension" />
+        <attr name="indicator_height" format="dimension" />
+        <attr name="indicator_selected_width" format="dimension" />
+        <attr name="indicator_selected_height" format="dimension" />
+        <attr name="indicator_margin" format="dimension" />
+        <attr name="indicator_drawable_selected" format="reference" />
+        <attr name="indicator_drawable_unselected" format="reference" />
+        <attr name="banner_layout" format="reference" />
+        <attr name="banner_default_image" format="reference" />
+        <attr name="image_scale_type" format="enum">
+            <enum name="center" value="0" />
+            <enum name="center_crop" value="1" />
+            <enum name="center_inside" value="2" />
+            <enum name="fit_center" value="3" />
+            <enum name="fit_end" value="4" />
+            <enum name="fit_start" value="5" />
+            <enum name="fit_xy" value="6" />
+            <enum name="matrix" value="7" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="AudioColumnView">
+        <attr name="column_height" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="RecordAudioView">
+        <attr name="min_audio_time" format="integer" />
+        <attr name="max_audio_time" format="integer" />
+        <attr name="audio_type" format="integer" />
+    </declare-styleable>
+
+
+    <declare-styleable name="LoadingIndicatorView">
+        <attr name="minWidth" format="dimension" />
+        <attr name="maxWidth" format="dimension" />
+        <attr name="minHeight" format="dimension" />
+        <attr name="maxHeight" format="dimension" />
+        <attr name="indicatorColor" format="color" />
+    </declare-styleable>
+
+
+    <declare-styleable name="AudioWaveView">
+        <attr name="waveColor" format="color" />
+        <attr name="texture_bg_waveColor" format="color" />
+        <attr name="wave_Offset" format="dimension" />
+        <attr name="wave_Count" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="RecordAudioWaveView">
+        <attr name="min_dbs" format="integer" />
+
+    </declare-styleable>
+
+    <declare-styleable name="TagFlowLayout">
+        <attr name="maxSelect" format="integer" />
+        <attr name="tagGravity">
+            <enum name="left" value="-1" />
+            <enum name="center" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SpeedBar">
+        <attr name="speed_degreeCount" format="integer" />
+        <attr name="speed_textColor" format="color" />
+        <attr name="speed_degreeColor" format="color" />
+        <attr name="speed_degreeWidth" format="dimension" />
+        <attr name="speed_textSize" format="dimension" />
+        <attr name="speed_thumbRadius" format="dimension" />
+        <attr name="speed_thumb" format="reference" />
+        <attr name="speed_length" format="dimension" />
+        <attr name="speed_show_text" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ClipImageView">
+        <attr name="civHeight" format="integer" />
+        <attr name="civWidth" format="integer" />
+        <attr name="civTipText" format="string" />
+        <attr name="civTipTextSize" format="dimension" />
+        <attr name="civMaskColor" format="color" />
+        <attr name="civClipPadding" format="dimension" />
+        <attr name="civClipRoundCorner" format="dimension|reference" />
+        <attr name="civClipCircle" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="BarrageView">
+        <attr name="maxSpeed" format="integer"/>
+        <attr name="minSpeed" format="integer"/>
+        <attr name="maxInterval" format="integer"/>
+        <attr name="minInterval" format="integer"/>
+        <attr name="maxTextSize" format="dimension"/>
+        <attr name="minTextSize" format="dimension"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="ProgressCircle">
+        <attr name="circleOuterRadius" format="dimension"/>
+        <attr name="circleBorderWidth" format="dimension" />
+        <attr name="circleBorderColor" format="color"/>
+        <attr name="innerPieColor" format="color" />
+        <attr name="innerPieStartingAngle" format="float"/>
+        <attr name="innerPieMaxProgress" format="integer"/>
+        <attr name="innerPieProgress" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="AnimationBar">
+        <attr name="anim_backColor" format="color"/>
+        <attr name="anim_enterColor" format="color"/>
+        <attr name="anim_leaveColor" format="color"/>
+        <attr name="anim_textColor" format="color"/>
+        <attr name="anim_thumbRadius" format="reference" />
+        <attr name="anim_enterThumb" format="reference" />
+        <attr name="anim_leaveThumb" format="reference" />
+        <attr name="anim_textSize" format="dimension" />
+        <attr name="anim_lineHeight" format="dimension" />
+        <attr name="anim_lineLength" format="dimension" />
+        <attr name="anim_degreeCount" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="ScaleBar">
+        <!--总刻度值-->
+        <attr name="scale_degreeCount" format="integer" />
+        <!--刻度值文字颜色-->
+        <attr name="scale_textColor" format="color" />
+        <!--大刻度线颜色-->
+        <attr name="scale_degreeBigColor" format="color" />
+        <!--小刻度线颜色-->
+        <attr name="scale_degreeSmallColor" format="color" />
+        <!--游标颜色-->
+        <attr name="cursor_color" format="color" />
+        <!--刻度线宽度-->
+        <attr name="scale_degreeWidth" format="dimension" />
+        <!--刻度文字尺寸-->
+        <attr name="scale_textSize" format="dimension" />
+        <!--游标文字尺寸-->
+        <attr name="cursor_textSize" format="dimension" />
+        <!--刻度间距-->
+        <attr name="cursor_margin" format="dimension" />
+        <!--刻度值长度-->
+        <attr name="scale_length" format="dimension" />
+        <!--游标图片-->
+        <attr name="scale_thumb" format="reference" />
+    </declare-styleable>
+</resources>

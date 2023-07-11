@@ -1,29 +1,31 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 package com.hms.explorehms.huawei.feature_fidokit;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -71,6 +73,8 @@ public class Fido2ClientActivity extends AppCompatActivity {
     private TextView resultView;
     private Fido2Client fido2Client;
     private byte[] regCredentialId = null;
+    private Boolean isRegistered = false;
+    private Boolean isAuthenticated = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,23 +138,30 @@ public class Fido2ClientActivity extends AppCompatActivity {
             logger(getString(R.string.fido2_is_not_supported));
             return;
         }
-        Fido2RegistrationRequest request = assembleFido2RegistrationRequest();
-        // Call Fido2Client.getRegistrationIntent to obtain a Fido2Intent instance and start the FIDO client registration process.
-        fido2Client.getRegistrationIntent(request, NativeFido2RegistrationOptions.DEFAULT_OPTIONS,
-                new Fido2IntentCallback() {
-                    @Override
-                    public void onSuccess(Fido2Intent fido2Intent) {
-                        // Start the FIDO client registration process through Fido2Client.REGISTRATION_REQUEST.
-                        fido2Intent.launchFido2Activity(Fido2ClientActivity.this, Fido2Client.REGISTRATION_REQUEST);
-                        logger(getString(R.string.registration_success));
-                    }
+        if (!isRegistered) {
+            Fido2RegistrationRequest request = assembleFido2RegistrationRequest();
+            // Call Fido2Client.getRegistrationIntent to obtain a Fido2Intent instance and start the FIDO client registration process.
+            fido2Client.getRegistrationIntent(request, NativeFido2RegistrationOptions.DEFAULT_OPTIONS,
+                    new Fido2IntentCallback() {
+                        @Override
+                        public void onSuccess(Fido2Intent fido2Intent) {
+                            // Start the FIDO client registration process through Fido2Client.REGISTRATION_REQUEST.
+                            fido2Intent.launchFido2Activity(Fido2ClientActivity.this, Fido2Client.REGISTRATION_REQUEST);
+                            resultView.setText("");
+                            //logger(getString(R.string.registration_call_success));
+                        }
 
-                    @Override
-                    public void onFailure(int errorCode, CharSequence errString) {
-                        showError("Registration failure." + errorCode + "=" + errString);
-                        logger("Registration failure." + errorCode + "=" + errString);
-                    }
-                });
+                        @Override
+                        public void onFailure(int errorCode, CharSequence errString) {
+                            showError("Registration failure." + errorCode + "=" + errString);
+                            logger("Registration failure." + errorCode + "=" + errString);
+                        }
+                    });
+        } else {
+            resultView.setText("");
+            showMsg(getString(R.string.already_registered));
+            logger(getString(R.string.already_registered));
+        }
     }
 
     // Obtain the challenge value and related policy from the FIDO server, and initiate a Fido2AuthenticationRequest request.
@@ -184,24 +195,33 @@ public class Fido2ClientActivity extends AppCompatActivity {
             logger(getString(R.string.fido2_is_not_supported));
             return;
         }
-        Fido2AuthenticationRequest request = assembleFido2AuthenticationRequest();
-        // Call Fido2Client.getAuthenticationIntent to obtain a Fido2Intent instance and start the FIDO client authentication process.
-        fido2Client.getAuthenticationIntent(request, NativeFido2AuthenticationOptions.DEFAULT_OPTIONS,
-                new Fido2IntentCallback() {
-                    @Override
-                    public void onSuccess(Fido2Intent fido2Intent) {
-                        // Start the FIDO client authentication process through Fido2Client.AUTHENTICATION_REQUEST.
-                        fido2Intent.launchFido2Activity(Fido2ClientActivity.this, Fido2Client.AUTHENTICATION_REQUEST);
-                    }
+        if (!isAuthenticated) {
+            Fido2AuthenticationRequest request = assembleFido2AuthenticationRequest();
+            // Call Fido2Client.getAuthenticationIntent to obtain a Fido2Intent instance and start the FIDO client authentication process.
+            fido2Client.getAuthenticationIntent(request, NativeFido2AuthenticationOptions.DEFAULT_OPTIONS,
+                    new Fido2IntentCallback() {
+                        @Override
+                        public void onSuccess(Fido2Intent fido2Intent) {
+                            // Start the FIDO client authentication process through Fido2Client.AUTHENTICATION_REQUEST.
+                            fido2Intent.launchFido2Activity(Fido2ClientActivity.this, Fido2Client.AUTHENTICATION_REQUEST);
+                            resultView.setText("");
+                            //logger(getString(R.string.authentication_call_success));
+                        }
 
-                    @Override
-                    public void onFailure(int errorCode, CharSequence errString) {
-                        showError(getString(R.string.auth_failure) + errorCode + "=" + errString);
-                        logger(getString(R.string.auth_failure) + errorCode + "=" + errString);
-                    }
-                });
+                        @Override
+                        public void onFailure(int errorCode, CharSequence errString) {
+                            showError(getString(R.string.auth_failure) + errorCode + "=" + errString);
+                            logger(getString(R.string.auth_failure) + errorCode + "=" + errString);
+                        }
+                    });
+        } else {
+            resultView.setText("");
+            showMsg(getString(R.string.already_authenticated));
+            logger(getString(R.string.already_authenticated));
+        }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.R)
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -214,25 +234,29 @@ public class Fido2ClientActivity extends AppCompatActivity {
         if (requestCode == Fido2Client.REGISTRATION_REQUEST) {
             Fido2RegistrationResponse fido2RegistrationResponse = fido2Client.getFido2RegistrationResponse(data);
             if (fido2RegistrationResponse.isSuccess()) {
-                resultView.append("\n\nregistration\n");
-                resultView.append(fido2RegistrationResponse.getAuthenticatorAttestationResponse().toJson());
-                resultView.append("\n");
+                // Response
+                //resultView.append("\n\nregistration\n");
+                //resultView.append(fido2RegistrationResponse.getAuthenticatorAttestationResponse().toJson());
+                //resultView.append("\n");
                 // save the credentialId
                 regCredentialId = fido2RegistrationResponse.getAuthenticatorAttestationResponse().getCredentialId();
+                isRegistered = true;
                 showMsg(getString(R.string.registration_success));
                 logger(getString(R.string.registration_success));
             } else {
-                showError("Registration failed.", fido2RegistrationResponse);
                 logger("Registration failed." + fido2RegistrationResponse);
+
             }
             // Receive authentication response
         } else if (requestCode == Fido2Client.AUTHENTICATION_REQUEST) {
             Fido2AuthenticationResponse fido2AuthenticationResponse =
                     fido2Client.getFido2AuthenticationResponse(data);
             if (fido2AuthenticationResponse.isSuccess()) {
-                resultView.append("\n\nAuthentication\n");
-                resultView.append(fido2AuthenticationResponse.getAuthenticatorAssertionResponse().toJson());
-                resultView.append("\n");
+                // Response
+                //resultView.append("\n\nAuthentication\n");
+                //resultView.append(fido2AuthenticationResponse.getAuthenticatorAssertionResponse().toJson());
+                //resultView.append("\n");
+                isAuthenticated = true;
                 showMsg("Authentication success.");
                 logger("Authentication success.");
             } else {
@@ -267,6 +291,26 @@ public class Fido2ClientActivity extends AppCompatActivity {
         builder.show();
     }
 
+    private void showBiometricMsg() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(Fido2ClientActivity.this);
+        builder.setTitle("Fingerprint Not Found");
+        builder.setMessage("Please define for finger for your device");
+        builder.setPositiveButton("Settings", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(Settings.ACTION_FINGERPRINT_ENROLL);
+                startActivity(intent);
+            }
+        });
+        builder.setNegativeButton("Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+                    }
+                }
+        );
+        builder.show();
+    }
+
     /**
      * Clear data
      *
@@ -289,7 +333,7 @@ public class Fido2ClientActivity extends AppCompatActivity {
         List<String> selectedAuthenticatorList = new ArrayList<>();
         for (AuthenticatorMetadata meta : fido2Client.getPlatformAuthenticators()) {
             if (!meta.isAvailable()) {
-                continue;
+                showBiometricMsg();
             }
             // Fingerprint authenticator
             if (meta.isSupportedUvm(AuthenticatorMetadata.UVM_FINGERPRINT)) {

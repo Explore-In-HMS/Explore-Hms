@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.huawei.feature_gameservice.fragments;
@@ -35,17 +33,25 @@ import com.huawei.hms.jos.games.buoy.BuoyClient;
 import java.lang.reflect.Field;
 import java.util.Objects;
 
-
+/**
+ * This shows how we can use Huawei GameCenter
+ */
 public class GameServicesFloatingWindowFragment extends BaseFragmentGameServices<FragmentGameServicesFloatingWindowBinding> {
 
 
     private static final String TAG = "GameServicesFloatingWindowFragment";
 
+    /**
+     * Sets the binding for the layout.
+     */
     @Override
     FragmentGameServicesFloatingWindowBinding bindView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return FragmentGameServicesFloatingWindowBinding.inflate(inflater, container, false);
     }
 
+    /**
+     * Initializes the UI to buttons to show or hide floating window
+     */
     @Override
     void initializeUI() {
         setTitle("Floating Window");
@@ -67,6 +73,9 @@ public class GameServicesFloatingWindowFragment extends BaseFragmentGameServices
 
     }
 
+    /**
+     * It returns Emui Version of phone
+     */
     private int getEmuiVersion() {
         Object returnObj = null;
         int emuiVersionCode = 0;
@@ -85,7 +94,7 @@ public class GameServicesFloatingWindowFragment extends BaseFragmentGameServices
             Log.e(TAG, "IllegalAccessException: ");
         } catch (ClassCastException e) {
             Log.e(TAG, "ClassCastException: getEMUIVersionCode is not a number" + Objects.requireNonNull(returnObj).toString());
-        }catch (SecurityException e) {
+        } catch (SecurityException e) {
             Log.e(TAG, e.getLocalizedMessage());
         }
         Log.i(TAG, "emuiVersionCodeValue: " + emuiVersionCode);

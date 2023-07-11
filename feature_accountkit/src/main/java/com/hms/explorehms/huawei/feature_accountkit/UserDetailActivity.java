@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 package com.hms.explorehms.huawei.feature_accountkit;
 
@@ -50,6 +48,10 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
+/**
+ * It shows the user profile information, such as Username, Email and Id Token
+ * It allows to user log out and revoke authorization.
+ */
 public class UserDetailActivity extends AppCompatActivity {
     private AccountAuthService mAuthManager;
     private AccountAuthParams mAuthParam;
@@ -70,7 +72,10 @@ public class UserDetailActivity extends AppCompatActivity {
     @BindView(R.id.detail_btn_revoke)
     Button btnRevoke;
 
-
+    /**
+     * The method initializes the sets up necessary for variables.
+     * It also load user profile image by using Picasso library.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,6 +110,9 @@ public class UserDetailActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -112,12 +120,20 @@ public class UserDetailActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
+    /**
+     * It allows to user log out.
+     * It also finishes this activity after log out and showing a toast message to user.
+     */
     @OnClick(R.id.detail_btn_logOut)
     public void logOut() {
         List<Scope> scopeList = new ArrayList<>();
@@ -141,6 +157,10 @@ public class UserDetailActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * It allows to user revoke authorization.
+     * When the user signs out, his token is still valid. It uses this function to revoke it.
+     */
     @OnClick(R.id.detail_btn_revoke)
     public void revoke() {
         Activity activity = this;

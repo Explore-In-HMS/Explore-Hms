@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.baseapp.model;
@@ -117,7 +115,9 @@ public class KitModel implements Parcelable {
             new KitModel("Video Editor Kit", "com.hms.explorehms.huawei.feature_videoeditorkit.ServiceIntroductionActivity", true, "feature_videoeditorkit", R.drawable.icon_video_editor_kit, KitModel.HmsCategory.Media),
             new KitModel("3D Modeling Kit", "com.hms.explorehms.modelingkit3d.ui.activity.MainActivity", false, null, R.drawable.icon_modeling3d_kit, KitModel.HmsCategory.Graphics),
             new KitModel("5G Modem Kit", "com.hms.explorehms.huawei.feature_modem5g_kit.ServiceIntroductionActivity", true,"feature_modem5g_kit" , R.drawable.icon_modem5g_kit, HmsCategory.System),
-            new KitModel("Keyring Service", "com.hms.explorehms.keyring.KeyringServiceIntroductionActivity", false,null , R.drawable.icon_keyservice, HmsCategory.Security)
+            new KitModel("Keyring Service", "com.hms.explorehms.keyring.KeyringServiceIntroductionActivity", false,null , R.drawable.icon_keyservice, HmsCategory.Security),
+            new KitModel("Navi Kit", "com.hms.explorehms.huawei.feature_navikit.MainActivity", true,"feature_navikit" , R.drawable.icon_navikit, HmsCategory.AppServices),
+            new KitModel("Video Editor Kit AI", "com.hms.explorehms.huawei.HomeActivity", true,"feature_videoeditorkitai" , R.drawable.icon_video_editor_kit, HmsCategory.Media)
     );
 
     public static List<KitModel> getKitsByCategory(HmsCategory category) {

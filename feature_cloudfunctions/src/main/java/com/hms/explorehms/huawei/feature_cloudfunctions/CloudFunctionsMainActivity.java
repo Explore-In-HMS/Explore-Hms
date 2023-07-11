@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.huawei.feature_cloudfunctions;
@@ -27,10 +25,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.hms.explorehms.Util;
 import com.hms.explorehms.huawei.feature_cloudfunctions.databinding.ActivityCloudFunctionsMainBinding;
 import com.hms.explorehms.huawei.feature_cloudfunctions.model.MethodTypes;
-import com.google.android.material.textfield.TextInputEditText;
 import com.huawei.agconnect.function.AGCFunctionException;
 import com.huawei.agconnect.function.AGConnectFunction;
 import com.huawei.hms.feature.dynamicinstall.FeatureCompat;
@@ -40,6 +38,9 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
+/**
+ * This shows how we can use Huawei Cloud Function service.
+ */
 public class CloudFunctionsMainActivity extends AppCompatActivity {
 
 
@@ -68,6 +69,9 @@ public class CloudFunctionsMainActivity extends AppCompatActivity {
         initUI();
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbarCloudFunctions);
         setSupportActionBar(toolbar);
@@ -76,6 +80,10 @@ public class CloudFunctionsMainActivity extends AppCompatActivity {
         Util.setToolbar(this, toolbar, getResources().getString(R.string.cloudfunctions_more_information_link));
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
@@ -150,7 +158,7 @@ public class CloudFunctionsMainActivity extends AppCompatActivity {
 
                         Log.i(TAG, value);
                     } else {
-                        Toast.makeText(this,"Please try again",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Please try again", Toast.LENGTH_SHORT).show();
                         Exception e = task.getException();
                         if (e instanceof AGCFunctionException) {
                             int errCode = ((AGCFunctionException) e).getCode();
@@ -161,6 +169,11 @@ public class CloudFunctionsMainActivity extends AppCompatActivity {
                 });
     }
 
+    /**
+     * It creates an object from JSONObject.
+     * According to method, it sets result to Textview.
+     * methods explained MethodTypes class.
+     */
     private void setTvResultCloudFunction(int method, String value) {
         try {
             JSONObject object = new JSONObject(value);
@@ -204,7 +217,7 @@ public class CloudFunctionsMainActivity extends AppCompatActivity {
                     } else {
                         Exception e = task.getException();
                         Log.e(TAG, e.toString());
-                        Toast.makeText(this,"Please try again",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Please try again", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -234,6 +247,9 @@ public class CloudFunctionsMainActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Called when the activity is attaching to its context.
+     */
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);

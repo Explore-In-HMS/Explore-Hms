@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.huawei.feature_authservice;
@@ -37,6 +35,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
+/**
+ * This shows how we login anonymously with Auth Service.
+ */
 public class AnonymousAccountLoginActivity extends AppCompatActivity {
 
     //region variablesAndObjects
@@ -54,6 +55,9 @@ public class AnonymousAccountLoginActivity extends AppCompatActivity {
     //endregion views
 
 
+    /**
+     * The method initializes the sets up necessary for variables.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +88,9 @@ public class AnonymousAccountLoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -92,12 +99,19 @@ public class AnonymousAccountLoginActivity extends AppCompatActivity {
         Util.setToolbar(this, toolbar, getResources().getString(R.string.url_auth_service_anonymous));
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
+    /**
+     * It handles login process anonymously, without any user requirement.
+     */
     private void loginWithAnonymously() {
         try {
             AGConnectAuth.getInstance().signInAnonymously()
@@ -122,6 +136,9 @@ public class AnonymousAccountLoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * It displays the details of sign-in user's information, including a message.
+     */
     public void showResultDetail(String msg, AGConnectUser signInResult) {
         String signMsg = msg + " onSuccess : \n\n" +
                 "user uid         : " + signInResult.getUid() + "\n" +
@@ -133,6 +150,9 @@ public class AnonymousAccountLoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * It allows to user log out.
+     */
     private void logOut() {
         if (Utils.isLoggedInAgcUser()) {
             try {
@@ -157,6 +177,7 @@ public class AnonymousAccountLoginActivity extends AppCompatActivity {
             }
         }
     }
+
 
     @Override
     protected void onDestroy() {

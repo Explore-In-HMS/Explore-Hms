@@ -1,19 +1,17 @@
 /*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *   Copyright 2020. Explore in HMS. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
- *   You may not use this file except in compliance with the License.
- *   You may obtain a copy of the License at
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *   See the License for the specific language governing permissions and
- *   limitations under the License.
- *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.huawei.feature_authservice;
@@ -46,6 +44,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
+/**
+ * This shows how we login with Huawei Id with Auth Service.
+ */
 public class HuaweiIdLoginActivity extends AppCompatActivity {
 
     //region variablesAndObjects
@@ -62,6 +63,9 @@ public class HuaweiIdLoginActivity extends AppCompatActivity {
 
     //endregion views
 
+    /**
+     * The method initializes the sets up necessary for variables.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,6 +95,9 @@ public class HuaweiIdLoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Sets up the toolbar for the activity
+     */
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -99,12 +106,20 @@ public class HuaweiIdLoginActivity extends AppCompatActivity {
         Util.setToolbar(this, toolbar, getResources().getString(R.string.url_auth_service_huawei_id));
     }
 
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
 
+    /**
+     * It allows to login with Huawei Id.
+     * It also sends request code.
+     */
     private void loginWithHuaweiId() {
         HuaweiIdAuthParams authParams = new HuaweiIdAuthParamsHelper(HuaweiIdAuthParams.DEFAULT_AUTH_REQUEST_PARAM).setAccessToken().createParams();
         HuaweiIdAuthService authService = HuaweiIdAuthManager.getService(HuaweiIdLoginActivity.this, authParams);
@@ -112,6 +127,10 @@ public class HuaweiIdLoginActivity extends AppCompatActivity {
         // another huaweiIdAuthParamsHelper method
     }
 
+    /**
+     * It handles sign in requests.
+     * If the sign in gives an error, a toast message will on the screen.
+     */
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -134,7 +153,9 @@ public class HuaweiIdLoginActivity extends AppCompatActivity {
         }
 
     }
-
+    /**
+     * It generates a credential using the obtained access token, and then call AGConnectAuth.
+     */
     private void transmitHuaweiAccountAccessTokenIntoAGC(String accessToken) {
         if (tvProfileDetails == null) {
             return;
@@ -158,7 +179,9 @@ public class HuaweiIdLoginActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * It displays the details of profile's information, including a message.
+     */
     public void showProfileDetail(AuthHuaweiId huaweiAccount) {
 
         String msg = "ProfileDetail : \n" +
@@ -177,7 +200,9 @@ public class HuaweiIdLoginActivity extends AppCompatActivity {
         tvProfileDetails.setText(msg);
     }
 
-
+    /**
+     * It displays the details of sign-in user's information, including a message.
+     */
     public void showResultDetail(String msg, AGConnectUser signInResult) {
         if (tvProfileDetails == null) {
             return;
@@ -191,6 +216,9 @@ public class HuaweiIdLoginActivity extends AppCompatActivity {
         tvProfileDetails.setText(signMsg);
     }
 
+    /**
+     * It allows to user log out.
+     */
     private void logOut() {
         if (tvProfileDetails == null) {
             return;

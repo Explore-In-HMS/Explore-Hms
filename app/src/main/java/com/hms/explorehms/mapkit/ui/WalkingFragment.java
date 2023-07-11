@@ -1,17 +1,17 @@
 /*
- * Copyright 2020. Explore in HMS. All rights reserved.
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
  *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *  http://www.apache.org/licenses/LICENSE-2.0
  *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.mapkit.ui;
@@ -63,7 +63,6 @@ import java.io.UnsupportedEncodingException;
 public class WalkingFragment extends BaseFragment implements IVolley {
 
 
-
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -72,7 +71,7 @@ public class WalkingFragment extends BaseFragment implements IVolley {
     private Context mcontext;
     private DirectionRequest dirRequest;
     private RecyclerView recylerView;
-    private TextView stepsVia,stepsMainInfo;
+    private TextView stepsVia, stepsMainInfo;
     private FragmentWalkingBinding binding;
     private Origin origin;
     private Destination destination;
@@ -111,7 +110,7 @@ public class WalkingFragment extends BaseFragment implements IVolley {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        mcontext=this.requireContext();
+        mcontext = this.requireContext();
     }
 
     @Override
@@ -122,6 +121,9 @@ public class WalkingFragment extends BaseFragment implements IVolley {
         return FragmentWalkingBinding.inflate(getLayoutInflater()).getRoot();
     }
 
+    /**
+     * It initializes the UI with calling allSteps
+     */
     @Override
     public void initializeUI() {
         try {
@@ -131,35 +133,37 @@ public class WalkingFragment extends BaseFragment implements IVolley {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
     }
 
-     void allSteps() throws UnsupportedEncodingException, JSONException {
-        origin= new
+    /**
+     * It handles Walking steps for a route
+     */
+    void allSteps() throws UnsupportedEncodingException, JSONException {
+        origin = new
                 Origin();
-        destination= new
+        destination = new
                 Destination();
-        dirRequest= new
+        dirRequest = new
                 DirectionRequest();
         origin.setLat(Constants.ORIGIN_LAT);
         origin.setLng(Constants.ORIGIN_LONG);
-        destination.setLat( Constants.DESTINATION_LAT);
+        destination.setLat(Constants.DESTINATION_LAT);
         destination.setLng(Constants.DESTINATION_LONG);
         dirRequest.setOrigin(origin);
         dirRequest.setDestination(destination);
         Gson gson = new Gson();
         String dirReq = gson.toJson(dirRequest);
-                if (hMap != null) {
-                    new MyVolleyRequest(getContext(), this).postRequest(
-                            dirReq, DirectionType.WALK.getType(),
-                            hMap, directionResponse -> {
-                                mdirectionResponse = directionResponse;
-                                showAllSteps(mdirectionResponse);
-                                new PolylineHelper().drawPolyline(mdirectionResponse,hMap);
-                            }
-                    );
-                }
-        addMarkerToMap(origin.getLat(), origin.getLng(), "Origin", "Start Point",null);
+        if (hMap != null) {
+            new MyVolleyRequest(getContext(), this).postRequest(
+                    dirReq, DirectionType.WALK.getType(),
+                    hMap, directionResponse -> {
+                        mdirectionResponse = directionResponse;
+                        showAllSteps(mdirectionResponse);
+                        new PolylineHelper().drawPolyline(mdirectionResponse, hMap);
+                    }
+            );
+        }
+        addMarkerToMap(origin.getLat(), origin.getLng(), "Origin", "Start Point", null);
         addMarkerToMap(destination.getLat(), destination.getLng(), "Destination", "End Point", BitmapDescriptorFactory.fromResource(R.drawable.finish_flag_96));
 
         //  TODO setting camera coordinates and moving camera on Huawei Map
@@ -172,25 +176,31 @@ public class WalkingFragment extends BaseFragment implements IVolley {
         hMap.moveCamera(update);
     }
 
+    /**
+     * It adds a marker to map, it takes lat, lot, title, snippet and an icon as parameter.
+     */
     void addMarkerToMap(Double lat, Double lot, String title, String snippet, BitmapDescriptor descriptor) {
         hMap.addMarker(
-               new MarkerOptions()
+                new MarkerOptions()
                         .title(title)
                         .snippet(snippet)
                         .position(new LatLng(lat, lot)).icon(descriptor)
         );
     }
 
-
+    /**
+     * It shows all steps for the route.
+     */
     void showAllSteps(DirectionResponse directionResponse) {
         mdirectionResponse = directionResponse;
+        // It assumes to first route is best way
         String mainInfo = mdirectionResponse.getRoutes().get(0).getPaths().get(0).getDurationText() + " " + (mdirectionResponse.getRoutes().get(0).getPaths().get(0).getDistanceText());
         stepsMainInfo.setText(mainInfo);
         stepsVia.setText(mdirectionResponse.getRoutes().get(0).getPaths().get(0).getSteps().get(0).getRoadName());
         DirectionsAdapter directionAdapter = new DirectionsAdapter(
-                    mcontext,
-                    mdirectionResponse.getRoutes().get(0).getPaths().get(0).getSteps()
-            );
+                mcontext,
+                mdirectionResponse.getRoutes().get(0).getPaths().get(0).getSteps()
+        );
         llm = new LinearLayoutManager(mcontext);
         recylerView.setLayoutManager(llm);
         recylerView.setHasFixedSize(true);
@@ -202,11 +212,14 @@ public class WalkingFragment extends BaseFragment implements IVolley {
     public void onSuccess(DirectionResponse directionResponse) {
     }
 
+    /**
+     * Initialize Ui elements, such as RecyclerView
+     */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        recylerView=view.findViewById(R.id.directionStepsRecyclerView);
-        stepsMainInfo=view.findViewById(R.id.directionStepsMainInfo);
-        stepsVia=view.findViewById(R.id.directionStepsVia);
+        recylerView = view.findViewById(R.id.directionStepsRecyclerView);
+        stepsMainInfo = view.findViewById(R.id.directionStepsMainInfo);
+        stepsVia = view.findViewById(R.id.directionStepsVia);
     }
 }

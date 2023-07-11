@@ -1,17 +1,17 @@
-/**
- * Copyright 2020. Explore in HMS. All rights reserved.
- * <p>
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+/*
+ *  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 
 package com.hms.explorehms.huawei.feature_videokit.activity;
@@ -28,6 +28,7 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.SeekBar;
@@ -35,6 +36,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.hms.explorehms.huawei.feature_videokit.R;
 import com.hms.explorehms.huawei.feature_videokit.contract.OnDialogInputValueListener;
 import com.hms.explorehms.huawei.feature_videokit.contract.OnPlayWindowListener;
@@ -51,7 +53,9 @@ import com.hms.explorehms.huawei.feature_videokit.utils.PlayControlUtil;
 import com.hms.explorehms.huawei.feature_videokit.utils.SelectDialog;
 import com.hms.explorehms.huawei.feature_videokit.utils.StringUtil;
 import com.hms.explorehms.huawei.feature_videokit.view.PlayView;
+import com.huawei.hms.videokit.hdrability.ability.HdrAbility;
 import com.huawei.hms.videokit.player.AudioTrackInfo;
+import com.huawei.hms.videokit.player.CreateComponentException;
 import com.huawei.hms.videokit.player.SubtitleTrackInfo;
 import com.huawei.hms.videokit.player.WisePlayer;
 import com.huawei.hms.videokit.player.common.PlayerConstants;
@@ -72,7 +76,7 @@ public class PlayActivity extends AppCompatActivity implements OnPlayWindowListe
     private static final String TAG = "PlayActivity";
 
     // Seek spacing
-    private static final int SEEK_TIME =  3 * 1000;
+    private static final int SEEK_TIME = 3 * 1000;
 
     // Play view
     private PlayView playView;
@@ -112,11 +116,19 @@ public class PlayActivity extends AppCompatActivity implements OnPlayWindowListe
 
     private boolean isPortraitOrientation = false;
 
+    SurfaceView surfaceView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
-        playControl = new PlayControl(this, this);
+        setHdrBrightness();
+
+        try {
+            playControl = new PlayControl(this, this);
+        } catch (CreateComponentException e) {
+            e.printStackTrace();
+        }
         // Some of the properties of preserving vertical screen
         systemUiVisibility = getWindow().getDecorView().getSystemUiVisibility();
 
@@ -128,6 +140,25 @@ public class PlayActivity extends AppCompatActivity implements OnPlayWindowListe
             playView.setRecycleData(playControl.getPlayList());
             ready();
         }
+    }
+
+    private void setHdrBrightness() {
+        HdrAbility.init(getApplicationContext());
+        boolean setHdrAbility = HdrAbility.setHdrAbility(true);
+
+        if (setHdrAbility) {
+            HdrAbility.setHdrLayer(surfaceView, true);
+            HdrAbility.setBrightness(HdrAbility.BRIGHTNESS_NIT_MAX);
+        } else {
+            showSnackbarIfHdrNotSupported();
+        }
+    }
+
+    public void showSnackbarIfHdrNotSupported() {
+        View rootOfLayout = findViewById(R.id.root_rl);
+        Snackbar snackbar = Snackbar
+                .make(rootOfLayout, R.string.your_device_does_not_support_hdr, Snackbar.LENGTH_LONG);
+        snackbar.show();
     }
 
     @Override
@@ -163,12 +194,13 @@ public class PlayActivity extends AppCompatActivity implements OnPlayWindowListe
     private void initView() {
         playView = new PlayView(this, this, this);
         setContentView(playView.getContentView());
+        surfaceView = findViewById(R.id.surface_view);
     }
 
     /**
      * Start playback activity
      *
-     * @param context Context
+     * @param context    Context
      * @param playEntity Play the video data entity
      */
     public static void startPlayActivity(Context context, PlayEntity playEntity) {
@@ -981,7 +1013,7 @@ public class PlayActivity extends AppCompatActivity implements OnPlayWindowListe
         LogUtil.d(TAG, "onPlayEnd " + wisePlayer.getCurrentTime());
         playControl.clearPlayProgress();
         isPlayComplete = true;
-        if (updateViewHandler != null){
+        if (updateViewHandler != null) {
             updateViewHandler.sendEmptyMessageDelayed(Constants.UPDATE_PLAY_STATE, Constants.DELAY_MILLIS_1000);
         }
     }
@@ -1045,7 +1077,7 @@ public class PlayActivity extends AppCompatActivity implements OnPlayWindowListe
             SelectDialog dialog = new SelectDialog(this);
             dialog.setTitle("switchAudio  no audiotrack");
             dialog.setHandler(updateViewHandler, Constants.PLAYER_SWITCH_AUDIO_TRACK);
-            dialog.setNegativeButton("Cancle",null);
+            dialog.setNegativeButton("Cancel", null);
             dialog.show();
             return;
         }
