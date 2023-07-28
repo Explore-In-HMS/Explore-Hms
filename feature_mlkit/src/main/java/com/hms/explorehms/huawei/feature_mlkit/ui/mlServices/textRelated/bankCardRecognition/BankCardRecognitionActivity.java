@@ -56,11 +56,12 @@ public class BankCardRecognitionActivity extends AppCompatActivity {
 
     private Unbinder unbinder;
 
-    String[] cardNumberLength = new String[3500];
-    String[] bankIdentificationNumber = new String[3500];
-    String[] cardIssuer = new String[3500];
-    String[] cardType = new String[3500];
-    String[] bankCardListWithSplit = new String[3500];
+    private int cardArrayLength = 5000;
+
+    String[] bankIdentificationNumber = new String[cardArrayLength];
+    String[] cardIssuer = new String[cardArrayLength];
+    String[] cardType = new String[cardArrayLength];
+    String[] bankCardListWithSplit = new String[cardArrayLength];
 
     @Nullable
     @BindView(R.id.resultLogs)
@@ -273,7 +274,7 @@ public class BankCardRecognitionActivity extends AppCompatActivity {
                     resultBuilder.append(System.lineSeparator());
 
                     resultBuilder.append("Length：");
-                    resultBuilder.append(cardNumberLength[i]);
+                    resultBuilder.append(result.getNumber().length());
                     resultBuilder.append(System.lineSeparator());
 
                     resultBuilder.append("Issuer：");
@@ -298,6 +299,10 @@ public class BankCardRecognitionActivity extends AppCompatActivity {
             if (!bankCardSupported) {
                 resultBuilder.append("Number：");
                 resultBuilder.append(result.getNumber());
+                resultBuilder.append(System.lineSeparator());
+
+                resultBuilder.append("Length：");
+                resultBuilder.append(result.getNumber().length());
                 resultBuilder.append(System.lineSeparator());
 
                 resultBuilder.append("Issuer：");
@@ -326,11 +331,9 @@ public class BankCardRecognitionActivity extends AppCompatActivity {
         bankCardListWithSplit = bankCardSupportedListJSON.split("\\{\n");
 
         for (int i = 1; i <= bankCardListWithSplit.length - 1; i++) {
-            cardNumberLength[i] = BankCardUtils.substringBetween(bankCardListWithSplit[i], "Length\": \"", "\",");
             bankIdentificationNumber[i] = BankCardUtils.substringBetween(bankCardListWithSplit[i], "(BIN)\": \"", "\",");
             cardIssuer[i] = BankCardUtils.substringBetween(bankCardListWithSplit[i], "Code)\": \"", "\",");
             cardType[i] = BankCardUtils.substringBetween(bankCardListWithSplit[i], "Type\": \"", "\"");
-            Log.d("Card Number Length: ", String.valueOf(cardNumberLength[i]));
             Log.d("Bank Identification Number (BIN): ", String.valueOf(bankIdentificationNumber[i]));
             Log.d("Card Issuer (Issuer Code): ", String.valueOf(cardIssuer[i]));
             Log.d("Card Type: ", String.valueOf(cardType[i]));
