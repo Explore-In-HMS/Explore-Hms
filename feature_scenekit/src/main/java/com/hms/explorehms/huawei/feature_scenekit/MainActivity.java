@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnArView.setOnClickListener(v -> {
             if (!checkDeviceProcessor()) {
-                Toast.makeText(this, "Your device is not supported by FaceView feature", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Your device is not supported by AR View feature", Toast.LENGTH_LONG).show();
             }
             else{
                 Intent arviewIntent = new Intent(MainActivity.this, ARViewActivity.class);
