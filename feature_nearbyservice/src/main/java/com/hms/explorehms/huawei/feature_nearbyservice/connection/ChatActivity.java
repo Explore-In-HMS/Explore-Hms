@@ -41,6 +41,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.collection.SimpleArrayMap;
 
 import com.hms.explorehms.huawei.feature_nearbyservice.R;
@@ -152,11 +153,27 @@ public class ChatActivity extends AppCompatActivity implements PermissionInterfa
 
         requestPermissions();
         initView();
-
+        setupToolbar();
         msgEt.setEnabled(false);
         menuBtn.setEnabled(false);
     }
 
+    private void setupToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar_nearbyservice);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
     private void initView() {
         myNameEt = findViewById(R.id.et_my_name);
         friendNameEt = findViewById(R.id.et_friend_name);

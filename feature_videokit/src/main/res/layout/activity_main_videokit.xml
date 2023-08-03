@@ -17,54 +17,45 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/tb_video"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_videokit"
         style="@style/ToolbarAppearance.ExploreHMS.Normal"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/play_list_menu"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Video Kit Demo">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dimens_16"
-            android:layout_marginTop="@dimen/dimens_8"
-            android:text="@string/app_name"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.appcompat.widget.Toolbar>
 
-        <ImageView
-            android:id="@+id/play_list_menu"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="25dp"
-            android:src="@drawable/more_menu_button" />
-
-
-    </RelativeLayout>
-
+    <ImageView
+        android:id="@+id/play_list_menu"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/more_menu_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/input_path_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimens_16"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="@dimen/dimens_16"
         android:layout_marginLeft="@dimen/dimens_16"
+        android:layout_marginTop="@dimen/dimens_16"
+        android:layout_marginRight="@dimen/dimens_16"
+        android:layout_marginBottom="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tb_video">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_videokit">
 
         <EditText
             android:id="@+id/input_path_ed"
@@ -72,10 +63,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:hint="@string/input_path"
+            app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/main_play_btn"
@@ -84,10 +75,10 @@
             android:layout_weight="1"
             android:text="@string/play"
             android:textAllCaps="false"
+            app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </LinearLayout>
 
@@ -111,8 +102,8 @@
         android:layout_height="100dp"
         android:indeterminate="true"
         android:indeterminateDrawable="@drawable/progress_bar_loading"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

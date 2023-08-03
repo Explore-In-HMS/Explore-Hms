@@ -17,6 +17,7 @@
 package com.hms.explorehms.locationkit;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -72,9 +73,27 @@ public class IndoorLocationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_indoor_location);
 
         initView();
+        setupToolbar();
         initListeners();
         createFusedLocationProviderClient();
 
+    }
+
+    private void setupToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     private void initView(){
