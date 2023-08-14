@@ -146,7 +146,11 @@ public class GeoFenceCreateActivity extends AppCompatActivity {
                 getCurrentLocationGeoFence();
                 break;
             case R.id.btn_createGeoFence:
-                createFromTextGeoData();
+
+                String conversionValue = etSetConversions.getText().toString();
+                if(conversionValue.equals("1") || conversionValue.equals("2") || conversionValue.equals("4")){
+                    createFromTextGeoData();
+                }
                 break;
             case R.id.btn_showGeoList:
                 String result = GeoFenceCreateActivity.GeoFenceData.showGeoFenceData();
