@@ -504,7 +504,7 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="text_roundarea_lat">RoundArea Latitude</string>
     <string name="text_roundarea_lon">RoundArea Longitude</string>
     <string name="text_radius_meters">Radius meters</string>
-    <string name="text_conversation_help">enter : 0 - exit : 1</string>
+    <string name="text_conversation_help">enter : 1 - exit : 2 - stay : 4</string>
     <string name="text_milisecond">milisecond</string>
     <string name="mock_mode_use_warning">To use Mock Location: \nYou should allow Mock Locations and Authorize App in Developer options!</string>
     <string name="mock_mode_use_method_introduction">To use the mock location function, \ngo to Settings > System &amp; updates > Developer options > Select mock location app and select the desired app. \n\n(If Developer options is unavailable, go to Settings > About phone and tap Build number for seven consecutive times. \nThen, Developer options will be displayed on System &amp; updates.)</string>
