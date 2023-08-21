@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -92,6 +93,9 @@ public class MainActivity extends AppCompatActivity {
             textResultCode.post(new Runnable() {
                 @Override
                 public void run() {
+                    if(errorCode == 1000){
+                        Toast.makeText(MainActivity.this, R.string.error_code_description, Toast.LENGTH_SHORT).show();
+                    }
                     textResultCode.setText(String.valueOf(errorCode));
                 }
             });

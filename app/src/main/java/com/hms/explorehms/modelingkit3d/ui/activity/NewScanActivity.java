@@ -167,6 +167,7 @@ public class NewScanActivity extends AppCompatActivity implements UploadDialog.O
         unbinder = ButterKnife.bind(this);
         initView();
         initPhotoSize();
+        previewView.setScaleType(PreviewView.ScaleType.FIT_CENTER);
 
     }
 

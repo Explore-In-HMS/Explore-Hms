@@ -133,7 +133,7 @@ public class DriveKitLoginActivity extends AppCompatActivity {
                 .setAccessToken()
                 .setIdToken()
                 .setUid()
-//                .setScopeList(scopeList)
+                .setScopeList(scopeList)
                 .createParams();
         // Call the account API to obtain account information.
         HuaweiIdAuthService client = HuaweiIdAuthManager.getService(DriveKitLoginActivity.this, authParams);
@@ -143,6 +143,7 @@ public class DriveKitLoginActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
 
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (permissions == null || grantResults == null) {
             Log.w(TAG, "onRequestPermissionsResult : permissions == null || grantResults == null");
             return;
