@@ -43,7 +43,7 @@ android {
 
     defaultConfig {
         applicationId "com.hms.explorehms"
-        minSdkVersion 28
+        minSdkVersion 29
         targetSdkVersion 33
         versionCode gradleVersionCode
         versionName gradleVersionName
@@ -265,7 +265,7 @@ dependencies {
     api "com.huawei.agconnect:agconnect-storage:1.5.0.100"
 
     //DTM
-    api 'com.huawei.hms:dtm-api:6.6.0.304'
+    api 'com.huawei.hms:dtm-api:6.6.0.305'
 
     //hquic
     implementation 'com.huawei.hms:hquic-provider:5.0.1.300'
@@ -274,7 +274,7 @@ dependencies {
     api 'com.huawei.hms:dynamicability:1.0.18.300'
 
     //Location Kit
-    implementation 'com.huawei.hms:location:6.9.0.300'
+    implementation 'com.huawei.hms:location:6.11.0.301'
 
     //Site Kit
     implementation 'com.huawei.hms:site:6.5.1.300'
@@ -455,13 +455,13 @@ dependencies {
     api 'com.huawei.hms:image-vision:1.0.3.306'
 
     //Game Kit
-    api "com.huawei.hms:game:6.8.0.300"
+    api "com.huawei.hms:game:6.10.0.300"
 
     //Drive Kit
-    api 'com.huawei.hms:drive:5.0.0.307'
+    api 'com.huawei.hms:drive:5.2.0.300'
 
     //Crash Service
-    api 'com.huawei.agconnect:agconnect-crash:1.8.0.300'
+    api 'com.huawei.agconnect:agconnect-crash:1.9.0.300'
 
     //Remote Configuration
     api 'com.huawei.agconnect:agconnect-remoteconfig:1.8.0.300'
