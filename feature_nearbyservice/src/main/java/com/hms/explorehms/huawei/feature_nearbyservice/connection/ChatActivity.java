@@ -21,13 +21,18 @@ import static com.huawei.hms.nearby.Nearby.setAgcRegion;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.ParcelFileDescriptor;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -39,16 +44,24 @@ import android.widget.PopupMenu;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.collection.SimpleArrayMap;
+import androidx.core.app.ActivityCompat;
 
+import com.hms.explorehms.huawei.feature_nearbyservice.BuildConfig;
 import com.hms.explorehms.huawei.feature_nearbyservice.R;
 import com.hms.explorehms.huawei.feature_nearbyservice.connection.utils.FileUtil;
 import com.hms.explorehms.huawei.feature_nearbyservice.connection.utils.ToastUtil;
 import com.hms.explorehms.huawei.feature_nearbyservice.permission.PermissionHelper;
 import com.hms.explorehms.huawei.feature_nearbyservice.permission.PermissionInterface;
 import com.google.android.material.textfield.TextInputLayout;
+import com.hms.explorehms.modelingkit3d.ui.activity.MainActivity;
+import com.huawei.hms.framework.common.ContextCompat;
 import com.huawei.hms.image.vision.bean.ResultCode;
 import com.huawei.hms.nearby.Nearby;
 import com.huawei.hms.nearby.StatusCode;
@@ -150,13 +163,29 @@ public class ChatActivity extends AppCompatActivity implements PermissionInterfa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        requestPermissions();
+        permissionrequest(this);
         initView();
-
+        setupToolbar();
         msgEt.setEnabled(false);
         menuBtn.setEnabled(false);
     }
 
+    private void setupToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar_nearbyservice);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
     private void initView() {
         myNameEt = findViewById(R.id.et_my_name);
         friendNameEt = findViewById(R.id.et_friend_name);
@@ -212,10 +241,6 @@ public class ChatActivity extends AppCompatActivity implements PermissionInterfa
                 }
             };
 
-    private void requestPermissions() {
-        mPermissionHelper = new PermissionHelper(this, this);
-        mPermissionHelper.requestPermissions();
-    }
 
     @Override
     public int getPermissionsRequestCode() {
@@ -228,11 +253,6 @@ public class ChatActivity extends AppCompatActivity implements PermissionInterfa
     @Override
     public String[] getPermissions() {
         return new String[]{
-                Manifest.permission.BLUETOOTH,
-                Manifest.permission.BLUETOOTH_ADMIN,
-                Manifest.permission.ACCESS_WIFI_STATE,
-                Manifest.permission.CHANGE_WIFI_STATE,
-                Manifest.permission.ACCESS_COARSE_LOCATION,
                 Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -251,11 +271,7 @@ public class ChatActivity extends AppCompatActivity implements PermissionInterfa
     }
 
     @Override
-    public void onRequestPermissionsResult(
-            int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if (mPermissionHelper.requestPermissionsResult(requestCode, permissions, grantResults)) {
-            return;
-        }
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
@@ -719,6 +735,7 @@ public class ChatActivity extends AppCompatActivity implements PermissionInterfa
     /**
      * ReceivedFileListener interface.
      */
+
     public interface ReceivedFileListener {
         /**
          * Receive file function.
@@ -727,4 +744,129 @@ public class ChatActivity extends AppCompatActivity implements PermissionInterfa
          */
         void receivedFile(File file);
     }
+
+    private void gotoSettingsForLocation() {
+        new AlertDialog.Builder(this)
+                .setCancelable(true)
+                .setTitle("Permission necessary")
+                .setMessage("Location permission is necessary")
+                .setIcon(com.hms.explorehms.R.drawable.icon_settings_loc)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(ChatActivity.this, "Moving to Settings", Toast.LENGTH_SHORT).show();
+                        try {
+                            Intent intent = new Intent();
+                            intent.setAction(
+                                    Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                            Uri uri = Uri.fromParts("package",
+                                    BuildConfig.APPLICATION_ID, null);
+                            intent.setData(uri);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                        } catch (Exception e) {
+                            Toast.makeText(ChatActivity.this, "failed to open Settings\n" + e, Toast.LENGTH_LONG).show();
+                            Log.d("error", e.toString());
+                        }
+
+                    }
+                }).create().show();
+    }
+    private void gotoSettingsForStorage() {
+        new AlertDialog.Builder(this)
+                .setCancelable(true)
+                .setTitle("Permission necessary")
+                .setMessage("External storage permission is necessary")
+                .setIcon(com.hms.explorehms.R.drawable.icon_settings_loc)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(ChatActivity.this, "Moving to Settings", Toast.LENGTH_SHORT).show();
+                        try {
+                            Intent intent = new Intent();
+                            intent.setAction(
+                                    Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                            Uri uri = Uri.fromParts("package",
+                                    BuildConfig.APPLICATION_ID, null);
+                            intent.setData(uri);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                        } catch (Exception e) {
+                            Toast.makeText(ChatActivity.this, "failed to open Settings\n" + e, Toast.LENGTH_LONG).show();
+                            Log.d("error", e.toString());
+                        }
+
+                    }
+                }).create().show();
+    }
+    private void gotoSettings() {
+        new AlertDialog.Builder(this)
+                .setCancelable(true)
+                .setTitle("Permission necessary")
+                .setMessage("External storage and Location permission is necessary")
+                .setIcon(com.hms.explorehms.R.drawable.icon_settings_loc)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(ChatActivity.this, "Moving to Settings", Toast.LENGTH_SHORT).show();
+                        try {
+                            Intent intent = new Intent();
+                            intent.setAction(
+                                    Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                            Uri uri = Uri.fromParts("package",
+                                    BuildConfig.APPLICATION_ID, null);
+                            intent.setData(uri);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                        } catch (Exception e) {
+                            Toast.makeText(ChatActivity.this, "failed to open Settings\n" + e, Toast.LENGTH_LONG).show();
+                            Log.d("error", e.toString());
+                        }
+
+                    }
+                }).create().show();
+    }
+
+    public void permissionrequest(Context context) {
+        ActivityResultLauncher<String[]> permissionRequest =
+                registerForActivityResult(new ActivityResultContracts
+                                .RequestMultiplePermissions(), result -> {
+                            Boolean fineLocationGranted = result.getOrDefault(
+                                    Manifest.permission.ACCESS_FINE_LOCATION, false);
+                            Boolean coarseLocationGranted = result.getOrDefault(
+                                    Manifest.permission.ACCESS_COARSE_LOCATION,false);
+                            Boolean writeExternalStorage = result.getOrDefault(
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE, false);
+                            Boolean readExternalStorage = result.getOrDefault(
+                            Manifest.permission.READ_EXTERNAL_STORAGE,false);
+                            if (writeExternalStorage != null && !writeExternalStorage && readExternalStorage != null && !readExternalStorage && fineLocationGranted != null && !fineLocationGranted && coarseLocationGranted != null && !coarseLocationGranted) {
+                               gotoSettings();
+                            }
+                            else if(writeExternalStorage != null && !writeExternalStorage && readExternalStorage != null && !readExternalStorage){
+                                gotoSettingsForStorage();
+                            }
+                            else if(fineLocationGranted != null && !fineLocationGranted && coarseLocationGranted != null && !coarseLocationGranted){
+                                gotoSettingsForLocation();
+                            }else{
+                                showToast("Permission granted! You can use Nearby Connection.");
+                            }
+                        }
+                );
+        permissionRequest.launch(new String[] {
+                Manifest.permission.BLUETOOTH,
+                Manifest.permission.BLUETOOTH_ADMIN,
+                Manifest.permission.ACCESS_WIFI_STATE,
+                Manifest.permission.CHANGE_WIFI_STATE,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_EXTERNAL_STORAGE
+        });
 }
+    private void showToast(String toastText) {
+        Toast.makeText(ChatActivity.this, toastText, Toast.LENGTH_SHORT).show();
+    }
+
+
+    }
+

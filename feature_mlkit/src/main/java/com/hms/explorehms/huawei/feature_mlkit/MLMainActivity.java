@@ -17,6 +17,7 @@ package com.hms.explorehms.huawei.feature_mlkit;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager2.widget.ViewPager2;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,6 +51,7 @@ public class MLMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ml_main);
 
         ButterKnife.bind(this);
+        setupToolbar();
         viewPager.setAdapter(new ViewPagerTabsAdapter(MLMainActivity.this.getSupportFragmentManager(), getLifecycle()));
 
         TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(tabLayout, viewPager, true, (tab, position) -> {
@@ -74,6 +76,23 @@ public class MLMainActivity extends AppCompatActivity {
             }
         });
         tabLayoutMediator.attach();
+    }
+
+    private void setupToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     @Override

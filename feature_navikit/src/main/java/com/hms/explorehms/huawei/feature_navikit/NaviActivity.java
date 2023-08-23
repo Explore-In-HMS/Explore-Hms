@@ -29,6 +29,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
 import com.hms.explorehms.huawei.feature_navikit.utils.DefaultMapNavi;
@@ -91,9 +92,27 @@ public class NaviActivity extends AppCompatActivity implements RadioGroup.OnChec
         setContentView(R.layout.activity_navi);
         initMapNavi();
         initView();
+        setupToolbar();
         initListener();
         initLocationType();
         initLocationPermission();
+    }
+
+    private void setupToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbarNaviKitInfo);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     private void initLocationPermission() {
