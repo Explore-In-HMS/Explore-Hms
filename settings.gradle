@@ -82,3 +82,4 @@ include ':feature_videoeditorkitai'
 
 include ':app'
 rootProject.name = "ExploreHMS"
+include ':app_update'

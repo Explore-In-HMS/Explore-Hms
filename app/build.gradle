@@ -153,7 +153,7 @@ dynamicFeatures =
                     ':feature_modem5g_kit',
                     ':feature_videoeditorkit',
                     ':feature_navikit',
-                    ':feature_videoeditorkitai'
+                    //':feature_videoeditorkitai'
             ]
 
     packagingOptions {
@@ -498,6 +498,9 @@ dependencies {
 
     //Keyring Service
     implementation "com.huawei.hms:keyring-credential:6.7.0.303"
+    //App Update (Third Party)
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':app_update')
 }
 
 /*apply from: '../sonarqube.gradle'
