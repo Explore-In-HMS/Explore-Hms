@@ -259,10 +259,10 @@ dependencies {
     api 'com.huawei.agconnect:agconnect-core:1.8.0.300'
 
     //Analytics Kit
-    api 'com.huawei.hms:hianalytics:6.10.0.300'
+    api 'com.huawei.hms:hianalytics:6.10.0.302'
 
     //cloud storage
-    api "com.huawei.agconnect:agconnect-storage:1.5.0.100"
+    api "com.huawei.agconnect:agconnect-storage:1.9.1.300"
 
     //DTM
     api 'com.huawei.hms:dtm-api:6.6.0.304'
@@ -280,13 +280,13 @@ dependencies {
     implementation 'com.huawei.hms:site:6.5.1.300'
 
     //Account Kit
-    api 'com.huawei.hms:hwid:6.9.0.301'
+    api 'com.huawei.hms:hwid:6.11.0.300'
 
     // Scan Kit
     implementation 'com.huawei.hms:scan:2.10.0.301'
 
     //Cloud functions sdk
-    api 'com.huawei.agconnect:agconnect-function:1.8.0.300'
+    api 'com.huawei.agconnect:agconnect-function:1.9.1.300'
 
     //audio kit
     api 'com.huawei.hms:audiokit-player:1.6.0.300'
@@ -430,7 +430,7 @@ dependencies {
     api 'com.huawei.scenekit:scenekit-iphysics-utils:6.0.0.301'*/
 
     //App linking
-    api 'com.huawei.agconnect:agconnect-applinking:1.8.0.300'
+    api 'com.huawei.agconnect:agconnect-applinking:1.9.1.300'
 
     //FIDO
     api 'com.huawei.hms:fido-fido2:6.7.0.300'
@@ -467,7 +467,7 @@ dependencies {
     api 'com.huawei.agconnect:agconnect-remoteconfig:1.8.0.300'
 
     //App Messaging
-    api 'com.huawei.agconnect:agconnect-appmessaging:1.8.0.300'
+    api 'com.huawei.agconnect:agconnect-appmessaging:1.9.1.300'
 
     //AR Engine
     api 'com.huawei.hms:arenginesdk:4.0.0.5'
