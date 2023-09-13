@@ -443,7 +443,7 @@ dependencies {
     api 'com.huawei.hms:push:6.9.0.300'
 
     //MAP kit
-    api "com.huawei.hms:maps:6.9.0.300"
+    api "com.huawei.hms:maps:6.11.0.304"
     //api 'com.huawei.hms:maps-advance:6.4.1.300'
 
     //Ads Kit
