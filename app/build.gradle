@@ -283,7 +283,7 @@ dependencies {
     api 'com.huawei.hms:hwid:6.9.0.301'
 
     // Scan Kit
-    implementation 'com.huawei.hms:scan:2.10.0.301'
+    implementation 'com.huawei.hms:scan:2.11.0.300'
 
     //Cloud functions sdk
     api 'com.huawei.agconnect:agconnect-function:1.8.0.300'
@@ -440,7 +440,7 @@ dependencies {
     api 'com.huawei.hms:awareness:3.4.0.302'
 
     //Push Kit
-    api 'com.huawei.hms:push:6.9.0.300'
+    api 'com.huawei.hms:push:6.11.0.300'
 
     //MAP kit
     api "com.huawei.hms:maps:6.9.0.300"
@@ -464,7 +464,7 @@ dependencies {
     api 'com.huawei.agconnect:agconnect-crash:1.9.0.300'
 
     //Remote Configuration
-    api 'com.huawei.agconnect:agconnect-remoteconfig:1.8.0.300'
+    api 'com.huawei.agconnect:agconnect-remoteconfig:1.9.1.300'
 
     //App Messaging
     api 'com.huawei.agconnect:agconnect-appmessaging:1.8.0.300'

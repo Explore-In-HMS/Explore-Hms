@@ -91,6 +91,13 @@ public class WifiDetectFragment extends Fragment implements View.OnClickListener
                             errorMsg = SafetyDetectStatusCodes.getStatusCodeString(apiException.getStatusCode()) + ": "
                                     + apiException.getMessage();
                             // You can use the apiException.getStatusCode() method to get the status code.
+
+                            //Error code: 19803
+                            int userDetectPermission = SafetyDetectStatusCodes.USER_DETECT_PERMISSION;
+                            if (((ApiException) e).getStatusCode() == userDetectPermission){
+                                Toast.makeText(getActivity(), "Failed to display a popup on a non-Huawei phone.", Toast.LENGTH_SHORT).show();
+                                wifiDetectStatusView.setText(R.string.error_code_19803);
+                            }
                         } else {
                             // Unknown type of error has occurred.
                             errorMsg = e.getMessage();

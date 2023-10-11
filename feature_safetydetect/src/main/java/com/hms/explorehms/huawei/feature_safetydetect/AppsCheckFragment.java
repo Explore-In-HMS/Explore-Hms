@@ -23,6 +23,7 @@ import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.fragment.app.Fragment;
@@ -51,6 +52,8 @@ public class AppsCheckFragment extends Fragment implements View.OnClickListener 
         View view1 = inflater.inflate(R.layout.fragment_apps_check, container, false);
         fgInformationAppsCheck = view1.findViewById(R.id.fg_information_appscheck);
         fgInformationAppsCheck.setText(R.string.appscheck_info);
+        int userDetectPermission = SafetyDetectStatusCodes.USER_DETECT_PERMISSION;
+        Log.d("naber", String.valueOf(userDetectPermission));
         return view1;
     }
 
@@ -105,6 +108,13 @@ public class AppsCheckFragment extends Fragment implements View.OnClickListener 
                             ApiException apiException = (ApiException) e;
                             errorMsg = SafetyDetectStatusCodes.getStatusCodeString(apiException.getStatusCode()) +
                                     ": " + apiException.getMessage();
+
+                            //Error code: 19803
+                            int userDetectPermission = SafetyDetectStatusCodes.USER_DETECT_PERMISSION;
+                            if (((ApiException) e).getStatusCode() == userDetectPermission){
+                                Toast.makeText(getActivity(), "Failed to display a popup on a non-Huawei phone.", Toast.LENGTH_SHORT).show();
+                                enableAppsCheckTextView.setText(R.string.error_code_19803);
+                            }
                             // You can use the apiException.getStatusCode() method to get the status code.
 
                         } else {
