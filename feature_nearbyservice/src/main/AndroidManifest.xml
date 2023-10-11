@@ -48,6 +48,15 @@
         <activity android:name=".connection.ChatActivity" />
         <activity android:name=".connection.ReceivedPhotoActivity"
             android:exported="true"/>
+
+        <receiver
+            android:name="com.hms.explorehms.huawei.feature_nearbyservice.connection.SampleReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.huawei.hms.nearby.action.ONFOUND_BEACON" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

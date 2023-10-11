@@ -65,6 +65,9 @@ import com.huawei.hms.framework.common.ContextCompat;
 import com.huawei.hms.image.vision.bean.ResultCode;
 import com.huawei.hms.nearby.Nearby;
 import com.huawei.hms.nearby.StatusCode;
+import com.huawei.hms.nearby.beacon.BeaconPicker;
+import com.huawei.hms.nearby.beacon.GetBeaconOption;
+import com.huawei.hms.nearby.beacon.TriggerOption;
 import com.huawei.hms.nearby.common.RegionCode;
 import com.huawei.hms.nearby.discovery.BroadcastOption;
 import com.huawei.hms.nearby.discovery.ConnectCallback;
@@ -89,7 +92,7 @@ import java.util.List;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-public class ChatActivity extends AppCompatActivity implements PermissionInterface, View.OnClickListener {
+public class ChatActivity extends AppCompatActivity implements PermissionInterface, View.OnClickListener{
 
     private static final int TIMEOUT_MILLISECONDS = 10000;
     private static final int REQUEST_OPEN_DOCUMENT = 20;
@@ -168,6 +171,31 @@ public class ChatActivity extends AppCompatActivity implements PermissionInterfa
         setupToolbar();
         msgEt.setEnabled(false);
         menuBtn.setEnabled(false);
+    }
+
+    private void registerScanTask(){
+
+        TriggerOption triggerOption = new TriggerOption.Builder()
+                // Set the notification mode (TriggerMode).
+                .setTriggerMode(1)
+                // Set the class name to Broadcast or Service, which should be consistent with TriggerMode.
+                .setTriggerClassName(SampleService.class.getName())
+                .build();
+        Intent intent = new Intent();
+        intent.putExtra(GetBeaconOption.KEY_TRIGGER_OPTION, triggerOption);
+
+        BeaconPicker beaconPicker = new BeaconPicker.Builder()
+                // Filter beacons based on NamespaceType.
+                .includeNamespaceType("dev91050203040506", "HMS")
+                // Filter beacons based on the beacon ID prefix and NamespaceType.
+                .includeNamespaceType("dev91050203040506", "HMS", "6bff00f723fdf7471402", BeaconPicker.BEACON_TYPE_IBEACON)
+                // Filter beacons based on beacon ID prefix.
+                .includeBeaconId("6bff00f723fdf7471402", BeaconPicker.BEACON_TYPE_IBEACON)
+                .build();
+        GetBeaconOption getOption = new GetBeaconOption.Builder().picker(beaconPicker).build();
+        Nearby.getBeaconEngine(this).registerScanTask(intent, getOption)
+                .addOnSuccessListener(unused -> Log.i(TAG, "registerScanTask success"))
+                .addOnFailureListener(e -> Log.i(TAG, "registerScanTask: " + e.getMessage()));
     }
 
     private void setupToolbar() {
@@ -280,6 +308,7 @@ public class ChatActivity extends AppCompatActivity implements PermissionInterfa
         switch (view.getId()) {
             case R.id.btn_connect: {
                 connectButtonActions(view);
+                registerScanTask();
                 break;
             }
             case R.id.btnPopupMenu: {
