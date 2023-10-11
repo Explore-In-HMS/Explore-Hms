@@ -35,6 +35,7 @@ import com.huawei.hms.maps.model.PolygonOptions;
 import com.huawei.hms.maps.model.Polyline;
 import com.huawei.hms.maps.model.PolylineOptions;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -43,11 +44,14 @@ import java.util.List;
  */
 public class MapKitShapeFragment extends BaseFragment {
 
+    private FragmentMapKitShapeBinding binding;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return FragmentMapKitShapeBinding.inflate(getLayoutInflater()).getRoot();
+        binding = FragmentMapKitShapeBinding.inflate(getLayoutInflater());
+        return binding.getRoot();
     }
 
     /**
@@ -64,6 +68,19 @@ public class MapKitShapeFragment extends BaseFragment {
      * It draws Polyline
      */
     private void drawPolyline() {
+
+        List<Integer> colorValueList = new ArrayList<>();
+        colorValueList.add(Color.RED);
+        colorValueList.add(Color.GREEN);
+        colorValueList.add(Color.BLUE);
+        colorValueList.add(Color.WHITE);
+        colorValueList.add(Color.BLACK);
+        colorValueList.add(Color.RED);
+        colorValueList.add(Color.GREEN);
+        colorValueList.add(Color.BLUE);
+        colorValueList.add(Color.WHITE);
+        colorValueList.add(Color.BLACK);
+
         Polyline polyline = hMap.addPolyline(new PolylineOptions()
                 .add(new LatLng(41.031498, 28.926077), new LatLng(41.038655, 28.937485),
                         new LatLng(41.047788, 28.945449), new LatLng(41.051068, 28.949624),
@@ -76,9 +93,17 @@ public class MapKitShapeFragment extends BaseFragment {
                         new LatLng(41.053821, 29.025553), new LatLng(41.036674, 29.043273)
                 )
                 .color(Color.BLUE)
+                .colorValues(colorValueList)
                 .width(3));
 
+        polyline.setColorValues(colorValueList);
+
         polyline.setClickable(true);
+
+        binding.changeGradient.setOnClickListener(view -> {
+                polyline.setGradient(!polyline.isGradient());
+        });
+
         hMap.setOnPolylineClickListener(polyline1 -> toast(polyline1.getId()));
     }
 

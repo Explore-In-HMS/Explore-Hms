@@ -203,7 +203,6 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 binding.volumeSeekBar.setProgress(progress);
                 if (mHwAudioPlayerManager != null) {
-                    mHwAudioPlayerManager.setVolume(progress);
                     mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, progress, AudioManager.STREAM_MUSIC);
                 }
                 String progressString = progress + "";

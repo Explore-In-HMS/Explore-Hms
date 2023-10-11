@@ -16,6 +16,7 @@
 
 package com.hms.explorehms.mapkit.ui;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,7 +29,9 @@ import com.hms.explorehms.R;
 import com.hms.explorehms.databinding.FragmentMapKitMapStyleBinding;
 import com.hms.explorehms.mapkit.base.BaseFragment;
 import com.huawei.hms.maps.OnMapReadyCallback;
+import com.huawei.hms.maps.model.BitmapDescriptorFactory;
 import com.huawei.hms.maps.model.MapStyleOptions;
+import com.huawei.hms.maps.model.MyLocationStyle;
 
 /**
  * It handles style of map such as Dark mode and Light mode.
@@ -37,6 +40,7 @@ public class MapKitMapStyleFragment extends BaseFragment implements OnMapReadyCa
 
     private FragmentMapKitMapStyleBinding binding;
     private boolean darkMode = false;
+    private int isChange = 0;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -50,8 +54,38 @@ public class MapKitMapStyleFragment extends BaseFragment implements OnMapReadyCa
             this.darkMode = !this.darkMode;
             changeStyle();
         });
+
+        binding.btnChangeLocationStyleMapkit.setOnClickListener(view -> {
+
+                    switch (isChange) {
+                        case 0:{
+                            int resourceId = R.mipmap.fruit_marker_icon;
+                            MyLocationStyle style = new MyLocationStyle().anchor(0.5f,0.5f)
+                                    .radiusFillColor(Color.RED)
+                                            .myLocationIcon(BitmapDescriptorFactory.fromResource(resourceId));
+                            setMyLocationStyle(style);
+                            isChange = 1;
+                            break;
+                        }
+                        case 1: {
+                            MyLocationStyle style = new MyLocationStyle().anchor(0.5f,0.5f)
+                                    .radiusFillColor(Color.BLUE);
+                            setMyLocationStyle(style);
+                            isChange = 0;
+                            break;
+                        }
+                    }
+                }
+                );
+
+    }
+    public void setMyLocationStyle(MyLocationStyle style){
+        hMap.setMyLocationStyle(style);
     }
 
+    public MyLocationStyle getMyLocationStyle(){
+        return hMap.getMyLocationStyle();
+    }
     /**
      * It changes style
      */

@@ -48,7 +48,7 @@ dependencies {
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
 
     //Cloud DB
-    api 'com.huawei.agconnect:agconnect-cloud-database:1.5.5.300'
+    api 'com.huawei.agconnect:agconnect-cloud-database:1.9.0.300'
 }
 
 /*apply from: '../sonarqube.gradle'

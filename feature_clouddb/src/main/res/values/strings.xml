@@ -62,5 +62,7 @@
     <string name="text_recycler_comment">Comment : </string>
     <string name="text_recycler_comment_date">Comment Date : </string>
     <string name="url_txt_clouddb">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-clouddb-introduction</string>
+    <string name="server_status">Server Status:</string>
+    <string name="server_time_stamp">Server Time Stamp:</string>
 
 </resources>
