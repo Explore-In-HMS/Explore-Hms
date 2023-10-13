@@ -73,6 +73,7 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
 
     private static final String TAG = "AudioActivity";
     private static final String CHANNEL_ID = "4";
+    float speed = 1.0F;
     private static final String MEDIACENTER_CANCEL_NOTIFICATION = "com.huawei.hms.mediacenter.cancel_notification";
     private final List<HwAudioStatusListener> mTempListeners = new CopyOnWriteArrayList<>();
     private final BroadcastReceiver mClickEventReceiver = new ClickEventReceiver();
@@ -202,7 +203,6 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 binding.volumeSeekBar.setProgress(progress);
                 if (mHwAudioPlayerManager != null) {
-                    mHwAudioPlayerManager.setVolume(progress);
                     mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, progress, AudioManager.STREAM_MUSIC);
                 }
                 String progressString = progress + "";
@@ -282,16 +282,24 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
             @Override
             public void onClick(View view) {
                 //String speed = String.valueOf((mHwAudioPlayerManager.getPlaySpeed()));
-                if (mHwAudioPlayerManager != null && String.valueOf((mHwAudioPlayerManager.getPlaySpeed())).equals("1.0")) {
-                    mHwAudioPlayerManager.setPlaySpeed(1.5F);
-                    binding.speedTextView.setText(R.string.speed_text_1_5X);
-                } else if (mHwAudioPlayerManager != null && String.valueOf((mHwAudioPlayerManager.getPlaySpeed())).equals("0.5")) {
-                    mHwAudioPlayerManager.setPlaySpeed(1F);
-                    binding.speedTextView.setText(R.string.speed_text_1X);
-                } else {
-                    assert mHwAudioPlayerManager != null;
-                    mHwAudioPlayerManager.setPlaySpeed(2F);
-                    binding.speedTextView.setText(R.string.speed_text_2X);
+                if(mHwAudioPlayerManager != null && !String.valueOf((mHwAudioPlayerManager.getPlaySpeed())).equals("2.0")){
+
+                    speed += 0.5F;
+                    mHwAudioPlayerManager.setPlaySpeed(speed);
+                    String speedvalue = Float.toString(speed);
+
+                    switch (speedvalue){
+
+                        case "1.0":
+                            binding.speedTextView.setText(R.string.speed_text_1X);
+                            break;
+                        case "1.5":
+                            binding.speedTextView.setText(R.string.speed_text_1_5X);
+                            break;
+                        case "2.0":
+                            binding.speedTextView.setText(R.string.speed_text_2X);
+                            break;
+                    }
                 }
             }
         });
@@ -299,15 +307,24 @@ public class AudioActivity extends AppCompatActivity implements CurrentPlaylistA
         binding.speedImageViewDecrease.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mHwAudioPlayerManager != null && String.valueOf((mHwAudioPlayerManager.getPlaySpeed())).equals("1.5")) {
-                    mHwAudioPlayerManager.setPlaySpeed(1F);
-                    binding.speedTextView.setText(R.string.speed_text_1X);
-                } else if (mHwAudioPlayerManager != null && String.valueOf((mHwAudioPlayerManager.getPlaySpeed())).equals("2.0")) {
-                    mHwAudioPlayerManager.setPlaySpeed(1.5F);
-                    binding.speedTextView.setText(R.string.speed_text_1_5X);
-                } else {
-                    mHwAudioPlayerManager.setPlaySpeed(0.5F);
-                    binding.speedTextView.setText(R.string.speed_text_0_5X);
+                if(mHwAudioPlayerManager != null && !String.valueOf((mHwAudioPlayerManager.getPlaySpeed())).equals("0.5")){
+
+                    speed -= 0.5F;
+                    mHwAudioPlayerManager.setPlaySpeed(speed);
+                    String speedvalue = Float.toString(speed);
+
+                    switch (speedvalue){
+
+                        case "0.5":
+                            binding.speedTextView.setText(R.string.speed_text_0_5X);
+                            break;
+                        case "1.0":
+                            binding.speedTextView.setText(R.string.speed_text_1X);
+                            break;
+                        case "1.5":
+                            binding.speedTextView.setText(R.string.speed_text_1_5X);
+                            break;
+                    }
                 }
             }
         });

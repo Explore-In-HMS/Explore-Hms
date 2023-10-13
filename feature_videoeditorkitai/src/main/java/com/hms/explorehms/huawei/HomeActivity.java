@@ -43,6 +43,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
@@ -157,8 +158,26 @@ public class HomeActivity extends BaseActivity {
         setContentView(R.layout.activity_home);
         MenuConfig.getInstance().initMenuConfig(this);
         initView();
+        setupToolbar();
         initAdapter();
         initData();
+    }
+
+    private void setupToolbar() {
+        Toolbar toolbar = findViewById(R.id.tb_main_video_editor);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     private void initView() {

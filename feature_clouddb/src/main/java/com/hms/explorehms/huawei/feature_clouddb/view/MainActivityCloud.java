@@ -15,11 +15,15 @@
  */
 package com.hms.explorehms.huawei.feature_clouddb.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +36,8 @@ import com.huawei.agconnect.auth.AGConnectAuthCredential;
 import com.huawei.agconnect.auth.HwIdAuthProvider;
 import com.huawei.agconnect.auth.SignInResult;
 import com.huawei.agconnect.cloud.database.AGConnectCloudDB;
+import com.huawei.agconnect.cloud.database.CloudDBZone;
+import com.huawei.agconnect.cloud.database.ServerStatus;
 import com.huawei.hmf.tasks.OnFailureListener;
 import com.huawei.hmf.tasks.OnSuccessListener;
 import com.huawei.hmf.tasks.Task;
@@ -42,34 +48,71 @@ import com.huawei.hms.support.hwid.request.HuaweiIdAuthParamsHelper;
 import com.huawei.hms.support.hwid.result.AuthHuaweiId;
 import com.huawei.hms.support.hwid.service.HuaweiIdAuthService;
 
+import java.util.Date;
+
 public class MainActivityCloud extends AppCompatActivity {
 
     private Button btnWithLogin;
     private Button btnWithoutLogin;
     private Intent activityIntent;
-    private static final int HUAWEI_ID_SIGN_IN =123;
-    private static final String LOGIN_MESSAGE ="STATE";
+    private TextView serverStatusText;
+    private TextView serverTimeStamp;
+
+
+    private String serverStatusString;
+    private static CloudDBZone cloudDbZone;
+
+    private static final int HUAWEI_ID_SIGN_IN = 123;
+    private static final String LOGIN_MESSAGE = "STATE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_cloud);
-
         //CloudDB's initialize methods called , This method is called inside manifest file.
         AGConnectCloudDB.initialize(getApplicationContext());
-
         CloudDBZoneWrapper.initCloudDBZone(getApplicationContext());
-        setComponents();//
+        cloudDbZone = CloudDBZoneWrapper.openCloudDBZone();
+        setComponents();
+        setServerStatus();
         setClickEvent();//set click events
 
     }
 
-    private void setComponents(){
+    @SuppressLint("SetTextI18n")
+    private void setServerStatus() {
+        CloudDBZoneWrapper.openCloudDBZone();
 
-        btnWithLogin= findViewById(R.id.btnContinuesWithLogin);
-        btnWithoutLogin= findViewById(R.id.btnContinueWithoutLogin);
+            Task<ServerStatus> serverStatusTask = cloudDbZone.executeServerStatusQuery();
+
+            serverStatusTask.addOnSuccessListener(new OnSuccessListener<ServerStatus>() {
+                @Override
+                public void onSuccess(ServerStatus serverStatus) {
+                    serverStatusString = Long.toString(serverStatus.getServerTimestamp());
+                    Date d = new Date(Long.parseLong(serverStatusString));
+                    serverTimeStamp.setVisibility(View.VISIBLE);
+                    serverTimeStamp.setText(d.toString());
+
+                    serverStatusText.setText("Open");
+                    serverStatusText.setTextColor(Color.GREEN);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(Exception e) {
+                    serverStatusString = "false";
+                }
+            });
+
+    }
+
+    private void setComponents() {
+
+        btnWithLogin = findViewById(R.id.btnContinuesWithLogin);
+        btnWithoutLogin = findViewById(R.id.btnContinueWithoutLogin);
+        serverStatusText = findViewById(R.id.serverStatus);
+        serverTimeStamp = findViewById(R.id.serverStatusTimeStamp);
         setupToolbar();
-        activityIntent = new Intent(getApplicationContext(),MainFragmentActivity.class);
+        activityIntent = new Intent(getApplicationContext(), MainFragmentActivity.class);
     }
 
     private void setupToolbar() {
@@ -85,30 +128,30 @@ public class MainActivityCloud extends AppCompatActivity {
         return true;
     }
 
-    private void setClickEvent(){
+    private void setClickEvent() {
 
         btnWithLogin.setOnClickListener(view -> {
-            Log.i(LOGIN_MESSAGE,"User wanted to Log in for Cloud DB");
-            if(AGConnectAuth.getInstance().getCurrentUser() == null){
+            Log.i(LOGIN_MESSAGE, "User wanted to Log in for Cloud DB");
+            if (AGConnectAuth.getInstance().getCurrentUser() == null) {
                 loginRequest();
-            }else{
+            } else {
                 goToMainActivity();
             }
         });
 
         btnWithoutLogin.setOnClickListener(view -> {
-            if(AGConnectAuth.getInstance().getCurrentUser() != null){
+            if (AGConnectAuth.getInstance().getCurrentUser() != null) {
                 //Users need to login to make some operations so We restrict them to login
                 AGConnectAuth.getInstance().signOut();
             }
-            Log.i(LOGIN_MESSAGE,"User didn't want to Log in for Cloud DB");
+            Log.i(LOGIN_MESSAGE, "User didn't want to Log in for Cloud DB");
             goToMainActivity();
         });
     }
 
-    private void loginRequest(){
+    private void loginRequest() {
         HuaweiIdAuthParams authParams = new HuaweiIdAuthParamsHelper(HuaweiIdAuthParams.DEFAULT_AUTH_REQUEST_PARAM).setAccessToken().createParams();
-        HuaweiIdAuthService service = HuaweiIdAuthManager.getService(this,authParams);
+        HuaweiIdAuthService service = HuaweiIdAuthManager.getService(this, authParams);
 
         startActivityForResult(service.getSignInIntent(), HUAWEI_ID_SIGN_IN);
     }
@@ -118,31 +161,32 @@ public class MainActivityCloud extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-      if(requestCode == HUAWEI_ID_SIGN_IN){
-          Task<AuthHuaweiId> authHuaweiIdTask = HuaweiIdAuthManager.parseAuthResultFromIntent(data);
-          if(authHuaweiIdTask.isSuccessful() && authHuaweiIdTask.isComplete()){
+        if (requestCode == HUAWEI_ID_SIGN_IN) {
+            Task<AuthHuaweiId> authHuaweiIdTask = HuaweiIdAuthManager.parseAuthResultFromIntent(data);
+            if (authHuaweiIdTask.isSuccessful() && authHuaweiIdTask.isComplete()) {
 
-           AuthHuaweiId huaweiAccount = authHuaweiIdTask.getResult();
-           String accessToken = huaweiAccount.getAccessToken();
-           AGConnectAuthCredential credential = HwIdAuthProvider.credentialWithToken(accessToken);
-           AGConnectAuth.getInstance().signIn(credential).addOnSuccessListener(new OnSuccessListener<SignInResult>() {
-               @Override
-               public void onSuccess(SignInResult signInResult) {
-                   goToMainActivity();
-               }
-           }).addOnFailureListener(new OnFailureListener() {
-               @Override
-               public void onFailure(Exception e) {
-                   Log.e(LOGIN_MESSAGE,e.toString());
-               }
-           });
-
-       }
-      }
+                AuthHuaweiId huaweiAccount = authHuaweiIdTask.getResult();
+                String accessToken = huaweiAccount.getAccessToken();
+                AGConnectAuthCredential credential = HwIdAuthProvider.credentialWithToken(accessToken);
+                AGConnectAuth.getInstance().signIn(credential).addOnSuccessListener(new OnSuccessListener<SignInResult>() {
+                    @Override
+                    public void onSuccess(SignInResult signInResult) {
+                        goToMainActivity();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(Exception e) {
+                        Log.e(LOGIN_MESSAGE, e.toString());
+                    }
+                });
+            }
+        }
     }
-    private void goToMainActivity(){
+
+    private void goToMainActivity() {
         startActivity(activityIntent);
     }
+
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);

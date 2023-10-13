@@ -69,7 +69,7 @@ dependencies {
     implementation "com.huawei.hms:hwid:6.1.0.302"
 
     // Auth Service
-    implementation 'com.huawei.agconnect:agconnect-auth:1.8.1.300'
+    implementation 'com.huawei.agconnect:agconnect-auth:1.9.0.300'
 
     //HMS Game
     implementation "com.huawei.hms:game:6.1.0.301"

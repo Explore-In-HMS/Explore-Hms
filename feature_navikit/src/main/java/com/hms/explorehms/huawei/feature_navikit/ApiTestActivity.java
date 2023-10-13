@@ -32,7 +32,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import com.hms.explorehms.Util;
 import com.hms.explorehms.huawei.feature_navikit.setting.CommonSetting;
 import com.hms.explorehms.huawei.feature_navikit.utils.CommonUtil;
 import com.hms.explorehms.huawei.feature_navikit.utils.ConstantNaviUtil;
@@ -57,7 +60,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-public class ApiTestActivity extends Activity implements RadioGroup.OnCheckedChangeListener {
+public class ApiTestActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
 
     private static final String TAG = "ApiTestActivity";
 
@@ -135,10 +138,28 @@ public class ApiTestActivity extends Activity implements RadioGroup.OnCheckedCha
         setContentView(R.layout.activity_api_test);
         context = this;
         initView();
+        setupToolbar();
         initListener();
 
         initMapNavi();
         initApiTestSite();
+    }
+
+    private void setupToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbarNaviKitInfo);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     private void initView() {

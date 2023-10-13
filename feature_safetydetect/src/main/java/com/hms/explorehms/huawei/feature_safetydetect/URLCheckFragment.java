@@ -24,6 +24,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -157,6 +158,13 @@ public class URLCheckFragment extends Fragment
                                     SafetyDetectStatusCodes.getStatusCodeString(apiException.getStatusCode()) + ": " +
                                     e.getMessage();
                             testRes.setText(errorMsg);
+
+                            //Error code: 19803
+                            int userDetectPermission = SafetyDetectStatusCodes.USER_DETECT_PERMISSION;
+                            if (((ApiException) e).getStatusCode() == userDetectPermission){
+                                Toast.makeText(getActivity(), "Failed to display a popup on a non-Huawei phone.", Toast.LENGTH_SHORT).show();
+                                testRes.setText(R.string.error_code_19803);
+                            }
                             // You can use the apiException.getStatusCode() method to get the status code.
                             // Note: If the status code is SafetyDetectStatusCodes.CHECK_WITHOUT_INIT, you need to call initUrlCheck().
                         } else {

@@ -18,15 +18,18 @@ package com.hms.explorehms.baseapp.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentContainerView;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -35,6 +38,7 @@ import com.hms.explorehms.baseapp.adapter.BaseViewPagerAdapter;
 import com.hms.explorehms.baseapp.fragment.HmsKitSearchFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.kcode.lib.UpdateWrapper;
 
 public class MainActivityTab extends AppCompatActivity {
 
@@ -42,6 +46,8 @@ public class MainActivityTab extends AppCompatActivity {
     ViewPager2 viewPager;
     FragmentContainerView searchFragmentContainer;
     HmsKitSearchFragment searchFragment;
+
+    private static final String TAG = "App_Update";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +57,32 @@ public class MainActivityTab extends AppCompatActivity {
 
         initUI();
         initAdapter();
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        checkUpdate(0, null);
+
     }
+    private void checkUpdate(final long time, final Class<? extends FragmentActivity> cls) {
+
+        UpdateWrapper.Builder builder = new UpdateWrapper.Builder(getApplicationContext())
+                .setTime(time)
+                .setNotificationIcon(R.mipmap.ic_launcher_round)
+                .setUrl("https://raw.githubusercontent.com/Explore-In-HMS/Explore-Hms/App_Update/app/update-changelog.json")
+                .setIsShowToast(false)
+                .setIsShowNetworkErrorToast(true)
+                .setIsShowBackgroundDownload(true)
+                .setCallback((model, hasNewVersion) -> {
+                    Log.d(TAG, String.valueOf(hasNewVersion));
+                    Log.d(TAG, "has new version:" + hasNewVersion + ";version info :" + model.getVersionName());
+                });
+
+        if (cls != null) {
+            builder.setCustomsActivity(cls);
+        }
+        builder.build().start();
+    }
+
+
 
 //    @Override
 //    public int getLayoutRes() {

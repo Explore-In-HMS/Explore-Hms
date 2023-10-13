@@ -24,11 +24,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
 import com.hms.explorehms.huawei.feature_nearbyservice.helper.WiFiShareHelper;
 
-public class WifiShareActivity extends Activity implements View.OnClickListener{
+public class WifiShareActivity extends AppCompatActivity implements View.OnClickListener{
 
     private WiFiShareHelper mWiFiShare;
     private static final String[] REQUIRED_PERMISSIONS =
@@ -49,9 +51,27 @@ public class WifiShareActivity extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wifi_share);
         initView();
+        setupToolbar();
         mWiFiShare = new WiFiShareHelper(this);
         mWiFiShare.setViewToFill(listView, tv_authCodeText);
         ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_REQUIRED_PERMISSIONS);
+    }
+
+    private void setupToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar_nearbyservice);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     private void initView() {

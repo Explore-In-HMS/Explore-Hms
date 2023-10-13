@@ -34,7 +34,15 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <uses-feature android:name="android.hardware.camera.any" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -51,8 +59,14 @@
         android:resizeableActivity="false"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:keepScreenOn="true"
         android:usesCleartextTraffic="true"
         tools:replace="name, icon, label, theme, resizeableActivity, allowBackup, hardwareAccelerated,android:networkSecurityConfig, android:configChanges">
+
+        <activity android:name=".CustomsUpdateActivity"
+            android:theme="@style/UpdateDialog">
+        </activity>
+
         <activity
             android:name=".locationkit.IndoorLocationActivity"
             android:exported="false">
@@ -151,6 +165,7 @@
                 <action android:name="com.hms.explorehms.locationkit.ACTION_PROCESS_LOCATION" />
             </intent-filter>
         </receiver>
+
         <receiver
             android:name=".locationkit.GeoFenceBroadcastReceiver"
             android:enabled="true"

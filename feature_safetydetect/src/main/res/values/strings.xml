@@ -75,6 +75,7 @@
     <string name="threats_found">Threats found!</string>
     <string name="result">Result</string>
     <string name="result_will_be_displayed_here">Result will be displayed here</string>
+    <string name="error_code_19803">Go to Settings (or your phone manager app), assign HMS Core (APK) with the permission to display a popup while running in the background, and try again.</string>
 
     <string name="url_safetydetect">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001050156325</string>
 

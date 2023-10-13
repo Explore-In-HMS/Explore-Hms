@@ -29,6 +29,7 @@ render.experimental.xml
 
 # AG Services (e.g. APIs)
 agconnect-services.json
+app/agconnect-services.json
 
 # Android Profiling
 *.hprof

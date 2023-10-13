@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -53,10 +54,16 @@ public class MapKitCameraFragment extends BaseFragment {
                 moveCamera(generateRandomLocation()));
         binding.btnAnimateCameraMapkit.setOnClickListener(view1 ->
                 animateCamera(generateRandomLocation()));
+        binding.btnScalePerPixelMapkit.setOnClickListener(view ->
+                getScalePerPixel());
     }
 
     private void moveCamera(LatLng latLng) {
         hMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, hMap.getCameraPosition().zoom));
+    }
+
+    private void getScalePerPixel(){
+        Toast.makeText(requireContext(),Float.toString(hMap.getScalePerPixel()),Toast.LENGTH_LONG).show();
     }
 
     private void animateCamera(LatLng latLng) {

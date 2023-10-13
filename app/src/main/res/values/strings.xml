@@ -504,7 +504,7 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="text_roundarea_lat">RoundArea Latitude</string>
     <string name="text_roundarea_lon">RoundArea Longitude</string>
     <string name="text_radius_meters">Radius meters</string>
-    <string name="text_conversation_help">enter : 0 - exit : 1</string>
+    <string name="text_conversation_help">enter : 1 - exit : 2 - stay : 4</string>
     <string name="text_milisecond">milisecond</string>
     <string name="mock_mode_use_warning">To use Mock Location: \nYou should allow Mock Locations and Authorize App in Developer options!</string>
     <string name="mock_mode_use_method_introduction">To use the mock location function, \ngo to Settings > System &amp; updates > Developer options > Select mock location app and select the desired app. \n\n(If Developer options is unavailable, go to Settings > About phone and tap Build number for seven consecutive times. \nThen, Developer options will be displayed on System &amp; updates.)</string>
@@ -741,6 +741,9 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="map_kit_header_mapkit">Map Kit</string>
     <string name="move_random_location_text_mapkit">Move Random Location</string>
     <string name="animate_random_location_text_mapkit">Animate Random Location</string>
+    <string name="get_scale_per_pixel_text_mapkit">Get Scale Per Pixel</string>
+    <string name="start_animation">Start Animation</string>
+    <string name="set_gradient">Change The Gradient</string>
     <string name="show_marker_text_mapkit">Show Marker</string>
     <string name="show_custom_marker_text_mapkit">Show Custom Marker</string>
     <string name="show_shape_text_mapkit">Show Shape</string>
@@ -750,6 +753,7 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="show_ground_overlay_text_mapkit">Show Ground Overlay</string>
     <string name="show_style_text_mapkit">Show Style</string>
     <string name="change_style_text_mapkit">Change Style</string>
+    <string name="change_location_style_mapkit">Change Location Style</string>
     <string name="site_kit_widget_text_sitekit">Widget</string>
     <string name="place_detail_search_with_siteid_text_sitekit">Place Detail Search with SiteId</string>
     <string name="site_kit_autocomplete_text_sitekit">Site Kit Autocomplete</string>

@@ -45,6 +45,9 @@ import com.huawei.hms.hmsscankit.ScanUtil;
 import com.huawei.hms.ml.scan.HmsScan;
 import com.huawei.hms.ml.scan.HmsScanAnalyzerOptions;
 import com.huawei.hms.ml.scan.HmsScanBase;
+import com.huawei.hms.ml.scan.HmsScanFrame;
+import com.huawei.hms.ml.scan.HmsScanFrameOptions;
+import com.huawei.hms.ml.scan.HmsScanResult;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -238,12 +241,14 @@ public class ScanKitActivity extends AppCompatActivity implements View.OnClickLi
                 try {
                     // Obtain the bitmap from the image picker.
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), data.getData());
+                    HmsScanFrame frame = new HmsScanFrame(bitmap);
 
                     // Call the decodeWithBitmap method to pass the bitmap.
-                    HmsScan[] result1 = ScanUtil.decodeWithBitmap(ScanKitActivity.this, bitmap, new HmsScanAnalyzerOptions.Creator().setHmsScanTypes(0).setPhotoMode(true).create());
+                    HmsScanResult result1 = ScanUtil.decode(ScanKitActivity.this, frame, new HmsScanFrameOptions.Creator().setHmsScanTypes(HmsScan.QRCODE_SCAN_TYPE| HmsScan.PDF417_SCAN_TYPE).setMultiMode(false).setParseResult(true).setPhotoMode(true).create());
+                    HmsScan[] hmsScans = result1.getHmsScans();
                     // Obtain the scanning result.
-                    if (result1 != null && result1.length > 0) {
-                        showMultiResultActivity(result1);
+                    if (result1 != null && hmsScans.length > 0) {
+                        showMultiResultActivity(hmsScans);
                     } else {
                         Toast.makeText(this, "Barcode is NULL or Empty!", Toast.LENGTH_SHORT).show();
                     }
