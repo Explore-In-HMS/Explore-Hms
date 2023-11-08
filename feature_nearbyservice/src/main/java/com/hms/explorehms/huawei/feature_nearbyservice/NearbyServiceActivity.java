@@ -44,8 +44,6 @@ public class NearbyServiceActivity extends AppCompatActivity {
         btnMessage.setOnClickListener(v -> Util.startActivity(NearbyServiceActivity.this, NearbyMessageActivity.class));
         btnConnection = findViewById(R.id.cv_nearbyconnection);
         btnConnection.setOnClickListener(v -> Util.startActivity(NearbyServiceActivity.this, ChatActivity.class));
-        btnConnection = findViewById(R.id.cv_nearwifi);
-        btnConnection.setOnClickListener(v -> Util.startActivity(NearbyServiceActivity.this, WifiShareActivity.class));
 
     }
 
