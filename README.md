@@ -1131,6 +1131,10 @@ sharing.
 ## Contributors
 
 - Çağatay Kızıldağ
+- Ali Osman Arslan
+- Fatih Muti
+- Hasan Kaya
+- Zübeyir Taruz
 - Begüm Avcı
 - Cem Genar
 - Erdal Kaymak
