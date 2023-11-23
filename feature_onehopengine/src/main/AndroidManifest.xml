@@ -31,6 +31,7 @@
 
     <application>
         <activity android:name="com.hms.explorehms.huawei.feature_onehopengine.GeneralFeaturesActivity"
+            android:screenOrientation="portrait"
             android:exported="true"/>
     </application>
 

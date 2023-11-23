@@ -45,7 +45,8 @@
             android:screenOrientation="portrait"
             android:exported="true"/>
         <activity android:name=".AudioMainActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
 
         <service
             android:name=".AudioKillService" />

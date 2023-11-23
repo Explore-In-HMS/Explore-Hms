@@ -67,7 +67,7 @@ public class MainActivityTab extends AppCompatActivity {
         UpdateWrapper.Builder builder = new UpdateWrapper.Builder(getApplicationContext())
                 .setTime(time)
                 .setNotificationIcon(R.mipmap.ic_launcher_round)
-                .setUrl("https://raw.githubusercontent.com/Explore-In-HMS/Explore-Hms/App_Update/app/update-changelog.json")
+                .setUrl("https://raw.githubusercontent.com/Explore-In-HMS/Explore-Hms/main/app/update-changelog.json")
                 .setIsShowToast(false)
                 .setIsShowNetworkErrorToast(true)
                 .setIsShowBackgroundDownload(true)

@@ -31,12 +31,16 @@
         <activity
             android:name=".CustomAttributesExampleActivity"
             android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait"
             android:exported="true"/>
         <activity
             android:name=".RemoteConfigMainActivity2"
             android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait"
             android:exported="true"/>
-        <activity android:name=".RemoteConfigMainActivity" android:exported="true"/>
+        <activity android:name=".RemoteConfigMainActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
     </application>
 
 </manifest>

@@ -35,9 +35,11 @@
     </dist:module>
 
     <application android:requestLegacyExternalStorage="true">
-        <activity android:name="com.hms.explorehms.huawei.feature_cloudstorage.CloudStorageDownloadedFilesActivity" />
+        <activity android:name="com.hms.explorehms.huawei.feature_cloudstorage.CloudStorageDownloadedFilesActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name="com.hms.explorehms.huawei.feature_cloudstorage.CloudStorageMainActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
 
     </application>
 

@@ -32,8 +32,10 @@
     </dist:module>
 
     <application>
-        <activity android:name=".ShareEngineHuaweiPhonesActivity" />
+        <activity android:name=".ShareEngineHuaweiPhonesActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".ShareEngineMainActivity"
+            android:screenOrientation="portrait"
             android:exported="true"/>
     </application>
 

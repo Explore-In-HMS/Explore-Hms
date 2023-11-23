@@ -31,6 +31,7 @@
 
     <application>
         <activity android:name=".IdentityActivity"
+            android:screenOrientation="portrait"
             android:exported="true"/>
     </application>
 
