@@ -1135,6 +1135,7 @@ sharing.
 - Fatih Muti
 - Hasan Kaya
 - Zübeyir Taruz
+- Kayra Enez Özenalp
 - Begüm Avcı
 - Cem Genar
 - Erdal Kaymak
