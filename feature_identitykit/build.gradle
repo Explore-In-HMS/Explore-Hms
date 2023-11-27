@@ -45,7 +45,7 @@ android {
 
 dependencies {
     implementation project(":app")
-    implementation 'com.huawei.hms:identity:6.4.0.302'
+    implementation 'com.huawei.hms:identity:6.13.0.300'
 }
 
 /*apply from: '../sonarqube.gradle'
