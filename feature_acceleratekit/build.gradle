@@ -31,7 +31,7 @@ android {
 
     defaultConfig {
         applicationId "com.hms.explorehms.huawei.feature_acceleratekit"
-        minSdkVersion 28
+        minSdkVersion 29
         targetSdkVersion 30
         versionCode gradleVersionCode
         versionName gradleVersionName
