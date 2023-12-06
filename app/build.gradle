@@ -410,7 +410,7 @@ dependencies {
     // ML KIT END
 
     //nearby
-    api 'com.huawei.hms:nearby:6.11.0.300'
+    api 'com.huawei.hms:nearby:6.12.1.300'
 
     //Video Kit
    // api "com.huawei.hms:videokit-player:1.0.10.302"
