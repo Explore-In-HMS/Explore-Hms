@@ -35,6 +35,7 @@
 
     <application>
         <activity android:name="com.hms.explorehms.huawei.feature_wirelesskit.MainWirelessActivity"
+            android:screenOrientation="portrait"
             android:exported="true"/>
     </application>
 

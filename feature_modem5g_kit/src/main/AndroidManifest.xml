@@ -31,13 +31,19 @@
 
     <application>
         <activity android:name="com.hms.explorehms.huawei.feature_modem5g_kit.ServiceIntroductionActivity"
+            android:screenOrientation="portrait"
             android:exported="true"/>
         <activity android:name="com.hms.explorehms.huawei.feature_modem5g_kit.hms5gkit.activitys.base.BaseActivity"
+            android:screenOrientation="portrait"
             android:exported="true"/>
-        <activity android:name="com.hms.explorehms.huawei.feature_modem5g_kit.hms5gkit.activitys.base.PermissionBaseActivity" />
-        <activity android:name="com.hms.explorehms.huawei.feature_modem5g_kit.hms5gkit.activitys.impl.HmsKitActivity" />
-        <activity android:name="com.hms.explorehms.huawei.feature_modem5g_kit.hms5gkit.activitys.impl.HmsKitBaseActivity" />
+        <activity android:name="com.hms.explorehms.huawei.feature_modem5g_kit.hms5gkit.activitys.base.PermissionBaseActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_modem5g_kit.hms5gkit.activitys.impl.HmsKitActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_modem5g_kit.hms5gkit.activitys.impl.HmsKitBaseActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name="com.hms.explorehms.huawei.feature_modem5g_kit.MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true"/>
     </application>
 

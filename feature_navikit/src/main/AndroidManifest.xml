@@ -30,14 +30,19 @@
     </dist:module>
 
     <application>
+
         <activity
-            android:name=".ApiTestActivity" />
+            android:name=".ApiTestActivity"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".BusResultActivity" />
+            android:name=".BusResultActivity"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".NaviActivity" />
+            android:name=".NaviActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
         </activity>
     </application>

@@ -33,8 +33,10 @@
 
     <application>
         <activity android:name=".LocalDisplayActivity"
+            android:screenOrientation="portrait"
             android:exported="true"/>
-        <activity android:name=".PanoramaActivity" />
+        <activity android:name=".PanoramaActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

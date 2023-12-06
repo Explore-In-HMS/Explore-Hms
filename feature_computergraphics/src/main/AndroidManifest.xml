@@ -34,7 +34,8 @@
             android:name=".CustomNativeActivity"
             android:configChanges="orientation|screenSize"
             android:launchMode="singleTask"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
 
             <!-- android:screenOrientation="portrait"> -->
             <meta-data
@@ -43,7 +44,8 @@
 
         </activity>
         <activity android:name="com.hms.explorehms.huawei.feature_computergraphics.ComputerGraphicsMainActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

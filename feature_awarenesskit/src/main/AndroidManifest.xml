@@ -42,9 +42,11 @@
     <application>
         <activity android:name=".ui.AwarenessKitReworkMainActivity"
             android:windowSoftInputMode="adjustResize|stateHidden"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity android:name=".ui.AwarenessKitReworkInfoActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden"/>
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait"/>
 
         <receiver
             android:name=".receivers.BarrierReceiver"
