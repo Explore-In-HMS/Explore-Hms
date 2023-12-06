@@ -31,6 +31,7 @@
 
     <application>
         <activity android:name="com.hms.explorehms.huawei.feature_quickapp.OtherFeaturesSliderActivity"
+            android:screenOrientation="portrait"
             android:exported="true"/>
     </application>
 

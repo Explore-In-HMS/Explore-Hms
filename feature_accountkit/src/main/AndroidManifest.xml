@@ -34,10 +34,14 @@
     </dist:module>
 
     <application>
-        <activity android:name=".SmsReaderInfoActivity" />
-        <activity android:name=".SmsReaderActivity" />
-        <activity android:name=".LoginActivity" android:exported="true"/>
-        <activity android:name=".UserDetailActivity" />
+        <activity android:name=".SmsReaderInfoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SmsReaderActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LoginActivity" android:exported="true"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".UserDetailActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

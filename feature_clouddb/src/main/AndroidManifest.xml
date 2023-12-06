@@ -31,10 +31,12 @@
     <application>
         <activity android:name=".view.MainFragmentActivity"
             android:windowSoftInputMode="adjustResize|stateHidden"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity android:name=".view.MainActivityCloud"
             android:windowSoftInputMode="adjustResize|stateHidden"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

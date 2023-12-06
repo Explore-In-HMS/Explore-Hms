@@ -40,7 +40,8 @@
         <activity
             android:name=".MainActivityAREngine"
             android:theme="@style/AppTheme"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
@@ -49,37 +50,43 @@
         <activity
             android:name=".ui.world.WorldActivity"
             android:label="World Tracking"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
         </activity>
 
         <activity android:name=".ui.face.FaceActivity"
             android:label="Face Tracking"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
         </activity>
 
         <activity
             android:name=".ui.hand.HandActivity"
             android:label="Hand Tracking"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
         </activity>
 
         <activity
             android:name=".ui.body.BodyActivity"
             android:label="Body Tracking"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
         </activity>
 
         <activity
             android:name=".ui.health.HealthActivity"
             android:label="Health Tracking"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
         </activity>
 
 
         <activity
             android:name=".ui.ConnectAppMarketActivity"
             android:label="ConnectAppMarketActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
         </activity>
 
     </application>

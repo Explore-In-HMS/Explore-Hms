@@ -31,8 +31,10 @@
 
     <application>
         <activity android:name="com.hms.explorehms.huawei.feature_dynamicability.DynamicAbilityTestActivity"
-            android:exported="true"/>
-        <activity android:name="com.hms.explorehms.huawei.feature_dynamicability.DynamicAbilityMainActivity" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_dynamicability.DynamicAbilityMainActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

@@ -64,8 +64,10 @@
         tools:replace="icon, label, theme, screenOrientation, resizeableActivity"
         tools:targetApi="q">
         <activity android:name=".ui.mlServices.faceAndBodyRelated.gesture.GestureMainActivity"
+            android:screenOrientation="portrait"
             android:exported="true"/>
-        <activity android:name=".ui.mlServices.faceAndBodyRelated.face3d.Live3DActivity" />
+        <activity android:name=".ui.mlServices.faceAndBodyRelated.face3d.Live3DActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MLMainActivity"
             android:screenOrientation="portrait"
@@ -101,14 +103,17 @@
         <activity
             android:name=".ui.mlServices.textRelated.idCardRecognition.IDCardActivity"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
             android:launchMode="singleTask" />
         <activity
             android:name=".ui.mlServices.textRelated.idCardRecognition.IDCardRecognitionActivity"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
             android:launchMode="singleTask" />
         <activity
             android:name=".ui.mlServices.textRelated.idCardRecognition.VNIdCardRecognitionActivity"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
             android:launchMode="singleTask" /> <!-- Language Related Services Activities -->
         <activity
             android:name=".ui.mlServices.languageRelated.audioTranscription.AudioFileTranscriptionActivity"
@@ -148,6 +153,7 @@
             android:name=".ui.mlServices.faceAndBodyRelated.faceDetection.FaceDetectionCameraActivity"
             android:launchMode="singleTask"
             android:resizeableActivity="false"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".ui.mlServices.faceAndBodyRelated.livenessDetection.LivenessDetectionActivity"
@@ -179,6 +185,7 @@
         <activity
             android:name=".ui.mlServices.imageRelated.objectDetection.ObjectDetectionCameraActivity"
             android:launchMode="singleTask"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".ui.mlServices.faceAndBodyRelated.face3d.Live3DFaceAnalyseActivity"
@@ -188,6 +195,7 @@
         <activity
             android:name=".ui.mlServices.faceAndBodyRelated.faceVerification.FaceVerificationActivity"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
             android:launchMode="singleTask" />
         <activity
             android:name=".ui.mlServices.faceAndBodyRelated.gesture.GestureActivity"
@@ -208,6 +216,7 @@
         <activity
             android:name=".ui.mlServices.imageRelated.imageClassification.ImageClassificationCameraActivity"
             android:launchMode="singleTask"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".ui.mlServices.imageRelated.landmarkRecognition.LandmarkRecognitionActivity"

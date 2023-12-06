@@ -31,7 +31,8 @@
 
     <application>
         <activity android:name="com.hms.explorehms.huawei.feature_clouddebugging.GeneralFeaturesActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

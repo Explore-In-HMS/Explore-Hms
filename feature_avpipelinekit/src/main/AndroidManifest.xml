@@ -32,14 +32,21 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_avpipelinekit.ui.PlayerActivitySRenabled"/>
-        <activity android:name="com.hms.explorehms.huawei.feature_avpipelinekit.ui.PlayerActivity"/>
-        <activity android:name="com.hms.explorehms.huawei.feature_avpipelinekit.ui.PlayerActivitySRdisabled"/>
-        <activity android:name="com.hms.explorehms.huawei.feature_avpipelinekit.ui.PlayerActivitySound"/>
-        <activity android:name="com.hms.explorehms.huawei.feature_avpipelinekit.ui.PlayerActivityBase"/>
-        <activity android:name="com.hms.explorehms.huawei.feature_avpipelinekit.ui.AssetActivity"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_avpipelinekit.ui.PlayerActivitySRenabled"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_avpipelinekit.ui.PlayerActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_avpipelinekit.ui.PlayerActivitySRdisabled"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_avpipelinekit.ui.PlayerActivitySound"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_avpipelinekit.ui.PlayerActivityBase"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_avpipelinekit.ui.AssetActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name="com.hms.explorehms.huawei.feature_avpipelinekit.MainActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
 
 
 

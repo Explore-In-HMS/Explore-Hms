@@ -32,8 +32,10 @@
 
     <application>
         <activity android:name=".AnalyticsKitActivity"
-            android:exported="true"/>
-        <activity android:name=".EcommerceExampleActivity"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".EcommerceExampleActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 

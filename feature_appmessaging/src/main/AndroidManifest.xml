@@ -29,9 +29,12 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_appmessaging.AppMessagingTestActivity"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_appmessaging.AppMessagingTestActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name="com.hms.explorehms.huawei.feature_appmessaging.AppMessagingMainActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+        />
     </application>
 
 </manifest>

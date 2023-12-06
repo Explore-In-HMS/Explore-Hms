@@ -47,8 +47,10 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_videoeditorkit.ServiceIntroductionActivity"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_videoeditorkit.ServiceIntroductionActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name="com.hms.explorehms.huawei.feature_videoeditorkit.MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true"/>
     </application>
 

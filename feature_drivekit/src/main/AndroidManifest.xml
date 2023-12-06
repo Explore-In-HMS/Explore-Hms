@@ -38,14 +38,19 @@
 
     <application>
         <activity android:name="com.hms.explorehms.huawei.feature_drivekit.HistoryVersionActivity"
-            android:exported="true"/>
-        <activity android:name="com.hms.explorehms.huawei.feature_drivekit.CommentDetailActivity" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_drivekit.CommentDetailActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.hms.explorehms.huawei.feature_drivekit.FileDetailActivity"
             android:windowSoftInputMode="adjustPan"
-            android:exported="true"/>
-        <activity android:name="com.hms.explorehms.huawei.feature_drivekit.FilesActivity" />
-        <activity android:name="com.hms.explorehms.huawei.feature_drivekit.DriveKitLoginActivity" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_drivekit.FilesActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_drivekit.DriveKitLoginActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
