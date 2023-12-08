@@ -700,7 +700,7 @@ Features:
 
 ### [ML Kit](https://developer.huawei.com/consumer/en/hms/huawei-mlkit/)
 
-*Version: 3.10.0.300*
+*Version: 3.9.0.300*
 
 HUAWEI ML Kit allows your apps to easily leverage Huawei's long-term proven expertise in machine
 learning to support diverse artificial intelligence (AI) applications throughout a wide range of
@@ -732,7 +732,6 @@ Language Related Service
   - *3.9.0.301*
 - [AFT : audio file Transcription](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/audio-file-transcription-0000001050040089)
   - *3.9.0.300*
-- [VCC : Video Course Creator]() - *2.0.2.301*
 - [Real-Time Transcription]() - *3.9.0.300*
 - [Sound Detection]() - *3.5.0.302*
 
