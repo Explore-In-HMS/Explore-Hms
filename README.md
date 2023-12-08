@@ -927,7 +927,7 @@ Features:
 
 ### [Safety Detect](https://developer.huawei.com/consumer/en/hms/huawei-safetydetectkit/)
 
-*Version: 6.7.0.301*
+*Version: 6.7.0.302*
 
 Safety Detect builds robust security capabilities, including system integrity check (SysIntegrity),
 app security check (AppsCheck), malicious URL check (URLCheck), fake user detection (UserDetect),
@@ -945,7 +945,7 @@ Features:
 
 ### [Scan Kit](https://developer.huawei.com/consumer/en/hms/huawei-scankit/)
 
-*Version: 2.10.0.301*
+*Version: 2.11.0.300*
 
 HUAWEI Scan Kit scans and parses all major 1D and 2D barcodes and generates QR codes, helping you
 quickly build barcode scanning functions into your apps.
@@ -1005,7 +1005,7 @@ Wi-Fi channels. File transfer speeds can be up to 80 MB/s when the device and en
 
 ### [Site Kit](https://developer.huawei.com/consumer/en/hms/huawei-sitekit/)
 
-*Version: 6.5.1.301*
+*Version: 6.5.1.300*
 
 Site Kit provides place search services including keyword search, nearby place search, place detail
 search, and place search suggestion, helping your app provide convenient place-related services to
