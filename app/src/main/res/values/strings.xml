@@ -121,7 +121,7 @@
     <string name="text_for_app_bundle_image_description">App bundle banner</string>
 
     <string name="txt_for_app_bundle_distribution"><a href="">Click here to learn more about AGC App Bundle Distribution</a></string>
-    <string name="txt_for_app_bundle_distribution_link">https://developer.huawei.com/consumer/en/doc/distribution/app/18527283</string>
+    <string name="txt_for_app_bundle_distribution_link">https://developer.huawei.com/consumer/en/doc/app/agc-help-releasebundle-0000001100316672</string>
 
     <string name="txt_for_app_bundle_information">Users are generally more willing to download smaller apps. Therefore, reducing the size of your app package to the greatest possible extent, is essential for boosting its download and installation success rate. App Bundle does this for you, and has become the preferred service for an increasing number of developers. HUAWEI AppGallery Connect allows you to release your app in App Bundle format, with the relevant Huawei SDKs integrated, ensuring that users only need to download the required content, bundled in a smaller, more streamlined app package.</string>
     <string name="txt_for_app_bundle_steps">App Bundle release processes consist of four steps.</string>
@@ -152,14 +152,14 @@
 </string>
     <string name="txt_apprelease_click"><a href="">Click here to learn more about App Release.</a></string>
     <string name="sample_image">sample_image</string>
-    <string name="txt_apprelease_link">https://developer.huawei.com/consumer/en/doc/distribution/app/agc-create_app</string>
+    <string name="txt_apprelease_link">https://developer.huawei.com/consumer/en/doc/app/agc-help-releaseapkrpk-0000001106463276</string>
     <!--app release-->
 
     <!--early access -->
     <string name="hello_blank_fragment_access">Hello blank fragment</string>
     <string name="title_earlyaccess">Early Access</string>
     <string name="txt_earlyaccess">This service tests how well your game adapts to Huawei devices and provides gameplay data to optimize versions for upcoming release. Early access data will also be used as an important reference for rating games and allocating promotion resources. Therefore, it is strongly recommended that you perform early access on the game.The early access application process is as follows.</string>
-    <string name="txt_earlyaccess_link">https://developer.huawei.com/consumer/en/doc/distribution/app/5020204</string>
+    <string name="txt_earlyaccess_link">https://developer.huawei.com/consumer/en/doc/app/agc-help-game-beta-0000001146796131</string>
     <string name="txt_earlyaccess_click"><a href="">Click here to learn more about Early Access.</a></string>
     <!--early access -->
 
@@ -185,7 +185,7 @@
     <string name="title_preorders">Preorders</string>
     <string name="txt_preorders">This service attracts potential users to your game prior to its release. During early access or initial release of a game, the system sends notifications to users who have preordered it to attract them to download the game. Therefore, it is recommended that you apply for Preorders. \nThe preorder application process is as follows.</string>
     <string name="txt_preorders_preparing">Currently, users can preorder a game on the details page. You only need to prepare five images and game introduction for preorders. Your game can be distributed to multiple countries or regions outside the Chinese mainland, and multiple languages are supported. Therefore, you need to prepare materials in advance based on the language requirements of the countries and regions where your game is to be released.</string>
-    <string name="txt_preorders_link">https://developer.huawei.com/consumer/en/doc/distribution/app/5020203</string>
+    <string name="txt_preorders_link">https://developer.huawei.com/consumer/en/doc/app/agc-help-applyfor-order-0000001108115002</string>
     <string name="txt_preorder_click"><a href="">Click here to learn more about Preorders.</a></string>
     <!-- preorders -->
 
@@ -207,7 +207,7 @@
     <string name="reply">reply</string>
     <string name="toolbar_title">Comments</string>
     <string name="link"><a href="">Click here to learn more about Comments Service.</a></string>
-    <string name="link2">https://developer.huawei.com/consumer/en/doc/distribution/app/20400</string>
+    <string name="link2">https://developer.huawei.com/consumer/en/doc/AppGallery-connect-Guides/agc-comments-introduction-0000001063018306</string>
     <!-- comments -->
 
     <!-- cloud hosting -->
@@ -218,7 +218,7 @@
     <string name="txt_for_version">Version: You can manage hosted static web pages by version to implement updates</string>
 
     <string name="txt_for_hyperlink"><a href="">Click here to learn more about AGC Cloud Hosting.</a></string>
-    <string name="txt_for_hyperlink_link">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-cloudhosting-introduction</string>
+    <string name="txt_for_hyperlink_link">https://developer.huawei.com/consumer/en/doc/AppGallery-connect-Guides/agc-cloudhosting-introductions-0000001057944575</string>
     <!-- cloud hosting -->
 
     <!-- gift management -->
@@ -298,7 +298,7 @@
     <string name="btn_hquic">Check App</string>
     <string name="hquic_result">Result</string>
     <string name="imageview_banner">banner</string>
-    <string name="url_txt_hquic">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001050440045</string>
+    <string name="url_txt_hquic">https://developer.huawei.com/consumer/en/doc/system-Guides/introduction-0000001050440045</string>
     <!--Hquic Kit -->
 
 
@@ -346,7 +346,7 @@
     <string name="text_for_apm_third_function"><b>\u2022 Custom traces and indicators</b></string>
     <string name="text_for_apm_third_function_desc">Monitors your app via tailored traces and indicators, providing a detailed glimpse of app performance.\n\n<b>Note:</b>Nowadays Custom trace can be used Android and Web applications.</string>
     <string name="text_for_apm_link_text_for_website">App Performance Management (APM) web page</string>
-    <string name="text_for_apm_link_for_web_site">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-apms-introduction</string>
+    <string name="text_for_apm_link_for_web_site">https://developer.huawei.com/consumer/en/doc/AppGallery-connect-Guides/agc-apm-introduction-0000001052247254</string>
     <string name="text_for_apm_link_name_for_codelab">App Performance Management (APM) Codelab</string>
     <string name="text_for_apm_link_for_codelab">https://developer.huawei.com/consumer/en/codelab/AppGalleryConnectAPM/index.html#0</string>
     <!-- App performance management -->
@@ -414,7 +414,7 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="text_6">●  On the <b>Report</b> page, to view details about the app, click <b>More</b>.</string>
     <string name="text_7">●  To delete a check record, click <b>Delete</b>.</string>
     <string name="header">Service Introduction</string>
-    <string name="url_txt_integrationcheck">https://developer.huawei.com/consumer/en/doc/distribution/app/agc-auto_check</string>
+    <string name="url_txt_integrationcheck">https://developer.huawei.com/consumer/en/doc/app/agc-help-self-check-0000001100158786</string>
     <!-- Integration Check -->
 
     <!-- local authentication-->

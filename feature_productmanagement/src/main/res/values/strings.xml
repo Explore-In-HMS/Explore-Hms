@@ -35,5 +35,5 @@
     <string name="activating_product_title">Activating a Product</string>
     <string name="activating_product_desc">After a product is added or deactivated, its status is Invalid by default. If you want to start selling the product, you can activate it.\n\n1. Sign in to AppGallery Connect and click My apps.\n\n2. Click an app from the app list to activate a product.\n\n3. Go to Operate &gt; Products &gt; Product Management.\n\n4. On the product list, click Activate next to the product you wish to activate.\n\n5. In the displayed dialog box, click OK.</string>
 
-    <string name="url_productmanagement">https://developer.huawei.com/consumer/en/doc/distribution/app/agc-create_product</string>
+    <string name="url_productmanagement">https://developer.huawei.com/consumer/en/doc/app/agc-help-create-product-0000001099854866</string>
 </resources>

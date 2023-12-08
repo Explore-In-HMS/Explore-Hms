@@ -99,7 +99,7 @@ this way, the application does not have non-required features.
   Windows -> Gradle -> Tasks -> Android -> signingReport
 - Login to Huawei Developer Console (https://developer.huawei.com/consumer/en/console)
 - If you don't have any app check this document for
-  create; https://developer.huawei.com/consumer/en/doc/distribution/app/agc-create_app
+  create; https://developer.huawei.com/consumer/en/doc/app/agc-help-releaseapkrpk-0000001106463276
 - Add SHA256 FingerPrint into your app with follow this steps on Huawei Console; My Apps -> Select
   App -> Project Settings
 - Make enable necessary SDKs with follow this steps; My Apps -> Select App -> Project Settings ->

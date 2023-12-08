@@ -28,7 +28,7 @@
 
     <string name="text_introduction_nearbyservice">Nearby Service includes Nearby Data Communication and Contact Shield. Nearby Data Communication allows apps to easily discover nearby devices and set up communication with them using technologies such as Bluetooth and Wi-Fi. HMS Core Contact Shield is a basic contact tracing service developed based on the Bluetooth low energy (BLE) technology.</string>
 
-    <string name="url_nearbyservice">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-nearby-0000001060363166</string>
+    <string name="url_nearbyservice">https://developer.huawei.com/consumer/en/doc/system-Guides/nearby-introduction-0000001060364528</string>
 
     <string name="text_introduction_nearbymessages">Nearby Message allows a user to subscribe to messages published by nearby users or from nearby beacons. Nearby Message provides app-based and beacon-based message publishing and subscription.</string>
     <string name="text_precautions_nearbymessages">Precautions</string>
@@ -36,7 +36,7 @@
 
 
     <string name="text_click_more_info_nearbymessage"><u>Click here to get more information about Nearby Message.</u></string>
-    <string name="url_nearbymessage">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/message-preparations-0000001050042561</string>
+    <string name="url_nearbymessage">https://developer.huawei.com/consumer/en/doc/system-Guides/message-preparations-0000001050042561</string>
 
     <string name="click_to_share_wifi">Share Wi-Fi</string>
     <string name="click_to_connect_wifi">Connect Wi-Fi</string>

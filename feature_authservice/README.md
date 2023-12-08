@@ -20,7 +20,7 @@ Most apps need to identify and authenticate users to tailor the app experience f
 - If you don't have a Huawei Developer account check this document for create; https://developer.huawei.com/consumer/en/doc/start/10104
 - Open your Android project and find Debug FingerPrint (SHA256) with follow this steps; View -> Tool Windows -> Gradle -> Tasks -> Android -> signingReport
 - Login to Huawei Developer Console (https://developer.huawei.com/consumer/en/console)
-- If you don't have any app check this document for create; https://developer.huawei.com/consumer/en/doc/distribution/app/agc-create_app
+- If you don't have any app check this document for create; https://developer.huawei.com/consumer/en/doc/app/agc-help-releaseapkrpk-0000001106463276
 - Add SHA256 FingerPrint into your app with follow this steps on Huawei Console; My Apps -> Select App -> Project Settings
 - Make enable necessary SDKs with follow this steps; My Apps -> Select App -> Project Settings -> Manage APIs
 - For this project you have to set enable AuthService, AnonymousAccount, HuaweiId, GameCenter, MobileNumberi MailAdress, Twitter, Facebook and Configure these. 

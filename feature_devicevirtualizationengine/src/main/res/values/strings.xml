@@ -29,7 +29,7 @@
     <string name="text_use_cases_info_devicevirtualization">\u2022 Entertainment\n<b>Video call enhancement:</b> During a video call, the phone, smart TV, speaker, and camera work seamlessly. With the multi-microphone sound pickup capability of the smart speaker, the large display of the smart TV, and the wide angle of the camera, the video call data flow is transferred to external devices, providing an enhanced hands-free video calling experience.\n<b>Video sharing:</b> External cameras, such as the drones, can shoot and share videos with a wider horizon.\n\u2022 Smart travel\n<b>Driving safety and convenience:</b> The mobile phone, head unit, and cameras can be collaboratively controlled, virtually pooling the resources of the mobile phone and vehicle.\n\u2022 Fitness and Health\n<b>Scientifically-grounded workouts:</b> The phone, smart TV, camera, speaker, wearable device, and fitness device collaborate for intelligent workouts that harness each device\'s unique capabilities.\n<b>Personal health assistance:</b> The mobile phone and wearable devices work together to collect and analyze the user\'s health information.</string>
 
     <string name="text_getmore_information_devicevirtualization"><u>Click here to get more information about Device Virtualization Engine.</u></string>
-    <string name="devicevirtualization_url">https://developer.huawei.com/consumer/en/doc/development/connectivity-Guides/devicevirtualization-introduction</string>
+    <string name="devicevirtualization_url">https://developer.huawei.com/consumer/en/doc/connectivity-Guides/service-overview-0000001051608750</string>
 
     <string name="text_appintegration_overview_devicevirtualization">DeviceVirtualization Engine (DV Engine for short) enables apps to use the capabilities of peripheral devices and components, including but not limited to cameras, speakers, monitors, microphones, sensors, and motors.</string>
     <string name="text_overview_appintegration">Overview</string>
@@ -49,7 +49,7 @@
     <string name="text_what_data_collect_info_appintegration">The SDK collects the app ID, package name, and API call status of the app to continuously improve DV Engine. The SDK does not collect user data.</string>
 
     <string name="text_click_more_information_appintegration"><u>Click here to get more information about App Integration.</u></string>
-    <string name="appintegration_url">https://developer.huawei.com/consumer/en/doc/development/connectivity-Guides/devicevirtualization-guide</string>
+    <string name="appintegration_url">https://developer.huawei.com/consumer/en/doc/connectivity-Guides/service-introduction-0000001051603824</string>
 
 
     <string name="text_overview_deviceintegration">Overview</string>
@@ -70,6 +70,6 @@
 
 
     <string name="text_click_more_information_deviceintegration"><u>Click here to get more information about Device Integration.</u></string>
-    <string name="deviceintegration_url">https://developer.huawei.com/consumer/en/doc/development/connectivity-Guides/androiddevicevirtualizationkit-guide</string>
+    <string name="deviceintegration_url">https://developer.huawei.com/consumer/en/doc/connectivity-Guides/overview-0000001052367479</string>
 
 </resources>
