@@ -215,6 +215,16 @@ public class NativeActivity extends AppCompatActivity {
         // Register a native ad object.
         nativeView.setNativeAd(nativeAd);
 
+        Log.i(TAG + " getAppName(): ", nativeAd.getAppInfo().getAppName());
+        Log.i(TAG + " getVersionName(): ", nativeAd.getAppInfo().getVersionName());
+        Log.i(TAG + " getDeveloperName(): ", nativeAd.getAppInfo().getDeveloperName());
+        Log.i(TAG + " isTransparencyOpen(): ", String.valueOf(nativeAd.isTransparencyOpen()));
+        Log.i(TAG + " getTransparencyTplUrl(): ", nativeAd.getTransparencyTplUrl());
+
+//        nativeAd.getAppInfo().showPrivacyPolicy(NativeActivity.this);
+//        nativeAd.getAppInfo().showPermissionPage(NativeActivity.this);
+//        nativeAd.showAppDetailPage(NativeActivity.this);
+
     }
 
     /**

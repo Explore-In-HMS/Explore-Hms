@@ -22,6 +22,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.MediaController;
@@ -52,6 +53,7 @@ import java.util.List;
  */
 public class InStreamRollActivity extends AppCompatActivity {
 
+    private static final String TAG = InStreamRollActivity.class.getSimpleName();
     private AppCompatButton btnGetAdvertiserInfoInroll;
 
     private TextView skipAd;
@@ -156,10 +158,12 @@ public class InStreamRollActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(whyThisAdUrl)));
+                        instreamView.showTransparencyDialog(instreamView);  // "Why did I see this ad?" dialog
                     }
                 });
             } else {
                 whyThisAd.setVisibility(View.GONE);
+                instreamView.hideTransparencyDialog();
             }
             //Get advertiser info
             /*
@@ -406,6 +410,8 @@ public class InStreamRollActivity extends AppCompatActivity {
         maxAdDuration = getMaxInstreamDuration(ads);
         instreamContainer.setVisibility(View.VISIBLE);
         instreamView.setInstreamAds(ads);
+        Log.i(TAG + " isTransparencyOpen(): ", String.valueOf(instreamAds.get(0).isTransparencyOpen()));
+        Log.i(TAG + " getTransparencyTplUrl(): ", String.valueOf(instreamAds.get(0).getTransparencyTplUrl()));
     }
 
     /**
