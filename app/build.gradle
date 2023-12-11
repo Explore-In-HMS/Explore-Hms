@@ -434,7 +434,7 @@ dependencies {
 
     //FIDO
     api 'com.huawei.hms:fido-fido2:6.7.0.301'
-    api 'com.huawei.hms:fido-bioauthn-androidx:6.7.0.300'
+    api 'com.huawei.hms:fido-bioauthn-androidx:6.7.0.301'
 
     //Awareness Kit
     api 'com.huawei.hms:awareness:3.4.0.302'
@@ -497,7 +497,7 @@ dependencies {
     //api 'com.huawei.hms:video-editor-sdk:1.7.0.300'
 
     //Keyring Service
-    implementation "com.huawei.hms:keyring-credential:6.7.0.303"
+    implementation "com.huawei.hms:keyring-credential:6.9.0.301"
     //App Update (Third Party)
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':app_update')
