@@ -113,14 +113,14 @@ dynamicFeatures =
                     ':feature_safetydetect',
                     ':feature_quickapp',
                     ':feature_wirelesskit',
-                    ':feature_acceleratekit',
+
                     ':feature_cloudfunctions',
                     ':feature_caaskit',
                     ':feature_clouddb',
                     ':feature_drivekit',
                     ':feature_walletkit',
                     ':feature_appsigning',
-                    ':feature_computergraphics',
+
                     ':feature_opentesting',
                     ':feature_searchkit',
                     ':feature_cloudtesting',
@@ -155,23 +155,15 @@ dynamicFeatures =
                     ':feature_navikit',
                     //':feature_videoeditorkitai'
             ]
-
     packagingOptions {
-        pickFirst 'lib/arm64-v8a/libmindspore-lite.so'
-        pickFirst 'okhttp3/internal/publicsuffix/publicsuffixes.gz'
-        pickFirst 'lib/x86_64/libAudioAdjustmentJni.so'
-        pickFirst 'lib/armeabi/libAudioAdjustmentJni.so'
-        pickFirst 'lib/x86/libAudioAdjustmentJni.so'
-        pickFirst 'lib/armeabi-v7a/libAudioAdjustmentJni.so'
-        pickFirst 'lib/arm64-v8a/libAudioAdjustmentJni.so'
-        pickFirst 'lib/arm64-v8a/libc++_shared.so'
-        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
-        pickFirst 'lib/arm64-v8a/libnative-lib.so'
-        pickFirst 'lib/arm64-v8a/libnative-lib.so'
-        pickFirst 'lib/arm64-v8a/libhiai_ir_build.so'
-        pickFirst 'lib/armeabi-v7a/libVariableSpeed.so'
-        pickFirst 'lib/arm64-v8a/libVariableSpeed.so'
+        jniLibs {
+            pickFirsts += ['lib/arm64-v8a/libmindspore-lite.so', 'lib/x86_64/libAudioAdjustmentJni.so', 'lib/armeabi/libAudioAdjustmentJni.so', 'lib/x86/libAudioAdjustmentJni.so', 'lib/armeabi-v7a/libAudioAdjustmentJni.so', 'lib/arm64-v8a/libAudioAdjustmentJni.so', 'lib/arm64-v8a/libc++_shared.so', 'lib/armeabi-v7a/libc++_shared.so', 'lib/arm64-v8a/libnative-lib.so', 'lib/arm64-v8a/libnative-lib.so', 'lib/arm64-v8a/libhiai_ir_build.so', 'lib/armeabi-v7a/libVariableSpeed.so', 'lib/arm64-v8a/libVariableSpeed.so']
+        }
+        resources {
+            pickFirsts += ['okhttp3/internal/publicsuffix/publicsuffixes.gz']
+        }
     }
+
 
 }
 

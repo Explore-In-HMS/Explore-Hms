@@ -35,9 +35,6 @@ android {
 
     defaultConfig {
         minSdkVersion 29
-        targetSdkVersion 30
-        versionCode gradleVersionCode
-        versionName gradleVersionName
         resConfigs "en", "zh-rCN", "tr"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -34,9 +34,6 @@ android {
 
     defaultConfig {
         minSdkVersion 29
-        targetSdkVersion 30
-        versionCode gradleVersionCode
-        versionName gradleVersionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -45,11 +42,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     packagingOptions {
-        exclude 'lib/arm64-v8a/libc++_shared.so'
-        exclude 'lib/armeabi-v7a/libc++_shared.so'
+        jniLibs {
+            excludes += ['lib/arm64-v8a/libc++_shared.so', 'lib/armeabi-v7a/libc++_shared.so']
+        }
     }
+
 
     repositories {
         flatDir {

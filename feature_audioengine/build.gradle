@@ -29,11 +29,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.hms.explorehms.huawei.feature_audioengine"
         minSdkVersion 29
-        targetSdkVersion 30
-        versionCode gradleVersionCode
-        versionName gradleVersionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

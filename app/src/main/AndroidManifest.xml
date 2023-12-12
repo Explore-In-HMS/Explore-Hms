@@ -61,6 +61,7 @@
         android:theme="@style/AppTheme"
         android:keepScreenOn="true"
         android:usesCleartextTraffic="true"
+        tools:node="replace"
         tools:replace="name, icon, label, theme, resizeableActivity, allowBackup, hardwareAccelerated,android:networkSecurityConfig, android:configChanges">
 
         <activity android:name=".CustomsUpdateActivity"
@@ -95,7 +96,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

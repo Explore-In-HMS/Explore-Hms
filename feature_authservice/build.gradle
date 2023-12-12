@@ -29,9 +29,6 @@ android {
 
     defaultConfig {
         minSdkVersion 29
-        targetSdkVersion 33
-        versionCode gradleVersionCode
-        versionName gradleVersionName
         manifestPlaceholders = [appAuthRedirectScheme: 'https://99536292102546105.auth.agconnect.link']
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
