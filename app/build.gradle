@@ -492,6 +492,10 @@ dependencies {
     implementation 'pub.devrel:easypermissions:3.0.0'
     api 'me.jessyan:autosize:1.2.1'
 
+    // For request limit feature
+    implementation 'com.huawei.agconnect:agconnect-auth:1.9.1.300'
+    implementation 'com.huawei.agconnect:agconnect-cloud-database:1.9.1.301'
+
     //Video Editor Kit
     api 'com.huawei.hms:video-editor-ui:1.1.0.305'
     //api 'com.huawei.hms:video-editor-sdk:1.7.0.300'

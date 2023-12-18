@@ -29,35 +29,74 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/rl_create_model"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:fontFamily="@font/din_pro_light"
-            android:textAppearance="?android:attr/textAppearanceButton"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:textColor="@color/whiteBG"
-            android:text="@string/create_modeling"
-            android:textAllCaps="false"
-            android:background="@color/colorPrimary" />
+            android:layout_marginEnd="16dp">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/rl_create_material"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/rl_create_model"
+                android:layout_width="0dp"
+                android:layout_weight="9"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/din_pro_light"
+                android:textAppearance="?android:attr/textAppearanceButton"
+                android:textColor="@color/whiteBG"
+                android:text="@string/create_modeling"
+                android:textAllCaps="false"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/request_limit_model"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/din_pro_light"
+                android:textAppearance="?android:attr/textAppearanceButton"
+                android:textColor="@color/whiteBG"
+                android:text=""
+                android:textAllCaps="false"
+                android:background="@color/colorPrimary"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:fontFamily="@font/din_pro_light"
-            android:textAppearance="?android:attr/textAppearanceButton"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:textColor="@color/whiteBG"
-            android:text="@string/create_materials"
-            android:textAllCaps="false"
-            android:background="@color/colorPrimary" >
-        </com.google.android.material.button.MaterialButton>
+            android:layout_marginEnd="16dp">
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/rl_create_material"
+                android:layout_width="0dp"
+                android:layout_weight="9"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/din_pro_light"
+                android:textAppearance="?android:attr/textAppearanceButton"
+                android:textColor="@color/whiteBG"
+                android:text="@string/create_materials"
+                android:textAllCaps="false"
+                android:background="@color/colorPrimary" >
+            </com.google.android.material.button.MaterialButton>
+
+            <TextView
+                android:id="@+id/request_limit_material"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/din_pro_light"
+                android:textAppearance="?android:attr/textAppearanceButton"
+                android:textColor="@color/whiteBG"
+                android:text=""
+                android:textAllCaps="false"
+                android:background="@color/colorPrimary"
+                android:gravity="center" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

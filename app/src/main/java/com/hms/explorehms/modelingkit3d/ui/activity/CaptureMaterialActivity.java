@@ -33,6 +33,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.hms.explorehms.ExploreHMSApplication;
 import com.hms.explorehms.R;
+import com.hms.explorehms.baseapp.CloudDBZoneWrapper;
+import com.hms.explorehms.baseapp.IListCallback;
+import com.hms.explorehms.baseapp.model.UserInfo;
 import com.hms.explorehms.cameratakelib.CameraTakeManager;
 import com.hms.explorehms.cameratakelib.SurfaceViewCallback;
 import com.hms.explorehms.cameratakelib.listener.CameraTakeListener;
@@ -46,6 +49,8 @@ import com.hms.explorehms.modelingresource.db.TaskInfoAppDb;
 import com.hms.explorehms.modelingresource.materialdb.TaskInfoMaterialAppDb;
 import com.hms.explorehms.modelingresource.materialdb.TaskInfoMaterialAppDbUtils;
 import com.hms.explorehms.modelingresource.util.Constants;
+import com.huawei.agconnect.auth.AGConnectAuth;
+import com.huawei.agconnect.cloud.database.AGConnectCloudDB;
 import com.huawei.hms.materialgeneratesdk.cloud.Modeling3dTextureEngine;
 import com.huawei.hms.materialgeneratesdk.cloud.Modeling3dTextureInitResult;
 import com.huawei.hms.materialgeneratesdk.cloud.Modeling3dTextureSetting;
@@ -54,6 +59,7 @@ import com.huawei.hms.materialgeneratesdk.cloud.Modeling3dTextureUploadResult;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -126,6 +132,10 @@ public class CaptureMaterialActivity extends AppCompatActivity implements Recycl
     private long lastClickTime = 0;
     private String globalTaskId;
 
+//    private static CloudDBZone cloudDbZone;
+    private static String userUid = AGConnectAuth.getInstance().getCurrentUser().getUid();
+    private static String kitName = "3DModellingKit";
+    private static String featureName = "CreateMaterial";
     UserBean userBean;
 
     @Override
@@ -135,6 +145,8 @@ public class CaptureMaterialActivity extends AppCompatActivity implements Recycl
         unbinder = ButterKnife.bind(this, this);
         initView();
         init();
+        AGConnectCloudDB.initialize(getApplicationContext());
+        CloudDBZoneWrapper.initCloudDBZone(getApplicationContext());
     }
 
     private void initView() {
@@ -268,7 +280,6 @@ public class CaptureMaterialActivity extends AppCompatActivity implements Recycl
 
             @Override
             public void onError(Throwable e) {
-
             }
 
             @Override
@@ -329,6 +340,9 @@ public class CaptureMaterialActivity extends AppCompatActivity implements Recycl
         @Override
         public void onUploadProgress(String taskId, double progress, Object ext) {
             progressCustomDialog.setCurrentProgress(progress);
+//            if(progress == 100.0){
+//                searchCommentByUserUid(list -> checkList(list), userUid);
+//            }
         }
 
         @Override
@@ -392,5 +406,12 @@ public class CaptureMaterialActivity extends AppCompatActivity implements Recycl
             }
         });
 
+    }
+    public void searchCommentByUserUid(IListCallback<UserInfo> listCallback, String userUid) {
+        CloudDBZoneWrapper.searchCommentByUserUid(listCallback, userUid, kitName);
+    }
+    private void checkList(List<UserInfo> userCommentList) {
+            UserInfo user = new UserInfo(userUid+kitName,kitName,userCommentList.get(0).getRemainingRequestLimit()-1);
+            CloudDBZoneWrapper.upsertData(user);
     }
 }

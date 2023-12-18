@@ -30,6 +30,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.Surface;
 import android.view.View;
 import android.view.Window;
@@ -48,6 +49,9 @@ import androidx.camera.view.PreviewView;
 import androidx.core.content.res.ResourcesCompat;
 
 import com.hms.explorehms.R;
+import com.hms.explorehms.baseapp.CloudDBZoneWrapper;
+import com.hms.explorehms.baseapp.IListCallback;
+import com.hms.explorehms.baseapp.model.UserInfo;
 import com.hms.explorehms.modelingkit3d.model.ConstantBean;
 import com.hms.explorehms.modelingkit3d.model.UserBean;
 import com.hms.explorehms.modelingkit3d.ui.widget.ProgressCustomDialog;
@@ -59,6 +63,9 @@ import com.hms.explorehms.modelingresource.db.TaskInfoAppDb;
 import com.hms.explorehms.modelingresource.db.TaskInfoAppDbUtils;
 import com.hms.explorehms.modelingresource.util.Constants;
 import com.hms.explorehms.modelingresource.view.CustomRoundAngleImageView;
+import com.huawei.agconnect.auth.AGConnectAuth;
+import com.huawei.agconnect.cloud.database.AGConnectCloudDB;
+import com.huawei.agconnect.cloud.database.CloudDBZone;
 import com.huawei.hms.objreconstructsdk.cloud.Modeling3dReconstructEngine;
 import com.huawei.hms.objreconstructsdk.cloud.Modeling3dReconstructInitResult;
 import com.huawei.hms.objreconstructsdk.cloud.Modeling3dReconstructSetting;
@@ -67,6 +74,7 @@ import com.huawei.hms.objreconstructsdk.cloud.Modeling3dReconstructUploadResult;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -88,6 +96,11 @@ public class NewScanActivity extends AppCompatActivity implements UploadDialog.O
     private float mLastY;
     private float mLastZ;
     private int shakeThreshold = 1000;
+
+//    private static CloudDBZone cloudDbZone;
+    private static String userUid = AGConnectAuth.getInstance().getCurrentUser().getUid();
+    private static String kitName = "3DModellingKit";
+    private static String featureName = "CreateModeling";
 
     @BindView(R.id.img_pic)
     CustomRoundAngleImageView imgPic;
@@ -168,6 +181,8 @@ public class NewScanActivity extends AppCompatActivity implements UploadDialog.O
         initView();
         initPhotoSize();
         previewView.setScaleType(PreviewView.ScaleType.FIT_CENTER);
+        AGConnectCloudDB.initialize(getApplicationContext());
+        CloudDBZoneWrapper.initCloudDBZone(getApplicationContext());
 
     }
 
@@ -507,7 +522,6 @@ public class NewScanActivity extends AppCompatActivity implements UploadDialog.O
         }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<Modeling3dReconstructInitResult>() {
             @Override
             public void onCompleted() {
-
             }
 
             @Override
@@ -529,6 +543,9 @@ public class NewScanActivity extends AppCompatActivity implements UploadDialog.O
         public void onUploadProgress(String taskId, double progress, Object ext) {
 
             progressCustomDialog.setCurrentProgress(progress);
+            if(progress == 100.0){
+                searchCommentByUserUid(list -> checkList(list), userUid);
+            }
         }
 
         @Override
@@ -599,5 +616,13 @@ public class NewScanActivity extends AppCompatActivity implements UploadDialog.O
     public void onBackPressed() {
         super.onBackPressed();
         saveData();
+    }
+    public void searchCommentByUserUid(IListCallback<UserInfo> listCallback, String userUid) {
+        CloudDBZoneWrapper.searchCommentByUserUid(listCallback, userUid, kitName);
+    }
+    private void checkList(List<UserInfo> userCommentList) {
+            UserInfo user = new UserInfo(userUid+kitName,kitName,userCommentList.get(0).getRemainingRequestLimit()-1);
+            CloudDBZoneWrapper.upsertData(user);
+            Log.i("zubeyr", "1 hakkini kullandi!");
     }
 }

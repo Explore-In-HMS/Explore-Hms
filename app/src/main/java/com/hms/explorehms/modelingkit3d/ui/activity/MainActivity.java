@@ -15,8 +15,10 @@
  */
 package com.hms.explorehms.modelingkit3d.ui.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,11 +27,16 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.hms.explorehms.R;
+import com.hms.explorehms.baseapp.CloudDBZoneWrapper;
+import com.hms.explorehms.baseapp.IListCallback;
+import com.hms.explorehms.baseapp.model.UserInfo;
 import com.hms.explorehms.modelingkit3d.model.UserBean;
 import com.hms.explorehms.modelingkit3d.ui.fragment.HomeFragment;
 import com.hms.explorehms.modelingkit3d.utils.BaseUtils;
 import com.hms.explorehms.modelingresource.db.DatabaseAppUtils;
 import com.hms.explorehms.modelingresource.materialdb.DatabaseMaterialAppUtils;
+import com.huawei.agconnect.auth.AGConnectAuth;
+import com.huawei.agconnect.cloud.database.AGConnectCloudDB;
 import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hms.materialgeneratesdk.MaterialGenApplication;
 import com.huawei.hms.objreconstructsdk.ReconstructApplication;
@@ -49,13 +56,19 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
     private static final int RC_CAMERA_AND_EXTERNAL_STORAGE = 0x01 << 8;
 
-    UserBean bean ;
-    int permissionType ;
+    UserBean bean;
+    int permissionType;
+//    private static CloudDBZone cloudDbZone;
+    private static String userUid = AGConnectAuth.getInstance().getCurrentUser().getUid();
+    private static String kitName = "3DModellingKit";
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_3d);
+        AGConnectCloudDB.initialize(getApplicationContext());
+        CloudDBZoneWrapper.initCloudDBZone(getApplicationContext());
         MaterialGenApplication.getInstance().setApiKey(AGConnectServicesConfig.fromContext(this).getString("client/api_key"));
         ReconstructApplication.getInstance().setApiKey(AGConnectServicesConfig.fromContext(this).getString("client/api_key"));
         Toolbar toolBar = findViewById(R.id.tb_main_modeling3d);
@@ -74,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     @Override
     protected void onResume() {
         super.onResume();
+        searchCommentByUserUid(list -> checkList(list), userUid);
     }
 
     private void initView() {
@@ -137,11 +151,27 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         super.onDestroy();
         DatabaseAppUtils.closeDatabase();
         DatabaseMaterialAppUtils.closeDatabase();
+        AGConnectAuth.getInstance().signOut();
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+    public void searchCommentByUserUid(IListCallback<UserInfo> listCallback, String userUid) {
+        CloudDBZoneWrapper.searchCommentByUserUid(listCallback, userUid, kitName);
+    }
+
+    private void checkList(List<UserInfo> userCommentList) {
+        if (userCommentList.size() != 0) {
+            homeFragment.updateRequestLimitModel(String.valueOf(userCommentList.get(0).getRemainingRequestLimit()));
+            homeFragment.modelIsZero(userCommentList.get(0).getRemainingRequestLimit());
+        } else {
+            UserInfo user = new UserInfo(userUid+kitName,kitName,5);
+            CloudDBZoneWrapper.upsertData(user);
+            searchCommentByUserUid(list -> checkList(list), userUid);
+        }
     }
 
 }

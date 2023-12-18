@@ -28,6 +28,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.button.MaterialButton;
 import com.hms.explorehms.R;
 import com.hms.explorehms.modelingkit3d.model.UserBean;
 import com.hms.explorehms.modelingkit3d.ui.activity.CaptureMaterialActivity;
@@ -52,6 +53,29 @@ import pub.devrel.easypermissions.EasyPermissions;
 
 public class HomeFragment extends Fragment {
     private Unbinder unbinder;
+    private TextView requestLimitTVModel,requestLimitTVMaterial;
+    private MaterialButton modelButton, materialButton;
+    public void updateRequestLimitModel(String newText) {
+        requestLimitTVModel = getActivity().findViewById(R.id.request_limit_model);
+        requestLimitTVModel.setText(newText);
+    }
+    public void modelIsZero(Integer number){
+        if(number == 0){
+            modelButton = getActivity().findViewById(R.id.rl_create_model);
+            modelButton.setEnabled(false);
+        }
+    }
+
+    public void updateRequestLimitMaterial(String newText) {
+        requestLimitTVMaterial = getActivity().findViewById(R.id.request_limit_material);
+        requestLimitTVMaterial.setText(newText);
+    }
+    public void MaterialIsZero(Integer number){
+        if(number == 0){
+            materialButton = getActivity().findViewById(R.id.rl_create_material);
+            materialButton.setEnabled(false);
+        }
+    }
 
     @BindView(R.id.tv_model_num)
     TextView tvModelNum;
