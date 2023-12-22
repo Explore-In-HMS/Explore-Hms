@@ -43,7 +43,7 @@
     <string name="overview_desc">On the Distribution analysis tab page, you can view the usage and sales data of a native app, or data reports of a quick app.</string>
     <string name="in_app_purchase_title">In-App Purchase</string>
     <string name="paid_application_details_title">Paid Application Details</string>
-    <string name="url_txt_distranalyse">https://developer.huawei.com/consumer/en/agconnect/Appanalytics/</string>
+    <string name="url_txt_distranalyse">https://developer.huawei.com/consumer/en/doc/app/agc-help-interface-overview-0000001146438655</string>
 
 
 </resources>

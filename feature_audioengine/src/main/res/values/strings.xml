@@ -50,5 +50,5 @@ Audio Engine provides the karaoke headset monitoring feature with open APIs to h
     \n\nYou need to follow the link below to continue developing Audio Engine.\n\nPlease note that <b>Audio Engine sample app is currently
          only available in China.</b>\n\nPlease follow the link below to check if it is published yet.</string>
 
-    <string name="url_text_audioengine">https://developer.huawei.com/consumer/en/doc/development/Media-Guides/audio-introduction</string>
+    <string name="url_text_audioengine">https://developer.huawei.com/consumer/en/doc/Media-Guides/introduction_services-0000001053333356</string>
 </resources>

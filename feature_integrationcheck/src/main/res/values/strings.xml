@@ -29,5 +29,5 @@
     <string name="text_6">●  On the <b>Report</b> page, to view details about the app, click <b>More</b>.</string>
     <string name="text_7">●  To delete a check record, click <b>Delete</b>.</string>
     <string name="header">Service Introduction</string>
-    <string name="url_txt_integrationcheck">https://developer.huawei.com/consumer/en/doc/distribution/app/agc-auto_check</string>
+    <string name="url_txt_integrationcheck">https://developer.huawei.com/consumer/en/doc/app/agc-help-self-check-0000001100158786</string>
 </resources>

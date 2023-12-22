@@ -49,5 +49,5 @@
 
     <string name="api_list_connectapi">APIs in the Connect api:</string>
     <string name="api_list_info">\u2022 Publishing API\n\u2022 Reports API\n\u2022 Project Management API\n\u2022 Comments API\n\u2022 PMS API</string>
-    <string name="url_txt_connectapi">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agcapi-overview</string>
+    <string name="url_txt_connectapi">https://developer.huawei.com/consumer/en/doc/AppGallery-connect-Guides/agcapi-overview-0000001158245083</string>
 </resources>

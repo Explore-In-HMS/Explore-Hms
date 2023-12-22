@@ -22,7 +22,7 @@
     <string name="metadata_cloud_storage">File metadata:\n%1$s</string>
     <string name="file_uri_cloudstorage">File uri:\n%1$s</string>
     <string name="more_information_cloudstorage"><u>Click here to get more information about Cloud Storage.</u></string>
-    <string name="more_information__link_cloudstorage">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-cloudstorage-introduction</string>
+    <string name="more_information__link_cloudstorage">https://developer.huawei.com/consumer/en/doc/AppGallery-connect-Guides/agc-cloudstorage-introduction-0000001054847259</string>
     <string name="downloaded_files_path_cloudstorage">Downloaded files will be stored in "Downloads/CloudStorage/".</string>
     <string name="download_file">Download file</string>
     <string name="delete_file">Delete file</string>

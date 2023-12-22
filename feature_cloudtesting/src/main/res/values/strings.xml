@@ -32,7 +32,7 @@
     <string name="docs">Docs</string>
 
     <string name="link_developer_cloud_testing">https://developer.huawei.com/consumer/en/agconnect/cloud-test</string>
-    <string name="link_cloudtesting_documentation_introduction">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-cloudtest-introduction</string>
+    <string name="link_cloudtesting_documentation_introduction">https://developer.huawei.com/consumer/en/doc/AppGallery-connect-Guides/agc-cloudtest-introduction-0000001083002880</string>
 
     <string name="open_testing_explanation1">Cloud Testing provides a complete set of automatic test processes based on real mobile phone use. It automatically tests the compatibility, stability, performance, and power consumption of Android apps, without manual intervention. In Cloud Testing, you can test your app against the full range of Huawei phones, to determine if there are any potential issues, well in advance. There are four different tests in cloud testing. \n\n</string>
     <string name="open_testing_explanation2">\u2022Compatibility Test \n\u2022Stability Test \n\u2022Performance Test\n\u2022Power Consumption Test \n\n</string>

@@ -24,7 +24,7 @@
         app development and O&amp;M so your functions can be implemented more easily and your service capabilities can be built more quickly.</string>
 
     <string name="cloudfunctions_more_information"><a href="">Click here to learn more about Cloud Functions.</a></string>
-    <string name="cloudfunctions_more_information_link">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-cloudfunction-introduction</string>
+    <string name="cloudfunctions_more_information_link">https://developer.huawei.com/consumer/en/doc/AppGallery-connect-Guides/agc-cloudfunction-introduction-0000001059279544</string>
     <string name="enter_your_year_of_birth_text">Enter your year of birth</string>
 
 </resources>

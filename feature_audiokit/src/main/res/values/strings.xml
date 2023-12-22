@@ -43,7 +43,7 @@
     <string name="channel_name">Notification Bar</string>
     <string name="channel_description">Displays real-time music control notification bar</string>
     <string name="right_top_of_screen">It is at right-top of the screen</string>
-    <string name="url_txt_audiokit">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001050749665</string>
+    <string name="url_txt_audiokit">https://developer.huawei.com/consumer/en/doc/Media-Guides/introduction-0000001050749665</string>
     <string name="speed_text_0_5X">0.5X</string>
     <string name="speed_text_1X">1X</string>
     <string name="speed_text_1_5X">1.5X</string>

@@ -24,5 +24,5 @@
     <string name="multithread_lib_service_introduction_text">Multi Thread Lib Service Introduction</string>
     <string name="set_thread_count_should_be">Thread count should be between 0-20</string>
     <string name="calculate_pi_button_text">Calculate Pi</string>
-    <string name="url_txt_acceleratekit">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001050980807</string>
+    <string name="url_txt_acceleratekit">https://developer.huawei.com/consumer/en/doc/graphics-Guides/introduction-0000001050980807</string>
 </resources>

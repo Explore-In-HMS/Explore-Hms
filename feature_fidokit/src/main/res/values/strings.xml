@@ -41,6 +41,6 @@
     <string name="already_registered">Already Registered</string>
     <string name="already_authenticated">Already Authenticated</string>
     <string name="auth_failure">Authentication failure.</string>
-    <string name="url_txt_fido">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/introduction-0000001051069988</string>
+    <string name="url_txt_fido">https://developer.huawei.com/consumer/en/doc/Security-Guides/introduction-0000001051069988</string>
     <string name="service_introduction">Service Introduction</string>
 </resources>
