@@ -69,20 +69,29 @@
 
         <activity
             android:name=".locationkit.IndoorLocationActivity"
-            android:exported="false">
+            android:exported="false"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".keyring.KeyringServiceIntroductionActivity" />
-        <activity android:name=".keyring.KeyringServiceActivity" />
-        <activity android:name=".baseapp.activity.BaseActivity" />
-        <activity android:name=".modelingkit3d.ui.activity.CaptureMaterialActivity" />
-        <activity android:name=".modelingkit3d.ui.activity.HistoryActivity" />
-        <activity android:name=".modelingkit3d.ui.activity.MainActivity" />
-        <activity android:name=".modelingkit3d.ui.activity.NewScanActivity" />
+        <activity android:name=".keyring.KeyringServiceIntroductionActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".keyring.KeyringServiceActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".baseapp.activity.BaseActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modelingkit3d.ui.activity.CaptureMaterialActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modelingkit3d.ui.activity.HistoryActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modelingkit3d.ui.activity.MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".modelingkit3d.ui.activity.NewScanActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".baseapp.activity.SplashScreen"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -91,52 +100,86 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".onboarding.OnboardingActivity" />
-        <activity android:name=".baseapp.activity.MainActivityTab" />
-        <activity android:name=".sitekit.SiteKitWidgetActivity" />
-        <activity android:name=".mapkit.MainActivityMapKit" />
-        <activity android:name=".mapkit.ui.MapKitDirectionApiActivity" />
-        <activity android:name=".sitekit.MainActivitySiteKit" />
-        <activity android:name=".scankit.ScanCustomViewActivity" />
-        <activity android:name=".scankit.ScanKitActivity" />
-        <activity android:name=".localauthenticationengine.LocalAuthenticationMainActivity" />
-        <activity android:name=".reference.appbundle.AppBundleMainActivity" />
-        <activity android:name=".reference.apprelease.AppReleaseActivity" />
-        <activity android:name=".reference.earlyaccess.EarlyAccessActivity" />
-        <activity android:name=".reference.preorders.PreordersActivity" />
-        <activity android:name=".reference.cloudhosting.CloudHostingMainActivity" />
-        <activity android:name=".reference.comments.CommentsActivity" />
-        <activity android:name=".reference.giftmanagement.GiftManagementActivity" />
-        <activity android:name=".reference.crashservice.CrashServiceMainActivity" />
-        <activity android:name=".reference.castengine.CastEngineMainActivity" />
-        <activity android:name=".reference.hquic.HQUICActivity" />
-        <activity android:name=".reference.dynamictagmanager.DynamicActivity" />
-        <activity android:name=".reference.datasecurity.GeneralFeaturesActivity" />
-        <activity android:name=".reference.apm.AppPerformanceMainActivity" />
-        <activity android:name=".reference.wiseplaydrm.WisePlayDRMMainActivity" />
-        <activity android:name=".reference.paidapps.GeneralFeaturesActivity" />
-        <activity android:name=".reference.integrationcheck.MainIntegrationCheckActivity" />
+        <activity android:name=".onboarding.OnboardingActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".baseapp.activity.MainActivityTab"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".sitekit.SiteKitWidgetActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".mapkit.MainActivityMapKit"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".mapkit.ui.MapKitDirectionApiActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".sitekit.MainActivitySiteKit"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".scankit.ScanCustomViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".scankit.ScanKitActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".localauthenticationengine.LocalAuthenticationMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".reference.appbundle.AppBundleMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".reference.apprelease.AppReleaseActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".reference.earlyaccess.EarlyAccessActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".reference.preorders.PreordersActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".reference.cloudhosting.CloudHostingMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".reference.comments.CommentsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".reference.giftmanagement.GiftManagementActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".reference.crashservice.CrashServiceMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".reference.castengine.CastEngineMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".reference.hquic.HQUICActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".reference.dynamictagmanager.DynamicActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".reference.datasecurity.GeneralFeaturesActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".reference.apm.AppPerformanceMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".reference.wiseplaydrm.WisePlayDRMMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".reference.paidapps.GeneralFeaturesActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".reference.integrationcheck.MainIntegrationCheckActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".scankit.GenerateCodeActivity"
-            android:label="@string/title_generatecode" />
-        <activity android:name=".scankit.CommonActivity" />
-        <activity android:name=".scankit.DisplayActivity" />
-        <activity android:name=".scankit.DisplayMulActivity" />
+            android:label="@string/title_generatecode"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".scankit.CommonActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".scankit.DisplayActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".scankit.DisplayMulActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".locationkit.LocationKitActivity"
-            android:label="@string/title_locationkit" />
+            android:label="@string/title_locationkit"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".locationkit.HdLocationActivity"
-            android:label="@string/title_location_hd" />
+            android:label="@string/title_location_hd"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".locationkit.GeocoderActivity"
-            android:label="@string/title_location_geocoder" />
+            android:label="@string/title_location_geocoder"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".locationkit.ActivityIdentificationActivity"
-            android:label="@string/title_location_activity_identification" />
+            android:label="@string/title_location_activity_identification"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".locationkit.ActivityConversionActivity"
-            android:label="@string/title_location_activity_conversion" />
+            android:label="@string/title_location_activity_conversion"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".locationkit.GeoFenceActivity"
             android:label="@string/title_geofence"
@@ -150,7 +193,8 @@
         <activity android:name=".pushkit.MainActivityPushKit" />
         <activity
             android:name=".pushkit.NotificationTargetActivityPushKit"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="com.hms.explorehms.pushkit.click" /> <!-- Target Activity When Tap Notification -->
                 <category android:name="android.intent.category.DEFAULT" /> <!-- Need to select 'Custom action page' name on service -->

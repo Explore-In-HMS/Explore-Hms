@@ -35,9 +35,12 @@
 
     <application>
         <activity android:name=".BioAuthnAndxActivity"
-            android:exported="true"/>
-        <activity android:name=".Fido2ClientActivity" />
-        <activity android:name=".FidoActivity" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Fido2ClientActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".FidoActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

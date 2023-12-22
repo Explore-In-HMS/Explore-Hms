@@ -39,27 +39,35 @@
         <activity android:name=".MainActivityImageKit"
             android:label="@string/title_feature_imagekit"
             android:hardwareAccelerated="false"
+            android:screenOrientation="portrait"
             android:exported="true">
         </activity>
         <activity android:name=".ui.services.imagevision.FilterActivity"
+            android:screenOrientation="portrait"
             android:label="@string/txt_image_vision_service_filter">
         </activity>
         <activity android:name=".ui.services.imagevision.smartlayout.SmartLayoutActivity"
+            android:screenOrientation="portrait"
             android:label="@string/txt_image_vision_service_smart_layout">
         </activity>
         <activity android:name=".ui.services.imagevision.smartlayout.SmartLayoutResultActivity"
+            android:screenOrientation="portrait"
             android:label="@string/txt_image_vision_service_smart_layout">
         </activity>
         <activity android:name=".ui.services.imagerender.ImageRenderActivity"
+            android:screenOrientation="portrait"
             android:label="@string/txt_image_render_service">
         </activity>
         <activity android:name=".ui.services.imagevision.ThemeTaggingActivity"
+            android:screenOrientation="portrait"
             android:label="@string/txt_image_vision_service_theme_tagging">
         </activity>
         <activity android:name=".ui.services.imagevision.StickerActivity"
+            android:screenOrientation="portrait"
             android:label="@string/txt_image_vision_service_sticker">
         </activity>
         <activity android:name=".ui.services.imagevision.ImageCroppingActivity"
+            android:screenOrientation="portrait"
             android:label="@string/txt_image_vision_service_cropping">
         </activity>
     </application>

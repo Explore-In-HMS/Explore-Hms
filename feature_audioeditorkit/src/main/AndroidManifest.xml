@@ -39,18 +39,23 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.hms.explorehms.huawei.feature_audioeditorkit.ui.VideoAudioExtractionActivity" />
-        <activity android:name="com.hms.explorehms.huawei.feature_audioeditorkit.ui.AudioFilePickerActivity">
+        <activity android:name="com.hms.explorehms.huawei.feature_audioeditorkit.ui.VideoAudioExtractionActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_audioeditorkit.ui.AudioFilePickerActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="com.huawei.hms.audioeditor.chooseaudio" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.hms.explorehms.huawei.feature_audioeditorkit.ui.AudioFormatActivity" />
+        <activity android:name="com.hms.explorehms.huawei.feature_audioeditorkit.ui.AudioFormatActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name="com.hms.explorehms.huawei.feature_audioeditorkit.ui.MainAudioEditorActivity"
-            android:exported="true"/>
-        <activity android:name="com.hms.explorehms.huawei.feature_audioeditorkit.ui.AudioTypeActivity" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.hms.explorehms.huawei.feature_audioeditorkit.ui.AudioTypeActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~  Copyright (c) Huawei Technologies Co., Ltd. 2020-2022. All rights reserved.
   ~
   ~  Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,12 +40,14 @@
     </dist:module>
 
     <application>
-        <activity android:name=".WifiShareActivity"
-            android:exported="true"/>
-        <activity android:name=".nearby_message.NearbyMessageActivity" />
-        <activity android:name=".NearbyServiceActivity" />
-        <activity android:name=".connection.ChatActivity" />
+        <activity android:name=".nearby_message.NearbyMessageActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".NearbyServiceActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".connection.ChatActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".connection.ReceivedPhotoActivity"
+            android:screenOrientation="portrait"
             android:exported="true"/>
 
         <receiver

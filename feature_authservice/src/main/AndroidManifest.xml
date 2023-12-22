@@ -42,7 +42,8 @@
         tools:replace="theme, screenOrientation">
         <activity
             android:name=".AlipayLoginActivity"
-            android:exported="false">
+            android:exported="false"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

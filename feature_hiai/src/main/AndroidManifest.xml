@@ -36,6 +36,7 @@
         <activity
             android:name=".MainActivityHiAi"
             android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN">
@@ -195,6 +196,7 @@
         </activity>
 
         <activity
+
             android:name=".ui.hiaiserviceviews.body_recognition.video_portrait_segmentation.VideoPortraitSegmentationActivity"
             android:label="Video Portrait Segmentation"
             android:theme="@style/AppTheme"

@@ -37,6 +37,7 @@
     <application>
         <activity android:name="com.hms.explorehms.huawei.feature_safetydetect.MainSafetyActivity"
             android:configChanges="screenSize|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
             android:exported="true">
 
         </activity>

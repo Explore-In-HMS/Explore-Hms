@@ -259,10 +259,10 @@ dependencies {
     api 'com.huawei.agconnect:agconnect-core:1.8.0.300'
 
     //Analytics Kit
-    api 'com.huawei.hms:hianalytics:6.10.0.302'
+    api 'com.huawei.hms:hianalytics:6.12.0.300'
 
     //cloud storage
-    api "com.huawei.agconnect:agconnect-storage:1.9.1.300"
+    api "com.huawei.agconnect:agconnect-storage:1.9.1.301"
 
     //DTM
     api 'com.huawei.hms:dtm-api:6.6.0.305'
@@ -280,13 +280,13 @@ dependencies {
     implementation 'com.huawei.hms:site:6.5.1.300'
 
     //Account Kit
-    api 'com.huawei.hms:hwid:6.11.0.300'
+    api 'com.huawei.hms:hwid:6.12.0.300'
 
     // Scan Kit
     implementation 'com.huawei.hms:scan:2.11.0.300'
 
     //Cloud functions sdk
-    api 'com.huawei.agconnect:agconnect-function:1.9.1.300'
+    api 'com.huawei.agconnect:agconnect-function:1.9.1.301'
 
     //audio kit
     api 'com.huawei.hms:audiokit-player:1.6.0.300'
@@ -410,7 +410,7 @@ dependencies {
     // ML KIT END
 
     //nearby
-    api 'com.huawei.hms:nearby:6.11.0.300'
+    api 'com.huawei.hms:nearby:6.12.1.300'
 
     //Video Kit
    // api "com.huawei.hms:videokit-player:1.0.10.302"
@@ -430,11 +430,11 @@ dependencies {
     api 'com.huawei.scenekit:scenekit-iphysics-utils:6.0.0.301'*/
 
     //App linking
-    api 'com.huawei.agconnect:agconnect-applinking:1.9.1.300'
+    api 'com.huawei.agconnect:agconnect-applinking:1.9.1.301'
 
     //FIDO
-    api 'com.huawei.hms:fido-fido2:6.7.0.300'
-    api 'com.huawei.hms:fido-bioauthn-androidx:6.7.0.300'
+    api 'com.huawei.hms:fido-fido2:6.7.0.301'
+    api 'com.huawei.hms:fido-bioauthn-androidx:6.7.0.301'
 
     //Awareness Kit
     api 'com.huawei.hms:awareness:3.4.0.302'
@@ -443,7 +443,7 @@ dependencies {
     api 'com.huawei.hms:push:6.11.0.300'
 
     //MAP kit
-    api "com.huawei.hms:maps:6.11.0.304"
+    api "com.huawei.hms:maps:6.11.2.301"
     //api 'com.huawei.hms:maps-advance:6.4.1.300'
 
     //Ads Kit
@@ -461,13 +461,13 @@ dependencies {
     api 'com.huawei.hms:drive:5.2.0.300'
 
     //Crash Service
-    api 'com.huawei.agconnect:agconnect-crash:1.9.0.300'
+    api 'com.huawei.agconnect:agconnect-crash:1.9.1.301'
 
     //Remote Configuration
     api 'com.huawei.agconnect:agconnect-remoteconfig:1.9.1.300'
 
     //App Messaging
-    api 'com.huawei.agconnect:agconnect-appmessaging:1.9.1.300'
+    api 'com.huawei.agconnect:agconnect-appmessaging:1.9.1.301'
 
     //AR Engine
     api 'com.huawei.hms:arenginesdk:4.0.0.5'
@@ -487,8 +487,8 @@ dependencies {
     implementation 'com.huawei.hms:modeling3d-object-reconstruct:1.9.0.300'
     implementation 'com.huawei.hms:modeling3d-material-generate:1.9.0.300'
     implementation 'com.huawei.hms:modeling3d-objectreconstruct-slam:1.9.0.300'
-    implementation 'com.huawei.hms:modeling3d-motion-capture:1.7.0.301'
-    implementation 'com.huawei.hms:modeling3d-motion-capture-model:1.7.0.301'
+    implementation 'com.huawei.hms:modeling3d-motion-capture:1.7.0.302'
+    implementation 'com.huawei.hms:modeling3d-motion-capture-model:1.7.0.302'
     implementation 'pub.devrel:easypermissions:3.0.0'
     api 'me.jessyan:autosize:1.2.1'
 
@@ -497,7 +497,7 @@ dependencies {
     //api 'com.huawei.hms:video-editor-sdk:1.7.0.300'
 
     //Keyring Service
-    implementation "com.huawei.hms:keyring-credential:6.7.0.303"
+    implementation "com.huawei.hms:keyring-credential:6.9.0.301"
     //App Update (Third Party)
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':app_update')

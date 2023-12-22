@@ -35,8 +35,10 @@
     <application
         android:resizeableActivity="false"
         android:screenOrientation="portrait">
-        <activity android:name=".FluidSimulation2D" />
-        <activity android:name=".SampleRenderActivity" />
+        <activity android:name=".FluidSimulation2D"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SampleRenderActivity"
+            android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="appId"
@@ -45,19 +47,24 @@
         <activity
             android:name=".MainActivity"
             android:label="Scene Kit"
+            android:screenOrientation="portrait"
             android:exported="true"/>
         <activity
             android:name=".sceneview.SceneViewActivity"
+            android:screenOrientation="portrait"
             android:label="Scene View" />
         <activity
             android:name=".arview.ARViewActivity"
+            android:screenOrientation="portrait"
             android:label="AR View" />
         <activity
             android:name=".faceview.FaceViewActivity"
+            android:screenOrientation="portrait"
             android:label="Face View" />
 
         <activity
             android:name=".fluidSimulation3D.Fluid3DActivity"
+            android:screenOrientation="portrait"
             android:label="Fluid Simulation 3D" />
 
         <meta-data

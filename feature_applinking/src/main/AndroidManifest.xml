@@ -31,7 +31,8 @@
     </dist:module>
 
     <application>
-        <activity android:name=".AppLinkingDeepLinkActivity" android:exported="true">
+        <activity android:name=".AppLinkingDeepLinkActivity" android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -39,7 +40,8 @@
                 <data android:host="developer.huawei.com" android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".AppLinkingMainActivity" android:exported="true"/>
+        <activity android:name=".AppLinkingMainActivity" android:exported="true"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

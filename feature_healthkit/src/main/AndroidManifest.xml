@@ -47,10 +47,14 @@
             android:value="102418005" />
 
         <activity android:name=".HealthKitMainActivity"
-            android:exported="true"/>
-        <activity android:name=".HealthKitDataControllerActivity" />
-        <activity android:name=".HealthKitAutoRecorderControllerActivity" />
-        <activity android:name=".HealthKitActivityRecordControllerActivity" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".HealthKitDataControllerActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".HealthKitAutoRecorderControllerActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".HealthKitActivityRecordControllerActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".HealthKitSettingControllerActivity" />
         <activity android:name=".auth.HealthKitCloudLogin" />
         <activity android:name=".auth.HealthKitAuthClientActivity" />
