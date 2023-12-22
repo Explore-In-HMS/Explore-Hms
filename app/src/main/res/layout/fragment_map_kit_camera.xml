@@ -48,4 +48,16 @@
         app:layout_constraintTop_toBottomOf="@+id/btnMoveCamera_mapkit"
         app:layout_constraintStart_toStartOf="parent"/>
 
+    <Button
+        android:id="@+id/btnScalePerPixel_mapkit"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/get_scale_per_pixel_text_mapkit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAnimateCamera_mapkit"
+        app:layout_constraintWidth_percent=".5" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

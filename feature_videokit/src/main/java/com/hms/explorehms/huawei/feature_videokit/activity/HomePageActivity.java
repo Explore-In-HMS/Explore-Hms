@@ -98,6 +98,24 @@ public class HomePageActivity extends AppCompatActivity implements OnHomePageLis
         PermissionUtils.requestPermissionsIfNeed(this, new String[] {permission.WRITE_EXTERNAL_STORAGE},
                 MSG_REQUEST_WRITE_SDCARD);
         initPlayer();
+        setupToolbar();
+    }
+
+    private void setupToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar_videokit);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     /**

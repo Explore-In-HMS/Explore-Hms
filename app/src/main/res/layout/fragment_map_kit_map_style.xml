@@ -29,14 +29,29 @@
         tools:layout_editor_absoluteY="0dp" />
 
     <Button
-        style="@style/ButtonAppearance.ExploreHMS.Normal"
         android:id="@+id/btnChangeStyle_mapkit"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/change_style_text_mapkit"
         android:layout_margin="16dp"
-        app:layout_constraintWidth_percent=".5"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="132dp"
+        android:text="@string/change_style_text_mapkit"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintWidth_percent=".5" />
+
+    <Button
+        android:id="@+id/btnChangeLocationStyle_mapkit"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="564dp"
+        android:text="@string/change_location_style_mapkit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnChangeStyle_mapkit"
+        app:layout_constraintWidth_percent=".5" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

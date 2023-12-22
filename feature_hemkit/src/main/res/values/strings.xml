@@ -21,4 +21,5 @@
     <string name="call_active">call active</string>
     <string name="result_description">result description:</string>
     <string name="hemkit_url">https://developer.huawei.com/consumer/en/doc/development/system-Guides/introduction-0000001058328675</string>
+    <string name="error_code_description">Only enterprise-oriented account are supported.</string>
 </resources>

@@ -405,12 +405,15 @@ public class MainActivityPushKit extends AppCompatActivity {
                 String appId = agConnectOptionsBuilder.getString("client/app_id");
                 HmsInstanceId.getInstance(getApplicationContext()).deleteToken(appId, "HCM");
                 Log.i(TAG, "deleteToken success.");
-
-                tvTokenResult.setText("");
-                tvTokenOprResult.setText(getResources().getString(R.string.txt_opr_res_success_pushkit));
+                runOnUiThread(() -> {
+                    tvTokenResult.setText("");
+                    tvTokenOprResult.setText(getResources().getString(R.string.txt_opr_res_success_pushkit));
+                });
             } catch (ApiException e) {
                 Log.e(TAG, "deleteToken failed." + e);
-                tvTokenOprResult.setText(getResources().getString(R.string.txt_opr_res_failed_pushkit));
+                runOnUiThread(() -> {
+                    tvTokenOprResult.setText(getResources().getString(R.string.txt_opr_res_failed_pushkit));
+                });
             }
         });
         deleteTokenThread.start();

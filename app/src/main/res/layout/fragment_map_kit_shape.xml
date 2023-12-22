@@ -27,6 +27,7 @@
         layout="@layout/map_layout_mapkit"/>
 
     <TextView
+        android:id="@+id/titleTextview"
         style="@style/TextAppearance.ExploreHMS.Body1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -37,5 +38,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/changeGradient"
+        style="@style/ButtonAppearance.ExploreHMS.Normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginBottom="608dp"
+        android:text="@string/set_gradient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextview"
+        app:layout_constraintWidth_percent=".5" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

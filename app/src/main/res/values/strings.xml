@@ -741,6 +741,9 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="map_kit_header_mapkit">Map Kit</string>
     <string name="move_random_location_text_mapkit">Move Random Location</string>
     <string name="animate_random_location_text_mapkit">Animate Random Location</string>
+    <string name="get_scale_per_pixel_text_mapkit">Get Scale Per Pixel</string>
+    <string name="start_animation">Start Animation</string>
+    <string name="set_gradient">Change The Gradient</string>
     <string name="show_marker_text_mapkit">Show Marker</string>
     <string name="show_custom_marker_text_mapkit">Show Custom Marker</string>
     <string name="show_shape_text_mapkit">Show Shape</string>
@@ -750,6 +753,7 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="show_ground_overlay_text_mapkit">Show Ground Overlay</string>
     <string name="show_style_text_mapkit">Show Style</string>
     <string name="change_style_text_mapkit">Change Style</string>
+    <string name="change_location_style_mapkit">Change Location Style</string>
     <string name="site_kit_widget_text_sitekit">Widget</string>
     <string name="place_detail_search_with_siteid_text_sitekit">Place Detail Search with SiteId</string>
     <string name="site_kit_autocomplete_text_sitekit">Site Kit Autocomplete</string>

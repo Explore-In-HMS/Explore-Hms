@@ -29,7 +29,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        minSdkVersion 28
+        minSdkVersion 29
         targetSdkVersion 30
         versionCode gradleVersionCode
         versionName gradleVersionName
@@ -48,7 +48,7 @@ dependencies {
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
 
     //Cloud DB
-    api 'com.huawei.agconnect:agconnect-cloud-database:1.5.5.300'
+    api 'com.huawei.agconnect:agconnect-cloud-database:1.9.0.300'
 }
 
 /*apply from: '../sonarqube.gradle'

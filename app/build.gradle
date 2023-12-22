@@ -43,7 +43,7 @@ android {
 
     defaultConfig {
         applicationId "com.hms.explorehms"
-        minSdkVersion 28
+        minSdkVersion 29
         targetSdkVersion 33
         versionCode gradleVersionCode
         versionName gradleVersionName
@@ -153,7 +153,7 @@ dynamicFeatures =
                     ':feature_modem5g_kit',
                     ':feature_videoeditorkit',
                     ':feature_navikit',
-                    ':feature_videoeditorkitai'
+                    //':feature_videoeditorkitai'
             ]
 
     packagingOptions {
@@ -259,13 +259,13 @@ dependencies {
     api 'com.huawei.agconnect:agconnect-core:1.8.0.300'
 
     //Analytics Kit
-    api 'com.huawei.hms:hianalytics:6.10.0.300'
+    api 'com.huawei.hms:hianalytics:6.10.0.302'
 
     //cloud storage
-    api "com.huawei.agconnect:agconnect-storage:1.5.0.100"
+    api "com.huawei.agconnect:agconnect-storage:1.9.1.300"
 
     //DTM
-    api 'com.huawei.hms:dtm-api:6.6.0.304'
+    api 'com.huawei.hms:dtm-api:6.6.0.305'
 
     //hquic
     implementation 'com.huawei.hms:hquic-provider:5.0.1.300'
@@ -274,19 +274,19 @@ dependencies {
     api 'com.huawei.hms:dynamicability:1.0.18.300'
 
     //Location Kit
-    implementation 'com.huawei.hms:location:6.9.0.300'
+    implementation 'com.huawei.hms:location:6.11.0.301'
 
     //Site Kit
     implementation 'com.huawei.hms:site:6.5.1.300'
 
     //Account Kit
-    api 'com.huawei.hms:hwid:6.9.0.301'
+    api 'com.huawei.hms:hwid:6.11.0.300'
 
     // Scan Kit
-    implementation 'com.huawei.hms:scan:2.10.0.301'
+    implementation 'com.huawei.hms:scan:2.11.0.300'
 
     //Cloud functions sdk
-    api 'com.huawei.agconnect:agconnect-function:1.8.0.300'
+    api 'com.huawei.agconnect:agconnect-function:1.9.1.300'
 
     //audio kit
     api 'com.huawei.hms:audiokit-player:1.6.0.300'
@@ -410,7 +410,7 @@ dependencies {
     // ML KIT END
 
     //nearby
-    api 'com.huawei.hms:nearby:6.9.0.300'
+    api 'com.huawei.hms:nearby:6.11.0.300'
 
     //Video Kit
    // api "com.huawei.hms:videokit-player:1.0.10.302"
@@ -430,7 +430,7 @@ dependencies {
     api 'com.huawei.scenekit:scenekit-iphysics-utils:6.0.0.301'*/
 
     //App linking
-    api 'com.huawei.agconnect:agconnect-applinking:1.8.0.300'
+    api 'com.huawei.agconnect:agconnect-applinking:1.9.1.300'
 
     //FIDO
     api 'com.huawei.hms:fido-fido2:6.7.0.300'
@@ -440,10 +440,10 @@ dependencies {
     api 'com.huawei.hms:awareness:3.4.0.302'
 
     //Push Kit
-    api 'com.huawei.hms:push:6.9.0.300'
+    api 'com.huawei.hms:push:6.11.0.300'
 
     //MAP kit
-    api "com.huawei.hms:maps:6.9.0.300"
+    api "com.huawei.hms:maps:6.11.0.304"
     //api 'com.huawei.hms:maps-advance:6.4.1.300'
 
     //Ads Kit
@@ -455,19 +455,19 @@ dependencies {
     api 'com.huawei.hms:image-vision:1.0.3.306'
 
     //Game Kit
-    api "com.huawei.hms:game:6.8.0.300"
+    api "com.huawei.hms:game:6.10.0.300"
 
     //Drive Kit
-    api 'com.huawei.hms:drive:5.0.0.307'
+    api 'com.huawei.hms:drive:5.2.0.300'
 
     //Crash Service
-    api 'com.huawei.agconnect:agconnect-crash:1.8.0.300'
+    api 'com.huawei.agconnect:agconnect-crash:1.9.0.300'
 
     //Remote Configuration
-    api 'com.huawei.agconnect:agconnect-remoteconfig:1.8.0.300'
+    api 'com.huawei.agconnect:agconnect-remoteconfig:1.9.1.300'
 
     //App Messaging
-    api 'com.huawei.agconnect:agconnect-appmessaging:1.8.0.300'
+    api 'com.huawei.agconnect:agconnect-appmessaging:1.9.1.300'
 
     //AR Engine
     api 'com.huawei.hms:arenginesdk:4.0.0.5'
@@ -498,6 +498,9 @@ dependencies {
 
     //Keyring Service
     implementation "com.huawei.hms:keyring-credential:6.7.0.303"
+    //App Update (Third Party)
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':app_update')
 }
 
 /*apply from: '../sonarqube.gradle'

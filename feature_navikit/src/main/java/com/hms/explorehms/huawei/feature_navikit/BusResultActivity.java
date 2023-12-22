@@ -27,6 +27,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.hms.explorehms.huawei.feature_navikit.setting.CommonSetting;
 import com.hms.explorehms.huawei.feature_navikit.utils.CommonUtil;
@@ -45,7 +47,7 @@ import com.huawei.hms.navi.navibase.model.busnavirequest.Origin;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
-public class BusResultActivity extends Activity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
+public class BusResultActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
     private static final String TAG = "BusResultActivity";
 
     private Button busPlan;
@@ -80,7 +82,25 @@ public class BusResultActivity extends Activity implements View.OnClickListener,
         context = this;
         initNavi();
         initView();
+        setupToolbar();
         initBusSite();
+    }
+
+    private void setupToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbarNaviKitInfo);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    /**
+     * Called when the user presses the "back" button in the toolbar.
+     * It handles the behavior for navigation.
+     */
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     private void initView() {

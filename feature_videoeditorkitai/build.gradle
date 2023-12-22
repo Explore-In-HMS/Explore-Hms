@@ -29,7 +29,7 @@ android {
 
     defaultConfig {
         applicationId "com.hms.explorehms.huawei.feature_videoeditorkitai"
-        minSdkVersion 28
+        minSdkVersion 29
         targetSdkVersion 33
         versionCode gradleVersionCode
         versionName gradleVersionName
@@ -81,8 +81,8 @@ dependencies {
     implementation 'com.google.android.exoplayer:exoplayer-ui:2.12.2'
     implementation 'com.danikula:videocache:2.7.0'
 
-    implementation 'com.huawei.hms:video-editor-sdk:1.9.0.300'
-    implementation 'com.huawei.hms:video-editor-ai:1.9.0.300'
+    implementation 'com.huawei.hms:video-editor-sdk:1.9.0.301'
+    implementation 'com.huawei.hms:video-editor-ai:1.9.0.301'
 
     implementation 'com.huawei.hms:video-editor-ai-beauty:1.8.0.300'
     implementation 'com.huawei.hms:video-editor-ai-beauty-model:1.8.0.300'

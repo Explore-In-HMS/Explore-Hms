@@ -35,7 +35,7 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 28
+        minSdkVersion 29
         targetSdkVersion 33
         versionCode gradleVersionCode
         versionName gradleVersionName
@@ -52,7 +52,7 @@ android {
 
 dependencies {
     implementation project(":app")
-    implementation 'com.huawei.hms:ads-lite:13.4.61.302'
+    implementation 'com.huawei.hms:ads-lite:13.4.62.302'
     implementation 'androidx.media2:media2-widget:1.2.1'
 }
 

@@ -17,9 +17,16 @@
 package com.hms.explorehms.mapkit.ui;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.ScaleAnimation;
+import android.view.animation.TranslateAnimation;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,11 +43,15 @@ import com.huawei.hms.maps.model.MarkerOptions;
 
 
 public class MapKitShowCustomMarkerFragment extends BaseFragment {
+
     private int count = 1;
+    private FragmentMapKitShowCustomMarkerBinding binding;
+    private static final String TAG = "MAP_KIT";
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return FragmentMapKitShowCustomMarkerBinding.inflate(getLayoutInflater()).getRoot();
+        binding = FragmentMapKitShowCustomMarkerBinding.inflate(getLayoutInflater());
+        return binding.getRoot();
     }
 
     @Override
@@ -53,10 +64,87 @@ public class MapKitShowCustomMarkerFragment extends BaseFragment {
         MarkerOptions options = new MarkerOptions()
                 .position(new LatLng(markerData.getLat(), markerData.getLng()))
                 .clusterable(true)
+                .clickable(true)
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker));
+
         Marker marker = hMap.addMarker(options);
         marker.setTag(markerData);
 
+        Animation translateAnimation = new TranslateAnimation(0,2,0,2);
+        translateAnimation.setDuration(1000L);
+        translateAnimation.setRepeatCount(10);
+
+        translateAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                Log.d(TAG, "Translate Animation Start");
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Log.d(TAG, "Translate Animation End");
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                Log.d(TAG, "Translate Animation Repeated");
+            }
+        });
+
+        Animation alphaAnimation = new AlphaAnimation(0.2f, 1.0f);
+        alphaAnimation.setRepeatCount(5);
+        alphaAnimation.setDuration(1000L);
+        alphaAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                Log.d(TAG, "Alpha Animation Start");
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Log.d(TAG, "Alpha Animation End");
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                Log.d(TAG, "Alpha Animation Repeated");
+            }
+        });
+
+        Animation scaleAnimation = new ScaleAnimation(0, 2, 0, 2);
+        scaleAnimation.setRepeatCount(10);
+        scaleAnimation.setDuration(1000L);
+        scaleAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                Log.d(TAG, "Scale Animation Start");
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Log.d(TAG, "Scale Animation Start");
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                Log.d(TAG, "Scale Animation Repeated");
+            }
+        });
+
+
+        AnimationSet animationSet = new AnimationSet(true);
+        animationSet.setInterpolator(new LinearInterpolator());
+        animationSet.addAnimation(alphaAnimation);
+        animationSet.addAnimation(scaleAnimation);
+        animationSet.addAnimation(translateAnimation);
+
+        marker.startAnimation();
+
+        if(marker.isClickable() || options.isClickable()){
+            Log.i(TAG,"Custom markers are clickable");
+        }else{
+            marker.setClickable(true);
+        }
         hMap.setMarkersClustering(true);
     }
 

@@ -66,7 +66,7 @@ public class CloudDBZoneWrapper {
         }
     }
 
-    public static void openCloudDBZone() {
+    public static CloudDBZone openCloudDBZone() {
         CloudDBZoneConfig cloudDBZoneConfig = new CloudDBZoneConfig("BookComments",
                 CloudDBZoneConfig.CloudDBZoneSyncProperty.CLOUDDBZONE_CLOUD_CACHE,
                 CloudDBZoneConfig.CloudDBZoneAccessProperty.CLOUDDBZONE_PUBLIC);
@@ -77,6 +77,8 @@ public class CloudDBZoneWrapper {
         } catch (Exception e) {
             Log.e(TAG, e.toString());
         }
+
+        return cloudDbZone;
     }
 
     public static void getAllBookComment(final IListCallback<BookComment> iGetListRequest) {

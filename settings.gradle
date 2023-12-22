@@ -78,7 +78,9 @@ include ':feature_devicevirtualizationengine'
 include ':feature_modem5g_kit'
 include ':feature_videoeditorkit'
 include ':feature_navikit'
-include ':feature_videoeditorkitai'
+//include ':feature_videoeditorkitai'
 
 include ':app'
+include ':app_update'
 rootProject.name = "ExploreHMS"
+
