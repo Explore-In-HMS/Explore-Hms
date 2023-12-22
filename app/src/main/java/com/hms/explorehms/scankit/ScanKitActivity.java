@@ -271,19 +271,21 @@ public class ScanKitActivity extends AppCompatActivity implements View.OnClickLi
 
                 YuvImage yuv = new YuvImage(bytes, ImageFormat.NV21, camera.getParameters().getPreviewSize().width,
                         camera.getParameters().getPreviewSize().height, null);
+                HmsScanFrame frame = new HmsScanFrame(yuv);
                 yuv.compressToJpeg(new Rect(0, 0, camera.getParameters().getPreviewSize().width,
                         camera.getParameters().getPreviewSize().height), 100, stream);
 
                 Bitmap bitmap = BitmapFactory.decodeByteArray(stream.toByteArray(), 0, stream.toByteArray().length);
+                HmsScanFrameOptions option = new HmsScanFrameOptions.Creator().setHmsScanTypes(HmsScan.QRCODE_SCAN_TYPE| HmsScan.ALL_SCAN_TYPE).setMultiMode(false).setParseResult(true).setPhotoMode(true).create();
 
-                HmsScanAnalyzerOptions options = new HmsScanAnalyzerOptions.Creator().setHmsScanTypes(0).setPhotoMode(false).create();
+                HmsScanResult result = ScanUtil.decode(ScanKitActivity.this, frame, option);
+                HmsScan[] hmsScans = result.getHmsScans();
 
-                HmsScan[] result2 = ScanUtil.decodeWithBitmap(ScanKitActivity.this, bitmap, options);
-
-                if (result2 != null && result2.length > 0) {
-                    showMultiResultActivity(result2);
+                if (hmsScans != null && hmsScans.length > 0) {
+                    showMultiResultActivity(hmsScans);
                 } else {
                     Toast.makeText(this, "Barcode is NULL or Empty!", Toast.LENGTH_SHORT).show();
+                    Log.i(this.toString(),"Barcode is NULL or Empty!");
                 }
 
                 break;
