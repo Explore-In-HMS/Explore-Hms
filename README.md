@@ -89,28 +89,53 @@ this way, the application does not have non-required features.
 * Android SDK version is 26 or later.
 * Gradle Version: 4.1.1
 
-## Before You Start
 
-**You need to agconnect-services.json for run this project correctly.**
+## 🚀 Before You Start
 
-- If you don't have a Huawei Developer account check this document for
-  create; https://developer.huawei.com/consumer/en/doc/start/10104
-- Open your Android project and find Debug FingerPrint (SHA256) with follow this steps; View -> Tool
-  Windows -> Gradle -> Tasks -> Android -> signingReport
-- Login to Huawei Developer Console (https://developer.huawei.com/consumer/en/console)
-- If you don't have any app check this document for
-  create; https://developer.huawei.com/consumer/en/doc/distribution/app/agc-create_app
-- Add SHA256 FingerPrint into your app with follow this steps on Huawei Console; My Apps -> Select
-  App -> Project Settings
-- Make enable necessary SDKs with follow this steps; My Apps -> Select App -> Project Settings ->
-  Manage APIs
-- For this project you have to set enable Map Kit, Site Kit, Auth Service, ML Kit
-- Than go again Project Settings page and click "agconnect-services.json" button for download json
-  file.
-- Move to json file in base "app" folder that under your android
-  project. (https://developer.huawei.com/consumer/en/doc/development/HMS-Guides/69407812#h1-1577692046342)
-- Go to app level gradle file and change application id of your android project. It must be same
-  with app id on AppGallery console you defined.
+**To ensure the smooth running of this project, you'll need the agconnect-services.json file. Follow these steps:**
+
+🌐 Huawei Developer Account:
+
+- If you don't have one, create a Huawei Developer account here: https://developer.huawei.com/consumer/en/doc/start/10104
+
+🖋️ Find Debug Fingerprint (SHA256):
+
+- Open your Android project and locate the Debug Fingerprint (SHA256) by navigating to View -> Tool Windows -> Gradle -> Tasks -> Android -> signingReport.
+
+🔐 Huawei Developer Console:
+
+- Log in to the Huawei Developer Console. (https://developer.huawei.com/consumer/en/console)
+
+📱 Create Your App:
+
+- If you don't have an app, follow the steps here: https://developer.huawei.com/consumer/en/doc/app/agc-help-releaseapkrpk-0000001106463276
+
+🤝 Add SHA256 Fingerprint:
+
+- Add the SHA256 Fingerprint to your app on Huawei Console: My Apps -> Select App -> Project Settings.
+
+🚀 Enable Necessary SDKs:
+
+- Navigate to My Apps -> Select App -> Project Settings -> Manage APIs.
+- Ensure that Map Kit, Site Kit, Auth Service, and ML Kit are enabled.
+
+📥 Download agconnect-services.json:
+
+- On the Project Settings page, click the "agconnect-services.json" button to download the JSON file.
+
+📂 Move JSON File:
+
+- Move the downloaded JSON file to the base "app" folder under your Android project. (https://developer.huawei.com/consumer/en/doc/development/HMS-Guides/69407812#h1-1577692046342)
+
+🔄 Update App ID:
+
+- Go to the app-level Gradle file and ensure that the application ID matches the app ID on the AppGallery console you defined.
+
+
+🌟 You're all set! Your project should now run smoothly with Huawei services. If you encounter any issues, refer to the provided documentation for further assistance.
+
+Happy coding! 🚀
+
 
 ## Implemented Kits And Services
 
