@@ -16,6 +16,8 @@
 package com.hms.explorehms.huawei.feature_mlkit.ui.mlServices.textRelated.bankCardRecognition;
 
 import android.Manifest;
+import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -25,7 +27,12 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -58,10 +65,10 @@ public class BankCardRecognitionActivity extends AppCompatActivity {
 
     private int cardArrayLength = 5000;
 
-    String[] bankIdentificationNumber = new String[cardArrayLength];
-    String[] cardIssuer = new String[cardArrayLength];
-    String[] cardType = new String[cardArrayLength];
-    String[] bankCardListWithSplit = new String[cardArrayLength];
+    private String[] bankIdentificationNumber = new String[cardArrayLength];
+    private String[] cardIssuer = new String[cardArrayLength];
+    private String[] cardType = new String[cardArrayLength];
+    private String[] bankCardListWithSplit = new String[cardArrayLength];
 
     @Nullable
     @BindView(R.id.resultLogs)
@@ -116,12 +123,16 @@ public class BankCardRecognitionActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.btn_bcrWithTakePhoto, R.id.cardNumber_img, R.id.avatar_delete})
+    @OnClick({R.id.btn_bcrWithTakePhoto, R.id.btn_bcrWithCustomView, R.id.cardNumber_img, R.id.avatar_delete})
     public void onItemClick(View v) {
         switch (v.getId()) {
             case R.id.btn_bcrWithTakePhoto:
                 ActivityCompat.requestPermissions(this, permissionRequestCameraAndStorage, PERMISSION_CODE_CAMERA_AND_STORAGE);
                 break;
+            case R.id.btn_bcrWithCustomView:
+                Intent i = new Intent(this, CustomScanningScreenActivity.class);
+                activityResultLauncher.launch(i);
+
             case R.id.cardNumber_img:
                 String cardText = cardNumberText.getText().toString();
                 if (!cardText.isEmpty()) {
@@ -140,6 +151,27 @@ public class BankCardRecognitionActivity extends AppCompatActivity {
                 break;
         }
     }
+
+    private ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        // Here, no request code
+                        Intent data = result.getData();
+                        String bankCardCalculatedResult = data.getStringExtra("bankCardCalculatedResult");
+                        String bankCardNumber = data.getStringExtra("bankCardNumber");
+                        Bitmap originalBitmap = data.getParcelableExtra("originalBitmap");
+                        Bitmap numberBitmap = data.getParcelableExtra("numberBitmap");
+
+                        showBankCardImageHideSampleCardImage(originalBitmap, numberBitmap);
+                        cardNumberText.setText(bankCardNumber);
+                        resultLogs.setText("Success AnalyseResults : with " + bankCardCalculatedResult.length() + " characters :\n" + bankCardCalculatedResult);
+
+                    }
+                }
+            });
 
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -237,66 +269,40 @@ public class BankCardRecognitionActivity extends AppCompatActivity {
             displayFailureAnalyseResults("MLBcrCaptureResult callback onCameraDenied !");
         }
 
-        private void showBankCardImageHideSampleCardImage(Bitmap bitmapBankCard, Bitmap bitmapCardNumber) {
-            imageViewCardSample.setVisibility(View.GONE);
-            imageViewCard.setVisibility(View.VISIBLE);
-            imageViewCard.setImageBitmap(bitmapBankCard);
-            // important for peek view from changed imageView resource
-            imageViewCard.getDrawingCache();
-            imageViewCardNumber.setVisibility(View.VISIBLE);
-            imageViewCardNumber.setImageBitmap(bitmapCardNumber);
-            // important for peek view from changed imageView resource
-            imageViewCardNumber.getDrawingCache();
-            imageViewDelete.setVisibility(View.VISIBLE);
-        }
+
+    };
+    private void showBankCardImageHideSampleCardImage(Bitmap bitmapBankCard, Bitmap bitmapCardNumber) {
+        imageViewCardSample.setVisibility(View.GONE);
+        imageViewCard.setVisibility(View.VISIBLE);
+        imageViewCard.setImageBitmap(bitmapBankCard);
+        // important for peek view from changed imageView resource
+        imageViewCard.getDrawingCache();
+        imageViewCardNumber.setVisibility(View.VISIBLE);
+        imageViewCardNumber.setImageBitmap(bitmapCardNumber);
+        // important for peek view from changed imageView resource
+        imageViewCardNumber.getDrawingCache();
+        imageViewDelete.setVisibility(View.VISIBLE);
+    }
 
 
-        private void displaySuccessAnalyseResults(MLBcrCaptureResult result) {
-            hideProgress();
-            String analyseResults = bankCardSupportedListCalculateResult(result);
-            Utils.createVibration(getApplicationContext(), 200);
-            Log.i(TAG, "Success AnalyseResults : " + analyseResults);
-            cardNumberText.setText(result.getNumber());
-            resultLogs.setText("Success AnalyseResults : with " + analyseResults.length() + " characters :\n" + analyseResults);
-        }
+    private void displaySuccessAnalyseResults(MLBcrCaptureResult result) {
+        hideProgress();
+        String analyseResults = bankCardSupportedListCalculateResult(result);
+        Utils.createVibration(getApplicationContext(), 200);
+        Log.i(TAG, "Success AnalyseResults : " + analyseResults);
+        cardNumberText.setText(result.getNumber());
+        resultLogs.setText("Success AnalyseResults : with " + analyseResults.length() + " characters :\n" + analyseResults);
+    }
 
-        private String bankCardSupportedListCalculateResult(MLBcrCaptureResult result) {
+    private String bankCardSupportedListCalculateResult(MLBcrCaptureResult result) {
 
-            String getBINNumber = result.getNumber().substring(0, 6);
-            StringBuilder resultBuilder = new StringBuilder();
-            Boolean bankCardSupported = false;
+        String getBINNumber = result.getNumber().substring(0, 6);
+        StringBuilder resultBuilder = new StringBuilder();
+        Boolean bankCardSupported = false;
 
-            for (int i = 1; i <= bankCardListWithSplit.length - 1; i++) {
-                if (getBINNumber.equals(bankIdentificationNumber[i])) {
+        for (int i = 1; i <= bankCardListWithSplit.length - 1; i++) {
+            if (getBINNumber.equals(bankIdentificationNumber[i])) {
 
-                    resultBuilder.append("Number：");
-                    resultBuilder.append(result.getNumber());
-                    resultBuilder.append(System.lineSeparator());
-
-                    resultBuilder.append("Length：");
-                    resultBuilder.append(result.getNumber().length());
-                    resultBuilder.append(System.lineSeparator());
-
-                    resultBuilder.append("Issuer：");
-                    resultBuilder.append(cardIssuer[i]);
-                    resultBuilder.append(System.lineSeparator());
-
-                    resultBuilder.append("Expire: ");
-                    resultBuilder.append(result.getExpire());
-                    resultBuilder.append(System.lineSeparator());
-
-                    resultBuilder.append("Type: ");
-                    resultBuilder.append(cardType[i]);
-                    resultBuilder.append(System.lineSeparator());
-
-                    resultBuilder.append("Organization: ");
-                    resultBuilder.append(result.getOrganization());
-                    resultBuilder.append(System.lineSeparator());
-                    bankCardSupported = true;
-                    break;
-                }
-            }
-            if (!bankCardSupported) {
                 resultBuilder.append("Number：");
                 resultBuilder.append(result.getNumber());
                 resultBuilder.append(System.lineSeparator());
@@ -306,7 +312,7 @@ public class BankCardRecognitionActivity extends AppCompatActivity {
                 resultBuilder.append(System.lineSeparator());
 
                 resultBuilder.append("Issuer：");
-                resultBuilder.append(result.getIssuer());
+                resultBuilder.append(cardIssuer[i]);
                 resultBuilder.append(System.lineSeparator());
 
                 resultBuilder.append("Expire: ");
@@ -314,17 +320,43 @@ public class BankCardRecognitionActivity extends AppCompatActivity {
                 resultBuilder.append(System.lineSeparator());
 
                 resultBuilder.append("Type: ");
-                resultBuilder.append(result.getType());
+                resultBuilder.append(cardType[i]);
                 resultBuilder.append(System.lineSeparator());
 
                 resultBuilder.append("Organization: ");
                 resultBuilder.append(result.getOrganization());
                 resultBuilder.append(System.lineSeparator());
+                bankCardSupported = true;
+                break;
             }
-            return resultBuilder.toString();
         }
-    };
+        if (!bankCardSupported) {
+            resultBuilder.append("Number：");
+            resultBuilder.append(result.getNumber());
+            resultBuilder.append(System.lineSeparator());
 
+            resultBuilder.append("Length：");
+            resultBuilder.append(result.getNumber().length());
+            resultBuilder.append(System.lineSeparator());
+
+            resultBuilder.append("Issuer：");
+            resultBuilder.append(result.getIssuer());
+            resultBuilder.append(System.lineSeparator());
+
+            resultBuilder.append("Expire: ");
+            resultBuilder.append(result.getExpire());
+            resultBuilder.append(System.lineSeparator());
+
+            resultBuilder.append("Type: ");
+            resultBuilder.append(result.getType());
+            resultBuilder.append(System.lineSeparator());
+
+            resultBuilder.append("Organization: ");
+            resultBuilder.append(result.getOrganization());
+            resultBuilder.append(System.lineSeparator());
+        }
+        return resultBuilder.toString();
+    }
     private void bankCardSupportedListCalculate() {
         String bankCardSupportedListJSON = BankCardUtils.getJsonFromFile(this, "BankCardSupportedList.json", true);
 
