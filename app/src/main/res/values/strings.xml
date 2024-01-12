@@ -760,9 +760,15 @@ Content decryption: Before a user plays the encrypted content, the client obtain
     <string name="place_text_sitekit">Place</string>
     <string name="link_sample">Lorem ipsum dolor sit amet,<a href="http://www.google.com">consectetur</a> adipiscing elit.</string>
 
+    <string name="login_info">Hello! Our application features some exclusive kits, and to benefit from the advantages of these kits, you need to log in.
+The reason for having limits on our exclusive kits is to provide you with a better experience and to serve each user fairly. These limits are determined in a way that help us sustain and effectively manage our kits. The limits are automatically updated after each use and displayed in the text next to the button, allowing you to always keep track of your remaining limit.
+Start now by logging in and enjoying the privileges offered by our exclusive kits!
+"</string>
+
     <string name="mapkit_info">Map Kit is an SDK for map development. It covers map data of more than 200 countries and regions, and supports hundreds of languages. With this SDK, you can easily integrate map-based functions into your apps.</string>
     <string name="mapkit_title">Service Introduction</string>
 
+    <string name="sign_in">Sign In</string>
     <string name="remove_activity_transition_update">Remove Activity Transition Update</string>
     <string name="request_activity_transition_update">Request Activity Transition Update</string>
     <string name="geofence_desc">Allows you to set an interested area through an API so that your app can receive a notification when a specified action (such as leaving, entering, or staying in the area) occurs.</string>
