@@ -28,7 +28,7 @@
 
     <string name="txt_for_dynamic_ability_image">it shows that How it works</string>
 
-    <string name="link_for_dynamic_ability_web_page" translatable="false">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-featuredelivery-introduction</string>
+    <string name="link_for_dynamic_ability_web_page" translatable="false">https://developer.huawei.com/consumer/en/doc/AppGallery-connect-Guides/agc-dynamicability-introduction-0000001057944549</string>
 
     <string name="text_for_dynamic_ability_test_header">Dynamic Ability Feature Test </string>
 

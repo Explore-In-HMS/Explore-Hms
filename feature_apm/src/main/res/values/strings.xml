@@ -40,7 +40,7 @@
     <string name="text_for_apm_third_function_desc">Monitors your app via tailored traces and indicators, providing a detailed glimpse of app performance.\n\n<b>Note:</b>Nowadays Custom trace can be used Android and Web applications.</string>
 
     <string name="text_for_apm_link_text_for_website">App Performance Management (APM) web page</string>
-    <string name="text_for_apm_link_for_web_site">https://developer.huawei.com/consumer/en/doc/development/AppGallery-connect-Guides/agc-apms-introduction</string>
+    <string name="text_for_apm_link_for_web_site">https://developer.huawei.com/consumer/en/doc/AppGallery-connect-Guides/agc-apm-introduction-0000001052247254</string>
 
     <string name="text_for_apm_link_name_for_codelab">App Performance Management (APM) Codelab</string>
     <string name="text_for_apm_link_for_codelab">https://developer.huawei.com/consumer/en/codelab/AppGalleryConnectAPM/index.html#0</string>

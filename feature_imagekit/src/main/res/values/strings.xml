@@ -32,7 +32,7 @@
     <string name="txt_img_render_service_introduction">The Image Render service provides five basic animation effects and nine advanced animation effects. Basic animation effects can be used in flexible combinations to suit different user needs. Advanced animation effects are not only stunning but easy to use and interesting, bringing more fun to user interactions.</string>
     <string name="txt_show_image_kit">Show</string>
     <string name="txt_result_image_kit">RESULT</string>
-    <string name="txt_image_doc_link_image_kit">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides-V5/service-introduction-0000001050199011-V5</string>
+    <string name="txt_image_doc_link_image_kit">https://developer.huawei.com/consumer/en/doc/Media-Guides/service-introduction-0000001050199011</string>
     <string name="txt_token_obtained_image_kit">Token Obtained</string>
 
     <!-- COMMON -->
@@ -140,5 +140,5 @@
     <string name="txt_not_record_process_finished_image_kit">Record Saving...</string>
     <string name="txt_not_recording_image_render_image_kit">Not Recording</string>
 
-    <string name="url_txt_imagekitmain">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050199011</string>
+    <string name="url_txt_imagekitmain">https://developer.huawei.com/consumer/en/doc/Media-Guides/service-introduction-0000001050199011</string>
 </resources>

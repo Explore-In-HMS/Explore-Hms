@@ -18,6 +18,6 @@
     <string name="title_preorders">Preorders</string>
     <string name="txt_preorders">This service attracts potential users to your game prior to its release. During early access or initial release of a game, the system sends notifications to users who have preordered it to attract them to download the game. Therefore, it is recommended that you apply for Preorders. \nThe preorder application process is as follows.</string>
     <string name="txt_preorders_preparing">Currently, users can preorder a game on the details page. You only need to prepare five images and game introduction for preorders. Your game can be distributed to multiple countries or regions outside the Chinese mainland, and multiple languages are supported. Therefore, you need to prepare materials in advance based on the language requirements of the countries and regions where your game is to be released.</string>
-    <string name="txt_preorders_link">https://developer.huawei.com/consumer/en/doc/distribution/app/5020203</string>
+    <string name="txt_preorders_link">https://developer.huawei.com/consumer/en/doc/app/agc-help-applyfor-order-0000001108115002</string>
     <string name="txt_preorder_click"><a href="">Click here to learn more about Preorders.</a></string>
 </resources>

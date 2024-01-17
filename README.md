@@ -89,28 +89,43 @@ this way, the application does not have non-required features.
 * Android SDK version is 26 or later.
 * Gradle Version: 4.1.1
 
-## Before You Start
 
-**You need to agconnect-services.json for run this project correctly.**
+## 🚀 Before You Start
 
-- If you don't have a Huawei Developer account check this document for
-  create; https://developer.huawei.com/consumer/en/doc/start/10104
-- Open your Android project and find Debug FingerPrint (SHA256) with follow this steps; View -> Tool
-  Windows -> Gradle -> Tasks -> Android -> signingReport
-- Login to Huawei Developer Console (https://developer.huawei.com/consumer/en/console)
-- If you don't have any app check this document for
-  create; https://developer.huawei.com/consumer/en/doc/distribution/app/agc-create_app
-- Add SHA256 FingerPrint into your app with follow this steps on Huawei Console; My Apps -> Select
-  App -> Project Settings
-- Make enable necessary SDKs with follow this steps; My Apps -> Select App -> Project Settings ->
-  Manage APIs
-- For this project you have to set enable Map Kit, Site Kit, Auth Service, ML Kit
-- Than go again Project Settings page and click "agconnect-services.json" button for download json
-  file.
-- Move to json file in base "app" folder that under your android
-  project. (https://developer.huawei.com/consumer/en/doc/development/HMS-Guides/69407812#h1-1577692046342)
-- Go to app level gradle file and change application id of your android project. It must be same
-  with app id on AppGallery console you defined.
+**To ensure the smooth running of this project, you'll need the agconnect-services.json file. Follow these steps:**
+
+🌐 Huawei Developer Account:
+- If you don't have one, create a Huawei Developer account here: https://developer.huawei.com/consumer/en/doc/start/10104
+
+🖋️ Find Debug Fingerprint (SHA256):
+- Open your Android project and locate the Debug Fingerprint (SHA256) by navigating to View -> Tool Windows -> Gradle -> Tasks -> Android -> signingReport.
+
+🔐 Huawei Developer Console:
+- Log in to the Huawei Developer Console. (https://developer.huawei.com/consumer/en/console)
+
+📱 Create Your App:
+- If you don't have an app, follow the steps here: https://developer.huawei.com/consumer/en/doc/app/agc-help-releaseapkrpk-0000001106463276
+
+🤝 Add SHA256 Fingerprint:
+- Add the SHA256 Fingerprint to your app on Huawei Console: My Apps -> Select App -> Project Settings.
+
+🚀 Enable Necessary SDKs:
+- Navigate to My Apps -> Select App -> Project Settings -> Manage APIs.
+- Ensure that Map Kit, Site Kit, Auth Service, and ML Kit are enabled.
+
+📥 Download agconnect-services.json:
+- On the Project Settings page, click the "agconnect-services.json" button to download the JSON file.
+
+📂 Move JSON File:
+- Move the downloaded JSON file to the base "app" folder under your Android project. (https://developer.huawei.com/consumer/en/doc/development/HMS-Guides/69407812#h1-1577692046342)
+
+🔄 Update App ID:
+- Go to the app-level Gradle file and ensure that the application ID matches the app ID on the AppGallery console you defined.
+
+🌟 You're all set! Your project should now run smoothly with Huawei services. If you encounter any issues, refer to the provided documentation for further assistance.
+
+Happy coding! 🚀
+
 
 ## Implemented Kits And Services
 
@@ -138,7 +153,7 @@ hardware capability of the OS, promising more efficient running.
 
 ### [Account Kit](https://developer.huawei.com/consumer/en/hms/huawei-accountkit)
 
-*Version: 6.9.0.301*
+*Version: 6.11.0.300*
 
 Account Kit provides you with simple, secure, and quick sign-in and authorization functions. Instead
 of entering accounts and passwords and waiting for authentication, users can just tap the Sign In
@@ -154,7 +169,7 @@ Features:
 
 ### [Ads Kit](https://developer.huawei.com/consumer/en/hms/huawei-adskit/)
 
-*Version: 13.4.47.302*
+*Version: 13.4.62.302*
 
 HUAWEI Ads Publisher Service is a monetization service that leverages Huawei's extensive data
 capabilities to display targeted, high quality ad content in your apps to the vast user base of
@@ -171,7 +186,7 @@ Features:
 
 ### [Analytics Kit](https://developer.huawei.com/consumer/en/hms/huawei-analyticskit/)
 
-*Version: 6.9.0.302*
+*Version: 6.10.0.302*
 
 HUAWEI Analytics Kit offers a rich array of preset analytics models that help you gain a deeper
 insight into your users, products, and content. With this insight, you can then take a data-driven
@@ -201,7 +216,7 @@ content, bundled in a smaller, more streamlined app package.
 
 ### [App Linking](https://developer.huawei.com/consumer/en/agconnect/App-linking/)
 
-*Version: 1.8.0.300*
+*Version: 1.9.1.300*
 
 App Linking allows you to create cross-platform links that can work as defined regardless of whether
 your app has been installed by a user. When a user taps the link on an Android or iOS device, the
@@ -216,7 +231,7 @@ Features:
 
 ### [App Messaging](https://developer.huawei.com/consumer/en/agconnect/app-messaging/)
 
-*Version: 1.8.0.300*
+*Version: 1.9.1.300*
 
 App Messaging even allows you to customize how your messages look and the way they will be sent, and
 define events for triggering message sending to your users at the right moment.
@@ -286,7 +301,7 @@ Features:
 
 ### [Audio Editor Kit](https://developer.huawei.com/consumer/en/hms/huawei-audio-editor/)
 
-*Version: 1.7.0.300*
+*Version: 1.8.0.301*
 
 Audio Editor Kit provides a wide range of audio editing capabilities, including AI dubbing, audio
 source separation, spatial audio, voice changer, and sound effects. With these capabilities, the kit
@@ -302,7 +317,7 @@ Features:
 
 ### [Auth Service](https://developer.huawei.com/consumer/en/agconnect/auth-service/)
 
-*Version: 1.6.0.300*
+*Version: 1.9.0.300*
 
 Most apps need to identify and authenticate users to tailor the app experience for individual users.
 However, building such a system from scratch is a difficult process. Auth Service can quickly build
@@ -373,7 +388,7 @@ screens, delivering a seamless, cross-device collaborative experience.
 
 ### [Cloud DB (Beta)](https://developer.huawei.com/consumer/en/agconnect/cloud-base/)
 
-*Version: 1.4.9.300*
+*Version: 1.9.0.300*
 
 Cloud DB is a device-cloud synergy database product that provides data synergy management
 capabilities between the device and cloud, unified data models, and various data management APIs. In
@@ -401,7 +416,7 @@ exporting logs.
 
 ### [Cloud Functions (Beta)](https://developer.huawei.com/consumer/en/agconnect/cloud-function/)
 
-*Version: 1.8.0.300*
+*Version: 1.9.1.300*
 
 Cloud Functions enables serverless computing. It provides the Function as a Service (FaaS)
 capabilities to simplify app development and O&M so your functions can be implemented more easily
@@ -450,7 +465,7 @@ development efficiency.
 
 ### [Crash](https://developer.huawei.com/consumer/en/agconnect/crash/)
 
-*Version: 1.8.0.300*
+*Version: 1.9.0.300*
 
 The AppGallery Connect Crash service provides a powerful yet lightweight solution to app crash
 problems. With the service, you can quickly detect, locate, and resolve app crashes (unexpected
@@ -483,7 +498,7 @@ Quick app:
 
 ### [Drive Kit](https://developer.huawei.com/consumer/en/hms/huawei-drivekit/)
 
-*Version: 5.0.0.307*
+*Version: 5.2.0.300*
 
 Drive Kit allows you to create apps that use HUAWEI Drive capabilities. Drive Kit provides cloud
 storage for your apps, enabling users to store files that are created while using your apps,
@@ -517,7 +532,7 @@ Features:
 
 ### [Dynamic Tag Manager](https://developer.huawei.com/consumer/en/hms/huawei-dynamic-tag-manager/)
 
-*Version: 6.6.0.304*
+*Version: 6.6.0.305*
 
 HUAWEI Dynamic Tag Manager (DTM) is a dynamic tag management system. With DTM, you can dynamically
 update tracking tags on a web-based UI to track specific events and report data to third-party
@@ -559,7 +574,7 @@ Features:
 
 ### [Game Service](https://developer.huawei.com/consumer/en/hms/huawei-game/)
 
-*Version: 6.8.0.300*
+*Version: 6.10.0.300*
 
 Game Service helps you build basic game functions such as achievements, leaderboards, and saved
 games at low costs. Improve efficiency in testing, managing, and releasing games and keep attracting
@@ -596,7 +611,7 @@ users with continuous optimization based on game data analysis.
 
 ### [Health Kit](https://developer.huawei.com/consumer/en/hms/huaweihealth/)
 
-*Version: 6.1.0.301*
+*Version: 6.8.0.300*
 
 HUAWEI Health Kit (Health Kit for short) allows ecosystem apps to access fitness and health data of
 users based on their HUAWEI ID and authorization.
@@ -610,7 +625,7 @@ Features:
 
 ### [Hem Kit](https://developer.huawei.com/consumer/en/hms/huawei-hemkit/)
 
-*Version: 1.0.0.303*
+*Version: 1.0.4.303*
 
 HUAWEI Enterprise Manager (HEM) is a mobile device management solution provided for you based on the
 powerful platform and hardware of Huawei. The device deployment service in HEM helps you
@@ -630,7 +645,7 @@ establishment, reduced packet loss, and higher throughput.
 
 ### [Identity Kit](https://developer.huawei.com/consumer/en/hms/huawei-identitykit/)
 
-*Version: 5.3.0.300*
+*Version: 6.4.0.302*
 
 Identity Kit provides unified address management services for users and allows your app to access
 users' addresses conveniently upon obtaining authorization from the users.
@@ -641,7 +656,7 @@ Features:
 
 ### [Image Kit](https://developer.huawei.com/consumer/en/hms/huawei-imagekit/)
 
-*Version: 1.0.3.303*
+*Version: 1.0.3.306*
 
 HUAWEI Image Kit incorporates powerful scene-specific smart design and animation production
 functions into your app, giving it the power of efficient image content reproduction while providing
@@ -666,7 +681,7 @@ a report. You can then optimize your app based on the report for improved perfor
 
 ### [Location Kit](https://developer.huawei.com/consumer/en/hms/huawei-locationkit/)
 
-*Version: 6.9.0.300*
+*Version: 6.11.0.301*
 
 HUAWEI Location Kit combines the GNSS, Wi-Fi, and base station location functionalities into your
 app to build up global positioning capabilities, allowing you to provide flexible location-based
@@ -683,7 +698,7 @@ Features:
 
 ### [Map Kit](https://developer.huawei.com/consumer/en/hms/huawei-MapKit/)
 
-*Version: 6.9.0.300*
+*Version: 6.11.0.304*
 
 HUAWEI Map Kit is an SDK for map development. It covers map data of more than 200 countries and
 regions, and supports dozens of languages. With this SDK, you can easily integrate map-based
@@ -700,7 +715,7 @@ Features:
 
 ### [ML Kit](https://developer.huawei.com/consumer/en/hms/huawei-mlkit/)
 
-*Version: 3.10.0.300*
+*Version: 3.9.0.300*
 
 HUAWEI ML Kit allows your apps to easily leverage Huawei's long-term proven expertise in machine
 learning to support diverse artificial intelligence (AI) applications throughout a wide range of
@@ -712,70 +727,69 @@ Features:
 Text Related Service
 
 - [TER : Text Recognition](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/text-recognition-0000001050040053)
-  - *2.0.1.300*
+  - *3.8.0.303*
 - [DOR : Document Recognition](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/document-recognition-0000001050038108)
-  - *2.0.1.300*
+  - *3.9.0.300*
 - [BCR : Bank Card Recognition](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/bank-card-recognition-0000001050038118)
-  - *2.0.0.300*
+  - *3.7.0.302*
 - [GCR : General Card Recognition](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/general-card-recognition-0000001050040073)
-  - *2.0.1.300*
+  - *3.8.0.303*
 
 Language Related Service
 
 - [Language Detection](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/real-time-language-detection-0000001050038134)
-  - *2.0.3.300*
+  - *3.9.0.300*
 - [Text Translation](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/real-time-translation-0000001050040079)
-  - *2.0.3.300*
+  - *3.9.0.300*
 - [ASR : Speech Recognition](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/ml-asr-0000001050066212)
-  - *2.0.3.300*
+  - *3.9.0.300*
 - [TTS : Text to Speech](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/ml-tts-0000001050068169)
-  - *2.0.2.300*
+  - *3.9.0.301*
 - [AFT : audio file Transcription](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/audio-file-transcription-0000001050040089)
-  - *2.0.1.300*
-- [VCC : Video Course Creator]() - *2.0.2.301*
-- [Real-Time Transcription]() - *2.0.3.300*
-- [Sound Detection]() - *2.0.3.300*
+  - *3.9.0.300*
+- [Real-Time Transcription]() - *3.9.0.300*
+- [Sound Detection]() - *3.5.0.302*
 
 Image Related Service
 
 - [Image Classification](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/image-classification-0000001050040095)
-  - *2.0.1.300*
+  - *3.7.0.301*
 - [Object Detection](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/object-detection-track-0000001050038150)
-  - *2.0.3.300*
+  - *3.7.0.301*
 - [Landmark Recognition](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/landmark-recognition-0000001050038154)
-  - *2.0.3.300*
+  - *3.9.0.300*
 - [Image Segmentation](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/image-segmentation-0000001050040109)
-  - *2.0.4.301*
+  - *3.7.0.302*
 - [Product Visual Search](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/product-visual-search-0000001050038164)
-  - *2.0.4.300*
+  - *3.9.0.300*
 - [Image Super-Resolution](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/imagesuper-resolution-0000001051546182)
-  - *2.0.4.300*
+  - *3.7.0.302*
 - [Document Skew Correction](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/documentskewcorrection-0000001051703156)
-  - *2.0.4.300*
+  - *3.7.0.301*
 - [Text Image Super-Resolution](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/text-image-super-resolution-0000001055442768)
-  - *2.0.4.300*
+  - *3.7.0.301*
 - [Scene Detection](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/scene-detection-0000001055162807)
-  - *2.0.3.300*
+  - *3.7.0.303*
 
 Face/Body Related Service
 
 - [Face Detection](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/face-detection-0000001050038170)
-  - *2.0.1.300*
+  - *3.7.0.301*
 - [Skeleton Detection](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/skeleton-detection-0000001051008415)
-  - *2.0.3.300*
+  - *3.7.0.301*
 - [Liveness Detection](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/mlkit-liveness-detection-0000001051386243)
-  - *2.0.2.300*
+  - *3.7.0.302*
 - [Hand Gesture Recognition](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/handgesturerecognition-0000001051615541)
-  - *2.0.3.300*
+  - *3.7.0.301*
 
 Natural Language Processing Services
 
 - [Text Embedding](https://developer.huawei.com/consumer/en/doc/development/hiai-Guides/text-embedding-0000001055002819)
-  - *2.0.3.300*
+  - *3.9.0.300*
 
 ### [Nearby Service](https://developer.huawei.com/consumer/en/hms/huawei-nearbyservice/)
 
-*Version: 6.9.0.300*
+*Version: 6.11.0.300*
 
 HUAWEI Nearby Service allows apps to easily discover nearby devices and set up communication with
 them using technologies such as Bluetooth and Wi-Fi. The service provides Nearby Connection and
@@ -788,7 +802,7 @@ Features:
 
 ### [Network Kit](https://developer.huawei.com/consumer/en/hms/huawei-networkkit/)
 
-*Version: 5.0.7.300*
+*Version: 6.0.8.300*
 
 Network Kit is a basic network service suite. It incorporates Huawei's experience in far-field
 network communications, and utilizes scenario-based RESTful APIs as well as file upload and download
@@ -844,7 +858,7 @@ your paid app based on your needs.
 
 ### [Panorama Kit](https://developer.huawei.com/consumer/en/hms/huawei-panoramakit/)
 
-*Version: 5.0.2.304*
+*Version: 5.0.2.308*
 
 By integrating the SDK of HUAWEI Panorama Kit, your app can quickly display interactive viewing of
 360-degree spherical or cylindrical panoramic images in simulated 3D space on Android phones,
@@ -891,7 +905,7 @@ as they are used.
 
 ### [Push Kit](https://developer.huawei.com/consumer/en/hms/huawei-pushkit/)
 
-*Version: 6.9.0.300*
+*Version: 6.11.0.300*
 
 HUAWEI Push Kit is a messaging service provided for you. It establishes a messaging channel from the
 cloud to devices. By integrating Push Kit, you can send messages to your apps on users' devices in
@@ -916,7 +930,7 @@ need to tap them open and enjoy the same experience and performance as native ap
 
 ### [Remote Configuration](https://developer.huawei.com/consumer/en/agconnect/remote-configuration/)
 
-*Version: 1.6.0.300*
+*Version: 1.9.1.300*
 
 AppGallery Connect Remote Configuration allows you to change the behavior and appearance of your app
 online without requiring users to update the app. With the service, you can provide tailored
@@ -928,7 +942,7 @@ Features:
 
 ### [Safety Detect](https://developer.huawei.com/consumer/en/hms/huawei-safetydetectkit/)
 
-*Version: 6.4.0.301*
+*Version: 6.7.0.302*
 
 Safety Detect builds robust security capabilities, including system integrity check (SysIntegrity),
 app security check (AppsCheck), malicious URL check (URLCheck), fake user detection (UserDetect),
@@ -946,7 +960,7 @@ Features:
 
 ### [Scan Kit](https://developer.huawei.com/consumer/en/hms/huawei-scankit/)
 
-*Version: 2.9.0.300*
+*Version: 2.11.0.300*
 
 HUAWEI Scan Kit scans and parses all major 1D and 2D barcodes and generates QR codes, helping you
 quickly build barcode scanning functions into your apps.
@@ -969,7 +983,7 @@ Features:
 
 ### [Scene Kit](https://developer.huawei.com/consumer/en/hms/huawei-scenekit/)
 
-*Version: 6.0.0.301*
+*Version: 6.8.0.300*
 
 HUAWEI Scene Kit is a lightweight rendering engine that features high performance and low
 consumption. It provides advanced descriptive APIs for you to edit, operate, and render 3D
@@ -1044,7 +1058,7 @@ Features:
 
 ### [Video Editor Kit](https://developer.huawei.com/consumer/en/hms/huawei-video-editor/)
 
-*Version: 1.1.0.301*
+*Version: 1.7.0.300*
 
 The one-stop toolkit provides a rich array of video processing capabilities, including video
 import/export, editing, rendering, and media asset management, for fast and easy development. Its
@@ -1069,7 +1083,7 @@ real-time status updates, and NFC capabilities.
 
 ### [Wireless Kit](https://developer.huawei.com/consumer/en/hms/huawei-wirelesskit/)
 
-*Version: 5.3.0.311*
+*Version: 6.4.0.202*
 
 HUAWEI Wireless Kit encapsulates a range of wireless transmission capabilities and provides network
 quality of experience (QoE) information for your app to achieve efficient wireless transmission and
@@ -1135,6 +1149,7 @@ sharing.
 - Fatih Muti
 - Hasan Kaya
 - Zübeyir Taruz
+- Aziz Tekpicak
 - Kayra Enez Özenalp
 - Begüm Avcı
 - Cem Genar

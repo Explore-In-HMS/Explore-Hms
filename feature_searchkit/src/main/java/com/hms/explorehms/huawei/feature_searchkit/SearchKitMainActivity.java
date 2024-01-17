@@ -19,6 +19,7 @@ package com.hms.explorehms.huawei.feature_searchkit;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -35,6 +36,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -111,6 +113,13 @@ public class SearchKitMainActivity extends AppCompatActivity implements AutoSugg
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+         Toast disable = Toast.makeText(this,"This Service has been discontinued.",Toast.LENGTH_LONG);
+         View toastView = disable.getView();
+         TextView text = (TextView) toastView.findViewById(android.R.id.message);
+         text.setTextColor(Color.parseColor("#F44336"));
+         disable.show();
+
 
         binding = ActivitySearchKitMainBinding.inflate(getLayoutInflater());
         CLIENT_ID_TOKEN = AGConnectServicesConfig.fromContext(this).getString("client/app_id");

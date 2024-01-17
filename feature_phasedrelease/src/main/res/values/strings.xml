@@ -47,5 +47,5 @@
     <string name="viewing_history_title">Viewing History of Release by Phase</string>
     <string name="viewing_history_desc">You can view the operation history of release by phase, such as suspending, restoring, updating, or canceling release by phase under Release type on the Version information page</string>
 
-    <string name="url_txt_pahsedrelease">https://developer.huawei.com/consumer/en/doc/distribution/app/agc-phased_release</string>
+    <string name="url_txt_pahsedrelease">https://developer.huawei.com/consumer/en/doc/app/agc-help-phased-release-0000001099836872</string>
 </resources>

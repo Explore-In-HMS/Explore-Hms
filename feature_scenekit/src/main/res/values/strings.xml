@@ -39,5 +39,5 @@
     <string name="service_exp">Service Introduction</string>
     <string name="title_scene">A 3D graphics rendering engine performs more with less. User-friendly rendering APIs for games, AR and VR apps, and other apps bring your users a stunning visual experience.</string>
 
-    <string name="url_scenekit">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050163355</string>
+    <string name="url_scenekit">https://developer.huawei.com/consumer/en/doc/graphics-Guides/service-introduction-0000001050163355</string>
 </resources>

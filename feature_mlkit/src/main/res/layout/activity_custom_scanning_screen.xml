@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.mlServices.textRelated.bankCardRecognition.CustomScanningScreenActivity">
+    <FrameLayout
+        android:id="@+id/rim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/viewfinder_text_color4">
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/light_layout"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="420dp">
+
+        <ImageView
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rn_eid_ic_hivision_light"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_marginTop="2dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageButton2"
+            android:text="Lit up"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+</FrameLayout>

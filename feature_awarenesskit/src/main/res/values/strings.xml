@@ -29,7 +29,7 @@
     <string name="capture_api_and_barrier_api_text_awarenesskit">Capture API and Barrier API</string>
 
     <string name="awarenesskit_more_information"><a href="">Click here to learn more about Awareness Kit.</a></string>
-    <string name="awarenesskit_more_information_link_documentation_link">https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/service-introduction-0000001050031140</string>
+    <string name="awarenesskit_more_information_link_documentation_link">https://developer.huawei.com/consumer/en/doc/HMSCore-Guides/service-introduction-0000001050171255</string>
 
 
     <string name="time_awareness_info_text">The time awareness capability can obtain holiday information of most countries/regions and sunrise and sunset time of all cities around the world. Holiday information is updated periodically to ensure data timeliness and accuracy.</string>
