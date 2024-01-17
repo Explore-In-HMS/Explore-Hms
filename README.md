@@ -4,6 +4,9 @@
 
 ![ #Kits/Services in Explore HMS](https://img.shields.io/badge/%20%23Kits%2FServices%20in%20Explore%20HMS-84-yellow) ![% HMS Kit/Service Coverage ](https://img.shields.io/badge/%20HMS%20Kit%2FService%20Coverage%20-100%2F100-orange) ![% Functional Coverage per Kit/Service](https://img.shields.io/badge/%20Functional%20Coverage%20per%20Kit%2FService-99%2F100-yellow) ![% Kit/Service Up-to-Date](https://img.shields.io/badge/%20Kit%2FService%20Up--to--Date-98%2F100-lightgrey)
 
+## In App Footage
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWNnY2xiZnZyeHRtcTBmOWRsbmppNzEwdmMzMWJ4dzA4Y2N4bTV3OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/76105Jvc9QOmbnZxBf/giphy-downsized.gif" width="300"  />
+
 ## Screenshots
 
 <table>
@@ -17,30 +20,30 @@
 
 </td>
 <td>
-<img src="/art/3.png" width="300"/>
+<img src="https://github.com/Explore-In-HMS/Explore-Hms/assets/89274981/4aae4e31-9c2e-4979-8973-7d9526c93b6b" width="300"/>
 
 </td>
 <td>
-<img src="/art/4.png" width="300"/>
+<img src="https://github.com/Explore-In-HMS/Explore-Hms/assets/89274981/03aad3d5-43f4-4531-b03b-226309626cac" width="300"/>
 
 </td>
 </tr>
 
 <tr>
 <td>
-<img src="/art/5.png" width="300"/>
+<img src="https://github.com/Explore-In-HMS/Explore-Hms/assets/89274981/9790f64b-a3a7-4965-9516-1cd590f69c70" width="300"/>
 
 </td>
 <td>
-<img src="/art/6.png" width="300"/>
+<img src="https://github.com/Explore-In-HMS/Explore-Hms/assets/89274981/793867ed-37ef-47eb-a8f5-bca67c460b75" width="300"/>
 
 </td>
 <td>
-<img src="/art/7.png" width="300"/>
+<img src="https://github.com/Explore-In-HMS/Explore-Hms/assets/89274981/deef6c50-1eef-4594-a5b8-9c79b9337810" width="300"/>
 
 </td>
 <td>
-<img src="/art/8.png" width="300"/>
+<img src="https://github.com/Explore-In-HMS/Explore-Hms/assets/89274981/5cb74cea-d707-41f6-b6d6-7ca4ddee0c89" width="300"/>
 
 </td>
 </tr>
