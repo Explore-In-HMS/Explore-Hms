@@ -253,6 +253,7 @@
     <string name="gcr_with_camera_stream">Recognition with Camera Stream</string>
 
     <string name="bcr_with_take_a_picture">Recognition with Take a Picture</string>
+    <string name="bcr_with_custom_view">Recognition with Custom View</string>
 
     <string name="dtc_rcg_results_will_be_here">Voice Type Detection and Recognition Results Will Be Here!</string>
 

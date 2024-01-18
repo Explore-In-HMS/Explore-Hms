@@ -97,6 +97,16 @@
             android:focusable="true"
             android:text="@string/bcr_with_take_a_picture" />
 
+        <Button
+            android:id="@+id/btn_bcrWithCustomView"
+            style="@style/ButtonAppearance.ExploreHMS.Normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/bcr_with_custom_view" />
+
     </LinearLayout>
 
     <ScrollView

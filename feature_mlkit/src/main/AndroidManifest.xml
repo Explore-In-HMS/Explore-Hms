@@ -60,18 +60,23 @@
         android:resizeableActivity="true"
         android:screenOrientation="portrait"
         android:theme="@style/AppTheme"
-        tools:node="replace"
+        tools:node="merge"
         tools:replace="icon, label, theme, screenOrientation, resizeableActivity"
         tools:targetApi="q">
-        <activity android:name=".ui.mlServices.faceAndBodyRelated.gesture.GestureMainActivity"
-            android:screenOrientation="portrait"
-            android:exported="true"/>
-        <activity android:name=".ui.mlServices.faceAndBodyRelated.face3d.Live3DActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.mlServices.textRelated.bankCardRecognition.CustomScanningScreenActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.mlServices.faceAndBodyRelated.gesture.GestureMainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mlServices.faceAndBodyRelated.face3d.Live3DActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MLMainActivity"
-            android:screenOrientation="portrait"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" /> <!-- Text Related Services Activities -->
         <activity
             android:name=".ui.mlServices.textRelated.bankCardRecognition.BankCardRecognitionActivity"
@@ -103,18 +108,18 @@
         <activity
             android:name=".ui.mlServices.textRelated.idCardRecognition.IDCardActivity"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|keyboardHidden|orientation"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask" />
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.mlServices.textRelated.idCardRecognition.IDCardRecognitionActivity"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|keyboardHidden|orientation"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask" />
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.mlServices.textRelated.idCardRecognition.VNIdCardRecognitionActivity"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|keyboardHidden|orientation"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask" /> <!-- Language Related Services Activities -->
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" /> <!-- Language Related Services Activities -->
         <activity
             android:name=".ui.mlServices.languageRelated.audioTranscription.AudioFileTranscriptionActivity"
             android:screenOrientation="portrait"
@@ -195,8 +200,8 @@
         <activity
             android:name=".ui.mlServices.faceAndBodyRelated.faceVerification.FaceVerificationActivity"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|keyboardHidden|orientation"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask" />
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.mlServices.faceAndBodyRelated.gesture.GestureActivity"
             android:screenOrientation="portrait"
